@@ -44,7 +44,7 @@
 <section>
   <div class="container">
     <div class="notice" data-i18n="team.notice">
-      Liste temporaire — remplacez les entrées dans <code>data/team-members.json</code> par vos vrais membres, photos et biographies.
+      Les bios s'en viennent — ajoutez-les dans <code>data/team-members.json</code>.
     </div>
     <div id="team-grid" class="grid grid-3"></div>
   </div>
@@ -85,14 +85,20 @@
       grid.innerHTML = members.map((m) => {
         const name = tr(m.name) || "?";
         const initials = (m.initials || name).toString().slice(0, 2).toUpperCase();
+        const role = tr(m.role);
+        const bio = tr(m.bio);
         const quote = tr(m.quote);
+        // Empty fields are slots waiting to be filled, not broken cards.
+        const bioBlock = bio
+          ? `<p>${esc(bio)}</p>`
+          : `<p class="member-bio-empty">${esc(PMF_I18N.t("team.bioPlaceholder"))}</p>`;
         return `
           <div class="member-card">
             <div class="member-photo">${esc(initials)}</div>
             <div class="member-body">
-              <span class="member-role">${esc(tr(m.role))}</span>
+              ${role ? `<span class="member-role">${esc(role)}</span>` : ""}
               <h3>${esc(name)}</h3>
-              <p>${esc(tr(m.bio))}</p>
+              ${bioBlock}
               ${quote ? `<div class="member-quote">"${esc(quote)}"</div>` : ""}
             </div>
           </div>
