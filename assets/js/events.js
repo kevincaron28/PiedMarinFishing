@@ -12,6 +12,7 @@ async function initEventList(options) {
     regionFilterSelector,
     whenFilterSelector,
     kindFilterSelector,
+    yearFilterSelector,
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
@@ -41,6 +42,7 @@ async function initEventList(options) {
   const regionSelect = regionFilterSelector ? document.querySelector(regionFilterSelector) : null;
   const whenSelect = whenFilterSelector ? document.querySelector(whenFilterSelector) : null;
   const kindSelect = kindFilterSelector ? document.querySelector(kindFilterSelector) : null;
+  const yearSelect = yearFilterSelector ? document.querySelector(yearFilterSelector) : null;
 
   // A circuit is a series; its stops point back at it by id.
   const circuitById = new Map(events.filter((e) => e.kind === "circuit").map((e) => [e.id, e]));
@@ -101,6 +103,17 @@ async function initEventList(options) {
       whenSelect.value = previous;
     }
 
+    if (yearSelect) {
+      const years = Array.from(new Set(
+        events.map((ev) => (dateParts(ev.startDate) || {}).year).filter(Boolean)
+      )).sort((a, b) => b - a);
+      buildOptions(
+        yearSelect,
+        years.map((y) => ({ value: String(y), label: String(y) })),
+        t("filters.allYears")
+      );
+    }
+
     if (kindSelect) {
       const previous = kindSelect.value || "";
       kindSelect.innerHTML = "";
@@ -142,6 +155,11 @@ async function initEventList(options) {
       // A cancelled event is never something you can still go and fish.
       if (whenSelect.value === "upcoming" && (past || ev.status === "cancelled")) return false;
       if (whenSelect.value === "past" && !past) return false;
+    }
+    if (yearSelect && yearSelect.value !== "") {
+      const p = dateParts(ev.startDate);
+      // Recurring / date-TBC entries aren't tied to a season, so they stay.
+      if (p && String(p.year) !== yearSelect.value) return false;
     }
     if (monthSelect && monthSelect.value !== "") {
       const d = parseISODate(ev.startDate);
@@ -288,7 +306,7 @@ async function initEventList(options) {
     if (onRender) onRender({ filtered, renderCard });
   }
 
-  [monthSelect, regionSelect, whenSelect, kindSelect, searchInput].forEach((el) => {
+  [monthSelect, regionSelect, whenSelect, kindSelect, yearSelect, searchInput].forEach((el) => {
     if (el) el.addEventListener("input", render);
   });
 
