@@ -383,6 +383,10 @@ section.alt { background: var(--sand-100); }
   font-weight: 700;
   margin-bottom: 6px;
 }
+.member-bio-empty {
+  font-style: italic;
+  color: rgba(71, 96, 111, 0.55);
+}
 .member-quote {
   font-style: italic;
   color: var(--ink-600);
