@@ -11,6 +11,7 @@ async function initEventList(options) {
     monthFilterSelector,
     regionFilterSelector,
     whenFilterSelector,
+    kindFilterSelector,
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
@@ -39,6 +40,16 @@ async function initEventList(options) {
   const monthSelect = monthFilterSelector ? document.querySelector(monthFilterSelector) : null;
   const regionSelect = regionFilterSelector ? document.querySelector(regionFilterSelector) : null;
   const whenSelect = whenFilterSelector ? document.querySelector(whenFilterSelector) : null;
+  const kindSelect = kindFilterSelector ? document.querySelector(kindFilterSelector) : null;
+
+  // A circuit is a series; its stops point back at it by id.
+  const circuitById = new Map(events.filter((e) => e.kind === "circuit").map((e) => [e.id, e]));
+  const stopsOf = new Map();
+  events.forEach((e) => {
+    if (e.kind !== "stop" || !e.circuit) return;
+    if (!stopsOf.has(e.circuit)) stopsOf.set(e.circuit, []);
+    stopsOf.get(e.circuit).push(e);
+  });
   const searchInput = searchSelector ? document.querySelector(searchSelector) : null;
 
   // Option values are language-independent, so a language switch never
@@ -89,9 +100,43 @@ async function initEventList(options) {
         });
       whenSelect.value = previous;
     }
+
+    if (kindSelect) {
+      const previous = kindSelect.value || "";
+      kindSelect.innerHTML = "";
+      [["", "filters.kind.all"], ["single", "filters.kind.single"],
+       ["circuit", "filters.kind.circuit"], ["pro", "filters.kind.pro"]]
+        .forEach(([value, key]) => {
+          const opt = document.createElement("option");
+          opt.value = value;
+          opt.textContent = t(key);
+          kindSelect.appendChild(opt);
+        });
+      kindSelect.value = previous;
+    }
+  }
+
+  function matchesKind(ev) {
+    if (!kindSelect || !kindSelect.value) return true;
+    const v = kindSelect.value;
+    if (v === "pro") return ev.tier === "pro";
+    if (v === "circuit") return ev.tier !== "pro" && (ev.kind === "circuit" || ev.kind === "stop");
+    if (v === "single") return ev.tier !== "pro" && ev.kind === "single";
+    return true;
   }
 
   function matchesFilters(ev) {
+    if (!matchesKind(ev)) return false;
+    // A circuit carries no date of its own — it is judged by its stops.
+    if (ev.kind === "circuit") {
+      const stops = stopsOf.get(ev.id) || [];
+      if (stops.length) return stops.some((st) => matchesDateAndPlace(st));
+      return matchesDateAndPlace(ev);
+    }
+    return matchesDateAndPlace(ev);
+  }
+
+  function matchesDateAndPlace(ev) {
     if (whenSelect && whenSelect.value !== "all") {
       const past = isPastEvent(ev);
       // A cancelled event is never something you can still go and fish.
@@ -132,6 +177,12 @@ async function initEventList(options) {
     const stateBadge = cancelled
       ? `<span class="badge red">${escapeHTML(t("events.cancelled"))}</span>`
       : past ? `<span class="badge navy">${escapeHTML(t("events.past"))}</span>` : "";
+    const tierBadge = ev.tier === "pro" ? `<span class="badge pro">${escapeHTML(t("events.proTour"))}</span>` : "";
+    // A stop names its parent series, so it never reads as a standalone event.
+    const parent = ev.kind === "stop" && ev.circuit ? circuitById.get(ev.circuit) : null;
+    const parentTag = parent
+      ? `<span class="event-parent">${escapeHTML(tr(parent.name))}</span>`
+      : "";
 
     const metaBits = [];
     if (ev.location) metaBits.push(`<span>📍 ${escapeHTML(tr(ev.location))}</span>`);
@@ -165,10 +216,11 @@ async function initEventList(options) {
     const notes = tr(ev.notes);
 
     return `
-      <article class="event-card${past || cancelled ? " event-inactive" : ""}" id="ev-${escapeHTML(ev.id || "")}">
+      <article class="event-card${past || cancelled ? " event-inactive" : ""}${ev.tier === "pro" ? " event-pro" : ""}" id="ev-${escapeHTML(ev.id || "")}">
         <div class="event-date">${dateBadge}</div>
         <div>
-          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
+          ${parentTag}
+          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${tierBadge}${stateBadge}</div>
           <div class="event-meta">${metaBits.join("")}</div>
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
           ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
@@ -178,6 +230,44 @@ async function initEventList(options) {
         </div>
       </article>
     `;
+  }
+
+  // Stops nest inside their circuit so a series reads as one thing rather
+  // than as N unrelated rows.
+  function groupByCircuit(filtered) {
+    const shownIds = new Set(filtered.map((e) => e.id));
+    const out = [];
+    const consumed = new Set();
+
+    filtered.forEach((ev) => {
+      if (consumed.has(ev.id)) return;
+
+      if (ev.kind === "circuit") {
+        consumed.add(ev.id);
+        const stops = (stopsOf.get(ev.id) || [])
+          .filter((st) => shownIds.has(st.id))
+          .sort((a, b) => (a.startDate || "9999").localeCompare(b.startDate || "9999"));
+        stops.forEach((st) => consumed.add(st.id));
+        out.push(`
+          <section class="circuit-block${ev.tier === "pro" ? " circuit-pro" : ""}">
+            ${renderCard(ev)}
+            ${stops.length ? `
+              <div class="circuit-stops">
+                <div class="circuit-stops-head">${escapeHTML(plural("events.stopCount", stops.length))}</div>
+                <div class="event-list">${stops.map(renderCard).join("")}</div>
+              </div>` : ""}
+          </section>
+        `);
+        return;
+      }
+
+      // A stop whose circuit was filtered out still stands on its own.
+      if (ev.kind === "stop" && ev.circuit && shownIds.has(ev.circuit)) return;
+      consumed.add(ev.id);
+      out.push(renderCard(ev));
+    });
+
+    return out.join("");
   }
 
   function render() {
@@ -192,13 +282,13 @@ async function initEventList(options) {
       if (emptyEl) emptyEl.style.display = "block";
     } else {
       if (emptyEl) emptyEl.style.display = "none";
-      listEl.innerHTML = filtered.map(renderCard).join("");
+      listEl.innerHTML = groupByCircuit(filtered);
     }
 
     if (onRender) onRender({ filtered, renderCard });
   }
 
-  [monthSelect, regionSelect, whenSelect, searchInput].forEach((el) => {
+  [monthSelect, regionSelect, whenSelect, kindSelect, searchInput].forEach((el) => {
     if (el) el.addEventListener("input", render);
   });
 

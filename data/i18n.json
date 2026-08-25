@@ -60,7 +60,7 @@
     "tournaments.desc": "Un répertoire communautaire des tournois de pêche et des événements de pêche compétitive partout au Québec.",
     "tournaments.h1": "Guide des tournois au Québec",
     "tournaments.intro": "Un répertoire communautaire des tournois de pêche et des activités compétitives au Québec — avec une couverture serrée de la Montérégie, du Saint-Laurent, du Richelieu et du lac Champlain. Maintenu par Pied Marin Fishing comme ressource pour tous les pêcheurs de tournoi, pas seulement notre équipe.",
-    "tournaments.notice": "Affichage des événements <strong>à venir</strong> par défaut — basculez le filtre sur « Passés » ou « Tous » pour voir la saison complète et anticiper les éditions de l'an prochain. Les dates changent : confirmez toujours auprès de l'organisateur avant de vous déplacer. Un événement manque à l'appel? <a href=\"mailto:info@piedmarinfishing.ca\">Écrivez-nous</a>.",
+    "tournaments.notice": "Affichage des événements <strong>à venir</strong> par défaut — basculez sur « Passés » ou « Tous » pour la saison complète. Les <strong>circuits</strong> regroupent leurs étapes; les <strong>tournées pro</strong> (Bassmaster Elite, MLF) sont en mauve et se disputent sur qualification. Confirmez toujours auprès de l'organisateur. Un événement manque à l'appel? <a href=\"mailto:info@piedmarinfishing.ca\">Écrivez-nous</a>.",
     "tournaments.keepDigging": "Pour aller plus loin",
     "tournaments.moreTitle": "Autres calendriers de tournois",
     "tournaments.moreBody": "Ces sites maintiennent leurs propres listes de tournois québécois, mises à jour en continu — à consulter en complément de notre répertoire.",
@@ -179,7 +179,15 @@
     "calendarView.monthOnly.one": "+ {n} sans jour précis",
     "calendarView.monthOnly.other": "+ {n} sans jour précis",
     "calendarView.undatedTitle": "Sans date confirmée",
-    "calendarView.undatedBody": "Ces événements reviennent chaque année mais leur date n'est pas publiée. Cliquez pour voir les détails."
+    "calendarView.undatedBody": "Ces événements reviennent chaque année mais leur date n'est pas publiée. Cliquez pour voir les détails.",
+    "filters.kind.all": "Tous les types",
+    "filters.kind.single": "Tournois individuels",
+    "filters.kind.circuit": "Circuits et séries",
+    "filters.kind.pro": "Tournées pro",
+    "events.proTour": "Pro",
+    "events.stopCount.one": "{n} étape",
+    "events.stopCount.other": "{n} étapes",
+    "calendarView.legendPro": "Tournée pro"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -242,7 +250,7 @@
     "tournaments.desc": "A community directory of fishing tournaments and competitive angling events across Québec.",
     "tournaments.h1": "Québec Tournament Guide",
     "tournaments.intro": "A community directory of fishing tournaments and competitive angling events across Québec — with close coverage of the Montérégie, the St. Lawrence, the Richelieu and Lake Champlain. Maintained by Pied Marin Fishing as a resource for the whole tournament trail, not just our own team.",
-    "tournaments.notice": "Showing <strong>upcoming</strong> events by default — switch the filter to \"Past\" or \"All\" to see the full season and plan for next year's editions. Dates change: always confirm with the organizer before travelling. Know an event we're missing? <a href=\"mailto:info@piedmarinfishing.ca\">Send it to us</a>.",
+    "tournaments.notice": "Showing <strong>upcoming</strong> events by default — switch to \"Past\" or \"All\" for the full season. <strong>Circuits</strong> group their stops together; <strong>pro tours</strong> (Bassmaster Elite, MLF) are shown in purple and are fished by qualification. Always confirm with the organizer. Know an event we're missing? <a href=\"mailto:info@piedmarinfishing.ca\">Send it to us</a>.",
     "tournaments.keepDigging": "Keep Digging",
     "tournaments.moreTitle": "More live tournament calendars",
     "tournaments.moreBody": "These sites maintain their own continuously-updated Québec tournament listings — worth checking alongside our directory.",
@@ -361,6 +369,14 @@
     "calendarView.monthOnly.one": "+ {n} with no set day",
     "calendarView.monthOnly.other": "+ {n} with no set day",
     "calendarView.undatedTitle": "No confirmed date",
-    "calendarView.undatedBody": "These events recur each year but their date isn't published. Click to see the details."
+    "calendarView.undatedBody": "These events recur each year but their date isn't published. Click to see the details.",
+    "filters.kind.all": "All types",
+    "filters.kind.single": "Single tournaments",
+    "filters.kind.circuit": "Circuits and series",
+    "filters.kind.pro": "Pro tours",
+    "events.proTour": "Pro",
+    "events.stopCount.one": "{n} stop",
+    "events.stopCount.other": "{n} stops",
+    "calendarView.legendPro": "Pro tour"
   }
 }

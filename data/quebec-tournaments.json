@@ -1,5 +1,1069 @@
 [
   {
+    "id": "excellence-bass",
+    "kind": "circuit",
+    "tier": "regional",
+    "name": "Excellence Bass",
+    "startDate": "",
+    "endDate": "",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Lac Saint-Louis, lac des Deux Montagnes, lac Saint-François",
+      "en": "Lac Saint-Louis, Lac des Deux Montagnes, Lac Saint-François"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "APC les Rapides de Coteau-du-Lac",
+      "en": "APC les Rapides de Coteau-du-Lac"
+    },
+    "type": {
+      "fr": "Circuit en équipe",
+      "en": "Team Circuit"
+    },
+    "status": "confirmed",
+    "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
+    "notes": {
+      "fr": "Circuit de quatre étapes à l'achigan, en équipe de deux. Inscription à la saison complète : 910 $ par équipe. Contact : Bertin Desrosiers, 450-763-0179.",
+      "en": "Four-stop team bass circuit, two anglers per boat. Full-season entry: $910 per team. Contact: Bertin Desrosiers, 450-763-0179."
+    },
+    "specs": {
+      "fee": {
+        "fr": "910 $ / équipe (saison)",
+        "en": "$910 / team (season)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": "25",
+      "deadline": {
+        "fr": "Paiement avant le 31 mai 2026",
+        "en": "Payment before 31 May 2026"
+      }
+    }
+  },
+  {
+    "id": "big-bass-quebec",
+    "kind": "circuit",
+    "tier": "regional",
+    "name": {
+      "fr": "Programme Big Bass Québec",
+      "en": "Big Bass Québec Program"
+    },
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Montérégie / Saint-Laurent",
+      "en": "Montérégie / St. Lawrence"
+    },
+    "location": {
+      "fr": "Lac Saint-Louis, lac Saint-François, Lavaltrie, marina de Lachine",
+      "en": "Lac Saint-Louis, Lac Saint-François, Lavaltrie, Marina de Lachine"
+    },
+    "species": {
+      "fr": "Achigan, doré, brochet, perchaude",
+      "en": "Bass, walleye, pike, perch"
+    },
+    "organizer": {
+      "fr": "Club de pêche Big Bass Québec",
+      "en": "Club de pêche Big Bass Québec"
+    },
+    "type": {
+      "fr": "Programme de club",
+      "en": "Club Program"
+    },
+    "status": "confirmed",
+    "link": "https://www.bigbasschallengequebec.com/2026-programmation",
+    "notes": {
+      "fr": "Le principal organisateur de tournois d'achigan du corridor. Chaque événement s'inscrit séparément — ce n'est pas un classement cumulatif de saison.",
+      "en": "The corridor's main bass tournament organizer. Each event is entered separately — this is not a cumulative season standings circuit."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    }
+  },
+  {
+    "id": "bassmaster-elite",
+    "kind": "circuit",
+    "tier": "pro",
+    "name": "Bassmaster Elite Series",
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Neuf étapes dans six États",
+      "en": "Nine stops across six states"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Tournée professionnelle",
+      "en": "Professional Tour"
+    },
+    "status": "confirmed",
+    "link": "https://www.bassmaster.com/elite/",
+    "notes": {
+      "fr": "Tournée pro américaine, sur qualification. Incluse ici comme référence : deux étapes 2026 se tiennent au lac Champlain et sur le Saint-Laurent, à distance de route du Québec.",
+      "en": "US pro tour, entry by qualification. Included here for reference: two 2026 stops are on Lake Champlain and the St. Lawrence, within driving range of Québec."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      }
+    }
+  },
+  {
+    "id": "mlf-bass-pro-tour",
+    "kind": "circuit",
+    "tier": "pro",
+    "name": "MLF Bass Pro Tour",
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Sept étapes plus Heavy Hitters et REDCREST",
+      "en": "Seven stages plus Heavy Hitters and REDCREST"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Tournée professionnelle",
+      "en": "Professional Tour"
+    },
+    "status": "confirmed",
+    "link": "https://majorleaguefishing.com/bass-pro-tour/",
+    "notes": {
+      "fr": "Tournée pro américaine en format remise à l'eau immédiate, sur qualification. 51 pros en 2026. Aucune étape au Québec — incluse comme référence.",
+      "en": "US pro tour in an immediate catch-and-release format, entry by qualification. 51 pros in 2026. No Québec stop — included for reference."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-guntersville",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Lake Guntersville",
+    "startDate": "2026-02-05",
+    "endDate": "2026-02-08",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Guntersville, Scottsboro, Alabama",
+      "en": "Lake Guntersville, Scottsboro, Alabama"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-martin",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Lake Martin",
+    "startDate": "2026-02-12",
+    "endDate": "2026-02-15",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Martin, Alexander City, Alabama",
+      "en": "Lake Martin, Alexander City, Alabama"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bassmaster-classic",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Classic",
+    "startDate": "2026-03-13",
+    "endDate": "2026-03-15",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Tennessee River, Knoxville, Tennessee",
+      "en": "Tennessee River, Knoxville, Tennessee"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Le championnat du circuit — l'événement le plus important de la saison.",
+      "en": "The circuit's championship — the biggest event of the season."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-tenn-tom",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Tennessee-Tombigbee",
+    "startDate": "2026-03-26",
+    "endDate": "2026-03-29",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Tennessee-Tombigbee Waterway, Columbus, Mississippi",
+      "en": "Tennessee-Tombigbee Waterway, Columbus, Mississippi"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-arkansas-river",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Arkansas River",
+    "startDate": "2026-04-16",
+    "endDate": "2026-04-19",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Arkansas River, Muskogee, Oklahoma",
+      "en": "Arkansas River, Muskogee, Oklahoma"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-murray",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Lake Murray",
+    "startDate": "2026-05-07",
+    "endDate": "2026-05-10",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Murray, Columbia, Caroline du Sud",
+      "en": "Lake Murray, Columbia, South Carolina"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-santee-cooper",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Santee Cooper Lakes",
+    "startDate": "2026-05-14",
+    "endDate": "2026-05-17",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Santee Cooper Lakes, comté de Clarendon, Caroline du Sud",
+      "en": "Santee Cooper Lakes, Clarendon County, South Carolina"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-pasquotank",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Pasquotank River",
+    "startDate": "2026-06-11",
+    "endDate": "2026-06-14",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Rivière Pasquotank / Albemarle Sound, Elizabeth City, Caroline du Nord",
+      "en": "Pasquotank River / Albemarle Sound, Elizabeth City, North Carolina"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-champlain",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Lac Champlain",
+    "startDate": "2026-08-13",
+    "endDate": "2026-08-16",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lac Champlain, Plattsburgh, New York",
+      "en": "Lake Champlain, Plattsburgh, New York"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "À portée de route depuis la Montérégie — l'un des deux seuls arrêts de la tournée près du Québec.",
+      "en": "Within driving range of the Montérégie — one of only two tour stops near Québec."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "bass-elite-st-lawrence",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "bassmaster-elite",
+    "name": "Bassmaster Elite — Fleuve Saint-Laurent",
+    "startDate": "2026-08-27",
+    "endDate": "2026-08-30",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Fleuve Saint-Laurent, Clayton, New York",
+      "en": "St. Lawrence River, Clayton, New York"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "B.A.S.S.",
+      "en": "B.A.S.S."
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "À portée de route depuis la Montérégie — l'un des deux seuls arrêts de la tournée près du Québec.",
+      "en": "Within driving range of the Montérégie — one of only two tour stops near Québec."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "4 jours, poids cumulé",
+        "en": "4 days, cumulative weight"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage1",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 1",
+    "startDate": "2026-01-15",
+    "endDate": "2026-01-18",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Guntersville, Guntersville, Alabama",
+      "en": "Lake Guntersville, Guntersville, Alabama"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage2",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 2",
+    "startDate": "2026-02-19",
+    "endDate": "2026-02-22",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Hartwell, comté d'Oconee, Caroline du Sud",
+      "en": "Lake Hartwell, Oconee County, South Carolina"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage3",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 3",
+    "startDate": "2026-03-05",
+    "endDate": "2026-03-08",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Whitney et Lake Waco, Waco, Texas",
+      "en": "Lake Whitney and Lake Waco, Waco, Texas"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage4",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 4",
+    "startDate": "2026-03-26",
+    "endDate": "2026-03-29",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "O.H. Ivie et Lake Brownwood, Early, Texas",
+      "en": "O.H. Ivie and Lake Brownwood, Early, Texas"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-redcrest",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF REDCREST 2026",
+    "startDate": "2026-04-16",
+    "endDate": "2026-04-19",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lieu à annoncer",
+      "en": "Venue to be announced"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Championnat de la tournée. Lieu non annoncé au moment de la compilation.",
+      "en": "Tour championship. Venue not announced at the time of compiling."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage5",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 5",
+    "startDate": "2026-04-30",
+    "endDate": "2026-05-03",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Beaver Lake, nord-ouest de l'Arkansas",
+      "en": "Beaver Lake, Northwest Arkansas"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-heavy-hitters",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Heavy Hitters",
+    "startDate": "2026-05-16",
+    "endDate": "2026-05-21",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Orange Lake, Ocala, Floride",
+      "en": "Orange Lake, Ocala, Florida"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Événement tout-étoiles de la tournée.",
+      "en": "The tour's all-star event."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage6",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 6",
+    "startDate": "2026-06-18",
+    "endDate": "2026-06-21",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Grand Lake, Grove, Oklahoma",
+      "en": "Grand Lake, Grove, Oklahoma"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
+    "id": "mlf-stage7",
+    "kind": "stop",
+    "tier": "pro",
+    "circuit": "mlf-bass-pro-tour",
+    "name": "MLF Bass Pro Tour — Stage 7",
+    "startDate": "2026-08-06",
+    "endDate": "2026-08-09",
+    "region": {
+      "fr": "États-Unis",
+      "en": "United States"
+    },
+    "location": {
+      "fr": "Lake Erie, Sandusky, Ohio",
+      "en": "Lake Erie, Sandusky, Ohio"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Major League Fishing",
+      "en": "Major League Fishing"
+    },
+    "type": {
+      "fr": "Étape de tournée pro",
+      "en": "Pro Tour Stop"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": "",
+    "specs": {
+      "fee": {
+        "fr": "Sur qualification",
+        "en": "By qualification"
+      },
+      "teamSize": {
+        "fr": "Individuel (pro)",
+        "en": "Individual (pro)"
+      },
+      "format": {
+        "fr": "Qualification (j.1-2), Knockout (j.3), Championnat (j.4)",
+        "en": "Qualifying (d.1-2), Knockout (d.3), Championship (d.4)"
+      }
+    }
+  },
+  {
     "id": "formule-brochet",
     "name": "Formule Brochet",
     "startDate": "",
@@ -34,7 +1098,9 @@
       },
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "pro-bass-pec-heure",
@@ -74,7 +1140,9 @@
         "en": "Catch-photo-release"
       },
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "circuit"
   },
   {
     "id": "coupe-quebec-peche-sportive",
@@ -107,7 +1175,9 @@
     "specs": {
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "walleye-challenge-nord",
@@ -140,7 +1210,9 @@
     "specs": {
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "econobass-2026",
@@ -167,7 +1239,9 @@
     "specs": {
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "circuit"
   },
   {
     "id": "peche-glace-lachine-2026",
@@ -210,7 +1284,10 @@
       },
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "brochet-gue-lachine-2026",
@@ -253,7 +1330,10 @@
       },
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "fete-de-la-peche-2026",
@@ -303,7 +1383,9 @@
         "fr": "Pêche libre sans permis provincial",
         "en": "Open fishing, no provincial licence"
       }
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "big-bass-lavaltrie-2026",
@@ -339,7 +1421,10 @@
     "specs": {
       "fee": "",
       "teamSize": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "excellence-bass-1-2026",
@@ -386,7 +1471,10 @@
         "fr": "Paiement avant le 31 mai 2026",
         "en": "Payment before 31 May 2026"
       }
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "excellence-bass"
   },
   {
     "id": "jeux-provinciaux-peche-2026",
@@ -429,7 +1517,9 @@
         "en": "Youth championship by region"
       },
       "fee": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "excellence-bass-2-2026",
@@ -472,7 +1562,10 @@
         "en": "2 anglers / boat"
       },
       "maxTeams": "25"
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "excellence-bass"
   },
   {
     "id": "big-bag-st-louis-2026",
@@ -523,7 +1616,10 @@
         "en": "Biggest bag: 3 bass and / or walleye"
       },
       "fee": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "amical-april-marine-2026",
@@ -570,7 +1666,10 @@
         "en": "Biggest fish per species"
       },
       "fee": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "excellence-bass-3-2026",
@@ -613,7 +1712,10 @@
         "en": "2 anglers / boat"
       },
       "maxTeams": "25"
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "excellence-bass"
   },
   {
     "id": "challenge-carpe-quebec-2026",
@@ -667,7 +1769,9 @@
         "fr": "100 % remise à l'eau — « Big 4 » cumulé",
         "en": "100% catch-and-release — cumulative \"Big 4\""
       }
-    }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "excellence-bass-finale-2026",
@@ -710,7 +1814,10 @@
         "en": "2 anglers / boat"
       },
       "maxTeams": "25"
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "excellence-bass"
   },
   {
     "id": "tournoi-invitation-st-francois-2026",
@@ -764,7 +1871,10 @@
         "fr": "Plus grosse bourriche de 4 achigans",
         "en": "Biggest bag of 4 bass"
       }
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   },
   {
     "id": "big-bass-cornwall-2026",
@@ -822,6 +1932,9 @@
         "en": "Biggest bass of the day / of the hour"
       },
       "fee": ""
-    }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "big-bass-quebec"
   }
 ]
