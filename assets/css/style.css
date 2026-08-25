@@ -729,6 +729,9 @@ section.alt { background: var(--sand-100); }
   color: rgba(255,255,255,0.55);
   margin-top: 2px;
 }
+/* Year-only dates, for events where the exact day isn't recorded */
+.event-date .day.year-only { font-size: 1.15rem; letter-spacing: -0.01em; }
+.placement.placement-unknown { color: rgba(71, 96, 111, 0.35); }
 .result-main { min-width: 0; }
 .result-notes { margin: 8px 0 0; font-size: 0.86rem; }
 

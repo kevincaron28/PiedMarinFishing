@@ -95,8 +95,8 @@
     "history.title": "Palmarès — Pied Marin Fishing",
     "history.desc": "Les résultats de tournoi de l'équipe Pied Marin Fishing, saison par saison.",
     "history.h1": "Palmarès de l'équipe",
-    "history.intro": "Chaque tournoi que nous avons pêché, avec le classement, le poids et les pêcheurs au bateau. Filtrez par membre pour voir son parcours.",
-    "history.notice": "Résultats d'exemple — remplacez les entrées dans <code>data/tournament-history.json</code> par vos vrais résultats.",
+    "history.intro": "Chaque tournoi que nous avons pêché, avec le classement, les mesures et les pêcheurs au bateau. Filtrez par membre pour voir son parcours.",
+    "history.notice": "Les trois Formule Brochet sont confirmées; les classements et mesures restent à remplir dans <code>data/tournament-history.json</code>.",
     "history.allMembers": "Tous les membres",
     "history.allSeasons": "Toutes les saisons",
     "history.search": "Rechercher un tournoi, un plan d'eau…",
@@ -123,7 +123,8 @@
     "video.placeholderTitle": "Vidéo à venir",
     "video.placeholderBody": "Ajoutez l'identifiant de la vidéo YouTube dans data/featured-video.json pour l'afficher ici.",
     "video.watchChannel": "Voir la chaîne →",
-    "video.playLabel": "Lire la vidéo"
+    "video.playLabel": "Lire la vidéo",
+    "history.resultPending": "Résultat à confirmer"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -221,8 +222,8 @@
     "history.title": "Results — Pied Marin Fishing",
     "history.desc": "Tournament results for the Pied Marin Fishing team, season by season.",
     "history.h1": "Team Results",
-    "history.intro": "Every tournament we've fished, with placement, weight, and who was in the boat. Filter by member to follow one angler's run.",
-    "history.notice": "Sample results — replace the entries in <code>data/tournament-history.json</code> with your real results.",
+    "history.intro": "Every tournament we've fished, with placement, measurements, and who was in the boat. Filter by member to follow one angler's run.",
+    "history.notice": "All three Formule Brochet entries are confirmed; placements and measurements still need filling in at <code>data/tournament-history.json</code>.",
     "history.allMembers": "All members",
     "history.allSeasons": "All seasons",
     "history.search": "Search a tournament, a lake…",
@@ -249,6 +250,7 @@
     "video.placeholderTitle": "Video coming soon",
     "video.placeholderBody": "Add a YouTube video ID to data/featured-video.json to feature it here.",
     "video.watchChannel": "Visit the channel →",
-    "video.playLabel": "Play video"
+    "video.playLabel": "Play video",
+    "history.resultPending": "Result to be confirmed"
   }
 }

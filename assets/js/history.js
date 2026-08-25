@@ -155,14 +155,25 @@ async function initHistory(options) {
     if (emptyEl) emptyEl.style.display = "none";
 
     listEl.innerHTML = rows.map((r) => {
-      const d = parseISODate(r.date);
-      const month = d ? m.abbr[d.getMonth()] : t("events.tbd");
-      const day = d ? d.getDate() : "?";
-      const year = d ? d.getFullYear() : "";
+      // Show exactly as much of the date as the data actually knows.
+      const p = dateParts(r.date);
+      let dateBadge;
+      if (!p) {
+        dateBadge = `<span class="month">${escapeHTML(t("events.tbd"))}</span><span class="day">?</span>`;
+      } else if (p.month !== null && p.day !== null) {
+        dateBadge = `<span class="month">${escapeHTML(m.abbr[p.month])}</span>`
+          + `<span class="day">${p.day}</span>`
+          + `<span class="year">${p.year}</span>`;
+      } else if (p.month !== null) {
+        dateBadge = `<span class="month">${escapeHTML(m.abbr[p.month])}</span>`
+          + `<span class="day year-only">${p.year}</span>`;
+      } else {
+        dateBadge = `<span class="day year-only">${p.year}</span>`;
+      }
 
       const place = Number.isFinite(r.placement)
         ? `<span class="placement ${placementClass(r.placement)}">${escapeHTML(ordinal(r.placement, lang))}</span>`
-        : "";
+        : `<span class="placement placement-unknown" title="${escapeHTML(t("history.resultPending"))}">—</span>`;
       const field = Number.isFinite(r.fieldSize)
         ? `<span class="placement-of">${escapeHTML(t("history.of", { n: r.fieldSize }))}</span>`
         : "";
@@ -173,9 +184,15 @@ async function initHistory(options) {
       if (r.species) meta.push(`<span>🎣 ${escapeHTML(tr(r.species))}</span>`);
       if (r.organizer) meta.push(`<span>${escapeHTML(tr(r.organizer))}</span>`);
 
+      // Weight events use weight/bigFish; length events (catch-photo-release)
+      // supply their own labelled figures. Empty values simply don't render.
       const figures = [];
       if (r.weight) figures.push(`<span><b>${escapeHTML(r.weight)}</b> ${escapeHTML(t("history.weight"))}</span>`);
       if (r.bigFish) figures.push(`<span><b>${escapeHTML(r.bigFish)}</b> ${escapeHTML(t("history.bigFish"))}</span>`);
+      (r.figures || []).forEach((f) => {
+        const value = tr(f.value);
+        if (value) figures.push(`<span><b>${escapeHTML(value)}</b> ${escapeHTML(tr(f.label))}</span>`);
+      });
 
       const anglers = (r.members || []).map((id) => {
         const mem = memberById.get(id);
@@ -187,11 +204,7 @@ async function initHistory(options) {
 
       return `
         <article class="result-card">
-          <div class="event-date">
-            <span class="month">${escapeHTML(month)}</span>
-            <span class="day">${day}</span>
-            <span class="year">${escapeHTML(String(year))}</span>
-          </div>
+          <div class="event-date">${dateBadge}</div>
           <div class="result-main">
             <div class="event-title">${escapeHTML(tr(r.name))}</div>
             <div class="event-meta">${meta.join("")}</div>
