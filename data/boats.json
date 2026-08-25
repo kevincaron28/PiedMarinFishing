@@ -1,0 +1,17 @@
+[
+  {
+    "id": "boat-1",
+    "name": { "fr": "Bateau de l'équipe", "en": "Team boat" },
+    "skipper": "",
+    "image": "",
+    "description": "",
+    "specs": {
+      "model": "",
+      "year": "",
+      "length": "",
+      "engine": "",
+      "trolling": "",
+      "electronics": ""
+    }
+  }
+]

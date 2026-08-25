@@ -1,0 +1,45 @@
+{
+  "orderEmail": "info@piedmarinfishing.ca",
+  "storeUrl": "",
+  "products": [
+    {
+      "id": "tee",
+      "name": { "fr": "T-shirt de l'équipe", "en": "Team t-shirt" },
+      "description": {
+        "fr": "Description à remplir — matière, coupe, couleurs offertes.",
+        "en": "Description to fill in — fabric, fit, available colours."
+      },
+      "price": "",
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "image": "",
+      "url": "",
+      "status": "soon"
+    },
+    {
+      "id": "cap",
+      "name": { "fr": "Casquette brodée", "en": "Embroidered cap" },
+      "description": {
+        "fr": "Description à remplir — style, ajustement, couleurs offertes.",
+        "en": "Description to fill in — style, fit, available colours."
+      },
+      "price": "",
+      "sizes": [],
+      "image": "",
+      "url": "",
+      "status": "soon"
+    },
+    {
+      "id": "hoodie",
+      "name": { "fr": "Coton ouaté", "en": "Hoodie" },
+      "description": {
+        "fr": "Description à remplir — matière, coupe, couleurs offertes.",
+        "en": "Description to fill in — fabric, fit, available colours."
+      },
+      "price": "",
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "image": "",
+      "url": "",
+      "status": "soon"
+    }
+  ]
+}
