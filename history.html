@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-text="calendar.title">Calendrier — Pied Marin Fishing</title>
-<meta name="description" data-i18n-content="calendar.desc" content="Les prochains tournois au calendrier de l'équipe Pied Marin Fishing.">
+<title data-i18n-text="history.title">Palmarès — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="history.desc" content="Les résultats de tournoi de l'équipe Pied Marin Fishing.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -20,8 +20,8 @@
     <ul class="nav-links">
       <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
       <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
-      <li><a href="history.html" data-i18n="nav.history">Palmarès</a></li>
-      <li><a href="calendar.html" aria-current="page" data-i18n="nav.calendar">Calendrier</a></li>
+      <li><a href="history.html" aria-current="page" data-i18n="nav.history">Palmarès</a></li>
+      <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
     </ul>
@@ -37,26 +37,28 @@
 
 <div class="page-header">
   <div class="container">
-    <h1 data-i18n="calendar.h1">Notre calendrier de tournois</h1>
-    <p data-i18n="calendar.intro">Tous les tournois auxquels Pied Marin Fishing est inscrit cette saison.</p>
+    <h1 data-i18n="history.h1">Palmarès de l'équipe</h1>
+    <p data-i18n="history.intro">Chaque tournoi que nous avons pêché, avec le classement, le poids et les pêcheurs au bateau.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice" data-i18n="calendar.notice">
-      Calendrier d'exemple — remplacez les entrées dans <code>data/team-schedule.json</code> par vos vrais tournois inscrits.
+    <div class="notice" data-i18n="history.notice">
+      Résultats d'exemple — remplacez les entrées dans <code>data/tournament-history.json</code> par vos vrais résultats.
     </div>
 
+    <div id="history-stats" class="grid grid-4" style="margin-bottom:32px;"></div>
+
     <div class="filters">
-      <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
-      <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
-      <input id="search-filter" type="text" data-i18n-placeholder="filters.searchTeam" placeholder="Rechercher un tournoi…">
+      <select id="member-filter" data-i18n-aria-label="history.allMembers" aria-label="Tous les membres"></select>
+      <select id="year-filter" data-i18n-aria-label="history.allSeasons" aria-label="Toutes les saisons"></select>
+      <input id="search-filter" type="text" data-i18n-placeholder="history.search" placeholder="Rechercher un tournoi, un plan d'eau…">
       <span class="result-count" id="result-count"></span>
     </div>
 
-    <div id="event-list" class="event-list"></div>
-    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="filters.empty">Aucun tournoi ne correspond à vos filtres.</div>
+    <div id="result-list" class="event-list"></div>
+    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="history.empty">Aucun résultat ne correspond à vos filtres.</div>
   </div>
 </section>
 
@@ -72,18 +74,16 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
-<script src="assets/js/events.js"></script>
+<script src="assets/js/history.js"></script>
 <script>
-  initEventList({
-    dataUrl: "data/team-schedule.json",
-    listSelector: "#event-list",
+  initHistory({
+    listSelector: "#result-list",
     emptySelector: "#empty-state",
+    statsSelector: "#history-stats",
     countSelector: "#result-count",
-    monthFilterSelector: "#month-filter",
-    regionFilterSelector: "#region-filter",
+    memberFilterSelector: "#member-filter",
+    yearFilterSelector: "#year-filter",
     searchSelector: "#search-filter",
-    badgeField: "type",
-    linkTextKey: "events.info",
   });
 </script>
 </body>

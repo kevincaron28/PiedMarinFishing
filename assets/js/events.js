@@ -1,33 +1,6 @@
 // Pied Marin Fishing — data-driven event list renderer (bilingual)
 // Used by calendar.html (team schedule) and tournaments.html (regional directory)
-
-const MONTHS = {
-  fr: {
-    full: ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
-           "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
-    abbr: ["JAN", "FÉV", "MARS", "AVR", "MAI", "JUIN",
-           "JUIL", "AOÛT", "SEPT", "OCT", "NOV", "DÉC"],
-  },
-  en: {
-    full: ["January", "February", "March", "April", "May", "June",
-           "July", "August", "September", "October", "November", "December"],
-    abbr: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-           "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
-  },
-};
-
-function parseISODate(value) {
-  if (!value) return null;
-  const [y, m, d] = value.split("-").map(Number);
-  if (!y || !m || !d) return null;
-  return new Date(y, m - 1, d);
-}
-
-function escapeHTML(str) {
-  const div = document.createElement("div");
-  div.textContent = str ?? "";
-  return div.innerHTML;
-}
+// Shared helpers (MONTHS, parseISODate, escapeHTML) come from util.js.
 
 async function initEventList(options) {
   const {
@@ -85,10 +58,10 @@ async function initEventList(options) {
   }
 
   function refreshFilterOptions() {
-    const months = MONTHS[PMF_I18N.lang] || MONTHS.fr;
+    const m = months(PMF_I18N.lang);
     buildOptions(
       monthSelect,
-      months.full.map((label, i) => ({ value: String(i), label })),
+      m.full.map((label, i) => ({ value: String(i), label })),
       t("filters.allMonths")
     );
 
@@ -123,7 +96,7 @@ async function initEventList(options) {
   }
 
   function render() {
-    const months = MONTHS[PMF_I18N.lang] || MONTHS.fr;
+    const m = months(PMF_I18N.lang);
     const filtered = events.filter(matchesFilters);
     const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
     const countEl = countSelector ? document.querySelector(countSelector) : null;
@@ -139,7 +112,7 @@ async function initEventList(options) {
 
     listEl.innerHTML = filtered.map((ev) => {
       const d = parseISODate(ev.startDate);
-      const month = d ? months.abbr[d.getMonth()] : t("events.tbd");
+      const month = d ? m.abbr[d.getMonth()] : t("events.tbd");
       const day = d ? d.getDate() : "?";
 
       const badgeText = tr(ev[badgeField]);

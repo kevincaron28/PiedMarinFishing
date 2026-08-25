@@ -11,10 +11,11 @@ Québec.
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page |
-| `team.html` | Team roster |
-| `social.html` | Social media links |
-| `calendar.html` | Our team's own tournament schedule |
+| `team.html` | Team roster — bios, angler specs, per-member record |
+| `history.html` | Palmarès: past tournament results, filterable by member and season |
+| `calendar.html` | Our team's own upcoming tournament schedule |
 | `tournaments.html` | Region-wide Québec tournament directory (for any angler, not just the team) |
+| `social.html` | Social media links |
 
 No build step, no framework, no dependencies — plain HTML/CSS/JS. Every
 content-heavy part of the site reads from a JSON file in `data/` so you can
@@ -72,19 +73,100 @@ English-only entry.
 
 To add a language, add a third block to `data/i18n.json`, add its code to
 `SUPPORTED` in `assets/js/i18n.js`, add month names to `MONTHS` in
-`assets/js/events.js`, and add a button to the `.lang-switch` in each page.
+`assets/js/util.js`, and add a button to the `.lang-switch` in each page.
+
+## Scripts
+
+| File | Role |
+|---|---|
+| `util.js` | shared helpers (month names, date parsing, escaping, ordinals) |
+| `i18n.js` | the FR/EN engine — must load before any renderer |
+| `main.js` | nav toggle, footer year |
+| `events.js` | upcoming-event lists (calendar + tournament guide) |
+| `history.js` | results rendering **and** the shared `PMF_HISTORY` store |
+| `team.js` | roster cards (reads `PMF_HISTORY` for the record strip) |
+
+Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
+`history.js`, because the record strip on each card is computed from the
+results data.
 
 ## Editing content
 
-- **Team roster** → `data/team-members.json`. Each entry supports `name`,
-  `role`, `initials` (used as the placeholder photo), `bio`, `quote`. Swap
-  `initials` for a real headshot by editing the `member-photo` markup in
-  `team.html` if you add photo files under `assets/img/`.
+- **Team roster** → `data/team-members.json`. Each entry supports `id`
+  (see **Members ↔ results**), `name`, `role`, `initials` (used as the
+  placeholder photo), `bio`, `quote`, and a `specs` block. Swap `initials`
+  for a real headshot by editing the `member-photo` markup in
+  `assets/js/team.js` if you add photo files under `assets/img/`.
 - **Social links** → `data/socials.json`. `icon` must be one of
   `instagram`, `facebook`, `youtube`, `tiktok`, `mail` (see `social.html`),
   or add a new SVG to the `ICONS` map there.
 - **Our schedule** → `data/team-schedule.json`.
 - **Québec tournament directory** → `data/quebec-tournaments.json`.
+- **Past results** → `data/tournament-history.json`.
+
+### Members ↔ results
+
+Each member in `data/team-members.json` carries a stable `id`
+(`kevin-caron`, `kevin-b`, `bobe`). Results reference those ids in a
+`members` array, and that one link drives everything else:
+
+```json
+// data/team-members.json          // data/tournament-history.json
+{ "id": "bobe", "name": "BOBE" }   { "members": ["kevin-caron", "bobe"], … }
+```
+
+- The record strip on each team card (tournaments fished, best finish,
+  podiums) is **computed** from the results — never typed in by hand.
+- "Voir son palmarès" links to `history.html?member=<id>`, which preselects
+  that angler in the filter.
+- The angler chips on each result link back the same way.
+
+So adding one result with the right ids updates the results page, both
+anglers' cards, and the team-wide stat tiles at once. If you add a member,
+give them an `id` and use it in `members`; a result referencing an unknown
+id still renders (it shows the raw id instead of a name).
+
+### Angler specs
+
+Each member has a `specs` block. Every row always renders — an empty value
+shows a muted `—` so the card doubles as a fill-in sheet:
+
+```json
+"specs": {
+  "homeWater": "Lac Saint-Pierre",
+  "species": { "fr": "Achigan à petite bouche", "en": "Smallmouth bass" },
+  "technique": "", "dreamCatch": "", "personalBest": "", "since": "2016"
+}
+```
+
+To add or reorder spec rows, edit `SPEC_FIELDS` in `assets/js/team.js` and
+add the matching `team.spec.*` labels to `data/i18n.json`.
+
+### Result entry shape
+
+```json
+{
+  "id": "unique-id",
+  "name": "Tournament name",
+  "date": "2025-08-09",
+  "region": "Outaouais",
+  "location": { "fr": "…", "en": "…" },
+  "species": { "fr": "Doré", "en": "Walleye" },
+  "organizer": "",
+  "placement": 1,
+  "fieldSize": 41,
+  "weight": "21,35 lb",
+  "bigFish": "6,05 lb",
+  "members": ["kevin-caron", "kevin-b"],
+  "link": "",
+  "notes": ""
+}
+```
+
+`placement` and `fieldSize` are numbers; 1st/2nd/3rd get a podium colour and
+the ordinal is written correctly per language (1re/2e vs 1st/2nd). `weight`
+and `bigFish` are free-text strings, so use whatever unit you actually weigh
+in.
 
 All schedule/directory entries share this shape (any text field may be a
 plain string or a `{ "fr": …, "en": … }` pair — see **Bilingual** above):
@@ -109,8 +191,10 @@ plain string or a `{ "fr": …, "en": … }` pair — see **Bilingual** above):
 Leave `startDate`/`endDate` as an empty string `""` for a "date TBD" entry.
 `status: "tentative"` renders a gold badge instead of teal.
 
-**The current roster, social handles, and team schedule are placeholders** —
-replace them with your real team's info before publishing. The Québec
+**The roster names are real; their bios, specs, roles and photos are not
+filled in yet.** The social handles, team schedule and past results are all
+still placeholders — replace them with your real info before publishing.
+Sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
 tournament directory was seeded with a few tournaments verified against
 organizer sites in August 2026 (see the `notes`/`link` field on each entry
 for the source) plus links out to a few live, continuously-updated calendars
