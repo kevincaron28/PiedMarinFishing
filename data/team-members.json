@@ -3,7 +3,10 @@
     "id": "kevin-caron",
     "name": "Kevin Caron",
     "initials": "KC",
-    "role": "",
+    "role": {
+      "fr": "Pêcheur multi-espèces",
+      "en": "Multi-species angler"
+    },
     "bio": "",
     "quote": "",
     "specs": {
@@ -19,7 +22,10 @@
     "id": "kevin-b",
     "name": "Kevin B.",
     "initials": "KB",
-    "role": "",
+    "role": {
+      "fr": "Pêcheur multi-espèces",
+      "en": "Multi-species angler"
+    },
     "bio": "",
     "quote": "",
     "specs": {
@@ -35,7 +41,10 @@
     "id": "bobe",
     "name": "BOBE",
     "initials": "BO",
-    "role": "",
+    "role": {
+      "fr": "Pêcheur multi-espèces",
+      "en": "Multi-species angler"
+    },
     "bio": "",
     "quote": "",
     "specs": {

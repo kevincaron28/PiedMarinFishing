@@ -383,7 +383,11 @@ Only 8 of the 19 events publish an entry fee and 11 publish a team format;
 the rest genuinely aren't published by their organizers. Don't guess — a
 wrong fee is worse than an honest blank.
 
-**The roster names are real; their bios, specs, roles and photos are not
+The team is positioned throughout as a **multi-species** team — pike, bass,
+walleye — rather than a bass specialist, which is what its results actually
+show.
+
+**The roster names and roles are real; their bios, specs and photos are not
 filled in yet.** The three Formule Brochet entries in the results are real
 events, but their placements and measurements still need filling in. The
 social handles, boats, shop products and the upcoming team schedule are

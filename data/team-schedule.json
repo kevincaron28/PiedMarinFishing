@@ -1,34 +1,41 @@
 [
   {
-    "id": "sample-1",
-    "name": { "fr": "EXEMPLE — Ouverture de saison", "en": "SAMPLE — Season Opener" },
-    "startDate": "2026-05-16",
-    "endDate": "2026-05-17",
-    "region": "Montérégie",
-    "location": { "fr": "Remplacer par le vrai plan d'eau / lieu", "en": "Replace with real lake/venue" },
-    "species": { "fr": "Achigan", "en": "Bass" },
-    "type": { "fr": "Tournoi d'équipe", "en": "Team Event" },
+    "id": "formule-brochet-2027",
+    "kind": "single",
+    "tier": "regional",
+    "name": "Formule Brochet 2027",
+    "startDate": "2027-05",
+    "endDate": "2027-05",
+    "region": {
+      "fr": "Zone 8 / corridor du Saint-Laurent",
+      "en": "Zone 8 / St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Ouverture du brochet — zone 8 et corridor du Saint-Laurent (zone 7)",
+      "en": "Pike opener — Zone 8 and the Zone 7 St. Lawrence corridor"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
+    "organizer": "Muskies Canada Montréal",
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
     "status": "tentative",
-    "link": "",
+    "link": "https://muskiescanada.ca/brochet2026/",
     "notes": {
-      "fr": "Entrée d'exemple. Modifiez data/team-schedule.json et remplacez-la par les vrais tournois auxquels l'équipe est inscrite.",
-      "en": "Placeholder entry. Edit data/team-schedule.json and replace with your team's real registered tournaments."
-    }
-  },
-  {
-    "id": "sample-2",
-    "name": { "fr": "EXEMPLE — Classique de mi-saison", "en": "SAMPLE — Mid-Season Classic" },
-    "startDate": "2026-07-11",
-    "endDate": "2026-07-12",
-    "region": "Outaouais",
-    "location": { "fr": "Remplacer par le vrai plan d'eau / lieu", "en": "Replace with real lake/venue" },
-    "species": { "fr": "Multi-espèces", "en": "Multi-species" },
-    "type": { "fr": "Tournoi d'équipe", "en": "Team Event" },
-    "status": "tentative",
-    "link": "",
-    "notes": {
-      "fr": "Entrée d'exemple. À supprimer une fois le vrai calendrier ajouté.",
-      "en": "Placeholder entry. Delete once your real schedule is added."
+      "fr": "Notre 4e participation consécutive. Tenu à l'ouverture du brochet, en mai — la date exacte 2027 n'est pas encore publiée (l'édition 2025 s'est tenue le samedi 3 mai). Remise à l'eau, mesuré à la règle.",
+      "en": "Our 4th consecutive year. Held at the pike opener in May — the exact 2027 date isn't published yet (the 2025 edition was Saturday 3 May). Catch-photo-release, ruler-measured."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "Remise à l'eau, les deux plus longs brochets",
+        "en": "Catch-photo-release, two longest pike"
+      }
     }
   }
 ]
