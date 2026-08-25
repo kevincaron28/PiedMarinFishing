@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pied Marin Fishing — Quebec Fishing Team</title>
-<meta name="description" content="Pied Marin Fishing is a Quebec-based competitive fishing team. Meet the team, follow our tournament schedule, and browse a guide to fishing tournaments across Quebec.">
+<title data-i18n-text="index.title">Pied Marin Fishing — Équipe de pêche du Québec</title>
+<meta name="description" data-i18n-content="index.desc" content="Pied Marin Fishing est une équipe de pêche compétitive du Québec.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,28 +14,34 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Pied Marin Fishing crest" class="brand-logo">
-      <span>Pied Marin Fishing<span class="brand-sub">Team Québec</span></span>
+      <img src="assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson Pied Marin Fishing">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <ul class="nav-links">
-      <li><a href="index.html" aria-current="page">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="social.html">Social</a></li>
-      <li><a href="calendar.html">Team Calendar</a></li>
-      <li><a href="tournaments.html">Tournament Guide</a></li>
+      <li><a href="index.html" aria-current="page" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
+      <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
     </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
   </nav>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="eyebrow">Competitive Angling · Québec</span>
+    <span class="eyebrow" data-i18n="index.eyebrow">Pêche compétitive · Québec</span>
     <h1>Pied Marin Fishing</h1>
-    <p class="lead">A Québec-based fishing team chasing bass, walleye, and every tournament worth the drive. Follow our season, meet the crew, and use our tournament guide to find your next event on the water.</p>
+    <p class="lead" data-i18n="index.lead">Une équipe de pêche québécoise à la poursuite de l'achigan, du doré et de chaque tournoi qui vaut le déplacement.</p>
     <div class="hero-actions">
-      <a class="btn btn-primary" href="calendar.html">See Our Schedule</a>
-      <a class="btn btn-outline" href="tournaments.html">Browse Québec Tournaments</a>
+      <a class="btn btn-primary" href="calendar.html" data-i18n="index.ctaSchedule">Voir notre calendrier</a>
+      <a class="btn btn-outline" href="tournaments.html" data-i18n="index.ctaGuide">Tournois au Québec</a>
     </div>
   </div>
   <div class="wave-divider">
@@ -46,10 +52,10 @@
 <section>
   <div class="container">
     <div class="grid grid-4">
-      <div class="stat-card"><div class="num">3+</div><div class="label">Anglers on Roster</div></div>
-      <div class="stat-card"><div class="num">5</div><div class="label">Tournaments a Season</div></div>
-      <div class="stat-card"><div class="num">2</div><div class="label">Target Species</div></div>
-      <div class="stat-card"><div class="num">1</div><div class="label">Home Province</div></div>
+      <div class="stat-card"><div class="num" data-i18n="index.stat1num">3+</div><div class="label" data-i18n="index.stat1label">Pêcheurs dans l'équipe</div></div>
+      <div class="stat-card"><div class="num" data-i18n="index.stat2num">5</div><div class="label" data-i18n="index.stat2label">Tournois par saison</div></div>
+      <div class="stat-card"><div class="num" data-i18n="index.stat3num">2</div><div class="label" data-i18n="index.stat3label">Espèces ciblées</div></div>
+      <div class="stat-card"><div class="num" data-i18n="index.stat4num">1</div><div class="label" data-i18n="index.stat4label">Province d'attache</div></div>
     </div>
   </div>
 </section>
@@ -57,25 +63,25 @@
 <section class="alt">
   <div class="container">
     <div class="section-head">
-      <span class="kicker">Who We Are</span>
-      <h2>Built on the water, in Québec</h2>
-      <p>Pied Marin Fishing is a small competitive team fishing bass and walleye tournaments across the province. We keep this site as our home base — and as a resource for the wider tournament community.</p>
+      <span class="kicker" data-i18n="index.whoKicker">Qui sommes-nous</span>
+      <h2 data-i18n="index.whoTitle">Forgés sur l'eau, au Québec</h2>
+      <p data-i18n="index.whoBody">Pied Marin Fishing est une petite équipe compétitive qui pêche l'achigan et le doré en tournoi partout dans la province.</p>
     </div>
     <div class="grid grid-3">
       <div class="card">
-        <h3>🎣 The Team</h3>
-        <p>Meet the anglers behind Pied Marin Fishing — roles, hometown waters, and what we bring to the boat.</p>
-        <a href="team.html">Meet the team →</a>
+        <h3 data-i18n="index.card1title">🎣 L'équipe</h3>
+        <p data-i18n="index.card1body">Rencontrez les pêcheurs derrière Pied Marin Fishing.</p>
+        <a href="team.html" data-i18n="index.card1link">Voir l'équipe →</a>
       </div>
       <div class="card">
-        <h3>📅 Our Schedule</h3>
-        <p>Every tournament we're registered for this season, with dates, venues, and links to organizer pages.</p>
-        <a href="calendar.html">View our calendar →</a>
+        <h3 data-i18n="index.card2title">📅 Notre calendrier</h3>
+        <p data-i18n="index.card2body">Tous les tournois auxquels nous sommes inscrits cette saison.</p>
+        <a href="calendar.html" data-i18n="index.card2link">Voir le calendrier →</a>
       </div>
       <div class="card">
-        <h3>🗺️ Québec Tournament Guide</h3>
-        <p>A running directory of tournaments and fishing events happening around Québec — built for the whole community, not just us.</p>
-        <a href="tournaments.html">Browse the guide →</a>
+        <h3 data-i18n="index.card3title">🗺️ Guide des tournois au Québec</h3>
+        <p data-i18n="index.card3body">Un répertoire des tournois et activités de pêche partout au Québec.</p>
+        <a href="tournaments.html" data-i18n="index.card3link">Consulter le guide →</a>
       </div>
     </div>
   </div>
@@ -84,9 +90,9 @@
 <section>
   <div class="container">
     <div class="callout">
-      <h3>Follow the season</h3>
-      <p>New photos, weigh-in results, and behind-the-scenes from every stop — posted to our socials as it happens.</p>
-      <a class="btn btn-teal" href="social.html">See all our socials →</a>
+      <h3 data-i18n="index.calloutTitle">Suivez la saison</h3>
+      <p data-i18n="index.calloutBody">Photos, résultats de pesée et coulisses de chaque tournoi.</p>
+      <a class="btn btn-teal" href="social.html" data-i18n="index.calloutLink">Voir tous nos réseaux →</a>
     </div>
   </div>
 </section>
@@ -96,31 +102,32 @@
     <div class="footer-grid">
       <div>
         <h4>Pied Marin Fishing</h4>
-        <p style="color:rgba(255,255,255,0.7)">A Québec competitive fishing team — and a tournament resource for anglers across the province.</p>
+        <p style="color:rgba(255,255,255,0.7)" data-i18n="footer.blurb">Une équipe de pêche compétitive québécoise — et une ressource de tournois pour les pêcheurs de partout dans la province.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h4 data-i18n="footer.explore">Explorer</h4>
         <ul class="footer-links">
-          <li><a href="team.html">Team</a></li>
-          <li><a href="calendar.html">Team Calendar</a></li>
-          <li><a href="tournaments.html">Tournament Guide</a></li>
+          <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+          <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
+          <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
         </ul>
       </div>
       <div>
-        <h4>Connect</h4>
+        <h4 data-i18n="footer.connect">Nous joindre</h4>
         <ul class="footer-links">
-          <li><a href="social.html">All Socials</a></li>
+          <li><a href="social.html" data-i18n="footer.allSocials">Tous nos réseaux</a></li>
           <li><a href="mailto:info@piedmarinfishing.ca">info@piedmarinfishing.ca</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year></span> Pied Marin Fishing</span>
-      <span>Made for anglers, by anglers.</span>
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span data-i18n="footer.madeBy">Par des pêcheurs, pour des pêcheurs.</span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
 </body>
 </html>

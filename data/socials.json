@@ -28,7 +28,7 @@
     "icon": "tiktok"
   },
   {
-    "name": "Email",
+    "name": { "fr": "Courriel", "en": "Email" },
     "handle": "info@piedmarinfishing.ca",
     "url": "mailto:info@piedmarinfishing.ca",
     "color": "#157a76",

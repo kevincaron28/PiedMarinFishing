@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Calendar — Pied Marin Fishing</title>
-<meta name="description" content="Upcoming tournaments on the Pied Marin Fishing team schedule.">
+<title data-i18n-text="calendar.title">Calendrier — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="calendar.desc" content="Les prochains tournois au calendrier de l'équipe Pied Marin Fishing.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,65 +14,62 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Pied Marin Fishing crest" class="brand-logo">
-      <span>Pied Marin Fishing<span class="brand-sub">Team Québec</span></span>
+      <img src="assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson Pied Marin Fishing">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="social.html">Social</a></li>
-      <li><a href="calendar.html" aria-current="page">Team Calendar</a></li>
-      <li><a href="tournaments.html">Tournament Guide</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="calendar.html" aria-current="page" data-i18n="nav.calendar">Calendrier</a></li>
+      <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
     </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
   </nav>
 </header>
 
 <div class="page-header">
   <div class="container">
-    <h1>Our Tournament Calendar</h1>
-    <p>Every tournament Pied Marin Fishing is registered for this season.</p>
+    <h1 data-i18n="calendar.h1">Notre calendrier de tournois</h1>
+    <p data-i18n="calendar.intro">Tous les tournois auxquels Pied Marin Fishing est inscrit cette saison.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice">
-      Sample schedule shown — replace the entries in <code>data/team-schedule.json</code> with your team's real, registered tournaments.
+    <div class="notice" data-i18n="calendar.notice">
+      Calendrier d'exemple — remplacez les entrées dans <code>data/team-schedule.json</code> par vos vrais tournois inscrits.
     </div>
 
     <div class="filters">
-      <select id="month-filter">
-        <option value="">All months</option>
-        <option value="0">January</option><option value="1">February</option>
-        <option value="2">March</option><option value="3">April</option>
-        <option value="4">May</option><option value="5">June</option>
-        <option value="6">July</option><option value="7">August</option>
-        <option value="8">September</option><option value="9">October</option>
-        <option value="10">November</option><option value="11">December</option>
-      </select>
-      <select id="region-filter">
-        <option value="">All regions</option>
-      </select>
-      <input id="search-filter" type="text" placeholder="Search tournaments…">
+      <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
+      <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
+      <input id="search-filter" type="text" data-i18n-placeholder="filters.searchTeam" placeholder="Rechercher un tournoi…">
       <span class="result-count" id="result-count"></span>
     </div>
 
     <div id="event-list" class="event-list"></div>
-    <div id="empty-state" class="empty-state" style="display:none;">No tournaments match your filters.</div>
+    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="filters.empty">Aucun tournoi ne correspond à vos filtres.</div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
-      <span>© <span data-year></span> Pied Marin Fishing</span>
-      <span><a href="index.html">Back to home</a></span>
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="index.html" data-i18n="footer.backHome">Retour à l'accueil</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/events.js"></script>
 <script>
   initEventList({
@@ -84,7 +81,7 @@
     regionFilterSelector: "#region-filter",
     searchSelector: "#search-filter",
     badgeField: "type",
-    linkText: "Tournament Info",
+    linkTextKey: "events.info",
   });
 </script>
 </body>

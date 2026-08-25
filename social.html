@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Social — Pied Marin Fishing</title>
-<meta name="description" content="Follow Pied Marin Fishing across social media for tournament updates, photos, and results.">
+<title data-i18n-text="social.title">Réseaux — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="social.desc" content="Suivez Pied Marin Fishing sur les réseaux sociaux.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,31 +14,37 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Pied Marin Fishing crest" class="brand-logo">
-      <span>Pied Marin Fishing<span class="brand-sub">Team Québec</span></span>
+      <img src="assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson Pied Marin Fishing">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="social.html" aria-current="page">Social</a></li>
-      <li><a href="calendar.html">Team Calendar</a></li>
-      <li><a href="tournaments.html">Tournament Guide</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="social.html" aria-current="page" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
+      <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
     </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
   </nav>
 </header>
 
 <div class="page-header">
   <div class="container">
-    <h1>Follow Along</h1>
-    <p>Weigh-ins, practice days, and everything in between — all our socials in one place.</p>
+    <h1 data-i18n="social.h1">Suivez-nous</h1>
+    <p data-i18n="social.intro">Pesées, journées de pratique et tout ce qu'il y a entre les deux — tous nos réseaux au même endroit.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice">
-      Placeholder handles — replace the entries in <code>data/socials.json</code> with your team's real accounts.
+    <div class="notice" data-i18n="social.notice">
+      Comptes temporaires — remplacez les entrées dans <code>data/socials.json</code> par vos vrais comptes.
     </div>
     <div id="social-grid" class="grid grid-2"></div>
   </div>
@@ -47,13 +53,14 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
-      <span>© <span data-year></span> Pied Marin Fishing</span>
-      <span><a href="index.html">Back to home</a></span>
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="index.html" data-i18n="footer.backHome">Retour à l'accueil</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script>
   const ICONS = {
     instagram: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="white"/></svg>',
@@ -63,23 +70,40 @@
     mail: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="white" stroke-width="1.8"/><path d="M4 6.5l8 6 8-6" stroke="white" stroke-width="1.8"/></svg>',
   };
 
-  fetch("data/socials.json")
-    .then((r) => r.json())
-    .then((socials) => {
-      const grid = document.getElementById("social-grid");
+  (async () => {
+    await PMF_I18N.ready;
+    const grid = document.getElementById("social-grid");
+
+    function esc(str) {
+      const d = document.createElement("div");
+      d.textContent = str ?? "";
+      return d.innerHTML;
+    }
+
+    let socials = [];
+    try {
+      socials = await (await fetch("data/socials.json")).json();
+    } catch (e) {
+      grid.innerHTML = `<div class="empty-state">${esc(PMF_I18N.t("social.loadError"))}</div>`;
+      return;
+    }
+
+    function render() {
+      const tr = PMF_I18N.tr;
       grid.innerHTML = socials.map((s) => `
-        <a class="social-card" href="${s.url}" target="_blank" rel="noopener">
-          <div class="social-icon" style="background:${s.color || "#157a76"}">${ICONS[s.icon] || ""}</div>
+        <a class="social-card" href="${esc(s.url)}" target="_blank" rel="noopener">
+          <div class="social-icon" style="background:${esc(s.color || "#157a76")}">${ICONS[s.icon] || ""}</div>
           <div>
-            <div class="social-name">${s.name}</div>
-            <div class="social-handle">${s.handle}</div>
+            <div class="social-name">${esc(tr(s.name))}</div>
+            <div class="social-handle">${esc(tr(s.handle))}</div>
           </div>
         </a>
       `).join("");
-    })
-    .catch(() => {
-      document.getElementById("social-grid").innerHTML = '<div class="empty-state">Could not load social links.</div>';
-    });
+    }
+
+    PMF_I18N.onChange(render);
+    render();
+  })();
 </script>
 </body>
 </html>

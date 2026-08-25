@@ -1,17 +1,20 @@
 [
   {
     "id": "big-bass-challenge-2026",
-    "name": "Big Bass Challenge Québec — 11th Edition",
+    "name": "Big Bass Challenge Québec — 11e édition",
     "startDate": "2026-10-10",
     "endDate": "2026-10-10",
-    "region": "Québec–Ontario border",
-    "location": "Lac Saint-François, Cornwall area",
-    "species": "Bass",
+    "region": { "fr": "Frontière Québec–Ontario", "en": "Québec–Ontario border" },
+    "location": { "fr": "Lac Saint-François, secteur Cornwall", "en": "Lac Saint-François, Cornwall area" },
+    "species": { "fr": "Achigan", "en": "Bass" },
     "organizer": "Big Bass Challenge Québec",
-    "type": "Circuit Stop",
+    "type": { "fr": "Étape de circuit", "en": "Circuit Stop" },
     "status": "confirmed",
     "link": "https://www.bigbasschallengequebec.com/2026-programmation",
-    "notes": "Verified via the organizer's 2026 programmation page. Always confirm final details on the official site before registering."
+    "notes": {
+      "fr": "Vérifié sur la page de programmation 2026 de l'organisateur. Confirmez toujours les détails finaux sur le site officiel avant de vous inscrire.",
+      "en": "Verified via the organizer's 2026 programmation page. Always confirm final details on the official site before registering."
+    }
   },
   {
     "id": "challenge-carpe-quebec-2026",
@@ -19,27 +22,33 @@
     "startDate": "2026-08-28",
     "endDate": "2026-08-30",
     "region": "Québec",
-    "location": "See official listing for venue",
-    "species": "Carp",
+    "location": { "fr": "Voir l'inscription officielle pour le lieu", "en": "See official listing for venue" },
+    "species": { "fr": "Carpe", "en": "Carp" },
     "organizer": "Team Carpe Aventure",
-    "type": "Circuit Stop",
+    "type": { "fr": "Étape de circuit", "en": "Circuit Stop" },
     "status": "confirmed",
     "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
-    "notes": "Verified date range from the organizer's event page. Confirm venue and entry details directly with the organizer."
+    "notes": {
+      "fr": "Dates vérifiées sur la page de l'événement de l'organisateur. Confirmez le lieu et les modalités d'inscription directement avec l'organisateur.",
+      "en": "Verified date range from the organizer's event page. Confirm venue and entry details directly with the organizer."
+    }
   },
   {
     "id": "pro-bass-canada",
-    "name": "Pro-Bass Canada Circuit",
+    "name": "Circuit Pro-Bass Canada",
     "startDate": "",
     "endDate": "",
     "region": "Québec",
-    "location": "Multiple stops across the province",
-    "species": "Bass",
+    "location": { "fr": "Plusieurs étapes à travers la province", "en": "Multiple stops across the province" },
+    "species": { "fr": "Achigan", "en": "Bass" },
     "organizer": "Pro-Bass Canada",
-    "type": "Circuit",
+    "type": { "fr": "Circuit", "en": "Circuit" },
     "status": "tentative",
     "link": "https://www.surlespot.com/evenement/22-pro-bass-canada-tournoi-pec-heure-1",
-    "notes": "Recurring pro-am bass circuit with several stops through the season. Exact 2026 stop dates were not confirmed during our research — check the listing or organizer for the current schedule."
+    "notes": {
+      "fr": "Circuit pro-am récurrent avec plusieurs étapes durant la saison. Les dates exactes 2026 n'ont pas été confirmées lors de nos recherches — consultez l'organisateur pour l'horaire à jour.",
+      "en": "Recurring pro-am bass circuit with several stops through the season. Exact 2026 stop dates were not confirmed during our research — check the listing or organizer for the current schedule."
+    }
   },
   {
     "id": "walleye-challenge-nord",
@@ -47,12 +56,15 @@
     "startDate": "",
     "endDate": "",
     "region": "Nord-du-Québec / Abitibi",
-    "location": "See regional listing",
-    "species": "Walleye",
-    "organizer": "Regional / community organized",
-    "type": "Community Tournament",
+    "location": { "fr": "Voir l'annonce régionale", "en": "See regional listing" },
+    "species": { "fr": "Doré", "en": "Walleye" },
+    "organizer": { "fr": "Organisation régionale / communautaire", "en": "Regional / community organized" },
+    "type": { "fr": "Tournoi communautaire", "en": "Community Tournament" },
     "status": "tentative",
     "link": "https://lenord.ca/2025/08/28/tournoi-de-peche-walleye-challenge/",
-    "notes": "Historically held in late August. Exact 2026 date not confirmed during our research — verify locally before planning a trip."
+    "notes": {
+      "fr": "Historiquement tenu à la fin août. La date exacte 2026 n'a pas été confirmée lors de nos recherches — vérifiez localement avant de planifier un déplacement.",
+      "en": "Historically held in late August. Exact 2026 date not confirmed during our research — verify locally before planning a trip."
+    }
   }
 ]

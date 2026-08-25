@@ -1,23 +1,41 @@
 [
   {
-    "name": "Add Your Name",
-    "role": "Team Captain",
+    "name": "Votre nom ici",
     "initials": "AA",
-    "bio": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively.",
-    "quote": "Sample quote — swap for something the real team member actually says."
+    "role": { "fr": "Capitaine d'équipe", "en": "Team Captain" },
+    "bio": {
+      "fr": "Remplacez cette fiche par une vraie biographie — plan d'eau d'origine, technique de prédilection, années d'expérience en tournoi.",
+      "en": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively."
+    },
+    "quote": {
+      "fr": "Citation d'exemple — à remplacer par une vraie phrase du membre de l'équipe.",
+      "en": "Sample quote — swap for something the real team member actually says."
+    }
   },
   {
-    "name": "Add Your Name",
-    "role": "Co-Angler",
+    "name": "Votre nom ici",
     "initials": "AA",
-    "bio": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively.",
-    "quote": "Sample quote — swap for something the real team member actually says."
+    "role": { "fr": "Co-équipier", "en": "Co-Angler" },
+    "bio": {
+      "fr": "Remplacez cette fiche par une vraie biographie — plan d'eau d'origine, technique de prédilection, années d'expérience en tournoi.",
+      "en": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively."
+    },
+    "quote": {
+      "fr": "Citation d'exemple — à remplacer par une vraie phrase du membre de l'équipe.",
+      "en": "Sample quote — swap for something the real team member actually says."
+    }
   },
   {
-    "name": "Add Your Name",
-    "role": "Boat Captain",
+    "name": "Votre nom ici",
     "initials": "AA",
-    "bio": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively.",
-    "quote": "Sample quote — swap for something the real team member actually says."
+    "role": { "fr": "Capitaine de bateau", "en": "Boat Captain" },
+    "bio": {
+      "fr": "Remplacez cette fiche par une vraie biographie — plan d'eau d'origine, technique de prédilection, années d'expérience en tournoi.",
+      "en": "Replace this card with a real bio — hometown water, go-to technique, years fishing competitively."
+    },
+    "quote": {
+      "fr": "Citation d'exemple — à remplacer par une vraie phrase du membre de l'équipe.",
+      "en": "Sample quote — swap for something the real team member actually says."
+    }
   }
 ]
