@@ -1,14 +1,55 @@
 [
   {
+    "id": "formule-brochet",
+    "name": "Formule Brochet",
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Zone 8 / corridor du Saint-Laurent",
+      "en": "Zone 8 / St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Zone 8 et corridor du Saint-Laurent (zone 7) jusqu'à Batiscan, incluant l'AFC du lac Saint-Pierre",
+      "en": "Zone 8 and the Zone 7 St. Lawrence corridor to Batiscan, including the Lac Saint-Pierre AFC"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
+    "organizer": "Muskies Canada Montréal",
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "tentative",
+    "link": "https://muskiescanada.ca/brochet2026/",
+    "notes": {
+      "fr": "Tournoi annuel à l'ouverture du brochet, en remise à l'eau et mesuré à la règle (les deux plus longs brochets). L'édition 2025 s'est tenue le samedi 3 mai. Consultez l'organisateur pour la date de la prochaine édition.",
+      "en": "Annual pike-opener tournament, catch-photo-release and measured by ruler (two longest pike combined). The 2025 edition was held on Saturday 3 May. Check with the organizer for the next edition's date."
+    }
+  },
+  {
     "id": "big-bass-challenge-2026",
     "name": "Big Bass Challenge Québec — 11e édition",
     "startDate": "2026-10-10",
     "endDate": "2026-10-10",
-    "region": { "fr": "Frontière Québec–Ontario", "en": "Québec–Ontario border" },
-    "location": { "fr": "Lac Saint-François, secteur Cornwall", "en": "Lac Saint-François, Cornwall area" },
-    "species": { "fr": "Achigan", "en": "Bass" },
+    "region": {
+      "fr": "Frontière Québec–Ontario",
+      "en": "Québec–Ontario border"
+    },
+    "location": {
+      "fr": "Lac Saint-François, secteur Cornwall",
+      "en": "Lac Saint-François, Cornwall area"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
     "organizer": "Big Bass Challenge Québec",
-    "type": { "fr": "Étape de circuit", "en": "Circuit Stop" },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
     "status": "confirmed",
     "link": "https://www.bigbasschallengequebec.com/2026-programmation",
     "notes": {
@@ -22,10 +63,19 @@
     "startDate": "2026-08-28",
     "endDate": "2026-08-30",
     "region": "Québec",
-    "location": { "fr": "Voir l'inscription officielle pour le lieu", "en": "See official listing for venue" },
-    "species": { "fr": "Carpe", "en": "Carp" },
+    "location": {
+      "fr": "Voir l'inscription officielle pour le lieu",
+      "en": "See official listing for venue"
+    },
+    "species": {
+      "fr": "Carpe",
+      "en": "Carp"
+    },
     "organizer": "Team Carpe Aventure",
-    "type": { "fr": "Étape de circuit", "en": "Circuit Stop" },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
     "status": "confirmed",
     "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
     "notes": {
@@ -39,10 +89,19 @@
     "startDate": "",
     "endDate": "",
     "region": "Québec",
-    "location": { "fr": "Plusieurs étapes à travers la province", "en": "Multiple stops across the province" },
-    "species": { "fr": "Achigan", "en": "Bass" },
+    "location": {
+      "fr": "Plusieurs étapes à travers la province",
+      "en": "Multiple stops across the province"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
     "organizer": "Pro-Bass Canada",
-    "type": { "fr": "Circuit", "en": "Circuit" },
+    "type": {
+      "fr": "Circuit",
+      "en": "Circuit"
+    },
     "status": "tentative",
     "link": "https://www.surlespot.com/evenement/22-pro-bass-canada-tournoi-pec-heure-1",
     "notes": {
@@ -56,10 +115,22 @@
     "startDate": "",
     "endDate": "",
     "region": "Nord-du-Québec / Abitibi",
-    "location": { "fr": "Voir l'annonce régionale", "en": "See regional listing" },
-    "species": { "fr": "Doré", "en": "Walleye" },
-    "organizer": { "fr": "Organisation régionale / communautaire", "en": "Regional / community organized" },
-    "type": { "fr": "Tournoi communautaire", "en": "Community Tournament" },
+    "location": {
+      "fr": "Voir l'annonce régionale",
+      "en": "See regional listing"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": {
+      "fr": "Organisation régionale / communautaire",
+      "en": "Regional / community organized"
+    },
+    "type": {
+      "fr": "Tournoi communautaire",
+      "en": "Community Tournament"
+    },
     "status": "tentative",
     "link": "https://lenord.ca/2025/08/28/tournoi-de-peche-walleye-challenge/",
     "notes": {

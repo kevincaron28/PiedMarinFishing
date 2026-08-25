@@ -1,59 +1,65 @@
 [
   {
-    "id": "sample-2025-opener",
-    "name": { "fr": "EXEMPLE — Ouverture Achigan", "en": "SAMPLE — Bass Opener" },
-    "date": "2025-06-14",
-    "region": "Montérégie",
-    "location": { "fr": "Remplacer par le vrai plan d'eau", "en": "Replace with the real lake" },
-    "species": { "fr": "Achigan", "en": "Bass" },
-    "organizer": "",
-    "placement": 3,
-    "fieldSize": 28,
-    "weight": "14,80 lb",
-    "bigFish": "4,10 lb",
-    "members": ["kevin-caron", "bobe"],
-    "link": "",
+    "id": "formule-brochet-2026",
+    "name": "Formule Brochet 2026",
+    "date": "2026",
+    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
+    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
+    "species": { "fr": "Brochet", "en": "Pike" },
+    "organizer": "Muskies Canada Montréal",
+    "placement": null,
+    "fieldSize": null,
+    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "link": "https://muskiescanada.ca/brochet2026/",
+    "figures": [
+      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
+      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+    ],
     "notes": {
-      "fr": "Résultat d'exemple. Modifiez data/tournament-history.json et remplacez-le par vos vrais résultats.",
-      "en": "Placeholder result. Edit data/tournament-history.json and replace it with your real results."
+      "fr": "Tournoi remise à l'eau, mesuré à la règle. Date exacte et résultat à confirmer.",
+      "en": "Catch-photo-release tournament, measured by length. Exact date and result to be confirmed."
     }
   },
   {
-    "id": "sample-2025-classic",
-    "name": { "fr": "EXEMPLE — Classique d'été", "en": "SAMPLE — Summer Classic" },
-    "date": "2025-08-09",
-    "region": "Outaouais",
-    "location": { "fr": "Remplacer par le vrai plan d'eau", "en": "Replace with the real lake" },
-    "species": { "fr": "Doré", "en": "Walleye" },
-    "organizer": "",
-    "placement": 1,
-    "fieldSize": 41,
-    "weight": "21,35 lb",
-    "bigFish": "6,05 lb",
-    "members": ["kevin-caron", "kevin-b"],
-    "link": "",
+    "id": "formule-brochet-2025",
+    "name": "Formule Brochet 2025",
+    "date": "2025-05-03",
+    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
+    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
+    "species": { "fr": "Brochet", "en": "Pike" },
+    "organizer": "Muskies Canada Montréal",
+    "placement": null,
+    "fieldSize": null,
+    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "link": "https://muskiescanada.ca/en/brochet2025/",
+    "figures": [
+      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
+      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+    ],
     "notes": {
-      "fr": "Résultat d'exemple. À supprimer une fois vos vrais résultats ajoutés.",
-      "en": "Placeholder result. Delete once your real results are added."
+      "fr": "Tenu le samedi 3 mai 2025. Tournoi remise à l'eau, mesuré à la règle. Résultat à confirmer.",
+      "en": "Held Saturday 3 May 2025. Catch-photo-release tournament, measured by length. Result to be confirmed."
     }
   },
   {
-    "id": "sample-2025-finale",
-    "name": { "fr": "EXEMPLE — Finale de saison", "en": "SAMPLE — Season Finale" },
-    "date": "2025-09-20",
-    "region": "Montérégie",
-    "location": { "fr": "Remplacer par le vrai plan d'eau", "en": "Replace with the real lake" },
-    "species": { "fr": "Achigan", "en": "Bass" },
-    "organizer": "",
-    "placement": 7,
-    "fieldSize": 35,
-    "weight": "11,20 lb",
-    "bigFish": "3,45 lb",
-    "members": ["kevin-b", "bobe"],
-    "link": "",
+    "id": "formule-brochet-2024",
+    "name": "Formule Brochet 2024",
+    "date": "2024",
+    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
+    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
+    "species": { "fr": "Brochet", "en": "Pike" },
+    "organizer": "Muskies Canada Montréal",
+    "placement": null,
+    "fieldSize": null,
+    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "link": "https://muskiescanada.ca/en/brochet2024/",
+    "figures": [
+      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
+      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+    ],
     "notes": {
-      "fr": "Résultat d'exemple. À supprimer une fois vos vrais résultats ajoutés.",
-      "en": "Placeholder result. Delete once your real results are added."
+      "fr": "Tournoi remise à l'eau, mesuré à la règle. Date exacte et résultat à confirmer.",
+      "en": "Catch-photo-release tournament, measured by length. Exact date and result to be confirmed."
     }
   }
 ]

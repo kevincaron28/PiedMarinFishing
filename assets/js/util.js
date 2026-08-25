@@ -26,6 +26,20 @@ function parseISODate(value) {
   return new Date(y, m - 1, d);
 }
 
+// Dates may be partial: "2024", "2024-05" or "2024-05-03". Use this when the
+// year is known but the exact day isn't, rather than inventing one.
+function dateParts(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return null;
+  const [y, m, d] = raw.split("-").map(Number);
+  if (!Number.isFinite(y)) return null;
+  return {
+    year: y,
+    month: Number.isFinite(m) ? m - 1 : null,
+    day: Number.isFinite(d) ? d : null,
+  };
+}
+
 function escapeHTML(str) {
   const div = document.createElement("div");
   div.textContent = str ?? "";

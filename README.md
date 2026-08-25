@@ -186,9 +186,26 @@ add the matching `team.spec.*` labels to `data/i18n.json`.
 ```
 
 `placement` and `fieldSize` are numbers; 1st/2nd/3rd get a podium colour and
-the ordinal is written correctly per language (1re/2e vs 1st/2nd). `weight`
-and `bigFish` are free-text strings, so use whatever unit you actually weigh
-in.
+the ordinal is written correctly per language (1re/2e vs 1st/2nd). Leave
+either as `null` when the result isn't recorded yet — the card shows a muted
+`—` rather than inventing a finish, and the stat tiles ignore it.
+
+**Partial dates.** `date` may be `"2024"`, `"2024-05"` or `"2024-05-03"`.
+Use the shortest form you can actually vouch for; the date badge shows only
+what's known, and the season filter still works off the year either way.
+
+**Scoring figures.** Weight tournaments can use the `weight` and `bigFish`
+shortcuts. Length events (catch-photo-release, measured on a ruler) supply
+their own labelled figures instead:
+
+```json
+"figures": [
+  { "value": "104 cm", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } }
+]
+```
+
+A figure with an empty `value` doesn't render, so you can leave the labels in
+place as a reminder of what to fill in.
 
 All schedule/directory entries share this shape (any text field may be a
 plain string or a `{ "fr": …, "en": … }` pair — see **Bilingual** above):
@@ -214,9 +231,10 @@ Leave `startDate`/`endDate` as an empty string `""` for a "date TBD" entry.
 `status: "tentative"` renders a gold badge instead of teal.
 
 **The roster names are real; their bios, specs, roles and photos are not
-filled in yet.** The social handles, team schedule and past results are all
-still placeholders — replace them with your real info before publishing.
-Sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
+filled in yet.** The three Formule Brochet entries in the results are real
+events, but their placements and measurements still need filling in. The
+social handles and the upcoming team schedule are still placeholders —
+sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
 tournament directory was seeded with a few tournaments verified against
 organizer sites in August 2026 (see the `notes`/`link` field on each entry
 for the source) plus links out to a few live, continuously-updated calendars
