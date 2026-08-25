@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Québec Tournament Guide — Pied Marin Fishing</title>
+<meta name="description" content="A community directory of fishing tournaments and competitive angling events across Québec.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎣</text></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 12c4-5 9-7 13-5 2 1 3 3 3 5s-1 4-3 5c-4 2-9 0-13-5z" stroke="#e8bd6a" stroke-width="1.6"/>
+        <circle cx="6.5" cy="12" r="1.1" fill="#e8bd6a"/>
+        <path d="M18 12l4-3v6l-4-3z" stroke="#e8bd6a" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span>Pied Marin Fishing<span class="brand-sub">Team Québec</span></span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="social.html">Social</a></li>
+      <li><a href="calendar.html">Team Calendar</a></li>
+      <li><a href="tournaments.html" aria-current="page">Tournament Guide</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1>Québec Tournament Guide</h1>
+    <p>A community directory of fishing tournaments and competitive angling events around Québec — maintained by Pied Marin Fishing as a resource for the whole tournament trail, not just our own team.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="notice">
+      We hand-checked the events below against organizer sites, but tournament dates change — always confirm directly with the organizer before you plan a trip. Know an event we're missing? <a href="mailto:info@piedmarinfishing.ca">Send it to us</a> and we'll add it.
+    </div>
+
+    <div class="filters">
+      <select id="month-filter">
+        <option value="">All months</option>
+        <option value="0">January</option><option value="1">February</option>
+        <option value="2">March</option><option value="3">April</option>
+        <option value="4">May</option><option value="5">June</option>
+        <option value="6">July</option><option value="7">August</option>
+        <option value="8">September</option><option value="9">October</option>
+        <option value="10">November</option><option value="11">December</option>
+      </select>
+      <select id="region-filter">
+        <option value="">All regions</option>
+      </select>
+      <input id="search-filter" type="text" placeholder="Search by name, lake, species…">
+      <span class="result-count" id="result-count"></span>
+    </div>
+
+    <div id="event-list" class="event-list"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">No tournaments match your filters.</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker">Keep Digging</span>
+      <h2>More live tournament calendars</h2>
+      <p>These sites maintain their own continuously-updated Québec tournament listings — worth checking alongside our directory.</p>
+    </div>
+    <ul class="resource-list">
+      <li>
+        <a href="https://pecheurquebec.com/tournois-de-peche-quebec" target="_blank" rel="noopener">Pêcheur Québec — Tournois de pêche Québec</a>
+        <div class="src-meta">Province-wide tournament listing, regularly updated.</div>
+      </li>
+      <li>
+        <a href="https://www.surlespot.ca/peche" target="_blank" rel="noopener">Sur Le Spot — Activités et événements de pêche</a>
+        <div class="src-meta">Fishing activities and events calendar for Québec.</div>
+      </li>
+      <li>
+        <a href="https://www.bigbasschallengequebec.com/2026-programmation" target="_blank" rel="noopener">Big Bass Challenge Québec — 2026 Programmation</a>
+        <div class="src-meta">Official schedule for the Big Bass Challenge circuit.</div>
+      </li>
+      <li>
+        <a href="https://canadianbass.com/" target="_blank" rel="noopener">Canadian Bass Federation</a>
+        <div class="src-meta">National bass circuit with events relevant to Québec anglers.</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="index.html">Back to home</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/events.js"></script>
+<script>
+  initEventList({
+    dataUrl: "data/quebec-tournaments.json",
+    listSelector: "#event-list",
+    emptySelector: "#empty-state",
+    countSelector: "#result-count",
+    monthFilterSelector: "#month-filter",
+    regionFilterSelector: "#region-filter",
+    searchSelector: "#search-filter",
+    badgeField: "species",
+    linkText: "Learn More",
+  });
+</script>
+</body>
+</html>
