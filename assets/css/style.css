@@ -181,7 +181,9 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
-@media (max-width: 780px) {
+/* Seven nav items need the full 1140px row; below that the menu collapses
+   rather than wrapping onto two or three lines. */
+@media (max-width: 1150px) {
   .nav-toggle { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .brand { font-size: 1.05rem; }
   .brand-logo { width: 36px; height: 36px; }
@@ -597,6 +599,117 @@ section.alt { background: var(--sand-100); }
 }
 .badge.gold { background: rgba(217,164,65,0.16); color: #9a6c14; }
 .badge.navy { background: rgba(11,32,56,0.08); color: var(--navy-800); }
+
+/* ---------- Team boats ---------- */
+
+.boat-list { display: grid; gap: 24px; }
+
+.boat-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 760px) {
+  .boat-card { grid-template-columns: 1fr; }
+}
+
+.boat-photo {
+  position: relative;
+  min-height: 220px;
+  background: linear-gradient(135deg, var(--navy-900), var(--teal-600));
+}
+.boat-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/logo-mark-light.png") center / 58% auto no-repeat;
+  opacity: 0.16;
+}
+.boat-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boat-body { padding: 26px; }
+.boat-specs { margin-top: 14px; }
+.boat-skipper {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+.boat-skipper a { font-weight: 700; margin-left: 6px; }
+
+/* ---------- Merchandise ---------- */
+
+.merch-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.merch-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(140deg, var(--navy-900), var(--navy-700) 70%, var(--teal-600));
+}
+.merch-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../img/logo-mark-light.png") center / 56% auto no-repeat;
+  opacity: 0.18;
+}
+.merch-photo-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.merch-body {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.merch-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.merch-head h3 { margin: 0; font-size: 1.1rem; }
+.merch-price {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--teal-600);
+}
+.merch-body p { margin: 0; font-size: 0.9rem; }
+.merch-sizes { display: flex; flex-wrap: wrap; gap: 6px; }
+.merch-sizes span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--ink-600);
+}
+.merch-body .btn { margin-top: auto; align-self: flex-start; }
 
 /* ---------- Featured video ---------- */
 

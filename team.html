@@ -23,6 +23,7 @@
       <li><a href="history.html" data-i18n="nav.history">Palmarès</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
+      <li><a href="merch.html" data-i18n="nav.merch">Boutique</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
     </ul>
     <div class="nav-actions">
@@ -51,6 +52,20 @@
   </div>
 </section>
 
+<section class="alt" id="bateaux">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker" data-i18n="team.boatsKicker">Notre flotte</span>
+      <h2 data-i18n="team.boatsTitle">Les bateaux de l'équipe</h2>
+      <p data-i18n="team.boatsIntro">Les embarcations qui nous amènent sur l'eau, et ce qu'il y a à bord.</p>
+    </div>
+    <div class="notice" data-i18n="team.boatsNotice">
+      Fiche à remplir — ajoutez vos bateaux et leurs détails dans <code>data/boats.json</code>.
+    </div>
+    <div id="boat-list" class="boat-list"></div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
@@ -65,8 +80,10 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/history.js"></script>
 <script src="assets/js/team.js"></script>
+<script src="assets/js/boats.js"></script>
 <script>
   initTeam("#team-grid");
+  initBoats("#boat-list");
 </script>
 </body>
 </html>

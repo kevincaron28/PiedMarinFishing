@@ -15,6 +15,7 @@ Québec.
 | `history.html` | Palmarès: past tournament results, filterable by member and season |
 | `calendar.html` | Our team's own upcoming tournament schedule |
 | `tournaments.html` | Region-wide Québec tournament directory (for any angler, not just the team) |
+| `merch.html` | Shop — apparel and gear |
 | `social.html` | Social media links |
 
 No build step, no framework, no dependencies — plain HTML/CSS/JS. Every
@@ -86,6 +87,8 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `history.js` | results rendering **and** the shared `PMF_HISTORY` store |
 | `team.js` | roster cards (reads `PMF_HISTORY` for the record strip) |
 | `video.js` | homepage featured video (click-to-load facade) |
+| `boats.js` | team boats section on the team page |
+| `merch.js` | shop product grid |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
@@ -119,6 +122,8 @@ they stay in sync.
 - **Our schedule** → `data/team-schedule.json`.
 - **Québec tournament directory** → `data/quebec-tournaments.json`.
 - **Past results** → `data/tournament-history.json`.
+- **Team boats** → `data/boats.json`.
+- **Shop products** → `data/merch.json`.
 - **Featured video** → `data/featured-video.json`. Paste a YouTube video id
   (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
   links are all parsed) into `videoId` and the homepage placeholder becomes
@@ -163,6 +168,62 @@ shows a muted `—` so the card doubles as a fill-in sheet:
 
 To add or reorder spec rows, edit `SPEC_FIELDS` in `assets/js/team.js` and
 add the matching `team.spec.*` labels to `data/i18n.json`.
+
+### Team boats
+
+Boats render as a section at the bottom of the team page (`#bateaux`), not
+their own page. Same fill-in-sheet behaviour as the angler specs — every row
+shows, empty ones show `—`:
+
+```json
+{
+  "id": "boat-1",
+  "name": { "fr": "Le Pied Marin", "en": "Le Pied Marin" },
+  "skipper": "kevin-caron",
+  "image": "assets/img/boats/boat-1.jpg",
+  "description": { "fr": "…", "en": "…" },
+  "specs": {
+    "model": "Princecraft Xpedition 186",
+    "year": "2022", "length": "18' 6\"",
+    "engine": "Mercury 150 CT", "trolling": "Minn Kota Ulterra 112",
+    "electronics": "Humminbird Helix 9"
+  }
+}
+```
+
+`skipper` takes a **member id** — set it and the card links through to that
+angler's results. Leave `image` empty and the crest watermark stands in. Add
+more boats by adding more entries; they stack vertically.
+
+To change which spec rows appear, edit `BOAT_SPEC_FIELDS` in
+`assets/js/boats.js` and add matching `boats.spec.*` labels to
+`data/i18n.json`.
+
+### Shop
+
+`data/merch.json` holds a shop-wide `orderEmail` and optional `storeUrl`,
+plus the product list:
+
+```json
+{
+  "id": "tee",
+  "name": { "fr": "T-shirt de l'équipe", "en": "Team t-shirt" },
+  "description": { "fr": "…", "en": "…" },
+  "price": "35 $",
+  "sizes": ["S", "M", "L", "XL", "2XL"],
+  "image": "assets/img/merch/tee.jpg",
+  "url": "",
+  "status": "available"
+}
+```
+
+`status` is `available`, `soon` or `soldout` and drives the badge. **There is
+no checkout** — deliberately, since this is a static site with no payment
+backend. The order button falls back in this order: the product's own `url`
+→ the shop-wide `storeUrl` → a `mailto:` link pre-filled with the product
+name. Sold-out items get no button. If you later open a real store
+(Shopify, Square, Etsy…), just fill in `storeUrl` and every product points
+at it.
 
 ### Result entry shape
 
@@ -233,7 +294,8 @@ Leave `startDate`/`endDate` as an empty string `""` for a "date TBD" entry.
 **The roster names are real; their bios, specs, roles and photos are not
 filled in yet.** The three Formule Brochet entries in the results are real
 events, but their placements and measurements still need filling in. The
-social handles and the upcoming team schedule are still placeholders —
+social handles, boats, shop products and the upcoming team schedule are
+still placeholders —
 sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
 tournament directory was seeded with a few tournaments verified against
 organizer sites in August 2026 (see the `notes`/`link` field on each entry
