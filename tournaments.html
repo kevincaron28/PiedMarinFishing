@@ -54,11 +54,22 @@
       <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
       <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
       <input id="search-filter" type="text" data-i18n-placeholder="filters.searchGuide" placeholder="Nom, plan d'eau, espèce…">
+      <div class="view-toggle" role="group" data-i18n-aria-label="view.label" aria-label="Affichage">
+        <button type="button" data-view="list" data-i18n="view.list">Liste</button>
+        <button type="button" data-view="calendar" data-i18n="view.calendar">Calendrier</button>
+      </div>
       <span class="result-count" id="result-count"></span>
     </div>
 
-    <div id="event-list" class="event-list"></div>
-    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="filters.empty">Aucun tournoi ne correspond à vos filtres.</div>
+    <div id="list-view">
+      <div id="event-list" class="event-list"></div>
+      <div id="empty-state" class="empty-state" style="display:none;" data-i18n="filters.empty">Aucun tournoi ne correspond à vos filtres.</div>
+    </div>
+
+    <div id="calendar-view" hidden>
+      <div id="season-calendar"></div>
+      <div id="calendar-detail"></div>
+    </div>
   </div>
 </section>
 
@@ -111,7 +122,19 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/events.js"></script>
+<script src="assets/js/calendar-view.js"></script>
 <script>
+  const calendar = initCalendarView({
+    calendarSelector: "#season-calendar",
+    detailSelector: "#calendar-detail",
+  });
+
+  initViewToggle({
+    toggleSelector: ".view-toggle",
+    listSelector: "#list-view",
+    calendarSelector: "#calendar-view",
+  });
+
   initEventList({
     dataUrl: "data/quebec-tournaments.json",
     listSelector: "#event-list",
@@ -123,6 +146,7 @@
     searchSelector: "#search-filter",
     badgeField: "species",
     linkTextKey: "events.learnMore",
+    onRender: (ctx) => calendar && calendar.render(ctx),
   });
 </script>
 </body>

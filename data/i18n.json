@@ -169,7 +169,17 @@
     "spec.hours": "Horaire",
     "spec.deadline": "Inscription",
     "spec.format": "Épreuve",
-    "spec.notPublished": "Non publié"
+    "spec.notPublished": "Non publié",
+    "view.list": "Liste",
+    "view.calendar": "Calendrier",
+    "view.label": "Affichage",
+    "calendarView.legendEvent": "Tournoi",
+    "calendarView.legendMulti": "Plusieurs le même jour",
+    "calendarView.legendToday": "Aujourd'hui",
+    "calendarView.monthOnly.one": "+ {n} sans jour précis",
+    "calendarView.monthOnly.other": "+ {n} sans jour précis",
+    "calendarView.undatedTitle": "Sans date confirmée",
+    "calendarView.undatedBody": "Ces événements reviennent chaque année mais leur date n'est pas publiée. Cliquez pour voir les détails."
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -341,6 +351,16 @@
     "spec.hours": "Hours",
     "spec.deadline": "Registration",
     "spec.format": "Scoring",
-    "spec.notPublished": "Not published"
+    "spec.notPublished": "Not published",
+    "view.list": "List",
+    "view.calendar": "Calendar",
+    "view.label": "View",
+    "calendarView.legendEvent": "Tournament",
+    "calendarView.legendMulti": "More than one that day",
+    "calendarView.legendToday": "Today",
+    "calendarView.monthOnly.one": "+ {n} with no set day",
+    "calendarView.monthOnly.other": "+ {n} with no set day",
+    "calendarView.undatedTitle": "No confirmed date",
+    "calendarView.undatedBody": "These events recur each year but their date isn't published. Click to see the details."
   }
 }

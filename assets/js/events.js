@@ -14,6 +14,7 @@ async function initEventList(options) {
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
+    onRender = null,
   } = options;
 
   const listEl = document.querySelector(listSelector);
@@ -117,6 +118,68 @@ async function initEventList(options) {
     return true;
   }
 
+  // Building a card is separate from listing them, so other views (the
+  // calendar) can render the same card for a selected day.
+  function renderCard(ev) {
+    const dateBadge = dateBadgeHTML(ev.startDate, PMF_I18N.lang, t("events.tbd"));
+    const past = isPastEvent(ev);
+    const cancelled = ev.status === "cancelled";
+
+    const badgeText = tr(ev[badgeField]);
+    const badge = badgeText
+      ? `<span class="badge${ev.status === "tentative" ? " gold" : ""}">${escapeHTML(badgeText)}</span>`
+      : "";
+    const stateBadge = cancelled
+      ? `<span class="badge red">${escapeHTML(t("events.cancelled"))}</span>`
+      : past ? `<span class="badge navy">${escapeHTML(t("events.past"))}</span>` : "";
+
+    const metaBits = [];
+    if (ev.location) metaBits.push(`<span>📍 ${escapeHTML(tr(ev.location))}</span>`);
+    if (ev.region) metaBits.push(`<span>${escapeHTML(tr(ev.region))}</span>`);
+    if (ev.species) metaBits.push(`<span>🎣 ${escapeHTML(tr(ev.species))}</span>`);
+    if (ev.organizer) metaBits.push(`<span>${escapeHTML(tr(ev.organizer))}</span>`);
+
+    // Entry fee and team format always show — an unpublished one says so
+    // rather than leaving the reader guessing. The rest appear when known.
+    const specs = ev.specs || {};
+    const specRows = [
+      { field: "fee", key: "spec.fee", icon: "💵", always: true },
+      { field: "teamSize", key: "spec.teamSize", icon: "👥", always: true },
+      { field: "maxTeams", key: "spec.maxTeams", icon: "🚩" },
+      { field: "hours", key: "spec.hours", icon: "⏱" },
+      { field: "deadline", key: "spec.deadline", icon: "📋" },
+      { field: "format", key: "spec.format", icon: "🎯" },
+    ].reduce((out, { field, key, icon, always }) => {
+      const value = tr(specs[field]);
+      if (!value && !always) return out;
+      const shown = value || t("spec.notPublished");
+      out.push(`
+        <div class="event-spec${value ? "" : " spec-empty"}">
+          <span class="event-spec-label"><span aria-hidden="true">${icon}</span> ${escapeHTML(t(key))}</span>
+          <span class="event-spec-value">${escapeHTML(shown)}</span>
+        </div>
+      `);
+      return out;
+    }, []).join("");
+
+    const notes = tr(ev.notes);
+
+    return `
+      <article class="event-card${past || cancelled ? " event-inactive" : ""}" id="ev-${escapeHTML(ev.id || "")}">
+        <div class="event-date">${dateBadge}</div>
+        <div>
+          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
+          <div class="event-meta">${metaBits.join("")}</div>
+          ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
+          ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
+        </div>
+        <div class="event-cta">
+          ${ev.link ? `<a class="btn btn-teal" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
+        </div>
+      </article>
+    `;
+  }
+
   function render() {
     const filtered = events.filter(matchesFilters);
     const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
@@ -127,69 +190,12 @@ async function initEventList(options) {
     if (filtered.length === 0) {
       listEl.innerHTML = "";
       if (emptyEl) emptyEl.style.display = "block";
-      return;
+    } else {
+      if (emptyEl) emptyEl.style.display = "none";
+      listEl.innerHTML = filtered.map(renderCard).join("");
     }
-    if (emptyEl) emptyEl.style.display = "none";
 
-    listEl.innerHTML = filtered.map((ev) => {
-      const dateBadge = dateBadgeHTML(ev.startDate, PMF_I18N.lang, t("events.tbd"));
-      const past = isPastEvent(ev);
-      const cancelled = ev.status === "cancelled";
-
-      const badgeText = tr(ev[badgeField]);
-      const badge = badgeText
-        ? `<span class="badge${ev.status === "tentative" ? " gold" : ""}">${escapeHTML(badgeText)}</span>`
-        : "";
-      const stateBadge = cancelled
-        ? `<span class="badge red">${escapeHTML(t("events.cancelled"))}</span>`
-        : past ? `<span class="badge navy">${escapeHTML(t("events.past"))}</span>` : "";
-
-      const metaBits = [];
-      if (ev.location) metaBits.push(`<span>📍 ${escapeHTML(tr(ev.location))}</span>`);
-      if (ev.region) metaBits.push(`<span>${escapeHTML(tr(ev.region))}</span>`);
-      if (ev.species) metaBits.push(`<span>🎣 ${escapeHTML(tr(ev.species))}</span>`);
-      if (ev.organizer) metaBits.push(`<span>${escapeHTML(tr(ev.organizer))}</span>`);
-
-      // Entry fee and team format always show — an unpublished one says so
-      // rather than leaving the reader guessing. The rest appear when known.
-      const specs = ev.specs || {};
-      const specRows = [
-        { field: "fee", key: "spec.fee", icon: "💵", always: true },
-        { field: "teamSize", key: "spec.teamSize", icon: "👥", always: true },
-        { field: "maxTeams", key: "spec.maxTeams", icon: "🚩" },
-        { field: "hours", key: "spec.hours", icon: "⏱" },
-        { field: "deadline", key: "spec.deadline", icon: "📋" },
-        { field: "format", key: "spec.format", icon: "🎯" },
-      ].reduce((out, { field, key, icon, always }) => {
-        const value = tr(specs[field]);
-        if (!value && !always) return out;
-        const shown = value || t("spec.notPublished");
-        out.push(`
-          <div class="event-spec${value ? "" : " spec-empty"}">
-            <span class="event-spec-label"><span aria-hidden="true">${icon}</span> ${escapeHTML(t(key))}</span>
-            <span class="event-spec-value">${escapeHTML(shown)}</span>
-          </div>
-        `);
-        return out;
-      }, []).join("");
-
-      const notes = tr(ev.notes);
-
-      return `
-        <article class="event-card${past || cancelled ? " event-inactive" : ""}">
-          <div class="event-date">${dateBadge}</div>
-          <div>
-            <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
-            <div class="event-meta">${metaBits.join("")}</div>
-            ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
-            ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
-          </div>
-          <div class="event-cta">
-            ${ev.link ? `<a class="btn btn-teal" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
-          </div>
-        </article>
-      `;
-    }).join("");
+    if (onRender) onRender({ filtered, renderCard });
   }
 
   [monthSelect, regionSelect, whenSelect, searchInput].forEach((el) => {

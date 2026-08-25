@@ -89,6 +89,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `video.js` | homepage featured video (click-to-load facade) |
 | `boats.js` | team boats section on the team page |
 | `merch.js` | shop product grid |
+| `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
@@ -299,6 +300,20 @@ when the organizer has only announced a month.
 | `confirmed` | normal teal species badge |
 | `tentative` | gold badge — date or details unverified |
 | `cancelled` | red "Annulé / Cancelled" badge; **hidden from Upcoming** |
+
+**List / Calendar.** The guide has two views of the same filtered set. The
+calendar is a twelve-month season overview rather than a month-at-a-time
+calendar: the season clusters into May–October, so paging through empty
+winter months would hide its shape, and seeing the whole year at once is
+what surfaces weekend collisions between circuits. Teal = a tournament,
+gold = more than one that day, outline = today. Click a day to see its
+cards. Month-only and undated events can't sit on a grid, so they appear as
+a note under their month and in a strip below the calendar. The chosen view
+is remembered in `localStorage`.
+
+`initEventList` takes an `onRender({ filtered, renderCard })` callback — that
+is how the calendar stays in sync with the filters without duplicating any
+of them.
 
 **Upcoming / Past / All.** The guide defaults to *Upcoming* so a visitor sees
 what they can still fish. Past events stay in the file (dimmed, badged
