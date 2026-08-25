@@ -80,7 +80,7 @@ img { max-width: 100%; display: block; }
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 16px;
   padding: 14px 24px;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -90,6 +90,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-right: auto;
   color: var(--white);
   font-family: "Georgia", serif;
   font-size: 1.25rem;
@@ -137,6 +138,37 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Language switcher (FR / EN) */
+.lang-switch {
+  display: inline-flex;
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.lang-switch button {
+  background: transparent;
+  border: 0;
+  color: rgba(255,255,255,0.72);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.lang-switch button:hover { color: var(--white); background: rgba(255,255,255,0.1); }
+.lang-switch button.active {
+  background: var(--gold-500);
+  color: var(--navy-950);
+}
+
 .nav-toggle {
   display: none;
   background: none;
@@ -144,11 +176,15 @@ img { max-width: 100%; display: block; }
   border-radius: 8px;
   padding: 8px 10px;
   color: var(--white);
+  font-family: inherit;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
 @media (max-width: 780px) {
-  .nav-toggle { display: inline-flex; align-items: center; gap: 6px; }
+  .nav-toggle { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+  .brand { font-size: 1.05rem; }
+  .brand-logo { width: 36px; height: 36px; }
   .nav-links {
     position: absolute;
     top: 100%;
@@ -162,6 +198,14 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 8px; }
+}
+
+/* On the narrowest screens the crest carries the wordmark on its own. */
+@media (max-width: 560px) {
+  .brand > span { display: none; }
+  .nav { gap: 10px; }
+  .nav-toggle { font-size: 0; padding: 9px 11px; }
+  .nav-toggle::before { content: "☰"; font-size: 1rem; }
 }
 
 /* ---------- Hero ---------- */

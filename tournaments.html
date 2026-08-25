@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Québec Tournament Guide — Pied Marin Fishing</title>
-<meta name="description" content="A community directory of fishing tournaments and competitive angling events across Québec.">
+<title data-i18n-text="tournaments.title">Guide des tournois au Québec — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="tournaments.desc" content="Un répertoire communautaire des tournois de pêche au Québec.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -14,78 +14,74 @@
 <header class="site-header">
   <nav class="nav">
     <a class="brand" href="index.html">
-      <img src="assets/img/logo.png" alt="Pied Marin Fishing crest" class="brand-logo">
-      <span>Pied Marin Fishing<span class="brand-sub">Team Québec</span></span>
+      <img src="assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson Pied Marin Fishing">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
     </a>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="social.html">Social</a></li>
-      <li><a href="calendar.html">Team Calendar</a></li>
-      <li><a href="tournaments.html" aria-current="page">Tournament Guide</a></li>
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
+      <li><a href="tournaments.html" aria-current="page" data-i18n="nav.guide">Guide des tournois</a></li>
     </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
   </nav>
 </header>
 
 <div class="page-header">
   <div class="container">
-    <h1>Québec Tournament Guide</h1>
-    <p>A community directory of fishing tournaments and competitive angling events around Québec — maintained by Pied Marin Fishing as a resource for the whole tournament trail, not just our own team.</p>
+    <h1 data-i18n="tournaments.h1">Guide des tournois au Québec</h1>
+    <p data-i18n="tournaments.intro">Un répertoire communautaire des tournois de pêche et des activités compétitives au Québec — maintenu par Pied Marin Fishing comme ressource pour tous les pêcheurs de tournoi.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice">
-      We hand-checked the events below against organizer sites, but tournament dates change — always confirm directly with the organizer before you plan a trip. Know an event we're missing? <a href="mailto:info@piedmarinfishing.ca">Send it to us</a> and we'll add it.
+    <div class="notice" data-i18n="tournaments.notice">
+      Nous avons vérifié les événements ci-dessous auprès des organisateurs, mais les dates changent — confirmez toujours directement avec l'organisateur. Un événement manque à l'appel? <a href="mailto:info@piedmarinfishing.ca">Écrivez-nous</a> et nous l'ajouterons.
     </div>
 
     <div class="filters">
-      <select id="month-filter">
-        <option value="">All months</option>
-        <option value="0">January</option><option value="1">February</option>
-        <option value="2">March</option><option value="3">April</option>
-        <option value="4">May</option><option value="5">June</option>
-        <option value="6">July</option><option value="7">August</option>
-        <option value="8">September</option><option value="9">October</option>
-        <option value="10">November</option><option value="11">December</option>
-      </select>
-      <select id="region-filter">
-        <option value="">All regions</option>
-      </select>
-      <input id="search-filter" type="text" placeholder="Search by name, lake, species…">
+      <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
+      <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
+      <input id="search-filter" type="text" data-i18n-placeholder="filters.searchGuide" placeholder="Nom, plan d'eau, espèce…">
       <span class="result-count" id="result-count"></span>
     </div>
 
     <div id="event-list" class="event-list"></div>
-    <div id="empty-state" class="empty-state" style="display:none;">No tournaments match your filters.</div>
+    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="filters.empty">Aucun tournoi ne correspond à vos filtres.</div>
   </div>
 </section>
 
 <section class="alt">
   <div class="container">
     <div class="section-head">
-      <span class="kicker">Keep Digging</span>
-      <h2>More live tournament calendars</h2>
-      <p>These sites maintain their own continuously-updated Québec tournament listings — worth checking alongside our directory.</p>
+      <span class="kicker" data-i18n="tournaments.keepDigging">Pour aller plus loin</span>
+      <h2 data-i18n="tournaments.moreTitle">Autres calendriers de tournois</h2>
+      <p data-i18n="tournaments.moreBody">Ces sites maintiennent leurs propres listes de tournois québécois, mises à jour en continu.</p>
     </div>
     <ul class="resource-list">
       <li>
         <a href="https://pecheurquebec.com/tournois-de-peche-quebec" target="_blank" rel="noopener">Pêcheur Québec — Tournois de pêche Québec</a>
-        <div class="src-meta">Province-wide tournament listing, regularly updated.</div>
+        <div class="src-meta" data-i18n="tournaments.res1">Répertoire provincial des tournois, mis à jour régulièrement.</div>
       </li>
       <li>
         <a href="https://www.surlespot.ca/peche" target="_blank" rel="noopener">Sur Le Spot — Activités et événements de pêche</a>
-        <div class="src-meta">Fishing activities and events calendar for Québec.</div>
+        <div class="src-meta" data-i18n="tournaments.res2">Calendrier d'activités et d'événements de pêche au Québec.</div>
       </li>
       <li>
-        <a href="https://www.bigbasschallengequebec.com/2026-programmation" target="_blank" rel="noopener">Big Bass Challenge Québec — 2026 Programmation</a>
-        <div class="src-meta">Official schedule for the Big Bass Challenge circuit.</div>
+        <a href="https://www.bigbasschallengequebec.com/2026-programmation" target="_blank" rel="noopener">Big Bass Challenge Québec — Programmation 2026</a>
+        <div class="src-meta" data-i18n="tournaments.res3">Calendrier officiel du circuit Big Bass Challenge.</div>
       </li>
       <li>
         <a href="https://canadianbass.com/" target="_blank" rel="noopener">Canadian Bass Federation</a>
-        <div class="src-meta">National bass circuit with events relevant to Québec anglers.</div>
+        <div class="src-meta" data-i18n="tournaments.res4">Circuit national d'achigan avec des événements pertinents pour les pêcheurs québécois.</div>
       </li>
     </ul>
   </div>
@@ -94,13 +90,14 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
-      <span>© <span data-year></span> Pied Marin Fishing</span>
-      <span><a href="index.html">Back to home</a></span>
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="index.html" data-i18n="footer.backHome">Retour à l'accueil</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script src="assets/js/events.js"></script>
 <script>
   initEventList({
@@ -112,7 +109,7 @@
     regionFilterSelector: "#region-filter",
     searchSelector: "#search-filter",
     badgeField: "species",
-    linkText: "Learn More",
+    linkTextKey: "events.learnMore",
   });
 </script>
 </body>

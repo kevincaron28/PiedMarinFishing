@@ -20,6 +20,60 @@ No build step, no framework, no dependencies — plain HTML/CSS/JS. Every
 content-heavy part of the site reads from a JSON file in `data/` so you can
 update the site without touching the markup.
 
+## Bilingual (FR / EN)
+
+The site is **French by default** with an EN toggle in the header. The
+visitor's choice is remembered in `localStorage`, so it carries across pages
+and return visits. You can also link straight to a language with
+`?lang=en` / `?lang=fr`.
+
+There are two kinds of translated text:
+
+**1. Interface strings** live in `data/i18n.json`, keyed by language:
+
+```json
+{ "fr": { "nav.team": "Équipe" }, "en": { "nav.team": "Team" } }
+```
+
+Markup opts in with an attribute naming the key:
+
+| Attribute | Translates |
+|---|---|
+| `data-i18n` | the element's inner HTML (links/`<code>` allowed in the string) |
+| `data-i18n-text` | the element's text only (used for `<title>`) |
+| `data-i18n-placeholder` | an input's placeholder |
+| `data-i18n-content` | a meta tag's `content` |
+| `data-i18n-alt` / `data-i18n-aria-label` | `alt` / `aria-label` |
+
+`{year}` in a string is replaced with the current year. Counts use
+`…count.one` / `…count.other` — the plural rule differs per language
+(French treats 0 as singular, English doesn't) and is handled for you.
+
+The HTML ships with French copy inline as the fallback, so if the JSON ever
+fails to load the site still reads correctly in French.
+
+**2. Content in data files** — any translatable field accepts *either* a
+plain string (identical in both languages, e.g. a proper noun) *or* an
+object:
+
+```json
+"species": { "fr": "Doré", "en": "Walleye" },
+"organizer": "Pro-Bass Canada"
+```
+
+Mix the two freely. Fields supporting this: `name`, `location`, `region`,
+`species`, `organizer`, `type`, `notes` on events; `role`, `bio`, `quote` on
+team members; `name`, `handle` on socials.
+
+Two things are deliberate: the region filter keys off the **French** value
+internally, so switching language never resets the visitor's selection; and
+search matches against *all* translations, so a French query still finds an
+English-only entry.
+
+To add a language, add a third block to `data/i18n.json`, add its code to
+`SUPPORTED` in `assets/js/i18n.js`, add month names to `MONTHS` in
+`assets/js/events.js`, and add a button to the `.lang-switch` in each page.
+
 ## Editing content
 
 - **Team roster** → `data/team-members.json`. Each entry supports `name`,
@@ -32,7 +86,8 @@ update the site without touching the markup.
 - **Our schedule** → `data/team-schedule.json`.
 - **Québec tournament directory** → `data/quebec-tournaments.json`.
 
-All schedule/directory entries share this shape:
+All schedule/directory entries share this shape (any text field may be a
+plain string or a `{ "fr": …, "en": … }` pair — see **Bilingual** above):
 
 ```json
 {
@@ -41,10 +96,10 @@ All schedule/directory entries share this shape:
   "startDate": "2026-08-28",
   "endDate": "2026-08-30",
   "region": "Montérégie",
-  "location": "Lake / venue",
-  "species": "Bass",
+  "location": { "fr": "Plan d'eau", "en": "Lake / venue" },
+  "species": { "fr": "Achigan", "en": "Bass" },
   "organizer": "Who runs it",
-  "type": "Circuit Stop",
+  "type": { "fr": "Étape de circuit", "en": "Circuit Stop" },
   "status": "confirmed",
   "link": "https://...",
   "notes": "Anything worth flagging"
