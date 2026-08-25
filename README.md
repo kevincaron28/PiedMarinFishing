@@ -85,10 +85,26 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `events.js` | upcoming-event lists (calendar + tournament guide) |
 | `history.js` | results rendering **and** the shared `PMF_HISTORY` store |
 | `team.js` | roster cards (reads `PMF_HISTORY` for the record strip) |
+| `video.js` | homepage featured video (click-to-load facade) |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
 results data.
+
+## Logo assets
+
+| File | Use |
+|---|---|
+| `logo.png` | full crest on its cream paper — nav badge |
+| `favicon.png` | browser tab / touch icon |
+| `logo-mark-light.png` | white crest, transparent background — for dark surfaces |
+| `logo-mark-dark.png` | navy crest, transparent background — for light surfaces |
+
+The two `logo-mark-*` files are knockouts generated from `logo.png` (the
+cream paper turned transparent, the ink recoloured). They're used as faint
+watermarks behind the hero copy, behind the initials on each team card, and
+in the video placeholder. If you replace the crest, regenerate both marks so
+they stay in sync.
 
 ## Editing content
 
@@ -103,6 +119,12 @@ results data.
 - **Our schedule** → `data/team-schedule.json`.
 - **Québec tournament directory** → `data/quebec-tournaments.json`.
 - **Past results** → `data/tournament-history.json`.
+- **Featured video** → `data/featured-video.json`. Paste a YouTube video id
+  (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
+  links are all parsed) into `videoId` and the homepage placeholder becomes
+  the real clip. The homepage shows a click-to-load thumbnail rather than a
+  live embed, so nothing is requested from YouTube until a visitor presses
+  play, and the player then loads from `youtube-nocookie.com`.
 
 ### Members ↔ results
 

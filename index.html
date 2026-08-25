@@ -52,12 +52,11 @@
 
 <section>
   <div class="container">
-    <div class="grid grid-4">
-      <div class="stat-card"><div class="num" data-i18n="index.stat1num">3</div><div class="label" data-i18n="index.stat1label">Pêcheurs dans l'équipe</div></div>
-      <div class="stat-card"><div class="num" data-i18n="index.stat2num">5</div><div class="label" data-i18n="index.stat2label">Tournois par saison</div></div>
-      <div class="stat-card"><div class="num" data-i18n="index.stat3num">2</div><div class="label" data-i18n="index.stat3label">Espèces ciblées</div></div>
-      <div class="stat-card"><div class="num" data-i18n="index.stat4num">1</div><div class="label" data-i18n="index.stat4label">Province d'attache</div></div>
+    <div class="section-head">
+      <span class="kicker" data-i18n="video.kicker">Sur notre chaîne</span>
+      <h2 data-i18n="video.title">Notre dernière vidéo</h2>
     </div>
+    <div id="featured-video"></div>
   </div>
 </section>
 
@@ -135,6 +134,11 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/video.js"></script>
+<script>
+  initFeaturedVideo("#featured-video");
+</script>
 </body>
 </html>
