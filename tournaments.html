@@ -46,10 +46,11 @@
 <section>
   <div class="container">
     <div class="notice" data-i18n="tournaments.notice">
-      Nous avons vérifié les événements ci-dessous auprès des organisateurs, mais les dates changent — confirmez toujours directement avec l'organisateur. Un événement manque à l'appel? <a href="mailto:info@piedmarinfishing.ca">Écrivez-nous</a> et nous l'ajouterons.
+      Affichage des événements <strong>à venir</strong> par défaut — basculez le filtre sur « Passés » ou « Tous » pour voir la saison complète. Les dates changent : confirmez toujours auprès de l'organisateur. Un événement manque à l'appel? <a href="mailto:info@piedmarinfishing.ca">Écrivez-nous</a>.
     </div>
 
     <div class="filters">
+      <select id="when-filter" data-i18n-aria-label="filters.when.upcoming" aria-label="À venir"></select>
       <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
       <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
       <input id="search-filter" type="text" data-i18n-placeholder="filters.searchGuide" placeholder="Nom, plan d'eau, espèce…">
@@ -85,6 +86,14 @@
         <a href="https://canadianbass.com/" target="_blank" rel="noopener">Canadian Bass Federation</a>
         <div class="src-meta" data-i18n="tournaments.res4">Circuit national d'achigan avec des événements pertinents pour les pêcheurs québécois.</div>
       </li>
+      <li>
+        <a href="http://www.pechearccoteaudulac.com/excellence-bass-2/" target="_blank" rel="noopener">APC les Rapides de Coteau-du-Lac — Excellence Bass</a>
+        <div class="src-meta" data-i18n="tournaments.res5">Circuit Excellence Bass et tournois du club de Coteau-du-Lac.</div>
+      </li>
+      <li>
+        <a href="https://fedecp.com/tournoi_peche" target="_blank" rel="noopener">Fédération québécoise des chasseurs et pêcheurs</a>
+        <div class="src-meta" data-i18n="tournaments.res6">Programme jeunesse et championnat provincial de la Fédération québécoise des chasseurs et pêcheurs.</div>
+      </li>
     </ul>
   </div>
 </section>
@@ -110,6 +119,7 @@
     countSelector: "#result-count",
     monthFilterSelector: "#month-filter",
     regionFilterSelector: "#region-filter",
+    whenFilterSelector: "#when-filter",
     searchSelector: "#search-filter",
     badgeField: "species",
     linkTextKey: "events.learnMore",

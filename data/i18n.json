@@ -59,8 +59,8 @@
     "tournaments.title": "Guide des tournois au Québec — Pied Marin Fishing",
     "tournaments.desc": "Un répertoire communautaire des tournois de pêche et des événements de pêche compétitive partout au Québec.",
     "tournaments.h1": "Guide des tournois au Québec",
-    "tournaments.intro": "Un répertoire communautaire des tournois de pêche et des activités compétitives au Québec — maintenu par Pied Marin Fishing comme ressource pour tous les pêcheurs de tournoi, pas seulement notre équipe.",
-    "tournaments.notice": "Nous avons vérifié les événements ci-dessous auprès des organisateurs, mais les dates changent — confirmez toujours directement avec l'organisateur avant de planifier un déplacement. Un événement manque à l'appel? <a href=\"mailto:info@piedmarinfishing.ca\">Écrivez-nous</a> et nous l'ajouterons.",
+    "tournaments.intro": "Un répertoire communautaire des tournois de pêche et des activités compétitives au Québec — avec une couverture serrée de la Montérégie, du Saint-Laurent, du Richelieu et du lac Champlain. Maintenu par Pied Marin Fishing comme ressource pour tous les pêcheurs de tournoi, pas seulement notre équipe.",
+    "tournaments.notice": "Affichage des événements <strong>à venir</strong> par défaut — basculez le filtre sur « Passés » ou « Tous » pour voir la saison complète et anticiper les éditions de l'an prochain. Les dates changent : confirmez toujours auprès de l'organisateur avant de vous déplacer. Un événement manque à l'appel? <a href=\"mailto:info@piedmarinfishing.ca\">Écrivez-nous</a>.",
     "tournaments.keepDigging": "Pour aller plus loin",
     "tournaments.moreTitle": "Autres calendriers de tournois",
     "tournaments.moreBody": "Ces sites maintiennent leurs propres listes de tournois québécois, mises à jour en continu — à consulter en complément de notre répertoire.",
@@ -155,7 +155,14 @@
     "merch.loadError": "Impossible de charger la boutique.",
     "merch.helpTitle": "Une question sur une commande?",
     "merch.helpBody": "Écrivez-nous et nous vous répondrons avec les tailles disponibles et les modalités de paiement et de livraison.",
-    "merch.helpCta": "Nous écrire →"
+    "merch.helpCta": "Nous écrire →",
+    "filters.when.upcoming": "À venir",
+    "filters.when.past": "Passés",
+    "filters.when.all": "Tous",
+    "events.cancelled": "Annulé",
+    "events.past": "Passé",
+    "tournaments.res5": "Circuit Excellence Bass et tournois du club de Coteau-du-Lac.",
+    "tournaments.res6": "Programme jeunesse et championnat provincial de la Fédération québécoise des chasseurs et pêcheurs."
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -217,8 +224,8 @@
     "tournaments.title": "Québec Tournament Guide — Pied Marin Fishing",
     "tournaments.desc": "A community directory of fishing tournaments and competitive angling events across Québec.",
     "tournaments.h1": "Québec Tournament Guide",
-    "tournaments.intro": "A community directory of fishing tournaments and competitive angling events around Québec — maintained by Pied Marin Fishing as a resource for the whole tournament trail, not just our own team.",
-    "tournaments.notice": "We hand-checked the events below against organizer sites, but tournament dates change — always confirm directly with the organizer before you plan a trip. Know an event we're missing? <a href=\"mailto:info@piedmarinfishing.ca\">Send it to us</a> and we'll add it.",
+    "tournaments.intro": "A community directory of fishing tournaments and competitive angling events across Québec — with close coverage of the Montérégie, the St. Lawrence, the Richelieu and Lake Champlain. Maintained by Pied Marin Fishing as a resource for the whole tournament trail, not just our own team.",
+    "tournaments.notice": "Showing <strong>upcoming</strong> events by default — switch the filter to \"Past\" or \"All\" to see the full season and plan for next year's editions. Dates change: always confirm with the organizer before travelling. Know an event we're missing? <a href=\"mailto:info@piedmarinfishing.ca\">Send it to us</a>.",
     "tournaments.keepDigging": "Keep Digging",
     "tournaments.moreTitle": "More live tournament calendars",
     "tournaments.moreBody": "These sites maintain their own continuously-updated Québec tournament listings — worth checking alongside our directory.",
@@ -313,6 +320,13 @@
     "merch.loadError": "Could not load the shop.",
     "merch.helpTitle": "Question about an order?",
     "merch.helpBody": "Drop us a line and we'll get back to you with available sizes, payment and delivery details.",
-    "merch.helpCta": "Get in touch →"
+    "merch.helpCta": "Get in touch →",
+    "filters.when.upcoming": "Upcoming",
+    "filters.when.past": "Past",
+    "filters.when.all": "All",
+    "events.cancelled": "Cancelled",
+    "events.past": "Past",
+    "tournaments.res5": "Excellence Bass circuit and the Coteau-du-Lac club's tournaments.",
+    "tournaments.res6": "Youth program and provincial championship from the Fédération québécoise des chasseurs et pêcheurs."
   }
 }

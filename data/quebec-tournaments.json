@@ -24,78 +24,26 @@
     "status": "tentative",
     "link": "https://muskiescanada.ca/brochet2026/",
     "notes": {
-      "fr": "Tournoi annuel à l'ouverture du brochet, en remise à l'eau et mesuré à la règle (les deux plus longs brochets). L'édition 2025 s'est tenue le samedi 3 mai. Consultez l'organisateur pour la date de la prochaine édition.",
-      "en": "Annual pike-opener tournament, catch-photo-release and measured by ruler (two longest pike combined). The 2025 edition was held on Saturday 3 May. Check with the organizer for the next edition's date."
+      "fr": "À l'ouverture du brochet, remise à l'eau et mesuré à la règle (les deux plus longs brochets). L'édition 2025 s'est tenue le samedi 3 mai. Confirmez la prochaine date avec l'organisateur.",
+      "en": "At the pike opener, catch-photo-release measured by ruler (two longest pike combined). The 2025 edition was held Saturday 3 May. Confirm the next date with the organizer."
     }
   },
   {
-    "id": "big-bass-challenge-2026",
-    "name": "Big Bass Challenge Québec — 11e édition",
-    "startDate": "2026-10-10",
-    "endDate": "2026-10-10",
-    "region": {
-      "fr": "Frontière Québec–Ontario",
-      "en": "Québec–Ontario border"
-    },
-    "location": {
-      "fr": "Lac Saint-François, secteur Cornwall",
-      "en": "Lac Saint-François, Cornwall area"
-    },
-    "species": {
-      "fr": "Achigan",
-      "en": "Bass"
-    },
-    "organizer": "Big Bass Challenge Québec",
-    "type": {
-      "fr": "Étape de circuit",
-      "en": "Circuit Stop"
-    },
-    "status": "confirmed",
-    "link": "https://www.bigbasschallengequebec.com/2026-programmation",
-    "notes": {
-      "fr": "Vérifié sur la page de programmation 2026 de l'organisateur. Confirmez toujours les détails finaux sur le site officiel avant de vous inscrire.",
-      "en": "Verified via the organizer's 2026 programmation page. Always confirm final details on the official site before registering."
-    }
-  },
-  {
-    "id": "challenge-carpe-quebec-2026",
-    "name": "Challenge Carpe Québec (CCQ)",
-    "startDate": "2026-08-28",
-    "endDate": "2026-08-30",
-    "region": "Québec",
-    "location": {
-      "fr": "Voir l'inscription officielle pour le lieu",
-      "en": "See official listing for venue"
-    },
-    "species": {
-      "fr": "Carpe",
-      "en": "Carp"
-    },
-    "organizer": "Team Carpe Aventure",
-    "type": {
-      "fr": "Étape de circuit",
-      "en": "Circuit Stop"
-    },
-    "status": "confirmed",
-    "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
-    "notes": {
-      "fr": "Dates vérifiées sur la page de l'événement de l'organisateur. Confirmez le lieu et les modalités d'inscription directement avec l'organisateur.",
-      "en": "Verified date range from the organizer's event page. Confirm venue and entry details directly with the organizer."
-    }
-  },
-  {
-    "id": "pro-bass-canada",
-    "name": "Circuit Pro-Bass Canada",
+    "id": "pro-bass-pec-heure",
+    "name": "Pro-Bass Canada — PEC-HEURE",
     "startDate": "",
     "endDate": "",
-    "region": "Québec",
+    "region": {
+      "fr": "Montérégie / Lac Champlain",
+      "en": "Montérégie / Lake Champlain"
+    },
     "location": {
-      "fr": "Plusieurs étapes à travers la province",
-      "en": "Multiple stops across the province"
+      "fr": "Venise-en-Québec (baie Missisquoi) et rivière Richelieu",
+      "en": "Venise-en-Québec (Missisquoi Bay) and the Richelieu River"
     },
     "species": {
-      "fr": "Achigan",
-      "en": "Bass"
+      "fr": "Achigan, brochet, doré, perchaude",
+      "en": "Bass, pike, walleye, perch"
     },
     "organizer": "Pro-Bass Canada",
     "type": {
@@ -103,10 +51,43 @@
       "en": "Circuit"
     },
     "status": "tentative",
+    "fee": {
+      "fr": "25 $ / personne",
+      "en": "$25 / person"
+    },
     "link": "https://www.surlespot.com/evenement/22-pro-bass-canada-tournoi-pec-heure-1",
     "notes": {
-      "fr": "Circuit pro-am récurrent avec plusieurs étapes durant la saison. Les dates exactes 2026 n'ont pas été confirmées lors de nos recherches — consultez l'organisateur pour l'horaire à jour.",
-      "en": "Recurring pro-am bass circuit with several stops through the season. Exact 2026 stop dates were not confirmed during our research — check the listing or organizer for the current schedule."
+      "fr": "Événements achigan en prise-photo-remise à l'eau, historiquement lancés de Venise-en-Québec et de la rivière Richelieu. Aucune date 2026 confirmée par une source officielle — vérifiez auprès de probasscanada.com (514-926-2277).",
+      "en": "Catch-photo-release bass events, historically launched from Venise-en-Québec and the Richelieu River. No 2026 dates confirmed from an official source — check probasscanada.com (514-926-2277)."
+    }
+  },
+  {
+    "id": "coupe-quebec-peche-sportive",
+    "name": "Coupe Québec Pêche Sportive",
+    "startDate": "",
+    "endDate": "",
+    "region": "Québec",
+    "location": {
+      "fr": "Lieu à confirmer",
+      "en": "Venue to be confirmed"
+    },
+    "species": {
+      "fr": "Multi-espèces",
+      "en": "Multi-species"
+    },
+    "organizer": {
+      "fr": "Championnat provincial",
+      "en": "Provincial championship"
+    },
+    "type": {
+      "fr": "Championnat",
+      "en": "Championship"
+    },
+    "status": "tentative",
+    "link": "https://pecheurquebec.com/tournois-de-peche-quebec",
+    "notes": {
+      "fr": "Championnat provincial généralement tenu entre août et septembre. Date et lieu 2026 non confirmés par une source primaire — référence d'agrégateur seulement.",
+      "en": "Provincial championship generally held between August and September. 2026 date and venue not confirmed from a primary source — aggregator reference only."
     }
   },
   {
@@ -134,8 +115,508 @@
     "status": "tentative",
     "link": "https://lenord.ca/2025/08/28/tournoi-de-peche-walleye-challenge/",
     "notes": {
-      "fr": "Historiquement tenu à la fin août. La date exacte 2026 n'a pas été confirmée lors de nos recherches — vérifiez localement avant de planifier un déplacement.",
-      "en": "Historically held in late August. Exact 2026 date not confirmed during our research — verify locally before planning a trip."
+      "fr": "Historiquement tenu à la fin août. Date exacte 2026 non confirmée — vérifiez localement avant de planifier un déplacement.",
+      "en": "Historically held in late August. Exact 2026 date not confirmed — verify locally before planning a trip."
+    }
+  },
+  {
+    "id": "econobass-2026",
+    "name": "EconoBass",
+    "startDate": "",
+    "endDate": "",
+    "region": "Québec",
+    "location": "",
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "EconoBass",
+    "type": {
+      "fr": "Circuit",
+      "en": "Circuit"
+    },
+    "status": "cancelled",
+    "link": "",
+    "fee": "",
+    "notes": {
+      "fr": "Saison 2026 annulée. L'organisateur cite le manque d'inscriptions d'équipes. Inscrit ici pour éviter de planifier autour d'un circuit inactif — surveillez econobass.com au cas où il reprendrait en 2027.",
+      "en": "2026 season cancelled. The organizer cites a lack of team registrations. Listed here so nobody plans around an inactive circuit — watch econobass.com in case it revives for 2027."
+    }
+  },
+  {
+    "id": "peche-glace-lachine-2026",
+    "name": {
+      "fr": "Pêche sur glace — Marina de Lachine",
+      "en": "Ice Fishing — Marina de Lachine"
+    },
+    "startDate": "2026-01-24",
+    "endDate": "2026-01-24",
+    "region": {
+      "fr": "Montréal / Lac Saint-Louis",
+      "en": "Montréal / Lac Saint-Louis"
+    },
+    "location": {
+      "fr": "Marina de Lachine, Montréal",
+      "en": "Marina de Lachine, Montréal"
+    },
+    "species": {
+      "fr": "Brochet, perchaude",
+      "en": "Pike, yellow perch"
+    },
+    "organizer": {
+      "fr": "François Larocque — Big Bass Québec",
+      "en": "François Larocque — Big Bass Québec"
+    },
+    "type": {
+      "fr": "Pêche blanche",
+      "en": "Ice Fishing"
+    },
+    "status": "confirmed",
+    "link": "https://en.bigbasschallengequebec.com/2026-programmation",
+    "notes": {
+      "fr": "2e édition. Défi du plus long brochet / de la plus longue perchaude. Environ 45 min de Napierville. Frais non publiés — vérifiez auprès de Big Bass Québec.",
+      "en": "2nd edition. Longest pike / longest yellow perch challenge. About 45 min from Napierville. Fee not published — check with Big Bass Québec."
+    }
+  },
+  {
+    "id": "brochet-gue-lachine-2026",
+    "name": {
+      "fr": "Brochet à gué — Marina de Lachine",
+      "en": "Wading for Pike — Marina de Lachine"
+    },
+    "startDate": "2026-05",
+    "endDate": "2026-05",
+    "region": {
+      "fr": "Montréal / Lac Saint-Louis",
+      "en": "Montréal / Lac Saint-Louis"
+    },
+    "location": {
+      "fr": "Marina de Lachine, Montréal",
+      "en": "Marina de Lachine, Montréal"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
+    "organizer": {
+      "fr": "François Larocque — Big Bass Québec",
+      "en": "François Larocque — Big Bass Québec"
+    },
+    "type": {
+      "fr": "Tournoi à gué",
+      "en": "Wading Tournament"
+    },
+    "status": "tentative",
+    "link": "https://en.bigbasschallengequebec.com/2026-programmation",
+    "notes": {
+      "fr": "2e édition. Défi du plus gros brochet, à gué / de la rive. Le programme n'annonce qu'un samedi de mai sans date précise — confirmez auprès de l'organisateur.",
+      "en": "2nd edition. Biggest-pike challenge, wading or from shore. The program lists only a Saturday in May without a precise date — confirm with the organizer."
+    }
+  },
+  {
+    "id": "fete-de-la-peche-2026",
+    "name": {
+      "fr": "Fête de la pêche",
+      "en": "Fête de la pêche (free fishing weekend)"
+    },
+    "startDate": "2026-06-05",
+    "endDate": "2026-06-07",
+    "region": "Québec",
+    "location": {
+      "fr": "Partout au Québec — près de 200 organismes hôtes",
+      "en": "Province-wide — nearly 200 host organizations"
+    },
+    "species": {
+      "fr": "Multi-espèces",
+      "en": "Multi-species"
+    },
+    "organizer": {
+      "fr": "Gouvernement du Québec (MELCCFP)",
+      "en": "Gouvernement du Québec (MELCCFP)"
+    },
+    "type": {
+      "fr": "Événement familial",
+      "en": "Family Event"
+    },
+    "status": "confirmed",
+    "fee": {
+      "fr": "Gratuit",
+      "en": "Free"
+    },
+    "link": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/fete-peche",
+    "notes": {
+      "fr": "26e édition. Pêchez sans permis provincial pendant trois jours (sauf le saumon atlantique). Aucune inscription. Plusieurs sites offrent un volet Pêche en herbe pour les 6-17 ans.",
+      "en": "26th edition. Fish without a provincial licence for three days (Atlantic salmon excepted). No registration. Many sites include a Pêche en herbe youth component for ages 6-17."
+    }
+  },
+  {
+    "id": "big-bass-lavaltrie-2026",
+    "name": {
+      "fr": "Big Bass Challenge — Lavaltrie",
+      "en": "Big Bass Challenge — Lavaltrie"
+    },
+    "startDate": "2026-06-20",
+    "endDate": "2026-06-20",
+    "region": "Lanaudière",
+    "location": {
+      "fr": "Fleuve Saint-Laurent, quai municipal de Lavaltrie",
+      "en": "St. Lawrence River, Lavaltrie municipal wharf"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Club de pêche Big Bass Québec",
+      "en": "Club de pêche Big Bass Québec"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://www.bigbasschallengequebec.com/2026-programmation",
+    "notes": {
+      "fr": "13e édition. Environ 1 h 15 de Napierville.",
+      "en": "13th edition. About 1 h 15 from Napierville."
+    }
+  },
+  {
+    "id": "excellence-bass-1-2026",
+    "name": {
+      "fr": "Excellence Bass — Étape 1 (Lac Saint-Louis)",
+      "en": "Excellence Bass — Stop 1 (Lac Saint-Louis)"
+    },
+    "startDate": "2026-06-21",
+    "endDate": "2026-06-21",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Descente du parc Bourcier, Melocheville (Beauharnois)",
+      "en": "Parc Bourcier launch, Melocheville (Beauharnois)"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "APC les Rapides de Coteau-du-Lac",
+      "en": "APC les Rapides de Coteau-du-Lac"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "fee": {
+      "fr": "910 $ / équipe (saison complète)",
+      "en": "$910 / team (full season)"
+    },
+    "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
+    "notes": {
+      "fr": "Circuit en équipe, 2 pêcheurs par bateau, maximum 25 équipes. Le 910 $ couvre les quatre étapes de la saison; 25 $ / pêcheur de plus pour les non-membres. Contact : Bertin Desrosiers, 450-763-0179.",
+      "en": "Team circuit, 2 anglers per boat, maximum 25 teams. The $910 covers all four season stops; non-members add $25 per angler. Contact: Bertin Desrosiers, 450-763-0179."
+    }
+  },
+  {
+    "id": "jeux-provinciaux-peche-2026",
+    "name": {
+      "fr": "Jeux provinciaux de pêche",
+      "en": "Provincial Fishing Games"
+    },
+    "startDate": "2026-06-27",
+    "endDate": "2026-06-28",
+    "region": "Estrie",
+    "location": {
+      "fr": "Campus international Massawippi et plage Massawippi",
+      "en": "Campus international Massawippi and Massawippi beach"
+    },
+    "species": {
+      "fr": "Multi-espèces",
+      "en": "Multi-species"
+    },
+    "organizer": {
+      "fr": "Fédération québécoise des chasseurs et pêcheurs",
+      "en": "Fédération québécoise des chasseurs et pêcheurs"
+    },
+    "type": {
+      "fr": "Championnat jeunesse",
+      "en": "Youth Championship"
+    },
+    "status": "confirmed",
+    "link": "https://fedecp.com/tournoi_peche",
+    "notes": {
+      "fr": "3e édition. Pour les jeunes de 12 à 16 ans représentant leur région; arrivée le 26 juin. Environ 1 h 30 de Napierville.",
+      "en": "3rd edition. For youth aged 12-16 representing their region; arrival on 26 June. About 1 h 30 from Napierville."
+    }
+  },
+  {
+    "id": "excellence-bass-2-2026",
+    "name": {
+      "fr": "Excellence Bass — Étape 2 (Lac des Deux Montagnes)",
+      "en": "Excellence Bass — Stop 2 (Lac des Deux Montagnes)"
+    },
+    "startDate": "2026-07-05",
+    "endDate": "2026-07-05",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Descente de la Pointe-Séguin, Rigaud",
+      "en": "Pointe-Séguin launch, Rigaud"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "APC les Rapides de Coteau-du-Lac",
+      "en": "APC les Rapides de Coteau-du-Lac"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
+    "notes": {
+      "fr": "Deuxième des quatre étapes du circuit Excellence Bass. Environ 1 h de Napierville.",
+      "en": "Second of the four Excellence Bass circuit stops. About 1 h from Napierville."
+    }
+  },
+  {
+    "id": "big-bag-st-louis-2026",
+    "name": {
+      "fr": "Big Bag Challenge — Lac Saint-Louis",
+      "en": "Big Bag Challenge — Lac Saint-Louis"
+    },
+    "startDate": "2026-07-25",
+    "endDate": "2026-07-25",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Parc Bourcier, Melocheville / Beauharnois",
+      "en": "Parc Bourcier, Melocheville / Beauharnois"
+    },
+    "species": {
+      "fr": "Achigan, doré",
+      "en": "Bass, walleye"
+    },
+    "organizer": {
+      "fr": "Club de pêche Big Bass Québec",
+      "en": "Club de pêche Big Bass Québec"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://www.bigbasschallengequebec.com/2026-st-louis-info",
+    "notes": {
+      "fr": "7e édition, 7 h à 15 h. Plus grosse bourriche d'achigans et / ou de dorés sur une journée de 8 h, environ 48 équipes. 12 bourses en argent (1re 1 000 $ par catégorie, lunker 300 $). Stationnement 20 $ comptant sur place. À noter : la page de l'organisateur se contredit sur la limite de dorés (2 ou 3) — à confirmer.",
+      "en": "7th edition, 7 am to 3 pm. Biggest bag of bass and/or walleye over an 8-hour day, about 48 teams. 12 cash purses (1st $1,000 per category, lunker $300). Parking $20 cash on site. Note: the organizer's page contradicts itself on the walleye limit (2 or 3) — confirm before fishing."
+    }
+  },
+  {
+    "id": "amical-april-marine-2026",
+    "name": {
+      "fr": "L'Amical — Club April Marine",
+      "en": "L'Amical — Club April Marine"
+    },
+    "startDate": "2026-08-01",
+    "endDate": "2026-08-01",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Lac Saint-Louis, parc Bourcier, Beauharnois",
+      "en": "Lac Saint-Louis, Parc Bourcier, Beauharnois"
+    },
+    "species": {
+      "fr": "Multi-espèces",
+      "en": "Multi-species"
+    },
+    "organizer": {
+      "fr": "Club April Marine avec Big Bass Québec",
+      "en": "Club April Marine with Big Bass Québec"
+    },
+    "type": {
+      "fr": "Événement familial",
+      "en": "Family Event"
+    },
+    "status": "confirmed",
+    "link": "https://en.bigbasschallengequebec.com/2026-club-april-info",
+    "notes": {
+      "fr": "8e édition. Format familial d'environ 7 h : plus gros poisson par espèce.",
+      "en": "8th edition. Family format over about 7 hours: biggest fish per species."
+    }
+  },
+  {
+    "id": "excellence-bass-3-2026",
+    "name": {
+      "fr": "Excellence Bass — Étape 3 (Lac Saint-François)",
+      "en": "Excellence Bass — Stop 3 (Lac Saint-François)"
+    },
+    "startDate": "2026-08-09",
+    "endDate": "2026-08-09",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Plage Saint-Zotique",
+      "en": "Saint-Zotique beach"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "APC les Rapides de Coteau-du-Lac",
+      "en": "APC les Rapides de Coteau-du-Lac"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
+    "notes": {
+      "fr": "Troisième des quatre étapes. Environ 55 min de Napierville.",
+      "en": "Third of the four stops. About 55 min from Napierville."
+    }
+  },
+  {
+    "id": "challenge-carpe-quebec-2026",
+    "name": {
+      "fr": "Challenge Carpe Québec (CCQ)",
+      "en": "Challenge Carpe Québec (CCQ)"
+    },
+    "startDate": "2026-08-28",
+    "endDate": "2026-08-30",
+    "region": "Lanaudière",
+    "location": {
+      "fr": "Pourvoirie Roger Gladu, île Dupas / Saint-Ignace-de-Loyola, lac Saint-Pierre",
+      "en": "Pourvoirie Roger Gladu, Île Dupas / Saint-Ignace-de-Loyola, Lac Saint-Pierre"
+    },
+    "species": {
+      "fr": "Carpe",
+      "en": "Carp"
+    },
+    "organizer": {
+      "fr": "Team Carpe Aventure et AFC du lac Saint-Pierre",
+      "en": "Team Carpe Aventure and the Lac Saint-Pierre AFC"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "fee": {
+      "fr": "600 $ / équipe de 2",
+      "en": "$600 / team of 2"
+    },
+    "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
+    "notes": {
+      "fr": "5e édition. 48 h de pêche de la rive, du vendredi midi au dimanche midi, 100 % remise à l'eau, camping sauvage sur votre zone. Classement « Big 4 » : poids cumulé des 4 plus grosses carpes. Bourses d'environ 3 000 $ (1re place 1 600 $). Inscriptions closes le 1er août 2026 ou une fois complet. Environ 1 h 45 à 2 h 15 de Napierville.",
+      "en": "5th edition. 48 hours of shore fishing, Friday noon to Sunday noon, 100% catch-and-release, wild camping on your zone. \"Big 4\" scoring: combined weight of the 4 largest carp. Roughly $3,000 in prizes (1st place $1,600). Registration closed 1 August 2026 or once full. About 1 h 45 to 2 h 15 from Napierville."
+    }
+  },
+  {
+    "id": "excellence-bass-finale-2026",
+    "name": {
+      "fr": "Excellence Bass — Finale",
+      "en": "Excellence Bass — Finale"
+    },
+    "startDate": "2026-08-30",
+    "endDate": "2026-08-30",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Plan d'eau déterminé par tirage",
+      "en": "Venue determined by draw"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "APC les Rapides de Coteau-du-Lac",
+      "en": "APC les Rapides de Coteau-du-Lac"
+    },
+    "type": {
+      "fr": "Finale de circuit",
+      "en": "Circuit Final"
+    },
+    "status": "confirmed",
+    "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
+    "notes": {
+      "fr": "Finale de la saison. Le plan d'eau est tiré au sort — confirmez auprès du club avant de vous déplacer.",
+      "en": "Season finale. The venue is drawn by lot — confirm with the club before travelling."
+    }
+  },
+  {
+    "id": "tournoi-invitation-st-francois-2026",
+    "name": {
+      "fr": "Tournoi Invitation — Lac Saint-François",
+      "en": "Invitational — Lac Saint-François"
+    },
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-19",
+    "region": {
+      "fr": "Frontière Québec–Ontario",
+      "en": "Québec–Ontario border"
+    },
+    "location": {
+      "fr": "Lac Saint-François, parc Lamoureux, Cornwall (Ontario)",
+      "en": "Lac Saint-François, Parc Lamoureux, Cornwall, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Club April Marine avec Big Bass Québec",
+      "en": "Club April Marine with Big Bass Québec"
+    },
+    "type": {
+      "fr": "Tournoi sur invitation",
+      "en": "Invitational"
+    },
+    "status": "confirmed",
+    "fee": {
+      "fr": "Inscription gratuite",
+      "en": "Free registration"
+    },
+    "link": "https://www.bigbasschallengequebec.com/2026-invitation-info",
+    "notes": {
+      "fr": "2e édition, 7 h à 14 h. Plus grosse bourriche de 4 achigans, équipes de 2 à 4 pêcheurs, maximum 100 équipes. 2 000 $ en bourses (1re 1 000 $, 2e 600 $, 3e 250 $, 4e 150 $). En 2025 : 71 équipes, 183 pêcheurs. Environ 1 h 15 de Napierville — prévoyez les règlements de pêche de l'Ontario et les pièces d'identité pour la frontière.",
+      "en": "2nd edition, 7 am to 2 pm. Biggest bag of 4 bass, teams of 2 to 4 anglers, maximum 100 teams. $2,000 in prizes (1st $1,000, 2nd $600, 3rd $250, 4th $150). In 2025: 71 teams, 183 anglers. About 1 h 15 from Napierville — plan for Ontario fishing regulations and border ID."
+    }
+  },
+  {
+    "id": "big-bass-cornwall-2026",
+    "name": {
+      "fr": "Big Bass Challenge — Cornwall",
+      "en": "Big Bass Challenge — Cornwall"
+    },
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-10",
+    "region": {
+      "fr": "Frontière Québec–Ontario",
+      "en": "Québec–Ontario border"
+    },
+    "location": {
+      "fr": "Lac Saint-François, descente municipale, Cornwall (Ontario)",
+      "en": "Lac Saint-François, municipal boat launch, Cornwall, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": {
+      "fr": "Club de pêche Big Bass Québec",
+      "en": "Club de pêche Big Bass Québec"
+    },
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://www.bigbasschallengequebec.com/2026-cornwall-info",
+    "notes": {
+      "fr": "11e édition. Plus gros achigan de la journée / de l'heure sur une fenêtre de 7 h 30; 8 bourses en argent basées sur environ 50 équipes. Préinscription avant le 30 septembre 2026. Prévoyez les règlements de pêche de l'Ontario et les pièces d'identité pour la frontière.",
+      "en": "11th edition. Biggest bass of the day / of the hour over a 7.5-hour window; 8 cash prizes based on about 50 teams. Pre-register before 30 September 2026. Plan for Ontario fishing regulations and border ID."
     }
   }
 ]

@@ -288,8 +288,26 @@ plain string or a `{ "fr": …, "en": … }` pair — see **Bilingual** above):
 }
 ```
 
-Leave `startDate`/`endDate` as an empty string `""` for a "date TBD" entry.
-`status: "tentative"` renders a gold badge instead of teal.
+Leave `startDate`/`endDate` as an empty string `""` for a recurring or
+date-TBC entry. Partial dates work here too: `"2026-05"` renders as MAI 2026
+when the organizer has only announced a month.
+
+`status` drives the badge and the filtering:
+
+| status | effect |
+|---|---|
+| `confirmed` | normal teal species badge |
+| `tentative` | gold badge — date or details unverified |
+| `cancelled` | red "Annulé / Cancelled" badge; **hidden from Upcoming** |
+
+**Upcoming / Past / All.** The guide defaults to *Upcoming* so a visitor sees
+what they can still fish. Past events stay in the file (dimmed, badged
+"Passé") because a finished season is the best predictor of next year's
+dates. This is computed from the dates — nothing to maintain by hand. An
+undated entry never counts as past, and a cancelled one never counts as
+upcoming.
+
+An optional `fee` field renders in the meta line (`"600 $ / équipe de 2"`).
 
 **The roster names are real; their bios, specs, roles and photos are not
 filled in yet.** The three Formule Brochet entries in the results are real
@@ -297,10 +315,14 @@ events, but their placements and measurements still need filling in. The
 social handles, boats, shop products and the upcoming team schedule are
 still placeholders —
 sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
-tournament directory was seeded with a few tournaments verified against
-organizer sites in August 2026 (see the `notes`/`link` field on each entry
-for the source) plus links out to a few live, continuously-updated calendars
-(Pêcheur Québec, Sur Le Spot, etc.) for anything not yet in our own list.
+tournament directory holds 19 entries for the 2026 season, compiled from
+organizer sites in August 2026 with close coverage of the Montérégie, the
+St. Lawrence, the Richelieu and Lake Champlain — the Big Bass Québec program,
+the Coteau-du-Lac Excellence Bass series, Challenge Carpe Québec, the Fête de
+la pêche and more. Each entry's `notes`/`link` carries its source and any
+caveat (unconfirmed dates, an organizer page that contradicts itself, a
+cancelled circuit). It's rounded out with links to continuously-updated
+calendars (Pêcheur Québec, Sur Le Spot, FédéCP, Coteau-du-Lac).
 Tournament dates change — keep this file current, and always tell readers to
 confirm with the organizer.
 
