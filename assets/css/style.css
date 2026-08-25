@@ -936,6 +936,40 @@ section.alt { background: var(--sand-100); }
   .placement { font-size: 1.25rem; }
 }
 
+/* Per-event spec strip: fee, team format, caps, deadlines. */
+.event-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px 20px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.event-spec {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+.event-spec-label {
+  font-size: 0.7rem;
+  color: var(--ink-600);
+  letter-spacing: 0.01em;
+}
+.event-spec-value {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--navy-900);
+  min-width: 0;
+}
+.event-spec.spec-empty .event-spec-value {
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(71, 96, 111, 0.45);
+}
+
+.event-notes { margin: 10px 0 0; font-size: 0.88rem; }
+
 .empty-state {
   text-align: center;
   padding: 48px 20px;

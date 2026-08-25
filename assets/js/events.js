@@ -107,7 +107,8 @@ async function initEventList(options) {
     if (searchInput && searchInput.value.trim() !== "") {
       const q = searchInput.value.trim().toLowerCase();
       // Search every translation so a French query still finds an English entry.
-      const hay = [ev.name, ev.location, ev.organizer, ev.species, ev.notes, ev.region]
+      const specValues = Object.values(ev.specs || {});
+      const hay = [ev.name, ev.location, ev.organizer, ev.species, ev.notes, ev.region, ...specValues]
         .map(trAll)
         .join(" ")
         .toLowerCase();
@@ -148,7 +149,29 @@ async function initEventList(options) {
       if (ev.region) metaBits.push(`<span>${escapeHTML(tr(ev.region))}</span>`);
       if (ev.species) metaBits.push(`<span>🎣 ${escapeHTML(tr(ev.species))}</span>`);
       if (ev.organizer) metaBits.push(`<span>${escapeHTML(tr(ev.organizer))}</span>`);
-      if (tr(ev.fee)) metaBits.push(`<span>💵 ${escapeHTML(tr(ev.fee))}</span>`);
+
+      // Entry fee and team format always show — an unpublished one says so
+      // rather than leaving the reader guessing. The rest appear when known.
+      const specs = ev.specs || {};
+      const specRows = [
+        { field: "fee", key: "spec.fee", icon: "💵", always: true },
+        { field: "teamSize", key: "spec.teamSize", icon: "👥", always: true },
+        { field: "maxTeams", key: "spec.maxTeams", icon: "🚩" },
+        { field: "hours", key: "spec.hours", icon: "⏱" },
+        { field: "deadline", key: "spec.deadline", icon: "📋" },
+        { field: "format", key: "spec.format", icon: "🎯" },
+      ].reduce((out, { field, key, icon, always }) => {
+        const value = tr(specs[field]);
+        if (!value && !always) return out;
+        const shown = value || t("spec.notPublished");
+        out.push(`
+          <div class="event-spec${value ? "" : " spec-empty"}">
+            <span class="event-spec-label"><span aria-hidden="true">${icon}</span> ${escapeHTML(t(key))}</span>
+            <span class="event-spec-value">${escapeHTML(shown)}</span>
+          </div>
+        `);
+        return out;
+      }, []).join("");
 
       const notes = tr(ev.notes);
 
@@ -158,7 +181,8 @@ async function initEventList(options) {
           <div>
             <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
             <div class="event-meta">${metaBits.join("")}</div>
-            ${notes ? `<p style="margin:8px 0 0;font-size:0.88rem;">${escapeHTML(notes)}</p>` : ""}
+            ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
+            ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
           </div>
           <div class="event-cta">
             ${ev.link ? `<a class="btn btn-teal" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}

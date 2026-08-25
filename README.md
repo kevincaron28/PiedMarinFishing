@@ -307,7 +307,30 @@ dates. This is computed from the dates — nothing to maintain by hand. An
 undated entry never counts as past, and a cancelled one never counts as
 upcoming.
 
-An optional `fee` field renders in the meta line (`"600 $ / équipe de 2"`).
+### Event specs
+
+Each event carries a `specs` block rendered as a scannable strip on the card:
+
+```json
+"specs": {
+  "fee":      { "fr": "600 $ / équipe (300 $ / pêcheur)", "en": "$600 / team ($300 / angler)" },
+  "teamSize": { "fr": "Équipe de 2", "en": "Team of 2" },
+  "maxTeams": "100",
+  "hours":    { "fr": "7 h – 14 h", "en": "7 am – 2 pm" },
+  "deadline": { "fr": "1er août 2026", "en": "1 August 2026" },
+  "format":   { "fr": "100 % remise à l'eau", "en": "100% catch-and-release" }
+}
+```
+
+**`fee` and `teamSize` always render**, even when empty — an unknown one
+shows a muted *Non publié / Not published* rather than silently disappearing,
+so a reader can tell "we don't know" from "it's free". The other four appear
+only when filled in. Search covers the spec text too, so `910` finds every
+Excellence Bass stop.
+
+Only 8 of the 19 events publish an entry fee and 11 publish a team format;
+the rest genuinely aren't published by their organizers. Don't guess — a
+wrong fee is worse than an honest blank.
 
 **The roster names are real; their bios, specs, roles and photos are not
 filled in yet.** The three Formule Brochet entries in the results are real

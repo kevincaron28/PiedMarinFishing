@@ -26,6 +26,14 @@
     "notes": {
       "fr": "À l'ouverture du brochet, remise à l'eau et mesuré à la règle (les deux plus longs brochets). L'édition 2025 s'est tenue le samedi 3 mai. Confirmez la prochaine date avec l'organisateur.",
       "en": "At the pike opener, catch-photo-release measured by ruler (two longest pike combined). The 2025 edition was held Saturday 3 May. Confirm the next date with the organizer."
+    },
+    "specs": {
+      "format": {
+        "fr": "Remise à l'eau, mesuré à la règle",
+        "en": "Catch-photo-release, ruler-measured"
+      },
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -51,14 +59,21 @@
       "en": "Circuit"
     },
     "status": "tentative",
-    "fee": {
-      "fr": "25 $ / personne",
-      "en": "$25 / person"
-    },
     "link": "https://www.surlespot.com/evenement/22-pro-bass-canada-tournoi-pec-heure-1",
     "notes": {
       "fr": "Événements achigan en prise-photo-remise à l'eau, historiquement lancés de Venise-en-Québec et de la rivière Richelieu. Aucune date 2026 confirmée par une source officielle — vérifiez auprès de probasscanada.com (514-926-2277).",
       "en": "Catch-photo-release bass events, historically launched from Venise-en-Québec and the Richelieu River. No 2026 dates confirmed from an official source — check probasscanada.com (514-926-2277)."
+    },
+    "specs": {
+      "fee": {
+        "fr": "25 $ / personne",
+        "en": "$25 / person"
+      },
+      "format": {
+        "fr": "Prise-photo-remise à l'eau",
+        "en": "Catch-photo-release"
+      },
+      "teamSize": ""
     }
   },
   {
@@ -88,6 +103,10 @@
     "notes": {
       "fr": "Championnat provincial généralement tenu entre août et septembre. Date et lieu 2026 non confirmés par une source primaire — référence d'agrégateur seulement.",
       "en": "Provincial championship generally held between August and September. 2026 date and venue not confirmed from a primary source — aggregator reference only."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -117,6 +136,10 @@
     "notes": {
       "fr": "Historiquement tenu à la fin août. Date exacte 2026 non confirmée — vérifiez localement avant de planifier un déplacement.",
       "en": "Historically held in late August. Exact 2026 date not confirmed — verify locally before planning a trip."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -137,10 +160,13 @@
     },
     "status": "cancelled",
     "link": "",
-    "fee": "",
     "notes": {
       "fr": "Saison 2026 annulée. L'organisateur cite le manque d'inscriptions d'équipes. Inscrit ici pour éviter de planifier autour d'un circuit inactif — surveillez econobass.com au cas où il reprendrait en 2027.",
       "en": "2026 season cancelled. The organizer cites a lack of team registrations. Listed here so nobody plans around an inactive circuit — watch econobass.com in case it revives for 2027."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -176,6 +202,14 @@
     "notes": {
       "fr": "2e édition. Défi du plus long brochet / de la plus longue perchaude. Environ 45 min de Napierville. Frais non publiés — vérifiez auprès de Big Bass Québec.",
       "en": "2nd edition. Longest pike / longest yellow perch challenge. About 45 min from Napierville. Fee not published — check with Big Bass Québec."
+    },
+    "specs": {
+      "format": {
+        "fr": "Plus long brochet / plus longue perchaude",
+        "en": "Longest pike / longest yellow perch"
+      },
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -211,6 +245,14 @@
     "notes": {
       "fr": "2e édition. Défi du plus gros brochet, à gué / de la rive. Le programme n'annonce qu'un samedi de mai sans date précise — confirmez auprès de l'organisateur.",
       "en": "2nd edition. Biggest-pike challenge, wading or from shore. The program lists only a Saturday in May without a precise date — confirm with the organizer."
+    },
+    "specs": {
+      "format": {
+        "fr": "Plus gros brochet, à gué / de la rive",
+        "en": "Biggest pike, wading or from shore"
+      },
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -239,14 +281,28 @@
       "en": "Family Event"
     },
     "status": "confirmed",
-    "fee": {
-      "fr": "Gratuit",
-      "en": "Free"
-    },
     "link": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/fete-peche",
     "notes": {
       "fr": "26e édition. Pêchez sans permis provincial pendant trois jours (sauf le saumon atlantique). Aucune inscription. Plusieurs sites offrent un volet Pêche en herbe pour les 6-17 ans.",
       "en": "26th edition. Fish without a provincial licence for three days (Atlantic salmon excepted). No registration. Many sites include a Pêche en herbe youth component for ages 6-17."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Gratuit",
+        "en": "Free"
+      },
+      "teamSize": {
+        "fr": "Individuel / familial",
+        "en": "Individual / family"
+      },
+      "deadline": {
+        "fr": "Aucune inscription",
+        "en": "No registration"
+      },
+      "format": {
+        "fr": "Pêche libre sans permis provincial",
+        "en": "Open fishing, no provincial licence"
+      }
     }
   },
   {
@@ -279,6 +335,10 @@
     "notes": {
       "fr": "13e édition. Environ 1 h 15 de Napierville.",
       "en": "13th edition. About 1 h 15 from Napierville."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
     }
   },
   {
@@ -307,14 +367,25 @@
       "en": "Circuit Stop"
     },
     "status": "confirmed",
-    "fee": {
-      "fr": "910 $ / équipe (saison complète)",
-      "en": "$910 / team (full season)"
-    },
     "link": "http://www.pechearccoteaudulac.com/excellence-bass-2/",
     "notes": {
       "fr": "Circuit en équipe, 2 pêcheurs par bateau, maximum 25 équipes. Le 910 $ couvre les quatre étapes de la saison; 25 $ / pêcheur de plus pour les non-membres. Contact : Bertin Desrosiers, 450-763-0179.",
       "en": "Team circuit, 2 anglers per boat, maximum 25 teams. The $910 covers all four season stops; non-members add $25 per angler. Contact: Bertin Desrosiers, 450-763-0179."
+    },
+    "specs": {
+      "fee": {
+        "fr": "910 $ / équipe (les 4 étapes)",
+        "en": "$910 / team (all 4 stops)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": "25",
+      "deadline": {
+        "fr": "Paiement avant le 31 mai 2026",
+        "en": "Payment before 31 May 2026"
+      }
     }
   },
   {
@@ -347,6 +418,17 @@
     "notes": {
       "fr": "3e édition. Pour les jeunes de 12 à 16 ans représentant leur région; arrivée le 26 juin. Environ 1 h 30 de Napierville.",
       "en": "3rd edition. For youth aged 12-16 representing their region; arrival on 26 June. About 1 h 30 from Napierville."
+    },
+    "specs": {
+      "teamSize": {
+        "fr": "Individuel, 12 à 16 ans",
+        "en": "Individual, ages 12 to 16"
+      },
+      "format": {
+        "fr": "Championnat jeunesse par région",
+        "en": "Youth championship by region"
+      },
+      "fee": ""
     }
   },
   {
@@ -379,6 +461,17 @@
     "notes": {
       "fr": "Deuxième des quatre étapes du circuit Excellence Bass. Environ 1 h de Napierville.",
       "en": "Second of the four Excellence Bass circuit stops. About 1 h from Napierville."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Inclus dans la saison (910 $ / équipe)",
+        "en": "Included in the season ($910 / team)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": "25"
     }
   },
   {
@@ -411,6 +504,25 @@
     "notes": {
       "fr": "7e édition, 7 h à 15 h. Plus grosse bourriche d'achigans et / ou de dorés sur une journée de 8 h, environ 48 équipes. 12 bourses en argent (1re 1 000 $ par catégorie, lunker 300 $). Stationnement 20 $ comptant sur place. À noter : la page de l'organisateur se contredit sur la limite de dorés (2 ou 3) — à confirmer.",
       "en": "7th edition, 7 am to 3 pm. Biggest bag of bass and/or walleye over an 8-hour day, about 48 teams. 12 cash purses (1st $1,000 per category, lunker $300). Parking $20 cash on site. Note: the organizer's page contradicts itself on the walleye limit (2 or 3) — confirm before fishing."
+    },
+    "specs": {
+      "teamSize": {
+        "fr": "En équipe",
+        "en": "Team format"
+      },
+      "maxTeams": {
+        "fr": "~48",
+        "en": "~48"
+      },
+      "hours": {
+        "fr": "7 h – 15 h",
+        "en": "7 am – 3 pm"
+      },
+      "format": {
+        "fr": "Plus grosse bourriche : 3 achigans et / ou dorés",
+        "en": "Biggest bag: 3 bass and / or walleye"
+      },
+      "fee": ""
     }
   },
   {
@@ -443,6 +555,21 @@
     "notes": {
       "fr": "8e édition. Format familial d'environ 7 h : plus gros poisson par espèce.",
       "en": "8th edition. Family format over about 7 hours: biggest fish per species."
+    },
+    "specs": {
+      "teamSize": {
+        "fr": "Familial",
+        "en": "Family"
+      },
+      "hours": {
+        "fr": "~7 h",
+        "en": "~7 hours"
+      },
+      "format": {
+        "fr": "Plus gros poisson par espèce",
+        "en": "Biggest fish per species"
+      },
+      "fee": ""
     }
   },
   {
@@ -475,6 +602,17 @@
     "notes": {
       "fr": "Troisième des quatre étapes. Environ 55 min de Napierville.",
       "en": "Third of the four stops. About 55 min from Napierville."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Inclus dans la saison (910 $ / équipe)",
+        "en": "Included in the season ($910 / team)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": "25"
     }
   },
   {
@@ -503,14 +641,32 @@
       "en": "Circuit Stop"
     },
     "status": "confirmed",
-    "fee": {
-      "fr": "600 $ / équipe de 2",
-      "en": "$600 / team of 2"
-    },
     "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
     "notes": {
       "fr": "5e édition. 48 h de pêche de la rive, du vendredi midi au dimanche midi, 100 % remise à l'eau, camping sauvage sur votre zone. Classement « Big 4 » : poids cumulé des 4 plus grosses carpes. Bourses d'environ 3 000 $ (1re place 1 600 $). Inscriptions closes le 1er août 2026 ou une fois complet. Environ 1 h 45 à 2 h 15 de Napierville.",
       "en": "5th edition. 48 hours of shore fishing, Friday noon to Sunday noon, 100% catch-and-release, wild camping on your zone. \"Big 4\" scoring: combined weight of the 4 largest carp. Roughly $3,000 in prizes (1st place $1,600). Registration closed 1 August 2026 or once full. About 1 h 45 to 2 h 15 from Napierville."
+    },
+    "specs": {
+      "fee": {
+        "fr": "600 $ / équipe (300 $ / pêcheur)",
+        "en": "$600 / team ($300 / angler)"
+      },
+      "teamSize": {
+        "fr": "Équipe de 2",
+        "en": "Team of 2"
+      },
+      "hours": {
+        "fr": "48 h — ven. midi à dim. midi",
+        "en": "48 h — Fri noon to Sun noon"
+      },
+      "deadline": {
+        "fr": "1er août 2026, 23 h 59",
+        "en": "1 August 2026, 11:59 pm"
+      },
+      "format": {
+        "fr": "100 % remise à l'eau — « Big 4 » cumulé",
+        "en": "100% catch-and-release — cumulative \"Big 4\""
+      }
     }
   },
   {
@@ -543,6 +699,17 @@
     "notes": {
       "fr": "Finale de la saison. Le plan d'eau est tiré au sort — confirmez auprès du club avant de vous déplacer.",
       "en": "Season finale. The venue is drawn by lot — confirm with the club before travelling."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Inclus dans la saison (910 $ / équipe)",
+        "en": "Included in the season ($910 / team)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": "25"
     }
   },
   {
@@ -574,14 +741,29 @@
       "en": "Invitational"
     },
     "status": "confirmed",
-    "fee": {
-      "fr": "Inscription gratuite",
-      "en": "Free registration"
-    },
     "link": "https://www.bigbasschallengequebec.com/2026-invitation-info",
     "notes": {
       "fr": "2e édition, 7 h à 14 h. Plus grosse bourriche de 4 achigans, équipes de 2 à 4 pêcheurs, maximum 100 équipes. 2 000 $ en bourses (1re 1 000 $, 2e 600 $, 3e 250 $, 4e 150 $). En 2025 : 71 équipes, 183 pêcheurs. Environ 1 h 15 de Napierville — prévoyez les règlements de pêche de l'Ontario et les pièces d'identité pour la frontière.",
       "en": "2nd edition, 7 am to 2 pm. Biggest bag of 4 bass, teams of 2 to 4 anglers, maximum 100 teams. $2,000 in prizes (1st $1,000, 2nd $600, 3rd $250, 4th $150). In 2025: 71 teams, 183 anglers. About 1 h 15 from Napierville — plan for Ontario fishing regulations and border ID."
+    },
+    "specs": {
+      "fee": {
+        "fr": "Gratuit",
+        "en": "Free"
+      },
+      "teamSize": {
+        "fr": "Équipes de 2 à 4 pêcheurs",
+        "en": "Teams of 2 to 4 anglers"
+      },
+      "maxTeams": "100",
+      "hours": {
+        "fr": "7 h – 14 h",
+        "en": "7 am – 2 pm"
+      },
+      "format": {
+        "fr": "Plus grosse bourriche de 4 achigans",
+        "en": "Biggest bag of 4 bass"
+      }
     }
   },
   {
@@ -617,6 +799,29 @@
     "notes": {
       "fr": "11e édition. Plus gros achigan de la journée / de l'heure sur une fenêtre de 7 h 30; 8 bourses en argent basées sur environ 50 équipes. Préinscription avant le 30 septembre 2026. Prévoyez les règlements de pêche de l'Ontario et les pièces d'identité pour la frontière.",
       "en": "11th edition. Biggest bass of the day / of the hour over a 7.5-hour window; 8 cash prizes based on about 50 teams. Pre-register before 30 September 2026. Plan for Ontario fishing regulations and border ID."
+    },
+    "specs": {
+      "teamSize": {
+        "fr": "En équipe",
+        "en": "Team format"
+      },
+      "maxTeams": {
+        "fr": "~50",
+        "en": "~50"
+      },
+      "hours": {
+        "fr": "Fenêtre de 7 h 30",
+        "en": "7.5-hour window"
+      },
+      "deadline": {
+        "fr": "Préinscription avant le 30 septembre 2026",
+        "en": "Pre-register before 30 September 2026"
+      },
+      "format": {
+        "fr": "Plus gros achigan de la journée / de l'heure",
+        "en": "Biggest bass of the day / of the hour"
+      },
+      "fee": ""
     }
   }
 ]

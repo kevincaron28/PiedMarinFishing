@@ -162,7 +162,14 @@
     "events.cancelled": "Annulé",
     "events.past": "Passé",
     "tournaments.res5": "Circuit Excellence Bass et tournois du club de Coteau-du-Lac.",
-    "tournaments.res6": "Programme jeunesse et championnat provincial de la Fédération québécoise des chasseurs et pêcheurs."
+    "tournaments.res6": "Programme jeunesse et championnat provincial de la Fédération québécoise des chasseurs et pêcheurs.",
+    "spec.fee": "Prix",
+    "spec.teamSize": "Format",
+    "spec.maxTeams": "Équipes max",
+    "spec.hours": "Horaire",
+    "spec.deadline": "Inscription",
+    "spec.format": "Épreuve",
+    "spec.notPublished": "Non publié"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -327,6 +334,13 @@
     "events.cancelled": "Cancelled",
     "events.past": "Past",
     "tournaments.res5": "Excellence Bass circuit and the Coteau-du-Lac club's tournaments.",
-    "tournaments.res6": "Youth program and provincial championship from the Fédération québécoise des chasseurs et pêcheurs."
+    "tournaments.res6": "Youth program and provincial championship from the Fédération québécoise des chasseurs et pêcheurs.",
+    "spec.fee": "Entry fee",
+    "spec.teamSize": "Format",
+    "spec.maxTeams": "Max teams",
+    "spec.hours": "Hours",
+    "spec.deadline": "Registration",
+    "spec.format": "Scoring",
+    "spec.notPublished": "Not published"
   }
 }
