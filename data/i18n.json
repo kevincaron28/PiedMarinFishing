@@ -187,7 +187,8 @@
     "events.proTour": "Pro",
     "events.stopCount.one": "{n} étape",
     "events.stopCount.other": "{n} étapes",
-    "calendarView.legendPro": "Tournée pro"
+    "calendarView.legendPro": "Tournée pro",
+    "filters.allYears": "Toutes les années"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -377,6 +378,7 @@
     "events.proTour": "Pro",
     "events.stopCount.one": "{n} stop",
     "events.stopCount.other": "{n} stops",
-    "calendarView.legendPro": "Pro tour"
+    "calendarView.legendPro": "Pro tour",
+    "filters.allYears": "All years"
   }
 }

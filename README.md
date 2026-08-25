@@ -315,6 +315,12 @@ is remembered in `localStorage`.
 is how the calendar stays in sync with the filters without duplicating any
 of them.
 
+**Year.** Options are built from the dates in the data — add 2027 events and
+2027 appears by itself. It defaults to *all years* rather than the current
+one, so newly added future seasons are never hidden from the person who just
+added them. Undated recurring entries aren't tied to a season, so a year
+choice never filters them out.
+
 **Upcoming / Past / All.** The guide defaults to *Upcoming* so a visitor sees
 what they can still fish. Past events stay in the file (dimmed, badged
 "Passé") because a finished season is the best predictor of next year's
