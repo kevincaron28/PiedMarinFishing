@@ -599,6 +599,11 @@ section.alt { background: var(--sand-100); }
 }
 .badge.gold { background: rgba(217,164,65,0.16); color: #9a6c14; }
 .badge.navy { background: rgba(11,32,56,0.08); color: var(--navy-800); }
+.badge.red { background: rgba(176,42,42,0.12); color: #a3271f; }
+
+/* Past and cancelled events stay listed but recede visually. */
+.event-card.event-inactive { opacity: 0.72; }
+.event-card.event-inactive .event-date { background: var(--navy-800); }
 
 /* ---------- Team boats ---------- */
 
@@ -844,6 +849,14 @@ section.alt { background: var(--sand-100); }
 }
 /* Year-only dates, for events where the exact day isn't recorded */
 .event-date .day.year-only { font-size: 1.15rem; letter-spacing: -0.01em; }
+.event-date .day.date-tbd {
+  font-family: system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-400);
+}
 .placement.placement-unknown { color: rgba(71, 96, 111, 0.35); }
 .result-main { min-width: 0; }
 .result-notes { margin: 8px 0 0; font-size: 0.86rem; }

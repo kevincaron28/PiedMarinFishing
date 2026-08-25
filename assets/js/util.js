@@ -55,6 +55,42 @@ function ordinal(n, lang) {
   return n + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
 }
 
+// The last moment a partial date could still refer to: "2026" -> 31 Dec 2026,
+// "2026-05" -> 31 May 2026. Used to decide whether an event has passed.
+function endOfPeriod(value) {
+  const p = dateParts(value);
+  if (!p) return null;
+  if (p.month === null) return new Date(p.year, 11, 31);
+  if (p.day === null) return new Date(p.year, p.month + 1, 0);
+  return new Date(p.year, p.month, p.day);
+}
+
+// Undated (recurring, date-TBC) events are never treated as past.
+function isPastEvent(ev) {
+  const end = endOfPeriod(ev.endDate || ev.startDate);
+  if (!end) return false;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return end < today;
+}
+
+// Date badge showing only as much as the data actually knows.
+function dateBadgeHTML(value, lang, tbdLabel) {
+  const m = months(lang);
+  const p = dateParts(value);
+  if (!p) return `<span class="day date-tbd">${escapeHTML(tbdLabel)}</span>`;
+  if (p.month !== null && p.day !== null) {
+    return `<span class="month">${escapeHTML(m.abbr[p.month])}</span>`
+      + `<span class="day">${p.day}</span>`
+      + `<span class="year">${p.year}</span>`;
+  }
+  if (p.month !== null) {
+    return `<span class="month">${escapeHTML(m.abbr[p.month])}</span>`
+      + `<span class="day year-only">${p.year}</span>`;
+  }
+  return `<span class="day year-only">${p.year}</span>`;
+}
+
 // Reads a filter value out of the query string, e.g. history.html?member=bobe
 function queryParam(name) {
   try {

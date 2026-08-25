@@ -10,6 +10,7 @@ async function initEventList(options) {
     countSelector,
     monthFilterSelector,
     regionFilterSelector,
+    whenFilterSelector,
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
@@ -36,6 +37,7 @@ async function initEventList(options) {
 
   const monthSelect = monthFilterSelector ? document.querySelector(monthFilterSelector) : null;
   const regionSelect = regionFilterSelector ? document.querySelector(regionFilterSelector) : null;
+  const whenSelect = whenFilterSelector ? document.querySelector(whenFilterSelector) : null;
   const searchInput = searchSelector ? document.querySelector(searchSelector) : null;
 
   // Option values are language-independent, so a language switch never
@@ -73,9 +75,28 @@ async function initEventList(options) {
     const regions = Array.from(seen, ([value, label]) => ({ value, label }))
       .sort((a, b) => a.label.localeCompare(b.label, PMF_I18N.lang));
     buildOptions(regionSelect, regions, t("filters.allRegions"));
+
+    if (whenSelect) {
+      const previous = whenSelect.value || "upcoming";
+      whenSelect.innerHTML = "";
+      [["upcoming", "filters.when.upcoming"], ["past", "filters.when.past"], ["all", "filters.when.all"]]
+        .forEach(([value, key]) => {
+          const opt = document.createElement("option");
+          opt.value = value;
+          opt.textContent = t(key);
+          whenSelect.appendChild(opt);
+        });
+      whenSelect.value = previous;
+    }
   }
 
   function matchesFilters(ev) {
+    if (whenSelect && whenSelect.value !== "all") {
+      const past = isPastEvent(ev);
+      // A cancelled event is never something you can still go and fish.
+      if (whenSelect.value === "upcoming" && (past || ev.status === "cancelled")) return false;
+      if (whenSelect.value === "past" && !past) return false;
+    }
     if (monthSelect && monthSelect.value !== "") {
       const d = parseISODate(ev.startDate);
       if (!d || String(d.getMonth()) !== monthSelect.value) return false;
@@ -96,7 +117,6 @@ async function initEventList(options) {
   }
 
   function render() {
-    const m = months(PMF_I18N.lang);
     const filtered = events.filter(matchesFilters);
     const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
     const countEl = countSelector ? document.querySelector(countSelector) : null;
@@ -111,31 +131,32 @@ async function initEventList(options) {
     if (emptyEl) emptyEl.style.display = "none";
 
     listEl.innerHTML = filtered.map((ev) => {
-      const d = parseISODate(ev.startDate);
-      const month = d ? m.abbr[d.getMonth()] : t("events.tbd");
-      const day = d ? d.getDate() : "?";
+      const dateBadge = dateBadgeHTML(ev.startDate, PMF_I18N.lang, t("events.tbd"));
+      const past = isPastEvent(ev);
+      const cancelled = ev.status === "cancelled";
 
       const badgeText = tr(ev[badgeField]);
       const badge = badgeText
         ? `<span class="badge${ev.status === "tentative" ? " gold" : ""}">${escapeHTML(badgeText)}</span>`
         : "";
+      const stateBadge = cancelled
+        ? `<span class="badge red">${escapeHTML(t("events.cancelled"))}</span>`
+        : past ? `<span class="badge navy">${escapeHTML(t("events.past"))}</span>` : "";
 
       const metaBits = [];
       if (ev.location) metaBits.push(`<span>📍 ${escapeHTML(tr(ev.location))}</span>`);
       if (ev.region) metaBits.push(`<span>${escapeHTML(tr(ev.region))}</span>`);
       if (ev.species) metaBits.push(`<span>🎣 ${escapeHTML(tr(ev.species))}</span>`);
       if (ev.organizer) metaBits.push(`<span>${escapeHTML(tr(ev.organizer))}</span>`);
+      if (tr(ev.fee)) metaBits.push(`<span>💵 ${escapeHTML(tr(ev.fee))}</span>`);
 
       const notes = tr(ev.notes);
 
       return `
-        <article class="event-card">
-          <div class="event-date">
-            <span class="month">${escapeHTML(month)}</span>
-            <span class="day">${day}</span>
-          </div>
+        <article class="event-card${past || cancelled ? " event-inactive" : ""}">
+          <div class="event-date">${dateBadge}</div>
           <div>
-            <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}</div>
+            <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
             <div class="event-meta">${metaBits.join("")}</div>
             ${notes ? `<p style="margin:8px 0 0;font-size:0.88rem;">${escapeHTML(notes)}</p>` : ""}
           </div>
@@ -147,7 +168,7 @@ async function initEventList(options) {
     }).join("");
   }
 
-  [monthSelect, regionSelect, searchInput].forEach((el) => {
+  [monthSelect, regionSelect, whenSelect, searchInput].forEach((el) => {
     if (el) el.addEventListener("input", render);
   });
 
