@@ -10,6 +10,9 @@
   --teal-400: #3fb6ad;
   --gold-500: #d9a441;
   --gold-400: #e8bd6a;
+  --pro-600: #4f4bab;
+  --pro-500: #6461c9;
+  --pro-100: rgba(100, 97, 201, 0.12);
   --sand-100: #f6f3ea;
   --sand-50: #fbf9f4;
   --ink-900: #10202f;
@@ -826,6 +829,47 @@ section.alt { background: var(--sand-100); }
   color: var(--ink-600);
 }
 
+/* ---------- Circuits and pro tours ---------- */
+
+/* A circuit and its stops read as one block. */
+.circuit-block {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal-500);
+  border-radius: var(--radius-lg);
+  background: var(--sand-100);
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.circuit-block.circuit-pro { border-left-color: var(--pro-500); }
+.circuit-block > .event-card { box-shadow: none; }
+
+.circuit-stops { margin-top: 14px; padding-left: 14px; border-left: 2px dashed var(--line); }
+.circuit-stops-head {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-600);
+  margin-bottom: 10px;
+}
+.circuit-stops .event-card { box-shadow: none; }
+
+/* A stop names the series it belongs to. */
+.event-parent {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--teal-600);
+  margin-bottom: 3px;
+}
+.event-pro .event-parent { color: var(--pro-600); }
+
+.badge.pro { background: var(--pro-100); color: var(--pro-600); }
+.event-card.event-pro { border-left: 3px solid var(--pro-500); }
+.event-card.event-pro .event-date { background: var(--pro-600); }
+
 /* ---------- Season calendar view ---------- */
 
 .view-toggle {
@@ -866,6 +910,7 @@ section.alt { background: var(--sand-100); }
 }
 .cal-swatch-event { background: var(--teal-500); }
 .cal-swatch-multi { background: var(--gold-500); }
+.cal-swatch-pro { background: var(--pro-500); }
 .cal-swatch-today { background: transparent; box-shadow: inset 0 0 0 2px var(--navy-800); }
 
 .cal-year-label { margin: 0 0 16px; }
@@ -931,6 +976,12 @@ section.alt { background: var(--sand-100); }
 .cal-day.cal-has-event:hover { background: var(--teal-400); }
 .cal-day.cal-multi { background: var(--gold-500); color: var(--navy-950); }
 .cal-day.cal-multi:hover { background: var(--gold-400); }
+.cal-day.cal-pro { background: var(--pro-500); color: var(--white); }
+.cal-day.cal-pro:hover { background: var(--pro-600); }
+/* A day holding both a regional event and a pro stop shows both colours. */
+.cal-day.cal-pro.cal-has-event.cal-mixed {
+  background: linear-gradient(135deg, var(--teal-500) 50%, var(--pro-500) 50%);
+}
 .cal-day.cal-today { box-shadow: inset 0 0 0 2px var(--navy-800); }
 .cal-day.cal-selected { outline: 2px solid var(--navy-900); outline-offset: 1px; }
 

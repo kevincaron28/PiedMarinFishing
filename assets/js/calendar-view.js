@@ -49,9 +49,18 @@ function initCalendarView(options) {
     const undated = [];
     const years = new Set();
 
+    // A circuit whose stops are already on the grid doesn't belong in the
+    // undated strip — only genuinely date-less entries do.
+    const datedCircuits = new Set(
+      filtered.filter((e) => e.kind === "stop" && e.circuit && dateParts(e.startDate)).map((e) => e.circuit)
+    );
+
     filtered.forEach((ev) => {
       const p = dateParts(ev.startDate);
-      if (!p) { undated.push(ev); return; }
+      if (!p) {
+        if (!(ev.kind === "circuit" && datedCircuits.has(ev.id))) undated.push(ev);
+        return;
+      }
       years.add(p.year);
       if (p.month === null) return;
       if (p.day === null) {
@@ -91,8 +100,13 @@ function initCalendarView(options) {
           const key = isoKey(year, monthIdx, day);
           const evs = byDay.get(key) || [];
           const classes = ["cal-day"];
+          const anyPro = evs.some((e) => e.tier === "pro");
+          const anyRegional = evs.some((e) => e.tier !== "pro");
           if (evs.length) { classes.push("cal-has-event"); monthHasEvent = true; }
-          if (evs.length > 1) classes.push("cal-multi");
+          // Pro stops read purple; a day holding both is split.
+          if (anyPro) classes.push("cal-pro");
+          if (anyPro && anyRegional) classes.push("cal-mixed");
+          else if (evs.length > 1) classes.push("cal-multi");
           if (key === todayKey) classes.push("cal-today");
           if (key === selectedKey) classes.push("cal-selected");
 
@@ -141,6 +155,7 @@ function initCalendarView(options) {
     calEl.innerHTML = `
       <div class="cal-legend">
         <span><i class="cal-swatch cal-swatch-event"></i>${escapeHTML(t("calendarView.legendEvent"))}</span>
+        <span><i class="cal-swatch cal-swatch-pro"></i>${escapeHTML(t("calendarView.legendPro"))}</span>
         <span><i class="cal-swatch cal-swatch-multi"></i>${escapeHTML(t("calendarView.legendMulti"))}</span>
         <span><i class="cal-swatch cal-swatch-today"></i>${escapeHTML(t("calendarView.legendToday"))}</span>
       </div>

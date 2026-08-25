@@ -322,6 +322,36 @@ dates. This is computed from the dates — nothing to maintain by hand. An
 undated entry never counts as past, and a cancelled one never counts as
 upcoming.
 
+### Circuits, stops and tiers
+
+Three fields classify every entry:
+
+| Field | Values |
+|---|---|
+| `kind` | `single` (a one-off tournament), `circuit` (a series), `stop` (one leg of a series) |
+| `circuit` | on a stop: the parent circuit's `id` |
+| `tier` | `regional` (default) or `pro` |
+
+A circuit carries **no dates of its own** — its stops do. In the list a
+circuit renders as a parent card with its stops nested inside it, so a
+series reads as one thing instead of N unrelated rows. Date and region
+filters judge a circuit by its stops, so filtering to October still shows
+the Big Bass Québec block with only its October stop inside.
+
+`tier: "pro"` gets purple styling everywhere — card border, date badge, a
+PRO badge, and its own colour in the calendar — so the professional tours
+never get mistaken for something you can enter. A calendar day holding both
+a regional event and a pro stop is split diagonally between the two colours.
+
+The **Type** filter offers All / Single tournaments / Circuits and series /
+Pro tours.
+
+The two pro tours (Bassmaster Elite, MLF Bass Pro Tour) are included as
+reference, not as events to enter — their specs say *Sur qualification /
+By qualification*. Two 2026 Bassmaster stops are genuinely near Québec
+(Lake Champlain at Plattsburgh, the St. Lawrence at Clayton) and say so in
+their notes.
+
 ### Event specs
 
 Each event carries a `specs` block rendered as a scannable strip on the card:
