@@ -1,23 +1,50 @@
 [
   {
+    "id": "kevin-caron",
     "name": "Kevin Caron",
     "initials": "KC",
     "role": "",
     "bio": "",
-    "quote": ""
+    "quote": "",
+    "specs": {
+      "homeWater": "",
+      "species": "",
+      "technique": "",
+      "dreamCatch": "",
+      "personalBest": "",
+      "since": ""
+    }
   },
   {
+    "id": "kevin-b",
     "name": "Kevin B.",
     "initials": "KB",
     "role": "",
     "bio": "",
-    "quote": ""
+    "quote": "",
+    "specs": {
+      "homeWater": "",
+      "species": "",
+      "technique": "",
+      "dreamCatch": "",
+      "personalBest": "",
+      "since": ""
+    }
   },
   {
+    "id": "bobe",
     "name": "BOBE",
     "initials": "BO",
     "role": "",
     "bio": "",
-    "quote": ""
+    "quote": "",
+    "specs": {
+      "homeWater": "",
+      "species": "",
+      "technique": "",
+      "dreamCatch": "",
+      "personalBest": "",
+      "since": ""
+    }
   }
 ]

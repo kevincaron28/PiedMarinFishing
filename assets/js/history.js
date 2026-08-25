@@ -1,0 +1,229 @@
+// Pied Marin Fishing — tournament results (palmarès)
+// Shared by history.html and the record strip on the team cards.
+// Helpers (months, parseISODate, escapeHTML, ordinal, queryParam) come from util.js.
+
+const PMF_HISTORY = (() => {
+  let cache = null;
+
+  function load() {
+    if (!cache) {
+      cache = fetch("data/tournament-history.json")
+        .then((r) => r.json())
+        .then((rows) => rows.slice().sort((a, b) => (b.date || "").localeCompare(a.date || "")))
+        .catch(() => []);
+    }
+    return cache;
+  }
+
+  // Aggregate stats for a set of results — the whole team, or one angler.
+  function summarize(rows) {
+    const placements = rows.map((r) => r.placement).filter((p) => Number.isFinite(p));
+    const seasons = new Set(rows.map((r) => (r.date || "").slice(0, 4)).filter(Boolean));
+    return {
+      events: rows.length,
+      best: placements.length ? Math.min(...placements) : null,
+      top3: placements.filter((p) => p <= 3).length,
+      wins: placements.filter((p) => p === 1).length,
+      seasons: seasons.size,
+    };
+  }
+
+  function forMember(rows, memberId) {
+    return rows.filter((r) => Array.isArray(r.members) && r.members.includes(memberId));
+  }
+
+  return { load, summarize, forMember };
+})();
+
+// Podium finishes get a colour; everything else stays neutral.
+function placementClass(placement) {
+  if (placement === 1) return "gold";
+  if (placement === 2) return "silver";
+  if (placement === 3) return "bronze";
+  return "";
+}
+
+async function initHistory(options) {
+  const {
+    listSelector,
+    emptySelector,
+    statsSelector,
+    countSelector,
+    memberFilterSelector,
+    yearFilterSelector,
+    searchSelector,
+  } = options;
+
+  const listEl = document.querySelector(listSelector);
+  if (!listEl) return;
+
+  await PMF_I18N.ready;
+  const { t, tr, trAll, plural } = PMF_I18N;
+
+  let results = [];
+  let members = [];
+  try {
+    [results, members] = await Promise.all([
+      PMF_HISTORY.load(),
+      fetch("data/team-members.json").then((r) => r.json()).catch(() => []),
+    ]);
+  } catch (e) {
+    listEl.innerHTML = `<div class="empty-state">${escapeHTML(t("history.loadError"))}</div>`;
+    return;
+  }
+
+  const memberById = new Map(members.map((m) => [m.id, m]));
+
+  const memberSelect = memberFilterSelector ? document.querySelector(memberFilterSelector) : null;
+  const yearSelect = yearFilterSelector ? document.querySelector(yearFilterSelector) : null;
+  const searchInput = searchSelector ? document.querySelector(searchSelector) : null;
+  const statsEl = statsSelector ? document.querySelector(statsSelector) : null;
+  const countEl = countSelector ? document.querySelector(countSelector) : null;
+  const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
+
+  function buildOptions(select, entries, allLabel) {
+    if (!select) return;
+    const previous = select.value;
+    select.innerHTML = "";
+    const all = document.createElement("option");
+    all.value = "";
+    all.textContent = allLabel;
+    select.appendChild(all);
+    entries.forEach(({ value, label }) => {
+      const opt = document.createElement("option");
+      opt.value = value;
+      opt.textContent = label;
+      select.appendChild(opt);
+    });
+    select.value = previous;
+  }
+
+  function refreshFilterOptions() {
+    buildOptions(
+      memberSelect,
+      members.map((m) => ({ value: m.id, label: tr(m.name) })),
+      t("history.allMembers")
+    );
+    const years = Array.from(new Set(results.map((r) => (r.date || "").slice(0, 4)).filter(Boolean)))
+      .sort((a, b) => b.localeCompare(a));
+    buildOptions(yearSelect, years.map((y) => ({ value: y, label: y })), t("history.allSeasons"));
+  }
+
+  function matches(r) {
+    if (memberSelect && memberSelect.value && !(r.members || []).includes(memberSelect.value)) return false;
+    if (yearSelect && yearSelect.value && (r.date || "").slice(0, 4) !== yearSelect.value) return false;
+    if (searchInput && searchInput.value.trim()) {
+      const q = searchInput.value.trim().toLowerCase();
+      const hay = [r.name, r.location, r.region, r.species, r.organizer, r.notes]
+        .map(trAll).join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  }
+
+  function renderStats(rows) {
+    if (!statsEl) return;
+    const s = PMF_HISTORY.summarize(rows);
+    const lang = PMF_I18N.lang;
+    const tiles = [
+      { num: s.events, label: plural("history.stat.events", s.events) },
+      { num: s.best ? ordinal(s.best, lang) : "—", label: t("history.stat.best") },
+      { num: s.top3, label: plural("history.stat.top3", s.top3) },
+      { num: s.seasons, label: plural("history.stat.seasons", s.seasons) },
+    ];
+    statsEl.innerHTML = tiles.map((x) => `
+      <div class="stat-card">
+        <div class="num">${escapeHTML(String(x.num))}</div>
+        <div class="label">${escapeHTML(x.label)}</div>
+      </div>
+    `).join("");
+  }
+
+  function render() {
+    const lang = PMF_I18N.lang;
+    const m = months(lang);
+    const rows = results.filter(matches);
+
+    renderStats(rows);
+    if (countEl) countEl.textContent = plural("history.count", rows.length);
+
+    if (!rows.length) {
+      listEl.innerHTML = "";
+      if (emptyEl) emptyEl.style.display = "block";
+      return;
+    }
+    if (emptyEl) emptyEl.style.display = "none";
+
+    listEl.innerHTML = rows.map((r) => {
+      const d = parseISODate(r.date);
+      const month = d ? m.abbr[d.getMonth()] : t("events.tbd");
+      const day = d ? d.getDate() : "?";
+      const year = d ? d.getFullYear() : "";
+
+      const place = Number.isFinite(r.placement)
+        ? `<span class="placement ${placementClass(r.placement)}">${escapeHTML(ordinal(r.placement, lang))}</span>`
+        : "";
+      const field = Number.isFinite(r.fieldSize)
+        ? `<span class="placement-of">${escapeHTML(t("history.of", { n: r.fieldSize }))}</span>`
+        : "";
+
+      const meta = [];
+      if (r.location) meta.push(`<span>📍 ${escapeHTML(tr(r.location))}</span>`);
+      if (r.region) meta.push(`<span>${escapeHTML(tr(r.region))}</span>`);
+      if (r.species) meta.push(`<span>🎣 ${escapeHTML(tr(r.species))}</span>`);
+      if (r.organizer) meta.push(`<span>${escapeHTML(tr(r.organizer))}</span>`);
+
+      const figures = [];
+      if (r.weight) figures.push(`<span><b>${escapeHTML(r.weight)}</b> ${escapeHTML(t("history.weight"))}</span>`);
+      if (r.bigFish) figures.push(`<span><b>${escapeHTML(r.bigFish)}</b> ${escapeHTML(t("history.bigFish"))}</span>`);
+
+      const anglers = (r.members || []).map((id) => {
+        const mem = memberById.get(id);
+        const label = mem ? tr(mem.name) : id;
+        return `<a class="angler-chip" href="?member=${encodeURIComponent(id)}">${escapeHTML(label)}</a>`;
+      }).join("");
+
+      const notes = tr(r.notes);
+
+      return `
+        <article class="result-card">
+          <div class="event-date">
+            <span class="month">${escapeHTML(month)}</span>
+            <span class="day">${day}</span>
+            <span class="year">${escapeHTML(String(year))}</span>
+          </div>
+          <div class="result-main">
+            <div class="event-title">${escapeHTML(tr(r.name))}</div>
+            <div class="event-meta">${meta.join("")}</div>
+            ${figures.length ? `<div class="result-figures">${figures.join("")}</div>` : ""}
+            ${anglers ? `<div class="angler-chips"><span class="angler-label">${escapeHTML(t("history.anglers"))}</span>${anglers}</div>` : ""}
+            ${notes ? `<p class="result-notes">${escapeHTML(notes)}</p>` : ""}
+          </div>
+          <div class="result-place">
+            ${place}
+            ${field}
+          </div>
+        </article>
+      `;
+    }).join("");
+  }
+
+  [memberSelect, yearSelect, searchInput].forEach((el) => {
+    if (el) el.addEventListener("input", render);
+  });
+
+  PMF_I18N.onChange(() => {
+    refreshFilterOptions();
+    render();
+  });
+
+  refreshFilterOptions();
+
+  // Allow deep links from the team cards: history.html?member=bobe
+  const preselect = queryParam("member");
+  if (memberSelect && preselect && memberById.has(preselect)) {
+    memberSelect.value = preselect;
+  }
+
+  render();
+}

@@ -20,9 +20,10 @@
     <ul class="nav-links">
       <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
       <li><a href="team.html" aria-current="page" data-i18n="nav.team">Équipe</a></li>
-      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="history.html" data-i18n="nav.history">Palmarès</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Guide des tournois</a></li>
+      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
     </ul>
     <div class="nav-actions">
       <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
@@ -60,55 +61,12 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/history.js"></script>
+<script src="assets/js/team.js"></script>
 <script>
-  (async () => {
-    await PMF_I18N.ready;
-    const grid = document.getElementById("team-grid");
-
-    function esc(str) {
-      const d = document.createElement("div");
-      d.textContent = str ?? "";
-      return d.innerHTML;
-    }
-
-    let members = [];
-    try {
-      members = await (await fetch("data/team-members.json")).json();
-    } catch (e) {
-      grid.innerHTML = `<div class="empty-state">${esc(PMF_I18N.t("team.loadError"))}</div>`;
-      return;
-    }
-
-    function render() {
-      const tr = PMF_I18N.tr;
-      grid.innerHTML = members.map((m) => {
-        const name = tr(m.name) || "?";
-        const initials = (m.initials || name).toString().slice(0, 2).toUpperCase();
-        const role = tr(m.role);
-        const bio = tr(m.bio);
-        const quote = tr(m.quote);
-        // Empty fields are slots waiting to be filled, not broken cards.
-        const bioBlock = bio
-          ? `<p>${esc(bio)}</p>`
-          : `<p class="member-bio-empty">${esc(PMF_I18N.t("team.bioPlaceholder"))}</p>`;
-        return `
-          <div class="member-card">
-            <div class="member-photo">${esc(initials)}</div>
-            <div class="member-body">
-              ${role ? `<span class="member-role">${esc(role)}</span>` : ""}
-              <h3>${esc(name)}</h3>
-              ${bioBlock}
-              ${quote ? `<div class="member-quote">"${esc(quote)}"</div>` : ""}
-            </div>
-          </div>
-        `;
-      }).join("");
-    }
-
-    PMF_I18N.onChange(render);
-    render();
-  })();
+  initTeam("#team-grid");
 </script>
 </body>
 </html>

@@ -322,7 +322,9 @@ section.alt { background: var(--sand-100); }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 620px) {
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  /* Stat tiles are compact enough to stay side by side on a phone. */
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 .card {
@@ -386,6 +388,59 @@ section.alt { background: var(--sand-100); }
 .member-bio-empty {
   font-style: italic;
   color: rgba(71, 96, 111, 0.55);
+}
+
+/* Angler spec sheet */
+.member-specs {
+  margin: 16px 0 0;
+  padding: 14px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 8px;
+}
+.spec-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: baseline;
+  font-size: 0.85rem;
+}
+.spec-row dt {
+  color: var(--ink-600);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+.spec-icon { font-size: 0.9em; }
+.spec-row dd {
+  margin: 0;
+  text-align: right;
+  font-weight: 600;
+  color: var(--navy-900);
+}
+.spec-row.spec-empty dd { color: rgba(71, 96, 111, 0.4); font-weight: 400; }
+
+/* Per-angler record strip */
+.member-record {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 0.82rem;
+  color: var(--ink-600);
+}
+.member-record b {
+  color: var(--teal-600);
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+.member-history-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
 }
 .member-quote {
   font-style: italic;
@@ -505,6 +560,105 @@ section.alt { background: var(--sand-100); }
 }
 .badge.gold { background: rgba(217,164,65,0.16); color: #9a6c14; }
 .badge.navy { background: rgba(11,32,56,0.08); color: var(--navy-800); }
+
+/* ---------- Tournament results (palmarès) ---------- */
+
+.result-card {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  gap: 20px;
+  align-items: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.result-card .event-date { align-self: start; }
+.event-date .year {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+}
+.result-main { min-width: 0; }
+.result-notes { margin: 8px 0 0; font-size: 0.86rem; }
+
+.result-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+.result-figures b {
+  color: var(--navy-900);
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.angler-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+}
+.angler-label {
+  font-size: 0.78rem;
+  color: var(--ink-600);
+  margin-right: 2px;
+}
+.angler-chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: rgba(28,150,145,0.1);
+  color: var(--teal-600);
+  border: 1px solid rgba(28,150,145,0.2);
+}
+.angler-chip:hover {
+  text-decoration: none;
+  background: var(--teal-500);
+  color: var(--white);
+  border-color: var(--teal-500);
+}
+
+.result-place { text-align: center; min-width: 78px; }
+.placement {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy-800);
+  line-height: 1.1;
+}
+.placement.gold { color: #b8860b; }
+.placement.silver { color: #6b7b86; }
+.placement.bronze { color: #a2673a; }
+.placement-of {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--ink-600);
+  margin-top: 2px;
+}
+
+@media (max-width: 700px) {
+  .result-card { grid-template-columns: 72px 1fr; }
+  .result-card .result-place {
+    grid-column: 1 / -1;
+    text-align: left;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding-top: 6px;
+    border-top: 1px solid var(--line);
+  }
+  .placement { font-size: 1.25rem; }
+}
 
 .empty-state {
   text-align: center;
