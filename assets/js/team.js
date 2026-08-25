@@ -75,7 +75,7 @@ async function initTeam(gridSelector) {
 
       return `
         <div class="member-card">
-          <div class="member-photo">${escapeHTML(initials)}</div>
+          <div class="member-photo"><span class="member-initials">${escapeHTML(initials)}</span></div>
           <div class="member-body">
             ${role ? `<span class="member-role">${escapeHTML(role)}</span>` : ""}
             <h3>${escapeHTML(name)}</h3>
