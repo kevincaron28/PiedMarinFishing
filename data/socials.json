@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Instagram",
+    "handle": "@piedmarinfishing",
+    "url": "https://instagram.com/piedmarinfishing",
+    "color": "#d6249f",
+    "icon": "instagram"
+  },
+  {
+    "name": "Facebook",
+    "handle": "Pied Marin Fishing",
+    "url": "https://facebook.com/piedmarinfishing",
+    "color": "#1877f2",
+    "icon": "facebook"
+  },
+  {
+    "name": "YouTube",
+    "handle": "Pied Marin Fishing",
+    "url": "https://youtube.com/@piedmarinfishing",
+    "color": "#ff0000",
+    "icon": "youtube"
+  },
+  {
+    "name": "TikTok",
+    "handle": "@piedmarinfishing",
+    "url": "https://tiktok.com/@piedmarinfishing",
+    "color": "#111111",
+    "icon": "tiktok"
+  },
+  {
+    "name": "Email",
+    "handle": "info@piedmarinfishing.ca",
+    "url": "mailto:info@piedmarinfishing.ca",
+    "color": "#157a76",
+    "icon": "mail"
+  }
+]

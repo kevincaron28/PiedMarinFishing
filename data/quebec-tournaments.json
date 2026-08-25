@@ -1,0 +1,58 @@
+[
+  {
+    "id": "big-bass-challenge-2026",
+    "name": "Big Bass Challenge Québec — 11th Edition",
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-10",
+    "region": "Québec–Ontario border",
+    "location": "Lac Saint-François, Cornwall area",
+    "species": "Bass",
+    "organizer": "Big Bass Challenge Québec",
+    "type": "Circuit Stop",
+    "status": "confirmed",
+    "link": "https://www.bigbasschallengequebec.com/2026-programmation",
+    "notes": "Verified via the organizer's 2026 programmation page. Always confirm final details on the official site before registering."
+  },
+  {
+    "id": "challenge-carpe-quebec-2026",
+    "name": "Challenge Carpe Québec (CCQ)",
+    "startDate": "2026-08-28",
+    "endDate": "2026-08-30",
+    "region": "Québec",
+    "location": "See official listing for venue",
+    "species": "Carp",
+    "organizer": "Team Carpe Aventure",
+    "type": "Circuit Stop",
+    "status": "confirmed",
+    "link": "https://teamcarpeaventure.com/challenge-carpe-quebec/",
+    "notes": "Verified date range from the organizer's event page. Confirm venue and entry details directly with the organizer."
+  },
+  {
+    "id": "pro-bass-canada",
+    "name": "Pro-Bass Canada Circuit",
+    "startDate": "",
+    "endDate": "",
+    "region": "Québec",
+    "location": "Multiple stops across the province",
+    "species": "Bass",
+    "organizer": "Pro-Bass Canada",
+    "type": "Circuit",
+    "status": "tentative",
+    "link": "https://www.surlespot.com/evenement/22-pro-bass-canada-tournoi-pec-heure-1",
+    "notes": "Recurring pro-am bass circuit with several stops through the season. Exact 2026 stop dates were not confirmed during our research — check the listing or organizer for the current schedule."
+  },
+  {
+    "id": "walleye-challenge-nord",
+    "name": "Walleye Challenge (Nord-du-Québec / Abitibi)",
+    "startDate": "",
+    "endDate": "",
+    "region": "Nord-du-Québec / Abitibi",
+    "location": "See regional listing",
+    "species": "Walleye",
+    "organizer": "Regional / community organized",
+    "type": "Community Tournament",
+    "status": "tentative",
+    "link": "https://lenord.ca/2025/08/28/tournoi-de-peche-walleye-challenge/",
+    "notes": "Historically held in late August. Exact 2026 date not confirmed during our research — verify locally before planning a trip."
+  }
+]

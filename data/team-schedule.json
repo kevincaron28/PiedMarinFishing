@@ -1,0 +1,28 @@
+[
+  {
+    "id": "sample-1",
+    "name": "SAMPLE — Season Opener",
+    "startDate": "2026-05-16",
+    "endDate": "2026-05-17",
+    "region": "Montérégie",
+    "location": "Replace with real lake/venue",
+    "species": "Bass",
+    "type": "Team Event",
+    "status": "tentative",
+    "link": "",
+    "notes": "Placeholder entry. Edit data/team-schedule.json and replace with your team's real registered tournaments."
+  },
+  {
+    "id": "sample-2",
+    "name": "SAMPLE — Mid-Season Classic",
+    "startDate": "2026-07-11",
+    "endDate": "2026-07-12",
+    "region": "Outaouais",
+    "location": "Replace with real lake/venue",
+    "species": "Multi-species",
+    "type": "Team Event",
+    "status": "tentative",
+    "link": "",
+    "notes": "Placeholder entry. Delete once your real schedule is added."
+  }
+]
