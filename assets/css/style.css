@@ -162,7 +162,7 @@ img { max-width: 100%; display: block; }
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  padding: 6px 12px;
+  padding: 9px 12px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -361,6 +361,16 @@ section.alt { background: var(--sand-100); }
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow);
+}
+
+/* These links stand alone rather than sitting inside a sentence, so they are
+   tap targets and need the 24px minimum height (WCAG 2.5.8), not text metrics. */
+.card > a:last-child,
+.member-history-link,
+.footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
 }
 
 .stat-card {

@@ -53,7 +53,7 @@ async function initFeaturedVideo(selector) {
         <button type="button" class="video-facade" aria-label="${escapeHTML(t("video.playLabel"))}">
           <img class="video-thumb" alt=""
                src="https://i.ytimg.com/vi/${encodeURIComponent(id)}/maxresdefault.jpg"
-               onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg'">
+               onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${encodeURIComponent(id)}/hqdefault.jpg';this.onerror=function(){this.style.display='none';}">
           <span class="video-play" aria-hidden="true"></span>
         </button>
       </div>
