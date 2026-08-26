@@ -1,0 +1,47 @@
+[
+  {
+    "id": "sample-1",
+    "angler": "kevin-caron",
+    "species": { "fr": "Brochet", "en": "Pike" },
+    "measure": "",
+    "date": "2026",
+    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
+    "event": "formule-brochet-2026",
+    "media": { "type": "", "src": "", "videoId": "" },
+    "highlight": true,
+    "notes": {
+      "fr": "EXEMPLE — remplacez par une vraie prise. Ajoutez une photo dans assets/img/catches/ et pointez media.src dessus, ou collez un identifiant YouTube dans media.videoId.",
+      "en": "SAMPLE — replace with a real catch. Drop a photo in assets/img/catches/ and point media.src at it, or paste a YouTube id into media.videoId."
+    }
+  },
+  {
+    "id": "sample-2",
+    "angler": "bobe",
+    "species": { "fr": "Brochet", "en": "Pike" },
+    "measure": "",
+    "date": "2025",
+    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
+    "event": "formule-brochet-2025",
+    "media": { "type": "", "src": "", "videoId": "" },
+    "highlight": false,
+    "notes": {
+      "fr": "EXEMPLE — à supprimer une fois vos vraies prises ajoutées.",
+      "en": "SAMPLE — delete once your real catches are added."
+    }
+  },
+  {
+    "id": "sample-3",
+    "angler": "kevin-b",
+    "species": { "fr": "Achigan", "en": "Bass" },
+    "measure": "",
+    "date": "2025",
+    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
+    "event": "",
+    "media": { "type": "", "src": "", "videoId": "" },
+    "highlight": false,
+    "notes": {
+      "fr": "EXEMPLE — à supprimer une fois vos vraies prises ajoutées.",
+      "en": "SAMPLE — delete once your real catches are added."
+    }
+  }
+]

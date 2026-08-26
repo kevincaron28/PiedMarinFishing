@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-text="team.title">Équipe — Pied Marin Fishing</title>
-<meta name="description" data-i18n-content="team.desc" content="Rencontrez les pêcheurs de Pied Marin Fishing, une équipe multi-espèces du Québec.">
+<title data-i18n-text="catches.title">Nos plus belles prises — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="catches.desc" content="Le tableau d'honneur de Pied Marin Fishing : photos et vidéos de nos plus belles prises.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="stylesheet" href="assets/css/style.css">
@@ -19,8 +19,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
-      <li><a href="team.html" aria-current="page" data-i18n="nav.team">Équipe</a></li>
-      <li><a href="catches.html" data-i18n="nav.catches">Prises</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="catches.html" aria-current="page" data-i18n="nav.catches">Prises</a></li>
       <li><a href="history.html" data-i18n="nav.history">Palmarès</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Guide</a></li>
@@ -39,31 +39,29 @@
 
 <div class="page-header">
   <div class="container">
-    <h1 data-i18n="team.h1">Notre équipe</h1>
-    <p data-i18n="team.intro">Les pêcheurs qui forment Pied Marin Fishing — des pêcheurs multi-espèces, sur l'eau ensemble, visant le même podium.</p>
+    <h1 data-i18n="catches.h1">Nos plus belles prises</h1>
+    <p data-i18n="catches.intro">Le tableau d'honneur de l'équipe — les poissons dont on parle encore. Filtrez par pêcheur ou par espèce.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice" data-i18n="team.notice">
-      Les bios s'en viennent — ajoutez-les dans <code>data/team-members.json</code>.
+    <div class="notice" data-i18n="catches.notice">
+      Prises d'exemple — ajoutez les vôtres dans <code>data/catches.json</code> et déposez les photos dans <code>assets/img/catches/</code>.
     </div>
-    <div id="team-grid" class="grid grid-3"></div>
-  </div>
-</section>
 
-<section class="alt" id="bateaux">
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker" data-i18n="team.boatsKicker">Notre flotte</span>
-      <h2 data-i18n="team.boatsTitle">Les bateaux de l'équipe</h2>
-      <p data-i18n="team.boatsIntro">Les embarcations qui nous amènent sur l'eau, et ce qu'il y a à bord.</p>
+    <div class="filters">
+      <select id="angler-filter" data-i18n-aria-label="catches.allAnglers" aria-label="Tous les pêcheurs"></select>
+      <select id="species-filter" data-i18n-aria-label="catches.allSpecies" aria-label="Toutes les espèces"></select>
+      <label class="filter-check">
+        <input type="checkbox" id="featured-filter">
+        <span data-i18n="catches.onlyFeatured">Vedettes seulement</span>
+      </label>
+      <span class="result-count" id="result-count"></span>
     </div>
-    <div class="notice" data-i18n="team.boatsNotice">
-      Fiche à remplir — ajoutez vos bateaux et leurs détails dans <code>data/boats.json</code>.
-    </div>
-    <div id="boat-list" class="boat-list"></div>
+
+    <div id="catch-grid" class="grid grid-3"></div>
+    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="catches.empty">Aucune prise ne correspond à vos filtres.</div>
   </div>
 </section>
 
@@ -79,13 +77,16 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
-<script src="assets/js/history.js"></script>
 <script src="assets/js/catches.js"></script>
-<script src="assets/js/team.js"></script>
-<script src="assets/js/boats.js"></script>
 <script>
-  initTeam("#team-grid");
-  initBoats("#boat-list");
+  initCatches({
+    gridSelector: "#catch-grid",
+    emptySelector: "#empty-state",
+    countSelector: "#result-count",
+    anglerFilterSelector: "#angler-filter",
+    speciesFilterSelector: "#species-filter",
+    highlightFilterSelector: "#featured-filter",
+  });
 </script>
 </body>
 </html>
