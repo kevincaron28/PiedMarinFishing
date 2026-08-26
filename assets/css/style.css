@@ -729,6 +729,15 @@ section.alt { background: var(--sand-100); }
   box-shadow: var(--shadow);
   background: linear-gradient(150deg, var(--navy-950), var(--navy-800) 60%, var(--teal-600) 160%);
 }
+/* Vertical clips (YouTube Shorts) get a phone-shaped frame instead of
+   sitting letterboxed inside a 16:9 one. */
+.video-frame.video-portrait {
+  aspect-ratio: 9 / 16;
+  max-width: min(100%, 360px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .video-frame iframe {
   position: absolute;
   inset: 0;

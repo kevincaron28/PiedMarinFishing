@@ -25,12 +25,17 @@ async function initFeaturedVideo(selector) {
     return /^[A-Za-z0-9_-]{11}$/.test(raw) ? raw : "";
   }
 
+  // A Short is vertical; a 16:9 frame would letterbox it into a thin strip.
+  function frameClass() {
+    return data.orientation === "portrait" ? " video-portrait" : "";
+  }
+
   function renderPlaceholder() {
     const channel = data.channelUrl
       ? `<a href="${escapeHTML(data.channelUrl)}" target="_blank" rel="noopener">${escapeHTML(t("video.watchChannel"))}</a>`
       : "";
     host.innerHTML = `
-      <div class="video-frame">
+      <div class="video-frame${frameClass()}">
         <div class="video-placeholder">
           <span class="video-play" aria-hidden="true"></span>
           <h3>${escapeHTML(t("video.placeholderTitle"))}</h3>
@@ -44,7 +49,7 @@ async function initFeaturedVideo(selector) {
   function renderVideo(id) {
     const title = tr(data.title);
     host.innerHTML = `
-      <div class="video-frame">
+      <div class="video-frame${frameClass()}">
         <button type="button" class="video-facade" aria-label="${escapeHTML(t("video.playLabel"))}">
           <img class="video-thumb" alt=""
                src="https://i.ytimg.com/vi/${encodeURIComponent(id)}/maxresdefault.jpg"
