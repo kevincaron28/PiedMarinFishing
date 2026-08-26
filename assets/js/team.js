@@ -20,10 +20,12 @@ async function initTeam(gridSelector) {
 
   let members = [];
   let results = [];
+  let catches = [];
   try {
-    [members, results] = await Promise.all([
+    [members, results, catches] = await Promise.all([
       fetch("data/team-members.json").then((r) => r.json()),
       PMF_HISTORY.load(),
+      typeof PMF_CATCHES !== "undefined" ? PMF_CATCHES.load() : Promise.resolve([]),
     ]);
   } catch (e) {
     grid.innerHTML = `<div class="empty-state">${escapeHTML(t("team.loadError"))}</div>`;
@@ -69,6 +71,17 @@ async function initTeam(gridSelector) {
         recordBits.push(`<span><b>${s.top3}</b> ${escapeHTML(t("team.record.top3"))}</span>`);
       }
 
+      // Catch count comes from the same log that drives the hall of fame.
+      const mine2 = m.id && typeof PMF_CATCHES !== "undefined"
+        ? PMF_CATCHES.forAngler(catches, m.id) : [];
+      if (mine2.length) {
+        recordBits.push(`<span><b>${mine2.length}</b> ${escapeHTML(plural("team.catchCount", mine2.length))}</span>`);
+      }
+
+      const catchLink = m.id && mine2.length
+        ? `<a class="member-history-link" href="catches.html?angler=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewCatches"))}</a>`
+        : "";
+
       const historyLink = m.id
         ? `<a class="member-history-link" href="history.html?member=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewResults"))}</a>`
         : "";
@@ -84,6 +97,7 @@ async function initTeam(gridSelector) {
             ${quote ? `<div class="member-quote">"${escapeHTML(quote)}"</div>` : ""}
             <div class="member-record">${recordBits.join("")}</div>
             ${historyLink}
+            ${catchLink}
           </div>
         </div>
       `;

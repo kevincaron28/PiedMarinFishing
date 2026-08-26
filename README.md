@@ -12,6 +12,7 @@ Québec.
 |---|---|
 | `index.html` | Landing page |
 | `team.html` | Team roster — bios, angler specs, per-member record |
+| `catches.html` | Hall of fame — catch log with photos and video |
 | `history.html` | Palmarès: past tournament results, filterable by member and season |
 | `calendar.html` | Our team's own upcoming tournament schedule |
 | `tournaments.html` | Region-wide Québec tournament directory (for any angler, not just the team) |
@@ -90,6 +91,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `boats.js` | team boats section on the team page |
 | `merch.js` | shop product grid |
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
+| `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
@@ -125,6 +127,7 @@ they stay in sync.
 - **Past results** → `data/tournament-history.json`.
 - **Team boats** → `data/boats.json`.
 - **Shop products** → `data/merch.json`.
+- **Catches** → `data/catches.json`, photos in `assets/img/catches/`.
 - **Featured video** → `data/featured-video.json`. Paste a YouTube video id
   (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
   links are all parsed) into `videoId` and the homepage placeholder becomes
@@ -357,6 +360,41 @@ reference, not as events to enter — their specs say *Sur qualification /
 By qualification*. Two 2026 Bassmaster stops are genuinely near Québec
 (Lake Champlain at Plattsburgh, the St. Lawrence at Clayton) and say so in
 their notes.
+
+### Catches
+
+`data/catches.json` is a catch log, not a photo dump — each entry names its
+angler by member `id` and optionally the result it came from, so the gallery
+links back into the roster and the palmarès:
+
+```json
+{
+  "id": "brochet-2026",
+  "angler": "kevin-caron",
+  "species": { "fr": "Brochet", "en": "Pike" },
+  "measure": "104 cm",
+  "date": "2026-05-02",
+  "water": { "fr": "Lac Saint-Pierre", "en": "Lac Saint-Pierre" },
+  "event": "formule-brochet-2026",
+  "media": { "type": "image", "src": "assets/img/catches/brochet-2026.jpg" },
+  "highlight": true
+}
+```
+
+- `media.type` is `image` (with `src`) or `youtube` (with `videoId`). Leave it
+  empty and the crest stands in with a *Photo à venir* label.
+- A YouTube tile shows a thumbnail and only contacts YouTube once someone
+  presses play — same click-to-load facade as the homepage video.
+- `highlight: true` pins the catch to the top with a gold ribbon and is what
+  the *Vedettes seulement / Featured only* filter matches.
+- `event` takes a **`tournament-history.json` id**, and `angler` a
+  **`team-members.json` id**. Each team card shows its angler's catch count
+  and deep-links to `catches.html?angler=<id>`.
+- `date` accepts the same partial forms as everywhere else — `"2026"`,
+  `"2026-05"` or `"2026-05-02"`.
+
+Resize photos to roughly 1200px on the long edge before committing; full
+camera files bloat the repo for no visible gain.
 
 ### Event specs
 
