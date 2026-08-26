@@ -456,6 +456,36 @@ python3 -m http.server 8000
 
 1. Push this repo to GitHub (already done if you're reading this from the repo).
 2. In the repo settings, go to **Pages** → set source to the `main` branch, root folder.
-3. The site will be live at `https://<username>.github.io/<repo>/` within a few minutes.
+3. The site goes live at `https://<username>.github.io/<repo>/` within a few minutes.
 
-No further configuration needed — there's nothing to build.
+No build step — there's nothing to compile.
+
+### Custom domain: piedmarinfishing.com
+
+The repo root holds a `CNAME` file containing `piedmarinfishing.com`. **Do not
+delete it** — GitHub Pages reads that file to know which domain to serve, and
+losing it drops the site back to the `github.io` URL.
+
+DNS lives at Porkbun. The apex needs GitHub's four A records:
+
+```
+A   piedmarinfishing.com   185.199.108.153
+A   piedmarinfishing.com   185.199.109.153
+A   piedmarinfishing.com   185.199.110.153
+A   piedmarinfishing.com   185.199.111.153
+CNAME   www                kevincaron28.github.io
+```
+
+Porkbun also supports `ALIAS` at the apex, which works and survives GitHub
+changing its IPs — point one ALIAS record at `kevincaron28.github.io` instead
+of the four A records.
+
+Two things to remove from Porkbun's defaults: the `ALIAS` pointing at
+`uixie.porkbun.com` (the parking page), and the wildcard
+`CNAME *.piedmarinfishing.com`. GitHub explicitly advises against wildcard DNS
+on a Pages domain — it lets anyone claim an unregistered subdomain.
+
+Keep the `MX` and SPF `TXT` records if you use Porkbun's email forwarding for
+`info@piedmarinfishing.com`; they don't conflict with Pages.
+
+After DNS propagates, tick **Enforce HTTPS** in the repo's Pages settings.

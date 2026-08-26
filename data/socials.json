@@ -29,8 +29,8 @@
   },
   {
     "name": { "fr": "Courriel", "en": "Email" },
-    "handle": "info@piedmarinfishing.ca",
-    "url": "mailto:info@piedmarinfishing.ca",
+    "handle": "info@piedmarinfishing.com",
+    "url": "mailto:info@piedmarinfishing.com",
     "color": "#157a76",
     "icon": "mail"
   }
