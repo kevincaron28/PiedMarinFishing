@@ -121,7 +121,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links {
   display: flex;
-  gap: 4px;
+  gap: 2px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -129,7 +129,7 @@ img { max-width: 100%; display: block; }
 
 .nav-links a {
   color: rgba(255,255,255,0.82);
-  padding: 8px 12px;
+  padding: 8px 10px;
   border-radius: 999px;
   font-size: 0.94rem;
   font-weight: 500;
