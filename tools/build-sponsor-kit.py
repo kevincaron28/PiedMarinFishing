@@ -64,7 +64,7 @@ h1 { font-family: "Liberation Serif", Georgia, serif; font-size: 25pt; line-heig
 h2 { font-family: "Liberation Serif", Georgia, serif; font-size: 12.5pt; color: #0b2038;
      margin: 0 0 7pt; padding-bottom: 4pt; border-bottom: 2px solid rgba(16,32,47,0.12);
      letter-spacing: 0.02em; }
-.section { margin-bottom: 0.13in; }
+.section { margin-bottom: 0.115in; }
 ul { list-style: none; }
 li { position: relative; padding: 2.2pt 0 2.2pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
 li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; font-weight: 700; }
