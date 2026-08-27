@@ -111,16 +111,23 @@
     "status": "tentative",
     "link": "https://muskiescanada.ca/brochet2026/",
     "notes": {
-      "fr": "À l'ouverture du brochet, remise à l'eau et mesuré à la règle (les deux plus longs brochets). L'édition 2025 s'est tenue le samedi 3 mai. Confirmez la prochaine date avec l'organisateur.",
-      "en": "At the pike opener, catch-photo-release measured by ruler (two longest pike combined). The 2025 edition was held Saturday 3 May. Confirm the next date with the organizer."
+      "fr": "Tournoi annuel de Muskies Canada Montréal, à l'ouverture du brochet, présenté par Thomas Marine, Ezoko et Black Jack Fishing. Remise à l'eau : le poisson est mesuré à la règle officielle (obligatoire) sans sortir de l'eau, et le pointage se fait sur la longueur combinée des deux plus longs brochets. Podium de 30 places et plus. Les éditions 2024 et 2025 se sont tenues le premier samedi de mai, de 6 h à 16 h. Inscription en équipe via l'application FishDonkey; la règle officielle du tournoi se vend 22 $ et se réutilise d'une année à l'autre. Confirme la prochaine date et le prix auprès de l'organisateur.",
+      "en": "Muskies Canada Montréal's annual pike-opener tournament, presented by Thomas Marine, Ezoko and Black Jack Fishing. Catch-photo-release: fish are measured on the official ruler (mandatory) without leaving the water, and scoring is on the combined length of the two longest pike. Podium of 30 places or more. The 2024 and 2025 editions ran on the first Saturday of May, 6 a.m. to 4 p.m. Team registration through the FishDonkey app; the official tournament ruler sells for $22 and carries over year to year. Confirm the next date and the entry fee with the organizer."
     },
     "specs": {
       "format": {
-        "fr": "Remise à l'eau, mesuré à la règle",
-        "en": "Catch-photo-release, ruler-measured"
+        "fr": "Remise à l'eau, deux plus longs brochets combinés",
+        "en": "Catch-photo-release, two longest pike combined"
       },
       "fee": "",
-      "teamSize": ""
+      "teamSize": {
+        "fr": "En équipe",
+        "en": "Team entry"
+      },
+      "hours": {
+        "fr": "6 h à 16 h (2024-2025)",
+        "en": "6 a.m. to 4 p.m. (2024-2025)"
+      }
     },
     "tier": "regional",
     "kind": "single"

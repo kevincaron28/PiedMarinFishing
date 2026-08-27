@@ -3,63 +3,138 @@
     "id": "formule-brochet-2026",
     "name": "Formule Brochet 2026",
     "date": "2026",
-    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
-    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
-    "species": { "fr": "Brochet", "en": "Pike" },
+    "region": {
+      "fr": "Zone 8 / corridor du Saint-Laurent",
+      "en": "Zone 8 / St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre",
+      "en": "Pike opener — Zone 8 and the Zone 7 corridor, including the Lac Saint-Pierre AFC"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
     "organizer": "Muskies Canada Montréal",
     "placement": null,
     "fieldSize": null,
-    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "members": [
+      "kevin-caron",
+      "kevin-b",
+      "bobe"
+    ],
     "link": "https://muskiescanada.ca/brochet2026/",
     "figures": [
-      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
-      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+      {
+        "value": "",
+        "label": {
+          "fr": "2 plus longs brochets",
+          "en": "2 longest pike"
+        }
+      },
+      {
+        "value": "",
+        "label": {
+          "fr": "plus long brochet",
+          "en": "longest pike"
+        }
+      }
     ],
     "notes": {
-      "fr": "Tournoi remise à l'eau, mesuré à la règle. Date exacte et résultat à confirmer.",
-      "en": "Catch-photo-release tournament, measured by length. Exact date and result to be confirmed."
+      "fr": "Notre troisième participation de suite. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. La date exacte et le résultat restent à confirmer.",
+      "en": "Our third year in a row. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Exact date and result still to be confirmed."
     }
   },
   {
     "id": "formule-brochet-2025",
     "name": "Formule Brochet 2025",
     "date": "2025-05-03",
-    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
-    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
-    "species": { "fr": "Brochet", "en": "Pike" },
+    "region": {
+      "fr": "Zone 8 / corridor du Saint-Laurent",
+      "en": "Zone 8 / St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre",
+      "en": "Pike opener — Zone 8 and the Zone 7 corridor, including the Lac Saint-Pierre AFC"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
     "organizer": "Muskies Canada Montréal",
     "placement": null,
     "fieldSize": null,
-    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "members": [
+      "kevin-caron",
+      "kevin-b",
+      "bobe"
+    ],
     "link": "https://muskiescanada.ca/en/brochet2025/",
     "figures": [
-      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
-      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+      {
+        "value": "",
+        "label": {
+          "fr": "2 plus longs brochets",
+          "en": "2 longest pike"
+        }
+      },
+      {
+        "value": "",
+        "label": {
+          "fr": "plus long brochet",
+          "en": "longest pike"
+        }
+      }
     ],
     "notes": {
-      "fr": "Tenu le samedi 3 mai 2025. Tournoi remise à l'eau, mesuré à la règle. Résultat à confirmer.",
-      "en": "Held Saturday 3 May 2025. Catch-photo-release tournament, measured by length. Result to be confirmed."
+      "fr": "Tenu le samedi 3 mai 2025, de 6 h à 16 h (date de remise au 10 mai). Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Résultat à confirmer.",
+      "en": "Held Saturday 3 May 2025, 6 a.m. to 4 p.m. (rain date 10 May). Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Result to be confirmed."
     }
   },
   {
     "id": "formule-brochet-2024",
     "name": "Formule Brochet 2024",
-    "date": "2024",
-    "region": { "fr": "Zone 8 / corridor du Saint-Laurent", "en": "Zone 8 / St. Lawrence corridor" },
-    "location": { "fr": "Ouverture du brochet — zone 8 et corridor zone 7", "en": "Pike opener — Zone 8 and Zone 7 corridor" },
-    "species": { "fr": "Brochet", "en": "Pike" },
+    "date": "2024-05-04",
+    "region": {
+      "fr": "Zone 8 / corridor du Saint-Laurent",
+      "en": "Zone 8 / St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre",
+      "en": "Pike opener — Zone 8 and the Zone 7 corridor, including the Lac Saint-Pierre AFC"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
     "organizer": "Muskies Canada Montréal",
     "placement": null,
     "fieldSize": null,
-    "members": ["kevin-caron", "kevin-b", "bobe"],
+    "members": [
+      "kevin-caron",
+      "kevin-b",
+      "bobe"
+    ],
     "link": "https://muskiescanada.ca/en/brochet2024/",
     "figures": [
-      { "value": "", "label": { "fr": "2 plus longs brochets", "en": "2 longest pike" } },
-      { "value": "", "label": { "fr": "plus long brochet", "en": "longest pike" } }
+      {
+        "value": "",
+        "label": {
+          "fr": "2 plus longs brochets",
+          "en": "2 longest pike"
+        }
+      },
+      {
+        "value": "",
+        "label": {
+          "fr": "plus long brochet",
+          "en": "longest pike"
+        }
+      }
     ],
     "notes": {
-      "fr": "Tournoi remise à l'eau, mesuré à la règle. Date exacte et résultat à confirmer.",
-      "en": "Catch-photo-release tournament, measured by length. Exact date and result to be confirmed."
+      "fr": "Tenu le samedi 4 mai 2024, de 6 h à 16 h. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Notre première participation. Résultat à confirmer.",
+      "en": "Held Saturday 4 May 2024, 6 a.m. to 4 p.m. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Our first year. Result to be confirmed."
     }
   }
 ]
