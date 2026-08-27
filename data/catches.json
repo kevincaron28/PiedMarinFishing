@@ -20,8 +20,8 @@
     },
     "highlight": false,
     "notes": {
-      "fr": "Pris sur la Salmon River, à Pulaski, dans l'État de New York, pendant la remonte automnale des chinooks des Grands Lacs.",
-      "en": "Caught on the Salmon River at Pulaski, New York, during the fall run of Great Lakes chinook."
+      "fr": "Pris sur la Salmon River, à Pulaski, dans l'État de New York, pendant la remonte automnale des chinooks des Grands Lacs, hors tournoi.",
+      "en": "Caught on the Salmon River at Pulaski, New York, during the fall run of Great Lakes chinook, outside competition."
     }
   },
   {
@@ -31,7 +31,10 @@
       "fr": "Maskinongé",
       "en": "Muskie"
     },
-    "measure": "",
+    "measure": {
+      "fr": "50 po",
+      "en": "50\""
+    },
     "date": "2025",
     "water": {
       "fr": "Fleuve Saint-Laurent",
@@ -45,8 +48,8 @@
     },
     "highlight": false,
     "notes": {
-      "fr": "Sorti du fleuve Saint-Laurent, une journée de pluie.",
-      "en": "Off the St. Lawrence, on a rainy day."
+      "fr": "Le record personnel de Kevin B. Sorti du fleuve Saint-Laurent une journée de pluie, hors tournoi.",
+      "en": "Kevin B.'s personal best. Off the St. Lawrence on a rainy day, outside competition."
     }
   },
   {
@@ -56,7 +59,10 @@
       "fr": "Maskinongé",
       "en": "Muskie"
     },
-    "measure": "",
+    "measure": {
+      "fr": "45 po",
+      "en": "45\""
+    },
     "date": "2025",
     "water": {
       "fr": "Fleuve Saint-Laurent",
@@ -70,8 +76,8 @@
     },
     "highlight": false,
     "notes": {
-      "fr": "Sorti du fleuve Saint-Laurent, en fin de journée.",
-      "en": "Off the St. Lawrence, late in the day."
+      "fr": "Le record personnel de BOBE. Sorti du fleuve Saint-Laurent en fin de journée, hors tournoi.",
+      "en": "BOBE's personal best. Off the St. Lawrence late in the day, outside competition."
     }
   }
 ]
