@@ -3,21 +3,22 @@
 Pied Marin Fishing - Fishing Team Quebec
 
 A static website for the team: landing page, roster, socials, our tournament
-schedule, and a community-maintained guide to fishing tournaments across
-Québec.
+schedule, a guide to fishing tournaments across Québec, and a sponsor pitch
+page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 
 ## Pages
 
 | File | Purpose |
 |---|---|
 | `index.html` | Landing page |
-| `team.html` | Team roster — bios, angler specs, per-member record |
-| `catches.html` | Hall of fame — catch log with photos and video |
-| `history.html` | Palmarès: past tournament results, filterable by member and season |
-| `calendar.html` | Our team's own upcoming tournament schedule |
-| `tournaments.html` | Region-wide Québec tournament directory (for any angler, not just the team) |
-| `merch.html` | Shop — apparel and gear |
+| `team.html` | Roster — bios, angler specs, per-member record, and the team boats |
+| `catches.html` | Catch log with photos and video |
+| `history.html` | *Sorties / Trips* — every tournament fished, filterable by member and season |
+| `calendar.html` | Our own upcoming tournament schedule |
+| `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
+| `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
+| `sponsors.html` | Sponsor pitch, with a downloadable PDF kit |
 
 No build step, no framework, no dependencies — plain HTML/CSS/JS. Every
 content-heavy part of the site reads from a JSON file in `data/` so you can
@@ -47,6 +48,7 @@ Markup opts in with an attribute naming the key:
 | `data-i18n-placeholder` | an input's placeholder |
 | `data-i18n-content` | a meta tag's `content` |
 | `data-i18n-alt` / `data-i18n-aria-label` | `alt` / `aria-label` |
+| `data-i18n-href` | a link's `href` — used for the two-language sponsor kit |
 
 `{year}` in a string is replaced with the current year. Counts use
 `…count.one` / `…count.other` — the plural rule differs per language
@@ -92,6 +94,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `merch.js` | shop product grid |
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 | `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
+| `sponsors.js` | partner logos — hides its whole section when there are none |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
@@ -134,6 +137,18 @@ they stay in sync.
   the real clip. The homepage shows a click-to-load thumbnail rather than a
   live embed, so nothing is requested from YouTube until a visitor presses
   play, and the player then loads from `youtube-nocookie.com`.
+
+  Optional fields added since: `photo` (a path under `assets/img/team/`,
+  which replaces the initials and hides the crest watermark), `photoAlt`
+  (what the photo actually shows — write it yourself; it is the alt text),
+  and `quoteBy` (the attribution, rendered under the quote rather than
+  inside the quotation marks, which would be wrong). Quotation marks follow
+  the language: guillemets in French, curly quotes in English.
+
+  **Verify any quote before publishing it.** The obvious Thoreau line about
+  men who fish without knowing it is not fish they are after is apocryphal —
+  the American Museum of Fly Fishing traced it and it appears nowhere in his
+  work. It was nearly used here.
 
 ### Members ↔ results
 
@@ -202,6 +217,10 @@ more boats by adding more entries; they stack vertically.
 To change which spec rows appear, edit `BOAT_SPEC_FIELDS` in
 `assets/js/boats.js` and add matching `boats.spec.*` labels to
 `data/i18n.json`.
+
+A boat can be owned by one member and run by another: `skipper` and `owner`
+each hold a member `id`. When they are the same person the two lines merge
+into one rather than repeating the name.
 
 ### Shop
 
@@ -331,35 +350,39 @@ dates. This is computed from the dates — nothing to maintain by hand. An
 undated entry never counts as past, and a cancelled one never counts as
 upcoming.
 
-### Circuits, stops and tiers
+### Circuits, stops and seasons
 
-Three fields classify every entry:
+Two fields classify every entry:
 
 | Field | Values |
 |---|---|
 | `kind` | `single` (a one-off tournament), `circuit` (a series), `stop` (one leg of a series) |
 | `circuit` | on a stop: the parent circuit's `id` |
-| `tier` | `regional` (default) or `pro` |
 
-A circuit carries **no dates of its own** — its stops do. In the list a
-circuit renders as a parent card with its stops nested inside it, so a
-series reads as one thing instead of N unrelated rows. Date and region
-filters judge a circuit by its stops, so filtering to October still shows
-the Big Bass Québec block with only its October stop inside.
+A circuit carries **no dates of its own** — its stops do. Its *season* is
+therefore inherited from its earliest stop; an entry with no date at all
+belongs to no season and stays visible whichever season is selected.
 
-`tier: "pro"` gets purple styling everywhere — card border, date badge, a
-PRO badge, and its own colour in the calendar — so the professional tours
-never get mistaken for something you can enter. A calendar day holding both
-a regional event and a pro stop is split diagonally between the two colours.
+The guide is organised by season, not by filters. There are only two
+controls left: a season switch and a search box.
 
-The **Type** filter offers All / Single tournaments / Circuits and series /
-Pro tours.
+- The **season switch appears only when there is more than one season to
+  show.** Today the directory covers 2026 alone, so it stays hidden and the
+  page goes straight to the content. Add a 2027 tournament and the switch
+  appears on its own, opening on the current year. Nothing to maintain.
+- Within a season the list is **grouped by month** (`MAI 2026 · 4 événements`),
+  which is why there is no month filter any more. Circuit stops appear in
+  their own month, tagged with the name of their series, and the series
+  themselves are listed once at the top with their stop count and link. So
+  "what's on in June" and "what is this circuit" are both answerable without
+  losing the other. Anything without a published date closes the page under
+  *Dates pas encore publiées*.
 
-The two pro tours (Bassmaster Elite, MLF Bass Pro Tour) are included as
-reference, not as events to enter — their specs say *Sur qualification /
-By qualification*. Two 2026 Bassmaster stops are genuinely near Québec
-(Lake Champlain at Plattsburgh, the St. Lawrence at Clayton) and say so in
-their notes.
+A `tier` field still exists on every entry and is set to `regional`
+throughout. The Bassmaster Elite and MLF Bass Pro Tour series were removed
+in August 2026 — the directory covers events an angler here can actually
+enter. `events.js` still accepts the `when`, `kind` and `year` filter
+options; no page passes them, but they work if a future page wants one.
 
 ### Catches
 
@@ -417,30 +440,93 @@ so a reader can tell "we don't know" from "it's free". The other four appear
 only when filled in. Search covers the spec text too, so `910` finds every
 Excellence Bass stop.
 
-Only 8 of the 19 events publish an entry fee and 11 publish a team format;
-the rest genuinely aren't published by their organizers. Don't guess — a
-wrong fee is worse than an honest blank.
+Of the 21 entries, **9 publish an entry fee and 14 publish a team format**.
+The rest genuinely aren't published: the organizers' own sites don't carry
+them. Don't guess — a wrong fee is worse than an honest blank. Filling these
+in is a phone call, not a code change, and it is the single biggest
+improvement left for the directory.
+
+#### Registration deadline
+
+`deadline` is human-readable prose (*"Paiement avant le 31 mai 2026"*), which
+is fine to read and impossible to compute with. A second field carries the
+machine-readable version:
+
+```json
+"deadline":     { "fr": "Préinscription avant le 30 septembre 2026", "en": "Pre-register before 30 September 2026" },
+"deadlineDate": "2026-09-30"
+```
+
+When `deadlineDate` is present the card shows a countdown — *Inscriptions :
+encore 34 jours* — which turns amber at seven days or fewer and becomes a
+plain *Inscriptions fermées* once the date has passed. Four entries have one.
+**Only ever fill `deadlineDate` from a date the organizer actually published**;
+it drives a claim about time, so a guess is worse here than anywhere else.
+
+#### Add to calendar
+
+Every entry with an exact day and a status other than `cancelled` gets an
+*Ajouter au calendrier* button. `events.js` builds the `.ics` in the browser
+and hands it to the visitor — no server, which is what makes it work on
+GitHub Pages. `DTEND` is set to the day after the end date, because an
+all-day `DTEND` is exclusive. Thirteen of the 21 entries qualify; the rest
+have no exact day, and an event without a date has no business in someone's
+calendar.
 
 The team is positioned throughout as a **multi-species** team — pike, bass,
 walleye — rather than a bass specialist, which is what its results actually
 show.
 
-**The roster names and roles are real; their bios, specs and photos are not
-filled in yet.** The three Formule Brochet entries in the results are real
-events, but their placements and measurements still need filling in. The
-social handles, boats, shop products and the upcoming team schedule are
-still placeholders —
-sample entries are prefixed `EXEMPLE` / `SAMPLE` so they are obvious. The Québec
-tournament directory holds 19 entries for the 2026 season, compiled from
-organizer sites in August 2026 with close coverage of the Montérégie, the
-St. Lawrence, the Richelieu and Lake Champlain — the Big Bass Québec program,
-the Coteau-du-Lac Excellence Bass series, Challenge Carpe Québec, the Fête de
-la pêche and more. Each entry's `notes`/`link` carries its source and any
-caveat (unconfirmed dates, an organizer page that contradicts itself, a
-cancelled circuit). It's rounded out with links to continuously-updated
-calendars (Pêcheur Québec, Sur Le Spot, FédéCP, Coteau-du-Lac).
-Tournament dates change — keep this file current, and always tell readers to
+### What is real, and what is not
+
+Everything on the site is either a verified fact or an honest blank. As of
+August 2026:
+
+| Filled in | Still open |
+|---|---|
+| The three anglers — bios, all six specs, roles, photos | Tournament placements and measurements |
+| The two boats — Princecraft Holiday 1996 and 1995, with owner and skipper | Merch products, sizes and prices |
+| Three catches, with species, water, date and photo | Entry fees for 12 of the 21 directory entries |
+| The four social accounts, confirmed by the team | |
+| The three Formule Brochet dates: 4 May 2024, 3 May 2025, 2 May 2026 | |
+
+The results carry `placement: null` and empty `figures` on purpose. The
+team fished all three editions; nobody has dug up the score sheets yet, and
+the site says so rather than inventing a ranking.
+
+The directory holds **21 entries for the 2026 season**, compiled from
+organizer sites in August 2026. Coverage is strongest in the Montérégie and
+the Southwest and thinner elsewhere, which is what the guide's own intro
+says — the site claims province-wide *scope*, not province-wide *density*.
+Each entry's `notes` and `link` carry its source and any caveat: an
+unconfirmed date, an organizer page that contradicts itself, a cancelled
+circuit. It is rounded out with links to continuously-updated calendars
+(Pêcheur Québec, Sur Le Spot, FédéCP, Coteau-du-Lac).
+
+Tournament dates change. Keep this file current, and always tell readers to
 confirm with the organizer.
+
+### The sponsor kit
+
+`tools/build-sponsor-kit.py` reads `data/i18n.json` and
+`data/team-members.json` and writes one letter-size HTML page per language;
+`tools/render-sponsor-kit.js` renders each to PDF with Chromium. The output
+lives in `assets/docs/` and is linked from `sponsors.html` — the download
+button swaps to the right language through `data-i18n-href`.
+
+```bash
+python3 tools/build-sponsor-kit.py
+node  tools/render-sponsor-kit.js
+```
+
+Because the kit is generated from the same JSON as the website, fixing a
+fact in one place fixes it in both. Regenerate after any change to the
+roster or the sponsor copy, and update the season label in
+`tools/build-sponsor-kit.py` when the season turns.
+
+`data/sponsors.json` is an empty array. The *Nos partenaires* section on
+`sponsors.html` hides itself while it stays that way — an empty grid under
+that heading would say the opposite of what the page is for.
 
 ## Running locally
 
@@ -452,13 +538,11 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-## Deploying to GitHub Pages
+## Deployment
 
-1. Push this repo to GitHub (already done if you're reading this from the repo).
-2. In the repo settings, go to **Pages** → set source to the `main` branch, root folder.
-3. The site goes live at `https://<username>.github.io/<repo>/` within a few minutes.
-
-No build step — there's nothing to compile.
+The site is **live** at <https://piedmarinfishing.com>, served by GitHub Pages
+from the `main` branch, root folder. There is nothing to compile: pushing to
+`main` publishes.
 
 ### Custom domain: piedmarinfishing.com
 
@@ -466,26 +550,25 @@ The repo root holds a `CNAME` file containing `piedmarinfishing.com`. **Do not
 delete it** — GitHub Pages reads that file to know which domain to serve, and
 losing it drops the site back to the `github.io` URL.
 
-DNS lives at Porkbun. The apex needs GitHub's four A records:
+DNS lives at Porkbun and is already pointed correctly. Verified against
+public resolvers:
 
 ```
-A   piedmarinfishing.com   185.199.108.153
-A   piedmarinfishing.com   185.199.109.153
-A   piedmarinfishing.com   185.199.110.153
-A   piedmarinfishing.com   185.199.111.153
-CNAME   www                kevincaron28.github.io
+piedmarinfishing.com       ->  185.199.108-111.153        (GitHub Pages)
+www.piedmarinfishing.com   ->  kevincaron28.github.io
+MX                         ->  fwd1/fwd2.porkbun.com      (email forwarding)
+TXT                        ->  v=spf1 include:_spf.porkbun.com ~all
 ```
 
-Porkbun also supports `ALIAS` at the apex, which works and survives GitHub
-changing its IPs — point one ALIAS record at `kevincaron28.github.io` instead
-of the four A records.
-
-Two things to remove from Porkbun's defaults: the `ALIAS` pointing at
-`uixie.porkbun.com` (the parking page), and the wildcard
+Porkbun's `ALIAS` at the apex is what points at `kevincaron28.github.io`; it
+survives GitHub changing its IPs, so prefer it over hard-coding the four A
+records. Two of Porkbun's defaults were removed and should stay removed: the
+`ALIAS` to `uixie.porkbun.com` (their parking page) and the wildcard
 `CNAME *.piedmarinfishing.com`. GitHub explicitly advises against wildcard DNS
 on a Pages domain — it lets anyone claim an unregistered subdomain.
 
-Keep the `MX` and SPF `TXT` records if you use Porkbun's email forwarding for
-`info@piedmarinfishing.com`; they don't conflict with Pages.
+The `MX` and SPF `TXT` records carry email forwarding for
+`info@piedmarinfishing.com`, which the whole site uses as its contact address.
+They don't conflict with Pages — leave them alone.
 
-After DNS propagates, tick **Enforce HTTPS** in the repo's Pages settings.
+**Enforce HTTPS** is on in the repo's Pages settings.
