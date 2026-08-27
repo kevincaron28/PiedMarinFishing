@@ -127,7 +127,6 @@
     "team.boatsKicker": "Notre flotte",
     "team.boatsTitle": "Les bateaux de l'équipe",
     "team.boatsIntro": "Les embarcations qui nous amènent sur l'eau, et ce qu'il y a à bord.",
-    "team.boatsNotice": "Les fiches des bateaux s'en viennent.",
     "boats.spec.model": "Modèle",
     "boats.spec.year": "Année",
     "boats.spec.length": "Longueur",
@@ -207,7 +206,9 @@
     "index.card5body": "Les poissons dont on parle encore — et les histoires qui viennent avec.",
     "index.card5link": "Voir le tableau →",
     "boats.photoAlt": "{name} — bateau de Pied Marin Fishing",
-    "merch.photoAlt": "{name} aux couleurs de Pied Marin Fishing"
+    "merch.photoAlt": "{name} aux couleurs de Pied Marin Fishing",
+    "boats.owner": "Propriétaire :",
+    "boats.skipperOwner": "Capitaine et propriétaire :"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -337,7 +338,6 @@
     "team.boatsKicker": "Our fleet",
     "team.boatsTitle": "The team boats",
     "team.boatsIntro": "The boats that get us on the water, and what's aboard.",
-    "team.boatsNotice": "Boat details are on the way.",
     "boats.spec.model": "Model",
     "boats.spec.year": "Year",
     "boats.spec.length": "Length",
@@ -417,6 +417,8 @@
     "index.card5body": "The fish we still talk about — and the stories that come with them.",
     "index.card5link": "See the board →",
     "boats.photoAlt": "{name} — a Pied Marin Fishing boat",
-    "merch.photoAlt": "{name} in Pied Marin Fishing colours"
+    "merch.photoAlt": "{name} in Pied Marin Fishing colours",
+    "boats.owner": "Owner:",
+    "boats.skipperOwner": "Skipper and owner:"
   }
 }

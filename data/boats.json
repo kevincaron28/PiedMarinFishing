@@ -1,17 +1,64 @@
 [
   {
-    "id": "boat-1",
-    "name": { "fr": "Bateau de l'équipe", "en": "Team boat" },
-    "skipper": "",
+    "id": "princecraft-1996",
+    "name": {
+      "fr": "Princecraft Holiday 1996 — bleu",
+      "en": "Princecraft Holiday 1996 — blue"
+    },
+    "skipper": "kevin-b",
+    "owner": "bobe",
     "image": "",
-    "description": "",
+    "description": {
+      "fr": "Le bleu de l'équipe. Un Princecraft Holiday Wide de 1996, 16,5 pieds sur 6, poussé par un Mariner 40 forces. C'est le bateau équipé pour chercher le poisson : Garmin LiveScope et écran de 12 pouces à la console. BOBE en est le propriétaire, Kevin B. le barre.",
+      "en": "The crew's blue rig. A 1996 Princecraft Holiday Wide, 16.5 feet by 6, pushed by a Mariner 40. This is the boat set up for finding fish: Garmin LiveScope and a 12-inch screen at the console. BOBE owns it, Kevin B. runs it."
+    },
     "specs": {
-      "model": "",
-      "year": "",
-      "length": "",
-      "engine": "",
+      "model": "Princecraft Holiday Wide",
+      "year": "1996",
+      "length": {
+        "fr": "16,5 pi × 6 pi",
+        "en": "16.5 ft × 6 ft"
+      },
+      "engine": {
+        "fr": "Mariner 40 forces",
+        "en": "Mariner 40 hp"
+      },
       "trolling": "",
-      "electronics": ""
+      "electronics": {
+        "fr": "Garmin LiveScope, écran 12 po",
+        "en": "Garmin LiveScope, 12-inch display"
+      }
+    }
+  },
+  {
+    "id": "princecraft-1995",
+    "name": {
+      "fr": "Princecraft Holiday 1995 — noir",
+      "en": "Princecraft Holiday 1995 — black"
+    },
+    "skipper": "kevin-caron",
+    "owner": "kevin-caron",
+    "image": "",
+    "description": {
+      "fr": "Le noir. Un Princecraft Holiday Wide de 1995, mêmes dimensions que son jumeau — 16,5 pieds sur 6 — avec un Evinrude 25 forces et un sonar Garmin ClearVü. Le bateau de Kevin Caron.",
+      "en": "The black one. A 1995 Princecraft Holiday Wide, same dimensions as its twin — 16.5 feet by 6 — with an Evinrude 25 and Garmin ClearVü sonar. Kevin Caron's boat."
+    },
+    "specs": {
+      "model": "Princecraft Holiday Wide",
+      "year": "1995",
+      "length": {
+        "fr": "16,5 pi × 6 pi",
+        "en": "16.5 ft × 6 ft"
+      },
+      "engine": {
+        "fr": "Evinrude 25 forces",
+        "en": "Evinrude 25 hp"
+      },
+      "trolling": "",
+      "electronics": {
+        "fr": "Sonar Garmin ClearVü",
+        "en": "Garmin ClearVü sonar"
+      }
     }
   }
 ]

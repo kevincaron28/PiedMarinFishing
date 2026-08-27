@@ -48,12 +48,20 @@ async function initBoats(selector) {
         `;
       }).join("");
 
+      // Un bateau peut appartenir à un membre et être barré par un autre.
       const skipper = memberById.get(b.skipper);
-      const skipperRow = skipper
-        ? `<div class="boat-skipper">${escapeHTML(t("boats.skipper"))}
-             <a href="history.html?member=${encodeURIComponent(skipper.id)}">${escapeHTML(tr(skipper.name))}</a>
-           </div>`
-        : "";
+      const owner = memberById.get(b.owner);
+      const crewLink = (m) =>
+        `<a href="history.html?member=${encodeURIComponent(m.id)}">${escapeHTML(tr(m.name))}</a>`;
+      let skipperRow = "";
+      if (skipper && owner && skipper.id === owner.id) {
+        skipperRow = `<div class="boat-skipper">${escapeHTML(t("boats.skipperOwner"))} ${crewLink(skipper)}</div>`;
+      } else {
+        const parts = [];
+        if (skipper) parts.push(`${escapeHTML(t("boats.skipper"))} ${crewLink(skipper)}`);
+        if (owner) parts.push(`${escapeHTML(t("boats.owner"))} ${crewLink(owner)}`);
+        if (parts.length) skipperRow = `<div class="boat-skipper">${parts.join("<br>")}</div>`;
+      }
 
       const photo = b.image
         ? `<img src="${escapeHTML(b.image)}" alt="${escapeHTML(t("boats.photoAlt", { name }))}" class="boat-photo-img">`
