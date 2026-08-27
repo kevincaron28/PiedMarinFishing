@@ -56,7 +56,7 @@ async function initBoats(selector) {
         : "";
 
       const photo = b.image
-        ? `<img src="${escapeHTML(b.image)}" alt="${escapeHTML(name)}" class="boat-photo-img">`
+        ? `<img src="${escapeHTML(b.image)}" alt="${escapeHTML(t("boats.photoAlt", { name }))}" class="boat-photo-img">`
         : "";
 
       return `

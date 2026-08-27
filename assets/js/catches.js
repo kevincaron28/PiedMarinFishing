@@ -144,7 +144,8 @@ async function initCatches(options) {
     grid.innerHTML = rows.map((c) => {
       const angler = memberById.get(c.angler);
       const anglerName = angler ? tr(angler.name) : c.angler || "";
-      c._alt = [tr(c.species), anglerName].filter(Boolean).join(" — ");
+      // Alt utile pour un lecteur d'écran : quoi, qui, et où.
+      c._alt = [tr(c.species), anglerName, tr(c.water)].filter(Boolean).join(" — ");
 
       const p = dateParts(c.date);
       let when = "";

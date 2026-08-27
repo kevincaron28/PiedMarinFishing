@@ -58,7 +58,7 @@ async function initMerch(selector) {
         ? `<div class="merch-sizes">${p.sizes.map((s) => `<span>${escapeHTML(s)}</span>`).join("")}</div>`
         : "";
       const photo = p.image
-        ? `<img src="${escapeHTML(p.image)}" alt="${escapeHTML(name)}" class="merch-photo-img">`
+        ? `<img src="${escapeHTML(p.image)}" alt="${escapeHTML(t("merch.photoAlt", { name }))}" class="merch-photo-img">`
         : "";
 
       return `
