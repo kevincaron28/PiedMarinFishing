@@ -15,6 +15,24 @@ const PMF_HISTORY = (() => {
     return cache;
   }
 
+  // Compare des mesures écrites pour l'oeil (« 55,25 po ») : on isole le nombre.
+  function figureValue(v) {
+    const txt = (typeof v === "object" && v) ? (v.fr || v.en || "") : (v || "");
+    const n = parseFloat(String(txt).replace(",", ".").replace(/[^\d.]/g, ""));
+    return Number.isFinite(n) ? n : null;
+  }
+
+  function bestFigure(rows) {
+    let best = null;
+    rows.forEach((r) => {
+      const f = (r.figures || [])[0];
+      if (!f) return;
+      const n = figureValue(f.value);
+      if (n !== null && (best === null || n > best.n)) best = { n, figure: f };
+    });
+    return best;
+  }
+
   // Aggregate stats for a set of results — the whole team, or one angler.
   function summarize(rows) {
     const placements = rows.map((r) => r.placement).filter((p) => Number.isFinite(p));
@@ -25,6 +43,8 @@ const PMF_HISTORY = (() => {
       top3: placements.filter((p) => p <= 3).length,
       wins: placements.filter((p) => p === 1).length,
       seasons: seasons.size,
+      // La première mesure d'une sortie est celle qui a servi au pointage.
+      bestFigure: bestFigure(rows),
     };
   }
 
@@ -128,7 +148,13 @@ async function initHistory(options) {
     const tiles = [
       { num: s.events, label: plural("history.stat.events", s.events) },
       { num: s.best ? ordinal(s.best, lang) : "—", label: t("history.stat.best") },
-      { num: s.top3, label: plural("history.stat.top3", s.top3) },
+      // Un « 0 podium » en évidence ne dit rien; la meilleure mesure, oui.
+      // La tuile podium revient d'elle-même au premier top 3.
+      s.top3 > 0
+        ? { num: s.top3, label: plural("history.stat.top3", s.top3) }
+        : (s.bestFigure
+            ? { num: PMF_I18N.tr(s.bestFigure.figure.value), label: PMF_I18N.tr(s.bestFigure.figure.label) }
+            : { num: s.top3, label: plural("history.stat.top3", s.top3) }),
       { num: s.seasons, label: plural("history.stat.seasons", s.seasons) },
     ];
     statsEl.innerHTML = tiles.map((x) => `

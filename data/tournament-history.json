@@ -16,7 +16,7 @@
       "en": "Pike"
     },
     "organizer": "Muskies Canada Montréal",
-    "placement": null,
+    "placement": 102,
     "fieldSize": null,
     "members": [
       "kevin-caron",
@@ -26,14 +26,20 @@
     "link": "https://muskiescanada.ca/brochet2026/",
     "figures": [
       {
-        "value": "",
+        "value": {
+          "fr": "55 po",
+          "en": "55\""
+        },
         "label": {
           "fr": "2 plus longs brochets",
           "en": "2 longest pike"
         }
       },
       {
-        "value": "",
+        "value": {
+          "fr": "28 po",
+          "en": "28\""
+        },
         "label": {
           "fr": "plus long brochet",
           "en": "longest pike"
@@ -41,8 +47,8 @@
       }
     ],
     "notes": {
-      "fr": "Tenu le samedi 2 mai 2026. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Notre troisième participation de suite. Résultat à confirmer.",
-      "en": "Held Saturday 2 May 2026. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Our third year in a row. Result to be confirmed."
+      "fr": "Tenu le samedi 2 mai 2026. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Stringer de 55 po (28 po + 27 po), 102e au classement. Troisième participation de suite. Résultats tirés de FishDonkey, l'application officielle du tournoi.",
+      "en": "Held Saturday 2 May 2026. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Stringer of 55\" (28\" + 27\"), 102th overall. Third year in a row. Results from FishDonkey, the tournament's official app."
     }
   },
   {
@@ -62,7 +68,7 @@
       "en": "Pike"
     },
     "organizer": "Muskies Canada Montréal",
-    "placement": null,
+    "placement": 99,
     "fieldSize": null,
     "members": [
       "kevin-caron",
@@ -72,14 +78,20 @@
     "link": "https://muskiescanada.ca/en/brochet2025/",
     "figures": [
       {
-        "value": "",
+        "value": {
+          "fr": "55,25 po",
+          "en": "55.25\""
+        },
         "label": {
           "fr": "2 plus longs brochets",
           "en": "2 longest pike"
         }
       },
       {
-        "value": "",
+        "value": {
+          "fr": "28 po",
+          "en": "28\""
+        },
         "label": {
           "fr": "plus long brochet",
           "en": "longest pike"
@@ -87,8 +99,8 @@
       }
     ],
     "notes": {
-      "fr": "Tenu le samedi 3 mai 2025, de 6 h à 16 h (date de remise au 10 mai). Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Résultat à confirmer.",
-      "en": "Held Saturday 3 May 2025, 6 a.m. to 4 p.m. (rain date 10 May). Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Result to be confirmed."
+      "fr": "Tenu le samedi 3 mai 2025. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Stringer de 55,25 po (28 po + 27,25 po), 99e au classement. Dix-neuf places gagnées et deux pouces de plus qu'en 2024. Résultats tirés de FishDonkey, l'application officielle du tournoi.",
+      "en": "Held Saturday 3 May 2025. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Stringer of 55.25\" (28\" + 27.25\"), 99th overall. Nineteen places gained and two inches more than 2024. Results from FishDonkey, the tournament's official app."
     }
   },
   {
@@ -108,7 +120,7 @@
       "en": "Pike"
     },
     "organizer": "Muskies Canada Montréal",
-    "placement": null,
+    "placement": 118,
     "fieldSize": null,
     "members": [
       "kevin-caron",
@@ -118,14 +130,20 @@
     "link": "https://muskiescanada.ca/en/brochet2024/",
     "figures": [
       {
-        "value": "",
+        "value": {
+          "fr": "53 po",
+          "en": "53\""
+        },
         "label": {
           "fr": "2 plus longs brochets",
           "en": "2 longest pike"
         }
       },
       {
-        "value": "",
+        "value": {
+          "fr": "27,5 po",
+          "en": "27.5\""
+        },
         "label": {
           "fr": "plus long brochet",
           "en": "longest pike"
@@ -133,8 +151,8 @@
       }
     ],
     "notes": {
-      "fr": "Tenu le samedi 4 mai 2024, de 6 h à 16 h. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Notre première participation. Résultat à confirmer.",
-      "en": "Held Saturday 4 May 2024, 6 a.m. to 4 p.m. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Our first year. Result to be confirmed."
+      "fr": "Tenu le samedi 4 mai 2024. Remise à l'eau : le brochet est mesuré à la règle officielle sans sortir de l'eau. Pointage sur la longueur combinée des deux plus longs brochets. Stringer de 53 po (27,5 po + 25,5 po), 118e au classement. Notre première participation. Résultats tirés de FishDonkey, l'application officielle du tournoi.",
+      "en": "Held Saturday 4 May 2024. Catch-photo-release: pike are measured on the official ruler without leaving the water. Scored on the combined length of the two longest pike. Stringer of 53\" (27.5\" + 25.5\"), 118th overall. Our first year. Results from FishDonkey, the tournament's official app."
     }
   }
 ]
