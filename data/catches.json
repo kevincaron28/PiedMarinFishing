@@ -1,47 +1,77 @@
 [
   {
-    "id": "sample-1",
+    "id": "chinook-salmon-river",
     "angler": "kevin-caron",
-    "species": { "fr": "Brochet", "en": "Pike" },
+    "species": {
+      "fr": "Saumon chinook",
+      "en": "Chinook salmon"
+    },
     "measure": "",
-    "date": "2026",
-    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
-    "event": "formule-brochet-2026",
-    "media": { "type": "", "src": "", "videoId": "" },
+    "date": "",
+    "water": {
+      "fr": "Salmon River, Pulaski (New York)",
+      "en": "Salmon River, Pulaski (New York)"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/team/kevin-caron.jpg",
+      "videoId": ""
+    },
     "highlight": true,
     "notes": {
-      "fr": "EXEMPLE — remplacez par une vraie prise. Ajoutez une photo dans assets/img/catches/ et pointez media.src dessus, ou collez un identifiant YouTube dans media.videoId.",
-      "en": "SAMPLE — replace with a real catch. Drop a photo in assets/img/catches/ and point media.src at it, or paste a YouTube id into media.videoId."
+      "fr": "Pris à l'automne sur la Salmon River, à Pulaski, dans l'État de New York — la rivière où monte la remonte de chinook des Grands Lacs.",
+      "en": "Caught in the fall on the Salmon River at Pulaski, New York — the river that gets the Great Lakes chinook run."
     }
   },
   {
-    "id": "sample-2",
-    "angler": "bobe",
-    "species": { "fr": "Brochet", "en": "Pike" },
-    "measure": "",
-    "date": "2025",
-    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
-    "event": "formule-brochet-2025",
-    "media": { "type": "", "src": "", "videoId": "" },
-    "highlight": false,
-    "notes": {
-      "fr": "EXEMPLE — à supprimer une fois vos vraies prises ajoutées.",
-      "en": "SAMPLE — delete once your real catches are added."
-    }
-  },
-  {
-    "id": "sample-3",
+    "id": "maskinonge-kevin-b",
     "angler": "kevin-b",
-    "species": { "fr": "Achigan", "en": "Bass" },
+    "species": {
+      "fr": "Maskinongé",
+      "en": "Muskie"
+    },
     "measure": "",
-    "date": "2025",
-    "water": { "fr": "Remplacer par le plan d'eau", "en": "Replace with the water" },
+    "date": "",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
     "event": "",
-    "media": { "type": "", "src": "", "videoId": "" },
-    "highlight": false,
+    "media": {
+      "type": "image",
+      "src": "assets/img/team/kevin-b.jpg",
+      "videoId": ""
+    },
+    "highlight": true,
     "notes": {
-      "fr": "EXEMPLE — à supprimer une fois vos vraies prises ajoutées.",
-      "en": "SAMPLE — delete once your real catches are added."
+      "fr": "Sorti du fleuve Saint-Laurent, une journée de pluie.",
+      "en": "Off the St. Lawrence, on a rainy day."
+    }
+  },
+  {
+    "id": "maskinonge-bobe",
+    "angler": "bobe",
+    "species": {
+      "fr": "Maskinongé",
+      "en": "Muskie"
+    },
+    "measure": "",
+    "date": "",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/team/bobe.jpg",
+      "videoId": ""
+    },
+    "highlight": true,
+    "notes": {
+      "fr": "Sorti du fleuve Saint-Laurent, en fin de journée.",
+      "en": "Off the St. Lawrence, late in the day."
     }
   }
 ]
