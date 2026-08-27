@@ -239,6 +239,41 @@ async function initEventList(options) {
 
   // Building a card is separate from listing them, so other views (the
   // calendar) can render the same card for a selected day.
+  // Le texte de la date limite est lisible mais pas calculable; deadlineDate
+  // porte la version ISO qui sert au décompte.
+  function deadlineInfo(ev) {
+    const iso = (ev.specs || {}).deadlineDate;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) return null;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const due = parseISODate(iso);
+    if (!due) return null;
+    const days = Math.round((due - today) / 86400000);
+    if (days < 0) return { state: "closed", days };
+    if (days === 0) return { state: "today", days };
+    return { state: "open", days };
+  }
+
+  function deadlineHTML(ev) {
+    const info = deadlineInfo(ev);
+    if (!info) return "";
+    if (info.state === "closed") {
+      return `<div class="event-deadline closed">${escapeHTML(t("events.regClosed"))}</div>`;
+    }
+    if (info.state === "today") {
+      return `<div class="event-deadline urgent">${escapeHTML(t("events.regToday"))}</div>`;
+    }
+    const cls = info.days <= 7 ? " urgent" : "";
+    return `<div class="event-deadline${cls}">${escapeHTML(plural("events.regCountdown", info.days))}</div>`;
+  }
+
+  // Fichier .ics fabriqué dans le navigateur : aucun serveur requis.
+  function icsHTML(ev) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(ev.startDate || "")) return "";
+    if (ev.status === "cancelled") return "";
+    return `<button type="button" class="btn btn-outline btn-ics" data-ics="${escapeHTML(ev.id)}">${escapeHTML(t("events.addToCalendar"))}</button>`;
+  }
+
   function renderCard(ev) {
     const dateBadge = dateBadgeHTML(ev.startDate, PMF_I18N.lang, t("events.tbd"));
     const past = isPastEvent(ev);
@@ -296,10 +331,12 @@ async function initEventList(options) {
           <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
           <div class="event-meta">${metaBits.join("")}</div>
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
+          ${deadlineHTML(ev)}
           ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
         </div>
         <div class="event-cta">
           ${ev.link ? `<a class="btn btn-teal" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
+          ${icsHTML(ev)}
         </div>
       </article>
     `;
@@ -411,6 +448,50 @@ async function initEventList(options) {
     return out.join("");
   }
 
+  function icsDate(iso) { return iso.replace(/-/g, ""); }
+
+  function buildICS(ev) {
+    const start = icsDate(ev.startDate);
+    // DTEND est exclusif dans une date entière : on ajoute un jour à la fin.
+    const endSrc = /^\d{4}-\d{2}-\d{2}$/.test(ev.endDate || "") ? ev.endDate : ev.startDate;
+    const end = parseISODate(endSrc);
+    end.setDate(end.getDate() + 1);
+    const endStr = `${end.getFullYear()}${String(end.getMonth() + 1).padStart(2, "0")}${String(end.getDate()).padStart(2, "0")}`;
+    const esc = (v) => String(v || "").replace(/([,;\\])/g, "\\$1").replace(/\n/g, "\\n");
+    const where = [tr(ev.location), tr(ev.region)].filter(Boolean).join(", ");
+    const desc = [tr(ev.organizer), tr(ev.notes), ev.link].filter(Boolean).join(" — ");
+    return [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Pied Marin Fishing//Guide//FR",
+      "BEGIN:VEVENT",
+      `UID:${ev.id}@piedmarinfishing.com`,
+      `DTSTART;VALUE=DATE:${start}`,
+      `DTEND;VALUE=DATE:${endStr}`,
+      `SUMMARY:${esc(tr(ev.name))}`,
+      where ? `LOCATION:${esc(where)}` : "",
+      desc ? `DESCRIPTION:${esc(desc)}` : "",
+      ev.link ? `URL:${esc(ev.link)}` : "",
+      "END:VEVENT", "END:VCALENDAR",
+    ].filter(Boolean).join("\r\n");
+  }
+
+  function bindIcsButtons() {
+    listEl.querySelectorAll(".btn-ics").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const ev = events.find((e) => e.id === btn.dataset.ics);
+        if (!ev) return;
+        const blob = new Blob([buildICS(ev)], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `${ev.id}.ics`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+    });
+  }
+
   function render() {
     const filtered = events.filter(matchesFilters);
     const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
@@ -426,6 +507,7 @@ async function initEventList(options) {
       listEl.innerHTML = groupByMonth ? groupBySeason(filtered) : groupByCircuit(filtered);
     }
 
+    bindIcsButtons();
     if (onRender) onRender({ filtered, renderCard });
   }
 

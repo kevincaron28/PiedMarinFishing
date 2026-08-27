@@ -211,7 +211,12 @@
     "events.seasonLabel": "Saison",
     "events.circuitsTitle": "Circuits et séries de la saison",
     "events.undatedTitle": "Dates pas encore publiées",
-    "events.programTBD": "Programme à venir"
+    "events.programTBD": "Programme à venir",
+    "events.regCountdown.one": "⏳ Inscriptions : encore {n} jour",
+    "events.regCountdown.other": "⏳ Inscriptions : encore {n} jours",
+    "events.regToday": "⏳ Dernier jour pour s'inscrire",
+    "events.regClosed": "Inscriptions fermées",
+    "events.addToCalendar": "📅 Ajouter au calendrier"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -425,6 +430,11 @@
     "events.seasonLabel": "Season",
     "events.circuitsTitle": "Season circuits and series",
     "events.undatedTitle": "Dates not published yet",
-    "events.programTBD": "Program to come"
+    "events.programTBD": "Program to come",
+    "events.regCountdown.one": "⏳ Registration closes in {n} day",
+    "events.regCountdown.other": "⏳ Registration closes in {n} days",
+    "events.regToday": "⏳ Last day to register",
+    "events.regClosed": "Registration closed",
+    "events.addToCalendar": "📅 Add to calendar"
   }
 }

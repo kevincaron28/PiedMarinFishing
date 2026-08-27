@@ -637,6 +637,22 @@ section.alt { background: var(--sand-100); }
 }
 .circuit-row-meta a { min-height: 24px; display: inline-flex; align-items: center; font-weight: 600; }
 
+/* Décompte d'inscription : l'information qui fait revenir un pêcheur. */
+.event-deadline {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  background: rgba(21, 122, 118, 0.1);
+  color: var(--teal-600);
+}
+.event-deadline.urgent { background: rgba(197, 122, 26, 0.14); color: #a8600f; }
+.event-deadline.closed { background: rgba(71, 96, 111, 0.12); color: var(--ink-600); font-weight: 500; }
+.btn-ics { margin-top: 8px; font-size: 0.84rem; padding: 8px 14px; }
+
 .event-card {
   display: grid;
   grid-template-columns: 92px 1fr auto;
