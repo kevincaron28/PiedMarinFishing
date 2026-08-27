@@ -1,5 +1,30 @@
 [
   {
+    "id": "maskinonge-kevin-b-2",
+    "angler": "kevin-b",
+    "species": {
+      "fr": "Maskinongé",
+      "en": "Muskie"
+    },
+    "measure": "",
+    "date": "",
+    "water": {
+      "fr": "",
+      "en": ""
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/maskinonge-kevin-b-2.jpg",
+      "videoId": ""
+    },
+    "highlight": false,
+    "notes": {
+      "fr": "Un gros maskinongé sorti en fin de journée, hors tournoi. Date et mesure exacte à confirmer.",
+      "en": "A big muskie landed late in the day, outside competition. Exact date and measurement to be confirmed."
+    }
+  },
+  {
     "id": "chinook-salmon-river",
     "angler": "kevin-caron",
     "species": {
