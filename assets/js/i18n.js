@@ -88,6 +88,10 @@ const PMF_I18N = (() => {
     scope.querySelectorAll("[data-i18n-content]").forEach((el) => {
       el.setAttribute("content", t(el.getAttribute("data-i18n-content")));
     });
+    // La trousse de commandite existe en deux versions : le lien lui-même change.
+    scope.querySelectorAll("[data-i18n-href]").forEach((el) => {
+      el.setAttribute("href", t(el.getAttribute("data-i18n-href")));
+    });
     scope.querySelectorAll("[data-i18n-alt]").forEach((el) => {
       el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
     });
