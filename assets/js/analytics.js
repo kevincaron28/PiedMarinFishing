@@ -13,7 +13,7 @@
 // Laissé vide, ce fichier ne fait rien du tout : aucun script chargé,
 // aucune requête, aucun visiteur mesuré.
 
-const GOATCOUNTER_SITE = "";
+const GOATCOUNTER_SITE = "piedmarinfishing";
 
 (function () {
   if (!GOATCOUNTER_SITE) return;
