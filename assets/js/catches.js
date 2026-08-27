@@ -209,6 +209,13 @@ async function initCatches(options) {
     if (el) el.addEventListener("input", render);
   });
 
+  // Sans aucune prise marquée, la case ne pourrait que vider la grille.
+  if (highlightToggle && !catches.some((c) => c.highlight)) {
+    const wrap = highlightToggle.closest("label") || highlightToggle;
+    wrap.style.display = "none";
+    highlightToggle.checked = false;
+  }
+
   PMF_I18N.onChange(() => { refreshFilterOptions(); render(); });
   refreshFilterOptions();
 

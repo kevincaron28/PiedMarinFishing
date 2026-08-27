@@ -7,7 +7,7 @@
       "en": "Chinook salmon"
     },
     "measure": "",
-    "date": "",
+    "date": "2024-10",
     "water": {
       "fr": "Salmon River, Pulaski (New York)",
       "en": "Salmon River, Pulaski (New York)"
@@ -18,10 +18,10 @@
       "src": "assets/img/team/kevin-caron.jpg",
       "videoId": ""
     },
-    "highlight": true,
+    "highlight": false,
     "notes": {
-      "fr": "Pris à l'automne sur la Salmon River, à Pulaski, dans l'État de New York — la rivière où monte la remonte de chinook des Grands Lacs.",
-      "en": "Caught in the fall on the Salmon River at Pulaski, New York — the river that gets the Great Lakes chinook run."
+      "fr": "Pris sur la Salmon River, à Pulaski, dans l'État de New York, pendant la remonte automnale des chinooks des Grands Lacs.",
+      "en": "Caught on the Salmon River at Pulaski, New York, during the fall run of Great Lakes chinook."
     }
   },
   {
@@ -32,7 +32,7 @@
       "en": "Muskie"
     },
     "measure": "",
-    "date": "",
+    "date": "2025",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -43,7 +43,7 @@
       "src": "assets/img/team/kevin-b.jpg",
       "videoId": ""
     },
-    "highlight": true,
+    "highlight": false,
     "notes": {
       "fr": "Sorti du fleuve Saint-Laurent, une journée de pluie.",
       "en": "Off the St. Lawrence, on a rainy day."
@@ -57,7 +57,7 @@
       "en": "Muskie"
     },
     "measure": "",
-    "date": "",
+    "date": "2025",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -68,7 +68,7 @@
       "src": "assets/img/team/bobe.jpg",
       "videoId": ""
     },
-    "highlight": true,
+    "highlight": false,
     "notes": {
       "fr": "Sorti du fleuve Saint-Laurent, en fin de journée.",
       "en": "Off the St. Lawrence, late in the day."
