@@ -136,7 +136,9 @@ function initCalendarView(options) {
 
       return `
         <div class="cal-year">
-          ${years.size > 1 ? `<h3 class="cal-year-label">${year}</h3>` : ""}
+          <!-- La vue est filtrée sur une saison : sans ce libellé, douze mois
+               s'affichent sans dire de quelle année il s'agit. -->
+          <h3 class="cal-year-label">${escapeHTML(t("events.seasonLabel"))} ${year}</h3>
           <div class="cal-months">${monthGrids}</div>
         </div>
       `;

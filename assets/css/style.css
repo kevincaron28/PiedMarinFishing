@@ -1186,7 +1186,15 @@ section.alt { background: var(--sand-100); }
 .cal-swatch-pro { background: var(--pro-500); }
 .cal-swatch-today { background: transparent; box-shadow: inset 0 0 0 2px var(--navy-800); }
 
-.cal-year-label { margin: 0 0 16px; }
+.cal-year-label {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-900);
+}
 .cal-months {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
