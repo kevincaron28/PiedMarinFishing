@@ -85,7 +85,9 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 16px;
   padding: 14px 24px;
-  max-width: var(--max-width);
+  /* Le bandeau va plus large que le contenu : neuf entrées ne tiennent pas
+     dans les 1140 px de la grille, et rien au-dessus ne peut compenser. */
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -354,6 +356,46 @@ section.alt { background: var(--sand-100); }
   /* Stat tiles are compact enough to stay side by side on a phone. */
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* Page commanditaires : faits en liste, logos de partenaires. */
+.fact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  max-width: 760px;
+}
+.fact-list li {
+  position: relative;
+  padding: 14px 18px 14px 46px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  color: var(--ink-600);
+}
+.fact-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 18px;
+  color: var(--teal-600);
+  font-weight: 700;
+}
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  text-decoration: none;
+}
+.sponsor-logo { max-width: 100%; max-height: 90px; object-fit: contain; }
+.sponsor-name { font-family: Georgia, serif; font-size: 1.15rem; color: var(--navy-900); }
+.sponsor-blurb { margin: 0; font-size: 0.9rem; color: var(--ink-600); }
 
 .card {
   background: var(--white);
