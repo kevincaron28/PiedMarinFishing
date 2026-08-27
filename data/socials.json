@@ -9,7 +9,7 @@
   {
     "name": "Facebook",
     "handle": "Pied Marin Fishing",
-    "url": "https://facebook.com/piedmarinfishing",
+    "url": "https://www.facebook.com/share/1DMh6kbnfC/",
     "color": "#1877f2",
     "icon": "facebook"
   },
@@ -28,7 +28,10 @@
     "icon": "tiktok"
   },
   {
-    "name": { "fr": "Courriel", "en": "Email" },
+    "name": {
+      "fr": "Courriel",
+      "en": "Email"
+    },
     "handle": "info@piedmarinfishing.com",
     "url": "mailto:info@piedmarinfishing.com",
     "color": "#157a76",
