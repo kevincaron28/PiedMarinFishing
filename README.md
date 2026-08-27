@@ -95,6 +95,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 | `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
 | `sponsors.js` | partner logos — hides its whole section when there are none |
+| `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
@@ -537,6 +538,34 @@ data files requires `http://`, not `file://`):
 python3 -m http.server 8000
 # then open http://localhost:8000
 ```
+
+## Analytics
+
+`assets/js/analytics.js` holds one constant:
+
+```js
+const GOATCOUNTER_SITE = "";
+```
+
+Empty, the file does nothing at all — no script loaded, no request, no
+visitor counted. Fill in a GoatCounter site code and the pageview beacon
+starts on every page. That is the entire configuration.
+
+GoatCounter was chosen over Cloudflare Web Analytics for two reasons that
+matter to a seasonal team: it keeps data for as long as the account is
+active, so May 2027 can be compared against May 2026, and it parses UTM
+tags, so a link posted on Instagram can be told apart from one posted on
+Facebook. Cloudflare keeps six months and logs no query strings.
+
+It sets no cookie and stores no persistent identifier, which is what keeps
+the site clear of a consent banner under Québec's Law 25 — that law applies
+to technologies that identify or profile a person. Adding Google Analytics
+here would change that, and would also break the site's one privacy
+promise: nothing reaches a third party until a visitor presses play on the
+video.
+
+Ad blockers will stop the beacon for some visitors, so treat the numbers as
+a floor, not a census.
 
 ## Deployment
 
