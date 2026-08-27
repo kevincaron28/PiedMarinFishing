@@ -66,11 +66,11 @@ h2 { font-family: "Liberation Serif", Georgia, serif; font-size: 12.5pt; color: 
      letter-spacing: 0.02em; }
 .section { margin-bottom: 0.13in; }
 ul { list-style: none; }
-li { position: relative; padding: 2.6pt 0 2.6pt 15pt; font-size: 9pt; line-height: 1.3; color: #2c4351; }
+li { position: relative; padding: 2.2pt 0 2.2pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
 li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; font-weight: 700; }
 .crews { display: flex; gap: 12pt; margin-top: 4pt; }
 .crew { flex: 1; text-align: center; }
-.crew img { width: 100%%; height: 0.95in; object-fit: cover; border-radius: 7pt; display: block; }
+.crew img { width: 100%%; height: 0.9in; object-fit: cover; border-radius: 7pt; display: block; }
 .crew-n { font-family: "Liberation Serif", Georgia, serif; font-size: 10pt; margin-top: 4pt; color: #0b2038; }
 .crew-r { font-size: 7.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #157a76; font-weight: 700; }
 .offs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6pt; }
