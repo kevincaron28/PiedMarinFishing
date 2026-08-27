@@ -41,7 +41,12 @@
         "en": "2022, seriously"
       }
     },
-    "quoteBy": "Warren Buffett"
+    "quoteBy": "Warren Buffett",
+    "photo": "assets/img/team/kevin-caron.jpg",
+    "photoAlt": {
+      "fr": "Kevin Caron, debout dans la rivière en waders, tenant un saumon chinook, en automne",
+      "en": "Kevin Caron standing in the river in waders, holding a chinook salmon, in autumn"
+    }
   },
   {
     "id": "kevin-b",
@@ -85,7 +90,12 @@
         "en": "Always"
       }
     },
-    "quoteBy": "Cyril Chauquet"
+    "quoteBy": "Cyril Chauquet",
+    "photo": "assets/img/team/kevin-b.jpg",
+    "photoAlt": {
+      "fr": "Kevin B. dans le bateau sous la pluie, tenant un maskinongé à deux mains",
+      "en": "Kevin B. in the boat in the rain, holding a muskie with both hands"
+    }
   },
   {
     "id": "bobe",
@@ -129,6 +139,11 @@
         "en": "More than 40 years"
       }
     },
-    "quoteBy": "Izaak Walton, 1653"
+    "quoteBy": "Izaak Walton, 1653",
+    "photo": "assets/img/team/bobe.jpg",
+    "photoAlt": {
+      "fr": "BOBE debout dans le bateau au coucher du soleil, tenant un maskinongé",
+      "en": "BOBE standing in the boat at sunset, holding a muskie"
+    }
   }
 ]

@@ -40,6 +40,15 @@ async function initTeam(gridSelector) {
       const initials = (m.initials || name).toString().slice(0, 2).toUpperCase();
       const role = tr(m.role);
       const bio = tr(m.bio);
+      // Une vraie photo remplace les initiales; sinon la carte garde son écusson.
+      const photoAlt = tr(m.photoAlt) || name;
+      const photoBlock = m.photo
+        ? `<div class="member-photo has-photo">
+             <img class="member-photo-img" src="${escapeHTML(m.photo)}"
+                  alt="${escapeHTML(photoAlt)}" loading="lazy" width="1200" height="900">
+           </div>`
+        : `<div class="member-photo"><span class="member-initials">${escapeHTML(initials)}</span></div>`;
+
       const quote = tr(m.quote);
       const quoteBy = tr(m.quoteBy);
       const fr = PMF_I18N.lang === "fr";
@@ -92,7 +101,7 @@ async function initTeam(gridSelector) {
 
       return `
         <div class="member-card">
-          <div class="member-photo"><span class="member-initials">${escapeHTML(initials)}</span></div>
+          ${photoBlock}
           <div class="member-body">
             ${role ? `<span class="member-role">${escapeHTML(role)}</span>` : ""}
             <h3>${escapeHTML(name)}</h3>
