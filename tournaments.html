@@ -66,15 +66,11 @@
 <section>
   <div class="container">
     <div class="notice" data-i18n="tournaments.notice">
-      Affichage des événements <strong>à venir</strong> par défaut — bascule sur « Passés » ou « Tous » pour la saison complète. Les <strong>circuits</strong> regroupent leurs étapes. Confirme toujours auprès de l'organisateur. Un tournoi manque à l'appel? <a href="mailto:info@piedmarinfishing.com">Écris-nous</a>, on l'ajoute.
+      Les tournois sont regroupés par mois. Les <strong>circuits</strong> sont listés en haut, et chacune de leurs étapes apparaît dans son mois. Ce qui n'a pas encore de date publiée est en bas de page. Confirme toujours auprès de l'organisateur. Un tournoi manque à l'appel? <a href="mailto:info@piedmarinfishing.com">Écris-nous</a>, on l'ajoute.
     </div>
 
     <div class="filters">
-      <select id="when-filter" data-i18n-aria-label="filters.when.upcoming" aria-label="À venir"></select>
-      <select id="year-filter" data-i18n-aria-label="filters.allYears" aria-label="Toutes les années"></select>
-      <select id="kind-filter" data-i18n-aria-label="filters.kind.all" aria-label="Tous les types"></select>
-      <select id="month-filter" data-i18n-aria-label="filters.allMonths" aria-label="Tous les mois"></select>
-      <select id="region-filter" data-i18n-aria-label="filters.allRegions" aria-label="Toutes les régions"></select>
+      <div class="season-switch" id="season-switch" role="group" data-i18n-aria-label="events.seasonLabel" aria-label="Saison"></div>
       <input id="search-filter" type="text" data-i18n-placeholder="filters.searchGuide" placeholder="Nom, plan d'eau, espèce…">
       <div class="view-toggle" role="group" data-i18n-aria-label="view.label" aria-label="Affichage">
         <button type="button" data-view="list" data-i18n="view.list">Liste</button>
@@ -162,11 +158,8 @@
     listSelector: "#event-list",
     emptySelector: "#empty-state",
     countSelector: "#result-count",
-    monthFilterSelector: "#month-filter",
-    regionFilterSelector: "#region-filter",
-    whenFilterSelector: "#when-filter",
-    kindFilterSelector: "#kind-filter",
-    yearFilterSelector: "#year-filter",
+    seasonSelector: "#season-switch",
+    groupByMonth: true,
     searchSelector: "#search-filter",
     badgeField: "species",
     linkTextKey: "events.learnMore",

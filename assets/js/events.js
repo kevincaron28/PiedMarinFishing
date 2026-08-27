@@ -13,6 +13,8 @@ async function initEventList(options) {
     whenFilterSelector,
     kindFilterSelector,
     yearFilterSelector,
+    seasonSelector,
+    groupByMonth = false,
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
@@ -129,6 +131,59 @@ async function initEventList(options) {
     }
   }
 
+  // La saison d'un événement, c'est l'année de sa date. Un circuit hérite de
+  // celle de sa première étape; sans date, il n'appartient à aucune saison.
+  function seasonOf(ev) {
+    const own = (ev.startDate || "").slice(0, 4);
+    if (/^\d{4}$/.test(own)) return own;
+    if (ev.kind === "circuit") {
+      const years = (stopsOf.get(ev.id) || [])
+        .map((st) => (st.startDate || "").slice(0, 4))
+        .filter((y) => /^\d{4}$/.test(y))
+        .sort();
+      if (years.length) return years[0];
+    }
+    return null;
+  }
+
+  let seasons = [];
+  let activeSeason = null;
+
+  function buildSeasons() {
+    seasons = [...new Set(events.map(seasonOf).filter(Boolean))].sort();
+    if (!seasons.length) { activeSeason = null; return; }
+    const thisYear = String(new Date().getFullYear());
+    if (!activeSeason || !seasons.includes(activeSeason)) {
+      activeSeason = seasons.includes(thisYear) ? thisYear : seasons[seasons.length - 1];
+    }
+  }
+
+  function renderSeasonSwitch() {
+    const host = seasonSelector ? document.querySelector(seasonSelector) : null;
+    if (!host) return;
+    // Un seul choix n'est pas un choix : le sélecteur ne sert qu'à partir de deux.
+    if (seasons.length < 2) { host.innerHTML = ""; host.style.display = "none"; return; }
+    host.style.display = "";
+    host.innerHTML = seasons.map((y) =>
+      `<button type="button" class="season-btn${y === activeSeason ? " active" : ""}"
+               data-season="${escapeHTML(y)}" aria-pressed="${y === activeSeason}">
+         ${escapeHTML(t("events.seasonLabel"))} ${escapeHTML(y)}
+       </button>`).join("");
+    host.querySelectorAll(".season-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        activeSeason = btn.dataset.season;
+        renderSeasonSwitch();
+        render();
+      });
+    });
+  }
+
+  function matchesSeason(ev) {
+    if (!groupByMonth || !activeSeason) return true;
+    const sn = seasonOf(ev);
+    return sn === null || sn === activeSeason;   // les sans-date restent visibles
+  }
+
   function matchesKind(ev) {
     if (!kindSelect || !kindSelect.value) return true;
     const v = kindSelect.value;
@@ -139,6 +194,7 @@ async function initEventList(options) {
   }
 
   function matchesFilters(ev) {
+    if (!matchesSeason(ev)) return false;
     if (!matchesKind(ev)) return false;
     // A circuit carries no date of its own — it is judged by its stops.
     if (ev.kind === "circuit") {
@@ -287,6 +343,74 @@ async function initEventList(options) {
     return out.join("");
   }
 
+  // Vue par saison : un aperçu des séries, puis chaque mois avec tout ce qui
+  // s'y passe (étapes de circuit comprises), puis ce qui n'a pas encore de date.
+  function renderCircuitRow(c) {
+    const stops = (stopsOf.get(c.id) || []);
+    const link = c.link
+      ? `<a href="${escapeHTML(c.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>`
+      : "";
+    const org = tr(c.organizer);
+    return `
+      <div class="circuit-row">
+        <div class="circuit-row-main">
+          <strong>${escapeHTML(tr(c.name))}</strong>
+          ${org ? `<span class="circuit-row-org">${escapeHTML(org)}</span>` : ""}
+        </div>
+        <div class="circuit-row-meta">
+          <span>${escapeHTML(stops.length ? plural("events.stopCount", stops.length) : t("events.programTBD"))}</span>
+          ${link}
+        </div>
+      </div>`;
+  }
+
+  function groupBySeason(filtered) {
+    const out = [];
+    const circuits = filtered.filter((e) => e.kind === "circuit" && seasonOf(e));
+    if (circuits.length) {
+      out.push(`
+        <section class="season-block">
+          <h3 class="season-head">${escapeHTML(t("events.circuitsTitle"))}</h3>
+          <div class="circuit-rows">${circuits.map(renderCircuitRow).join("")}</div>
+        </section>`);
+    }
+
+    // Chaque mois montre les tournois seuls et les étapes, à plat.
+    const dated = filtered
+      .filter((e) => e.kind !== "circuit" && /^\d{4}-\d{2}/.test(e.startDate || ""))
+      .sort((a, b) => (a.startDate || "").localeCompare(b.startDate || ""));
+    const names = months(PMF_I18N.lang).full;
+    const byMonth = new Map();
+    dated.forEach((e) => {
+      const k = e.startDate.slice(0, 7);
+      if (!byMonth.has(k)) byMonth.set(k, []);
+      byMonth.get(k).push(e);
+    });
+    [...byMonth.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([k, list]) => {
+      const mi = parseInt(k.slice(5, 7), 10) - 1;
+      const label = `${names[mi]} ${k.slice(0, 4)}`;
+      out.push(`
+        <section class="season-block">
+          <h3 class="season-head">${escapeHTML(label)}
+            <span class="season-count">${escapeHTML(plural("filters.count", list.length))}</span>
+          </h3>
+          <div class="event-list">${list.map(renderCard).join("")}</div>
+        </section>`);
+    });
+
+    const undated = filtered.filter((e) => !seasonOf(e));
+    if (undated.length) {
+      out.push(`
+        <section class="season-block">
+          <h3 class="season-head">${escapeHTML(t("events.undatedTitle"))}
+            <span class="season-count">${escapeHTML(plural("filters.count", undated.length))}</span>
+          </h3>
+          <div class="event-list">${undated.map(renderCard).join("")}</div>
+        </section>`);
+    }
+    return out.join("");
+  }
+
   function render() {
     const filtered = events.filter(matchesFilters);
     const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
@@ -299,7 +423,7 @@ async function initEventList(options) {
       if (emptyEl) emptyEl.style.display = "block";
     } else {
       if (emptyEl) emptyEl.style.display = "none";
-      listEl.innerHTML = groupByCircuit(filtered);
+      listEl.innerHTML = groupByMonth ? groupBySeason(filtered) : groupByCircuit(filtered);
     }
 
     if (onRender) onRender({ filtered, renderCard });
@@ -311,9 +435,12 @@ async function initEventList(options) {
 
   PMF_I18N.onChange(() => {
     refreshFilterOptions();
+    renderSeasonSwitch();
     render();
   });
 
   refreshFilterOptions();
+  buildSeasons();
+  renderSeasonSwitch();
   render();
 }

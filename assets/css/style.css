@@ -578,6 +578,65 @@ section.alt { background: var(--sand-100); }
 
 .event-list { display: flex; flex-direction: column; gap: 14px; }
 
+/* Vue par saison du guide : bandeaux de mois, aperçu des séries. */
+.season-switch { display: inline-flex; gap: 4px; }
+.season-btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--ink-600);
+  border-radius: 999px;
+  cursor: pointer;
+}
+.season-btn.active { background: var(--navy-900); border-color: var(--navy-900); color: var(--white); }
+
+.season-block { margin-bottom: 34px; }
+.season-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--line);
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--navy-900);
+}
+.season-count {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--teal-600);
+}
+
+.circuit-rows { display: grid; gap: 10px; }
+.circuit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 18px;
+  padding: 14px 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal-400);
+  border-radius: var(--radius-md);
+}
+.circuit-row-org { display: block; font-size: 0.85rem; color: var(--ink-600); margin-top: 2px; }
+.circuit-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+.circuit-row-meta a { min-height: 24px; display: inline-flex; align-items: center; font-weight: 600; }
+
 .event-card {
   display: grid;
   grid-template-columns: 92px 1fr auto;
