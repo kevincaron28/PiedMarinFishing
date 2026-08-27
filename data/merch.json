@@ -4,23 +4,29 @@
   "products": [
     {
       "id": "tee",
-      "name": { "fr": "T-shirt de l'équipe", "en": "Team t-shirt" },
+      "name": {
+        "fr": "T-shirt de l'équipe",
+        "en": "Team t-shirt"
+      },
       "description": {
-        "fr": "Description à remplir — matière, coupe, couleurs offertes.",
-        "en": "Description to fill in — fabric, fit, available colours."
+        "fr": "",
+        "en": ""
       },
       "price": "",
-      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "sizes": [],
       "image": "",
       "url": "",
       "status": "soon"
     },
     {
       "id": "cap",
-      "name": { "fr": "Casquette brodée", "en": "Embroidered cap" },
+      "name": {
+        "fr": "Casquette brodée",
+        "en": "Embroidered cap"
+      },
       "description": {
-        "fr": "Description à remplir — style, ajustement, couleurs offertes.",
-        "en": "Description to fill in — style, fit, available colours."
+        "fr": "",
+        "en": ""
       },
       "price": "",
       "sizes": [],
@@ -30,13 +36,16 @@
     },
     {
       "id": "hoodie",
-      "name": { "fr": "Coton ouaté", "en": "Hoodie" },
+      "name": {
+        "fr": "Coton ouaté",
+        "en": "Hoodie"
+      },
       "description": {
-        "fr": "Description à remplir — matière, coupe, couleurs offertes.",
-        "en": "Description to fill in — fabric, fit, available colours."
+        "fr": "",
+        "en": ""
       },
       "price": "",
-      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "sizes": [],
       "image": "",
       "url": "",
       "status": "soon"

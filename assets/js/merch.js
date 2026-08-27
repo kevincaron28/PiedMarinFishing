@@ -32,7 +32,8 @@ async function initMerch(selector) {
   }
 
   function callToAction(p) {
-    if (p.status === "soldout") return "";
+    // Seul un produit réellement disponible se commande.
+    if (p.status !== "available") return "";
     // A product's own link wins; then a shop-wide store; then email.
     const href = p.url || data.storeUrl || "";
     if (href) {
