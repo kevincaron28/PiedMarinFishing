@@ -494,6 +494,15 @@ section.alt { background: var(--sand-100); }
   font-size: 0.88rem;
   font-weight: 600;
 }
+.member-quote-by {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--teal-600);
+}
+
 .member-quote {
   font-style: italic;
   color: var(--ink-600);

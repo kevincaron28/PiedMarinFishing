@@ -41,6 +41,10 @@ async function initTeam(gridSelector) {
       const role = tr(m.role);
       const bio = tr(m.bio);
       const quote = tr(m.quote);
+      const quoteBy = tr(m.quoteBy);
+      const fr = PMF_I18N.lang === "fr";
+      const openQuote = fr ? "&laquo;&nbsp;" : "&ldquo;";
+      const closeQuote = fr ? "&nbsp;&raquo;" : "&rdquo;";
       const specs = m.specs || {};
 
       // Empty fields are slots waiting to be filled, not broken cards.
@@ -94,7 +98,7 @@ async function initTeam(gridSelector) {
             <h3>${escapeHTML(name)}</h3>
             ${bioBlock}
             <dl class="member-specs">${specRows}</dl>
-            ${quote ? `<div class="member-quote">"${escapeHTML(quote)}"</div>` : ""}
+            ${quote ? `<div class="member-quote">${openQuote}${escapeHTML(quote)}${closeQuote}${quoteBy ? `<span class="member-quote-by">&mdash; ${escapeHTML(quoteBy)}</span>` : ""}</div>` : ""}
             <div class="member-record">${recordBits.join("")}</div>
             ${historyLink}
             ${catchLink}

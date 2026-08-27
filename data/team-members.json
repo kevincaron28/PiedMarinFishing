@@ -7,16 +7,41 @@
       "fr": "Pêcheur multi-espèces",
       "en": "Multi-species angler"
     },
-    "bio": "",
-    "quote": "",
+    "bio": {
+      "fr": "Kevin pêche sérieusement depuis 2022, et la rivière Richelieu est devenue son terrain de jeu. Il travaille surtout en finesse — présentations lentes, matériel léger et beaucoup de patience — une approche qui paye sur le brochet comme sur le reste. Sa plus grosse prise à date reste un saumon chinook de 20 lb; celle qu'il court encore, c'est un maskinongé de 55 pouces.",
+      "en": "Kevin has been fishing seriously since 2022, and the Richelieu River has become his home water. He works mostly finesse — slow presentations, light tackle and a lot of patience — an approach that pays off on pike as much as on anything else. His biggest fish so far is a 20 lb chinook salmon; the one he's still chasing is a 55-inch muskie."
+    },
+    "quote": {
+      "fr": "La qualité la plus importante chez un investisseur, c'est le tempérament, pas l'intelligence.",
+      "en": "The most important quality for an investor is temperament, not intellect."
+    },
     "specs": {
-      "homeWater": "",
-      "species": "",
-      "technique": "",
-      "dreamCatch": "",
-      "personalBest": "",
-      "since": ""
-    }
+      "homeWater": {
+        "fr": "Rivière Richelieu",
+        "en": "Richelieu River"
+      },
+      "species": {
+        "fr": "Brochet",
+        "en": "Northern pike"
+      },
+      "technique": {
+        "fr": "Pêche en finesse",
+        "en": "Finesse fishing"
+      },
+      "dreamCatch": {
+        "fr": "Maskinongé de 55 pouces",
+        "en": "55-inch muskie"
+      },
+      "personalBest": {
+        "fr": "Saumon chinook de 20 lb",
+        "en": "20 lb chinook salmon"
+      },
+      "since": {
+        "fr": "2022, sérieusement",
+        "en": "2022, seriously"
+      }
+    },
+    "quoteBy": "Warren Buffett"
   },
   {
     "id": "kevin-b",
