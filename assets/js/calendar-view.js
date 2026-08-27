@@ -155,7 +155,6 @@ function initCalendarView(options) {
     calEl.innerHTML = `
       <div class="cal-legend">
         <span><i class="cal-swatch cal-swatch-event"></i>${escapeHTML(t("calendarView.legendEvent"))}</span>
-        <span><i class="cal-swatch cal-swatch-pro"></i>${escapeHTML(t("calendarView.legendPro"))}</span>
         <span><i class="cal-swatch cal-swatch-multi"></i>${escapeHTML(t("calendarView.legendMulti"))}</span>
         <span><i class="cal-swatch cal-swatch-today"></i>${escapeHTML(t("calendarView.legendToday"))}</span>
       </div>

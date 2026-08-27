@@ -118,7 +118,7 @@ async function initEventList(options) {
       const previous = kindSelect.value || "";
       kindSelect.innerHTML = "";
       [["", "filters.kind.all"], ["single", "filters.kind.single"],
-       ["circuit", "filters.kind.circuit"], ["pro", "filters.kind.pro"]]
+       ["circuit", "filters.kind.circuit"]]
         .forEach(([value, key]) => {
           const opt = document.createElement("option");
           opt.value = value;
@@ -195,7 +195,6 @@ async function initEventList(options) {
     const stateBadge = cancelled
       ? `<span class="badge red">${escapeHTML(t("events.cancelled"))}</span>`
       : past ? `<span class="badge navy">${escapeHTML(t("events.past"))}</span>` : "";
-    const tierBadge = ev.tier === "pro" ? `<span class="badge pro">${escapeHTML(t("events.proTour"))}</span>` : "";
     // A stop names its parent series, so it never reads as a standalone event.
     const parent = ev.kind === "stop" && ev.circuit ? circuitById.get(ev.circuit) : null;
     const parentTag = parent
@@ -238,7 +237,7 @@ async function initEventList(options) {
         <div class="event-date">${dateBadge}</div>
         <div>
           ${parentTag}
-          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${tierBadge}${stateBadge}</div>
+          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
           <div class="event-meta">${metaBits.join("")}</div>
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
           ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
