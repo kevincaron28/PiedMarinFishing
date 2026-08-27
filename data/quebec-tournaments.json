@@ -246,6 +246,41 @@
     "kind": "single"
   },
   {
+    "id": "super-walleye-challenge",
+    "name": "Super Walleye Challenge",
+    "startDate": "",
+    "endDate": "",
+    "region": "Lanaudière",
+    "location": {
+      "fr": "Saint-Ignace-de-Loyola, lac Saint-Pierre / archipel des îles de Sorel",
+      "en": "Saint-Ignace-de-Loyola, Lac Saint-Pierre / Sorel islands archipelago"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": {
+      "fr": "Super Walleye Challenge",
+      "en": "Super Walleye Challenge"
+    },
+    "type": {
+      "fr": "Tournoi communautaire",
+      "en": "Community Tournament"
+    },
+    "status": "tentative",
+    "link": "https://www.superwalleyechallenge.ca/",
+    "notes": {
+      "fr": "Tournoi de doré présenté dans le secteur du lac Saint-Pierre et des îles de Sorel. Les dates, les frais et le format de l'édition 2026 n'étaient pas publiés au moment de la mise à jour — l'organisation annonce l'édition sur son site et sa page Facebook. Vérifie avant de planifier un déplacement.",
+      "en": "Walleye tournament held in the Lac Saint-Pierre and Sorel islands area. The 2026 dates, fees and format were not published at the time of this update — the organizers announce each edition on their website and Facebook page. Check before planning a trip."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
     "id": "econobass-2026",
     "name": "EconoBass",
     "startDate": "",
