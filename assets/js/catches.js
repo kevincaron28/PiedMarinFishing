@@ -9,7 +9,7 @@ const PMF_CATCHES = (() => {
   let cache = null;
   function load() {
     if (!cache) {
-      cache = fetch("data/catches.json")
+      cache = fetch("data/catches.json", DATA_FETCH)
         .then((r) => r.json())
         .then((rows) => rows.slice().sort((a, b) => {
           // Highlights first, then most recent.
@@ -67,8 +67,8 @@ async function initCatches(options) {
   try {
     [catches, members, events] = await Promise.all([
       PMF_CATCHES.load(),
-      fetch("data/team-members.json").then((r) => r.json()).catch(() => []),
-      fetch("data/tournament-history.json").then((r) => r.json()).catch(() => []),
+      fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
+      fetch("data/tournament-history.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
     ]);
   } catch (e) {
     grid.innerHTML = `<div class="empty-state">${escapeHTML(t("catches.loadError"))}</div>`;

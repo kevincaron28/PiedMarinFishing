@@ -12,7 +12,7 @@ async function initSponsors(gridSelector, sectionSelector) {
 
   let list = [];
   try {
-    list = await (await fetch("data/sponsors.json")).json();
+    list = await (await fetch("data/sponsors.json", DATA_FETCH)).json();
   } catch (e) {
     list = [];
   }

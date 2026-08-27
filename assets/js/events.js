@@ -31,7 +31,7 @@ async function initEventList(options) {
 
   let events = [];
   try {
-    const res = await fetch(dataUrl);
+    const res = await fetch(dataUrl, DATA_FETCH);
     events = await res.json();
   } catch (err) {
     listEl.innerHTML = `<div class="empty-state">${escapeHTML(t("events.loadError"))}</div>`;

@@ -23,7 +23,7 @@ async function initTeam(gridSelector) {
   let catches = [];
   try {
     [members, results, catches] = await Promise.all([
-      fetch("data/team-members.json").then((r) => r.json()),
+      fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()),
       PMF_HISTORY.load(),
       typeof PMF_CATCHES !== "undefined" ? PMF_CATCHES.load() : Promise.resolve([]),
     ]);

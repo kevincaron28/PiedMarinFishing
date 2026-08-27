@@ -1,3 +1,10 @@
+// Les fichiers de données changent sans que leur nom change. Sans ceci, un
+// visiteur revenant sur le site garde l'ancienne version en cache — un
+// classement corrigé, un tournoi ajouté, il ne les voit pas. "no-cache"
+// n'empêche pas la mise en cache : il force juste une revalidation, et un
+// 304 ne coûte presque rien.
+const DATA_FETCH = { cache: "no-cache" };
+
 // Pied Marin Fishing — bilingual (FR/EN) engine
 // French is the default; the visitor's choice is remembered in localStorage.
 
@@ -130,7 +137,7 @@ const PMF_I18N = (() => {
     });
   }
 
-  const ready = fetch("data/i18n.json")
+  const ready = fetch("data/i18n.json", DATA_FETCH)
     .then((r) => r.json())
     .then((data) => {
       strings = data;

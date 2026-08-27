@@ -22,8 +22,8 @@ async function initBoats(selector) {
   let members = [];
   try {
     [boats, members] = await Promise.all([
-      fetch("data/boats.json").then((r) => r.json()),
-      fetch("data/team-members.json").then((r) => r.json()).catch(() => []),
+      fetch("data/boats.json", DATA_FETCH).then((r) => r.json()),
+      fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
     ]);
   } catch (e) {
     host.innerHTML = `<div class="empty-state">${escapeHTML(t("boats.loadError"))}</div>`;

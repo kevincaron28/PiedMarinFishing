@@ -11,7 +11,7 @@ async function initMerch(selector) {
 
   let data = {};
   try {
-    data = await (await fetch("data/merch.json")).json();
+    data = await (await fetch("data/merch.json", DATA_FETCH)).json();
   } catch (e) {
     host.innerHTML = `<div class="empty-state">${escapeHTML(t("merch.loadError"))}</div>`;
     return;

@@ -7,7 +7,7 @@ const PMF_HISTORY = (() => {
 
   function load() {
     if (!cache) {
-      cache = fetch("data/tournament-history.json")
+      cache = fetch("data/tournament-history.json", DATA_FETCH)
         .then((r) => r.json())
         .then((rows) => rows.slice().sort((a, b) => (b.date || "").localeCompare(a.date || "")))
         .catch(() => []);
@@ -97,7 +97,7 @@ async function initHistory(options) {
   try {
     [results, members] = await Promise.all([
       PMF_HISTORY.load(),
-      fetch("data/team-members.json").then((r) => r.json()).catch(() => []),
+      fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
     ]);
   } catch (e) {
     listEl.innerHTML = `<div class="empty-state">${escapeHTML(t("history.loadError"))}</div>`;

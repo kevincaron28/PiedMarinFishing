@@ -11,7 +11,7 @@ async function initFeaturedVideo(selector) {
 
   let data = {};
   try {
-    data = await (await fetch("data/featured-video.json")).json();
+    data = await (await fetch("data/featured-video.json", DATA_FETCH)).json();
   } catch (e) {
     data = {};
   }
