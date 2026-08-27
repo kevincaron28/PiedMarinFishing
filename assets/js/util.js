@@ -55,6 +55,14 @@ function ordinal(n, lang) {
   return n + (suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0]);
 }
 
+// « 99e sur 237 ». Un rang seul ne dit rien : sans le peloton, 99e peut
+// aussi bien être excellent que quelconque.
+function placementOf(placement, fieldSize, lang, ofLabel) {
+  if (!Number.isFinite(placement)) return "";
+  const rank = ordinal(placement, lang);
+  return Number.isFinite(fieldSize) ? `${rank} ${ofLabel}` : rank;
+}
+
 // The last moment a partial date could still refer to: "2026" -> 31 Dec 2026,
 // "2026-05" -> 31 May 2026. Used to decide whether an event has passed.
 function endOfPeriod(value) {

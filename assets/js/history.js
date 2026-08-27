@@ -33,6 +33,15 @@ const PMF_HISTORY = (() => {
     return best;
   }
 
+  function bestFieldSize(rows) {
+    let best = null;
+    rows.forEach((r) => {
+      if (!Number.isFinite(r.placement)) return;
+      if (best === null || r.placement < best.placement) best = r;
+    });
+    return best && Number.isFinite(best.fieldSize) ? best.fieldSize : null;
+  }
+
   // Aggregate stats for a set of results — the whole team, or one angler.
   function summarize(rows) {
     const placements = rows.map((r) => r.placement).filter((p) => Number.isFinite(p));
@@ -40,6 +49,9 @@ const PMF_HISTORY = (() => {
     return {
       events: rows.length,
       best: placements.length ? Math.min(...placements) : null,
+      // Le peloton du meilleur résultat : un rang sans son dénominateur
+      // ne veut rien dire.
+      bestField: bestFieldSize(rows),
       top3: placements.filter((p) => p <= 3).length,
       wins: placements.filter((p) => p === 1).length,
       seasons: seasons.size,
@@ -147,7 +159,8 @@ async function initHistory(options) {
     const lang = PMF_I18N.lang;
     const tiles = [
       { num: s.events, label: plural("history.stat.events", s.events) },
-      { num: s.best ? ordinal(s.best, lang) : "—", label: t("history.stat.best") },
+      { num: s.best ? placementOf(s.best, s.bestField, lang, t("history.of", { n: s.bestField })) : "—",
+        label: t("history.stat.best") },
       // Un « 0 podium » en évidence ne dit rien; la meilleure mesure, oui.
       // La tuile podium revient d'elle-même au premier top 3.
       s.top3 > 0

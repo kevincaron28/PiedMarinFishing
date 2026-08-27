@@ -78,7 +78,8 @@ async function initTeam(gridSelector) {
         `<span><b>${s.events}</b> ${escapeHTML(plural("team.record.events", s.events))}</span>`,
       ];
       if (s.best) {
-        recordBits.push(`<span><b>${escapeHTML(ordinal(s.best, lang))}</b> ${escapeHTML(t("team.record.best"))}</span>`);
+        const place = placementOf(s.best, s.bestField, lang, t("history.of", { n: s.bestField }));
+        recordBits.push(`<span><b>${escapeHTML(place)}</b> ${escapeHTML(t("team.record.best"))}</span>`);
       }
       if (s.top3) {
         recordBits.push(`<span><b>${s.top3}</b> ${escapeHTML(t("team.record.top3"))}</span>`);
