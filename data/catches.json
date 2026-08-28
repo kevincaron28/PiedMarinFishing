@@ -62,7 +62,7 @@
       "fr": "50 po",
       "en": "50\""
     },
-    "date": "2025",
+    "date": "2025-05-23",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -91,7 +91,7 @@
       "fr": "45 po",
       "en": "45\""
     },
-    "date": "2025",
+    "date": "2025-07-04",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -117,7 +117,7 @@
       "en": "Freshwater drum"
     },
     "measure": "11 lb",
-    "date": "2025",
+    "date": "2025-07-04",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -131,8 +131,8 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "Un malachigan de 11 livres levé au coucher du soleil sur le fleuve, pendant la saison 2025. La longueur n'a pas été mesurée.",
-      "en": "An 11-pound freshwater drum lifted at sunset on the St. Lawrence during the 2025 season. Its length was not measured."
+      "fr": "Un malachigan de 11 livres levé au coucher du soleil sur le fleuve. La longueur n'a pas été mesurée.",
+      "en": "An 11-pound freshwater drum lifted at sunset on the St. Lawrence. Its length was not measured."
     }
   },
   {
@@ -143,7 +143,7 @@
       "en": "Channel catfish"
     },
     "measure": "7 lb",
-    "date": "2025",
+    "date": "2025-07-04",
     "water": {
       "fr": "Fleuve Saint-Laurent",
       "en": "St. Lawrence River"
@@ -157,8 +157,8 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "Une barbue de rivière de 7 livres prise de nuit sur le fleuve, pendant la saison 2025. La longueur n'a pas été mesurée.",
-      "en": "A 7-pound channel catfish taken at night on the St. Lawrence during the 2025 season. Its length was not measured."
+      "fr": "Une barbue de rivière de 7 livres prise de nuit sur le fleuve. La longueur n'a pas été mesurée.",
+      "en": "A 7-pound channel catfish taken at night on the St. Lawrence. Its length was not measured."
     }
   }
 ]

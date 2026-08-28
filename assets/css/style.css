@@ -1436,7 +1436,6 @@ body.has-lightbox { overflow: hidden; }
   font-weight: 700;
   color: var(--navy-900);
   margin: 28px 0 12px;
-  text-transform: capitalize;
 }
 
 /* ---------- Tournament results (palmarès) ---------- */

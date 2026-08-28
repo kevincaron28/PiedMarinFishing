@@ -181,9 +181,7 @@ function initCalendarView(options) {
         calEl.querySelectorAll(".cal-selected").forEach((el) => el.classList.remove("cal-selected"));
         if (!selectedKey) { if (detailEl) detailEl.innerHTML = ""; return; }
         btn.classList.add("cal-selected");
-        const p = dateParts(key);
-        const heading = `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`;
-        showEvents(byDay.get(key) || [], heading);
+        showEvents(byDay.get(key) || [], longDate(key, PMF_I18N.lang));
       });
     });
 

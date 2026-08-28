@@ -40,6 +40,20 @@ function dateParts(value) {
   };
 }
 
+// Une date en toutes lettres, dans la forme de la langue : « 23 mai 2025 » en
+// français, "May 23, 2025" en anglais. Rend seulement ce que la date connaît —
+// « Octobre 2024 » ou « 2024 » quand le jour ou le mois manquent.
+function longDate(value, lang) {
+  const p = dateParts(value);
+  if (!p) return "";
+  const m = months(lang);
+  if (p.month === null) return String(p.year);
+  if (p.day === null) return `${m.full[p.month]} ${p.year}`;
+  return lang === "en"
+    ? `${m.full[p.month]} ${p.day}, ${p.year}`
+    : `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`;
+}
+
 function escapeHTML(str) {
   const div = document.createElement("div");
   div.textContent = str ?? "";

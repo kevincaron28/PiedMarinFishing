@@ -9,7 +9,7 @@
 // walks every photo of every catch currently on screen — nothing moves on its
 // own, the visitor drives.
 //
-// Helpers (dateParts, escapeHTML, months, queryParam) come from util.js.
+// Helpers (longDate, escapeHTML, queryParam) come from util.js.
 
 const PMF_CATCHES = (() => {
   let cache = null;
@@ -267,17 +267,9 @@ async function initCatches(options) {
   // les faits, et le texte alternatif d'une photo.
   function describe(c) {
     const lang = PMF_I18N.lang;
-    const m = months(lang);
     const angler = memberById.get(c.angler);
     const anglerName = angler ? tr(angler.name) : c.angler || "";
-
-    const p = dateParts(c.date);
-    let when = "";
-    if (p) {
-      when = p.month !== null && p.day !== null
-        ? `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`
-        : p.month !== null ? `${m.full[p.month]} ${p.year}` : String(p.year);
-    }
+    const when = longDate(c.date, lang);
 
     const ev = c.event ? eventById.get(c.event) : null;
     const facts = [];
