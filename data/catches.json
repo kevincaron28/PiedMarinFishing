@@ -108,5 +108,31 @@
       "fr": "Le record personnel de BOBE. Sorti du fleuve Saint-Laurent en fin de journée, hors tournoi.",
       "en": "BOBE's personal best. Off the St. Lawrence late in the day, outside competition."
     }
+  },
+  {
+    "id": "malachigan-2025",
+    "angler": "bobe",
+    "species": {
+      "fr": "Malachigan",
+      "en": "Freshwater drum"
+    },
+    "measure": "11 lb",
+    "date": "2025",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/malachigan-2025.jpg",
+      "videoId": ""
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "Un malachigan de 11 livres levé au coucher du soleil sur le fleuve, pendant la saison 2025. La longueur n'a pas été mesurée.",
+      "en": "An 11-pound freshwater drum lifted at sunset on the St. Lawrence during the 2025 season. Its length was not measured."
+    }
   }
 ]
