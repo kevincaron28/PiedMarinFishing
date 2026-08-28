@@ -134,5 +134,31 @@
       "fr": "Un malachigan de 11 livres levé au coucher du soleil sur le fleuve, pendant la saison 2025. La longueur n'a pas été mesurée.",
       "en": "An 11-pound freshwater drum lifted at sunset on the St. Lawrence during the 2025 season. Its length was not measured."
     }
+  },
+  {
+    "id": "barbue-2025",
+    "angler": "kevin-caron",
+    "species": {
+      "fr": "Barbue de rivière",
+      "en": "Channel catfish"
+    },
+    "measure": "7 lb",
+    "date": "2025",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/barbue-2025.jpg",
+      "videoId": ""
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "Une barbue de rivière de 7 livres prise de nuit sur le fleuve, pendant la saison 2025. La longueur n'a pas été mesurée.",
+      "en": "A 7-pound channel catfish taken at night on the St. Lawrence during the 2025 season. Its length was not measured."
+    }
   }
 ]
