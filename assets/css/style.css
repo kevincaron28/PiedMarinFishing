@@ -230,23 +230,30 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
-/* Oversized crest watermark, kept faint so the headline stays dominant. */
+/* L'écusson en filigrane derrière la phrase d'ouverture et les deux boutons,
+   assez pâle pour que le texte reste le sujet. Il s'aligne sur la colonne de
+   texte plutôt que sur le bord de l'écran. */
 .hero::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: clamp(16px, 5vw, 72px);
-  transform: translateY(-52%);
-  width: min(38vw, 420px);
+  left: max(24px, calc(50% - var(--max-width) / 2 + 24px));
+  bottom: 92px;
+  width: min(46vw, 400px);
   aspect-ratio: 1;
   background: url("../img/logo-mark-light.png") center / contain no-repeat;
-  opacity: 0.09;
+  opacity: 0.12;
   pointer-events: none;
   z-index: 1;
 }
-/* Below the two-column breakpoint the crest would sit under the copy. */
+/* Sur une colonne, l'écusson se centre sous le texte plutôt que de le border. */
 @media (max-width: 820px) {
-  .hero::after { display: none; }
+  .hero::after {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 72px;
+    width: min(74vw, 340px);
+    opacity: 0.1;
+  }
 }
 
 .hero-inner {
