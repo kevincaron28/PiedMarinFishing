@@ -67,7 +67,7 @@ object:
 ```
 
 Mix the two freely. Fields supporting this: `name`, `location`, `region`,
-`species`, `organizer`, `type`, `notes` on events; `role`, `bio`, `quote` on
+`species`, `organizer`, `type`, `notes` on events; `role`, `bio` on
 team members; `name`, `handle` on socials.
 
 Two things are deliberate: the region filter keys off the **French** value
@@ -120,7 +120,7 @@ they stay in sync.
 
 - **Team roster** → `data/team-members.json`. Each entry supports `id`
   (see **Members ↔ results**), `name`, `role`, `initials` (used as the
-  placeholder photo), `bio`, `quote`, and a `specs` block. Swap `initials`
+  placeholder photo), `bio`, and a `specs` block. Swap `initials`
   for a real headshot by editing the `member-photo` markup in
   `assets/js/team.js` if you add photo files under `assets/img/`.
 - **Social links** → `data/socials.json`. `icon` must be one of
@@ -140,21 +140,19 @@ they stay in sync.
   play, and the player then loads from `youtube-nocookie.com`.
 
   Optional fields added since: `photo` (a path under `assets/img/team/`,
-  which replaces the initials and hides the crest watermark), `photoAlt`
-  (what the photo actually shows — write it yourself; it is the alt text),
-  and `quoteBy` (the attribution, rendered under the quote rather than
-  inside the quotation marks, which would be wrong). Quotation marks follow
-  the language: guillemets in French, curly quotes in English.
+  which replaces the initials and hides the crest watermark) and `photoAlt`
+  (what the photo actually shows — write it yourself; it is the alt text).
 
   `assets/img/team/` holds **portraits only** — 3:4, roughly 900x1200 — and
   `assets/img/catches/` holds the catch photos at 4:3. Keeping the two apart
   matters: a file used on both pages shows the same image twice to anyone
   walking the site.
 
-  **Verify any quote before publishing it.** The obvious Thoreau line about
-  men who fish without knowing it is not fish they are after is apocryphal —
-  the American Museum of Fly Fishing traced it and it appears nowhere in his
-  work. It was nearly used here.
+  **Verify anything you attribute before publishing it.** The cards once
+  carried a quote each; the field is gone, but the lesson holds for bios and
+  notes. The obvious Thoreau line about men who fish without knowing it is
+  not fish they are after is apocryphal — the American Museum of Fly Fishing
+  traced it and it appears nowhere in his work. It was nearly used here.
 
 ### Members ↔ results
 

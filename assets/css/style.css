@@ -557,24 +557,6 @@ section.alt { background: var(--sand-100); }
   font-size: 0.88rem;
   font-weight: 600;
 }
-.member-quote-by {
-  display: block;
-  margin-top: 6px;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 0.82rem;
-  color: var(--teal-600);
-}
-
-.member-quote {
-  font-style: italic;
-  color: var(--ink-600);
-  font-size: 0.92rem;
-  border-left: 3px solid var(--teal-400);
-  padding-left: 12px;
-  margin-top: 12px;
-}
-
 /* ---------- Social ---------- */
 
 .social-card {
@@ -1156,7 +1138,6 @@ section.alt { background: var(--sand-100); }
 .featured-body { padding: 28px; justify-content: center; gap: 10px; }
 .featured-body .catch-facts { font-size: 0.9rem; }
 .featured-body .catch-notes { font-size: 0.92rem; }
-.featured-cta { align-self: flex-start; margin-top: 8px; }
 
 @media (max-width: 820px) {
   .featured-catch { grid-template-columns: 1fr; }

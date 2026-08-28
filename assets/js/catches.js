@@ -387,10 +387,7 @@ async function initCatches(options) {
 
   function featuredHTML(c) {
     const d = describe(c);
-    const photos = catchPhotos(c);
-    const cta = photos.length
-      ? `<button type="button" class="btn btn-teal featured-cta" data-catch="${escapeHTML(c.id)}" data-photo="0">${escapeHTML(t("catches.openPhoto"))}</button>`
-      : "";
+    // Pas de bouton « voir en grand » : la photo elle-même ouvre la visionneuse.
     return `
       <article class="featured-catch">
         <div class="catch-media featured-media">
@@ -399,7 +396,6 @@ async function initCatches(options) {
         </div>
         <div class="catch-body featured-body">
           ${bodyHTML(c, d, "h2")}
-          ${cta}
         </div>
       </article>`;
   }

@@ -45,15 +45,10 @@ async function initTeam(gridSelector) {
       const photoBlock = m.photo
         ? `<div class="member-photo has-photo">
              <img class="member-photo-img" src="${escapeHTML(m.photo)}"
-                  alt="${escapeHTML(photoAlt)}" loading="lazy" width="1200" height="900">
+                  alt="${escapeHTML(photoAlt)}" loading="lazy" width="900" height="1200">
            </div>`
         : `<div class="member-photo"><span class="member-initials">${escapeHTML(initials)}</span></div>`;
 
-      const quote = tr(m.quote);
-      const quoteBy = tr(m.quoteBy);
-      const fr = PMF_I18N.lang === "fr";
-      const openQuote = fr ? "&laquo;&nbsp;" : "&ldquo;";
-      const closeQuote = fr ? "&nbsp;&raquo;" : "&rdquo;";
       const specs = m.specs || {};
 
       // Empty fields are slots waiting to be filled, not broken cards.
@@ -108,7 +103,6 @@ async function initTeam(gridSelector) {
             <h3>${escapeHTML(name)}</h3>
             ${bioBlock}
             <dl class="member-specs">${specRows}</dl>
-            ${quote ? `<div class="member-quote">${openQuote}${escapeHTML(quote)}${closeQuote}${quoteBy ? `<span class="member-quote-by">&mdash; ${escapeHTML(quoteBy)}</span>` : ""}</div>` : ""}
             <div class="member-record">${recordBits.join("")}</div>
             ${historyLink}
             ${catchLink}

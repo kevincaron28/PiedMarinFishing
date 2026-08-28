@@ -11,10 +11,6 @@
       "fr": "Kevin pêche sérieusement depuis 2022, et la rivière Richelieu est devenue son terrain de jeu. Il travaille surtout en finesse — présentations lentes, matériel léger et beaucoup de patience — une approche qui paye sur le brochet comme sur le reste. Sa plus grosse prise à date reste un saumon chinook de 20 lb; celle qu'il court encore, c'est un maskinongé de 55 pouces.",
       "en": "Kevin has been fishing seriously since 2022, and the Richelieu River has become his home water. He works mostly finesse — slow presentations, light tackle and a lot of patience — an approach that pays off on pike as much as on anything else. His biggest fish so far is a 20 lb chinook salmon; the one he's still chasing is a 55-inch muskie."
     },
-    "quote": {
-      "fr": "Quelqu'un est assis à l'ombre aujourd'hui parce que quelqu'un a planté un arbre il y a longtemps.",
-      "en": "Someone's sitting in the shade today because someone planted a tree a long time ago."
-    },
     "specs": {
       "homeWater": {
         "fr": "Rivière Richelieu",
@@ -41,7 +37,6 @@
         "en": "2022, seriously"
       }
     },
-    "quoteBy": "Warren Buffett",
     "photo": "assets/img/team/kevin-caron.jpg",
     "photoAlt": {
       "fr": "Kevin Caron en gros plan sur l'eau par temps gris, capuchon relevé, lunettes fumées et gilet de sauvetage, tenant sa prise",
@@ -59,10 +54,6 @@
     "bio": {
       "fr": "Kevin B. est le capitaine de l'équipe — c'est lui qui place le bateau et qui lit l'eau. Il pêche depuis toujours, surtout l'achigan sur le fleuve Saint-Laurent, et il passe sans hésiter de la finesse au power fishing selon ce que la journée demande. Son record, un maskinongé de 50 pouces; son objectif, le même poisson en 55.",
       "en": "Kevin B. is the crew's skipper — he's the one putting the boat on fish and reading the water. He's fished his whole life, mostly bass on the St. Lawrence, and he'll swing from finesse to power fishing without hesitating depending on what the day calls for. His personal best is a 50-inch muskie; what he's after is the same fish at 55."
-    },
-    "quote": {
-      "fr": "Non mais regardez la taille de c'poisson!",
-      "en": "Just look at the size of that fish!"
     },
     "specs": {
       "homeWater": {
@@ -90,7 +81,6 @@
         "en": "Always"
       }
     },
-    "quoteBy": "Cyril Chauquet",
     "photo": "assets/img/team/kevin-b.jpg",
     "photoAlt": {
       "fr": "Kevin B. en gros plan sous la pluie, chapeau de brousse noir et habit imperméable, tenant un maskinongé",
@@ -108,10 +98,6 @@
     "bio": {
       "fr": "BOBE pêche depuis toujours — plus de cinquante ans — et c'est le spécialiste de la traîne dans l'équipe — lignes en arrière, vitesse ajustée, patience. Le doré du fleuve est sa spécialité, même s'il garde en mémoire ceux de 10 livres d'il y a quelques décennies et qu'il en cherche encore un. Sa plus grosse prise reste un maskinongé de 45 pouces.",
       "en": "BOBE has been fishing his whole life — more than fifty years — and he's the crew's trolling specialist — lines out the back, speed dialled in, patience. Walleye on the St. Lawrence is his specialty, though he still remembers the 10-pounders from a few decades back and is still after another one. His biggest fish is a 45-inch muskie."
-    },
-    "quote": {
-      "fr": "La pêche à la ligne ressemble aux mathématiques : on ne peut jamais l'apprendre complètement.",
-      "en": "Angling may be said to be so like the mathematics, that it can never be fully learnt."
     },
     "specs": {
       "homeWater": {
@@ -139,7 +125,6 @@
         "en": "His whole life, 50+ years"
       }
     },
-    "quoteBy": "Izaak Walton, 1653",
     "photo": "assets/img/team/bobe.jpg",
     "photoAlt": {
       "fr": "BOBE en gros plan au coucher du soleil, chapeau de brousse et lunettes fumées, la tête d'un maskinongé à côté de lui",
