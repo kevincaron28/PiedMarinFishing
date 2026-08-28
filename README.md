@@ -401,7 +401,11 @@ links back into the roster and the palmarès:
   "water": { "fr": "Lac Saint-Pierre", "en": "Lac Saint-Pierre" },
   "event": "formule-brochet-2026",
   "media": { "type": "image", "src": "assets/img/catches/brochet-2026.jpg" },
-  "highlight": true
+  "gallery": [
+    { "src": "assets/img/catches/brochet-2026-b.jpg",
+      "alt": { "fr": "Le brochet de profil", "en": "The pike in profile" } }
+  ],
+  "featured": true
 }
 ```
 
@@ -409,8 +413,16 @@ links back into the roster and the palmarès:
   empty and the crest stands in with a *Photo à venir* label.
 - A YouTube tile shows a thumbnail and only contacts YouTube once someone
   presses play — same click-to-load facade as the homepage video.
-- `highlight: true` pins the catch to the top with a gold ribbon and is what
-  the *Vedettes seulement / Featured only* filter matches.
+- `gallery` holds more photos of the **same** fish. `media` stays the cover
+  shown on the card; the extra shots appear after it in the lightbox and the
+  card gets a `1/3` badge. An entry is either a plain path or an object with
+  its own bilingual `alt`; leave the array empty when there is only one photo.
+- Clicking any photo opens the lightbox: arrows, swipe, Esc, full keyboard
+  support — and nothing advances on its own.
+- `featured: true` on **one** catch lifts it into the large *Prise vedette /
+  Featured catch* block above the grid, where it is no longer repeated as a
+  card. Applying any filter hides that block and returns every match to the
+  grid. Set it on a different catch to move the spotlight.
 - `event` takes a **`tournament-history.json` id**, and `angler` a
   **`team-members.json` id**. Each team card shows its angler's catch count
   and deep-links to `catches.html?angler=<id>`.

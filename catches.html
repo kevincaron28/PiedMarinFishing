@@ -70,12 +70,12 @@
     <div class="filters">
       <select id="angler-filter" data-i18n-aria-label="catches.allAnglers" aria-label="Tous les pêcheurs"></select>
       <select id="species-filter" data-i18n-aria-label="catches.allSpecies" aria-label="Toutes les espèces"></select>
-      <label class="filter-check">
-        <input type="checkbox" id="featured-filter">
-        <span data-i18n="catches.onlyFeatured">Coups de cœur seulement</span>
-      </label>
       <span class="result-count" id="result-count"></span>
     </div>
+
+    <!-- La prise vedette : remplie seulement si une prise porte "featured": true
+         dans data/catches.json, et masquée dès qu'un filtre est actif. -->
+    <div id="featured-catch"></div>
 
     <div id="catch-grid" class="grid grid-3"></div>
     <div id="empty-state" class="empty-state" style="display:none;" data-i18n="catches.empty">Aucune prise ne correspond à tes filtres.</div>
@@ -103,7 +103,7 @@
     countSelector: "#result-count",
     anglerFilterSelector: "#angler-filter",
     speciesFilterSelector: "#species-filter",
-    highlightFilterSelector: "#featured-filter",
+    featuredSelector: "#featured-catch",
   });
 </script>
 </body>

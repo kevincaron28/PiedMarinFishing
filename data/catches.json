@@ -18,7 +18,8 @@
       "src": "assets/img/catches/maskinonge-kevin-b-2.jpg",
       "videoId": ""
     },
-    "highlight": false,
+    "gallery": [],
+    "featured": false,
     "notes": {
       "fr": "Un gros maskinongé sorti en fin de journée, hors tournoi. Date et mesure exacte à confirmer.",
       "en": "A big muskie landed late in the day, outside competition. Exact date and measurement to be confirmed."
@@ -43,7 +44,8 @@
       "src": "assets/img/team/kevin-caron.jpg",
       "videoId": ""
     },
-    "highlight": false,
+    "gallery": [],
+    "featured": false,
     "notes": {
       "fr": "Pris sur la Salmon River, à Pulaski, dans l'État de New York, pendant la remonte automnale des chinooks des Grands Lacs, hors tournoi.",
       "en": "Caught on the Salmon River at Pulaski, New York, during the fall run of Great Lakes chinook, outside competition."
@@ -71,7 +73,8 @@
       "src": "assets/img/team/kevin-b.jpg",
       "videoId": ""
     },
-    "highlight": false,
+    "gallery": [],
+    "featured": true,
     "notes": {
       "fr": "Le record personnel de Kevin B. Sorti du fleuve Saint-Laurent une journée de pluie, hors tournoi.",
       "en": "Kevin B.'s personal best. Off the St. Lawrence on a rainy day, outside competition."
@@ -99,7 +102,8 @@
       "src": "assets/img/team/bobe.jpg",
       "videoId": ""
     },
-    "highlight": false,
+    "gallery": [],
+    "featured": false,
     "notes": {
       "fr": "Le record personnel de BOBE. Sorti du fleuve Saint-Laurent en fin de journée, hors tournoi.",
       "en": "BOBE's personal best. Off the St. Lawrence late in the day, outside competition."
