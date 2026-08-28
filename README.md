@@ -146,6 +146,11 @@ they stay in sync.
   inside the quotation marks, which would be wrong). Quotation marks follow
   the language: guillemets in French, curly quotes in English.
 
+  `assets/img/team/` holds **portraits only** — 3:4, roughly 900x1200 — and
+  `assets/img/catches/` holds the catch photos at 4:3. Keeping the two apart
+  matters: a file used on both pages shows the same image twice to anyone
+  walking the site.
+
   **Verify any quote before publishing it.** The obvious Thoreau line about
   men who fish without knowing it is not fish they are after is apocryphal —
   the American Museum of Fly Fishing traced it and it appears nowhere in his

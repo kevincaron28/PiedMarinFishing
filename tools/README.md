@@ -18,23 +18,15 @@ Les PDF publiés sont dans `assets/docs/`.
 
 ## Floutage des arrière-plans de prises
 
-`blur-catch-backgrounds.py` régénère les photos de prises depuis les
-originaux en floutant le décor : une rive, une tour ou un quai suffisent à
-situer un spot, et un spot à maskinongé se garde.
+Le floutage se fait maintenant en amont, hors du dépôt : les photos
+arrivent déjà traitées. Le script `blur-catch-backgrounds.py` qui régénérait
+les images depuis les originaux a été retiré — ses fichiers sources n'étaient
+pas versionnés et ses chemins de sortie ne correspondent plus à
+l'arborescence (`assets/img/team/` ne contient que des portraits depuis que
+les photos de prises vivent dans `assets/img/catches/`).
 
-Le masque est une union d'ellipses — une par pêcheur, une pour le poisson —
-adoucie pour se lire comme une profondeur de champ. Une seule grande
-ellipse ne marche pas : elle englobe ce qui se trouve entre les sujets, et
-c'est justement là que passait une tour de communication sur une des
-photos.
-
-Limite connue : sans détourage automatique, ce qui se trouve directement
-derrière une tête reste net. Pour aller plus loin il faut recadrer plus
-serré à la source.
-
-Trois de ces images servent aussi de portraits sur la page Équipe. Elles
-sont partagées volontairement : flouter seulement les copies des Prises
-laisserait le décor identifiable sur l'autre page.
-
-**Les originaux ne sont pas dans le dépôt.** Garde-les de ton côté : le
-floutage n'est pas réversible une fois publié.
+Le principe reste bon à connaître : une rive, une tour ou un quai suffisent
+à situer un spot, et un spot à maskinongé se garde. Ce qui se trouve
+directement derrière une tête reste toujours le point faible d'un floutage
+automatique — recadrer plus serré à la source règle le problème mieux qu'un
+masque.
