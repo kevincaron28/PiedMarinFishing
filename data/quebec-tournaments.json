@@ -310,6 +310,32 @@
     "kind": "circuit"
   },
   {
+    "id": "backlash-fc",
+    "name": "Backlash FC",
+    "startDate": "",
+    "endDate": "",
+    "region": "Québec",
+    "location": "",
+    "species": "",
+    "organizer": "Backlash FC",
+    "type": {
+      "fr": "Série de tournois",
+      "en": "Tournament Series"
+    },
+    "status": "tentative",
+    "link": "https://www.facebook.com/share/1HQET6XwH3/",
+    "notes": {
+      "fr": "Série de tournois présentée au Québec. L'organisation annonce ses étapes sur sa page Facebook : calendrier, plans d'eau, espèces et frais s'y trouvent. Vérifie directement auprès d'eux avant de planifier un déplacement.",
+      "en": "Tournament series run in Québec. The organizers announce their stops on their Facebook page, where the schedule, waters, species and fees live. Check with them directly before planning a trip."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "circuit"
+  },
+  {
     "id": "peche-glace-lachine-2026",
     "name": {
       "fr": "Pêche sur glace — Marina de Lachine",
