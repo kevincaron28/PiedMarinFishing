@@ -768,6 +768,52 @@
     "circuit": "big-bass-quebec"
   },
   {
+    "id": "waswanipi-old-post-derby-2026",
+    "name": "Waswanipi Old Post Fishing Derby",
+    "startDate": "2026-08-07",
+    "endDate": "2026-08-09",
+    "region": "Nord-du-Québec",
+    "location": {
+      "fr": "Waswanipi, Eeyou Istchee Baie-James",
+      "en": "Waswanipi, Eeyou Istchee James Bay"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": "Waswanipi Old Post Fishing Derby",
+    "type": {
+      "fr": "Derby de pêche",
+      "en": "Fishing Derby"
+    },
+    "status": "tentative",
+    "link": "",
+    "notes": {
+      "fr": "Derby de trois jours, catégorie doré. Bourses annoncées : 30 000 $ pour la 1re place, 20 000 $ pour la 2e, 15 000 $ pour la 3e, en descendant jusqu'à 2 000 $ pour la 10e, plus un prix quotidien de 2 000 $ chacun des trois jours. LiveScope interdit. À noter : l'affiche diffusée est un brouillon et l'organisation prévient que les bourses peuvent varier selon le nombre d'inscriptions.",
+      "en": "Three-day derby, walleye category. Announced purses: $30,000 for 1st place, $20,000 for 2nd, $15,000 for 3rd, down to $2,000 for 10th, plus a $2,000 daily prize on each of the three days. LiveScope is banned. Note: the poster circulating is a draft and the organizers warn the purses may vary with the number of entries."
+    },
+    "specs": {
+      "fee": {
+        "fr": "350 $ / personne",
+        "en": "$350 / person"
+      },
+      "teamSize": {
+        "fr": "En équipe",
+        "en": "Team format"
+      },
+      "hours": {
+        "fr": "J1 et J2 : 8 h à 20 h · J3 : 8 h à 15 h",
+        "en": "Days 1 and 2: 8 am to 8 pm · Day 3: 8 am to 3 pm"
+      },
+      "format": {
+        "fr": "Doré — LiveScope interdit",
+        "en": "Walleye — no LiveScope"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
     "id": "excellence-bass-3-2026",
     "name": {
       "fr": "Excellence Bass — Étape 3 (Lac Saint-François)",
@@ -812,6 +858,53 @@
     "tier": "regional",
     "kind": "stop",
     "circuit": "excellence-bass"
+  },
+  {
+    "id": "tournoi-eclair-brochet-2026",
+    "name": "Tournoi Éclair Brochet",
+    "startDate": "2026-08-22",
+    "endDate": "2026-08-22",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix",
+      "en": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
+    "organizer": "Pourvoirie Guy Mayer",
+    "type": {
+      "fr": "Tournoi d'un jour",
+      "en": "One-day Tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Minimum deux pêcheurs par embarcation, plus un enfant. Le tarif de pré-inscription courait jusqu'au 14 août; 150 $ par bateau à partir du 15 août.",
+      "en": "Minimum two anglers per boat, plus one child. The pre-registration rate ran until 14 August; $150 per boat from 15 August."
+    },
+    "specs": {
+      "fee": {
+        "fr": "120 $ / bateau (pré-inscription) · 150 $ dès le 15 août",
+        "en": "$120 / boat (pre-registration) · $150 from 15 August"
+      },
+      "teamSize": {
+        "fr": "Minimum 2 pêcheurs par bateau + 1 enfant",
+        "en": "Minimum 2 anglers per boat + 1 child"
+      },
+      "hours": {
+        "fr": "7 h à 15 h",
+        "en": "7 am to 3 pm"
+      },
+      "deadline": {
+        "fr": "Pré-inscription jusqu'au 14 août 2026",
+        "en": "Pre-registration until 14 August 2026"
+      },
+      "deadlineDate": "2026-08-14"
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "challenge-carpe-quebec-2026",
@@ -917,6 +1010,41 @@
     "circuit": "excellence-bass"
   },
   {
+    "id": "tournoi-massawippi-2026",
+    "name": {
+      "fr": "Tournoi de pêche du lac Massawippi",
+      "en": "Lac Massawippi Fishing Tournament"
+    },
+    "startDate": "2026-09-12",
+    "endDate": "2026-09-12",
+    "region": "Estrie",
+    "location": {
+      "fr": "Lac Massawippi",
+      "en": "Lac Massawippi"
+    },
+    "species": "",
+    "organizer": "",
+    "type": {
+      "fr": "Tournoi-bénéfice",
+      "en": "Charity Tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Tournoi-bénéfice au profit de la Société canadienne du cancer, dans le cadre de La Course à la vie CIBC. 66 bateaux à l'édition 2025; l'organisation vise 75 bateaux en 2026. Inscriptions auprès de Patrick Proulx sur Facebook. L'espèce visée n'est pas précisée sur l'affiche.",
+      "en": "Charity tournament in support of the Canadian Cancer Society, as part of the CIBC Run for the Cure. 66 boats in the 2025 edition; the organizers are aiming for 75 in 2026. Register through Patrick Proulx on Facebook. The target species is not stated on the poster."
+    },
+    "specs": {
+      "fee": {
+        "fr": "50 $ / bateau",
+        "en": "$50 / boat"
+      },
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
     "id": "tournoi-invitation-st-francois-2026",
     "name": {
       "fr": "Tournoi Invitation — Lac Saint-François",
@@ -972,6 +1100,50 @@
     "tier": "regional",
     "kind": "stop",
     "circuit": "big-bass-quebec"
+  },
+  {
+    "id": "tournoi-destroyer-2026",
+    "name": "Tournoi de pêche Destroyer",
+    "startDate": "2026-09-26",
+    "endDate": "2026-09-26",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix",
+      "en": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix"
+    },
+    "species": "",
+    "organizer": "L.P.T.P.",
+    "type": {
+      "fr": "Tournoi d'un jour",
+      "en": "One-day Tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Départ à 10 h, fin à 17 h, remise des prix à 18 h. Hot-dogs servis sur place. Le tarif de pré-vente court jusqu'au 15 septembre; 150 $ par équipe ensuite. L'espèce visée n'est pas précisée sur l'affiche.",
+      "en": "Start at 10 am, finish at 5 pm, awards at 6 pm. Hot dogs served on site. The presale rate runs until 15 September; $150 per team afterwards. The target species is not stated on the poster."
+    },
+    "specs": {
+      "fee": {
+        "fr": "120 $ / équipe (pré-vente) · 150 $ après le 15 septembre",
+        "en": "$120 / team (presale) · $150 after 15 September"
+      },
+      "teamSize": {
+        "fr": "Équipes de 2 seulement",
+        "en": "Teams of 2 only"
+      },
+      "hours": {
+        "fr": "10 h à 17 h · remise des prix à 18 h",
+        "en": "10 am to 5 pm · awards at 6 pm"
+      },
+      "deadline": {
+        "fr": "Tarif de pré-vente jusqu'au 15 septembre 2026",
+        "en": "Presale rate until 15 September 2026"
+      },
+      "deadlineDate": "2026-09-15"
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "big-bass-cornwall-2026",
