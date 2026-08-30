@@ -1,5 +1,44 @@
 [
   {
+    "id": "peche-blanche-brochet-perchaude-2027",
+    "kind": "single",
+    "tier": "regional",
+    "name": {
+      "fr": "Tournoi de pêche blanche du Centre nautique de Beauharnois",
+      "en": "Centre nautique de Beauharnois Ice Fishing Tournament"
+    },
+    "startDate": "2027",
+    "endDate": "2027",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Centre nautique de Beauharnois, lac Saint-Louis",
+      "en": "Centre nautique de Beauharnois, Lac Saint-Louis"
+    },
+    "species": {
+      "fr": "Brochet et perchaude",
+      "en": "Pike and yellow perch"
+    },
+    "organizer": "Centre nautique de Beauharnois",
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "tentative",
+    "link": "https://www.centrenautiquedebeauharnois.com/",
+    "notes": {
+      "fr": "Notre sortie d'hiver. La date de l'édition 2027 n'est pas encore annoncée; l'édition 2026 a eu lieu le samedi 7 février, de 7 h à 13 h. Présenté par le Centre nautique de Beauharnois, sur le lac Saint-Louis. L'édition 2025, la 5e, a distribué plus de 10 000 $ en prix et bourses. Espèces admissibles : brochet et perchaude seulement. Les prix vont à la longueur du poisson et à l'heure de la mesure; à égalité, le premier poisson mesuré l'emporte. Jusqu'à trois prises mesurées par catégorie, mais un seul prix par catégorie. Maximum de 10 lignes par participant. Les poissons doivent être apportés vivants au kiosque du juge — apporte un seau d'eau; les poissons morts ou gelés sont refusés et la décision du juge est finale. Billet numéroté obligatoire en tout temps, vérifié à l'entrée du site et exigé pour réclamer un prix. Défense de percer des trous dans le circuit de course ou dans les espaces déneigés. Les règlements de pêche du Québec s'appliquent, et chacun demeure responsable de sa sécurité et de son équipement.",
+      "en": "Our winter outing. The 2027 date has not been announced yet; the 2026 edition ran on Saturday 7 February, 7 am to 1 pm. Hosted by the Centre nautique de Beauharnois on Lac Saint-Louis. The 2025 edition, the 5th, handed out more than $10,000 in prizes. Eligible species: pike and yellow perch only. Prizes go by fish length and by the time it is measured; ties go to the first fish measured. Up to three catches measured per category, but only one prize per category. Maximum 10 lines per participant. Fish must be brought alive to the judge's booth — bring a bucket of water; dead or frozen fish are refused and the judge's decision is final. A numbered ticket is required at all times, checked at the entrance to the site and needed to claim a prize. Drilling holes in the race circuit or in any cleared area is forbidden. Québec fishing regulations apply, and everyone remains responsible for their own safety and equipment."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "Mesuré à la longueur — poissons remis vivants au juge",
+        "en": "Measured by length — fish brought alive to the judge"
+      }
+    }
+  },
+  {
     "id": "formule-brochet-2027",
     "kind": "single",
     "tier": "regional",
