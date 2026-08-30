@@ -271,7 +271,7 @@ async function initEventList(options) {
   function icsHTML(ev) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(ev.startDate || "")) return "";
     if (ev.status === "cancelled") return "";
-    return `<button type="button" class="btn btn-outline btn-ics" data-ics="${escapeHTML(ev.id)}">${escapeHTML(t("events.addToCalendar"))}</button>`;
+    return `<button type="button" class="btn btn-ghost btn-ics" data-ics="${escapeHTML(ev.id)}">${escapeHTML(t("events.addToCalendar"))}</button>`;
   }
 
   function renderCard(ev) {

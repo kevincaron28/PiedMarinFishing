@@ -251,8 +251,8 @@
     "sponsors.ctaBody": "Écrivez-nous en quelques lignes : votre entreprise, ce qui vous intéresse, et on vous revient rapidement. Aucune formule imposée — on s'ajuste à ce qui a du sens pour vous.",
     "sponsors.ctaBtn": "Écrire à l'équipe →",
     "sponsors.partnersTitle": "Nos partenaires",
-    "sponsors.kitFile": "assets/docs/trousse-commandite.pdf",
-    "sponsors.kitBtn": "📄 Télécharger la trousse (PDF)"
+    "sponsors.kitBtnFr": "📄 Trousse de commandite (FR)",
+    "sponsors.kitBtnEn": "📄 Sponsorship kit (EN)"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -506,7 +506,7 @@
     "sponsors.ctaBody": "Send us a few lines: your business, what interests you, and we'll get back to you quickly. No fixed packages — we'll shape it around what makes sense for you.",
     "sponsors.ctaBtn": "Email the team →",
     "sponsors.partnersTitle": "Our partners",
-    "sponsors.kitFile": "assets/docs/sponsorship-kit.pdf",
-    "sponsors.kitBtn": "📄 Download the kit (PDF)"
+    "sponsors.kitBtnFr": "📄 Trousse de commandite (FR)",
+    "sponsors.kitBtnEn": "📄 Sponsorship kit (EN)"
   }
 }

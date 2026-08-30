@@ -329,6 +329,15 @@ img { max-width: 100%; display: block; }
 }
 .btn-teal:hover { background: var(--teal-400); }
 
+/* .btn-outline est blanc sur blanc dès qu'on le sort d'un fond sombre.
+   .btn-ghost est son équivalent pour les fonds clairs : cartes, rappels. */
+.btn-ghost {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: rgba(16, 32, 47, 0.22);
+}
+.btn-ghost:hover { background: var(--sand-100); border-color: var(--teal-400); }
+
 /* ---------- Sections ---------- */
 
 section { padding: 72px 0; }
@@ -1599,6 +1608,9 @@ body.has-lightbox { overflow: hidden; }
   padding: 24px 28px;
 }
 .callout h3 { margin-bottom: 8px; }
+/* Trois boutons dans un rappel : ils s'alignent et retombent proprement
+   sur téléphone plutôt que de se coller les uns aux autres. */
+.callout-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
 
 .resource-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
 .resource-list li {
