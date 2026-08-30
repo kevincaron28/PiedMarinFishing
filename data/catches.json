@@ -160,5 +160,35 @@
       "fr": "Une barbue de rivière de 7 livres prise de nuit sur le fleuve. La longueur n'a pas été mesurée.",
       "en": "A 7-pound channel catfish taken at night on the St. Lawrence. Its length was not measured."
     }
+  },
+  {
+    "id": "perchaude-2025",
+    "angler": "",
+    "species": {
+      "fr": "Perchaude",
+      "en": "Yellow perch"
+    },
+    "measure": "",
+    "date": "2025",
+    "water": {
+      "fr": "",
+      "en": ""
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/perchaude-2025.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Une jeune enfant, visage masqué, tenant une petite perchaude sur la glace",
+        "en": "A young child, face obscured, holding a small yellow perch on the ice"
+      }
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "Une petite perchaude sortie sur la glace pendant l'hiver 2025 par la fille de Kevin Caron — la relève de l'équipe.",
+      "en": "A small yellow perch pulled through the ice in the winter of 2025 by Kevin Caron's daughter — the team's next generation."
+    }
   }
 ]
