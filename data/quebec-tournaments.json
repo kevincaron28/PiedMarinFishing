@@ -200,8 +200,8 @@
     "status": "tentative",
     "link": "https://pecheurquebec.com/tournois-de-peche-quebec",
     "notes": {
-      "fr": "Championnat provincial généralement tenu entre août et septembre. Date et lieu 2026 non confirmés par une source primaire — référence d'agrégateur seulement.",
-      "en": "Provincial championship generally held between August and September. 2026 date and venue not confirmed from a primary source — aggregator reference only."
+      "fr": "Championnat provincial à plusieurs catégories d'espèces, situé entre août et septembre. Date, lieu et organisateur non confirmés par une source primaire — référence d'agrégateur seulement (Pêcheur Québec).",
+      "en": "Provincial championship with several species categories, placed between August and September. Date, venue and organizer not confirmed from a primary source — aggregator reference only (Pêcheur Québec)."
     },
     "specs": {
       "fee": "",
@@ -576,6 +576,51 @@
     "circuit": "big-bass-quebec"
   },
   {
+    "id": "lac-pemichangan-2026",
+    "name": {
+      "fr": "Tournoi de pêche du lac Pemichangan",
+      "en": "Lac Pemichangan Fishing Tournament"
+    },
+    "startDate": "2026-06-20",
+    "endDate": "2026-06-20",
+    "region": "Outaouais",
+    "location": {
+      "fr": "Lac Pemichangan, Érablière J.B. Caron, Vallée-de-la-Gatineau",
+      "en": "Lac Pemichangan, Érablière J.B. Caron, Vallée-de-la-Gatineau"
+    },
+    "species": {
+      "fr": "Truite, achigan, brochet",
+      "en": "Trout, bass, pike"
+    },
+    "organizer": {
+      "fr": "Érablière J.B. Caron avec Pronature Gracefield",
+      "en": "Érablière J.B. Caron with Pronature Gracefield"
+    },
+    "type": {
+      "fr": "Tournoi communautaire",
+      "en": "Community Tournament"
+    },
+    "status": "confirmed",
+    "link": "https://tourismevalleedelagatineau.com/repertoire-dactivites/lac-pemichangan-tournoi-de-peche-2026/",
+    "notes": {
+      "fr": "Tournoi ouvert autant aux pêcheurs d'expérience qu'aux familles. Inscription par espèce; souper servi sur place. Les billets se vendent chez Pronature Gracefield et au Dépanneur des Lacs.",
+      "en": "Open to seasoned anglers and families alike. Entry is per species; supper is served on site. Tickets are sold at Pronature Gracefield and Dépanneur des Lacs."
+    },
+    "specs": {
+      "fee": {
+        "fr": "10 $ par espèce",
+        "en": "$10 per species"
+      },
+      "teamSize": "",
+      "format": {
+        "fr": "Trois catégories : truite, achigan, brochet",
+        "en": "Three categories: trout, bass, pike"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
     "id": "excellence-bass-1-2026",
     "name": {
       "fr": "Excellence Bass — Étape 1 (Lac Saint-Louis)",
@@ -716,6 +761,45 @@
     "tier": "regional",
     "kind": "stop",
     "circuit": "excellence-bass"
+  },
+  {
+    "id": "acp-nominingue-2026",
+    "name": {
+      "fr": "Tournoi de pêche de l'ACP Nominingue",
+      "en": "ACP Nominingue Fishing Tournament"
+    },
+    "startDate": "2026-07-11",
+    "endDate": "2026-07-11",
+    "region": "Laurentides",
+    "location": {
+      "fr": "Grand Lac Nominingue",
+      "en": "Grand Lac Nominingue"
+    },
+    "species": "",
+    "organizer": {
+      "fr": "Association de chasse et de pêche de Nominingue",
+      "en": "Association de chasse et de pêche de Nominingue"
+    },
+    "type": {
+      "fr": "Tournoi communautaire",
+      "en": "Community Tournament"
+    },
+    "status": "tentative",
+    "link": "https://acpnominingue.ca/tournoi-de-peche-2024",
+    "notes": {
+      "fr": "Tournoi annuel de l'association locale, de 6 h à 16 h. Bourses de 100 $ au gagnant et 50 $ au deuxième de chaque catégorie. Attention : la page de l'organisation date d'une édition précédente et la date du samedi 11 juillet tombe bien un samedi en 2026, mais l'année n'est pas confirmée — vérifie auprès de l'association avant de planifier.",
+      "en": "The local association's annual tournament, 6 am to 4 pm. Purses of $100 for the winner and $50 for the runner-up in each category. Note: the organizer's page dates from an earlier edition, and while Saturday 11 July does fall on a Saturday in 2026, the year is not confirmed — check with the association before planning."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "hours": {
+        "fr": "6 h à 16 h",
+        "en": "6 am to 4 pm"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
   },
   {
     "id": "big-bag-st-louis-2026",
@@ -1260,5 +1344,46 @@
     "tier": "regional",
     "kind": "stop",
     "circuit": "big-bass-quebec"
+  },
+  {
+    "id": "tournoi-peche-lac-saint-jean",
+    "name": {
+      "fr": "Tournoi de pêche Lac-Saint-Jean",
+      "en": "Lac-Saint-Jean Fishing Tournament"
+    },
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Saguenay–Lac-Saint-Jean",
+      "en": "Saguenay–Lac-Saint-Jean"
+    },
+    "location": {
+      "fr": "Lac Saint-Jean",
+      "en": "Lac Saint-Jean"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": {
+      "fr": "Tournoi de Pêche Lac-Saint-Jean (organisme sans but lucratif)",
+      "en": "Tournoi de Pêche Lac-Saint-Jean (non-profit)"
+    },
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "tentative",
+    "link": "http://www.pechelsj.ca/",
+    "notes": {
+      "fr": "Tournoi annuel d'un organisme sans but lucratif, réunissant plus de 100 pêcheurs pour environ 20 000 $ en prix. Historiquement tenu pendant la Fête de la pêche, au début juin; l'agrégateur Pêcheur Québec le situe plutôt en juillet. La date de la prochaine édition n'est pas confirmée — vérifie sur pechelsj.ca avant de planifier.",
+      "en": "Annual tournament run by a non-profit, drawing more than 100 anglers for roughly $20,000 in prizes. Historically held during the Fête de la pêche in early June; the aggregator Pêcheur Québec places it in July instead. The next edition's date is not confirmed — check pechelsj.ca before planning."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "single"
   }
 ]
