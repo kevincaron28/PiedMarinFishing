@@ -1322,6 +1322,48 @@
     "circuit": "big-bass-quebec"
   },
   {
+    "id": "tournoi-darlington-2026",
+    "name": {
+      "fr": "Tournoi de pêche amateur Darlington",
+      "en": "Darlington Amateur Fishing Tournament"
+    },
+    "startDate": "2026-09-25",
+    "endDate": "2026-09-25",
+    "region": "Montérégie",
+    "location": {
+      "fr": "Dorion, Vaudreuil-Dorion",
+      "en": "Dorion, Vaudreuil-Dorion"
+    },
+    "species": {
+      "fr": "Doré, brochet, achigan",
+      "en": "Walleye, pike, bass"
+    },
+    "organizer": "Étienne La Mouche",
+    "type": {
+      "fr": "Tournoi amateur",
+      "en": "Amateur Tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Quatre classes, toutes à la longueur : plus long poisson, plus long doré, plus long brochet et plus long achigan. Dîner fourni sur place et descente de bateau gratuite. Location de chaloupes offerte — à réserver d'avance. Nombreux prix de présence, plusieurs commanditaires confirmés. Inscriptions et informations auprès de l'organisateur, qui annonce l'événement sur Facebook.",
+      "en": "Four classes, all measured by length: longest fish, longest walleye, longest pike and longest bass. Lunch provided on site and free boat launch. Rowboat rental available — reserve ahead. Plenty of door prizes and several confirmed sponsors. Registration and details through the organizer, who announces the event on Facebook."
+    },
+    "specs": {
+      "fee": {
+        "fr": "40 $ / personne",
+        "en": "$40 / person"
+      },
+      "teamSize": "",
+      "format": {
+        "fr": "Quatre classes à la longueur — poisson, doré, brochet, achigan",
+        "en": "Four length classes — any fish, walleye, pike, bass"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
     "id": "tournoi-destroyer-2026",
     "name": "Tournoi de pêche Destroyer",
     "startDate": "2026-09-26",
