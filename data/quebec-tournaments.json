@@ -347,6 +347,41 @@
     "kind": "circuit"
   },
   {
+    "id": "pro-peche-vallee-gatineau",
+    "name": "Pro Pêche Vallée-de-la-Gatineau",
+    "startDate": "",
+    "endDate": "",
+    "region": "Outaouais",
+    "location": {
+      "fr": "Vallée-de-la-Gatineau",
+      "en": "Vallée-de-la-Gatineau"
+    },
+    "species": "",
+    "organizer": "Pro Pêche Vallée-de-la-Gatineau",
+    "type": {
+      "fr": "Circuit à étapes",
+      "en": "Multi-stop Circuit"
+    },
+    "status": "tentative",
+    "link": "http://www.propechevg.com/",
+    "notes": {
+      "fr": "Circuit à étapes de la Vallée-de-la-Gatineau, avec classement de saison, liste d'équipes inscrites et commanditaires. Au moins une des étapes se pêche au doré. Pour la saison 2025, l'inscription était de 450 $ par équipe d'un ou deux pêcheurs, par téléphone. Le calendrier des étapes, les plans d'eau et les frais de la saison en cours sont publiés sur propechevg.com.",
+      "en": "Multi-stop circuit in the Vallée-de-la-Gatineau, with season standings, a registered-team list and sponsors. At least one stage is fished for walleye. For the 2025 season, entry was $450 per team of one or two anglers, by phone. The stage schedule, waters and fees for the current season are published on propechevg.com."
+    },
+    "specs": {
+      "fee": {
+        "fr": "450 $ / équipe (saison 2025)",
+        "en": "$450 / team (2025 season)"
+      },
+      "teamSize": {
+        "fr": "1 ou 2 pêcheurs par équipe",
+        "en": "1 or 2 anglers per team"
+      }
+    },
+    "tier": "regional",
+    "kind": "circuit"
+  },
+  {
     "id": "peche-glace-lachine-2026",
     "name": {
       "fr": "Pêche sur glace — Marina de Lachine",
@@ -603,8 +638,8 @@
     "status": "confirmed",
     "link": "https://tourismevalleedelagatineau.com/repertoire-dactivites/lac-pemichangan-tournoi-de-peche-2026/",
     "notes": {
-      "fr": "Tournoi ouvert autant aux pêcheurs d'expérience qu'aux familles. Inscription par espèce; souper servi sur place. Les billets se vendent chez Pronature Gracefield et au Dépanneur des Lacs.",
-      "en": "Open to seasoned anglers and families alike. Entry is per species; supper is served on site. Tickets are sold at Pronature Gracefield and Dépanneur des Lacs."
+      "fr": "Tournoi annuel de l'érablière J.B. Caron en collaboration avec Pronature Gracefield, ouvert autant aux pêcheurs d'expérience qu'aux familles. Inscription par espèce. Souper servi vers 18 h à l'érablière : 35 $ pour les adultes, 20 $ pour les moins de 12 ans. Les billets se vendent chez Pronature Gracefield et au Dépanneur des Lacs.",
+      "en": "Annual tournament run by the J.B. Caron sugar bush with Pronature Gracefield, open to seasoned anglers and families alike. Entry is per species. Supper is served around 6 pm at the sugar bush: $35 for adults, $20 for children under 12. Tickets are sold at Pronature Gracefield and Dépanneur des Lacs."
     },
     "specs": {
       "fee": {
@@ -615,6 +650,10 @@
       "format": {
         "fr": "Trois catégories : truite, achigan, brochet",
         "en": "Three categories: trout, bass, pike"
+      },
+      "hours": {
+        "fr": "Souper vers 18 h",
+        "en": "Supper around 6 pm"
       }
     },
     "tier": "regional",
