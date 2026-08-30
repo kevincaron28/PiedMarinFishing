@@ -382,6 +382,49 @@
     "kind": "circuit"
   },
   {
+    "id": "la-trail-team-brother-fishing",
+    "name": {
+      "fr": "La Trail — Team Brother Fishing",
+      "en": "La Trail — Team Brother Fishing"
+    },
+    "startDate": "",
+    "endDate": "",
+    "region": "Québec",
+    "location": {
+      "fr": "Plans d'eau variés — voir le calendrier de l'organisation",
+      "en": "Various waters — see the organizers' calendar"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "Team Brother Fishing",
+    "type": {
+      "fr": "Circuit en kayak",
+      "en": "Kayak Circuit"
+    },
+    "status": "tentative",
+    "link": "https://teambrotherfishing.com/",
+    "notes": {
+      "fr": "Le circuit de pêche à l'achigan en kayak au Québec : trois étapes plus La Classique, la finale. Team Brother Fishing organise des événements en kayak depuis neuf ans. Journée de 7 h à 15 h, remise des feuilles à 15 h 30. Maximum de cinq poissons par équipe, minimum de 12 pouces, avec un boni du plus gros poisson à chaque heure : à la fin de chaque heure, le pêcheur qui a enregistré le plus long poisson l'emporte. Aucun remboursement après l'inscription. Les dates, les plans d'eau et les frais de la saison sont publiés sur teambrotherfishing.com, qui tient aussi les classements et les archives.",
+      "en": "Québec's kayak bass circuit: three stages plus La Classique, the final. Team Brother Fishing has been running kayak events for nine years. Days run 7 am to 3 pm, cards in by 3:30 pm. Maximum five fish per team, 12-inch minimum, with a big-fish bonus every hour: at the end of each hour, the angler who logged the longest fish takes it. No refunds after registration. Dates, waters and fees for the season are published on teambrotherfishing.com, which also keeps the standings and archives."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "hours": {
+        "fr": "7 h à 15 h — remise à 15 h 30",
+        "en": "7 am to 3 pm — cards in by 3:30 pm"
+      },
+      "format": {
+        "fr": "En kayak — 5 poissons max, 12 po minimum, boni horaire",
+        "en": "From a kayak — 5 fish max, 12-inch minimum, hourly bonus"
+      }
+    },
+    "tier": "regional",
+    "kind": "circuit"
+  },
+  {
     "id": "peche-glace-lachine-2026",
     "name": {
       "fr": "Pêche sur glace — Marina de Lachine",
