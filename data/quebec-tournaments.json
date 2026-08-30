@@ -229,18 +229,29 @@
       "en": "Regional / community organized"
     },
     "type": {
-      "fr": "Tournoi communautaire",
-      "en": "Community Tournament"
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
     },
     "status": "tentative",
     "link": "https://lenord.ca/2025/08/28/tournoi-de-peche-walleye-challenge/",
     "notes": {
-      "fr": "Historiquement tenu à la fin août. Date exacte 2026 non confirmée — vérifiez localement avant de planifier un déplacement.",
-      "en": "Historically held in late August. Exact 2026 date not confirmed — verify locally before planning a trip."
+      "fr": "Tournoi annuel de deux jours, du vendredi au samedi — le dimanche est laissé en repos aux bénévoles et aux participants. L'édition 2025 s'est tenue les 22 et 23 août sur la chaîne de lacs et a réuni 34 équipes; le plus gros doré pesait 4,66 lb. L'organisation met l'accent sur la remise à l'eau : sur environ 200 poissons, neuf seulement n'ont pas survécu. Un rabais de 150 $ à l'inscription était offert aux nouveaux participants. La date de la prochaine édition n'est pas confirmée — vérifie localement avant de planifier un déplacement.",
+      "en": "Two-day annual tournament, Friday to Saturday — Sunday is left as a rest day for volunteers and entrants. The 2025 edition ran on 22 and 23 August on the lake chain and drew 34 teams; the biggest walleye weighed 4.66 lb. The organizers push catch-and-release: out of roughly 200 fish, only nine did not survive. A $150 registration discount was offered to first-time entrants. The next edition's date is not confirmed — check locally before planning a trip."
     },
     "specs": {
       "fee": "",
-      "teamSize": ""
+      "teamSize": {
+        "fr": "En équipe",
+        "en": "Team format"
+      },
+      "hours": {
+        "fr": "Deux jours — vendredi et samedi",
+        "en": "Two days — Friday and Saturday"
+      },
+      "format": {
+        "fr": "Doré — remise à l'eau encouragée",
+        "en": "Walleye — catch-and-release encouraged"
+      }
     },
     "tier": "regional",
     "kind": "single"
