@@ -11,8 +11,11 @@ La trousse se régénère donc à partir des mêmes textes que la page
 
 ```
 python3 tools/build-sponsor-kit.py
-node tools/render-sponsor-kit.js
+node tools/render-sponsor-kit.js <dossier>
 ```
+
+`build-sponsor-kit.py` affiche le dossier à passer en argument à la fin de son
+exécution.
 
 Les PDF publiés sont dans `assets/docs/`.
 
@@ -33,8 +36,9 @@ masque.
 
 ## Données structurées
 
-`build-structured-data.py` écrit le JSON-LD dans `index.html` (l'équipe) et
-`tournaments.html` (la liste des tournois datés). Les moteurs de recherche
+`build-structured-data.py` écrit le JSON-LD dans `index.html` (le site et
+l'équipe, liés par `@id`) et `tournaments.html` (la liste des tournois
+datés). Les moteurs de recherche
 lisent ce balisage pour afficher les événements dans leurs résultats.
 
 ```
@@ -49,3 +53,39 @@ simplement en retard d'une édition.
 
 Seuls les événements dont la date est complète (`2026-08-07`) sont publiés :
 une date partielle ne répond pas aux exigences des moteurs.
+
+## Après avoir modifié `data/i18n.json`
+
+Chaque page HTML porte une copie française du texte, visible avant que
+`i18n.js` s'exécute. C'est cette copie que lisent Google, Facebook et les
+aperçus de lien — pas la version chargée en JavaScript. Elle doit donc suivre.
+
+```
+python3 tools/sync-html-fallbacks.py --check   # ce qui a dérivé
+python3 tools/sync-html-fallbacks.py           # le corriger
+```
+
+Le script recopie aussi le `<title>` et la `<meta name="description">` vers les
+balises `og:` et `twitter:`, qui figeaient sinon d'anciennes phrases dans les
+aperçus partagés. Les clés à accolades (`{year}`, `{count}`) sont laissées de
+côté : leur version HTML est volontairement différente.
+
+C'est l'oubli le plus facile du dépôt — le site s'affiche parfaitement pendant
+que les moteurs indexent une phrase périmée. `--check` sort en code 1 s'il
+trouve une divergence.
+
+## Sitemap
+
+`build-sitemap.py` régénère `sitemap.xml`. La date `<lastmod>` de chaque page
+vient de git : le dernier commit qui a touché la page **ou** une des données
+qu'elle affiche (`tournaments.html` suit `data/quebec-tournaments.json`, et
+toutes suivent `data/i18n.json`). Une page modifiée mais pas encore commitée
+est datée d'aujourd'hui.
+
+```
+python3 tools/build-sitemap.py
+```
+
+À relancer juste après un commit de contenu, pour que les dates soient celles
+du commit et non celles de la journée. `merch.html` et `404.html` en sont
+absentes : elles portent `noindex`.

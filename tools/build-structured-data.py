@@ -38,12 +38,17 @@ def fr(value):
 
 
 def team_json():
+    """Accueil : l'équipe et le site lui-même, liés par @id.
+
+    Le nœud WebSite dit aux moteurs que piedmarinfishing.com est un site
+    bilingue publié par l'équipe — c'est ce qui permet d'associer le nom de
+    l'équipe au domaine plutôt qu'à une page isolée."""
     members = load("team-members.json")
     socials = load("socials.json")
     i18n = load("i18n.json")["fr"]
-    return {
-        "@context": "https://schema.org",
+    team = {
         "@type": "SportsTeam",
+        "@id": SITE + "/#team",
         "name": "Pied Marin Fishing",
         "sport": "Fishing",
         "url": SITE + "/",
@@ -56,6 +61,16 @@ def team_json():
         "sameAs": [s["url"] for s in socials
                    if s.get("url", "").startswith("http")],
     }
+    site = {
+        "@type": "WebSite",
+        "@id": SITE + "/#website",
+        "url": SITE + "/",
+        "name": "Pied Marin Fishing",
+        "description": i18n.get("index.desc", ""),
+        "inLanguage": ["fr-CA", "en-CA"],
+        "publisher": {"@id": team["@id"]},
+    }
+    return {"@context": "https://schema.org", "@graph": [site, team]}
 
 
 def event_json(ev):
@@ -97,6 +112,7 @@ def event_json(ev):
 
 
 def guide_json():
+    """Le guide : la liste des tournois, rattachée au même site."""
     events = [e for e in (event_json(x) for x in load("quebec-tournaments.json")) if e]
     events.sort(key=lambda e: e["startDate"])
     return {
@@ -104,6 +120,7 @@ def guide_json():
         "@type": "ItemList",
         "name": "Tournois de pêche au Québec",
         "url": SITE + "/tournaments.html",
+        "isPartOf": {"@id": SITE + "/#website"},
         "numberOfItems": len(events),
         "itemListElement": [
             {"@type": "ListItem", "position": i + 1, "item": e}
@@ -135,7 +152,7 @@ def write_block(page, payload):
 
 if __name__ == "__main__":
     n = write_block("index.html", team_json())
-    print("index.html        SportsTeam            %5d octets" % n)
+    print("index.html        WebSite + SportsTeam  %5d octets" % n)
     guide = guide_json()
     n = write_block("tournaments.html", guide)
     print("tournaments.html  ItemList de %2d Event  %5d octets"

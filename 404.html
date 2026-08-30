@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-text="notfound.title">Page introuvable — Pied Marin Fishing</title>
+<!-- GitHub Pages sert cette page pour n'importe quelle adresse inconnue, à
+     n'importe quelle profondeur (/foo, /foo/bar/baz). Les chemins relatifs
+     casseraient dès le deuxième niveau — d'où <base>, qui les ramène tous à la
+     racine, y compris le fetch de data/i18n.json fait par i18n.js. Les liens
+     sont écrits en absolu par-dessus, par sécurité. Seule page du site à faire
+     ça : les autres ont une adresse stable. -->
+<base href="/">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#0b1e33">
+<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+<link rel="apple-touch-icon" href="/assets/img/favicon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="/index.html">
+      <img src="/assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson de l'équipe Pied Marin Fishing : un brochet au-dessus de l'eau">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="/team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="/catches.html" data-i18n="nav.catches">Prises</a></li>
+      <li><a href="/history.html" data-i18n="nav.history">Sorties</a></li>
+      <li><a href="/calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
+      <li><a href="/tournaments.html" data-i18n="nav.guide">Tournois</a></li>
+      <li><a href="/social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="/sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1 data-i18n="notfound.h1">Cette page a mordu ailleurs</h1>
+    <p data-i18n="notfound.body">L'adresse ne mène nulle part. Le lien a peut-être changé, ou la page n'a jamais existé. Voici par où repartir.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker" data-i18n="notfound.kicker">Erreur 404</span>
+      <h2 data-i18n="notfound.hereTitle">Reprends par ici</h2>
+    </div>
+    <div class="callout-actions">
+      <a class="btn btn-teal" href="/index.html" data-i18n="link.home">Retour à l'accueil</a>
+      <a class="btn btn-ghost" href="/tournaments.html" data-i18n="link.guide">Le répertoire des tournois →</a>
+      <a class="btn btn-ghost" href="/catches.html" data-i18n="link.catches">Nos prises →</a>
+      <a class="btn btn-ghost" href="/calendar.html" data-i18n="link.calendar">Notre calendrier →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="/index.html" data-i18n="footer.backHome">Retour à l'accueil</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/analytics.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="/assets/js/util.js"></script>
+<script src="/assets/js/i18n.js"></script>
+</body>
+</html>

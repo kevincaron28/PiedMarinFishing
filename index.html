@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n-text="index.title">Pied Marin Fishing — Une gang de pêcheurs du Québec</title>
-<meta name="description" data-i18n-content="index.desc" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. Trois Formule Brochet de suite depuis 2024. Découvre l'équipe, notre calendrier de saison et le répertoire des tournois du Québec.">
+<meta name="description" data-i18n-content="index.desc" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. L'équipe, les prises, le répertoire des tournois.">
 <link rel="canonical" href="https://piedmarinfishing.com/">
 <!-- Le site sert les deux langues sur la même URL; ?lang=en est la version
      anglaise liable. Le français reste la version par défaut. -->
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="fr_CA">
 <meta property="og:locale:alternate" content="en_CA">
 <meta property="og:title" content="Pied Marin Fishing — Une gang de pêcheurs du Québec">
-<meta property="og:description" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. Trois Formule Brochet de suite depuis 2024. Découvre l'équipe, notre calendrier de saison et le répertoire des tournois du Québec.">
+<meta property="og:description" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. L'équipe, les prises, le répertoire des tournois.">
 <meta property="og:url" content="https://piedmarinfishing.com/">
 <meta property="og:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
@@ -27,7 +27,7 @@
 <meta property="og:image:alt" content="Écusson de l'équipe Pied Marin Fishing : un brochet au-dessus de l'eau">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Pied Marin Fishing — Une gang de pêcheurs du Québec">
-<meta name="twitter:description" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. Trois Formule Brochet de suite depuis 2024. Découvre l'équipe, notre calendrier de saison et le répertoire des tournois du Québec.">
+<meta name="twitter:description" content="Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. L'équipe, les prises, le répertoire des tournois.">
 <meta name="twitter:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
@@ -36,37 +36,56 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "SportsTeam",
-  "name": "Pied Marin Fishing",
-  "sport": "Fishing",
-  "url": "https://piedmarinfishing.com/",
-  "logo": "https://piedmarinfishing.com/assets/img/logo.png",
-  "image": "https://piedmarinfishing.com/assets/img/og-card.png",
-  "description": "Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. Trois Formule Brochet de suite depuis 2024. Découvre l'équipe, notre calendrier de saison et le répertoire des tournois du Québec.",
-  "email": "info@piedmarinfishing.com",
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "Québec, Canada"
-  },
-  "member": [
+  "@graph": [
     {
-      "@type": "Person",
-      "name": "Kevin Caron"
+      "@type": "WebSite",
+      "@id": "https://piedmarinfishing.com/#website",
+      "url": "https://piedmarinfishing.com/",
+      "name": "Pied Marin Fishing",
+      "description": "Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. L'équipe, les prises, le répertoire des tournois.",
+      "inLanguage": [
+        "fr-CA",
+        "en-CA"
+      ],
+      "publisher": {
+        "@id": "https://piedmarinfishing.com/#team"
+      }
     },
     {
-      "@type": "Person",
-      "name": "Kevin B."
-    },
-    {
-      "@type": "Person",
-      "name": "BOBE"
+      "@type": "SportsTeam",
+      "@id": "https://piedmarinfishing.com/#team",
+      "name": "Pied Marin Fishing",
+      "sport": "Fishing",
+      "url": "https://piedmarinfishing.com/",
+      "logo": "https://piedmarinfishing.com/assets/img/logo.png",
+      "image": "https://piedmarinfishing.com/assets/img/og-card.png",
+      "description": "Pied Marin Fishing, une gang de pêcheurs du Québec — brochet, achigan, doré, de l'eau libre à la glace. L'équipe, les prises, le répertoire des tournois.",
+      "email": "info@piedmarinfishing.com",
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Québec, Canada"
+      },
+      "member": [
+        {
+          "@type": "Person",
+          "name": "Kevin Caron"
+        },
+        {
+          "@type": "Person",
+          "name": "Kevin B."
+        },
+        {
+          "@type": "Person",
+          "name": "BOBE"
+        }
+      ],
+      "sameAs": [
+        "https://instagram.com/piedmarinfishing",
+        "https://www.facebook.com/share/1DMh6kbnfC/",
+        "https://youtube.com/@piedmarinfishing",
+        "https://tiktok.com/@piedmarinfishing"
+      ]
     }
-  ],
-  "sameAs": [
-    "https://instagram.com/piedmarinfishing",
-    "https://www.facebook.com/share/1DMh6kbnfC/",
-    "https://youtube.com/@piedmarinfishing",
-    "https://tiktok.com/@piedmarinfishing"
   ]
 }
 </script>
