@@ -11,7 +11,28 @@ def b64(path, mime):
         return "data:%s;base64,%s" % (mime, base64.b64encode(f.read()).decode())
 
 CREST = b64("assets/img/logo-mark-light.png", "image/png")
-PHOTOS = {m["id"]: b64(m["photo"], "image/jpeg") for m in members if m.get("photo")}
+
+# La vignette d'équipe est une bande très large (2,14:1) découpée dans un
+# portrait 3:4 : à peine plus haute qu'un visage. Les trois visages ne sont pas
+# à la même hauteur dans leur photo — capuchon relevé, chapeau à large bord —
+# alors un cadrage unique en rate forcément deux. Ces fractions disent où se
+# trouve le centre du visage dans chaque portrait; le découpage est fait ici
+# plutôt que laissé à object-position, qui ne sait pas viser.
+FACE = {"kevin-caron": 0.19, "kevin-b": 0.27, "bobe": 0.50}
+CREW_RATIO = 2.138
+
+def crew_thumb(path, face):
+    from PIL import Image
+    im = Image.open(REPO + "/" + path).convert("RGB")
+    w, h = im.size
+    band = round(w / CREW_RATIO)
+    top = min(max(round(face * h - band / 2), 0), h - band)
+    buf = io.BytesIO()
+    im.crop((0, top, w, top + band)).save(buf, "JPEG", quality=88, optimize=True)
+    return "data:image/jpeg;base64,%s" % base64.b64encode(buf.getvalue()).decode()
+
+PHOTOS = {m["id"]: crew_thumb(m["photo"], FACE.get(m["id"], 0.3))
+          for m in members if m.get("photo")}
 
 L = {
  "fr": dict(
@@ -70,8 +91,7 @@ li { position: relative; padding: 1.6pt 0 1.6pt 15pt; font-size: 8.8pt; line-hei
 li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; font-weight: 700; }
 .crews { display: flex; gap: 12pt; margin-top: 4pt; }
 .crew { flex: 1; text-align: center; }
-.crew img { width: 100%%; height: 1.08in; object-fit: cover; object-position: center 22%%;
-            border-radius: 7pt; display: block; }
+.crew img { width: 100%%; height: 1.08in; object-fit: cover; border-radius: 7pt; display: block; }
 .crew-n { font-family: "Liberation Serif", Georgia, serif; font-size: 10pt; margin-top: 4pt; color: #0b2038; }
 .crew-r { font-size: 7.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #157a76; font-weight: 700; }
 .offs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6pt; }
