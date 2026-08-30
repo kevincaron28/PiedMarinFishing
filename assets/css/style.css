@@ -491,6 +491,8 @@ section.alt { background: var(--sand-100); }
   text-shadow: 0 2px 10px rgba(7, 23, 38, 0.45);
 }
 .member-body { padding: 20px; }
+/* Le nom du membre est un h2 pour la hiérarchie, pas pour la taille. */
+.member-body h2 { font-size: 1.25rem; }
 .member-role {
   display: inline-block;
   font-size: 0.72rem;
@@ -839,7 +841,7 @@ section.alt { background: var(--sand-100); }
   justify-content: space-between;
   gap: 10px;
 }
-.merch-head h3 { margin: 0; font-size: 1.1rem; }
+.merch-head h2 { margin: 0; font-size: 1.1rem; }
 .merch-price {
   font-family: Georgia, serif;
   font-size: 1.3rem;

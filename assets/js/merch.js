@@ -67,7 +67,7 @@ async function initMerch(selector) {
           <div class="merch-photo">${photo}</div>
           <div class="merch-body">
             <div class="merch-head">
-              <h3>${escapeHTML(name)}</h3>
+              <h2>${escapeHTML(name)}</h2>
               ${statusBadge(p.status)}
             </div>
             <div class="merch-price">${price ? escapeHTML(price) : escapeHTML(t("merch.priceTBD"))}</div>

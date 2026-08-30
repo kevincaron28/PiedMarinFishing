@@ -407,7 +407,7 @@ async function initEventList(options) {
     if (circuits.length) {
       out.push(`
         <section class="season-block">
-          <h3 class="season-head">${escapeHTML(t("events.circuitsTitle"))}</h3>
+          <h2 class="season-head">${escapeHTML(t("events.circuitsTitle"))}</h2>
           <div class="circuit-rows">${circuits.map(renderCircuitRow).join("")}</div>
         </section>`);
     }
@@ -428,9 +428,9 @@ async function initEventList(options) {
       const label = `${names[mi]} ${k.slice(0, 4)}`;
       out.push(`
         <section class="season-block">
-          <h3 class="season-head">${escapeHTML(label)}
+          <h2 class="season-head">${escapeHTML(label)}
             <span class="season-count">${escapeHTML(plural("filters.count", list.length))}</span>
-          </h3>
+          </h2>
           <div class="event-list">${list.map(renderCard).join("")}</div>
         </section>`);
     });
@@ -439,9 +439,9 @@ async function initEventList(options) {
     if (undated.length) {
       out.push(`
         <section class="season-block">
-          <h3 class="season-head">${escapeHTML(t("events.undatedTitle"))}
+          <h2 class="season-head">${escapeHTML(t("events.undatedTitle"))}
             <span class="season-count">${escapeHTML(plural("filters.count", undated.length))}</span>
-          </h3>
+          </h2>
           <div class="event-list">${undated.map(renderCard).join("")}</div>
         </section>`);
     }

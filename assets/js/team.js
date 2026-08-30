@@ -100,7 +100,7 @@ async function initTeam(gridSelector) {
           ${photoBlock}
           <div class="member-body">
             ${role ? `<span class="member-role">${escapeHTML(role)}</span>` : ""}
-            <h3>${escapeHTML(name)}</h3>
+            <h2>${escapeHTML(name)}</h2>
             ${bioBlock}
             <dl class="member-specs">${specRows}</dl>
             <div class="member-record">${recordBits.join("")}</div>

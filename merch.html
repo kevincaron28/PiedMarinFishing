@@ -6,6 +6,14 @@
 <title data-i18n-text="merch.title">Boutique — Pied Marin Fishing</title>
 <meta name="description" data-i18n-content="merch.desc" content="Vêtements et accessoires aux couleurs de Pied Marin Fishing — chandails, casquettes et cotons ouatés.">
 <link rel="canonical" href="https://piedmarinfishing.com/merch.html">
+<!-- Le site sert les deux langues sur la même URL; ?lang=en est la version
+     anglaise liable. Le français reste la version par défaut. -->
+<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/merch.html">
+<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/merch.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/merch.html">
+<!-- Hors du menu et hors de l'index tant que la boutique est vide.
+     Retirer cette ligne et remettre le lien dans la nav quand les produits existent. -->
+<meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0b1e33">
 <!-- Link previews on Facebook, Messenger, Instagram and WhatsApp. Crawlers read
      the static markup, so these carry the French copy — the site default. -->
@@ -43,7 +51,6 @@
       <li><a href="history.html" data-i18n="nav.history">Sorties</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="merch.html" aria-current="page" data-i18n="nav.merch">Boutique</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
     </ul>

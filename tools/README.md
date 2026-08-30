@@ -30,3 +30,22 @@ Le principe reste bon à connaître : une rive, une tour ou un quai suffisent
 directement derrière une tête reste toujours le point faible d'un floutage
 automatique — recadrer plus serré à la source règle le problème mieux qu'un
 masque.
+
+## Données structurées
+
+`build-structured-data.py` écrit le JSON-LD dans `index.html` (l'équipe) et
+`tournaments.html` (la liste des tournois datés). Les moteurs de recherche
+lisent ce balisage pour afficher les événements dans leurs résultats.
+
+```
+python3 tools/build-structured-data.py
+```
+
+À relancer après avoir modifié `data/quebec-tournaments.json`. Le bloc est
+délimité par `<!-- structured-data:start -->` et `<!-- structured-data:end -->`;
+le script le remplace en entier, il n'y a rien à éditer à la main. Le site
+fonctionne sans avoir relancé le script — les données structurées seront
+simplement en retard d'une édition.
+
+Seuls les événements dont la date est complète (`2026-08-07`) sont publiés :
+une date partielle ne répond pas aux exigences des moteurs.
