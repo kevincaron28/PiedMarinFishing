@@ -60,17 +60,18 @@ h1 { font-family: "Liberation Serif", Georgia, serif; font-size: 25pt; line-heig
 .tag { font-size: 10.5pt; color: rgba(255,255,255,0.85); max-width: 5in; }
 .season { margin-top: 9pt; display: inline-block; background: rgba(255,255,255,0.14);
           padding: 3pt 10pt; border-radius: 99px; font-size: 8.5pt; letter-spacing: 0.08em; }
-.body { padding: 0.24in 0.62in 0; }
+.body { padding: 0.18in 0.62in 0; }
 h2 { font-family: "Liberation Serif", Georgia, serif; font-size: 12.5pt; color: #0b2038;
      margin: 0 0 7pt; padding-bottom: 4pt; border-bottom: 2px solid rgba(16,32,47,0.12);
      letter-spacing: 0.02em; }
-.section { margin-bottom: 0.115in; }
+.section { margin-bottom: 0.07in; }
 ul { list-style: none; }
-li { position: relative; padding: 2.2pt 0 2.2pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
+li { position: relative; padding: 1.6pt 0 1.6pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
 li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; font-weight: 700; }
 .crews { display: flex; gap: 12pt; margin-top: 4pt; }
 .crew { flex: 1; text-align: center; }
-.crew img { width: 100%%; height: 0.9in; object-fit: cover; border-radius: 7pt; display: block; }
+.crew img { width: 100%%; height: 1.08in; object-fit: cover; object-position: center 22%%;
+            border-radius: 7pt; display: block; }
 .crew-n { font-family: "Liberation Serif", Georgia, serif; font-size: 10pt; margin-top: 4pt; color: #0b2038; }
 .crew-r { font-size: 7.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #157a76; font-weight: 700; }
 .offs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6pt; }
@@ -79,8 +80,8 @@ li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; fon
 .off b { display: block; font-size: 9.2pt; color: #0b2038; margin-bottom: 2.5pt; }
 .off span { font-size: 8pt; color: #47606f; line-height: 1.4; }
 .honest { background: #f6f3ea; border: 1px solid rgba(16,32,47,0.1); border-radius: 8pt;
-          padding: 7pt 11pt; font-size: 8.5pt; line-height: 1.38; color: #2c4351; }
-.contact { background: #0b2038; color: #fff; border-radius: 8pt; padding: 9pt 13pt; }
+          padding: 5pt 11pt; font-size: 8.5pt; line-height: 1.38; color: #2c4351; }
+.contact { background: #0b2038; color: #fff; border-radius: 8pt; padding: 7pt 13pt; }
 .contact h3 { font-family: "Liberation Serif", Georgia, serif; font-size: 11.5pt; margin-bottom: 4pt; }
 .contact p { font-size: 8.6pt; color: rgba(255,255,255,0.82); line-height: 1.45; margin-bottom: 7pt; }
 .contact .mail { display: inline-block; background: #157a76; color: #fff; padding: 6pt 13pt;
@@ -120,7 +121,9 @@ li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; fon
       honestBody=t["sponsors.honestBody"], contactTitle=s["contactTitle"],
       contactBody=s["contactBody"], site=s["site"], page=s["page"])
 
+os.makedirs(OUT, exist_ok=True)
 for lang in ("fr", "en"):
     p = os.path.join(OUT, "kit-%s.html" % lang)
     io.open(p, "w", encoding="utf-8").write(build(lang))
     print("  écrit :", p, "(%.1f Ko)" % (os.path.getsize(p)/1024))
+print("\nÉtape suivante :\n  node tools/render-sponsor-kit.js %s" % OUT)
