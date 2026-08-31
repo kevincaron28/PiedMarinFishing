@@ -20,13 +20,19 @@ import os
 import re
 import sys
 
+import importlib.util
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TODAY = datetime.date.today()
 SEASON = str(TODAY.year)
-# Le seuil des fiches, repris de build-tournament-pages.py.
-FIELDS = ["location", "species", "organizer", "link", "notes"]
-SPEC_FIELDS = ["fee", "teamSize", "hours", "format", "deadline"]
-SCORE_MIN = 6
+
+# Le barème vient de build-tournament-pages.py plutôt que d'être recopié ici :
+# deux copies finissent toujours par diverger, et ce rapport mentirait alors
+# sur ce qui manque à une entrée pour mériter sa fiche.
+_spec = importlib.util.spec_from_file_location(
+    "pages", os.path.join(REPO, "tools", "build-tournament-pages.py"))
+pages = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(pages)
 
 
 def load(name):
@@ -41,15 +47,14 @@ def fr(value):
 
 
 def score(ev):
-    specs = ev.get("specs") or {}
-    return (sum(1 for f in FIELDS if fr(ev.get(f)).strip())
-            + sum(1 for f in SPEC_FIELDS if fr(specs.get(f)).strip()))
+    return pages.score(ev)
 
 
 def missing(ev):
+    fields, spec_fields, _ = pages.rubric(ev)
     specs = ev.get("specs") or {}
-    gaps = [f for f in FIELDS if not fr(ev.get(f)).strip()]
-    gaps += ["specs." + f for f in SPEC_FIELDS if not fr(specs.get(f)).strip()]
+    gaps = [f for f in fields if not fr(ev.get(f)).strip()]
+    gaps += ["specs." + f for f in spec_fields if not fr(specs.get(f)).strip()]
     return gaps
 
 
@@ -74,7 +79,7 @@ def bucket(events):
                 out["aVenir"].append(ev)
         elif start < SEASON:
             out["passe"].append(ev)
-        if score(ev) < SCORE_MIN and ev.get("kind") != "stop":
+        if score(ev) < pages.rubric(ev)[2] and ev.get("kind") not in ("stop", "circuit"):
             out["sousSeuil"].append(ev)
     return out
 
@@ -127,8 +132,9 @@ if __name__ == "__main__":
                    "→ aucun lien : à trouver")
 
     show("SOUS LE SEUIL DE FICHE", b["sousSeuil"],
-         "Il leur manque peu pour mériter leur page (%d/10 requis)." % SCORE_MIN,
-         lambda e: "%d/10 — manque : %s" % (score(e), ", ".join(missing(e))))
+         "Il leur manque peu pour mériter leur page. Les circuits en ont une d'office.",
+         lambda e: "%d/%d — manque : %s"
+                   % (score(e), pages.score_max(e), ", ".join(missing(e))))
 
     show("ENCORE À VENIR", b["aVenir"],
          "Rien à faire : ces dates tiennent toujours.")

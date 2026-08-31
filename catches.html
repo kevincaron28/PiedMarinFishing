@@ -81,6 +81,18 @@
          dans data/catches.json, et masquée dès qu'un filtre est actif. -->
     <div id="featured-catch"></div>
 
+    <!-- Temple de la renommée : calculé par catches.js à partir des prises
+         mesurées, une par espèce. Se masque tout seul sous deux records, et
+         quand un filtre est actif. -->
+    <div class="hall-section" data-hall-section hidden>
+      <div class="section-head">
+        <span class="kicker" data-i18n="hall.kicker">Records de l'équipe</span>
+        <h2 data-i18n="hall.title">Temple de la renommée</h2>
+        <p data-i18n="hall.intro">La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand.</p>
+      </div>
+      <div id="hall-of-fame" class="hall-grid"></div>
+    </div>
+
     <div id="catch-grid" class="grid grid-3"></div>
     <div id="empty-state" class="empty-state" style="display:none;" data-i18n="catches.empty">Aucune prise ne correspond à tes filtres.</div>
   </div>
@@ -108,6 +120,7 @@
     anglerFilterSelector: "#angler-filter",
     speciesFilterSelector: "#species-filter",
     featuredSelector: "#featured-catch",
+    hallSelector: "#hall-of-fame",
   });
 </script>
 </body>

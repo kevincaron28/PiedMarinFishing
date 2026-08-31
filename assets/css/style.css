@@ -1924,3 +1924,49 @@ body.has-lightbox { overflow: hidden; }
   font-size: 0.85rem;
   color: var(--ink-600);
 }
+
+/* Temple de la renommée — page Prises. Une tuile par espèce, cliquable. */
+.hall-section { margin: 34px 0 8px; }
+.hall-section .section-head { margin-bottom: 18px; }
+.hall-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+.hall-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px 10px 10px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--gold-500);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  width: 100%;
+}
+.hall-item:hover { border-color: var(--teal-400); border-left-color: var(--gold-500); }
+.hall-thumb {
+  width: 72px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  flex: none;
+}
+.hall-body { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.hall-species {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.hall-measure {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.15;
+}
+.hall-angler { font-size: 0.85rem; color: var(--ink-600); }

@@ -184,6 +184,7 @@ async function initCatches(options) {
     emptySelector,
     countSelector,
     featuredSelector,
+    hallSelector,
     anglerFilterSelector,
     speciesFilterSelector,
   } = options;
@@ -216,6 +217,7 @@ async function initCatches(options) {
   const countEl = countSelector ? document.querySelector(countSelector) : null;
   const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
   const featuredEl = featuredSelector ? document.querySelector(featuredSelector) : null;
+  const hallEl = hallSelector ? document.querySelector(hallSelector) : null;
 
   function buildOptions(select, entries, allLabel) {
     if (!select) return;
@@ -392,6 +394,60 @@ async function initCatches(options) {
       </article>`;
   }
 
+  // Temple de la renommée — le plus gros poisson par espèce.
+  //
+  // Rien n'est saisi à la main : le tableau se recalcule à partir des prises.
+  // Une prise sans mesure ne peut pas détenir de record, et deux mesures ne se
+  // comparent que si elles portent la même unité — 50 po et 11 lb ne se
+  // classent pas l'un contre l'autre.
+  function parseMeasure(text) {
+    const m = String(text || "").match(/([\d]+(?:[.,][\d]+)?)\s*(po|lb|kg|cm|in|"|″)/i);
+    if (!m) return null;
+    const unit = m[2].toLowerCase().replace(/["″]/, "po");
+    return { value: parseFloat(m[1].replace(",", ".")), unit };
+  }
+
+  function records(rows) {
+    const best = new Map();
+    rows.forEach((c) => {
+      const parsed = parseMeasure(tr(c.measure));
+      if (!parsed) return;
+      const key = stableKey(c.species);
+      if (!key) return;
+      const held = best.get(key);
+      // À unité différente, on garde le premier plutôt que de comparer
+      // des pouces à des livres.
+      if (!held || (held.parsed.unit === parsed.unit && parsed.value > held.parsed.value)) {
+        best.set(key, { catch: c, parsed });
+      }
+    });
+    return [...best.values()].sort((a, b) => {
+      const sa = tr(a.catch.species) || "";
+      return sa.localeCompare(tr(b.catch.species) || "", PMF_I18N.lang);
+    });
+  }
+
+  function hallHTML(rows) {
+    return rows.map(({ catch: c }) => {
+      const d = describe(c);
+      const photo = catchPhotos(c)[0];
+      const angler = d.anglerName;
+      return `
+        <!-- Pas d'aria-label : il remplacerait le texte visible du bouton par une
+             version plus courte, sans le nom du pêcheur. Le contenu fait le nom
+             accessible, et il correspond exactement à ce qui est à l'écran.
+             La vignette reste en alt="" — décorative à côté de ce texte. -->
+        <button type="button" class="hall-item" data-catch="${escapeHTML(c.id)}" data-photo="0">
+          ${photo ? `<img class="hall-thumb" src="${escapeHTML(photo.src)}" alt="" loading="lazy" width="120" height="90">` : ""}
+          <span class="hall-body">
+            <span class="hall-species">${escapeHTML(tr(c.species))}</span>
+            <span class="hall-measure">${escapeHTML(tr(c.measure))}</span>
+            ${angler ? `<span class="hall-angler">${escapeHTML(angler)}</span>` : ""}
+          </span>
+        </button>`;
+    }).join("");
+  }
+
   function render() {
     const rows = catches.filter(matches);
     slides = slidesFor(rows);
@@ -403,12 +459,23 @@ async function initCatches(options) {
     const featured = !filtering() ? rows.find((c) => c.featured) : null;
     if (featuredEl) featuredEl.innerHTML = featured ? featuredHTML(featured) : "";
 
+    // Le temple ne s'affiche que sur la page complète, comme la vedette, et
+    // seulement s'il compte au moins deux records — un seul ne fait pas un
+    // palmarès.
+    const hall = !filtering() ? records(rows) : [];
+    if (hallEl) {
+      const show = hall.length >= 2;
+      hallEl.innerHTML = show ? hallHTML(hall) : "";
+      const section = hallEl.closest("[data-hall-section]") || hallEl;
+      section.hidden = !show;
+    }
+
     const gridRows = featured ? rows.filter((c) => c !== featured) : rows;
     grid.innerHTML = gridRows.map(cardHTML).join("");
 
     if (emptyEl) emptyEl.style.display = rows.length ? "none" : "block";
 
-    const scope = featuredEl ? [featuredEl, grid] : [grid];
+    const scope = [featuredEl, hallEl, grid].filter(Boolean);
     scope.forEach((el) => {
       el.querySelectorAll("[data-catch]").forEach((btn) => {
         btn.addEventListener("click", () => openFrom(btn));

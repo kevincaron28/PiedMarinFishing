@@ -73,8 +73,17 @@ lecteur (lieu, espèce, organisateur, lien, notes, puis prix, format, horaire,
 épreuve, date limite). Les étapes d'un circuit sont détaillées sur la page de
 leur circuit plutôt que d'avoir chacune la leur — « Deuxième des quatre
 étapes » ne fait pas une page. Une étape dont le circuit n'a pas de fiche
-redevient éligible. Aujourd'hui : **22 fiches sur 34 tournois**. Le script
-affiche le pointage de chacun, retenu ou non.
+redevient éligible, et **tous les circuits en ont une d'office** : leur valeur
+vient de ce qu'ils regroupent, pas de leurs propres champs.
+
+Un **salon** est noté sur un barème à lui. Il n'a ni espèce ciblée, ni équipe,
+ni épreuve, ni date limite : le juger sur ces dix champs revenait à le condamner
+pour des cases qui ne le concernent pas. Il est donc noté sur les six qui
+s'appliquent (lieu, organisateur, lien, notes, prix, horaire), avec le même
+seuil proportionnel — 4 sur 6.
+
+Le script affiche le pointage de chacun sur son propre barème, retenu ou non.
+`check-stale.py` importe ce barème plutôt que d'en garder une copie.
 
 Le script écrit aussi `data/tournament-pages.json`, la liste des identifiants
 ayant une fiche. `assets/js/events.js` la lit pour ajouter le bouton « Fiche du

@@ -34,6 +34,13 @@ SCORE_MIN = 6
 
 FIELDS = ["location", "species", "organizer", "link", "notes"]
 SPEC_FIELDS = ["fee", "teamSize", "hours", "format", "deadline"]
+# Un salon n'a ni espèce ciblée, ni équipe, ni épreuve, ni date limite : le
+# noter sur ces dix champs-là revenait à le condamner pour des cases qui ne le
+# concernent pas. On le juge donc sur les six qui s'appliquent, avec le même
+# seuil proportionnel (60 %).
+SHOW_FIELDS = ["location", "organizer", "link", "notes"]
+SHOW_SPEC_FIELDS = ["fee", "hours"]
+SHOW_SCORE_MIN = 4
 
 # Le JSON-LD Event est déjà écrit et testé ailleurs : on l'importe plutôt que
 # d'en tenir une deuxième version qui finirait par diverger.
@@ -91,10 +98,23 @@ def date_phrase(ev, lang):
     return long_date(start, lang)
 
 
+def rubric(ev):
+    """Les champs qui comptent pour ce type d'entrée, et la note de passage."""
+    if ev.get("kind") == "show":
+        return SHOW_FIELDS, SHOW_SPEC_FIELDS, SHOW_SCORE_MIN
+    return FIELDS, SPEC_FIELDS, SCORE_MIN
+
+
 def score(ev):
+    fields, spec_fields, _ = rubric(ev)
     specs = ev.get("specs") or {}
-    return (sum(1 for f in FIELDS if pick(ev.get(f), "fr").strip())
-            + sum(1 for f in SPEC_FIELDS if pick(specs.get(f), "fr").strip()))
+    return (sum(1 for f in fields if pick(ev.get(f), "fr").strip())
+            + sum(1 for f in spec_fields if pick(specs.get(f), "fr").strip()))
+
+
+def score_max(ev):
+    fields, spec_fields, _ = rubric(ev)
+    return len(fields) + len(spec_fields)
 
 
 def qualifies(ev, by_id):
@@ -105,7 +125,7 @@ def qualifies(ev, by_id):
     # année? » est exactement la question qu'on vient poser.
     if ev.get("kind") == "circuit":
         return True
-    if score(ev) < SCORE_MIN:
+    if score(ev) < rubric(ev)[2]:
         return False
     if ev.get("kind") == "stop":
         parent = by_id.get(ev.get("circuit"))
@@ -521,5 +541,5 @@ if __name__ == "__main__":
           % (len(kept), len(events)))
     for ev in sorted(events, key=lambda e: -score(e)):
         mark = "✓" if ev in kept else " "
-        print("  %s %-46s %2d/10  %s" % (mark, pick(ev.get("name"), "fr")[:46],
-                                         score(ev), ev.get("kind") or "—"))
+        print("  %s %-46s %2d/%d  %s" % (mark, pick(ev.get("name"), "fr")[:46],
+                                         score(ev), score_max(ev), ev.get("kind") or "—"))

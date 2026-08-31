@@ -304,7 +304,10 @@
     "tp.rank": "Rang",
     "tp.team": "Équipe",
     "tp.points": "Points",
-    "tp.cancelled": "Cette édition est annulée. Les détails ci-dessous sont conservés pour référence."
+    "tp.cancelled": "Cette édition est annulée. Les détails ci-dessous sont conservés pour référence.",
+    "hall.kicker": "Records de l'équipe",
+    "hall.title": "Temple de la renommée",
+    "hall.intro": "La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand."
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -611,6 +614,9 @@
     "tp.rank": "Rank",
     "tp.team": "Team",
     "tp.points": "Points",
-    "tp.cancelled": "This edition is cancelled. The details below are kept for reference."
+    "tp.cancelled": "This edition is cancelled. The details below are kept for reference.",
+    "hall.kicker": "Team records",
+    "hall.title": "Hall of fame",
+    "hall.intro": "The biggest of each species since we started keeping track. Tap a catch to see it full size."
   }
 }
