@@ -28,6 +28,13 @@
     "icon": "tiktok"
   },
   {
+    "name": "X",
+    "handle": "@piedmarinfishin",
+    "url": "https://x.com/piedmarinfishin",
+    "color": "#000000",
+    "icon": "x"
+  },
+  {
     "name": {
       "fr": "Courriel",
       "en": "Email"

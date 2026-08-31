@@ -129,7 +129,7 @@ li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; fon
       <h3>%(contactTitle)s</h3>
       <p>%(contactBody)s</p>
       <a class="mail" href="mailto:info@piedmarinfishing.com">info@piedmarinfishing.com</a>
-      <div class="soc">piedmarinfishing.com &nbsp;·&nbsp; Instagram, Facebook, YouTube, TikTok : @piedmarinfishing</div>
+      <div class="soc">piedmarinfishing.com &nbsp;·&nbsp; Instagram, Facebook, YouTube, TikTok : @piedmarinfishing &nbsp;·&nbsp; X : @piedmarinfishin</div>
     </div>
   </div>
   <div class="foot"><span>%(site)s</span><span>%(season)s</span></div>
