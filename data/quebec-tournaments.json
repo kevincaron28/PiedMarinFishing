@@ -1981,5 +1981,44 @@
     },
     "tier": "regional",
     "kind": "show"
+  },
+  {
+    "id": "salon-bateau-montreal-2026",
+    "name": {
+      "fr": "Salon du bateau et des sports nautiques de Montréal",
+      "en": "Montréal Boat and Watersports Show"
+    },
+    "startDate": "2026-02-12",
+    "endDate": "2026-02-15",
+    "region": {
+      "fr": "Montréal",
+      "en": "Montréal"
+    },
+    "location": {
+      "fr": "Palais des congrès de Montréal, 1001 place Jean-Paul-Riopelle",
+      "en": "Palais des congrès de Montréal, 1001 Place Jean-Paul-Riopelle"
+    },
+    "species": "",
+    "organizer": "Nautisme Québec",
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "confirmed",
+    "link": "https://salondubateau.com/",
+    "notes": {
+      "fr": "25e édition, tenue du 12 au 15 février 2026 au Palais des congrès. Bateaux, moteurs, motomarines et accessoires, plus les conférences nautiques de Nautisme Québec, offertes sur place et en ligne. C'est le salon à voir pour magasiner une embarcation avant la saison. La date de l'édition 2027 n'était pas annoncée au moment de l'ajout — surveille salondubateau.com.",
+      "en": "25th edition, held 12–15 February 2026 at the Palais des congrès. Boats, engines, personal watercraft and accessories, plus Nautisme Québec's boating seminars, offered both on site and online. This is the show to hit if you're shopping for a rig before the season. The 2027 date had not been announced when this was added — watch salondubateau.com."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "hours": {
+        "fr": "Jeu. et ven. 11 h à 20 h · sam. 10 h à 20 h · dim. 10 h à 17 h",
+        "en": "Thu. and Fri. 11 a.m.–8 p.m. · Sat. 10 a.m.–8 p.m. · Sun. 10 a.m.–5 p.m."
+      }
+    },
+    "tier": "regional",
+    "kind": "show"
   }
 ]
