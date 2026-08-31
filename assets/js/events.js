@@ -290,7 +290,13 @@ async function initEventList(options) {
     const past = isPastEvent(ev);
     const cancelled = ev.status === "cancelled";
 
-    const badgeText = tr(ev[badgeField]);
+    // Un salon n'a pas d'espèce ciblée : sa pastille tombe alors sur son type.
+    // Sauf si le nom le dit déjà — « Salon … de Saint-Hyacinthe » suivi d'une
+    // pastille « Salon » se lisait deux fois.
+    const typeText = tr(ev.type);
+    const nameText = tr(ev.name);
+    const badgeText = tr(ev[badgeField])
+      || (typeText && !nameText.toLowerCase().includes(typeText.toLowerCase()) ? typeText : "");
     const badge = badgeText
       ? `<span class="badge${ev.status === "tentative" ? " gold" : ""}">${escapeHTML(badgeText)}</span>`
       : "";
@@ -321,7 +327,8 @@ async function initEventList(options) {
       { field: "format", key: "spec.format", icon: "🎯" },
     ].reduce((out, { field, key, icon, always }) => {
       const value = tr(specs[field]);
-      if (!value && !always) return out;
+      const required = always && ev.kind !== "show";
+      if (!value && !required) return out;
       const shown = value || t("spec.notPublished");
       out.push(`
         <div class="event-spec${value ? "" : " spec-empty"}">

@@ -81,7 +81,9 @@ def event_json(ev):
 
     place_name = fr(ev.get("location")) or fr(ev.get("region")) or "Québec"
     node = {
-        "@type": "Event",
+        # Schema.org a un sous-type pour les salons : plus juste qu'« Event »,
+        # et les moteurs le comprennent aussi bien.
+        "@type": "ExhibitionEvent" if ev.get("kind") == "show" else "Event",
         "name": fr(ev.get("name")),
         "startDate": start,
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",

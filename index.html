@@ -135,6 +135,21 @@
   </div>
 </section>
 
+<!-- Rempli par assets/js/whatsnew.js à partir des mêmes fichiers que le reste
+     du site : la section se met à jour toute seule quand une prise ou un
+     tournoi s'ajoute, et se masque s'il n'y a rien à montrer. -->
+<section id="whats-new" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker" data-i18n="new.kicker">Quoi de neuf</span>
+      <h2 data-i18n="new.title">Les dernières nouvelles de l'équipe</h2>
+    </div>
+    <div id="news-grid" class="grid grid-3"></div>
+    <p class="news-social-lead" data-i18n="new.socialLead">Le jour le jour se passe sur nos réseaux — photos de sorties, prises de la journée et coulisses.</p>
+    <div id="news-socials" class="news-socials"></div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="section-head">
@@ -230,8 +245,14 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/video.js"></script>
+<script src="assets/js/whatsnew.js"></script>
 <script>
   initFeaturedVideo("#featured-video");
+  initWhatsNew({
+    sectionSelector: "#whats-new",
+    gridSelector: "#news-grid",
+    socialSelector: "#news-socials",
+  });
 </script>
 </body>
 </html>

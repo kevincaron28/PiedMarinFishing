@@ -233,7 +233,9 @@ def specs_html(ev, ui):
     rows = []
     for field, key, icon, always in SPEC_ROWS:
         value = specs.get(field)
-        if not pick(value, "fr") and not always:
+        # Même règle que dans le répertoire : « Format : Non publié » n'a aucun
+        # sens sur un salon, où il n'y a pas d'équipe.
+        if not pick(value, "fr") and not (always and ev.get("kind") != "show"):
             continue
         if not pick(value, "fr"):
             value = {"fr": ui["fr"]["spec.notPublished"], "en": ui["en"]["spec.notPublished"]}

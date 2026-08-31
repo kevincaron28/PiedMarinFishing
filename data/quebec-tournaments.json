@@ -1867,5 +1867,119 @@
     "tier": "regional",
     "kind": "stop",
     "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "salon-plein-air-saint-hyacinthe-2027",
+    "name": {
+      "fr": "Salon plein air, chasse, pêche et camping de Saint-Hyacinthe",
+      "en": "Saint-Hyacinthe Outdoor, Hunting, Fishing and Camping Show"
+    },
+    "startDate": "2027-02-19",
+    "endDate": "2027-02-21",
+    "region": {
+      "fr": "Montérégie",
+      "en": "Montérégie"
+    },
+    "location": {
+      "fr": "Espace Saint-Hyacinthe, 2670 avenue Beauparlant, Saint-Hyacinthe",
+      "en": "Espace Saint-Hyacinthe, 2670 avenue Beauparlant, Saint-Hyacinthe"
+    },
+    "species": "",
+    "organizer": {
+      "fr": "Salon plein air Saint-Hyacinthe",
+      "en": "Salon plein air Saint-Hyacinthe"
+    },
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "confirmed",
+    "link": "https://www.salonpleinairsh.ca/",
+    "notes": {
+      "fr": "Le salon de la Rive-Sud, à trois jours de février. Exposants d'équipement, pourvoiries, embarcations et conférences. L'horaire et le prix d'entrée n'étaient pas encore annoncés au moment de l'ajout.",
+      "en": "The South Shore show, three days in February. Gear exhibitors, outfitters, boats and talks. Opening hours and ticket prices had not been announced when this was added."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "show"
+  },
+  {
+    "id": "salon-national-pourvoirie-laval-2027",
+    "name": {
+      "fr": "Salon national de la pourvoirie, chasse et pêche — Laval",
+      "en": "National Outfitters, Hunting and Fishing Show — Laval"
+    },
+    "startDate": "2027-01-21",
+    "endDate": "2027-01-24",
+    "region": {
+      "fr": "Laval / Grand Montréal",
+      "en": "Laval / Greater Montréal"
+    },
+    "location": {
+      "fr": "Laval — salle à confirmer",
+      "en": "Laval — venue to be confirmed"
+    },
+    "species": "",
+    "organizer": {
+      "fr": "Salons nationaux pourvoirie, chasse et pêche",
+      "en": "Salons nationaux pourvoirie, chasse et pêche"
+    },
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "confirmed",
+    "link": "https://pourvoirie.net/",
+    "notes": {
+      "fr": "Le salon du Grand Montréal, orienté pourvoiries et destinations de pêche : représentants sur place, conférences et boutiques. La salle de l'édition 2027 n'était pas confirmée par une source officielle au moment de l'ajout — vérifie avant de te déplacer.",
+      "en": "The Greater Montréal show, focused on outfitters and fishing destinations: representatives on site, talks and shops. The 2027 venue was not confirmed by an official source when this was added — check before making the trip."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "show"
+  },
+  {
+    "id": "salon-plein-air-quebec-2027",
+    "name": {
+      "fr": "Salon plein air, chasse, pêche et camping de Québec",
+      "en": "Québec City Outdoor, Hunting, Fishing and Camping Show"
+    },
+    "startDate": "2027-03-11",
+    "endDate": "2027-03-14",
+    "region": {
+      "fr": "Capitale-Nationale",
+      "en": "Capitale-Nationale"
+    },
+    "location": {
+      "fr": "Centre de foires ExpoCité, Québec",
+      "en": "Centre de foires ExpoCité, Québec City"
+    },
+    "species": "",
+    "organizer": {
+      "fr": "Salon plein air Québec",
+      "en": "Salon plein air Québec"
+    },
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "confirmed",
+    "link": "https://www.salonpleinairquebec.ca/",
+    "notes": {
+      "fr": "Quatre jours à ExpoCité, jumelés au Salon du bateau de Québec. Le plus gros des trois pour qui veut magasiner une embarcation.",
+      "en": "Four days at ExpoCité, paired with the Québec City Boat Show. The biggest of the three if you're shopping for a boat."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "show"
   }
 ]

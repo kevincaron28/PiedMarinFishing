@@ -48,7 +48,13 @@ function longDate(value, lang) {
   if (!p) return "";
   const m = months(lang);
   if (p.month === null) return String(p.year);
-  if (p.day === null) return `${m.full[p.month]} ${p.year}`;
+  // En français les mois s'écrivent en minuscule, y compris sans le jour :
+  // « mai 2027 », pas « Mai 2027 ». La branche avec jour le faisait déjà.
+  if (p.day === null) {
+    return lang === "en"
+      ? `${m.full[p.month]} ${p.year}`
+      : `${m.full[p.month].toLowerCase()} ${p.year}`;
+  }
   return lang === "en"
     ? `${m.full[p.month]} ${p.day}, ${p.year}`
     : `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`;
