@@ -26,7 +26,9 @@ SITE = "https://piedmarinfishing.com"
 # page -> (priorité, fréquence, données affichées par la page)
 # data/i18n.json compte pour toutes : c'est là que vit le texte.
 PAGES = [
-    ("index.html",       "1.0", "weekly",  ["data/featured-video.json"]),
+    ("index.html",       "1.0", "weekly",  ["data/videos.json", "data/catches.json",
+                                            "data/team-schedule.json",
+                                            "data/tournament-history.json"]),
     ("tournaments.html", "0.9", "weekly",  ["data/quebec-tournaments.json"]),
     ("calendar.html",    "0.8", "weekly",  ["data/team-schedule.json"]),
     ("sponsors.html",    "0.8", "monthly", ["data/sponsors.json"]),
@@ -36,7 +38,7 @@ PAGES = [
                                             "data/tournament-history.json"]),
     ("history.html",     "0.6", "monthly", ["data/tournament-history.json",
                                             "data/team-members.json"]),
-    ("social.html",      "0.5", "monthly", ["data/socials.json"]),
+    ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
 ]
 COMMON = ["data/i18n.json"]
 # Les fiches de tournoi sont générées : elles suivent le répertoire et le

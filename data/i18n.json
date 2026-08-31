@@ -307,7 +307,14 @@
     "tp.cancelled": "Cette édition est annulée. Les détails ci-dessous sont conservés pour référence.",
     "hall.kicker": "Records de l'équipe",
     "hall.title": "Temple de la renommée",
-    "hall.intro": "La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand."
+    "hall.intro": "La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand.",
+    "events.weAttend": "On y sera",
+    "tp.weAttend": "Pied Marin Fishing y sera",
+    "tp.weAttendBody": "Ce tournoi est à notre calendrier de saison. Viens nous dire bonjour au quai.",
+    "videos.kicker": "Sur notre chaîne",
+    "videos.title": "Nos vidéos",
+    "videos.intro": "Sorties, tournois et coulisses. Chaque vignette ouvre la vidéo sur YouTube.",
+    "videos.untitled": "Vidéo sans titre"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -617,6 +624,13 @@
     "tp.cancelled": "This edition is cancelled. The details below are kept for reference.",
     "hall.kicker": "Team records",
     "hall.title": "Hall of fame",
-    "hall.intro": "The biggest of each species since we started keeping track. Tap a catch to see it full size."
+    "hall.intro": "The biggest of each species since we started keeping track. Tap a catch to see it full size.",
+    "events.weAttend": "We'll be there",
+    "tp.weAttend": "Pied Marin Fishing will be there",
+    "tp.weAttendBody": "This one is on our season calendar. Come say hi at the dock.",
+    "videos.kicker": "On our channel",
+    "videos.title": "Our videos",
+    "videos.intro": "Trips, tournaments and behind the scenes. Each thumbnail opens the video on YouTube.",
+    "videos.untitled": "Untitled video"
   }
 }

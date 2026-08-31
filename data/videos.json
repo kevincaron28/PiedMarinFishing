@@ -1,0 +1,16 @@
+{
+  "channelUrl": "https://youtube.com/@piedmarinfishing",
+  "videos": [
+    {
+      "id": "clip-1",
+      "videoId": "PXwFXozk-5c",
+      "orientation": "portrait",
+      "title": {
+        "fr": "",
+        "en": ""
+      },
+      "date": "",
+      "featured": true
+    }
+  ]
+}

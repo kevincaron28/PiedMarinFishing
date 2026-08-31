@@ -19,6 +19,7 @@ async function initEventList(options) {
     badgeField = "type",
     linkTextKey = "events.learnMore",
     pagesUrl = null,
+    attendingUrl = null,
     onRender = null,
   } = options;
 
@@ -49,6 +50,19 @@ async function initEventList(options) {
     try {
       pageIds = new Set(await (await fetch(pagesUrl, DATA_FETCH)).json());
     } catch (err) { /* pas de fiches, pas de lien */ }
+  }
+
+  // Les tournois où l'équipe sera, d'après son propre calendrier. Les deux
+  // fichiers ne parlent pas de la même édition — le répertoire tient 2026, le
+  // calendrier vise 2027 — alors on rapproche les identifiants en retirant
+  // l'année finale : peche-glace-lachine-2026 et -2027 partagent leur famille.
+  const family = (id) => String(id || "").replace(/-\d{4}$/, "");
+  let attending = new Set();
+  if (attendingUrl) {
+    try {
+      const rows = await (await fetch(attendingUrl, DATA_FETCH)).json();
+      attending = new Set(rows.map((r) => family(r.id)).filter(Boolean));
+    } catch (err) { /* pas de calendrier, pas de mention */ }
   }
 
   const monthSelect = monthFilterSelector ? document.querySelector(monthFilterSelector) : null;
@@ -346,7 +360,13 @@ async function initEventList(options) {
         <div class="event-date">${dateBadge}</div>
         <div>
           ${parentTag}
-          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}</div>
+          <div class="event-title">${escapeHTML(tr(ev.name))} ${badge}${stateBadge}${
+            // Seulement sur une édition à venir : le répertoire tient encore les
+            // éditions 2026, et « on y sera » sur une date passée est faux.
+            // La pastille réapparaîtra d'elle-même sur les entrées 2027.
+            attending.has(family(ev.id)) && !past
+              ? `<span class="badge badge-ours">${escapeHTML(t("events.weAttend"))}</span>`
+              : ""}</div>
           <div class="event-meta">${metaBits.join("")}</div>
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
           ${deadlineHTML(ev)}

@@ -21,6 +21,7 @@ Les étapes de circuit sont couvertes sur la page de leur circuit plutôt que
 d'avoir chacune la leur : « Deuxième des quatre étapes » ne fait pas une page.
 Une étape orpheline (circuit absent ou sous le seuil) redevient éligible.
 """
+import datetime
 import io
 import json
 import os
@@ -30,6 +31,7 @@ import importlib.util
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(REPO, "tournois")
 SITE = "https://piedmarinfishing.com"
+TODAY = datetime.date.today().isoformat()
 SCORE_MIN = 6
 
 FIELDS = ["location", "species", "organizer", "link", "notes"]
@@ -332,7 +334,12 @@ def related(ev, kept):
     return out
 
 
-def render(ev, by_id, stops_of, history, ui, kept):
+def family(identifier):
+    """peche-glace-lachine-2026 et -2027 sont la même série."""
+    return re.sub(r"-\d{4}$", "", identifier or "")
+
+
+def render(ev, by_id, stops_of, history, ui, kept, attending):
     fr_name = pick(ev.get("name"), "fr")
     title = {"fr": clamp_title(fr_name), "en": clamp_title(pick(ev.get("name"), "en"))}
     desc = {"fr": build_description(ev, "fr"), "en": build_description(ev, "en")}
@@ -341,6 +348,16 @@ def render(ev, by_id, stops_of, history, ui, kept):
             "en": date_phrase(ev, "en") or ui["en"]["tp.dateTBD"]}
 
     body = []
+    # « On y sera » ne vaut que pour une édition à venir : le répertoire tient
+    # encore les éditions 2026, et l'équipe vise les 2027.
+    upcoming = (ev.get("endDate") or ev.get("startDate") or "9999") >= TODAY
+    if family(ev.get("id")) in attending and upcoming:
+        body.append(
+            '<section><div class="container"><div class="notice notice-ours">'
+            "<strong>%s</strong> %s</div></div></section>"
+            % (bilingual("span", {"fr": ui["fr"]["tp.weAttend"], "en": ui["en"]["tp.weAttend"]}),
+               bilingual("span", {"fr": ui["fr"]["tp.weAttendBody"],
+                                  "en": ui["en"]["tp.weAttendBody"]})))
     if ev.get("status") == "cancelled":
         body.append('<section><div class="container"><div class="notice notice-cancelled">%s</div></div></section>'
                     % bilingual("span", {"fr": ui["fr"]["tp.cancelled"],
@@ -509,6 +526,7 @@ def render(ev, by_id, stops_of, history, ui, kept):
 if __name__ == "__main__":
     events = load("quebec-tournaments.json")
     history = load("tournament-history.json")
+    attending = {family(e.get("id")) for e in load("team-schedule.json")}
     i18n = load("i18n.json")
     ui = {"fr": i18n["fr"], "en": i18n["en"]}
     by_id = {e["id"]: e for e in events}
@@ -526,7 +544,7 @@ if __name__ == "__main__":
     for ev in kept:
         name = "%s.html" % ev["id"]
         with io.open(os.path.join(OUT_DIR, name), "w", encoding="utf-8") as fh:
-            fh.write(render(ev, by_id, stops_of, history, ui, kept))
+            fh.write(render(ev, by_id, stops_of, history, ui, kept, attending))
         written.add(name)
     # Un tournoi retiré du répertoire ne doit pas laisser sa fiche en ligne.
     for stale in sorted(existing - written):

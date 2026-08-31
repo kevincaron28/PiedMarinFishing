@@ -1,6 +1,21 @@
-// Pied Marin Fishing — featured YouTube video
-// Set "videoId" in data/featured-video.json to swap the placeholder for the
-// real clip. Nothing is requested from YouTube until the visitor hits play.
+// Pied Marin Fishing — vidéos YouTube
+//
+// data/videos.json tient la liste; celle marquée "featured" passe en vedette
+// sur l'accueil, et la page Réseaux les affiche toutes. Rien n'est demandé à
+// YouTube tant que le visiteur n'a pas cliqué : la vignette vient d'i.ytimg,
+// et l'iframe n'est créée qu'au clic. Pas de témoin avant ce geste.
+
+async function loadVideos() {
+  try {
+    const data = await (await fetch("data/videos.json", DATA_FETCH)).json();
+    return {
+      channelUrl: data.channelUrl || "",
+      videos: (data.videos || []).filter((v) => v && v.videoId),
+    };
+  } catch (e) {
+    return { channelUrl: "", videos: [] };
+  }
+}
 
 async function initFeaturedVideo(selector) {
   const host = document.querySelector(selector);
@@ -9,12 +24,12 @@ async function initFeaturedVideo(selector) {
   await PMF_I18N.ready;
   const { t, tr } = PMF_I18N;
 
-  let data = {};
-  try {
-    data = await (await fetch("data/featured-video.json", DATA_FETCH)).json();
-  } catch (e) {
-    data = {};
-  }
+  const all = await loadVideos();
+  // La vedette, sinon la première de la liste — l'accueil montre toujours
+  // quelque chose tant qu'il y a une vidéo.
+  const data = Object.assign(
+    { channelUrl: all.channelUrl },
+    all.videos.find((v) => v.featured) || all.videos[0] || {});
 
   // Accept a bare id or a full YouTube URL, whichever got pasted in.
   function extractId(value) {
@@ -81,4 +96,46 @@ async function initFeaturedVideo(selector) {
 
   PMF_I18N.onChange(render);
   render();
+}
+
+// Liste des vidéos — page Réseaux.
+//
+// Sous deux vidéos, la section se retire : une « chaîne » d'un seul clip
+// n'en est pas une, et l'accueil le montre déjà en vedette.
+async function initVideoList(options) {
+  const { listSelector, sectionSelector, minimum = 2 } = options;
+  const list = document.querySelector(listSelector);
+  const section = sectionSelector ? document.querySelector(sectionSelector) : list;
+  if (!list) return;
+
+  await PMF_I18N.ready;
+  const { t, tr } = PMF_I18N;
+  const { videos } = await loadVideos();
+
+  function draw() {
+    if (videos.length < minimum) {
+      if (section) section.hidden = true;
+      list.innerHTML = "";
+      return;
+    }
+    if (section) section.hidden = false;
+    list.innerHTML = videos.map((v) => {
+      const id = encodeURIComponent(v.videoId);
+      const title = tr(v.title) || t("videos.untitled");
+      const when = v.date ? longDate(v.date, PMF_I18N.lang) : "";
+      return `
+        <a class="video-item" href="https://www.youtube.com/watch?v=${id}"
+           target="_blank" rel="noopener">
+          <img class="video-item-thumb" loading="lazy" width="320" height="180" alt=""
+               src="https://i.ytimg.com/vi/${id}/mqdefault.jpg">
+          <span class="video-item-body">
+            <span class="video-item-title">${escapeHTML(title)}</span>
+            ${when ? `<span class="video-item-date">${escapeHTML(when)}</span>` : ""}
+          </span>
+        </a>`;
+    }).join("");
+  }
+
+  draw();
+  PMF_I18N.onChange(draw);
 }

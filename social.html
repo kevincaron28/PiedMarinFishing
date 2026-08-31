@@ -74,6 +74,20 @@
   </div>
 </section>
 
+<!-- Liste remplie par assets/js/video.js depuis data/videos.json. Elle se
+     retire d'elle-même sous deux vidéos : une chaîne d'un seul clip n'en est
+     pas une, et l'accueil le montre déjà en vedette. -->
+<section id="videos-section" hidden>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker" data-i18n="videos.kicker">Sur notre chaîne</span>
+      <h2 data-i18n="videos.title">Nos vidéos</h2>
+      <p data-i18n="videos.intro">Sorties, tournois et coulisses. Chaque vignette ouvre la vidéo sur YouTube.</p>
+    </div>
+    <div id="video-list" class="video-list"></div>
+  </div>
+</section>
+
 <section class="alt">
   <div class="container">
     <div class="section-head">
@@ -115,7 +129,9 @@
 
 <script src="assets/js/analytics.js"></script>
 <script src="assets/js/main.js"></script>
+<script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/video.js"></script>
 <script>
   const ICONS = {
     instagram: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="white" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="white"/></svg>',
@@ -160,6 +176,8 @@
     PMF_I18N.onChange(render);
     render();
   })();
+
+  initVideoList({ listSelector: "#video-list", sectionSelector: "#videos-section" });
 </script>
 </body>
 </html>

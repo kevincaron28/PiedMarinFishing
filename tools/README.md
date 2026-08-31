@@ -123,6 +123,39 @@ vient de ce qu'ils regroupent. « Programme Big Bass Québec » comptait sept
 avec un bandeau — « est-ce que ça roule cette année? » est exactement la
 question qu'on vient poser.
 
+### « On y sera »
+
+Un tournoi du répertoire porte la mention **On y sera** quand il figure au
+calendrier de l'équipe. Le rapprochement est automatique : les identifiants
+sont comparés après avoir retiré l'année finale, donc
+`peche-glace-lachine-2026` et `peche-glace-lachine-2027` sont reconnus comme la
+même série. Rien à saisir deux fois — ajoute l'entrée à
+`data/team-schedule.json` et la mention apparaît.
+
+La mention ne s'affiche que sur une édition **à venir** : le répertoire tient
+encore les éditions 2026 alors que l'équipe vise les 2027, et « on y sera » sur
+une date passée serait faux. Elle réapparaîtra d'elle-même sur les entrées 2027.
+
+### Vidéos
+
+`data/videos.json` tient la liste et l'adresse de la chaîne. Celle marquée
+`"featured": true` passe en vedette sur l'accueil; la page Réseaux les affiche
+toutes, mais **la section se retire sous deux vidéos** — une chaîne d'un seul
+clip n'en est pas une, et l'accueil le montre déjà.
+
+```json
+{
+  "channelUrl": "https://youtube.com/@piedmarinfishing",
+  "videos": [
+    { "id": "…", "videoId": "PXwFXozk-5c", "orientation": "portrait",
+      "title": { "fr": "…", "en": "…" }, "date": "2026-07-04", "featured": true }
+  ]
+}
+```
+
+`orientation: "portrait"` pour un Short, sinon le cadre 16:9 le réduit à une
+bande. `videoId` accepte l'identifiant seul ou une URL YouTube complète.
+
 ## Après avoir modifié `data/i18n.json`
 
 Chaque page HTML porte une copie française du texte, visible avant que
