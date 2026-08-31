@@ -672,6 +672,9 @@ section.alt { background: var(--sand-100); }
   border-radius: var(--radius-md);
 }
 .circuit-row-org { display: block; font-size: 0.85rem; color: var(--ink-600); margin-top: 2px; }
+/* Le nom du circuit est devenu un lien vers sa fiche : il lui faut la même
+   hauteur de cible tactile que le lien de droite (WCAG 2.5.8, 24 px). */
+.circuit-row-main strong a { min-height: 24px; display: inline-flex; align-items: center; }
 .circuit-row-meta {
   display: flex;
   align-items: center;
