@@ -1509,5 +1509,363 @@
     },
     "tier": "regional",
     "kind": "single"
+  },
+  {
+    "id": "festival-dore-baie-james-2026",
+    "name": "Festival du Doré Baie-James",
+    "startDate": "2026-06-25",
+    "endDate": "2026-07-04",
+    "region": {
+      "fr": "Nord-du-Québec / Eeyou Istchee Baie-James",
+      "en": "Nord-du-Québec / Eeyou Istchee James Bay"
+    },
+    "location": {
+      "fr": "Lac Opémisca, Chapais",
+      "en": "Lac Opémisca, Chapais"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": "Festival du Doré Baie-James",
+    "type": {
+      "fr": "Festival de pêche",
+      "en": "Fishing Festival"
+    },
+    "status": "confirmed",
+    "link": "https://festivaldudore.com/",
+    "notes": {
+      "fr": "24e édition, sur dix jours. L'organisation le présente comme le plus grand tournoi de pêche au doré de la province. Trois volets : le volet amateur-Princecraft tous les jours, le Challenge le 30 juin, et le Pro-VIP Princecraft à partir du 3 juillet. Les frais et le détail des bourses ne figuraient pas dans les sources consultées — confirme auprès de l'organisation.",
+      "en": "24th edition, run over ten days. The organizers bill it as the province's largest walleye tournament. Three streams: the Princecraft amateur stream daily, the Challenge on 30 June, and the Princecraft Pro-VIP from 3 July. Entry fees and prize details were not in the sources consulted — confirm with the organizers."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "hours": {
+        "fr": "7 h à 17 h (volet amateur)",
+        "en": "7 a.m. to 5 p.m. (amateur stream)"
+      },
+      "format": {
+        "fr": "Trois volets : amateur, Challenge, Pro-VIP",
+        "en": "Three streams: amateur, Challenge, Pro-VIP"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
+    "id": "ecotone-ville-marie-2026",
+    "name": {
+      "fr": "Tournoi de pêche au doré Écotone Ville-Marie",
+      "en": "Écotone Ville-Marie Walleye Tournament"
+    },
+    "startDate": "2026-07-18",
+    "endDate": "2026-07-18",
+    "region": {
+      "fr": "Abitibi-Témiscamingue",
+      "en": "Abitibi-Témiscamingue"
+    },
+    "location": {
+      "fr": "Lac Témiscamingue, Ville-Marie",
+      "en": "Lake Timiskaming, Ville-Marie"
+    },
+    "species": {
+      "fr": "Doré",
+      "en": "Walleye"
+    },
+    "organizer": {
+      "fr": "Tournoi Écotone Ville-Marie (OK Pneus Écotone)",
+      "en": "Tournoi Écotone Ville-Marie (OK Pneus Écotone)"
+    },
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "confirmed",
+    "link": "https://www.tournoiecotonevm.com/",
+    "notes": {
+      "fr": "8e édition. Le seul tournoi du genre sur le lac Témiscamingue, et le seul tournoi de doré au Québec sans limite de longueur — le lac étant partagé entre le Québec et l'Ontario. Remise à l'eau obligatoire : aucun poisson mort n'est enregistré. Plus de 40 000 $ en prix annoncés. Prévois les règlements applicables des deux côtés de la frontière.",
+      "en": "8th edition. The only tournament of its kind on Lake Timiskaming, and the only walleye tournament in Québec with no length limit — the lake is shared between Québec and Ontario. Mandatory catch-and-release: no dead fish is registered. Over $40,000 in announced prizes. Plan for the rules applying on both sides of the border."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "Doré — remise à l'eau obligatoire, aucune limite de longueur",
+        "en": "Walleye — mandatory catch-and-release, no length limit"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
+    "id": "massawippi-ouverture-2026",
+    "name": {
+      "fr": "Tournoi du lac Massawippi — ouverture des salmonidés",
+      "en": "Lac Massawippi Tournament — salmonid opener"
+    },
+    "startDate": "2026-04",
+    "endDate": "",
+    "region": {
+      "fr": "Estrie",
+      "en": "Estrie"
+    },
+    "location": {
+      "fr": "Lac Massawippi",
+      "en": "Lac Massawippi"
+    },
+    "species": {
+      "fr": "Truite grise, truite brune, truite arc-en-ciel",
+      "en": "Lake trout, brown trout, rainbow trout"
+    },
+    "organizer": {
+      "fr": "Club de conservation du lac Massawippi",
+      "en": "Club de conservation du lac Massawippi"
+    },
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "tentative",
+    "link": "",
+    "notes": {
+      "fr": "À ne pas confondre avec le tournoi-bénéfice de septembre sur le même lac : celui-ci ouvre la saison des salmonidés depuis plus de 50 ans, sous un club fondé il y a environ 125 ans. L'édition 2026 s'est étirée sur dix jours et s'est terminée le 3 mai; la date de début exacte n'était pas publiée dans les sources consultées. Environ 250 pêcheurs. Bourses de 500 $, 300 $ et 150 $ pour les trois plus grosses truites grises, et les mêmes pour la truite brune ou arc-en-ciel. Les inscriptions servent à ensemencer le lac.",
+      "en": "Not to be confused with the September charity tournament on the same lake: this one has opened the salmonid season for over 50 years, run by a club founded roughly 125 years ago. The 2026 edition ran over ten days and ended on 3 May; the exact start date was not published in the sources consulted. Around 250 anglers. Prizes of $500, $300 and $150 for the three largest lake trout, and the same for brown or rainbow trout. Entry money restocks the lake."
+    },
+    "specs": {
+      "fee": {
+        "fr": "50 $ / pêcheur",
+        "en": "$50 / angler"
+      },
+      "teamSize": ""
+    },
+    "tier": "regional",
+    "kind": "single"
+  },
+  {
+    "id": "baitfuel-fishing-tour",
+    "name": "BAITFUEL Fishing Tour",
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Fleuve Saint-Laurent et baie de Quinte (Ontario)",
+      "en": "St. Lawrence River and Bay of Quinte, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Circuit",
+      "en": "Circuit"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/schedule/",
+    "notes": {
+      "fr": "Circuit d'achigan ontarien, pêché sur le fleuve Saint-Laurent et la baie de Quinte. Six qualifications, le Thousand Islands Open et la finale; les points s'accumulent sur les six qualifications et décident l'équipe de l'année. Chaque épreuve est limitée à 65 bateaux, et la finale aux 40 meilleures équipes de la saison. Achigan à grande et à petite bouche, sans limite de longueur, sauf aux qualifications de la baie de Quinte (5 achigans à grande bouche). Inscrit ici parce que Brockville et Cornwall sont à portée depuis le Québec — comme les étapes de Cornwall déjà au répertoire. Les frais n'étaient pas publiés dans les sources consultées. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Ontario bass circuit, fished on the St. Lawrence River and the Bay of Quinte. Six qualifiers, the Thousand Islands Open and the championship; points accumulate across the six qualifiers and decide Team of the Year. Each event is capped at 65 boats, and the championship at the season's top 40 teams. Largemouth and smallmouth of any length, except at the Bay of Quinte qualifiers (5 largemouth). Listed here because Brockville and Cornwall are within reach from Québec — like the Cornwall stops already in the directory. Entry fees were not published in the sources consulted. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "circuit"
+  },
+  {
+    "id": "baitfuel-quinte-west-2026",
+    "name": {
+      "fr": "Qualifications 1 et 2 — Quinte West",
+      "en": "Qualifiers 1 & 2 — Quinte West"
+    },
+    "startDate": "2026-06-27",
+    "endDate": "2026-06-28",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Parc Centennial, Quinte West (Trenton), Ontario",
+      "en": "Centennial Park, Quinte West (Trenton), Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/schedule/",
+    "notes": {
+      "fr": "Deux qualifications sur la baie de Quinte. Achigan à grande bouche seulement : cinq poissons par tournoi. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Two qualifiers on the Bay of Quinte. Largemouth only: five fish per tournament. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-brockville-2026",
+    "name": {
+      "fr": "Qualification 3 — Brockville",
+      "en": "Qualifier 3 — Brockville"
+    },
+    "startDate": "2026-07-11",
+    "endDate": "2026-07-11",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Blockhouse Island, Brockville, Ontario",
+      "en": "Blockhouse Island, Brockville, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/schedule/",
+    "notes": {
+      "fr": "Troisième qualification, en format rivière seulement. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Third qualifier, river-only format. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-cornwall-2026",
+    "name": {
+      "fr": "Qualifications 4 et 5 — Cornwall",
+      "en": "Qualifiers 4 & 5 — Cornwall"
+    },
+    "startDate": "2026-08-15",
+    "endDate": "2026-08-16",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Marina 200, Cornwall, Ontario",
+      "en": "Marina 200, Cornwall, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/schedule/",
+    "notes": {
+      "fr": "Deux qualifications sur le lac Saint-François, avec la Marina 200 comme quartier général. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Two qualifiers on Lac Saint-François, with Marina 200 as tournament HQ. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-championship-2026",
+    "name": {
+      "fr": "Finale du circuit — Brockville",
+      "en": "Tour Championship — Brockville"
+    },
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-20",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Parc Hardy, Brockville, Ontario",
+      "en": "Hardy Park, Brockville, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/schedule/",
+    "notes": {
+      "fr": "Finale de la saison, réservée aux 40 meilleures équipes des qualifications. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Season finale, open to the top 40 teams from the qualifiers. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
   }
 ]

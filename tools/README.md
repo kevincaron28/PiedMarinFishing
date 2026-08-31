@@ -124,6 +124,26 @@ du commit et non celles de la journée. `merch.html` et `404.html` en sont
 absentes : elles portent `noindex`. Les fiches de `tournois/` y sont ajoutées
 automatiquement.
 
+## Ce qui demande une vérification
+
+`check-stale.py` lit le répertoire et dit par où commencer une séance de
+recherche, au lieu de relire les 42 entrées.
+
+```
+python3 tools/check-stale.py            # rapport complet
+python3 tools/check-stale.py --brief    # juste les totaux
+```
+
+Quatre paquets : les éditions **passées** (à reporter sur la saison suivante),
+celles **sans date publiée**, celles **sous le seuil de fiche** avec la liste
+exacte des champs manquants, et celles **encore à venir** (rien à faire). Le
+script avertit aussi quand aucune date de la saison suivante n'est au
+répertoire — c'est ce qui donne au guide un air abandonné au printemps.
+
+Il ne va sur aucun site et ne modifie rien : la recherche reste manuelle, et
+c'est voulu. Une date inventée coûte plus cher au répertoire qu'une date
+manquante.
+
 ## L'ordre des scripts
 
 Après une modification de `data/quebec-tournaments.json` :
