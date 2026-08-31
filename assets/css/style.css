@@ -2030,55 +2030,6 @@ body.has-lightbox { overflow: hidden; }
 }
 
 /* ---------------------------------------------------------------------------
-   Chiffres de l'en-tête d'accueil
-   Le texte occupait la moitié gauche et la droite restait vide. Sur grand
-   écran les chiffres s'y installent; sous 900px ils repassent sous le texte,
-   en ligne. Remplis par whatsnew.js — jamais écrits à la main.
---------------------------------------------------------------------------- */
-@media (min-width: 900px) {
-  .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 48px; }
-  .hero-inner > .eyebrow,
-  .hero-inner > h1,
-  .hero-inner > p.lead,
-  .hero-inner > .hero-actions { grid-column: 1; }
-  .hero-stats {
-    grid-column: 2;
-    /* « 1 / -1 » ne marcherait pas : sans lignes de rangées explicites, -1
-       retombe sur la ligne 1 et le bloc ne couvrirait que la première rangée.
-       On couvre donc les quatre éléments de la colonne de gauche. */
-    grid-row: 1 / span 4;
-    align-self: center;
-    display: grid;
-    gap: 26px;
-    padding-left: 40px;
-    border-left: 1px solid rgba(255, 255, 255, 0.16);
-  }
-}
-.hero-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px 34px;
-  margin-top: 34px;
-}
-.hero-stat { min-width: 0; }
-.hero-stat-n {
-  display: block;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2.6rem;
-  line-height: 1;
-  color: var(--gold-400);
-}
-.hero-stat-label {
-  display: block;
-  margin-top: 4px;
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-  max-width: 18ch;
-}
-
-/* ---------------------------------------------------------------------------
    Apparition au défilement
    Uniquement opacity et transform : ce sont les deux seules propriétés que le
    navigateur anime sur le fil du compositeur, donc sans saccade sur un

@@ -315,13 +315,7 @@
     "videos.title": "Nos vidéos",
     "videos.intro": "Sorties, tournois et coulisses. Chaque vignette ouvre la vidéo sur YouTube.",
     "videos.untitled": "Vidéo sans titre",
-    "catches.watchVideo": "Voir la vidéo",
-    "hero.stat.seasons.one": "Saison en tournoi",
-    "hero.stat.seasons.other": "Saisons en tournoi",
-    "hero.stat.guide.one": "Tournoi au répertoire",
-    "hero.stat.guide.other": "Tournois au répertoire",
-    "hero.stat.records.one": "Record d'équipe",
-    "hero.stat.records.other": "Records d'équipe"
+    "catches.watchVideo": "Voir la vidéo"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -639,12 +633,6 @@
     "videos.title": "Our videos",
     "videos.intro": "Trips, tournaments and behind the scenes. Each thumbnail opens the video on YouTube.",
     "videos.untitled": "Untitled video",
-    "catches.watchVideo": "Watch the video",
-    "hero.stat.seasons.one": "Season of tournaments",
-    "hero.stat.seasons.other": "Seasons of tournaments",
-    "hero.stat.guide.one": "Tournament in the directory",
-    "hero.stat.guide.other": "Tournaments in the directory",
-    "hero.stat.records.one": "Team record",
-    "hero.stat.records.other": "Team records"
+    "catches.watchVideo": "Watch the video"
   }
 }

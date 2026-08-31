@@ -129,10 +129,6 @@
       <a class="btn btn-primary" href="calendar.html" data-i18n="index.ctaSchedule">Voir notre calendrier</a>
       <a class="btn btn-outline" href="tournaments.html" data-i18n="index.ctaGuide">Trouve ton prochain tournoi</a>
     </div>
-    <!-- Chiffres calculés par whatsnew.js. Ils occupent la moitié droite de
-         l'en-tête, restée vide jusqu'ici, et se retirent s'il n'y a rien à
-         compter. Une photo pourra les remplacer plus tard. -->
-    <div id="hero-stats" class="hero-stats" hidden></div>
   </div>
   <div class="wave-divider">
     <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#fbf9f4" d="M0,64L60,58.7C120,53,240,43,360,45.3C480,48,600,64,720,69.3C840,75,960,69,1080,56C1200,43,1320,21,1380,10.7L1440,0L1440,100L1380,100C1320,100,1200,100,1080,100C960,100,840,100,720,100C600,100,480,100,360,100C240,100,120,100,60,100L0,100Z"></path></svg>
@@ -253,7 +249,6 @@
 <script>
   initFeaturedVideo("#featured-video");
   initWhatsNew({
-    statsSelector: "#hero-stats",
     sectionSelector: "#whats-new",
     gridSelector: "#news-grid",
     socialSelector: "#news-socials",

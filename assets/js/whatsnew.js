@@ -12,7 +12,7 @@
 // qui obligeraient à un bandeau de consentement (Loi 25). Le bloc social plus
 // bas se contente de liens — c'est honnête et ça ne coûte rien au visiteur.
 async function initWhatsNew(options) {
-  const { sectionSelector, gridSelector, socialSelector, statsSelector } = options;
+  const { sectionSelector, gridSelector, socialSelector } = options;
   const section = document.querySelector(sectionSelector);
   const grid = document.querySelector(gridSelector);
   if (!section || !grid) return;
@@ -21,14 +21,11 @@ async function initWhatsNew(options) {
   const { t, tr } = PMF_I18N;
 
   const json = (url) => fetch(url, DATA_FETCH).then((r) => r.json()).catch(() => []);
-  const [catches, schedule, history, socials, stats] = await Promise.all([
+  const [catches, schedule, history, socials] = await Promise.all([
     json("data/catches.json"),
     json("data/team-schedule.json"),
     json("data/tournament-history.json"),
     json("data/socials.json"),
-    // Écrit par tools/build-stats.py. Le répertoire lui-même pèse 74 Ko :
-    // le charger ici pour afficher un nombre serait absurde.
-    json("data/site-stats.json"),
   ]);
 
   const today = new Date().toISOString().slice(0, 10);
@@ -37,35 +34,6 @@ async function initWhatsNew(options) {
   const sortable = (d) => (d || "").padEnd(10, "9");
   const newest = (rows, key) =>
     rows.filter((r) => r[key]).sort((a, b) => sortable(b[key]).localeCompare(sortable(a[key])))[0];
-
-  // ---- Les chiffres du bandeau d'accueil ------------------------------
-  // Le côté droit de l'en-tête était vide. Trois chiffres, tous calculés :
-  // rien à tenir à jour à la main, et rien qui puisse devenir faux.
-  const statsHost = statsSelector ? document.querySelector(statsSelector) : null;
-  if (statsHost) {
-    const seasons = new Set(
-      history.map((r) => String(r.date || "").slice(0, 4)).filter(Boolean)).size;
-
-    // Un record par espèce, et seulement pour une prise mesurée — même règle
-    // que le temple de la renommée, via parseMeasure de util.js.
-    const measured = new Set();
-    catches.forEach((c) => {
-      if (parseMeasure(tr(c.measure))) measured.add(PMF_I18N.key(c.species));
-    });
-
-    const tiles = [
-      [seasons, "hero.stat.seasons"],
-      [Number(stats && stats.tournaments) || 0, "hero.stat.guide"],
-      [measured.size, "hero.stat.records"],
-    ].filter(([n]) => n > 0);
-
-    statsHost.innerHTML = tiles.map(([n, key]) => `
-      <div class="hero-stat">
-        <span class="hero-stat-n">${escapeHTML(String(n))}</span>
-        <span class="hero-stat-label">${escapeHTML(PMF_I18N.plural(key, n))}</span>
-      </div>`).join("");
-    statsHost.hidden = !tiles.length;
-  }
 
   const cards = [];
 
