@@ -416,13 +416,6 @@ async function initCatches(options) {
   // Une prise sans mesure ne peut pas détenir de record, et deux mesures ne se
   // comparent que si elles portent la même unité — 50 po et 11 lb ne se
   // classent pas l'un contre l'autre.
-  function parseMeasure(text) {
-    const m = String(text || "").match(/([\d]+(?:[.,][\d]+)?)\s*(po|lb|kg|cm|in|"|″)/i);
-    if (!m) return null;
-    const unit = m[2].toLowerCase().replace(/["″]/, "po");
-    return { value: parseFloat(m[1].replace(",", ".")), unit };
-  }
-
   function records(rows) {
     const best = new Map();
     rows.forEach((c) => {

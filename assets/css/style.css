@@ -236,18 +236,23 @@ img { max-width: 100%; display: block; }
 .hero::after {
   content: "";
   position: absolute;
-  left: max(24px, calc(50% - var(--max-width) / 2 + 24px));
-  bottom: 92px;
-  width: min(46vw, 400px);
+  /* L'écusson se tenait derrière le paragraphe, assez lisible pour lui faire
+     concurrence. Il passe à droite, sous les chiffres, et s'assourdit. */
+  right: max(24px, calc(50% - var(--max-width) / 2 + 24px));
+  bottom: 40px;
+  width: min(46vw, 340px);
   aspect-ratio: 1;
   background: url("../img/logo-mark-light.png") center / contain no-repeat;
-  opacity: 0.12;
+  opacity: 0.09;
   pointer-events: none;
   z-index: 1;
 }
 /* Sur une colonne, l'écusson se centre sous le texte plutôt que de le border. */
 @media (max-width: 820px) {
   .hero::after {
+    /* La règle de bureau positionne par la droite : sans ce raz, les deux
+       s'appliqueraient et l'écusson serait étiré sur toute la largeur. */
+    right: auto;
     left: 50%;
     transform: translateX(-50%);
     bottom: 72px;
@@ -886,7 +891,11 @@ section.alt { background: var(--sand-100); }
    sitting letterboxed inside a 16:9 one. */
 .video-frame.video-portrait {
   aspect-ratio: 9 / 16;
-  max-width: min(100%, 360px);
+  /* 360 px de large en 9/16 donnaient 640 px de haut : le clip occupait
+     presque tout l'écran sur un portable. On plafonne la hauteur, et la
+     largeur suit pour garder le cadrage vertical intact. */
+  max-height: min(72vh, 520px);
+  max-width: min(100%, 293px);
   margin-left: auto;
   margin-right: auto;
 }
@@ -1852,6 +1861,12 @@ body.has-lightbox { overflow: hidden; }
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  /* Sur toute la largeur, quatre pastilles tenaient sur une ligne et la
+     cinquième restait seule en dessous. En serrant la rangée, la rupture
+     tombe à 3 + 2 : deux lignes équilibrées plutôt qu'une orpheline. */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .news-social {
   display: flex;
@@ -2012,4 +2027,92 @@ body.has-lightbox { overflow: hidden; }
   margin-top: 10px;
   font-weight: 600;
   font-size: 0.92rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Chiffres de l'en-tête d'accueil
+   Le texte occupait la moitié gauche et la droite restait vide. Sur grand
+   écran les chiffres s'y installent; sous 900px ils repassent sous le texte,
+   en ligne. Remplis par whatsnew.js — jamais écrits à la main.
+--------------------------------------------------------------------------- */
+@media (min-width: 900px) {
+  .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 48px; }
+  .hero-inner > .eyebrow,
+  .hero-inner > h1,
+  .hero-inner > p.lead,
+  .hero-inner > .hero-actions { grid-column: 1; }
+  .hero-stats {
+    grid-column: 2;
+    /* « 1 / -1 » ne marcherait pas : sans lignes de rangées explicites, -1
+       retombe sur la ligne 1 et le bloc ne couvrirait que la première rangée.
+       On couvre donc les quatre éléments de la colonne de gauche. */
+    grid-row: 1 / span 4;
+    align-self: center;
+    display: grid;
+    gap: 26px;
+    padding-left: 40px;
+    border-left: 1px solid rgba(255, 255, 255, 0.16);
+  }
+}
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px 34px;
+  margin-top: 34px;
+}
+.hero-stat { min-width: 0; }
+.hero-stat-n {
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--gold-400);
+}
+.hero-stat-label {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 18ch;
+}
+
+/* ---------------------------------------------------------------------------
+   Apparition au défilement
+   Uniquement opacity et transform : ce sont les deux seules propriétés que le
+   navigateur anime sur le fil du compositeur, donc sans saccade sur un
+   téléphone milieu de gamme — celui qu'on a dans le bateau.
+
+   Deux garde-fous imbriqués. La requête de préférence d'abord : qui a demandé
+   moins d'animation n'en voit aucune. Le @supports ensuite : là où
+   animation-timeline n'existe pas encore (Safari, notamment), le contenu
+   s'affiche normalement, sans JavaScript de secours.
+
+   Volontairement absent : les cartes du répertoire (.event-card) et les étapes
+   de circuit. À 45 entrées, l'effet cesse d'être discret et devient du bruit.
+--------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .section-head,
+    .card,
+    .news-card,
+    .hall-item,
+    .catch-card,
+    .member-card,
+    .boat-card,
+    .stat-card,
+    .video-item {
+      animation: pmf-reveal linear both;
+      animation-timeline: view();
+      /* L'apparition se joue pendant que l'élément entre dans l'écran; ce qui
+         est déjà visible au chargement est donc déjà arrivé à son terme. */
+      animation-range: entry 0% entry 40%;
+    }
+  }
+
+  @keyframes pmf-reveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+  }
 }

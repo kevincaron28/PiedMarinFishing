@@ -60,6 +60,16 @@ function longDate(value, lang) {
     : `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`;
 }
 
+// Lit une mesure de prise : « 50 po », « 11 lb », « 45" ». Renvoie la valeur et
+// son unité, ou null si rien n'est mesurable. Deux mesures ne se comparent que
+// si leur unité est la même — des pouces contre des livres ne veulent rien dire.
+// Partagé par la page Prises (temple de la renommée) et l'accueil (compteur).
+function parseMeasure(text) {
+  const m = String(text || "").match(/([\d]+(?:[.,][\d]+)?)\s*(po|lb|kg|cm|in|"|″)/i);
+  if (!m) return null;
+  return { value: parseFloat(m[1].replace(",", ".")), unit: m[2].toLowerCase().replace(/["″]/, "po") };
+}
+
 function escapeHTML(str) {
   const div = document.createElement("div");
   div.textContent = str ?? "";

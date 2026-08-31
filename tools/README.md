@@ -159,6 +159,21 @@ bande. `videoId` accepte l'identifiant seul ou une URL YouTube complète.
 `angler` est un identifiant de `data/team-members.json`, jamais un nom recopié —
 le nom affiché suit la fiche d'équipe. `date` et `angler` sont facultatifs.
 
+## Chiffres de l'accueil
+
+`build-stats.py` écrit `data/site-stats.json` — quelques octets, régénérés avec
+le reste.
+
+```
+python3 tools/build-stats.py
+```
+
+Le répertoire pèse 74 Ko : le charger sur la page d'accueil pour afficher
+« 45 tournois » serait absurde. Les autres chiffres du bandeau (saisons,
+records) se calculent dans le navigateur, à partir de fichiers qu'il charge
+déjà. Un tournoi annulé n'est pas compté : il est au répertoire pour prévenir,
+pas pour gonfler un chiffre.
+
 ## Après avoir modifié `data/i18n.json`
 
 Chaque page HTML porte une copie française du texte, visible avant que
@@ -222,7 +237,8 @@ Après une modification de `data/quebec-tournaments.json` :
 
 ```
 python3 tools/build-tournament-pages.py   # 1. les fiches
-python3 tools/build-structured-data.py    # 2. le JSON-LD du guide
-python3 tools/sync-html-fallbacks.py      # 3. les textes FR figés
-python3 tools/build-sitemap.py            # 4. le sitemap (après le commit)
+python3 tools/build-stats.py              # 2. les chiffres de l'accueil
+python3 tools/build-structured-data.py    # 3. le JSON-LD du guide
+python3 tools/sync-html-fallbacks.py      # 4. les textes FR figés
+python3 tools/build-sitemap.py            # 5. le sitemap (après le commit)
 ```
