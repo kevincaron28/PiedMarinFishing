@@ -83,6 +83,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/tournois/backlash-fc.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/backlash-fc.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/backlash-fc.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/tournois/backlash-fc.html"/>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/tournois/baitfuel-fishing-tour.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/baitfuel-fishing-tour.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/baitfuel-fishing-tour.html?lang=en"/>
@@ -119,6 +128,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/tournois/big-bass-quebec.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/big-bass-quebec.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/big-bass-quebec.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/tournois/big-bass-quebec.html"/>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/tournois/brochet-gue-lachine-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/brochet-gue-lachine-2026.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/brochet-gue-lachine-2026.html?lang=en"/>
@@ -132,6 +150,15 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/challenge-carpe-quebec-2026.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/challenge-carpe-quebec-2026.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/tournois/challenge-carpe-quebec-2026.html"/>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://piedmarinfishing.com/tournois/econobass-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/econobass-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/econobass-2026.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/tournois/econobass-2026.html"/>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

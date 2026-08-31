@@ -87,6 +87,33 @@ et l'anglais voyage dans des attributs `data-en` qu'`assets/js/tournament-page.j
 de `tournois/` à la main : la prochaine exécution l'écraserait. Corrige le
 tournoi dans `data/quebec-tournaments.json`.
 
+### Classement de saison sur une fiche de circuit
+
+Un circuit peut porter un classement. Rien n'est calculé : les points viennent
+de l'organisateur. Ajoute un champ `standings` au tournoi dans
+`data/quebec-tournaments.json` :
+
+```json
+"standings": {
+  "updated": "2026-08-30",
+  "source": "https://exemple.ca/classement",
+  "rows": [
+    { "rank": 1, "team": "Nom de l'équipe", "points": "310" },
+    { "rank": 2, "team": "Autre équipe", "points": "295" }
+  ]
+}
+```
+
+`updated` et `source` sont facultatifs. Sans `rows`, la section n'apparaît pas
+du tout — comme le reste du site, elle se masque plutôt que de montrer un
+tableau vide. `team` accepte une chaîne simple ou `{fr, en}`.
+
+**Tous les circuits ont leur fiche**, quel que soit leur pointage : leur valeur
+vient de ce qu'ils regroupent. « Programme Big Bass Québec » comptait sept
+étapes sans page où les voir ensemble. Un circuit annulé garde la sienne aussi,
+avec un bandeau — « est-ce que ça roule cette année? » est exactement la
+question qu'on vient poser.
+
 ## Après avoir modifié `data/i18n.json`
 
 Chaque page HTML porte une copie française du texte, visible avant que

@@ -296,7 +296,15 @@
     "new.nextCta": "Voir notre calendrier →",
     "new.result": "Dernier résultat",
     "new.resultCta": "Voir tous nos résultats →",
-    "new.socialLead": "Le jour le jour se passe sur nos réseaux — photos de sorties, prises de la journée et coulisses."
+    "new.socialLead": "Le jour le jour se passe sur nos réseaux — photos de sorties, prises de la journée et coulisses.",
+    "new.dateTBC": "date à confirmer",
+    "tp.standings": "Classement de la saison",
+    "tp.standingsUpdated": "Mis à jour le",
+    "tp.standingsSource": "Voir la source",
+    "tp.rank": "Rang",
+    "tp.team": "Équipe",
+    "tp.points": "Points",
+    "tp.cancelled": "Cette édition est annulée. Les détails ci-dessous sont conservés pour référence."
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -595,6 +603,14 @@
     "new.nextCta": "See our calendar →",
     "new.result": "Latest result",
     "new.resultCta": "See all our results →",
-    "new.socialLead": "The day-to-day happens on our socials — trip photos, the day's catch and behind the scenes."
+    "new.socialLead": "The day-to-day happens on our socials — trip photos, the day's catch and behind the scenes.",
+    "new.dateTBC": "date to be confirmed",
+    "tp.standings": "Season standings",
+    "tp.standingsUpdated": "Updated",
+    "tp.standingsSource": "View the source",
+    "tp.rank": "Rank",
+    "tp.team": "Team",
+    "tp.points": "Points",
+    "tp.cancelled": "This edition is cancelled. The details below are kept for reference."
   }
 }

@@ -98,6 +98,13 @@ def score(ev):
 
 
 def qualifies(ev, by_id):
+    # Un circuit a toujours sa fiche, quel que soit son pointage : sa valeur
+    # vient de ce qu'il regroupe, pas de ses propres champs. « Programme Big
+    # Bass Québec » comptait sept étapes et aucune page où les voir ensemble.
+    # Même un circuit annulé mérite la sienne : « est-ce que ça roule cette
+    # année? » est exactement la question qu'on vient poser.
+    if ev.get("kind") == "circuit":
+        return True
     if score(ev) < SCORE_MIN:
         return False
     if ev.get("kind") == "stop":
@@ -313,7 +320,12 @@ def render(ev, by_id, stops_of, history, ui, kept):
     when = {"fr": date_phrase(ev, "fr") or ui["fr"]["tp.dateTBD"],
             "en": date_phrase(ev, "en") or ui["en"]["tp.dateTBD"]}
 
-    body = [section({"fr": ui["fr"]["tp.infoTitle"], "en": ui["en"]["tp.infoTitle"]},
+    body = []
+    if ev.get("status") == "cancelled":
+        body.append('<section><div class="container"><div class="notice notice-cancelled">%s</div></div></section>'
+                    % bilingual("span", {"fr": ui["fr"]["tp.cancelled"],
+                                         "en": ui["en"]["tp.cancelled"]}))
+    body += [section({"fr": ui["fr"]["tp.infoTitle"], "en": ui["en"]["tp.infoTitle"]},
                     '<div class="event-specs tp-specs">%s</div>' % specs_html(ev, ui))]
 
     if pick(ev.get("notes"), "fr"):
@@ -325,6 +337,38 @@ def render(ev, by_id, stops_of, history, ui, kept):
         stops = sorted(stops, key=lambda s: s.get("startDate") or "9999")
         body.append(section({"fr": ui["fr"]["tp.stopsTitle"], "en": ui["en"]["tp.stopsTitle"]},
                             '<ul class="tp-stops">%s</ul>' % stop_rows(stops)))
+
+    # Classement de saison, s'il a été fourni. Rien n'est calculé ici : les
+    # points viennent de l'organisateur, via le champ "standings" du tournoi.
+    # Absent, la section n'existe pas — comme partout ailleurs sur le site.
+    standings = ev.get("standings") or {}
+    if standings.get("rows"):
+        head = "".join(
+            "<th>%s</th>" % bilingual("span", {"fr": ui["fr"][k], "en": ui["en"][k]})
+            for k in ("tp.rank", "tp.team", "tp.points"))
+        lines = "".join(
+            "<tr><td>%s</td><td>%s</td><td>%s</td></tr>"
+            % (esc(r.get("rank", "")), bilingual("span", r.get("team")),
+               esc(r.get("points", "")))
+            for r in standings["rows"])
+        meta = ""
+        if standings.get("updated"):
+            meta = bilingual("span", {
+                "fr": "%s %s" % (ui["fr"]["tp.standingsUpdated"],
+                                 long_date(standings["updated"], "fr")),
+                "en": "%s %s" % (ui["en"]["tp.standingsUpdated"],
+                                 long_date(standings["updated"], "en"))})
+        if (standings.get("source") or "").startswith("http"):
+            meta += ' <a href="%s" target="_blank" rel="noopener">%s</a>' % (
+                esc(standings["source"]),
+                bilingual("span", {"fr": ui["fr"]["tp.standingsSource"],
+                                   "en": ui["en"]["tp.standingsSource"]}))
+        table = ('<div class="tp-standings-wrap"><table class="tp-standings">'
+                 "<thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>" % (head, lines))
+        if meta:
+            table += '<p class="tp-standings-meta">%s</p>' % meta
+        body.append(section({"fr": ui["fr"]["tp.standings"], "en": ui["en"]["tp.standings"]},
+                            table, alt=True))
 
     parent = by_id.get(ev.get("circuit")) if ev.get("kind") == "stop" else None
     if parent:

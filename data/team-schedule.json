@@ -9,6 +9,7 @@
     },
     "startDate": "2027",
     "endDate": "2027",
+    "previousDate": "2026-02-07",
     "region": "Montérégie",
     "location": {
       "fr": "Centre nautique de Beauharnois, lac Saint-Louis",
@@ -87,6 +88,7 @@
     },
     "startDate": "2027",
     "endDate": "2027",
+    "previousDate": "2026-01-24",
     "region": {
       "fr": "Montréal / Lac Saint-Louis",
       "en": "Montréal / Lac Saint-Louis"
@@ -132,6 +134,7 @@
     },
     "startDate": "2027",
     "endDate": "2027",
+    "previousDate": "2026-08-01",
     "region": "Montérégie",
     "location": {
       "fr": "Lac Saint-Louis, parc Bourcier, Beauharnois",
@@ -181,6 +184,7 @@
     },
     "startDate": "2027",
     "endDate": "2027",
+    "previousDate": "2026-09-19",
     "region": {
       "fr": "Frontière Québec–Ontario",
       "en": "Québec–Ontario border"

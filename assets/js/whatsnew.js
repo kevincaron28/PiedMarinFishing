@@ -51,14 +51,31 @@ async function initWhatsNew(options) {
 
   // Le prochain tournoi : le premier qui n'est pas encore passé. Une entrée
   // datée à l'année seule ("2027") reste candidate — c'est bien à venir.
+  //
+  // Mais elle ne peut pas être triée sur "2027" seul : la pêche blanche de
+  // janvier se retrouverait après l'ouverture du brochet de mai. Quand
+  // l'organisateur n'a pas encore publié sa date, on ordonne sur le mois et le
+  // jour de l'édition précédente (previousDate). C'est une estimation, et elle
+  // ne sert qu'au classement — jamais affichée comme si c'était la date 2027.
+  const orderKey = (e) => {
+    const start = e.startDate || "";
+    if (/^\d{4}$/.test(start) && /^\d{4}-\d{2}-\d{2}$/.test(e.previousDate || "")) {
+      return start + e.previousDate.slice(4);
+    }
+    return sortable(start);
+  };
   const next = schedule
     .filter((e) => e.startDate && sortable(e.endDate || e.startDate) >= today)
-    .sort((a, b) => sortable(a.startDate).localeCompare(sortable(b.startDate)))[0];
+    .sort((a, b) => orderKey(a).localeCompare(orderKey(b)))[0];
   if (next) {
+    // "2027" tout court ne dit rien d'utile : on l'annonce comme à confirmer.
+    const when = /^\d{4}$/.test(next.startDate)
+      ? `${next.startDate} — ${t("new.dateTBC")}`
+      : longDate(next.startDate, PMF_I18N.lang);
     cards.push({
       kicker: t("new.next"),
       title: tr(next.name),
-      meta: [longDate(next.startDate, PMF_I18N.lang), tr(next.location)].filter(Boolean).join(" · "),
+      meta: [when, tr(next.location)].filter(Boolean).join(" · "),
       href: "calendar.html",
       cta: t("new.nextCta"),
     });
