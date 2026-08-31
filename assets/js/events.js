@@ -18,6 +18,7 @@ async function initEventList(options) {
     searchSelector,
     badgeField = "type",
     linkTextKey = "events.learnMore",
+    pagesUrl = null,
     onRender = null,
   } = options;
 
@@ -39,6 +40,16 @@ async function initEventList(options) {
   }
 
   events.sort((a, b) => (a.startDate || "9999").localeCompare(b.startDate || "9999"));
+
+  // Les tournois assez documentés ont leur propre fiche dans tournois/.
+  // La liste est écrite par tools/build-tournament-pages.py; si elle manque,
+  // les cartes s'affichent simplement sans le lien.
+  let pageIds = new Set();
+  if (pagesUrl) {
+    try {
+      pageIds = new Set(await (await fetch(pagesUrl, DATA_FETCH)).json());
+    } catch (err) { /* pas de fiches, pas de lien */ }
+  }
 
   const monthSelect = monthFilterSelector ? document.querySelector(monthFilterSelector) : null;
   const regionSelect = regionFilterSelector ? document.querySelector(regionFilterSelector) : null;
@@ -335,7 +346,8 @@ async function initEventList(options) {
           ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
         </div>
         <div class="event-cta">
-          ${ev.link ? `<a class="btn btn-teal" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
+          ${pageIds.has(ev.id) ? `<a class="btn btn-teal" href="tournois/${escapeHTML(ev.id)}.html">${escapeHTML(t("events.cardPage"))}</a>` : ""}
+          ${ev.link ? `<a class="btn ${pageIds.has(ev.id) ? "btn-ghost" : "btn-teal"}" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
           ${icsHTML(ev)}
         </div>
       </article>
@@ -391,7 +403,9 @@ async function initEventList(options) {
     return `
       <div class="circuit-row">
         <div class="circuit-row-main">
-          <strong>${escapeHTML(tr(c.name))}</strong>
+          <strong>${pageIds.has(c.id)
+            ? `<a href="tournois/${escapeHTML(c.id)}.html">${escapeHTML(tr(c.name))}</a>`
+            : escapeHTML(tr(c.name))}</strong>
           ${org ? `<span class="circuit-row-org">${escapeHTML(org)}</span>` : ""}
         </div>
         <div class="circuit-row-meta">

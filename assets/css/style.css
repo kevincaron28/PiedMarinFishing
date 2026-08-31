@@ -1679,3 +1679,120 @@ body.has-lightbox { overflow: hidden; }
 }
 .page-header h1 { color: var(--white); margin-bottom: 8px; }
 .page-header p { color: rgba(255,255,255,0.78); max-width: 60ch; }
+
+/* ---------------------------------------------------------------------------
+   Fiches de tournoi (tournois/*.html)
+   Générées par tools/build-tournament-pages.py. Elles réutilisent .event-spec
+   du répertoire; ce qui suit ne couvre que ce qui leur est propre.
+--------------------------------------------------------------------------- */
+.page-header .tp-when {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--sand-100);
+  margin-top: 6px;
+}
+/* Sorties de la carte de tournoi, les specs n'ont plus de filet au-dessus
+   ni de titre juste avant : on leur redonne de l'air. */
+.tp-specs {
+  border-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+  gap: 18px 28px;
+  /* Plus large que sur les cartes du répertoire : ici une valeur comme
+     « 910 $ / équipe (saison) » a la place de tenir sur une ligne ou deux. */
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.tp-specs .event-spec-label { font-size: 0.74rem; }
+.tp-specs .event-spec-value { font-size: 0.98rem; }
+
+.tp-notes {
+  max-width: 62ch;
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.tp-parent { font-size: 1.05rem; }
+
+.tp-stops {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.tp-stop {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 16px;
+  align-items: baseline;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+.tp-stop strong { color: var(--navy-900); }
+.tp-stop-date {
+  font-weight: 700;
+  color: var(--teal-600);
+  white-space: nowrap;
+}
+.tp-stop-place {
+  grid-column: 1 / -1;
+  font-size: 0.88rem;
+  color: var(--ink-600);
+}
+
+.tp-history {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.tp-history li {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal-400);
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+.tp-history strong { display: block; color: var(--navy-900); }
+.tp-history-note {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--ink-600);
+  line-height: 1.55;
+}
+
+@media (max-width: 560px) {
+  .tp-stop { grid-template-columns: 1fr; }
+  .tp-stop-date { white-space: normal; }
+}
+
+.tp-related {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+.tp-related a {
+  display: block;
+  height: 100%;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 18px;
+  text-decoration: none;
+  color: var(--navy-900);
+  font-weight: 600;
+}
+.tp-related a:hover { border-color: var(--teal-400); }
+.tp-related-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ink-600);
+}

@@ -54,6 +54,39 @@ simplement en retard d'une édition.
 Seuls les événements dont la date est complète (`2026-08-07`) sont publiés :
 une date partielle ne répond pas aux exigences des moteurs.
 
+## Fiches de tournoi
+
+`build-tournament-pages.py` écrit une page par tournoi dans `tournois/`, à
+partir de `data/quebec-tournaments.json`.
+
+```
+python3 tools/build-tournament-pages.py
+```
+
+Les 34 tournois du guide vivaient sur une seule adresse : quelqu'un qui
+cherche « Tournoi Destroyer 2026 inscription » n'y trouvait rien. Chaque fiche
+répond maintenant à une recherche précise.
+
+**Le seuil.** Une fiche mince nuit plus qu'elle n'aide. Un tournoi n'a droit à
+sa page que s'il atteint 6 points sur les dix champs qui intéressent un
+lecteur (lieu, espèce, organisateur, lien, notes, puis prix, format, horaire,
+épreuve, date limite). Les étapes d'un circuit sont détaillées sur la page de
+leur circuit plutôt que d'avoir chacune la leur — « Deuxième des quatre
+étapes » ne fait pas une page. Une étape dont le circuit n'a pas de fiche
+redevient éligible. Aujourd'hui : **22 fiches sur 34 tournois**. Le script
+affiche le pointage de chacun, retenu ou non.
+
+Le script écrit aussi `data/tournament-pages.json`, la liste des identifiants
+ayant une fiche. `assets/js/events.js` la lit pour ajouter le bouton « Fiche du
+tournoi » aux bonnes cartes du répertoire, et supprime les fiches devenues
+orphelines quand un tournoi quitte le guide.
+
+Le français est écrit en dur dans le HTML — c'est lui que lisent les robots —
+et l'anglais voyage dans des attributs `data-en` qu'`assets/js/tournament-page.js`
+échange au clic. Rien n'est rendu en JavaScript. Ne modifie jamais un fichier
+de `tournois/` à la main : la prochaine exécution l'écraserait. Corrige le
+tournoi dans `data/quebec-tournaments.json`.
+
 ## Après avoir modifié `data/i18n.json`
 
 Chaque page HTML porte une copie française du texte, visible avant que
@@ -88,4 +121,16 @@ python3 tools/build-sitemap.py
 
 À relancer juste après un commit de contenu, pour que les dates soient celles
 du commit et non celles de la journée. `merch.html` et `404.html` en sont
-absentes : elles portent `noindex`.
+absentes : elles portent `noindex`. Les fiches de `tournois/` y sont ajoutées
+automatiquement.
+
+## L'ordre des scripts
+
+Après une modification de `data/quebec-tournaments.json` :
+
+```
+python3 tools/build-tournament-pages.py   # 1. les fiches
+python3 tools/build-structured-data.py    # 2. le JSON-LD du guide
+python3 tools/sync-html-fallbacks.py      # 3. les textes FR figés
+python3 tools/build-sitemap.py            # 4. le sitemap (après le commit)
+```

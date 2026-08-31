@@ -271,7 +271,23 @@
     "social.what5": "<strong>Courriel</strong> — pour les commandites, les questions sur le répertoire des tournois, ou juste pour jaser.",
     "social.moreKicker": "Ailleurs sur le site",
     "social.moreTitle": "Pas juste des fils d'actualité",
-    "social.moreBody": "Une bonne partie de ce qu'on publie se retrouve aussi ici, en plus détaillé : chaque prise avec sa date et son plan d'eau, notre calendrier de saison au complet, et le répertoire des tournois du Québec qu'on tient à jour pour tout le monde."
+    "social.moreBody": "Une bonne partie de ce qu'on publie se retrouve aussi ici, en plus détaillé : chaque prise avec sa date et son plan d'eau, notre calendrier de saison au complet, et le répertoire des tournois du Québec qu'on tient à jour pour tout le monde.",
+    "tp.kicker": "Répertoire des tournois",
+    "tp.backToGuide": "← Tous les tournois du Québec",
+    "tp.infoTitle": "Infos pratiques",
+    "tp.aboutTitle": "Ce qu'il faut savoir",
+    "tp.stopsTitle": "Les étapes de la saison",
+    "tp.partOfTitle": "Fait partie d'un circuit",
+    "tp.ourResult": "On l'a pêché",
+    "tp.organizerBtn": "Site de l'organisateur →",
+    "tp.organizer": "Organisateur",
+    "tp.species": "Espèce",
+    "tp.location": "Lieu",
+    "tp.region": "Région",
+    "tp.dateTBD": "Date à confirmer",
+    "tp.confirm": "Les détails viennent de l'organisateur et peuvent changer. Confirme toujours auprès de lui avant de te déplacer.",
+    "tp.related": "D'autres tournois au Québec",
+    "events.cardPage": "Fiche du tournoi →"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -545,6 +561,22 @@
     "social.what5": "<strong>Email</strong> — for sponsorship, questions about the tournament directory, or just to talk fishing.",
     "social.moreKicker": "Elsewhere on the site",
     "social.moreTitle": "More than just feeds",
-    "social.moreBody": "A good part of what we post also lands here, with more detail: every catch with its date and water, our full season calendar, and the Québec tournament directory we keep up to date for everyone."
+    "social.moreBody": "A good part of what we post also lands here, with more detail: every catch with its date and water, our full season calendar, and the Québec tournament directory we keep up to date for everyone.",
+    "tp.kicker": "Tournament directory",
+    "tp.backToGuide": "← All Québec tournaments",
+    "tp.infoTitle": "Key details",
+    "tp.aboutTitle": "What to know",
+    "tp.stopsTitle": "The season's stops",
+    "tp.partOfTitle": "Part of a circuit",
+    "tp.ourResult": "We fished it",
+    "tp.organizerBtn": "Organizer's site →",
+    "tp.organizer": "Organizer",
+    "tp.species": "Species",
+    "tp.location": "Location",
+    "tp.region": "Region",
+    "tp.dateTBD": "Date to be confirmed",
+    "tp.confirm": "Details come from the organizer and can change. Always confirm with them before making the trip.",
+    "tp.related": "More tournaments in Québec",
+    "events.cardPage": "Tournament page →"
   }
 }

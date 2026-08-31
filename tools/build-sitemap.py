@@ -39,6 +39,9 @@ PAGES = [
     ("social.html",      "0.5", "monthly", ["data/socials.json"]),
 ]
 COMMON = ["data/i18n.json"]
+# Les fiches de tournoi sont générées : elles suivent le répertoire et le
+# script qui les écrit, pas une date saisie à la main.
+PAGE_DEPS = ["data/quebec-tournaments.json", "tools/build-tournament-pages.py"]
 TODAY = datetime.date.today().isoformat()
 
 
@@ -73,7 +76,19 @@ def url(page, priority, freq, deps):
     ])
 
 
+def tournament_pages():
+    """Une entrée par fiche écrite dans tournois/."""
+    out = []
+    directory = os.path.join(REPO, "tournois")
+    if not os.path.isdir(directory):
+        return out
+    for name in sorted(f for f in os.listdir(directory) if f.endswith(".html")):
+        out.append(("tournois/" + name, "0.6", "monthly", PAGE_DEPS))
+    return out
+
+
 if __name__ == "__main__":
+    PAGES += tournament_pages()
     body = "\n".join(url(p, prio, freq, deps) for p, prio, freq, deps in PAGES)
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'

@@ -18,6 +18,8 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
+| `404.html` | Not-found page, served by GitHub Pages at any depth |
+| `tournois/*.html` | One generated page per documented tournament |
 | `sponsors.html` | Sponsor pitch, with a downloadable PDF kit |
 
 No build step, no framework, no dependencies — plain HTML/CSS/JS. Every

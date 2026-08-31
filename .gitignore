@@ -1,0 +1,4 @@
+# build-tournament-pages.py importe build-structured-data.py pour réutiliser
+# son générateur de JSON-LD; Python dépose son cache à côté.
+__pycache__/
+*.pyc
