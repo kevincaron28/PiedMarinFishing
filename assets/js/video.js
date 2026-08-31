@@ -112,6 +112,16 @@ async function initVideoList(options) {
   const { t, tr } = PMF_I18N;
   const { videos } = await loadVideos();
 
+  // Le nom du pêcheur vient de la fiche d'équipe, comme pour les prises :
+  // un identifiant dans les données, jamais un nom recopié.
+  let memberById = new Map();
+  if (videos.some((v) => v.angler)) {
+    try {
+      const members = await (await fetch("data/team-members.json", DATA_FETCH)).json();
+      memberById = new Map(members.map((m) => [m.id, m]));
+    } catch (e) { /* sans les noms, la liste reste utilisable */ }
+  }
+
   function draw() {
     if (videos.length < minimum) {
       if (section) section.hidden = true;
@@ -123,6 +133,9 @@ async function initVideoList(options) {
       const id = encodeURIComponent(v.videoId);
       const title = tr(v.title) || t("videos.untitled");
       const when = v.date ? longDate(v.date, PMF_I18N.lang) : "";
+      const member = v.angler ? memberById.get(v.angler) : null;
+      const who = member ? tr(member.name) : "";
+      const line = [who, when].filter(Boolean).join(" · ");
       return `
         <a class="video-item" href="https://www.youtube.com/watch?v=${id}"
            target="_blank" rel="noopener">
@@ -130,7 +143,7 @@ async function initVideoList(options) {
                src="https://i.ytimg.com/vi/${id}/mqdefault.jpg">
           <span class="video-item-body">
             <span class="video-item-title">${escapeHTML(title)}</span>
-            ${when ? `<span class="video-item-date">${escapeHTML(when)}</span>` : ""}
+            ${line ? `<span class="video-item-date">${escapeHTML(line)}</span>` : ""}
           </span>
         </a>`;
     }).join("");

@@ -148,13 +148,16 @@ clip n'en est pas une, et l'accueil le montre déjà.
   "channelUrl": "https://youtube.com/@piedmarinfishing",
   "videos": [
     { "id": "…", "videoId": "PXwFXozk-5c", "orientation": "portrait",
-      "title": { "fr": "…", "en": "…" }, "date": "2026-07-04", "featured": true }
+      "title": { "fr": "…", "en": "…" }, "angler": "kevin-b",
+      "date": "2026-07-04", "featured": true }
   ]
 }
 ```
 
 `orientation: "portrait"` pour un Short, sinon le cadre 16:9 le réduit à une
 bande. `videoId` accepte l'identifiant seul ou une URL YouTube complète.
+`angler` est un identifiant de `data/team-members.json`, jamais un nom recopié —
+le nom affiché suit la fiche d'équipe. `date` et `angler` sont facultatifs.
 
 ## Après avoir modifié `data/i18n.json`
 
