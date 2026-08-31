@@ -2020,5 +2020,61 @@
     },
     "tier": "regional",
     "kind": "show"
+  },
+  {
+    "id": "costa-zale-cup",
+    "name": {
+      "fr": "Costa Zale Cup, présentée par Livingston Lures",
+      "en": "Costa Zale Cup, presented by Livingston Lures"
+    },
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Frontière Québec–Ontario",
+      "en": "Québec–Ontario border"
+    },
+    "location": {
+      "fr": "Lac Saint-François, Cornwall (Ontario)",
+      "en": "Lac Saint-François, Cornwall, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "Zale Outdoors",
+    "type": {
+      "fr": "Tournoi annuel",
+      "en": "Annual Tournament"
+    },
+    "status": "tentative",
+    "link": "https://zaleoutdoors.com/zale-cup",
+    "notes": {
+      "fr": "Deux jours à l'achigan sur le lac Saint-François, organisés par Zale Outdoors, une agence québécoise. Seule la meilleure moitié des équipes du jour 1 pêche le jour 2. La bourse dépend du nombre d'inscrits : plus de 44 000 $ à 50-75 équipes, plus de 65 000 $ à 85-100. L'édition 2025 s'est tenue les 18 et 19 octobre, avec une inscription à 650 $ par équipe et une date limite au 20 juillet pour entrer dans le tirage des positions de départ. La date de la prochaine édition n'était pas publiée au moment de l'ajout — vérifie auprès de l'organisation. Tournoi ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Two days of bass fishing on Lac Saint-François, run by Zale Outdoors, a Québec agency. Only the top half of day-one teams fish day two. The purse scales with the field: over $44,000 at 50-75 teams, over $65,000 at 85-100. The 2025 edition ran on 18 and 19 October, with a $650 entry per team and a 20 July cut-off to be included in the starting-position draw. The next edition's date had not been published when this was added — check with the organizers. Ontario tournament: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": {
+        "fr": "650 $ / équipe (édition 2025)",
+        "en": "$650 / team (2025 edition)"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "50 à 100 équipes",
+        "en": "50 to 100 teams"
+      },
+      "hours": {
+        "fr": "Départs 7 h à 7 h 30 · retours 15 h à 15 h 30",
+        "en": "Launch 7:00–7:30 a.m. · return 3:00–3:30 p.m."
+      },
+      "format": {
+        "fr": "Deux jours — la meilleure moitié du jour 1 pêche le jour 2",
+        "en": "Two days — the top half from day 1 fish day 2"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
   }
 ]
