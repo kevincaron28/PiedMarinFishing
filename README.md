@@ -437,6 +437,13 @@ links back into the roster and the palmarès:
 Resize photos to roughly 1200px on the long edge before committing; full
 camera files bloat the repo for no visible gain.
 
+
+A catch shown as a **photo** can still link out to a clip: set `media.videoId`
+alongside `media.src` and the card gains a "Watch the video" link under the
+notes. The photo stays — the video does not replace it. That only applies when
+`media.type` is `"image"`; when the catch *is* a video (`"youtube"`), the player
+facade already handles it.
+
 ### Event specs
 
 Each event carries a `specs` block rendered as a scannable strip on the card:

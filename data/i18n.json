@@ -314,7 +314,8 @@
     "videos.kicker": "Sur notre chaîne",
     "videos.title": "Nos vidéos",
     "videos.intro": "Sorties, tournois et coulisses. Chaque vignette ouvre la vidéo sur YouTube.",
-    "videos.untitled": "Vidéo sans titre"
+    "videos.untitled": "Vidéo sans titre",
+    "catches.watchVideo": "Voir la vidéo"
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -631,6 +632,7 @@
     "videos.kicker": "On our channel",
     "videos.title": "Our videos",
     "videos.intro": "Trips, tournaments and behind the scenes. Each thumbnail opens the video on YouTube.",
-    "videos.untitled": "Untitled video"
+    "videos.untitled": "Untitled video",
+    "catches.watchVideo": "Watch the video"
   }
 }

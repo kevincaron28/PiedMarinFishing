@@ -2002,3 +2002,14 @@ body.has-lightbox { overflow: hidden; }
 .video-item-body { display: block; padding: 12px 16px 14px; }
 .video-item-title { display: block; font-weight: 700; color: var(--navy-900); line-height: 1.35; }
 .video-item-date { display: block; margin-top: 3px; font-size: 0.85rem; color: var(--ink-600); }
+
+/* Renvoi d'une prise vers son clip. Hauteur de cible tactile assurée. */
+.catch-video-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 24px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}

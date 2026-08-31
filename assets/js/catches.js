@@ -367,7 +367,23 @@ async function initCatches(options) {
       </div>
       ${chip ? `<div class="catch-anglers">${chip}</div>` : ""}
       ${d.facts.length ? `<div class="catch-facts">${d.facts.map((f) => `<span>${escapeHTML(f)}</span>`).join("")}</div>` : ""}
-      ${d.notes ? `<p class="catch-notes">${escapeHTML(d.notes)}</p>` : ""}`;
+      ${d.notes ? `<p class="catch-notes">${escapeHTML(d.notes)}</p>` : ""}
+      ${videoLinkHTML(c)}`;
+  }
+
+  // Une prise illustrée par une photo peut quand même avoir été filmée : le
+  // champ media.videoId sert alors de renvoi vers le clip, sans remplacer la
+  // photo. Quand la prise EST une vidéo (media.type === "youtube"), c'est
+  // mediaHTML qui s'en charge et il n'y a rien à ajouter ici.
+  function videoLinkHTML(c) {
+    const media = c.media || {};
+    if (media.type === "youtube" || !media.videoId) return "";
+    const id = encodeURIComponent(media.videoId);
+    return `
+      <a class="catch-video-link" href="https://www.youtube.com/watch?v=${id}"
+         target="_blank" rel="noopener">
+        <span aria-hidden="true">▶</span> ${escapeHTML(t("catches.watchVideo"))}
+      </a>`;
   }
 
   function cardHTML(c) {
