@@ -2387,3 +2387,29 @@ body.has-lightbox { overflow: hidden; }
   font-weight: 600;
   color: var(--teal-700);
 }
+
+/* Notre historique à un événement, sur la carte du calendrier. Même langage
+   visuel que le palmarès des cartes de pêcheurs. */
+.event-record {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 18px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--ink-600);
+}
+.event-record b {
+  color: var(--teal-700);
+  font-family: Georgia, serif;
+  font-size: 1.05rem;
+}
+.event-record sup { font-size: 0.6em; }
+.event-record a {
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+}

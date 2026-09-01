@@ -19,6 +19,10 @@ async function initEventList(options) {
     badgeField = "type",
     linkTextKey = "events.learnMore",
     pagesUrl = null,
+    // « lean » : notre calendrier. Il dit ce qu'on fait, pas ce qu'est
+    // l'événement — la fiche s'en charge, à un clic de là.
+    lean = false,
+    historyUrl = null,
     attendingUrl = null,
     onRender = null,
   } = options;
@@ -42,21 +46,40 @@ async function initEventList(options) {
 
   events.sort((a, b) => eventOrderKey(a).localeCompare(eventOrderKey(b)));
 
+  // Deux fichiers, deux éditions du même événement : le répertoire tient 2026,
+  // notre calendrier vise 2027. On les rapproche en retirant l'année finale —
+  // peche-glace-lachine-2026 et -2027 partagent leur famille. Déclaré ici
+  // parce que le chargement des fiches, juste dessous, s'en sert déjà.
+  const family = (id) => String(id || "").replace(/-\d{4}$/, "");
+
   // Les tournois assez documentés ont leur propre fiche dans tournois/.
   // La liste est écrite par tools/build-tournament-pages.py; si elle manque,
   // les cartes s'affichent simplement sans le lien.
   let pageIds = new Set();
+  // Notre calendrier parle des éditions 2027, le répertoire tient les fiches
+  // 2026 : « formule-brochet-2027 » ne trouvait donc jamais sa fiche, et le
+  // calendrier ne pointait vers aucune. On retombe sur la famille — le même
+  // événement, une autre année.
+  let pageByFamily = new Map();
+  let historyByFamily = new Map();
   if (pagesUrl) {
     try {
       pageIds = new Set(await (await fetch(pagesUrl, DATA_FETCH)).json());
+      pageIds.forEach((id) => pageByFamily.set(family(id), id));
     } catch (err) { /* pas de fiches, pas de lien */ }
   }
 
-  // Les tournois où l'équipe sera, d'après son propre calendrier. Les deux
-  // fichiers ne parlent pas de la même édition — le répertoire tient 2026, le
-  // calendrier vise 2027 — alors on rapproche les identifiants en retirant
-  // l'année finale : peche-glace-lachine-2026 et -2027 partagent leur famille.
-  const family = (id) => String(id || "").replace(/-\d{4}$/, "");
+  if (historyUrl) {
+    try {
+      const rows = await (await fetch(historyUrl, DATA_FETCH)).json();
+      rows.forEach((r) => {
+        const k = family(r.id);
+        if (!historyByFamily.has(k)) historyByFamily.set(k, []);
+        historyByFamily.get(k).push(r);
+      });
+    } catch (err) { /* pas de palmarès, pas de bandeau */ }
+  }
+
   let attending = new Set();
   if (attendingUrl) {
     try {
@@ -323,16 +346,30 @@ async function initEventList(options) {
       ? `<span class="event-parent">${escapeHTML(tr(parent.name))}</span>`
       : "";
 
+    const cardPage = pageFor(ev);
+    // Sur notre calendrier, tout ce que la fiche redit déjà s'efface : région,
+    // organisateur, frais, format, horaire. Il reste où on va, quand, pour
+    // quelle espèce, et pourquoi nous y allons. Sans fiche où le lire — le
+    // gala n'en a pas — la carte garde tout, sinon l'information disparaîtrait.
+    const trim = lean && cardPage;
+
+    // Un champ bilingue vide reste un objet, donc « truthy » : une entrée sans
+    // espèce — un salon, un gala — affichait un hameçon tout seul. C'est la
+    // valeur traduite qu'il faut peser, pas le champ.
     const metaBits = [];
-    if (ev.location) metaBits.push(`<span>📍 ${escapeHTML(tr(ev.location))}</span>`);
-    if (ev.region) metaBits.push(`<span>${escapeHTML(tr(ev.region))}</span>`);
-    if (ev.species) metaBits.push(`<span>🎣 ${escapeHTML(tr(ev.species))}</span>`);
-    if (ev.organizer) metaBits.push(`<span>${escapeHTML(tr(ev.organizer))}</span>`);
+    const meta = (value, prefix) => {
+      const text = tr(value);
+      if (text) metaBits.push(`<span>${prefix}${escapeHTML(text)}</span>`);
+    };
+    meta(ev.location, "📍 ");
+    if (!trim) meta(ev.region, "");
+    meta(ev.species, "🎣 ");
+    if (!trim) meta(ev.organizer, "");
 
     // Entry fee and team format always show — an unpublished one says so
     // rather than leaving the reader guessing. The rest appear when known.
     const specs = ev.specs || {};
-    const specRows = [
+    const specRows = trim ? "" : [
       { field: "fee", key: "spec.fee", icon: "💵", always: true },
       { field: "teamSize", key: "spec.teamSize", icon: "👥", always: true },
       { field: "maxTeams", key: "spec.maxTeams", icon: "🚩" },
@@ -353,6 +390,7 @@ async function initEventList(options) {
       return out;
     }, []).join("");
 
+
     return `
       <article class="event-card${past || cancelled ? " event-inactive" : ""}${ev.tier === "pro" ? " event-pro" : ""}" id="ev-${escapeHTML(ev.id || "")}">
         <div class="event-date">${dateBadge}</div>
@@ -369,10 +407,11 @@ async function initEventList(options) {
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
           ${deadlineHTML(ev)}
           ${noteHTML(ev)}
+          ${recordHTML(ev)}
         </div>
         <div class="event-cta">
-          ${pageIds.has(ev.id) ? `<a class="btn btn-teal" href="tournois/${escapeHTML(ev.id)}.html">${escapeHTML(t("events.cardPage"))}</a>` : ""}
-          ${ev.link ? `<a class="btn ${pageIds.has(ev.id) ? "btn-ghost" : "btn-teal"}" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
+          ${cardPage ? `<a class="btn btn-teal" href="tournois/${escapeHTML(cardPage)}.html">${escapeHTML(t("events.cardPage"))}</a>` : ""}
+          ${ev.link ? `<a class="btn ${cardPage ? "btn-ghost" : "btn-teal"}" href="${escapeHTML(ev.link)}" target="_blank" rel="noopener">${escapeHTML(t(linkTextKey))}</a>` : ""}
           ${icsHTML(ev)}
         </div>
       </article>
@@ -386,6 +425,28 @@ async function initEventList(options) {
   // Sans fiche où lire la suite, on ne coupe pas : l'information disparaîtrait.
   // La recherche continue de porter sur la note entière — elle lit les données,
   // pas la page.
+  // Notre historique à cet événement : la seule chose que le répertoire ne
+  // pourra jamais dire, puisqu'elle ne regarde que nous.
+  function recordHTML(ev) {
+    const rows = historyByFamily.get(family(ev.id));
+    if (!rows || !rows.length) return "";
+    const places = rows.map((r) => r.placement).filter(Number.isFinite);
+    if (!places.length) return "";
+    const best = Math.min(...places);
+    const field = (rows.find((r) => r.placement === best) || {}).fieldSize;
+    const bits = [
+      `<span><b>${escapeHTML(ordinal(rows.length + 1, PMF_I18N.lang))}</b> ${escapeHTML(t("events.ourNth"))}</span>`,
+      `<span><b>${escapeHTML(placementOf(best, field, PMF_I18N.lang, t("history.of", { n: field })))}</b> ${escapeHTML(t("team.record.best"))}</span>`,
+    ];
+    return `<div class="event-record">${bits.join("")}
+      <a href="history.html">${escapeHTML(t("events.ourResults"))}</a></div>`;
+  }
+
+  function pageFor(ev) {
+    if (pageIds.has(ev.id)) return ev.id;
+    return pageByFamily.get(family(ev.id)) || null;
+  }
+
   const NOTE_LIMIT = 150;
 
   // Une phrase complète se lit mieux qu'une idée tranchée en deux : si une fin
@@ -409,13 +470,15 @@ async function initEventList(options) {
   function noteHTML(ev) {
     const notes = tr(ev.notes);
     if (!notes) return "";
+    const page = pageFor(ev);
     // Sans fiche où lire la suite, couper ferait disparaître l'information.
-    if (!pageIds.has(ev.id) || notes.length <= NOTE_LIMIT) {
+    // Sur notre calendrier la note est la nôtre : on ne la coupe jamais.
+    if (lean || !page || notes.length <= NOTE_LIMIT) {
       return `<p class="event-notes">${escapeHTML(notes)}</p>`;
     }
     const ex = excerpt(notes);
     return `<p class="event-notes">${escapeHTML(ex.text)}${ex.cut ? "…" : ""}
-      <a class="event-more" href="tournois/${escapeHTML(ev.id)}.html">${escapeHTML(t("events.readMore"))}</a></p>`;
+      <a class="event-more" href="tournois/${escapeHTML(page)}.html">${escapeHTML(t("events.readMore"))}</a></p>`;
   }
 
   // Stops nest inside their circuit so a series reads as one thing rather
