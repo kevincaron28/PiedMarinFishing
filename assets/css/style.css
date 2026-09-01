@@ -2379,3 +2379,11 @@ body.has-lightbox { overflow: hidden; }
   .bp-progress { flex-wrap: wrap; gap: 8px; }
   .bp-progress-track { flex-basis: 100%; }
 }
+
+/* « lire la suite » prolonge la phrase coupée : il reste dans le fil du
+   texte plutôt que de devenir un bouton de plus sur la carte. */
+.event-more {
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--teal-700);
+}

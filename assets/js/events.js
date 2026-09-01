@@ -353,8 +353,6 @@ async function initEventList(options) {
       return out;
     }, []).join("");
 
-    const notes = tr(ev.notes);
-
     return `
       <article class="event-card${past || cancelled ? " event-inactive" : ""}${ev.tier === "pro" ? " event-pro" : ""}" id="ev-${escapeHTML(ev.id || "")}">
         <div class="event-date">${dateBadge}</div>
@@ -370,7 +368,7 @@ async function initEventList(options) {
           <div class="event-meta">${metaBits.join("")}</div>
           ${specRows ? `<div class="event-specs">${specRows}</div>` : ""}
           ${deadlineHTML(ev)}
-          ${notes ? `<p class="event-notes">${escapeHTML(notes)}</p>` : ""}
+          ${noteHTML(ev)}
         </div>
         <div class="event-cta">
           ${pageIds.has(ev.id) ? `<a class="btn btn-teal" href="tournois/${escapeHTML(ev.id)}.html">${escapeHTML(t("events.cardPage"))}</a>` : ""}
@@ -379,6 +377,45 @@ async function initEventList(options) {
         </div>
       </article>
     `;
+  }
+
+  // Le guide disait la note au complet, et la fiche la redisait mot pour mot :
+  // qui avait lu le guide n'avait plus aucune raison d'ouvrir une fiche. Le
+  // guide n'en garde donc qu'une amorce, et le lien mène au reste.
+  //
+  // Sans fiche où lire la suite, on ne coupe pas : l'information disparaîtrait.
+  // La recherche continue de porter sur la note entière — elle lit les données,
+  // pas la page.
+  const NOTE_LIMIT = 150;
+
+  // Une phrase complète se lit mieux qu'une idée tranchée en deux : si une fin
+  // de phrase tombe dans la fenêtre et pas trop tôt, on coupe là et le point
+  // suffit. Sinon on coupe au mot, avec les points de suspension.
+  function excerpt(text) {
+    const window = text.slice(0, NOTE_LIMIT);
+    const stop = Math.max(window.lastIndexOf(". "), window.lastIndexOf("! "),
+                          window.lastIndexOf("? "));
+    if (stop >= NOTE_LIMIT * 0.45) return { text: window.slice(0, stop + 1), cut: false };
+
+    let out = window.replace(/\s+\S*$/, "");
+    // « a distribué plus de 10 000 $ » coupé après « 10 » annonce un autre
+    // montant : on laisse tomber le nombre entamé plutôt que de le trahir.
+    if (/\d$/.test(out) && /^[\s\u00a0\u202f]*\d/.test(text.slice(out.length))) {
+      out = out.replace(/[\s\u00a0\u202f]*\S+$/, "");
+    }
+    return { text: out.replace(/[\s,;:.\u2014\u2013-]+$/, ""), cut: true };
+  }
+
+  function noteHTML(ev) {
+    const notes = tr(ev.notes);
+    if (!notes) return "";
+    // Sans fiche où lire la suite, couper ferait disparaître l'information.
+    if (!pageIds.has(ev.id) || notes.length <= NOTE_LIMIT) {
+      return `<p class="event-notes">${escapeHTML(notes)}</p>`;
+    }
+    const ex = excerpt(notes);
+    return `<p class="event-notes">${escapeHTML(ex.text)}${ex.cut ? "…" : ""}
+      <a class="event-more" href="tournois/${escapeHTML(ev.id)}.html">${escapeHTML(t("events.readMore"))}</a></p>`;
   }
 
   // Stops nest inside their circuit so a series reads as one thing rather
