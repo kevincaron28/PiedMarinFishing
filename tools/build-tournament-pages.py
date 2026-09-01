@@ -320,7 +320,15 @@ def related(ev, kept):
                 and pick(other.get(field), "fr") == pick(ev.get(field), "fr"))
 
     pool = [e for e in kept if e["id"] != ev["id"]]
-    ranked = ([e for e in pool if same("region", e)]
+    # Un salon proposait « d'autres tournois » et jamais d'autres salons, si
+    # bien que les trois fiches de salons 2027 n'avaient aucun lien entrant :
+    # le sélecteur de saison du guide s'ouvre sur 2026, et un robot ne clique
+    # pas. Les types distinctifs se rangent donc entre eux d'abord.
+    kind = ev.get("kind") or ""
+    kin = ([e for e in pool if (e.get("kind") or "") == kind]
+           if kind in ("show", "circuit") else [])
+    ranked = (kin
+              + [e for e in pool if same("region", e)]
               + [e for e in pool if same("species", e) and not same("region", e)]
               + pool)
     out, seen = [], set()
@@ -440,7 +448,8 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
                                   "en": date_phrase(p, "en") or pick(p.get("region"), "en")},
                          "tp-related-meta"))
             for p in peers)
-        body.append(section({"fr": ui["fr"]["tp.related"], "en": ui["en"]["tp.related"]},
+        rel_key = "tp.relatedShows" if ev.get("kind") == "show" else "tp.related"
+        body.append(section({"fr": ui["fr"][rel_key], "en": ui["en"][rel_key]},
                             '<ul class="tp-related">%s</ul>' % rows, alt=True))
 
     cta = []

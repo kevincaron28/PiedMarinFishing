@@ -2,13 +2,13 @@
 // Each card carries the angler's specs plus a record strip summarising their
 // results, which deep-links into the palmarès page.
 
+// Deux specs seulement : le plan d'eau et l'espèce disent qui est le pêcheur
+// d'un coup d'œil, ce qui est le travail d'une carte. Les quatre autres —
+// technique, prise de rêve, record personnel, depuis quand — vivent sur sa
+// fiche, avec la bio. Les répéter ici rendait la fiche inutile à ouvrir.
 const SPEC_FIELDS = [
   { field: "homeWater", key: "team.spec.homeWater", icon: "🌊" },
   { field: "species", key: "team.spec.species", icon: "🐟" },
-  { field: "technique", key: "team.spec.technique", icon: "🎯" },
-  { field: "dreamCatch", key: "team.spec.dreamCatch", icon: "⭐" },
-  { field: "personalBest", key: "team.spec.personalBest", icon: "🏅" },
-  { field: "since", key: "team.spec.since", icon: "📅" },
 ];
 
 async function initTeam(gridSelector) {
@@ -39,7 +39,6 @@ async function initTeam(gridSelector) {
       const name = tr(m.name) || "?";
       const initials = (m.initials || name).toString().slice(0, 2).toUpperCase();
       const role = tr(m.role);
-      const bio = tr(m.bio);
       // Une vraie photo remplace les initiales; sinon la carte garde son écusson.
       const photoAlt = tr(m.photoAlt) || name;
       const photoBlock = m.photo
@@ -51,18 +50,15 @@ async function initTeam(gridSelector) {
 
       const specs = m.specs || {};
 
-      // Empty fields are slots waiting to be filled, not broken cards.
-      const bioBlock = bio
-        ? `<p>${escapeHTML(bio)}</p>`
-        : `<p class="member-bio-empty">${escapeHTML(t("team.bioPlaceholder"))}</p>`;
-
-      // Every spec row is always shown so the card doubles as a fill-in sheet.
+      // Une rangée vide ne s'écrit plus : la carte est une porte d'entrée,
+      // pas une feuille à remplir — c'est la fiche qui porte le détail.
       const specRows = SPEC_FIELDS.map(({ field, key, icon }) => {
         const value = tr(specs[field]);
+        if (!value) return "";
         return `
-          <div class="spec-row${value ? "" : " spec-empty"}">
+          <div class="spec-row">
             <dt><span class="spec-icon" aria-hidden="true">${icon}</span>${escapeHTML(t(key))}</dt>
-            <dd>${value ? escapeHTML(value) : "—"}</dd>
+            <dd>${escapeHTML(value)}</dd>
           </div>
         `;
       }).join("");
@@ -87,18 +83,12 @@ async function initTeam(gridSelector) {
         recordBits.push(`<span><b>${mine2.length}</b> ${escapeHTML(plural("team.catchCount", mine2.length))}</span>`);
       }
 
-      const catchLink = m.id && mine2.length
-        ? `<a class="member-history-link" href="catches.html?angler=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewCatches"))}</a>`
-        : "";
 
-      // La fiche a sa propre adresse — c'est elle qu'un pêcheur colle dans une
-      // candidature de pro staff, alors elle passe en premier.
+      // Un seul lien : la fiche. Elle mène déjà aux résultats et aux prises,
+      // alors les proposer aussi ici encombrait la carte de trois liens pour
+      // deux destinations déjà atteignables d'un clic de plus.
       const profileLink = m.id
         ? `<a class="member-history-link member-profile-link" href="pecheurs/${encodeURIComponent(m.id)}.html">${escapeHTML(t("team.viewProfile"))}</a>`
-        : "";
-
-      const historyLink = m.id
-        ? `<a class="member-history-link" href="history.html?member=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewResults"))}</a>`
         : "";
 
       return `
@@ -107,12 +97,9 @@ async function initTeam(gridSelector) {
           <div class="member-body">
             ${role ? `<span class="member-role">${escapeHTML(role)}</span>` : ""}
             <h2>${escapeHTML(name)}</h2>
-            ${bioBlock}
             <dl class="member-specs">${specRows}</dl>
             <div class="member-record">${recordBits.join("")}</div>
             ${profileLink}
-            ${historyLink}
-            ${catchLink}
           </div>
         </div>
       `;

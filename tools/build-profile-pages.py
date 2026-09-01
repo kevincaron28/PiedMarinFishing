@@ -386,8 +386,14 @@ def render_angler(m, ui, results, catches, boats, tp_index):
                   bilingual("span", c.get("measure"), "ap-catch-measure")
                   if pick(c.get("measure"), "fr") else ""))
             for c in mine_catches)
+        # Le même lien nommé que la section des résultats : une vignette
+        # cliquable ne dit pas où elle mène.
+        more = ('<a class="member-history-link" href="catches.html?angler=%s">%s</a>'
+                % (esc(m["id"]), bilingual("span", {"fr": ui["fr"]["team.viewCatches"],
+                                                    "en": ui["en"]["team.viewCatches"]})))
         body.append(section({"fr": ui["fr"]["ap.catches"], "en": ui["en"]["ap.catches"]},
-                            '<div class="ap-catches">%s</div>' % cards, key="ap.catches"))
+                            '<div class="ap-catches">%s</div>%s' % (cards, more),
+                            key="ap.catches"))
 
     # Son bateau — celui qu'il barre, sinon celui qu'il possède.
     his = ([b for b in boats if b.get("skipper") == m["id"]]

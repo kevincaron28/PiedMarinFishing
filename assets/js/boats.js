@@ -2,12 +2,11 @@
 // Rendered as a section on the team page. A boat's `skipper` holds a member
 // id, which links the card back to that angler.
 
+// Le modèle et l'année sont déjà dans le nom du bateau, et la longueur ne
+// distingue pas deux coques identiques : la carte garde donc ce qui les
+// sépare vraiment — le moteur et l'électronique. Le reste est sur la fiche.
 const BOAT_SPEC_FIELDS = [
-  { field: "model", key: "boats.spec.model" },
-  { field: "year", key: "boats.spec.year" },
-  { field: "length", key: "boats.spec.length" },
   { field: "engine", key: "boats.spec.engine" },
-  { field: "trolling", key: "boats.spec.trolling" },
   { field: "electronics", key: "boats.spec.electronics" },
 ];
 
@@ -35,15 +34,15 @@ async function initBoats(selector) {
   function render() {
     host.innerHTML = boats.map((b) => {
       const name = tr(b.name) || "—";
-      const description = tr(b.description);
       const specs = b.specs || {};
 
       const specRows = BOAT_SPEC_FIELDS.map(({ field, key }) => {
         const value = tr(specs[field]);
+        if (!value) return "";
         return `
-          <div class="spec-row${value ? "" : " spec-empty"}">
+          <div class="spec-row">
             <dt>${escapeHTML(t(key))}</dt>
-            <dd>${value ? escapeHTML(value) : "—"}</dd>
+            <dd>${escapeHTML(value)}</dd>
           </div>
         `;
       }).join("");
@@ -86,9 +85,6 @@ async function initBoats(selector) {
           <div class="boat-body">
             ${statusBadge}
             <h3>${escapeHTML(name)}</h3>
-            ${description
-              ? `<p>${escapeHTML(description)}</p>`
-              : `<p class="member-bio-empty">${escapeHTML(t("boats.descPlaceholder"))}</p>`}
             <dl class="member-specs boat-specs">${specRows}</dl>
             ${skipperRow}
             ${pageLink}
