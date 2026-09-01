@@ -2076,5 +2076,65 @@
     },
     "tier": "regional",
     "kind": "single"
+  },
+  {
+    "id": "challenge-crystal-cup-2026",
+    "name": {
+      "fr": "Challenge Crystal Cup",
+      "en": "Crystal Cup Challenge"
+    },
+    "startDate": "2026-10-03",
+    "endDate": "2026-10-03",
+    "region": {
+      "fr": "Frontière Québec–Ontario",
+      "en": "Québec–Ontario border"
+    },
+    "location": {
+      "fr": "Rivière des Outaouais, entre Gatineau et le barrage Carillon — mises à l'eau à l'île du Chenail et au parc Cyr-de-Lasalle, Hawkesbury (Ontario)",
+      "en": "Ottawa River, between Gatineau and the Carillon dam — launches at Île du Chenail and Parc Cyr-de-Lasalle, Hawkesbury, Ontario"
+    },
+    "species": {
+      "fr": "Maskinongé",
+      "en": "Muskie"
+    },
+    "organizer": {
+      "fr": "Muskies Canada — section Montréal",
+      "en": "Muskies Canada — Montréal chapter"
+    },
+    "type": {
+      "fr": "Finale du circuit CMCM",
+      "en": "CMCM circuit finale"
+    },
+    "status": "confirmed",
+    "link": "https://muskiescanada.ca/montreal/",
+    "notes": {
+      "fr": "Dernière étape du circuit Muskies Canada Montréal. La section de Montréal y rencontre celle d'Ottawa. Retour cette année à l'ancienne formule : la Crystal Cup revient à la section qui cumule le plus de pouces de maskinongé, au prorata du nombre de pêcheurs qui la représentent; le trophée Swan va au membre de MCI qui prend le plus long poisson. Souper après la pêche au club de golf La Cité, 850 rue McGill, Hawkesbury. Deux choses à savoir avant de s'inscrire : un non-membre doit pêcher avec un membre en règle de Muskies Canada, et tous les pêcheurs à bord doivent acheter leur billet et signer le formulaire de renonciation. Les permis de pêche du Québec et de l'Ontario sont tous deux valables sur cette section de la rivière. Une vignette de stationnement gratuite est à imprimer et à poser sur le tableau de bord, sinon amende. Les prises s'enregistrent au restaurant ou par courriel avant 17 h, photo à l'appui avec le mot secret dévoilé la veille.",
+      "en": "Final leg of the Muskies Canada Montréal circuit, where the Montréal chapter meets Ottawa's. This year returns to the old format: the Crystal Cup goes to the chapter with the most combined inches of muskie, pro-rated by how many anglers represent it; the Swan Trophy goes to the MCI member with the longest fish. Dinner after fishing at Club de golf La Cité, 850 rue McGill, Hawkesbury. Two things to know before entering: a non-member must fish with a Muskies Canada member in good standing, and every angler aboard must buy a ticket and sign the waiver. Québec and Ontario fishing licences are both valid on this stretch of the river. A free parking permit must be printed and placed on the dashboard or you risk a fine. Catches are registered at the restaurant or by email before 5 p.m., with a photo showing the secret word revealed the night before."
+    },
+    "specs": {
+      "fee": {
+        "fr": "85 $ — 55 $ pour les 17 ans et moins",
+        "en": "$85 — $55 for ages 17 and under"
+      },
+      "teamSize": {
+        "fr": "Individuel — un non-membre doit être accompagné d'un membre",
+        "en": "Individual — a non-member must fish with a member"
+      },
+      "hours": {
+        "fr": "7 h à 16 h",
+        "en": "7 a.m. to 4 p.m."
+      },
+      "deadline": {
+        "fr": "Inscription jusqu'au 1er octobre 2026, 21 h",
+        "en": "Registration until 1 October 2026, 9 p.m."
+      },
+      "deadlineDate": "2026-10-01",
+      "format": {
+        "fr": "Maskinongé — pouces cumulés par section, au prorata des pêcheurs",
+        "en": "Muskie — combined inches per chapter, pro-rated by angler count"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
   }
 ]
