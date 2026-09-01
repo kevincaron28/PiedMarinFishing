@@ -31,9 +31,8 @@ async function initWhatsNew(options) {
   const today = new Date().toISOString().slice(0, 10);
   // Une date partielle ("2027", "2027-05") se compare bien en texte tant qu'on
   // la complète : "2027" devient "2027-99" pour trier après les mois connus.
-  const sortable = (d) => (d || "").padEnd(10, "9");
   const newest = (rows, key) =>
-    rows.filter((r) => r[key]).sort((a, b) => sortable(b[key]).localeCompare(sortable(a[key])))[0];
+    rows.filter((r) => r[key]).sort((a, b) => sortableDate(b[key]).localeCompare(sortableDate(a[key])))[0];
 
   const cards = [];
 
@@ -57,15 +56,9 @@ async function initWhatsNew(options) {
   // l'organisateur n'a pas encore publié sa date, on ordonne sur le mois et le
   // jour de l'édition précédente (previousDate). C'est une estimation, et elle
   // ne sert qu'au classement — jamais affichée comme si c'était la date 2027.
-  const orderKey = (e) => {
-    const start = e.startDate || "";
-    if (/^\d{4}$/.test(start) && /^\d{4}-\d{2}-\d{2}$/.test(e.previousDate || "")) {
-      return start + e.previousDate.slice(4);
-    }
-    return sortable(start);
-  };
+  const orderKey = eventOrderKey;
   const next = schedule
-    .filter((e) => e.startDate && sortable(e.endDate || e.startDate) >= today)
+    .filter((e) => e.startDate && sortableDate(e.endDate || e.startDate) >= today)
     .sort((a, b) => orderKey(a).localeCompare(orderKey(b)))[0];
   if (next) {
     // "2027" tout court ne dit rien d'utile : on l'annonce comme à confirmer.

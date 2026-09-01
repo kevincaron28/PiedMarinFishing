@@ -229,5 +229,124 @@
         "en": "Biggest bag of 4 bass"
       }
     }
+  },
+  {
+    "id": "gala-baitfuel-2027",
+    "kind": "single",
+    "tier": "regional",
+    "name": "Gala BaitFuel 2027",
+    "startDate": "2027",
+    "previousDate": "2026-05-01",
+    "endDate": "2027",
+    "region": {
+      "fr": "Laval",
+      "en": "Laval"
+    },
+    "location": {
+      "fr": "Thomas Marine, Laval",
+      "en": "Thomas Marine, Laval"
+    },
+    "species": {
+      "fr": "",
+      "en": ""
+    },
+    "organizer": "",
+    "type": {
+      "fr": "Gala",
+      "en": "Gala"
+    },
+    "status": "tentative",
+    "link": "",
+    "notes": {
+      "fr": "Le gala qui précède le Formule Brochet : il se tient le vendredi soir, la veille du tournoi du samedi. Les trois dernières éditions ont eu lieu chez Thomas Marine à Laval. La date 2027 suit celle du tournoi — si le Formule Brochet tombe le 1er mai comme le laissent croire les trois dernières éditions, le gala serait le 30 avril. À confirmer.",
+      "en": "The gala that comes before Formule Brochet: it runs on the Friday evening, the night before Saturday's tournament. The last three editions were held at Thomas Marine in Laval. The 2027 date follows the tournament's — if Formule Brochet lands on 1 May, as the last three editions suggest, the gala would be 30 April. To be confirmed."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  },
+  {
+    "id": "salon-bateau-montreal-2027",
+    "kind": "single",
+    "tier": "regional",
+    "name": "Salon du bateau de Montréal 2027",
+    "startDate": "2027",
+    "previousDate": "2026-02-12",
+    "endDate": "2027",
+    "region": {
+      "fr": "Montréal",
+      "en": "Montréal"
+    },
+    "location": {
+      "fr": "Palais des congrès de Montréal",
+      "en": "Palais des congrès de Montréal"
+    },
+    "species": {
+      "fr": "",
+      "en": ""
+    },
+    "organizer": "Nautisme Québec",
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "tentative",
+    "link": "https://salondubateau.com/",
+    "notes": {
+      "fr": "Les dates 2027 ne sont pas publiées. L'édition 2026 s'est tenue du 12 au 15 février au Palais des congrès. À confirmer auprès de l'organisateur.",
+      "en": "The 2027 dates aren't published yet. The 2026 edition ran 12–15 February at the Palais des congrès. Confirm with the organizer."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "",
+        "en": ""
+      }
+    }
+  },
+  {
+    "id": "salon-plein-air-saint-hyacinthe-2027",
+    "kind": "single",
+    "tier": "regional",
+    "name": "Salon plein air, chasse, pêche et camping de Saint-Hyacinthe 2027",
+    "startDate": "2027-02-19",
+    "endDate": "2027-02-21",
+    "region": {
+      "fr": "Montérégie",
+      "en": "Montérégie"
+    },
+    "location": {
+      "fr": "Espace Saint-Hyacinthe, 2670 avenue Beauparlant, Saint-Hyacinthe",
+      "en": "Espace Saint-Hyacinthe, 2670 avenue Beauparlant, Saint-Hyacinthe"
+    },
+    "species": {
+      "fr": "",
+      "en": ""
+    },
+    "organizer": "Salon plein air Saint-Hyacinthe",
+    "type": {
+      "fr": "Salon",
+      "en": "Show"
+    },
+    "status": "",
+    "link": "https://www.salonpleinairsh.ca/",
+    "notes": {
+      "fr": "Trois jours de salon en Montérégie, à vingt minutes de nos plans d'eau. Dates confirmées par l'organisateur.",
+      "en": "Three days of show in the Montérégie, twenty minutes from our home water. Dates confirmed by the organizer."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": "",
+      "format": {
+        "fr": "",
+        "en": ""
+      }
+    }
   }
 ]

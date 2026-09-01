@@ -137,3 +137,23 @@ function queryParam(name) {
     return "";
   }
 }
+
+// Une date partielle se compare en la complétant : « 2027 » devient
+// « 2027999999 », donc après tout ce qui est daté dans l'année.
+function sortableDate(d) {
+  return (d || "").padEnd(10, "9");
+}
+
+// Le classement d'un événement dont la date n'est pas encore publiée.
+// Une entrée « 2027 » toute seule n'a pas de mois, alors six d'entre elles
+// se retrouvaient à égalité et s'affichaient dans l'ordre du fichier — un
+// gala de mai avant un salon de février. Quand previousDate donne la date de
+// la dernière édition, on emprunte son mois et son jour pour classer, sans
+// jamais prétendre connaître la date à venir : previousDate ne sert qu'ici.
+function eventOrderKey(ev) {
+  const start = ev.startDate || "";
+  if (/^\d{4}$/.test(start) && /^\d{4}-\d{2}-\d{2}$/.test(ev.previousDate || "")) {
+    return start + ev.previousDate.slice(4);
+  }
+  return sortableDate(start);
+}

@@ -360,12 +360,16 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
     # encore les éditions 2026, et l'équipe vise les 2027.
     upcoming = (ev.get("endDate") or ev.get("startDate") or "9999") >= TODAY
     if family(ev.get("id")) in attending and upcoming:
+        # « Ce tournoi est à notre calendrier » sur la fiche d'un salon disait
+        # le mauvais mot, et le quai n'y est pour rien non plus.
+        body_key = ("tp.weAttendBodyShow" if ev.get("kind") == "show"
+                    else "tp.weAttendBody")
         body.append(
             '<section><div class="container"><div class="notice notice-ours">'
             "<strong>%s</strong> %s</div></div></section>"
             % (bilingual("span", {"fr": ui["fr"]["tp.weAttend"], "en": ui["en"]["tp.weAttend"]}),
-               bilingual("span", {"fr": ui["fr"]["tp.weAttendBody"],
-                                  "en": ui["en"]["tp.weAttendBody"]})))
+               bilingual("span", {"fr": ui["fr"][body_key],
+                                  "en": ui["en"][body_key]})))
     if ev.get("status") == "cancelled":
         body.append('<section><div class="container"><div class="notice notice-cancelled">%s</div></div></section>'
                     % bilingual("span", {"fr": ui["fr"]["tp.cancelled"],

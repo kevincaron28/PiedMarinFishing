@@ -40,7 +40,7 @@ async function initEventList(options) {
     return;
   }
 
-  events.sort((a, b) => (a.startDate || "9999").localeCompare(b.startDate || "9999"));
+  events.sort((a, b) => eventOrderKey(a).localeCompare(eventOrderKey(b)));
 
   // Les tournois assez documentés ont leur propre fiche dans tournois/.
   // La liste est écrite par tools/build-tournament-pages.py; si elle manque,
