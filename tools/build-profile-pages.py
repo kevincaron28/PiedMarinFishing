@@ -481,7 +481,11 @@ def render_boat(b, ui, members_by_id):
     # n'existe pas — comme partout ailleurs sur le site.
     entries = [e for e in (resto.get("entries") or []) if pick(e.get("title"), "fr")
                or pick(e.get("body"), "fr")]
-    if entries:
+    # Un chantier annoncé mais sans entrée n'aurait qu'une pastille et rien
+    # d'autre : l'intro dit où le bateau en est en attendant la première photo.
+    intro = (bilingual("p", resto.get("intro"), "bp-intro")
+             if pick(resto.get("intro"), "fr") else "")
+    if entries or intro:
         items = []
         for e in sorted(entries, key=lambda x: x.get("date") or "", reverse=True):
             when = {lang: long_date(e.get("date"), lang) for lang in ("fr", "en")}
@@ -492,8 +496,9 @@ def render_boat(b, ui, members_by_id):
                    bilingual("h3", e.get("title"), "bp-log-title") if pick(e.get("title"), "fr") else "",
                    bilingual("p", e.get("body"), "bp-log-body") if pick(e.get("body"), "fr") else "",
                    gallery_html(photos, pick(e.get("title"), "fr") or pick(b.get("name"), "fr"))))
+        log = '<ol class="bp-log">%s</ol>' % "".join(items) if items else ""
         body.append(section({"fr": ui["fr"]["bp.restoration"], "en": ui["en"]["bp.restoration"]},
-                            '<ol class="bp-log">%s</ol>' % "".join(items), key="bp.restoration"))
+                            intro + log, key="bp.restoration"))
 
     body.append('<section><div class="container"><div class="callout-actions">'
                 '<a class="btn btn-ghost" href="team.html#bateaux">%s</a></div></div></section>'

@@ -45,10 +45,17 @@ async function initFeaturedVideo(selector) {
     return data.orientation === "portrait" ? " video-portrait" : "";
   }
 
-  function renderPlaceholder() {
-    const channel = data.channelUrl
-      ? `<a href="${escapeHTML(data.channelUrl)}" target="_blank" rel="noopener">${escapeHTML(t("video.watchChannel"))}</a>`
+  // Le lien vers la chaîne, en bouton. Il n'existait que dans le substitut :
+  // dès qu'une vidéo était en vedette, l'accueil montrait un extrait sans
+  // offrir nulle part où aller ensuite.
+  function channelBtn(label, cls) {
+    return data.channelUrl
+      ? `<a class="btn ${cls}" href="${escapeHTML(data.channelUrl)}" target="_blank" rel="noopener">${escapeHTML(t(label))}</a>`
       : "";
+  }
+
+  function renderPlaceholder() {
+    const channel = channelBtn("video.watchChannel", "btn-teal");
     host.innerHTML = `
       <div class="video-frame${frameClass()}">
         <div class="video-placeholder">
@@ -73,6 +80,7 @@ async function initFeaturedVideo(selector) {
         </button>
       </div>
       ${title ? `<div class="video-caption">${escapeHTML(title)}</div>` : ""}
+      <div class="video-cta">${channelBtn("video.subscribe", "btn-teal")}</div>
     `;
 
     host.querySelector(".video-facade").addEventListener("click", (ev) => {

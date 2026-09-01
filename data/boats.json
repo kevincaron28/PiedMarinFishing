@@ -67,7 +67,11 @@
     },
     "gallery": [],
     "restoration": {
-      "status": "",
+      "status": "restoration",
+      "intro": {
+        "fr": "Le bateau sert encore à chaque sortie — la restauration se fait entre les sorties, avec un objectif : le rendre prêt pour la compétition.",
+        "en": "The boat is still out on every trip — the restoration happens between outings, with one goal: getting it tournament-ready."
+      },
       "entries": []
     }
   }
