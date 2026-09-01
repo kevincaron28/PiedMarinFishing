@@ -426,6 +426,41 @@ def render_angler(m, ui, results, catches, boats, tp_index):
     }
 
 
+def tasks_html(tasks, ui):
+    """Le chantier en deux colonnes : ce qui est fait, ce qu'il reste.
+
+    Kevin a donné une liste, pas un journal — la rendre en entrées datées
+    aurait demandé d'inventer des dates. Une liste dit d'ailleurs mieux ce
+    qu'un chantier a de particulier : où il en est, et où il s'en va.
+    """
+    if not tasks:
+        return ""
+    done = [t for t in tasks if t.get("done")]
+    todo = [t for t in tasks if not t.get("done")]
+    pct = int(round(100.0 * len(done) / len(tasks)))
+
+    def column(rows, key, cls):
+        if not rows:
+            return ""
+        items = "".join("<li>%s</li>" % bilingual("span", t.get("label")) for t in rows)
+        return ('<div class="bp-task-col %s">%s<ul>%s</ul></div>'
+                % (cls, bilingual("h3", {"fr": ui["fr"][key], "en": ui["en"][key]},
+                                  "bp-task-head"), items))
+
+    label = {lang: ui[lang]["bp.progress"].replace("{done}", str(len(done)))
+                                          .replace("{total}", str(len(tasks)))
+             for lang in ("fr", "en")}
+    # aria-hidden sur la barre : le compte est déjà écrit juste à côté, en
+    # toutes lettres. La répéter n'ajouterait rien à la lecture vocale.
+    bar = ('<div class="bp-progress">%s'
+           '<div class="bp-progress-track" aria-hidden="true">'
+           '<span class="bp-progress-fill" style="width:%d%%"></span></div></div>'
+           % (bilingual("span", label, "bp-progress-label"), pct))
+    return ("%s<div class=\"bp-tasks\">%s%s</div>"
+            % (bar, column(done, "bp.tasksDone", "is-done"),
+               column(todo, "bp.tasksTodo", "is-todo")))
+
+
 def render_boat(b, ui, members_by_id):
     title = {lang: clamp_title(pick(b.get("name"), lang)) for lang in ("fr", "en")}
     desc = {lang: boat_description(b, lang, ui) for lang in ("fr", "en")}
@@ -485,7 +520,9 @@ def render_boat(b, ui, members_by_id):
     # d'autre : l'intro dit où le bateau en est en attendant la première photo.
     intro = (bilingual("p", resto.get("intro"), "bp-intro")
              if pick(resto.get("intro"), "fr") else "")
-    if entries or intro:
+    tasks = tasks_html([t for t in (resto.get("tasks") or [])
+                        if pick(t.get("label"), "fr")], ui)
+    if entries or intro or tasks:
         items = []
         for e in sorted(entries, key=lambda x: x.get("date") or "", reverse=True):
             when = {lang: long_date(e.get("date"), lang) for lang in ("fr", "en")}
@@ -498,7 +535,7 @@ def render_boat(b, ui, members_by_id):
                    gallery_html(photos, pick(e.get("title"), "fr") or pick(b.get("name"), "fr"))))
         log = '<ol class="bp-log">%s</ol>' % "".join(items) if items else ""
         body.append(section({"fr": ui["fr"]["bp.restoration"], "en": ui["en"]["bp.restoration"]},
-                            intro + log, key="bp.restoration"))
+                            intro + tasks + log, key="bp.restoration"))
 
     body.append('<section><div class="container"><div class="callout-actions">'
                 '<a class="btn btn-ghost" href="team.html#bateaux">%s</a></div></div></section>'

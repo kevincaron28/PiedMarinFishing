@@ -2312,3 +2312,75 @@ body.has-lightbox { overflow: hidden; }
   line-height: 1.7;
   color: var(--ink-600);
 }
+
+/* ---------- Chantier : la liste fait / à faire ---------- */
+
+.bp-progress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.bp-progress-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--teal-700);
+  white-space: nowrap;
+}
+.bp-progress-track {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(16, 32, 47, 0.1);
+  overflow: hidden;
+}
+.bp-progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--teal-500);
+}
+
+.bp-tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.bp-task-col {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+.bp-task-head {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.bp-task-col ul { list-style: none; margin: 0; padding: 0; }
+.bp-task-col li {
+  position: relative;
+  padding: 7px 0 7px 28px;
+  color: var(--navy-900);
+  line-height: 1.5;
+}
+/* La pastille porte le sens, alors elle n'est pas décorative : chaque item
+   annonce lui-même s'il est fait ou non, sans dépendre de sa colonne. */
+.bp-task-col li::before {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  font-weight: 700;
+}
+.bp-task-col.is-done li::before { content: "✓"; color: var(--teal-600); }
+.bp-task-col.is-todo li::before { content: "○"; color: var(--gold-700); }
+.bp-task-col.is-todo li { color: var(--ink-600); }
+
+@media (max-width: 560px) {
+  .bp-progress { flex-wrap: wrap; gap: 8px; }
+  .bp-progress-track { flex-basis: 100%; }
+}

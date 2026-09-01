@@ -72,6 +72,78 @@
         "fr": "Le bateau sert encore à chaque sortie — la restauration se fait entre les sorties, avec un objectif : le rendre prêt pour la compétition.",
         "en": "The boat is still out on every trip — the restoration happens between outings, with one goal: getting it tournament-ready."
       },
+      "tasks": [
+        {
+          "label": {
+            "fr": "Plateforme avant",
+            "en": "Front casting deck"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Lumières de navigation",
+            "en": "Navigation lights"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Panneau d'interrupteurs",
+            "en": "Switch panel"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Lumières de courtoisie",
+            "en": "Courtesy lights"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Pompe de cale",
+            "en": "Bilge pump"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Filage électrique refait au complet",
+            "en": "Wiring redone throughout"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Planchers et tapis",
+            "en": "Flooring and carpet"
+          },
+          "done": false
+        },
+        {
+          "label": {
+            "fr": "Sièges",
+            "en": "Seats"
+          },
+          "done": false
+        },
+        {
+          "label": {
+            "fr": "Vivier",
+            "en": "Livewell"
+          },
+          "done": false
+        },
+        {
+          "label": {
+            "fr": "Moteur électrique",
+            "en": "Trolling motor"
+          },
+          "done": false
+        }
+      ],
       "entries": []
     }
   }
