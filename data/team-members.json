@@ -60,6 +60,16 @@
       },
       {
         "label": {
+          "fr": "Ligne",
+          "en": "Line"
+        },
+        "value": {
+          "fr": "Tresse 20 lb, bas de ligne fluorocarbone 8 à 12 lb selon la situation",
+          "en": "20 lb braid, 8–12 lb fluorocarbon leader depending on the situation"
+        }
+      },
+      {
+        "label": {
           "fr": "Leurre de prédilection",
           "en": "Go-to lure"
         },
