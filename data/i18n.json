@@ -157,7 +157,6 @@
     "events.cancelled": "Annulé",
     "events.past": "Passé",
     "tournaments.res5": "Circuit Excellence Bass et tournois du club de Coteau-du-Lac.",
-    "tournaments.res6": "Programme jeunesse et championnat provincial de la Fédération québécoise des chasseurs et pêcheurs.",
     "spec.fee": "Prix",
     "spec.teamSize": "Format",
     "spec.maxTeams": "Équipes max",
@@ -315,7 +314,13 @@
     "videos.title": "Nos vidéos",
     "videos.intro": "Sorties, tournois et coulisses. Chaque vignette ouvre la vidéo sur YouTube.",
     "videos.untitled": "Vidéo sans titre",
-    "catches.watchVideo": "Voir la vidéo"
+    "catches.watchVideo": "Voir la vidéo",
+    "tournaments.orgKicker": "Le monde de la pêche au Québec",
+    "tournaments.orgTitle": "Fédérations et associations",
+    "tournaments.orgBody": "Ces organismes ne tiennent pas qu'un calendrier : ils défendent l'accès à l'eau, font de la recherche et organisent une partie des tournois listés ici. Vaut la peine de les connaître.",
+    "tournaments.org1": "Conservation et recherche sur le maskinongé, à l'échelle du pays. Sa section de Montréal tient son propre circuit, le CMCM, dont la finale — le Challenge Crystal Cup — est au calendrier ci-dessus.",
+    "tournaments.org2": "La fédération provinciale des chasseurs et pêcheurs. Elle tient les Jeux provinciaux de pêche et un programme jeunesse, tous deux au répertoire.",
+    "tournaments.org3": "Vouée à l'accès équitable aux plans d'eau publics du Québec. Elle coprésente aussi L'Amical, plus haut dans la liste."
   },
   "en": {
     "brand.sub": "Team Québec",
@@ -475,7 +480,6 @@
     "events.cancelled": "Cancelled",
     "events.past": "Past",
     "tournaments.res5": "Excellence Bass circuit and the Coteau-du-Lac club's tournaments.",
-    "tournaments.res6": "Youth program and provincial championship from the Fédération québécoise des chasseurs et pêcheurs.",
     "spec.fee": "Entry fee",
     "spec.teamSize": "Format",
     "spec.maxTeams": "Max teams",
@@ -633,6 +637,12 @@
     "videos.title": "Our videos",
     "videos.intro": "Trips, tournaments and behind the scenes. Each thumbnail opens the video on YouTube.",
     "videos.untitled": "Untitled video",
-    "catches.watchVideo": "Watch the video"
+    "catches.watchVideo": "Watch the video",
+    "tournaments.orgKicker": "Québec's fishing community",
+    "tournaments.orgTitle": "Federations and associations",
+    "tournaments.orgBody": "These groups do more than keep a calendar: they defend access to the water, run research, and organize a share of the tournaments listed here. Worth knowing.",
+    "tournaments.org1": "Muskie conservation and research, nationwide. Its Montréal chapter runs its own circuit, the CMCM, whose finale — the Crystal Cup Challenge — is in the calendar above.",
+    "tournaments.org2": "The provincial hunters and anglers federation. It runs the Jeux provinciaux de pêche and a youth program, both in the directory.",
+    "tournaments.org3": "Devoted to fair access to Québec's public waters. It also co-presents L'Amical, listed above."
   }
 }
