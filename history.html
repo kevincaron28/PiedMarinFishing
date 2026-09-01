@@ -70,9 +70,16 @@
 
 <section>
   <div class="container">
-    <div class="notice" data-i18n="history.notice">Nos trois Formule Brochet sont confirmées, résultats à l'appui — classements et mesures tirés de FishDonkey, l'application officielle du tournoi.</div>
+    <div class="notice" data-i18n="history.notice">Nos trois Formule Brochet sont confirmées, résultats à l'appui. Le brochet s'y mesure à la règle officielle sans sortir de l'eau, et le pointage est la longueur combinée des deux plus longs. Classements et mesures tirés de FishDonkey, l'application officielle du tournoi.</div>
 
     <div id="history-stats" class="grid grid-4" style="margin-bottom:32px;"></div>
+
+    <!-- Palmarès en tableau : rempli par history.js, il se retire sous deux
+         lignes. Les cartes plus bas gardent le détail de chaque année. -->
+    <div class="record-section" data-table-section hidden>
+      <h2 class="record-title" data-i18n="history.tableTitle">Palmarès</h2>
+      <div id="record-table"></div>
+    </div>
 
     <div class="filters">
       <select id="member-filter" data-i18n-aria-label="history.allMembers" aria-label="Tous les membres"></select>
@@ -105,6 +112,7 @@
     listSelector: "#result-list",
     emptySelector: "#empty-state",
     statsSelector: "#history-stats",
+    tableSelector: "#record-table",
     countSelector: "#result-count",
     memberFilterSelector: "#member-filter",
     yearFilterSelector: "#year-filter",

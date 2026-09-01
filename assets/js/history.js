@@ -68,6 +68,14 @@ const PMF_HISTORY = (() => {
 })();
 
 // Podium finishes get a colour; everything else stays neutral.
+// Un rang brut ne se lit pas sans son peloton : 99e est excellent sur 329,
+// médiocre sur 120. Le centile le dit d'un coup d'œil, et c'est la façon dont
+// les circuits présentent leurs résultats.
+function topPercent(placement, fieldSize) {
+  if (!Number.isFinite(placement) || !Number.isFinite(fieldSize) || fieldSize < 1) return null;
+  return Math.max(1, Math.ceil((placement / fieldSize) * 100));
+}
+
 function placementClass(placement) {
   if (placement === 1) return "gold";
   if (placement === 2) return "silver";
@@ -80,6 +88,7 @@ async function initHistory(options) {
     listSelector,
     emptySelector,
     statsSelector,
+    tableSelector,
     countSelector,
     memberFilterSelector,
     yearFilterSelector,
@@ -110,6 +119,7 @@ async function initHistory(options) {
   const yearSelect = yearFilterSelector ? document.querySelector(yearFilterSelector) : null;
   const searchInput = searchSelector ? document.querySelector(searchSelector) : null;
   const statsEl = statsSelector ? document.querySelector(statsSelector) : null;
+  const tableEl = tableSelector ? document.querySelector(tableSelector) : null;
   const countEl = countSelector ? document.querySelector(countSelector) : null;
   const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
 
@@ -166,7 +176,7 @@ async function initHistory(options) {
       s.top3 > 0
         ? { num: s.top3, label: plural("history.stat.top3", s.top3) }
         : (s.bestFigure
-            ? { num: PMF_I18N.tr(s.bestFigure.figure.value), label: PMF_I18N.tr(s.bestFigure.figure.label) }
+            ? { num: PMF_I18N.tr(s.bestFigure.figure.value), label: t("history.stat.bestScore") }
             : { num: s.top3, label: plural("history.stat.top3", s.top3) }),
       { num: s.seasons, label: plural("history.stat.seasons", s.seasons) },
     ];
@@ -178,12 +188,47 @@ async function initHistory(options) {
     `).join("");
   }
 
+  function renderTable(rows) {
+    if (!tableEl) return;
+    const section = tableEl.closest("[data-table-section]") || tableEl;
+    if (rows.length < 2) {
+      section.hidden = true;
+      tableEl.innerHTML = "";
+      return;
+    }
+    section.hidden = false;
+    const lang = PMF_I18N.lang;
+    const head = ["history.col.season", "history.col.event",
+                  "history.col.place", "history.col.score"]
+      .map((k) => `<th>${escapeHTML(t(k))}</th>`).join("");
+    const body = rows.map((r) => {
+      const season = String(r.date || "").slice(0, 4) || "—";
+      const pct = topPercent(r.placement, r.fieldSize);
+      const place = Number.isFinite(r.placement)
+        ? `${escapeHTML(ordinal(r.placement, lang))}${
+            Number.isFinite(r.fieldSize) ? " " + escapeHTML(t("history.of", { n: r.fieldSize })) : ""}`
+        : "—";
+      const first = (r.figures || [])[0];
+      const score = first ? tr(first.value) : (r.weight ? tr(r.weight) : "—");
+      return `
+        <tr>
+          <td>${escapeHTML(season)}</td>
+          <td>${escapeHTML(tr(r.name))}</td>
+          <td>${place}${pct ? ` <span class="table-pct">${escapeHTML(t("history.topPercent", { n: pct }))}</span>` : ""}</td>
+          <td>${escapeHTML(score)}</td>
+        </tr>`;
+    }).join("");
+    tableEl.innerHTML =
+      `<table class="record-table"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  }
+
   function render() {
     const lang = PMF_I18N.lang;
     const m = months(lang);
     const rows = results.filter(matches);
 
     renderStats(rows);
+    renderTable(rows);
     if (countEl) countEl.textContent = plural("history.count", rows.length);
 
     if (!rows.length) {
@@ -213,6 +258,10 @@ async function initHistory(options) {
       const place = Number.isFinite(r.placement)
         ? `<span class="placement ${placementClass(r.placement)}">${escapeHTML(ordinal(r.placement, lang))}</span>`
         : `<span class="placement placement-unknown" title="${escapeHTML(t("history.resultPending"))}">—</span>`;
+      const pct = topPercent(r.placement, r.fieldSize);
+      const pctHTML = pct
+        ? `<span class="placement-pct">${escapeHTML(t("history.topPercent", { n: pct }))}</span>`
+        : "";
       const field = Number.isFinite(r.fieldSize)
         ? `<span class="placement-of">${escapeHTML(t("history.of", { n: r.fieldSize }))}</span>`
         : "";
@@ -254,6 +303,7 @@ async function initHistory(options) {
           <div class="result-place">
             ${place}
             ${field}
+            ${pctHTML}
           </div>
         </article>
       `;
