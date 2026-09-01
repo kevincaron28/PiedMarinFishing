@@ -40,12 +40,42 @@
     "gear": [
       {
         "label": {
+          "fr": "Canne",
+          "en": "Rod"
+        },
+        "value": {
+          "fr": "Lancer lourd Fenwick",
+          "en": "Fenwick baitcaster"
+        }
+      },
+      {
+        "label": {
+          "fr": "Moulinet",
+          "en": "Reel"
+        },
+        "value": {
+          "fr": "Okuma Hakai, profil bas",
+          "en": "Okuma Hakai, low profile"
+        }
+      },
+      {
+        "label": {
           "fr": "Leurre de prédilection",
           "en": "Go-to lure"
         },
         "value": {
           "fr": "Rapala DT6 Fire Tiger 3,5 po",
           "en": "Rapala DT6 Fire Tiger 3.5\""
+        }
+      },
+      {
+        "label": {
+          "fr": "Présentation favorite",
+          "en": "Go-to presentation"
+        },
+        "value": {
+          "fr": "Drop shot",
+          "en": "Drop shot"
         }
       }
     ],
@@ -93,7 +123,28 @@
         "en": "Always"
       }
     },
-    "gear": [],
+    "gear": [
+      {
+        "label": {
+          "fr": "Canne",
+          "en": "Rod"
+        },
+        "value": {
+          "fr": "Lancer lourd",
+          "en": "Baitcaster"
+        }
+      },
+      {
+        "label": {
+          "fr": "Leurre de prédilection",
+          "en": "Go-to lure"
+        },
+        "value": {
+          "fr": "Chatterbait",
+          "en": "Chatterbait"
+        }
+      }
+    ],
     "photo": "assets/img/team/kevin-b.jpg",
     "photoAlt": {
       "fr": "Kevin B. en gros plan sous la pluie, chapeau de brousse noir et habit imperméable, tenant un maskinongé",
@@ -138,7 +189,28 @@
         "en": "His whole life, 50+ years"
       }
     },
-    "gear": [],
+    "gear": [
+      {
+        "label": {
+          "fr": "Canne",
+          "en": "Rod"
+        },
+        "value": {
+          "fr": "Lancer lourd",
+          "en": "Baitcaster"
+        }
+      },
+      {
+        "label": {
+          "fr": "Leurre de prédilection",
+          "en": "Go-to lure"
+        },
+        "value": {
+          "fr": "Yo-Zuri Squarebill Fire Tiger",
+          "en": "Yo-Zuri Squarebill Fire Tiger"
+        }
+      }
+    ],
     "photo": "assets/img/team/bobe.jpg",
     "photoAlt": {
       "fr": "BOBE en gros plan au coucher du soleil, chapeau de brousse et lunettes fumées, la tête d'un maskinongé à côté de lui",
