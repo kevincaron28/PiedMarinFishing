@@ -52,7 +52,7 @@ async function initBoats(selector) {
       const skipper = memberById.get(b.skipper);
       const owner = memberById.get(b.owner);
       const crewLink = (m) =>
-        `<a href="history.html?member=${encodeURIComponent(m.id)}">${escapeHTML(tr(m.name))}</a>`;
+        `<a href="pecheurs/${encodeURIComponent(m.id)}.html">${escapeHTML(tr(m.name))}</a>`;
       let skipperRow = "";
       if (skipper && owner && skipper.id === owner.id) {
         skipperRow = `<div class="boat-skipper">${escapeHTML(t("boats.skipperOwner"))} ${crewLink(skipper)}</div>`;
@@ -63,6 +63,19 @@ async function initBoats(selector) {
         if (parts.length) skipperRow = `<div class="boat-skipper">${parts.join("<br>")}</div>`;
       }
 
+      // Un bateau en chantier le dit sur sa carte : c'est ce qui donne envie
+      // d'ouvrir sa fiche, où le journal de restauration se tient.
+      const status = (b.restoration || {}).status || "";
+      const statusBadge = status === "restoration"
+        ? `<span class="boat-status">${escapeHTML(t("boats.restoring"))}</span>`
+        : (status === "restored" || status === "done")
+          ? `<span class="boat-status is-done">${escapeHTML(t("boats.restored"))}</span>`
+          : "";
+
+      const pageLink = b.id
+        ? `<a class="member-history-link" href="bateaux/${encodeURIComponent(b.id)}.html">${escapeHTML(t("boats.viewPage"))}</a>`
+        : "";
+
       const photo = b.image
         ? `<img src="${escapeHTML(b.image)}" alt="${escapeHTML(t("boats.photoAlt", { name }))}" class="boat-photo-img">`
         : "";
@@ -71,12 +84,14 @@ async function initBoats(selector) {
         <article class="boat-card">
           <div class="boat-photo">${photo}</div>
           <div class="boat-body">
+            ${statusBadge}
             <h3>${escapeHTML(name)}</h3>
             ${description
               ? `<p>${escapeHTML(description)}</p>`
               : `<p class="member-bio-empty">${escapeHTML(t("boats.descPlaceholder"))}</p>`}
             <dl class="member-specs boat-specs">${specRows}</dl>
             ${skipperRow}
+            ${pageLink}
           </div>
         </article>
       `;

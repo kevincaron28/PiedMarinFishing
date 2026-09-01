@@ -108,17 +108,19 @@ if __name__ == "__main__":
         strings = json.load(fh)["fr"]
 
     changes = []
-    # Les fiches de tournoi portent le même menu que le reste du site : leur
-    # texte français doit suivre data/i18n.json comme celui des autres pages.
+    # Les fiches générées (tournois, pêcheurs, bateaux) portent le même menu
+    # que le reste du site : leur texte français doit suivre data/i18n.json
+    # comme celui des autres pages.
     pages = sorted(f for f in os.listdir(REPO) if f.endswith(".html"))
-    sub = os.path.join(REPO, "tournois")
-    if os.path.isdir(sub):
-        pages += sorted(os.path.join("tournois", f)
-                        for f in os.listdir(sub) if f.endswith(".html"))
+    for dirname in ("tournois", "pecheurs", "bateaux"):
+        sub = os.path.join(REPO, dirname)
+        if os.path.isdir(sub):
+            pages += sorted(os.path.join(dirname, f)
+                            for f in os.listdir(sub) if f.endswith(".html"))
     touched = [p for p in pages if sync(p, strings, changes)]
 
     for page, key, old, new in changes:
-        print("%-18s %s\n   - %s\n   + %s" % (page, key, old, new))
+        print("%-34s %s\n   - %s\n   + %s" % (page, key, old, new))
     verb = "à corriger" if "--check" in sys.argv else "corrigées"
     print("\n%d divergence(s) %s dans %d page(s) sur %d."
           % (len(changes), verb, len(touched), len(pages)))

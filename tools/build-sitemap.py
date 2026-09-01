@@ -78,19 +78,26 @@ def url(page, priority, freq, deps):
     ])
 
 
-def tournament_pages():
-    """Une entrée par fiche écrite dans tournois/."""
+# Les dossiers de fiches générées, avec la priorité qui leur revient : une
+# fiche de pêcheur est une adresse qu'on donne à une marque, elle vaut plus
+# qu'une fiche de tournoi parmi trente-quatre.
+GENERATED_DIRS = [("tournois", "0.6"), ("pecheurs", "0.7"), ("bateaux", "0.5")]
+
+
+def generated_pages():
+    """Une entrée par fiche écrite dans tournois/, pecheurs/ et bateaux/."""
     out = []
-    directory = os.path.join(REPO, "tournois")
-    if not os.path.isdir(directory):
-        return out
-    for name in sorted(f for f in os.listdir(directory) if f.endswith(".html")):
-        out.append(("tournois/" + name, "0.6", "monthly", PAGE_DEPS))
+    for dirname, priority in GENERATED_DIRS:
+        directory = os.path.join(REPO, dirname)
+        if not os.path.isdir(directory):
+            continue
+        for name in sorted(f for f in os.listdir(directory) if f.endswith(".html")):
+            out.append(("%s/%s" % (dirname, name), priority, "monthly", PAGE_DEPS))
     return out
 
 
 if __name__ == "__main__":
-    PAGES += tournament_pages()
+    PAGES += generated_pages()
     body = "\n".join(url(p, prio, freq, deps) for p, prio, freq, deps in PAGES)
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
@@ -99,4 +106,4 @@ if __name__ == "__main__":
     with io.open(os.path.join(REPO, "sitemap.xml"), "w", encoding="utf-8") as fh:
         fh.write(xml)
     for page, _, _, deps in PAGES:
-        print("%-18s %s" % (page, lastmod(page, deps)))
+        print("%-34s %s" % (page, lastmod(page, deps)))

@@ -13,13 +13,15 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `index.html` | Landing page |
 | `team.html` | Roster — bios, angler specs, per-member record, and the team boats |
 | `catches.html` | Catch log with photos and video |
-| `history.html` | *Sorties / Trips* — every tournament fished, filterable by member and season |
+| `history.html` | *Résultats / Results* — every tournament fished, filterable by member and season |
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
 | `404.html` | Not-found page, served by GitHub Pages at any depth |
 | `tournois/*.html` | One generated page per documented tournament |
+| `pecheurs/*.html` | One generated profile per angler — its own URL, so it can be pasted into a pro-staff application |
+| `bateaux/*.html` | One generated page per boat — specs, crew, gallery, and the restoration log for the one under way |
 | `sponsors.html` | Sponsor pitch, with a downloadable PDF kit |
 
 No build step, no framework, no dependencies — plain HTML/CSS/JS. Every
@@ -102,6 +104,40 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
 results data.
+
+`tournament-page.js` is the exception: the generated pages under `tournois/`,
+`pecheurs/` and `bateaux/` carry French in the HTML and English in `data-en`
+attributes, and it swaps the two on the language click. Nothing on those pages
+is rendered by JavaScript — that is the whole point of generating them.
+
+## Build tools
+
+These are run by hand, not at deploy time — GitHub Pages serves the repo as-is.
+
+| File | Role |
+|---|---|
+| `tools/build-tournament-pages.py` | writes `tournois/*.html` from `data/quebec-tournaments.json`, and the index `data/tournament-pages.json` |
+| `tools/build-profile-pages.py` | writes `pecheurs/*.html` and `bateaux/*.html` from `data/team-members.json` and `data/boats.json` |
+| `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
+| `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
+| `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
+| `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
+| `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
+| `tools/render-sponsor-kit.js` | renders that HTML to PDF with Chromium |
+
+The usual order after a content change:
+
+```bash
+python3 tools/build-tournament-pages.py   # if a tournament changed
+python3 tools/build-profile-pages.py      # if a member or a boat changed
+python3 tools/build-structured-data.py
+python3 tools/sync-html-fallbacks.py
+python3 tools/build-sitemap.py            # last — it reads git for lastmod
+```
+
+`build-profile-pages.py` imports its template — nav, footer, the `data-en`
+helpers — from `build-tournament-pages.py` rather than copying it, so the two
+families of generated pages cannot drift apart.
 
 ## Logo assets
 
@@ -194,11 +230,45 @@ shows a muted `—` so the card doubles as a fill-in sheet:
 To add or reorder spec rows, edit `SPEC_FIELDS` in `assets/js/team.js` and
 add the matching `team.spec.*` labels to `data/i18n.json`.
 
+### Angler gear
+
+`gear` is the list a brand actually reads, so it behaves the opposite way from
+`specs`: rows you leave out simply do not exist, and an empty `gear` array
+hides the whole section. A half-filled tackle list does the application more
+harm than no list at all.
+
+```json
+"gear": [
+  { "label": { "fr": "Canne", "en": "Rod" },
+    "value": { "fr": "St. Croix Mojo Bass 7'1\" MH", "en": "St. Croix Mojo Bass 7'1\" MH" } },
+  { "label": { "fr": "Moulinet", "en": "Reel" }, "value": "Shimano Curado 200K" }
+]
+```
+
+Both `label` and `value` take either a plain string or a `{fr, en}` pair, and
+the order in the file is the order on the page. Put the things a sponsor cares
+about first: rod, reel, line, and the go-to lure.
+
+Run `python3 tools/build-profile-pages.py` after any change.
+
+### Angler profile pages
+
+Each member gets `pecheurs/<id>.html` — a real address to paste into a
+pro-staff application. The page assembles itself from what is already in
+`data/team-members.json` plus the results and catches logs: background, specs,
+gear, the tournament record (with the percentile for each finish), the
+documented catches, and a link to their boat. Every section hides itself when
+its data is empty, so nothing has to be filled in before the page is usable.
+
+The profile carries `Person` JSON-LD naming Pied Marin Fishing as the team, so
+a search engine can connect the angler to the crew.
+
 ### Team boats
 
-Boats render as a section at the bottom of the team page (`#bateaux`), not
-their own page. Same fill-in-sheet behaviour as the angler specs — every row
-shows, empty ones show `—`:
+Boats appear as a section at the bottom of the team page (`#bateaux`), and
+each card links through to the boat's own page. Same fill-in-sheet behaviour
+as the angler specs — on the card every row shows, empty ones show `—`; on the
+generated page the empty rows are simply left out:
 
 ```json
 {
@@ -217,7 +287,7 @@ shows, empty ones show `—`:
 ```
 
 `skipper` takes a **member id** — set it and the card links through to that
-angler's results. Leave `image` empty and the crest watermark stands in. Add
+angler's profile. Leave `image` empty and the crest watermark stands in. Add
 more boats by adding more entries; they stack vertically.
 
 To change which spec rows appear, edit `BOAT_SPEC_FIELDS` in
@@ -227,6 +297,36 @@ To change which spec rows appear, edit `BOAT_SPEC_FIELDS` in
 A boat can be owned by one member and run by another: `skipper` and `owner`
 each hold a member `id`. When they are the same person the two lines merge
 into one rather than repeating the name.
+
+### Boat pages and the restoration log
+
+Each boat also gets `bateaux/<id>.html`, with a photo gallery and — when
+there is one — the restoration log. The card on the team page links to it and
+shows a status pill when a boat is in the shop.
+
+```json
+"gallery": ["assets/img/boats/1995-1.jpg", "assets/img/boats/1995-2.jpg"],
+"restoration": {
+  "status": "restoration",
+  "entries": [
+    { "date": "2026-08-15",
+      "title": { "fr": "Ponçage du plancher", "en": "Sanding the floor" },
+      "body":  { "fr": "…", "en": "…" },
+      "photos": ["assets/img/boats/resto-1.jpg"] }
+  ]
+}
+```
+
+`status` takes `""` (nothing shown), `"restoration"` (*En restauration*) or
+`"restored"` (*Restauré*). Entries are sorted newest first by the tool, so the
+order in the file does not matter. `date` may be partial — `"2026"`,
+`"2026-07"` or `"2026-07-15"` — and only what is known gets printed. An entry
+needs a title or a body; `photos` is optional.
+
+Empty `gallery` and empty `entries` each hide their own section, so a boat
+that is not being worked on shows no restoration heading at all.
+
+Run `python3 tools/build-profile-pages.py` after any change.
 
 ### Shop
 

@@ -26,6 +26,13 @@
       el.setAttribute("content", el.getAttribute(en ? "data-en-content" : "data-fr-content"));
     });
 
+    document.querySelectorAll("[data-en-alt]").forEach((el) => {
+      if (!el.hasAttribute("data-fr-alt")) {
+        el.setAttribute("data-fr-alt", el.getAttribute("alt") || "");
+      }
+      el.setAttribute("alt", el.getAttribute(en ? "data-en-alt" : "data-fr-alt"));
+    });
+
     document.querySelectorAll("[data-en-href]").forEach((el) => {
       if (!el.hasAttribute("data-fr-href")) {
         el.setAttribute("data-fr-href", el.getAttribute("href") || "");

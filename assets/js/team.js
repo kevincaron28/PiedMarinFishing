@@ -91,6 +91,12 @@ async function initTeam(gridSelector) {
         ? `<a class="member-history-link" href="catches.html?angler=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewCatches"))}</a>`
         : "";
 
+      // La fiche a sa propre adresse — c'est elle qu'un pêcheur colle dans une
+      // candidature de pro staff, alors elle passe en premier.
+      const profileLink = m.id
+        ? `<a class="member-history-link member-profile-link" href="pecheurs/${encodeURIComponent(m.id)}.html">${escapeHTML(t("team.viewProfile"))}</a>`
+        : "";
+
       const historyLink = m.id
         ? `<a class="member-history-link" href="history.html?member=${encodeURIComponent(m.id)}">${escapeHTML(t("team.viewResults"))}</a>`
         : "";
@@ -104,6 +110,7 @@ async function initTeam(gridSelector) {
             ${bioBlock}
             <dl class="member-specs">${specRows}</dl>
             <div class="member-record">${recordBits.join("")}</div>
+            ${profileLink}
             ${historyLink}
             ${catchLink}
           </div>

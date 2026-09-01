@@ -28,6 +28,11 @@
         "fr": "Garmin LiveScope, écran 12 po",
         "en": "Garmin LiveScope, 12-inch display"
       }
+    },
+    "gallery": [],
+    "restoration": {
+      "status": "",
+      "entries": []
     }
   },
   {
@@ -59,6 +64,11 @@
         "fr": "Sonar Garmin ClearVü",
         "en": "Garmin ClearVü sonar"
       }
+    },
+    "gallery": [],
+    "restoration": {
+      "status": "",
+      "entries": []
     }
   }
 ]
