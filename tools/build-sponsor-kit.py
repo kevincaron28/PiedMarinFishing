@@ -56,7 +56,7 @@ L = {
 def build(lang):
     t = i18n[lang]; s = L[lang]
     def tr(v): return v.get(lang) if isinstance(v, dict) else (v or "")
-    facts = [t["sponsors.fact%d" % i] for i in range(1, 6)]
+    facts = [t["sponsors.fact%d" % i] for i in range(1, 7)]
     offers = [(t["sponsors.offer%d" % i], t["sponsors.offer%db" % i]) for i in range(1, 6)]
     crew = "".join(
       '<div class="crew"><img src="%s"><div class="crew-n">%s</div><div class="crew-r">%s</div></div>'
@@ -73,7 +73,7 @@ body { font-family: "Liberation Sans", Helvetica, Arial, sans-serif; color: #102
          page-break-after: always; background: #fbf9f4; }
 .sheet:last-child { page-break-after: auto; }
 .band { background: linear-gradient(135deg, #071726 0%%, #123452 55%%, #157a76 100%%);
-        color: #fff; padding: 0.4in 0.62in 0.34in; position: relative; }
+        color: #fff; padding: 0.36in 0.62in 0.29in; position: relative; }
 .band img.crest { position: absolute; right: 0.45in; top: 50%%; transform: translateY(-50%%);
                   width: 1.3in; opacity: 0.9; }
 .kick { font-size: 8.5pt; letter-spacing: 0.18em; text-transform: uppercase; color: #e8bd6a; font-weight: 700; }
@@ -81,17 +81,17 @@ h1 { font-family: "Liberation Serif", Georgia, serif; font-size: 25pt; line-heig
 .tag { font-size: 10.5pt; color: rgba(255,255,255,0.85); max-width: 5in; }
 .season { margin-top: 9pt; display: inline-block; background: rgba(255,255,255,0.14);
           padding: 3pt 10pt; border-radius: 99px; font-size: 8.5pt; letter-spacing: 0.08em; }
-.body { padding: 0.18in 0.62in 0; }
+.body { padding: 0.13in 0.62in 0; }
 h2 { font-family: "Liberation Serif", Georgia, serif; font-size: 12.5pt; color: #0b2038;
      margin: 0 0 7pt; padding-bottom: 4pt; border-bottom: 2px solid rgba(16,32,47,0.12);
      letter-spacing: 0.02em; }
-.section { margin-bottom: 0.07in; }
+.section { margin-bottom: 0.045in; }
 ul { list-style: none; }
-li { position: relative; padding: 1.6pt 0 1.6pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
+li { position: relative; padding: 1.1pt 0 1.1pt 15pt; font-size: 8.8pt; line-height: 1.28; color: #2c4351; }
 li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; font-weight: 700; }
 .crews { display: flex; gap: 12pt; margin-top: 4pt; }
 .crew { flex: 1; text-align: center; }
-.crew img { width: 100%%; height: 1.08in; object-fit: cover; border-radius: 7pt; display: block; }
+.crew img { width: 100%%; height: 1.0in; object-fit: cover; border-radius: 7pt; display: block; }
 .crew-n { font-family: "Liberation Serif", Georgia, serif; font-size: 10pt; margin-top: 4pt; color: #0b2038; }
 .crew-r { font-size: 7.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #157a76; font-weight: 700; }
 .offs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6pt; }
@@ -101,7 +101,7 @@ li::before { content: "\\2713"; position: absolute; left: 0; color: #157a76; fon
 .off span { font-size: 8pt; color: #47606f; line-height: 1.4; }
 .honest { background: #f6f3ea; border: 1px solid rgba(16,32,47,0.1); border-radius: 8pt;
           padding: 5pt 11pt; font-size: 8.5pt; line-height: 1.38; color: #2c4351; }
-.contact { background: #0b2038; color: #fff; border-radius: 8pt; padding: 7pt 13pt; }
+.contact { background: #0b2038; color: #fff; border-radius: 8pt; padding: 6pt 13pt; }
 .contact h3 { font-family: "Liberation Serif", Georgia, serif; font-size: 11.5pt; margin-bottom: 4pt; }
 .contact p { font-size: 8.6pt; color: rgba(255,255,255,0.82); line-height: 1.45; margin-bottom: 7pt; }
 .contact .mail { display: inline-block; background: #157a76; color: #fff; padding: 6pt 13pt;
