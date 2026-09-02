@@ -45,9 +45,9 @@ async function initFeaturedVideo(selector) {
     return data.orientation === "portrait" ? " video-portrait" : "";
   }
 
-  // Le lien vers la chaîne, en bouton. Il n'existait que dans le substitut :
-  // dès qu'une vidéo était en vedette, l'accueil montrait un extrait sans
-  // offrir nulle part où aller ensuite.
+  // Le lien vers la chaîne, en bouton. Réservé au substitut : quand une vidéo
+  // est en vedette, le hero de l'accueil porte déjà le lien vers YouTube, et
+  // le redonner ici n'aurait fait que le répéter.
   function channelBtn(label, cls) {
     return data.channelUrl
       ? `<a class="btn ${cls}" href="${escapeHTML(data.channelUrl)}" target="_blank" rel="noopener">${escapeHTML(t(label))}</a>`
@@ -80,7 +80,6 @@ async function initFeaturedVideo(selector) {
         </button>
       </div>
       ${title ? `<div class="video-caption">${escapeHTML(title)}</div>` : ""}
-      <div class="video-cta">${channelBtn("video.subscribe", "btn-teal")}</div>
     `;
 
     host.querySelector(".video-facade").addEventListener("click", (ev) => {

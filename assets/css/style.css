@@ -2300,7 +2300,6 @@ body.has-lightbox { overflow: hidden; }
 
 /* Le bouton d'abonnement suit la vidéo — l'invitation vient après l'extrait,
    pas avant. */
-.video-cta { margin-top: 16px; text-align: center; }
 .bp-intro {
   margin: 0 0 20px;
   font-size: 1.02rem;
