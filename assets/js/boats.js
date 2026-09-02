@@ -15,6 +15,10 @@ async function initBoats(selector) {
   if (!host) return;
 
   await PMF_I18N.ready;
+  // La carte des largeurs d'image, pour que srcset soit prêt au premier
+  // rendu. Elle avale ses propres erreurs : sans elle, les photos sont
+  // simplement servies en taille d'origine.
+  await PMF_IMG.load();
   const { t, tr } = PMF_I18N;
 
   let boats = [];
@@ -76,7 +80,7 @@ async function initBoats(selector) {
         : "";
 
       const photo = b.image
-        ? `<img src="${escapeHTML(b.image)}" alt="${escapeHTML(t("boats.photoAlt", { name }))}" class="boat-photo-img">`
+        ? `<img src="${escapeHTML(b.image)}"${PMF_IMG.attrs(b.image, "(max-width: 760px) 92vw, 420px")} alt="${escapeHTML(t("boats.photoAlt", { name }))}" class="boat-photo-img">`
         : "";
 
       return `

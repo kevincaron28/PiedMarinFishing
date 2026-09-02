@@ -122,12 +122,14 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
 | `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
+| `tools/build-image-variants.py` | writes the 160/400/800px versions of every photo and the `data/image-variants.json` map that `srcset` is built from |
 | `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
 | `tools/render-sponsor-kit.js` | renders that HTML to PDF with Chromium |
 
 The usual order after a content change:
 
 ```bash
+python3 tools/build-image-variants.py     # if a photo was added
 python3 tools/build-tournament-pages.py   # if a tournament changed
 python3 tools/build-profile-pages.py      # if a member or a boat changed
 python3 tools/build-structured-data.py
@@ -138,6 +140,21 @@ python3 tools/build-sitemap.py            # last — it reads git for lastmod
 `build-profile-pages.py` imports its template — nav, footer, the `data-en`
 helpers — from `build-tournament-pages.py` rather than copying it, so the two
 families of generated pages cannot drift apart.
+
+### Responsive photos
+
+Every photo under `assets/img/{catches,team,boats}` is also written at 160,
+400 and 800px wide, next to the original. `data/image-variants.json` records
+which widths exist, and both the renderers (`PMF_IMG` in `util.js`) and
+`build-profile-pages.py` build a `srcset` from it.
+
+A photo that is **not** in the map is served at full size with no `srcset` —
+adding a photo without re-running the tool costs bytes, never a broken image.
+The `sizes` attribute is measured, not guessed: a hall-of-fame thumbnail is
+72px at every breakpoint, a catch card is 346px, the featured catch 583px.
+
+Before this, the 72px thumbnail was downloading the 1200px original — 16.7x
+too much — and `catches.html` weighed 1.27 MB.
 
 ## Logo assets
 

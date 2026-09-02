@@ -86,11 +86,32 @@ def head(title, desc, url, image, ld="", og_type="profile"):
               "nav": nav_for(1)}
 
 
+VARIANTS = {}
+
+
+def srcset_attrs(src, sizes):
+    """Le srcset écrit en dur, à partir de data/image-variants.json.
+
+    Les fiches ne rendent rien en JavaScript : c'est le générateur qui doit
+    poser les largeurs. Une photo absente de la carte sort sans srcset, donc
+    servie telle quelle — jamais cassée.
+    """
+    widths = VARIANTS.get(src)
+    if not widths or len(widths) < 2:
+        return ""
+    stem, ext = os.path.splitext(src)
+    top = max(widths)
+    liste = ", ".join("%s %dw" % (src if w == top else "%s-%d%s" % (stem, w, ext), w)
+                      for w in widths)
+    return ' srcset="%s" sizes="%s"' % (esc(liste), esc(sizes))
+
+
 def gallery_html(photos, alt):
     if not photos:
         return ""
     return '<div class="gal-grid">%s</div>' % "".join(
-        '<img class="gal-img" src="%s" alt="%s" loading="lazy">' % (esc(p), esc(alt))
+        '<img class="gal-img" src="%s"%s alt="%s" loading="lazy">'
+        % (esc(p), srcset_attrs(p, "(max-width: 700px) 92vw, 260px"), esc(alt))
         for p in photos)
 
 
@@ -305,8 +326,9 @@ def render_angler(m, ui, results, catches, boats, tp_index):
 
     # Parcours — la photo et la bio, côte à côte.
     alt = m.get("photoAlt") or {"fr": name, "en": name}
-    photo_html = ('<img class="ap-photo" src="%s" alt="%s" width="900" height="1200">'
-                  % (esc(photo), esc(pick(alt, "fr")))) if photo else ""
+    photo_html = ('<img class="ap-photo" src="%s"%s alt="%s" width="900" height="1200">'
+                  % (esc(photo), srcset_attrs(photo, "(max-width: 700px) 92vw, 260px"),
+                     esc(pick(alt, "fr")))) if photo else ""
     if photo_html and pick(alt, "en") != pick(alt, "fr"):
         photo_html = photo_html.replace("<img ", '<img data-en-alt="%s" ' % esc(pick(alt, "en")))
     bio = bilingual("p", m.get("bio"), "ap-bio") if pick(m.get("bio"), "fr") else ""
@@ -378,8 +400,9 @@ def render_angler(m, ui, results, catches, boats, tp_index):
         cards = "".join(
             '<a class="ap-catch" href="catches.html?angler=%s">%s%s</a>'
             % (esc(m["id"]),
-               '<img src="%s" alt="" loading="lazy" width="120" height="90">'
-               % esc((c.get("media") or {}).get("src") or "")
+               '<img src="%s"%s alt="" loading="lazy" width="120" height="90">'
+               % (esc((c.get("media") or {}).get("src") or ""),
+                  srcset_attrs((c.get("media") or {}).get("src") or "", "68px"))
                if (c.get("media") or {}).get("src") else "",
                '<span class="ap-catch-body">%s%s</span>'
                % (bilingual("span", c.get("species"), "ap-catch-species"),
@@ -580,6 +603,10 @@ def write_dir(dirname, files):
 
 
 if __name__ == "__main__":
+    try:
+        VARIANTS.update(load("image-variants.json"))
+    except IOError:
+        pass  # pas de variantes, pas de srcset : les photos sortent en pleine taille
     members = load("team-members.json")
     boats = load("boats.json")
     results = load("tournament-history.json")

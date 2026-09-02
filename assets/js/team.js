@@ -16,6 +16,10 @@ async function initTeam(gridSelector) {
   if (!grid) return;
 
   await PMF_I18N.ready;
+  // La carte des largeurs d'image, pour que srcset soit prêt au premier
+  // rendu. Elle avale ses propres erreurs : sans elle, les photos sont
+  // simplement servies en taille d'origine.
+  await PMF_IMG.load();
   const { t, tr, plural } = PMF_I18N;
 
   let members = [];
@@ -43,7 +47,8 @@ async function initTeam(gridSelector) {
       const photoAlt = tr(m.photoAlt) || name;
       const photoBlock = m.photo
         ? `<div class="member-photo has-photo">
-             <img class="member-photo-img" src="${escapeHTML(m.photo)}"
+             <img class="member-photo-img" src="${escapeHTML(m.photo)}"${
+               PMF_IMG.attrs(m.photo, "(max-width: 560px) 90vw, (max-width: 1000px) 46vw, 346px")}
                   alt="${escapeHTML(photoAlt)}" loading="lazy" width="900" height="1200">
            </div>`
         : `<div class="member-photo"><span class="member-initials">${escapeHTML(initials)}</span></div>`;

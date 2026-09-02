@@ -131,6 +131,11 @@ const PMF_LIGHTBOX = (() => {
     const s = slides[index];
     if (!s) return;
     els.img.src = s.src;
+    // La visionneuse occupe presque tout l'écran : sur un téléphone, 96vw en
+    // double densité demande environ 750px, pas les 1200 de l'original.
+    const ss = PMF_IMG.srcset(s.src);
+    if (ss) { els.img.srcset = ss; els.img.sizes = "96vw"; }
+    else { els.img.removeAttribute("srcset"); els.img.removeAttribute("sizes"); }
     els.img.alt = s.alt || "";
     els.title.textContent = s.title || "";
     els.meta.textContent = s.meta || "";
@@ -193,6 +198,10 @@ async function initCatches(options) {
   if (!grid) return;
 
   await PMF_I18N.ready;
+  // La carte des largeurs d'image, pour que srcset soit prêt au premier
+  // rendu. Elle avale ses propres erreurs : sans elle, les photos sont
+  // simplement servies en taille d'origine.
+  await PMF_IMG.load();
   const { t, tr, plural, key: stableKey } = PMF_I18N;
 
   let catches = [];
@@ -326,7 +335,7 @@ async function initCatches(options) {
   }
 
   // Photo cliquable, clip YouTube, ou l'écusson en attendant une vraie photo.
-  function mediaHTML(c, d) {
+  function mediaHTML(c, d, sizes) {
     const photos = catchPhotos(c);
     if (photos.length) {
       const badge = photos.length > 1
@@ -335,7 +344,8 @@ async function initCatches(options) {
       return `
         <button type="button" class="catch-media-btn" data-catch="${escapeHTML(c.id)}" data-photo="0"
                 aria-label="${escapeHTML(t("catches.openPhoto"))}">
-          <img class="catch-media-img" src="${escapeHTML(photos[0].src)}"
+          <img class="catch-media-img" src="${escapeHTML(photos[0].src)}"${
+            PMF_IMG.attrs(photos[0].src, sizes || "(max-width: 760px) 92vw, 346px")}
                alt="${escapeHTML(tr(photos[0].alt) || d.alt)}" loading="lazy">
           ${badge}
         </button>`;
@@ -401,7 +411,7 @@ async function initCatches(options) {
     return `
       <article class="featured-catch">
         <div class="catch-media featured-media">
-          ${mediaHTML(c, d)}
+          ${mediaHTML(c, d, "(max-width: 760px) 92vw, 583px")}
           <span class="featured-flag">${escapeHTML(t("catches.featured"))}</span>
         </div>
         <div class="catch-body featured-body">
@@ -447,7 +457,7 @@ async function initCatches(options) {
              accessible, et il correspond exactement à ce qui est à l'écran.
              La vignette reste en alt="" — décorative à côté de ce texte. -->
         <button type="button" class="hall-item" data-catch="${escapeHTML(c.id)}" data-photo="0">
-          ${photo ? `<img class="hall-thumb" src="${escapeHTML(photo.src)}" alt="" loading="lazy" width="120" height="90">` : ""}
+          ${photo ? `<img class="hall-thumb" src="${escapeHTML(photo.src)}"${PMF_IMG.attrs(photo.src, "72px")} alt="" loading="lazy" width="120" height="90">` : ""}
           <span class="hall-body">
             <span class="hall-species">${escapeHTML(tr(c.species))}</span>
             <span class="hall-measure">${escapeHTML(tr(c.measure))}</span>

@@ -157,3 +157,45 @@ function eventOrderKey(ev) {
   }
   return sortableDate(start);
 }
+
+// Les photos existent en plusieurs largeurs, écrites par
+// tools/build-image-variants.py et listées dans data/image-variants.json.
+// On donne la liste au navigateur et c'est lui qui choisit : une vignette de
+// 72px n'a aucune raison de télécharger 1200px.
+//
+// Une photo absente de la carte est servie telle quelle, sans srcset — donc
+// ajouter une photo sans relancer l'outil dégrade le poids, jamais l'affichage.
+const PMF_IMG = (() => {
+  let map = null;
+
+  async function load() {
+    if (map) return map;
+    try {
+      map = await (await fetch("data/image-variants.json", DATA_FETCH)).json();
+    } catch (e) {
+      map = {};
+    }
+    return map;
+  }
+
+  function srcset(src) {
+    const widths = map && map[src];
+    if (!widths || widths.length < 2) return "";
+    const dot = src.lastIndexOf(".");
+    const stem = src.slice(0, dot);
+    const ext = src.slice(dot);
+    // La plus grande largeur, c'est le fichier d'origine sous son propre nom.
+    const max = Math.max(...widths);
+    return widths
+      .map((w) => `${w === max ? src : stem + "-" + w + ext} ${w}w`)
+      .join(", ");
+  }
+
+  // Prêt à coller dans une balise : vide si aucune variante n'est connue.
+  function attrs(src, sizes) {
+    const ss = srcset(src);
+    return ss ? ` srcset="${escapeHTML(ss)}" sizes="${escapeHTML(sizes)}"` : "";
+  }
+
+  return { load, srcset, attrs };
+})();
