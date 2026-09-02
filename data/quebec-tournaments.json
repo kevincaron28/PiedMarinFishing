@@ -2136,5 +2136,38 @@
     },
     "tier": "regional",
     "kind": "single"
+  },
+  {
+    "id": "tournoi-achigan-catshalac",
+    "name": {
+      "fr": "Tournoi d'achigan CATSHALAC — lac Saint-Joseph",
+      "en": "CATSHALAC Bass Tournament — Lac Saint-Joseph"
+    },
+    "kind": "single",
+    "tier": "regional",
+    "startDate": "",
+    "endDate": "",
+    "region": {
+      "fr": "Capitale-Nationale",
+      "en": "Capitale-Nationale"
+    },
+    "location": {
+      "fr": "Lac Saint-Joseph, Sainte-Catherine-de-la-Jacques-Cartier",
+      "en": "Lac Saint-Joseph, Sainte-Catherine-de-la-Jacques-Cartier"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "CATSHALAC",
+    "link": "https://catshalac.com/tournoi-achigan-catshalac-lac-st-joseph/",
+    "notes": {
+      "fr": "L'organisation annonce une première édition sur le lac Saint-Joseph, ouverte à tous les niveaux, débutants comme habitués. La date, les frais et le format n'étaient pas publiés au moment de l'ajout — CATSHALAC répond au 581 748-2636 et à info@catshalac.com. Vérifie avant de planifier un déplacement.",
+      "en": "The organizers announce a first edition on Lac Saint-Joseph, open to all levels, beginners and regulars alike. The date, fees and format were not published at the time this was added — CATSHALAC can be reached at 581-748-2636 and info@catshalac.com. Check before planning a trip."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": ""
+    }
   }
 ]
