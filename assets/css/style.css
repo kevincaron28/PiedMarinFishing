@@ -2413,3 +2413,7 @@ body.has-lightbox { overflow: hidden; }
   align-items: center;
   min-height: 24px;
 }
+
+/* Le lien de l'organisateur, dans l'en-tête de la fiche : c'est la première
+   chose que cherche quelqu'un arrivé de Google avec « inscription » en tête. */
+.tp-head-cta { margin-top: 20px; }

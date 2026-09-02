@@ -470,6 +470,20 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
                 % (bilingual("p", {"fr": ui["fr"]["tp.confirm"], "en": ui["en"]["tp.confirm"]}),
                    "".join(cta)))
 
+    # Le lien de l'organisateur vivait tout en bas, après le bloc « à lire
+    # aussi » : entre 80 et 88 % de la hauteur, jusqu'à 3,6 écrans à faire
+    # défiler sur téléphone. Quelqu'un qui arrive de Google en cherchant
+    # « inscription » veut ce lien tout de suite. Il monte donc dans l'en-tête,
+    # et reste en bas pour qui a tout lu.
+    head_cta = ""
+    if (ev.get("link") or "").startswith("http"):
+        head_cta = ('<div class="tp-head-cta">'
+                    '<a class="btn btn-primary" href="%s" target="_blank" rel="noopener">%s</a>'
+                    "</div>"
+                    % (esc(ev["link"]),
+                       bilingual("span", {"fr": ui["fr"]["tp.organizerBtn"],
+                                          "en": ui["en"]["tp.organizerBtn"]})))
+
     ld = structured.event_json(ev)
     ld_block = ""
     if ld:
@@ -522,6 +536,7 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
     <span class="kicker" data-i18n="tp.kicker">Répertoire des tournois</span>
     %(h1)s
     <p class="tp-when">%(when)s</p>
+    %(headcta)s
   </div>
 </div>
 
@@ -532,6 +547,7 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
         "url": url, "site": SITE, "ld": ld_block, "nav": NAV, "footer": FOOTER,
         "h1": bilingual("h1", ev.get("name")),
         "when": bilingual("span", when),
+        "headcta": head_cta,
         "body": "\n\n".join(body),
     }
 
