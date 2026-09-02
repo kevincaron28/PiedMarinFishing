@@ -2416,3 +2416,15 @@ body.has-lightbox { overflow: hidden; }
 /* Le lien de l'organisateur, dans l'en-tête de la fiche : c'est la première
    chose que cherche quelqu'un arrivé de Google avec « inscription » en tête. */
 .tp-head-cta { margin-top: 20px; }
+
+/* Le lien vers l'autre moitié de la saison, sous l'intro d'une page.
+   Sur le fond marine de l'en-tête, il doit rester lisible sans crier. */
+.page-header .cross-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  margin-top: 14px;
+  font-weight: 600;
+  color: var(--gold-400);
+}
+.page-header .cross-link:hover { color: var(--gold-500); }
