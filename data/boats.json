@@ -65,7 +65,15 @@
         "en": "Garmin ClearVü sonar"
       }
     },
-    "gallery": [],
+    "gallery": [
+      {
+        "src": "assets/img/boats/princecraft-1995-lumieres-courtoisie.jpg",
+        "alt": {
+          "fr": "L'intérieur du Princecraft 1995 de nuit, éclairé en vert par les lumières de courtoisie installées; le plancher de contreplaqué est encore nu et les coffres de rangement sont en place.",
+          "en": "The inside of the 1995 Princecraft at night, lit green by the newly installed courtesy lights; the plywood floor is still bare and the storage boxes are in place."
+        }
+      }
+    ],
     "restoration": {
       "status": "restoration",
       "intro": {

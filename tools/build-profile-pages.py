@@ -107,12 +107,29 @@ def srcset_attrs(src, sizes):
 
 
 def gallery_html(photos, alt):
+    """Une galerie où chaque photo peut porter sa propre description.
+
+    Une entrée est soit un chemin tout court, soit {src, alt:{fr,en}}. Un
+    chemin seul retombe sur la description commune — c'est mieux que rien,
+    mais une photo qui montre quelque chose de précis mérite de le dire.
+    """
     if not photos:
         return ""
-    return '<div class="gal-grid">%s</div>' % "".join(
-        '<img class="gal-img" src="%s"%s alt="%s" loading="lazy">'
-        % (esc(p), srcset_attrs(p, "(max-width: 700px) 92vw, 260px"), esc(alt))
-        for p in photos)
+    out = []
+    for photo in photos:
+        src = photo.get("src") if isinstance(photo, dict) else photo
+        if not src:
+            continue
+        legende = pick(photo.get("alt"), "fr") if isinstance(photo, dict) else ""
+        img = ('<img class="gal-img" src="%s"%s alt="%s" loading="lazy">'
+               % (esc(src), srcset_attrs(src, "(max-width: 700px) 92vw, 260px"),
+                  esc(legende or alt)))
+        # L'anglais voyage en data-en-alt, comme partout sur les fiches.
+        if isinstance(photo, dict) and pick(photo.get("alt"), "en") not in ("", legende):
+            img = img.replace("<img ", '<img data-en-alt="%s" '
+                              % esc(pick(photo.get("alt"), "en")), 1)
+        out.append(img)
+    return '<div class="gal-grid">%s</div>' % "".join(out)
 
 
 def ordinal(n, lang):
