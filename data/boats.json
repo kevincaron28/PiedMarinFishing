@@ -102,10 +102,10 @@
         }
       },
       {
-        "src": "assets/img/boats/princecraft-1995-sieges-poses.jpg",
+        "src": "assets/img/boats/princecraft-1995-sieges-temporaires.jpg",
         "alt": {
-          "fr": "Le bateau vu de l'arrière : deux sièges verts sur pied, le panneau d'interrupteurs sur le coffre de gauche, une lumière de courtoisie sur le coffre de droite, et le moteur Evinrude au tableau arrière.",
-          "en": "The boat seen from the stern: two green pedestal seats, the switch panel on the left box, a courtesy light on the right box, and the Evinrude on the transom."
+          "fr": "Le bateau vu de l'arrière : deux sièges verts temporaires sur pied, le panneau d'interrupteurs sur le coffre de gauche, une lumière de courtoisie sur le coffre de droite, et le moteur Evinrude au tableau arrière.",
+          "en": "The boat seen from the stern: two temporary green pedestal seats, the switch panel on the left box, a courtesy light on the right box, and the Evinrude on the transom."
         }
       },
       {
@@ -174,8 +174,8 @@
         },
         {
           "label": {
-            "fr": "Sièges",
-            "en": "Seats"
+            "fr": "Sièges pivotants et siège de plateforme avant",
+            "en": "Swivel seats and a front casting seat"
           },
           "done": false
         },
