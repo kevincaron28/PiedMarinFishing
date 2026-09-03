@@ -17,7 +17,7 @@ async function initEventList(options) {
     groupByMonth = false,
     searchSelector,
     badgeField = "type",
-    linkTextKey = "events.learnMore",
+    linkTextKey = "events.organizerSite",
     pagesUrl = null,
     // « lean » : notre calendrier. Il dit ce qu'on fait, pas ce qu'est
     // l'événement — la fiche s'en charge, à un clic de là.
