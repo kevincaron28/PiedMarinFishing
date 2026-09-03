@@ -67,10 +67,52 @@
     },
     "gallery": [
       {
+        "src": "assets/img/boats/princecraft-1995-avant-tribord.jpg",
+        "alt": {
+          "fr": "Le Princecraft Holiday 1995 sur sa remorque avant les travaux : coque noire, immatriculation QC5003417, intérieur en aluminium nu avec ses bancs d'origine.",
+          "en": "The 1995 Princecraft Holiday on its trailer before the work: black hull, registration QC5003417, bare aluminium interior with its original bench seats."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-avant-babord.jpg",
+        "alt": {
+          "fr": "Le même bateau vu de l'autre bord, coque noire et plat-bord d'aluminium, l'intérieur encore complètement vide.",
+          "en": "The same boat from the other side, black hull and aluminium gunwale, the interior still completely empty."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-chantier-abri.jpg",
+        "alt": {
+          "fr": "Le bateau sous un abri de toile dans l'entrée, un jour de pluie, une grande feuille de contreplaqué appuyée contre le montant : le chantier se fait dehors.",
+          "en": "The boat under a pop-up canopy in the driveway on a rainy day, a large sheet of plywood leaning against the frame: the work happens outdoors."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-plancher-pose.jpg",
+        "alt": {
+          "fr": "L'avant du bateau pendant la pose du plancher : contreplaqué neuf posé à côté du vieux coussin de banc bleu, parois d'aluminium encore nues.",
+          "en": "The bow during the floor work: fresh plywood laid next to the old blue bench cushion, aluminium sides still bare."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-base-siege.jpg",
+        "alt": {
+          "fr": "Le plancher de contreplaqué posé, les coffres de rangement en place, et une base de siège noire vissée sur l'un des coffres.",
+          "en": "The plywood floor down, the storage boxes in place, and a black seat base being bolted onto one of the boxes."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-sieges-poses.jpg",
+        "alt": {
+          "fr": "Le bateau vu de l'arrière : deux sièges verts sur pied, le panneau d'interrupteurs sur le coffre de gauche, une lumière de courtoisie sur le coffre de droite, et le moteur Evinrude au tableau arrière.",
+          "en": "The boat seen from the stern: two green pedestal seats, the switch panel on the left box, a courtesy light on the right box, and the Evinrude on the transom."
+        }
+      },
+      {
         "src": "assets/img/boats/princecraft-1995-lumieres-courtoisie.jpg",
         "alt": {
-          "fr": "L'intérieur du Princecraft 1995 de nuit, éclairé en vert par les lumières de courtoisie installées; le plancher de contreplaqué est encore nu et les coffres de rangement sont en place.",
-          "en": "The inside of the 1995 Princecraft at night, lit green by the newly installed courtesy lights; the plywood floor is still bare and the storage boxes are in place."
+          "fr": "L'intérieur de nuit, éclairé en vert par les lumières de courtoisie; le plancher de contreplaqué est encore nu.",
+          "en": "The interior at night, lit green by the courtesy lights; the plywood floor is still bare."
         }
       }
     ],

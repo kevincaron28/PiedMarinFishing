@@ -23,6 +23,13 @@ from PIL import Image
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DIRS = ("assets/img/catches", "assets/img/team", "assets/img/boats")
 WIDTHS = (160, 400, 800)
+# Une photo de téléphone fait 4000px et 5 Mo. L'affichage le plus large du site
+# en demande 652, soit 1304 sur un écran à double densité : au-delà de 1600, on
+# stocke du poids que personne ne recevra jamais. La source est donc réduite sur
+# place, une fois, à la première exécution.
+#
+# Garde tes originaux ailleurs : ce dossier est la copie du site, pas l'archive.
+MAX_SOURCE = 1600
 QUALITY = 82
 EXTS = (".jpg", ".jpeg", ".png")
 
@@ -37,9 +44,36 @@ def fresh(src, out):
     return os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(src)
 
 
-def build(rel, report):
+def cap_source(rel, report):
+    """Ramène une source démesurée à MAX_SOURCE, sur place."""
     src = os.path.join(REPO, rel)
     im = Image.open(src)
+    if im.width <= MAX_SOURCE:
+        return im
+    avant = os.path.getsize(src)
+    if im.mode not in ("RGB", "L"):
+        im = im.convert("RGB")
+    petite = im.resize((MAX_SOURCE, round(MAX_SOURCE * im.height / im.width)), Image.LANCZOS)
+    buf = io.BytesIO()
+    if rel.lower().endswith(".png"):
+        petite.save(buf, "PNG", optimize=True)
+    else:
+        petite.save(buf, "JPEG", quality=88, optimize=True, progressive=True)
+    # Recompresser une image déjà compressée peut la faire GROSSIR. Une source
+    # à peine au-dessus du plafond ne vaut alors pas la perte de qualité : on
+    # n'écrit que si on y gagne vraiment.
+    if buf.tell() >= avant:
+        return im
+    with open(src, "wb") as fh:
+        fh.write(buf.getvalue())
+    report.append(("↓ source ramenée à %dpx  %s" % (MAX_SOURCE, rel),
+                   avant - os.path.getsize(src)))
+    return Image.open(src)
+
+
+def build(rel, report):
+    src = os.path.join(REPO, rel)
+    im = cap_source(rel, report)
     if im.mode not in ("RGB", "L"):
         im = im.convert("RGB")
     widths = [w for w in WIDTHS if w < im.width]
@@ -82,7 +116,10 @@ if __name__ == "__main__":
         fh.write(json.dumps(carte, ensure_ascii=False, indent=2, sort_keys=True) + "\n")
 
     for rel, size in report:
-        print("  écrit  %-50s %5d Ko" % (rel, size // 1024))
+        if rel.startswith("↓"):
+            print("  %-58s -%4d Ko" % (rel, size // 1024))
+        else:
+            print("  écrit  %-50s %5d Ko" % (rel, size // 1024))
     print("\n%d photo(s), %d variante(s) écrite(s) cette fois." % (sources, len(report)))
     for rel, widths in sorted(carte.items()):
         print("  %-46s %s" % (rel, " ".join("%dw" % w for w in widths)))

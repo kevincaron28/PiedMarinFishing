@@ -1,9 +1,45 @@
 {
+  "assets/img/boats/princecraft-1995-avant-babord.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
+  "assets/img/boats/princecraft-1995-avant-tribord.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
+  "assets/img/boats/princecraft-1995-base-siege.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
+  "assets/img/boats/princecraft-1995-chantier-abri.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
   "assets/img/boats/princecraft-1995-lumieres-courtoisie.jpg": [
     160,
     400,
     800,
     1920
+  ],
+  "assets/img/boats/princecraft-1995-plancher-pose.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
+  "assets/img/boats/princecraft-1995-sieges-poses.jpg": [
+    160,
+    400,
+    800,
+    1600
   ],
   "assets/img/catches/barbue-2025.jpg": [
     160,
