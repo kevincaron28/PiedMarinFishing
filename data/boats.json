@@ -114,6 +114,13 @@
           "fr": "L'intérieur de nuit, éclairé en vert par les lumières de courtoisie; le plancher de contreplaqué est encore nu.",
           "en": "The interior at night, lit green by the courtesy lights; the plywood floor is still bare."
         }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-porte-cannes.jpg",
+        "alt": {
+          "fr": "L'intérieur vu de l'arrière : deux jeux de trois porte-cannes noirs fixés de chaque côté de la plateforme avant, le plancher de contreplaqué encore nu, et les outils posés sur la plateforme.",
+          "en": "The interior seen from the stern: two sets of three black rod holders mounted on either side of the front platform, the plywood floor still bare, and tools set down on the platform."
+        }
       }
     ],
     "restoration": {
@@ -162,6 +169,13 @@
           "label": {
             "fr": "Filage électrique refait au complet",
             "en": "Wiring redone throughout"
+          },
+          "done": true
+        },
+        {
+          "label": {
+            "fr": "Porte-cannes",
+            "en": "Rod holders"
           },
           "done": true
         },
