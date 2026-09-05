@@ -463,6 +463,31 @@ is remembered in `localStorage`.
 is how the calendar stays in sync with the filters without duplicating any
 of them.
 
+**Mobile length.** The guide was **40 279 px — 48.5 phone screens** at 390×830,
+and 79 % of that was the cards themselves (736 px each). Three options bring
+it to 19.4 screens without removing anything:
+
+- `trimWhenPaged: true` drops the specs block, the region and the organizer
+  name from a card **when that tournament has its own page** — 250 px per card
+  that `tournois/<id>.html` repeats verbatim. The 15 entries with no page keep
+  everything, since there would be nowhere else to read it. Same idea as
+  `lean` (our calendar), different motive, so it is a separate flag.
+- Month blocks render as `<details>`, collapsed when **every** event in them
+  is past. Nothing is removed: the content stays in the DOM (crawlers and
+  in-page search still see it) and one tap opens it. A filter or a search
+  suspends collapsing entirely — hiding a result somebody just asked for
+  would be absurd.
+- `monthNavSelector` renders the sticky month strip. It is rebuilt on every
+  render, so it can never point at a month the filters removed; it scrolls
+  itself to the current month; and it is hidden in calendar view, where its
+  anchors would lead into a hidden list.
+
+Two details worth keeping: the month `<h2>` lives **inside** the `<summary>`
+(the spec allows it) because without it the page jumped h1 → h3 and screen
+readers lost the months from their heading list. And `#ev-<id>` card anchors
+reopen their collapsed month before scrolling, so a shared link never lands
+on a closed block.
+
 **Year.** Options are built from the dates in the data — add 2027 events and
 2027 appears by itself. It defaults to *all years* rather than the current
 one, so newly added future seasons are never hidden from the person who just

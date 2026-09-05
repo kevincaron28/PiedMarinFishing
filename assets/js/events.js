@@ -22,6 +22,13 @@ async function initEventList(options) {
     // « lean » : notre calendrier. Il dit ce qu'on fait, pas ce qu'est
     // l'événement — la fiche s'en charge, à un clic de là.
     lean = false,
+    // « trimWhenPaged » : le répertoire. Même raisonnement, autre motif — la
+    // carte mesurait 736px sur un téléphone, dont 250 de specs que la fiche
+    // du tournoi redit mot pour mot. Elle ne les redit plus quand il y a une
+    // fiche où les lire; les 15 tournois qui n'en ont pas gardent tout.
+    trimWhenPaged = false,
+    // Où accrocher la barre de mois. Sans elle, rien ne change.
+    monthNavSelector = null,
     historyUrl = null,
     attendingUrl = null,
     onRender = null,
@@ -351,7 +358,7 @@ async function initEventList(options) {
     // organisateur, frais, format, horaire. Il reste où on va, quand, pour
     // quelle espèce, et pourquoi nous y allons. Sans fiche où le lire — le
     // gala n'en a pas — la carte garde tout, sinon l'information disparaîtrait.
-    const trim = lean && cardPage;
+    const trim = (lean || trimWhenPaged) && cardPage;
 
     // Un champ bilingue vide reste un objet, donc « truthy » : une entrée sans
     // espèce — un salon, un gala — affichait un hameçon tout seul. C'est la
@@ -542,15 +549,45 @@ async function initEventList(options) {
       </div>`;
   }
 
+  // Un bloc de mois entièrement passé s'ouvre replié : sur un téléphone,
+  // les 25 tournois déjà pêchés de 2026 poussaient les 18 à venir hors de
+  // portée. Rien n'est retiré — <details> garde tout à un tap, et le contenu
+  // reste dans le DOM, donc la recherche du navigateur et les robots le
+  // voient. Dès qu'un filtre ou une recherche est actif, plus rien ne se
+  // replie : cacher un résultat qu'on vient de demander serait absurde.
+  function filtersActive() {
+    return [monthSelect, regionSelect, whenSelect, kindSelect, yearSelect, searchInput]
+      .some((el) => el && String(el.value || "").trim() !== "");
+  }
+
+  // Les blocs de la dernière liste rendue, pour la barre de mois.
+  let monthAnchors = [];
+
+  function block(id, label, count, body, collapsed) {
+    // Le <h2> reste DANS le <summary> : la spec l'autorise, et sans lui la
+    // page sautait de h1 à h3. Un lecteur d'écran navigue par titres — les
+    // mois doivent rester des titres même devenus dépliables.
+    const head = `<summary class="season-summary">
+        <h2 class="season-head">${escapeHTML(label)}
+          <span class="season-count">${escapeHTML(plural("filters.count", count))}</span>
+        </h2>
+      </summary>`;
+    return `
+      <details class="season-block"${collapsed ? "" : " open"}${id ? ` id="${escapeHTML(id)}"` : ""}>
+        ${head}
+        ${body}
+      </details>`;
+  }
+
   function groupBySeason(filtered) {
     const out = [];
+    monthAnchors = [];
+    const frozen = filtersActive();
     const circuits = filtered.filter((e) => e.kind === "circuit" && seasonOf(e));
     if (circuits.length) {
-      out.push(`
-        <section class="season-block">
-          <h2 class="season-head">${escapeHTML(t("events.circuitsTitle"))}</h2>
-          <div class="circuit-rows">${circuits.map(renderCircuitRow).join("")}</div>
-        </section>`);
+      out.push(block("m-circuits", t("events.circuitsTitle"), circuits.length,
+        `<div class="circuit-rows">${circuits.map(renderCircuitRow).join("")}</div>`, false));
+      monthAnchors.push({ id: "m-circuits", label: t("events.circuitsShort"), state: "" });
     }
 
     // Chaque mois montre les tournois seuls et les étapes, à plat.
@@ -564,30 +601,98 @@ async function initEventList(options) {
       if (!byMonth.has(k)) byMonth.set(k, []);
       byMonth.get(k).push(e);
     });
+    const nowKey = new Date().toISOString().slice(0, 7);
     [...byMonth.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([k, list]) => {
       const mi = parseInt(k.slice(5, 7), 10) - 1;
       const label = `${names[mi]} ${k.slice(0, 4)}`;
-      out.push(`
-        <section class="season-block">
-          <h2 class="season-head">${escapeHTML(label)}
-            <span class="season-count">${escapeHTML(plural("filters.count", list.length))}</span>
-          </h2>
-          <div class="event-list">${list.map(renderCard).join("")}</div>
-        </section>`);
+      const allPast = list.every(isPastEvent);
+      const id = `m-${k}`;
+      out.push(block(id, label, list.length,
+        `<div class="event-list">${list.map(renderCard).join("")}</div>`,
+        allPast && !frozen));
+      monthAnchors.push({
+        id,
+        // util.js tient déjà les abréviations des deux langues.
+        label: months(PMF_I18N.lang).abbr[mi],
+        state: k === nowKey ? "now" : allPast ? "past" : "",
+      });
     });
 
     const undated = filtered.filter((e) => !seasonOf(e));
     if (undated.length) {
-      out.push(`
-        <section class="season-block">
-          <h2 class="season-head">${escapeHTML(t("events.undatedTitle"))}
-            <span class="season-count">${escapeHTML(plural("filters.count", undated.length))}</span>
-          </h2>
-          <div class="event-list">${undated.map(renderCard).join("")}</div>
-        </section>`);
+      // Sans date, rien n'est passé : ce bloc reste ouvert.
+      out.push(block("m-undated", t("events.undatedTitle"), undated.length,
+        `<div class="event-list">${undated.map(renderCard).join("")}</div>`, false));
+      monthAnchors.push({ id: "m-undated", label: t("events.undatedShort"), state: "" });
     }
     return out.join("");
   }
+
+  // La barre de mois : des raccourcis vers les blocs qu'on vient d'écrire.
+  // Elle se reconstruit à chaque rendu, donc elle ne peut pas pointer vers un
+  // mois que les filtres ont fait disparaître.
+  const monthNavEl = monthNavSelector ? document.querySelector(monthNavSelector) : null;
+
+  function renderMonthNav() {
+    if (!monthNavEl) return;
+    // Un seul bloc : la barre n'aide personne, elle disparaît.
+    if (monthAnchors.length < 2) {
+      monthNavEl.hidden = true;
+      monthNavEl.innerHTML = "";
+      return;
+    }
+    monthNavEl.hidden = false;
+    monthNavEl.innerHTML = monthAnchors.map((a) => `
+      <a class="month-chip${a.state ? " month-chip-" + a.state : ""}" href="#${escapeHTML(a.id)}"
+         ${a.state === "now" ? `aria-current="true"` : ""}>${escapeHTML(a.label)}</a>`).join("");
+
+    // La barre déborde à droite : sur un téléphone on voit cinq mois sur onze.
+    // Le mois courant est celui qu'on cherche, alors c'est lui qu'on amène
+    // dans le champ de vision — sans faire bouger la page elle-même.
+    const now = monthNavEl.querySelector(".month-chip-now");
+    if (now) {
+      monthNavEl.scrollLeft = Math.max(
+        0, now.offsetLeft - (monthNavEl.clientWidth - now.offsetWidth) / 2);
+    }
+  }
+
+  // Un mois replié doit s'ouvrir avant qu'on y saute, sinon le lien mène à un
+  // titre et le visiteur croit que le mois est vide. L'ancre est ensuite
+  // amenée sous l'en-tête collant plutôt que dessous.
+  function jumpTo(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    if (target.tagName === "DETAILS") target.open = true;
+    const header = document.querySelector(".site-header");
+    const offset = (header ? header.getBoundingClientRect().height : 0)
+      + (monthNavEl && !monthNavEl.hidden ? monthNavEl.getBoundingClientRect().height : 0) + 8;
+    const y = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+  }
+
+  if (monthNavEl) {
+    monthNavEl.addEventListener("click", (e) => {
+      const chip = e.target.closest(".month-chip");
+      if (!chip) return;
+      e.preventDefault();
+      jumpTo(chip.getAttribute("href").slice(1));
+    });
+  }
+
+  // Chaque carte porte une ancre #ev-<id>, partageable. Depuis que les mois
+  // passés s'ouvrent repliés, un tel lien tomberait dans le vide : le
+  // navigateur ne peut pas défiler vers un élément fermé. On rouvre le mois
+  // qui contient la cible avant de l'atteindre.
+  function openHashTarget() {
+    const id = (location.hash || "").slice(1);
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el || !listEl.contains(el)) return;
+    let box = el.closest("details");
+    while (box) { box.open = true; box = box.parentElement && box.parentElement.closest("details"); }
+    jumpTo(id);
+  }
+  window.addEventListener("hashchange", openHashTarget);
 
   function icsDate(iso) { return iso.replace(/-/g, ""); }
 
@@ -649,6 +754,7 @@ async function initEventList(options) {
     }
 
     bindIcsButtons();
+    renderMonthNav();
     if (onRender) onRender({ filtered, renderCard });
   }
 
@@ -666,4 +772,5 @@ async function initEventList(options) {
   buildSeasons();
   renderSeasonSwitch();
   render();
+  openHashTarget();
 }

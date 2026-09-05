@@ -653,10 +653,87 @@ section.alt { background: var(--sand-100); }
   padding-bottom: 8px;
   border-bottom: 2px solid var(--line);
   font-size: 1.05rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--navy-900);
 }
+/* Le titre vit dans un <summary> : c'est lui qui porte le clic et le focus,
+   le <h2> ne porte que l'allure. Le chevron par défaut de Safari se place
+   mal dans une ligne en flex, alors on dessine le nôtre. */
+.season-summary { cursor: pointer; list-style: none; }
+.season-summary::-webkit-details-marker { display: none; }
+/* Un chevron à droite, qui pivote quand le mois s'ouvre : c'est le seul
+   indice qu'un mois replié n'est pas un mois vide. */
+.season-head::after {
+  content: "";
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--ink-600);
+  border-bottom: 2px solid var(--ink-600);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.15s ease;
+}
+details[open] > .season-summary .season-head::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+.season-summary:hover .season-head { color: var(--teal-600); }
+.season-summary:focus-visible { outline: 2px solid var(--teal-600); outline-offset: 3px; }
+
+/* ---------- Barre de mois ---------- */
+
+/* Elle colle sous l'en-tête du site, qui fait 64px sur un téléphone et 72
+   au-delà. Le défilement horizontal est voulu : douze mois ne tiennent pas
+   sur 390px, et une barre qui passe à la ligne repousse la liste. */
+.month-nav {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: -12px 0 20px;
+  padding: 10px 0;
+  background: var(--sand-50);
+  border-bottom: 1px solid var(--line);
+}
+.month-nav::-webkit-scrollbar { display: none; }
+/* Masquée en vue calendrier, où ses ancres ne mènent nulle part. */
+.month-nav.month-nav-off { display: none; }
+/* Un fondu à droite dit qu'il y a d'autres mois derrière le bord, ce qu'une
+   barre coupée net ne dit pas. Il disparaît quand tout tient à l'écran. */
+.month-nav { -webkit-mask-image: var(--fade); mask-image: var(--fade); }
+.month-nav {
+  --fade: linear-gradient(to right, #000 0, #000 calc(100% - 28px), transparent 100%);
+}
+@media (min-width: 760px) {
+  .month-nav { top: 72px; }
+  .month-nav { --fade: none; -webkit-mask-image: none; mask-image: none; }
+}
+
+.month-chip {
+  flex: 0 0 auto;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy-900);
+  white-space: nowrap;
+}
+.month-chip:hover { text-decoration: none; border-color: var(--teal-400); color: var(--teal-600); }
+/* Un mois passé reste atteignable, mais il ne réclame pas l'attention. */
+.month-chip-past { color: var(--ink-600); background: transparent; font-weight: 500; }
+.month-chip-now {
+  background: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+.month-chip-now:hover { color: var(--white); border-color: var(--navy-900); }
 .season-count {
   font-size: 0.82rem;
   font-weight: 600;

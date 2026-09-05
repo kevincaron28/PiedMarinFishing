@@ -947,13 +947,13 @@
 <div class="page-header">
   <div class="container">
     <h1 data-i18n="tournaments.h1">Guide des tournois au Québec</h1>
-    <p data-i18n="tournaments.intro">Un répertoire des tournois de pêche au Québec, monté par des pêcheurs pour des pêcheurs — lacs, rivières et fleuve, d'un bout à l'autre de la province. C'est déjà bien garni en Montérégie et dans le Sud-Ouest, et ça continue de grandir ailleurs au Québec. On y ajoute quelques tournois du corridor ontarien du Saint-Laurent — Cornwall, Brockville — qui se pêchent facilement depuis chez nous : prévois le permis de l'Ontario et tes pièces d'identité pour la frontière. On y met aussi les salons plein air, chasse et pêche — c'est là que la saison se prépare, en plein hiver. Bonne pêche!</p>
+    <p data-i18n="tournaments.intro">Un répertoire des tournois de pêche au Québec, monté par des pêcheurs pour des pêcheurs — lacs, rivières et fleuve, d'un bout à l'autre de la province. Bonne pêche!</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice" data-i18n="tournaments.notice">Les tournois sont regroupés par mois. Les <strong>circuits</strong> sont listés en haut, et chacune de leurs étapes apparaît dans son mois. Ce qui n'a pas encore de date publiée est en bas de page. Confirme toujours auprès de l'organisateur. Un tournoi manque à l'appel? <a href="mailto:info@piedmarinfishing.com">Écris-nous</a>, on l'ajoute.</div>
+    <div class="notice" data-i18n="tournaments.notice">On y met aussi les salons plein air et quelques tournois du corridor ontarien du Saint-Laurent. Confirme toujours les dates auprès de l'organisateur — c'est lui qui décide. Un tournoi manque à l'appel? <a href="mailto:info@piedmarinfishing.com">Écris-nous</a>, on l'ajoute.</div>
 
     <div class="filters">
       <div class="season-switch" id="season-switch" role="group" data-i18n-aria-label="events.seasonLabel" aria-label="Saison"></div>
@@ -964,6 +964,8 @@
       </div>
       <span class="result-count" id="result-count"></span>
     </div>
+
+    <nav class="month-nav" id="month-nav" hidden data-i18n-aria-label="events.monthNavLabel" aria-label="Aller au mois"></nav>
 
     <div id="list-view">
       <div id="event-list" class="event-list"></div>
@@ -1048,6 +1050,12 @@
     toggleSelector: ".view-toggle",
     listSelector: "#list-view",
     calendarSelector: "#calendar-view",
+    // La barre de mois saute dans la liste : en vue calendrier elle
+    // pointerait vers des blocs masqués. Elle suit donc la vue.
+    onChange: (view) => {
+      const nav = document.getElementById("month-nav");
+      if (nav) nav.classList.toggle("month-nav-off", view !== "list");
+    },
   });
 
   initEventList({
@@ -1060,6 +1068,8 @@
     seasonSelector: "#season-switch",
     groupByMonth: true,
     searchSelector: "#search-filter",
+    monthNavSelector: "#month-nav",
+    trimWhenPaged: true,
     badgeField: "species",
     linkTextKey: "events.organizerSite",
     onRender: (ctx) => calendar && calendar.render(ctx),
