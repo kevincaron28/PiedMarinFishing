@@ -1010,25 +1010,15 @@
     <!-- Deuxième liste, volontairement séparée de la première : ce sont des
          organismes, pas des calendriers. La FédéCP y a été déplacée pour la
          même raison. -->
-    <div class="section-head" style="margin-top:44px;">
-      <span class="kicker" data-i18n="tournaments.orgKicker">Le monde de la pêche au Québec</span>
-      <h2 data-i18n="tournaments.orgTitle">Fédérations et associations</h2>
-      <p data-i18n="tournaments.orgBody">Ces organismes ne tiennent pas qu'un calendrier : ils défendent l'accès à l'eau, font de la recherche et organisent une partie des tournois listés ici. Vaut la peine de les connaître.</p>
+    <div id="organismes" data-orgs-section>
+      <div class="section-head" style="margin-top:44px;">
+        <span class="kicker" data-i18n="tournaments.orgKicker">Le monde de la pêche au Québec</span>
+        <h2 data-i18n="tournaments.orgTitle">Fédérations et associations</h2>
+        <p data-i18n="tournaments.orgBody">Ces organismes ne tiennent pas qu'un calendrier : ils défendent l'accès à l'eau, font de la recherche et organisent une partie des tournois listés ici. Vaut la peine de les connaître.</p>
+      </div>
+      <ul class="resource-list" id="org-list"></ul>
+      <p class="org-disclaimer" data-org-disclaimer data-i18n="orgs.disclaimer">Aucun de ces organismes ne nous commandite, et on n'est membre d'aucun. On les nomme parce qu'ils font le travail.</p>
     </div>
-    <ul class="resource-list">
-      <li>
-        <a href="https://muskiescanada.ca/" target="_blank" rel="noopener">Muskies Canada</a>
-        <div class="src-meta" data-i18n="tournaments.org1">Conservation et recherche sur le maskinongé, à l'échelle du pays. Sa section de Montréal tient son propre circuit, le CMCM, dont la finale — le Challenge Crystal Cup — est au calendrier ci-dessus.</div>
-      </li>
-      <li>
-        <a href="https://fedecp.com/" target="_blank" rel="noopener">Fédération québécoise des chasseurs et pêcheurs</a>
-        <div class="src-meta" data-i18n="tournaments.org2">La fédération provinciale des chasseurs et pêcheurs. Elle tient les Jeux provinciaux de pêche et un programme jeunesse, tous deux au répertoire.</div>
-      </li>
-      <li>
-        <a href="https://www.apsq.ca/" target="_blank" rel="noopener">Association des Pêcheurs Sportifs du Québec</a>
-        <div class="src-meta" data-i18n="tournaments.org3">Vouée à l'accès équitable aux plans d'eau publics du Québec. Elle coprésente aussi L'Amical, plus haut dans la liste.</div>
-      </li>
-    </ul>
   </div>
 </section>
 
@@ -1047,6 +1037,7 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/events.js"></script>
 <script src="assets/js/calendar-view.js"></script>
+<script src="assets/js/organizations.js"></script>
 <script>
   const calendar = initCalendarView({
     calendarSelector: "#season-calendar",
@@ -1073,6 +1064,7 @@
     linkTextKey: "events.organizerSite",
     onRender: (ctx) => calendar && calendar.render(ctx),
   });
+  initOrganizations("[data-orgs-section]", "#org-list", "[data-org-disclaimer]");
 </script>
 </body>
 </html>

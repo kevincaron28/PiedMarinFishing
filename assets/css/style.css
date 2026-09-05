@@ -895,39 +895,17 @@ a.nextgen-parent { font-weight: 600; }
 
 /* ---------- Le milieu (organismes) ---------- */
 
-.org-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.org-card {
-  display: flex;
-  flex-direction: column;
-  padding: 24px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-}
-.org-kicker {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--teal-600);
-}
-.org-card h3 { margin: 6px 0 0; font-size: 1.08rem; line-height: 1.3; }
-
+/* Les organismes vivent dans une .resource-list du répertoire; il ne reste
+   ici que les pastilles de lien et la note sous la liste. */
 .org-ties {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin: 8px 0 4px;
 }
 /* Trois poids, et l'écart est voulu : ce qu'on a pêché se lit en premier,
-   ce qui s'en vient ensuite, et « on suit leur travail » ne doit surtout pas
-   se faire passer pour un lien qu'on n'a pas. */
+   et « on suit leur travail » ne doit surtout pas se faire passer pour un
+   lien qu'on n'a pas. */
 .org-tie {
   padding: 3px 10px;
   border-radius: 999px;
@@ -945,21 +923,6 @@ a.nextgen-parent { font-weight: 600; }
   border: 1px solid var(--line);
   color: var(--ink-600);
   font-weight: 500;
-}
-
-.org-what {
-  margin: 12px 0 0;
-  font-size: 0.9rem;
-  color: var(--ink-600);
-  flex: 1;
-}
-.org-link {
-  display: inline-block;
-  align-self: flex-start;
-  margin-top: 12px;
-  padding: 3px 0;
-  font-size: 0.88rem;
-  font-weight: 600;
 }
 
 .org-disclaimer {

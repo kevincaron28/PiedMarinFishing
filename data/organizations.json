@@ -1,11 +1,10 @@
 [
   {
-    "id": "muskies-canada-montreal",
+    "id": "muskies-canada",
     "name": "Muskies Canada — section Montréal",
-    "kicker": { "fr": "Maskinongé · Montréal", "en": "Muskie · Montréal" },
     "what": {
-      "fr": "Club sans but lucratif voué à la recherche scientifique sur le maskinongé et à sa remise à l'eau. La section de Montréal, fondée en 1993, est la seule au Québec. Elle organise la Formule Brochet et le circuit CMCM, et fait de l'initiation auprès des jeunes.",
-      "en": "A non-profit club devoted to scientific research on muskie and to catch-and-release. The Montréal chapter, founded in 1993, is the only one in Québec. It runs the Formule Brochet and the CMCM circuit, and introduces kids to the sport."
+      "fr": "Club sans but lucratif voué à la recherche scientifique sur le maskinongé et à sa remise à l'eau. La section de Montréal, fondée en 1993, est la seule au Québec; elle tient le circuit CMCM et fait de l'initiation auprès des jeunes.",
+      "en": "A non-profit club devoted to scientific research on muskie and to catch-and-release. The Montréal chapter, founded in 1993, is the only one in Québec; it runs the CMCM circuit and introduces kids to the sport."
     },
     "link": "https://muskiescanada.ca/montreal/",
     "organizerMatch": ["Muskies Canada"]
@@ -13,7 +12,6 @@
   {
     "id": "big-bass-quebec",
     "name": "Big Bass Québec",
-    "kicker": { "fr": "Achigan · corridor du Saint-Laurent", "en": "Bass · St. Lawrence corridor" },
     "what": {
       "fr": "Le principal organisateur de tournois d'achigan du corridor, du lac Saint-Louis à Lavaltrie. Des événements accessibles, ouverts autant aux équipes qui débutent qu'aux habitués.",
       "en": "The corridor's main bass tournament organizer, from Lac Saint-Louis to Lavaltrie. Accessible events, open to first-timers as much as to regulars."
@@ -24,18 +22,16 @@
   {
     "id": "fedecp",
     "name": "Fédération québécoise des chasseurs et pêcheurs",
-    "kicker": { "fr": "Relève et conservation · depuis 1946", "en": "Conservation and newcomers · since 1946" },
     "what": {
       "fr": "Depuis 1946, la FédéCP représente les chasseurs et les pêcheurs du Québec, forme à la pratique sécuritaire et travaille à la conservation de la faune. C'est l'un des plus vieux organismes fauniques de la province.",
       "en": "Since 1946 the FédéCP has represented Québec's hunters and anglers, trained them in safe practice and worked on wildlife conservation. It is one of the province's oldest wildlife organizations."
     },
     "link": "https://fedecp.com/",
-    "organizerMatch": []
+    "organizerMatch": ["Fédération québécoise des chasseurs", "FédéCP"]
   },
   {
     "id": "heritage-faune",
     "name": "Fondation Héritage faune",
-    "kicker": { "fr": "Habitats et relève · depuis 1980", "en": "Habitat and newcomers · since 1980" },
     "what": {
       "fr": "La fondation de la FédéCP, première au Québec à se consacrer à l'aménagement des habitats fauniques et au développement de la relève. Elle finance entre autres des activités d'initiation à la pêche blanche pour les jeunes.",
       "en": "The FédéCP's foundation, the first in Québec devoted to wildlife habitat work and to bringing new people into the sport. Among other things it funds ice-fishing introduction days for kids."
@@ -46,7 +42,6 @@
   {
     "id": "apsq",
     "name": "Association des pêcheurs sportifs du Québec",
-    "kicker": { "fr": "Accès aux plans d'eau publics", "en": "Access to public waters" },
     "what": {
       "fr": "L'APSQ se bat pour que tous les pêcheurs gardent accès aux plans d'eau publics du Québec, peu importe d'où ils viennent. Sans mise à l'eau, il n'y a pas de pêche — c'est un combat qui nous concerne directement.",
       "en": "The APSQ fights to keep every angler's access to Québec's public waters, whoever they are. Without a launch there is no fishing — this one affects us directly."
@@ -55,9 +50,38 @@
     "organizerMatch": []
   },
   {
+    "id": "fbfq",
+    "name": "Fondation pour la biodiversité et la faune du Québec",
+    "what": {
+      "fr": "Anciennement la Fondation de la faune du Québec. Elle finance les organismes qui protègent et restaurent les habitats fauniques, en bonne partie grâce aux contributions des chasseurs, pêcheurs et trappeurs — une part de chaque permis de pêche aboutit ici.",
+      "en": "Formerly the Fondation de la faune du Québec. It funds the groups that protect and restore wildlife habitat, largely on contributions from hunters, anglers and trappers — a share of every fishing licence ends up here."
+    },
+    "link": "https://www.fbfq.ca/",
+    "organizerMatch": []
+  },
+  {
+    "id": "reseau-zec",
+    "name": "Réseau Zec du Québec",
+    "what": {
+      "fr": "Les zecs sont des territoires de chasse et de pêche sur terres publiques, gérées par des organismes sans but lucratif depuis 1978. Les revenus de la pêche y sont réinvestis dans la conservation, et le territoire reste ouvert à tout le monde.",
+      "en": "Zecs are hunting and fishing territories on public land, run by non-profits since 1978. Fishing revenue is reinvested in conservation, and the territory stays open to everyone."
+    },
+    "link": "https://www.reseauzec.com/",
+    "organizerMatch": []
+  },
+  {
+    "id": "comite-zip-lac-saint-pierre",
+    "name": "Comité ZIP du lac Saint-Pierre",
+    "what": {
+      "fr": "Le lac Saint-Pierre est la plus grande plaine inondable du Saint-Laurent, et sa perchaude est sous moratoire de pêche depuis 2012. Le comité travaille sur la qualité de l'eau et la restauration des habitats avec les chercheurs et les riverains.",
+      "en": "Lac Saint-Pierre is the St. Lawrence's largest floodplain, and its yellow perch has been under a fishing moratorium since 2012. The committee works on water quality and habitat restoration with researchers and shoreline communities."
+    },
+    "link": "https://comiteziplsp.org/",
+    "organizerMatch": []
+  },
+  {
     "id": "covabar",
     "name": "COVABAR — OBV Richelieu et zone Saint-Laurent",
-    "kicker": { "fr": "Notre rivière", "en": "Our home river" },
     "what": {
       "fr": "L'organisme de bassin versant de la rivière Richelieu et du Saint-Laurent, de Brossard à Sorel-Tracy. C'est exactement l'eau qu'on pêche : la qualité de nos sorties dépend de la santé de ce bassin.",
       "en": "The watershed organization for the Richelieu and the St. Lawrence, from Brossard to Sorel-Tracy. That is precisely the water we fish: the quality of our days out depends on this basin's health."

@@ -187,8 +187,8 @@ they stay in sync.
 - **Team boats** → `data/boats.json`.
 - **La relève / next generation** → `data/next-gen.json` (see **La relève**).
 - **Shop products** → `data/merch.json`.
-- **Organizations we stand behind** → `data/organizations.json` (see
-  **Le milieu**).
+- **Federations and associations** → `data/organizations.json` (see
+  **Fédérations et associations**).
 - **Catches** → `data/catches.json`, photos in `assets/img/catches/`.
 - **Featured video** → `data/featured-video.json`. Paste a YouTube video id
   (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
@@ -544,37 +544,48 @@ belongs to a child.
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
 
-### Le milieu
+### Fédérations et associations
 
-`data/organizations.json` feeds the *Les organismes qu'on appuie* section of
-`sponsors.html` through `assets/js/organizations.js`. A list like this is an
-easy place to imply a membership nobody granted, so the module is built to
-make that hard: **nothing in the JSON can assert a relationship.** The only
-tie a card shows is *computed* from our own logs.
+`data/organizations.json` feeds the *Fédérations et associations* block at the
+bottom of `tournaments.html` through `assets/js/organizations.js`. The guide is
+its home for a reason: it is the page anglers already read as a reference, and
+keeping the list in one place is what stops two copies from drifting apart.
+`sponsors.html` links here rather than repeating it.
+
+A list like this is an easy place to imply a relationship nobody granted, so
+the module is built to make that hard: **nothing in the JSON can assert one.**
+Every tie shown is *computed* by matching `organizerMatch` against the
+`organizer` field of three files:
+
+| Source | Chip |
+|---|---|
+| `tournament-history.json` | *N tournois pêchés depuis YYYY* |
+| `team-schedule.json` | *N tournois à notre calendrier* |
+| `quebec-tournaments.json` | *N tournois au répertoire* |
+| nothing matched | *On suit leur travail* |
 
 ```json
 {
-  "id": "muskies-canada-montreal",
+  "id": "muskies-canada",
   "name": "Muskies Canada — section Montréal",
-  "kicker": { "fr": "Maskinongé · Montréal", "en": "Muskie · Montréal" },
   "what": { "fr": "…", "en": "…" },
   "link": "https://muskiescanada.ca/montreal/",
   "organizerMatch": ["Muskies Canada"]
 }
 ```
 
-- `organizerMatch` holds substrings tested against the `organizer` field of
-  `tournament-history.json` (tournaments we **fished**) and
-  `team-schedule.json` (tournaments **booked**). Matching ignores case and
-  accents, so `Muskies Canada Montréal` and `Muskies Canada — section
-  Montréal` are the same organization. Empty array, or no match: the card
-  falls back to *On suit leur travail* — never to a number.
+- Matching ignores case and accents, so `Muskies Canada Montréal` and
+  `Muskies Canada — section Montréal` are the same organization. An empty
+  array, or no match, falls back to *On suit leur travail* — never to a number.
 - The *fished since* year is the earliest matching result's year. Nothing is
-  written by hand, so a card cannot outrun the record.
+  written by hand, so a line cannot outrun the record. This replaced three
+  hand-written notes, one of which had already gone stale: it credited
+  L'Amical to the APSQ, while the directory says *Club April Marine avec Big
+  Bass Québec*.
 - `member: true` is the **only** way to claim membership, and setting it on
-  any organization automatically hides the *we belong to none of them*
-  disclaimer under the grid — so that line can never turn into a lie.
-- Empty file, no section.
+  any organization hides the *we belong to none of them* line under the list —
+  so that sentence can never turn into a lie.
+- Empty file: the heading, the list and the note all disappear together.
 
 The external links here cannot be reached from a sandboxed session (the egress
 proxy blocks every outside host), so they are transcribed from search results

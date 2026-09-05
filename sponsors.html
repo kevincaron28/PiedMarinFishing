@@ -90,23 +90,12 @@
       <li data-i18n="sponsors.fact4">Présents aussi dans les salons de pêche et les galas de tournois du Québec — là où le monde de la pêche se rassemble hors saison.</li>
       <li data-i18n="sponsors.fact5">Un site bilingue et cinq réseaux sociaux alimentés au fil de la saison.</li>
       <li data-i18n="sponsors.fact6">Un répertoire de plus de 30 tournois du Québec, tenu à jour pour toute la communauté des pêcheurs — pas juste pour nous.</li>
+      <li><span data-i18n="sponsors.fact7">Un répertoire qui présente aussi les fédérations et les organismes du milieu — Muskies Canada, Big Bass Québec, la FédéCP, l'APSQ et les autres.</span> <a href="tournaments.html#organismes" data-i18n="sponsors.fact7Link">Voir la liste →</a></li>
     </ul>
   </div>
 </section>
 
-<section id="organismes" data-orgs-section>
-  <div class="container">
-    <div class="section-head">
-      <span class="kicker" data-i18n="orgs.kicker">Le milieu</span>
-      <h2 data-i18n="orgs.title">Les organismes qu'on appuie</h2>
-      <p data-i18n="orgs.intro">La pêche au Québec tient sur des organismes et des bénévoles. Voici ceux dont on pêche les tournois, et ceux dont on suit le travail parce qu'il profite à tout le monde sur l'eau.</p>
-    </div>
-    <div id="org-list" class="org-list"></div>
-    <p class="org-disclaimer" data-org-disclaimer data-i18n="orgs.disclaimer">Aucun de ces organismes ne nous commandite, et on n'est membre d'aucun. On les nomme parce qu'ils font le travail.</p>
-  </div>
-</section>
-
-<section class="alt">
+<section>
   <div class="container">
     <div class="section-head">
       <span class="kicker" data-i18n="sponsors.offerKicker">Ce qu'on peut offrir</span>
@@ -124,7 +113,7 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="container">
     <div class="section-head">
       <span class="kicker" data-i18n="sponsors.honestKicker">Ce qu'on ne peut pas encore offrir</span>
@@ -134,7 +123,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="container">
     <div class="callout">
       <h3 data-i18n="sponsors.ctaTitle">Parlons-nous</h3>
@@ -165,10 +154,8 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/sponsors.js"></script>
-<script src="assets/js/organizations.js"></script>
 <script>
   initSponsors("#sponsor-grid", "#partners-section");
-  initOrganizations("[data-orgs-section]", "#org-list", "[data-org-disclaimer]");
 </script>
 </body>
 </html>

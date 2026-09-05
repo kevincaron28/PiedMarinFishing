@@ -1,15 +1,21 @@
-// Pied Marin Fishing — le milieu qu'on appuie
+// Pied Marin Fishing — fédérations et associations
 //
 // Une liste d'organismes est une invitation à s'attribuer un mérite qui n'est
-// pas le sien. Ce module est écrit pour rendre ça difficile : rien ici n'est
-// une affiliation, et le seul lien qu'une carte peut afficher est CALCULÉ à
-// partir de nos propres données — les tournois de data/tournament-history.json
-// qu'on a réellement pêchés, et ceux de data/team-schedule.json qui sont
-// réellement à notre calendrier. Un organisme dont on ne pêche pas les
-// événements n'affiche aucun compte, parce qu'il n'y a rien à compter.
+// pas le sien. Ce module est écrit pour rendre ça difficile : rien dans
+// data/organizations.json ne peut affirmer une relation. Les seuls liens
+// qu'une ligne affiche sont CALCULÉS en comparant organizerMatch au champ
+// organizer de trois sources :
 //
-// La mention « on n'est membre d'aucun » disparaît d'elle-même le jour où un
-// organisme porte member: true — pour qu'elle ne devienne jamais fausse.
+//   tournament-history.json  ce qu'on a réellement pêché
+//   team-schedule.json       ce qui est réellement à notre calendrier
+//   quebec-tournaments.json  ce qu'ils organisent dans le répertoire
+//
+// C'est ce qui a rattrapé une note écrite à la main qui donnait L'Amical à
+// l'APSQ : le répertoire dit « Club April Marine avec Big Bass Québec ».
+// Un chiffre calculé ne peut pas vieillir tout seul; une phrase, oui.
+//
+// La mention « on n'est membre d'aucun » disparaît d'elle-même dès qu'un
+// organisme porte member: true, pour qu'elle ne devienne jamais fausse.
 
 async function initOrganizations(sectionSelector, listSelector, disclaimerSelector) {
   const section = document.querySelector(sectionSelector);
@@ -19,14 +25,18 @@ async function initOrganizations(sectionSelector, listSelector, disclaimerSelect
   await PMF_I18N.ready;
   const { t, tr, plural } = PMF_I18N;
 
+  const grab = (url) => fetch(url, DATA_FETCH).then((r) => r.json()).catch(() => []);
+
   let orgs = [];
   let history = [];
   let schedule = [];
+  let directory = [];
   try {
-    [orgs, history, schedule] = await Promise.all([
+    [orgs, history, schedule, directory] = await Promise.all([
       fetch("data/organizations.json", DATA_FETCH).then((r) => r.json()),
-      fetch("data/tournament-history.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
-      fetch("data/team-schedule.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
+      grab("data/tournament-history.json"),
+      grab("data/team-schedule.json"),
+      grab("data/quebec-tournaments.json"),
     ]);
   } catch (e) {
     orgs = [];
@@ -37,10 +47,8 @@ async function initOrganizations(sectionSelector, listSelector, disclaimerSelect
     return;
   }
 
-  // Un organisme est « le nôtre » sur un événement quand son nom apparaît dans
-  // le champ organizer, dans une langue ou l'autre. La comparaison est faite
-  // sans accents ni casse : « Muskies Canada Montréal » et « Muskies Canada —
-  // section Montréal » sont le même monde.
+  // Comparaison sans accents ni casse : « Muskies Canada Montréal » et
+  // « Muskies Canada — section Montréal » sont le même monde.
   function fold(s) {
     return String(s || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   }
@@ -60,10 +68,12 @@ async function initOrganizations(sectionSelector, listSelector, disclaimerSelect
     });
   }
 
-  function render() {
-    const lang = PMF_I18N.lang;
-    const anyMember = orgs.some((o) => o.member);
+  function chip(text, cls) {
+    return `<span class="org-tie${cls ? " " + cls : ""}">${escapeHTML(text)}</span>`;
+  }
 
+  function render() {
+    const anyMember = orgs.some((o) => o.member);
     const disclaimer = disclaimerSelector ? document.querySelector(disclaimerSelector) : null;
     if (disclaimer) disclaimer.hidden = anyMember;
 
@@ -73,38 +83,36 @@ async function initOrganizations(sectionSelector, listSelector, disclaimerSelect
 
       const fished = matched(org, history);
       const booked = matched(org, schedule);
+      const listed = matched(org, directory);
 
-      // Les liens réels, dans l'ordre où ils comptent : ce qu'on a pêché,
-      // puis ce qui s'en vient. Rien quand il n'y a rien.
       const ties = [];
-      if (org.member) ties.push(`<span class="org-tie org-tie-strong">${escapeHTML(t("orgs.tie.member"))}</span>`);
+      if (org.member) ties.push(chip(t("orgs.tie.member"), "org-tie-strong"));
       if (fished.length) {
         const years = fished.map((e) => parseInt(String(e.date || "").slice(0, 4), 10)).filter(Boolean);
-        const label = years.length
-          ? t("orgs.tie.fishedSince", { n: fished.length, noun: plural("orgs.tournament", fished.length), y: Math.min(...years) })
-          : `${fished.length} ${plural("orgs.tournament", fished.length)}`;
-        ties.push(`<span class="org-tie org-tie-strong">${escapeHTML(label)}</span>`);
+        const noun = plural("orgs.tournament", fished.length);
+        ties.push(chip(years.length
+          ? t("orgs.tie.fishedSince", { n: fished.length, noun, y: Math.min(...years) })
+          : `${fished.length} ${noun}`, "org-tie-strong"));
       }
       if (booked.length) {
-        ties.push(`<span class="org-tie">${escapeHTML(
-          t("orgs.tie.booked", { n: booked.length, noun: plural("orgs.tournament", booked.length) }))}</span>`);
+        ties.push(chip(t("orgs.tie.booked", { n: booked.length, noun: plural("orgs.tournament", booked.length) })));
       }
-      if (!ties.length) ties.push(`<span class="org-tie org-tie-soft">${escapeHTML(t("orgs.tie.follow"))}</span>`);
+      if (listed.length) {
+        ties.push(chip(t("orgs.tie.listed", { n: listed.length, noun: plural("orgs.tournament", listed.length) })));
+      }
+      // Aucun lien calculé : on le dit, plutôt que d'en inventer un.
+      if (!ties.length) ties.push(chip(t("orgs.tie.follow"), "org-tie-soft"));
 
-      const kicker = tr(org.kicker);
-      const link = org.link
-        ? `<a class="org-link" href="${escapeHTML(org.link)}" target="_blank" rel="noopener">${
-            escapeHTML(t("orgs.visit"))} <span aria-hidden="true">↗</span></a>`
-        : "";
+      const title = org.link
+        ? `<a href="${escapeHTML(org.link)}" target="_blank" rel="noopener">${escapeHTML(name)}</a>`
+        : `<b>${escapeHTML(name)}</b>`;
 
       return `
-        <article class="org-card">
-          ${kicker ? `<span class="org-kicker">${escapeHTML(kicker)}</span>` : ""}
-          <h3>${escapeHTML(name)}</h3>
+        <li>
+          ${title}
           <div class="org-ties">${ties.join("")}</div>
-          ${tr(org.what) ? `<p class="org-what">${escapeHTML(tr(org.what))}</p>` : ""}
-          ${link}
-        </article>`;
+          ${tr(org.what) ? `<div class="src-meta">${escapeHTML(tr(org.what))}</div>` : ""}
+        </li>`;
     }).join("");
   }
 
