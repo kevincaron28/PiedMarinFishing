@@ -13,35 +13,5 @@
       "fr": "Assez grande pour tenir une canne toute seule, et assez patiente pour rester assise sur la glace le temps que ça morde. La première de la relève à ramener un poisson.",
       "en": "Big enough to hold a rod on her own, and patient enough to sit on the ice until something bites. The first of the next generation to land a fish."
     }
-  },
-  {
-    "id": "releve-kevin-b",
-    "name": "",
-    "relation": {
-      "fr": "Fille de Kevin B.",
-      "en": "Kevin B.'s daughter"
-    },
-    "parent": "kevin-b",
-    "status": "growing",
-    "catch": "",
-    "story": {
-      "fr": "Encore trop petite pour la canne, mais elle est déjà de la sortie. Son tour s'en vient.",
-      "en": "Still too small for a rod, but she's already along for the trip. Her turn is coming."
-    }
-  },
-  {
-    "id": "releve-kevin-caron-2",
-    "name": "",
-    "relation": {
-      "fr": "Deuxième fille de Kevin Caron",
-      "en": "Kevin Caron's second daughter"
-    },
-    "parent": "kevin-caron",
-    "status": "expected",
-    "catch": "",
-    "story": {
-      "fr": "Une place l'attend déjà à bord.",
-      "en": "A seat aboard is already waiting."
-    }
   }
 ]

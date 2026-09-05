@@ -821,7 +821,10 @@ section.alt { background: var(--sand-100); }
 
 .nextgen-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  /* Plafonnées et centrées : une seule carte de relève ne doit pas s'étirer
+     sur toute la largeur de la page en attendant les suivantes. */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 360px));
+  justify-content: center;
   gap: 20px;
 }
 
