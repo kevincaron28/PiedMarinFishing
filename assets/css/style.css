@@ -817,6 +817,78 @@ section.alt { background: var(--sand-100); }
 }
 .boat-skipper a { font-weight: 700; margin-left: 6px; }
 
+/* ---------- La relève ---------- */
+
+.nextgen-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.nextgen-card {
+  display: flex;
+  gap: 16px;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.nextgen-badge { flex-shrink: 0; }
+.nextgen-initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy-900), var(--teal-600));
+  color: var(--white);
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+/* La pousse remplace l'initiale tant qu'il n'y a pas de prénom à afficher. */
+.nextgen-initial.nextgen-sprout {
+  background: rgba(15, 118, 130, 0.1);
+  /* Le blanc de l'écusson disparaîtrait sur ce fond pâle si la pousse tombait
+     sur une police monochrome — elle garde donc sa propre couleur. */
+  color: var(--navy-900);
+  font-size: 1.2rem;
+}
+
+.nextgen-body { min-width: 0; }
+.nextgen-body h3 { margin: 4px 0 0; font-size: 1.15rem; }
+.nextgen-status {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--teal-600);
+}
+.nextgen-parent {
+  display: inline-block;
+  margin-top: 2px;
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+a.nextgen-parent { font-weight: 600; }
+.nextgen-story {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-600);
+}
+.nextgen-first {
+  margin: 12px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--ink-600);
+}
+.nextgen-first b { color: var(--navy-900); }
+
 /* ---------- Merchandise ---------- */
 
 .merch-card {

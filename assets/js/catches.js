@@ -279,7 +279,10 @@ async function initCatches(options) {
   function describe(c) {
     const lang = PMF_I18N.lang;
     const angler = memberById.get(c.angler);
-    const anglerName = angler ? tr(angler.name) : c.angler || "";
+    // Un pêcheur hors roster porte son nom sur la prise elle-même : c'est le
+    // cas de la relève, qui n'a volontairement pas de fiche (voir
+    // data/next-gen.json). Sa vignette reste alors du texte, sans lien.
+    const anglerName = angler ? tr(angler.name) : (tr(c.anglerName) || c.angler || "");
     const when = longDate(c.date, lang);
 
     const ev = c.event ? eventById.get(c.event) : null;

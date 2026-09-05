@@ -74,6 +74,17 @@
   </div>
 </section>
 
+<section id="releve" data-nextgen-section>
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker" data-i18n="team.nextGenKicker">La relève</span>
+      <h2 data-i18n="team.nextGenTitle">La nouvelle génération</h2>
+      <p data-i18n="team.nextGenIntro">Les enfants de l'équipe grandissent autour des bateaux. On les nomme par leur prénom seulement, sans photo — ils sont mineurs.</p>
+    </div>
+    <div id="nextgen-list" class="nextgen-list"></div>
+  </div>
+</section>
+
 <section class="alt" id="bateaux">
   <div class="container">
     <div class="section-head">
@@ -101,9 +112,11 @@
 <script src="assets/js/history.js"></script>
 <script src="assets/js/catches.js"></script>
 <script src="assets/js/team.js"></script>
+<script src="assets/js/next-gen.js"></script>
 <script src="assets/js/boats.js"></script>
 <script>
   initTeam("#team-grid");
+  initNextGen("[data-nextgen-section]", "#nextgen-list");
   initBoats("#boat-list");
 </script>
 </body>

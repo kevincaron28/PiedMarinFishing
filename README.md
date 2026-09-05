@@ -185,6 +185,7 @@ they stay in sync.
 - **Québec tournament directory** → `data/quebec-tournaments.json`.
 - **Past results** → `data/tournament-history.json`.
 - **Team boats** → `data/boats.json`.
+- **La relève / next generation** → `data/next-gen.json` (see **La relève**).
 - **Shop products** → `data/merch.json`.
 - **Catches** → `data/catches.json`, photos in `assets/img/catches/`.
 - **Featured video** → `data/featured-video.json`. Paste a YouTube video id
@@ -507,6 +508,40 @@ in August 2026 — the directory covers events an angler here can actually
 enter. `events.js` still accepts the `when`, `kind` and `year` filter
 options; no page passes them, but they work if a future page wants one.
 
+### La relève
+
+`data/next-gen.json` holds the team's kids, rendered by `assets/js/next-gen.js`
+into the *La nouvelle génération* section of `team.html`. They are minors, so
+the shape of this file is deliberately narrow: **first name only, no surname,
+no age, no birth date, no photo, no page.** They are kept out of
+`data/team-members.json` on purpose — everything in that file gets a public
+profile page under `pecheurs/` and a `Person` JSON-LD block, and none of that
+belongs to a child.
+
+```json
+{
+  "id": "romy",
+  "name": "Romy",
+  "relation": { "fr": "Fille de Kevin Caron", "en": "Kevin Caron's daughter" },
+  "parent": "kevin-caron",
+  "status": "fishing",
+  "catch": "perchaude-2025",
+  "story": { "fr": "…", "en": "…" }
+}
+```
+
+- `name` may be empty. The `relation` then becomes the card's heading, which
+  is how a child is listed before there is anything to say about them.
+- `parent` is a **`team-members.json` id** and is the card's only link — it
+  points at the parent's profile. It is rendered only when `name` is filled,
+  since otherwise the heading already says it.
+- `status` is `fishing`, `growing` or `expected`; each maps to a
+  `team.nextGen.status.*` label in `data/i18n.json`.
+- `catch` is a **`catches.json` id**. The card reads the species and the
+  **month** back out of the catch log rather than repeating them, so the two
+  cannot drift — and the exact day of a child's outing stays off the page.
+- Empty file, no section: it hides itself like every other block on the site.
+
 ### Catches
 
 `data/catches.json` is a catch log, not a photo dump — each entry names its
@@ -548,6 +583,11 @@ links back into the roster and the palmarès:
 - `event` takes a **`tournament-history.json` id**, and `angler` a
   **`team-members.json` id**. Each team card shows its angler's catch count
   and deep-links to `catches.html?angler=<id>`.
+- A catch landed by someone who is **not** on the roster leaves `angler`
+  empty and names them in `anglerName` (bilingual) instead. The card then
+  shows a plain chip rather than a link, and the catch stays out of every
+  member's count. That is how the kids' catches are logged — they have no
+  profile page by design.
 - `date` accepts the same partial forms as everywhere else — `"2026"`,
   `"2026-05"` or `"2026-05-02"`.
 
