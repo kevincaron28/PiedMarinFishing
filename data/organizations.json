@@ -1,0 +1,68 @@
+[
+  {
+    "id": "muskies-canada-montreal",
+    "name": "Muskies Canada — section Montréal",
+    "kicker": { "fr": "Maskinongé · Montréal", "en": "Muskie · Montréal" },
+    "what": {
+      "fr": "Club sans but lucratif voué à la recherche scientifique sur le maskinongé et à sa remise à l'eau. La section de Montréal, fondée en 1993, est la seule au Québec. Elle organise la Formule Brochet et le circuit CMCM, et fait de l'initiation auprès des jeunes.",
+      "en": "A non-profit club devoted to scientific research on muskie and to catch-and-release. The Montréal chapter, founded in 1993, is the only one in Québec. It runs the Formule Brochet and the CMCM circuit, and introduces kids to the sport."
+    },
+    "link": "https://muskiescanada.ca/montreal/",
+    "organizerMatch": ["Muskies Canada"]
+  },
+  {
+    "id": "big-bass-quebec",
+    "name": "Big Bass Québec",
+    "kicker": { "fr": "Achigan · corridor du Saint-Laurent", "en": "Bass · St. Lawrence corridor" },
+    "what": {
+      "fr": "Le principal organisateur de tournois d'achigan du corridor, du lac Saint-Louis à Lavaltrie. Des événements accessibles, ouverts autant aux équipes qui débutent qu'aux habitués.",
+      "en": "The corridor's main bass tournament organizer, from Lac Saint-Louis to Lavaltrie. Accessible events, open to first-timers as much as to regulars."
+    },
+    "link": "https://www.bigbasschallengequebec.com/",
+    "organizerMatch": ["Big Bass Québec"]
+  },
+  {
+    "id": "fedecp",
+    "name": "Fédération québécoise des chasseurs et pêcheurs",
+    "kicker": { "fr": "Relève et conservation · depuis 1946", "en": "Conservation and newcomers · since 1946" },
+    "what": {
+      "fr": "Depuis 1946, la FédéCP représente les chasseurs et les pêcheurs du Québec, forme à la pratique sécuritaire et travaille à la conservation de la faune. C'est l'un des plus vieux organismes fauniques de la province.",
+      "en": "Since 1946 the FédéCP has represented Québec's hunters and anglers, trained them in safe practice and worked on wildlife conservation. It is one of the province's oldest wildlife organizations."
+    },
+    "link": "https://fedecp.com/",
+    "organizerMatch": []
+  },
+  {
+    "id": "heritage-faune",
+    "name": "Fondation Héritage faune",
+    "kicker": { "fr": "Habitats et relève · depuis 1980", "en": "Habitat and newcomers · since 1980" },
+    "what": {
+      "fr": "La fondation de la FédéCP, première au Québec à se consacrer à l'aménagement des habitats fauniques et au développement de la relève. Elle finance entre autres des activités d'initiation à la pêche blanche pour les jeunes.",
+      "en": "The FédéCP's foundation, the first in Québec devoted to wildlife habitat work and to bringing new people into the sport. Among other things it funds ice-fishing introduction days for kids."
+    },
+    "link": "https://fedecp.com/fondation",
+    "organizerMatch": []
+  },
+  {
+    "id": "apsq",
+    "name": "Association des pêcheurs sportifs du Québec",
+    "kicker": { "fr": "Accès aux plans d'eau publics", "en": "Access to public waters" },
+    "what": {
+      "fr": "L'APSQ se bat pour que tous les pêcheurs gardent accès aux plans d'eau publics du Québec, peu importe d'où ils viennent. Sans mise à l'eau, il n'y a pas de pêche — c'est un combat qui nous concerne directement.",
+      "en": "The APSQ fights to keep every angler's access to Québec's public waters, whoever they are. Without a launch there is no fishing — this one affects us directly."
+    },
+    "link": "https://www.apsq.ca/",
+    "organizerMatch": []
+  },
+  {
+    "id": "covabar",
+    "name": "COVABAR — OBV Richelieu et zone Saint-Laurent",
+    "kicker": { "fr": "Notre rivière", "en": "Our home river" },
+    "what": {
+      "fr": "L'organisme de bassin versant de la rivière Richelieu et du Saint-Laurent, de Brossard à Sorel-Tracy. C'est exactement l'eau qu'on pêche : la qualité de nos sorties dépend de la santé de ce bassin.",
+      "en": "The watershed organization for the Richelieu and the St. Lawrence, from Brossard to Sorel-Tracy. That is precisely the water we fish: the quality of our days out depends on this basin's health."
+    },
+    "link": "https://covabar.qc.ca/",
+    "organizerMatch": []
+  }
+]

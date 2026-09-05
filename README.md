@@ -187,6 +187,8 @@ they stay in sync.
 - **Team boats** → `data/boats.json`.
 - **La relève / next generation** → `data/next-gen.json` (see **La relève**).
 - **Shop products** → `data/merch.json`.
+- **Organizations we stand behind** → `data/organizations.json` (see
+  **Le milieu**).
 - **Catches** → `data/catches.json`, photos in `assets/img/catches/`.
 - **Featured video** → `data/featured-video.json`. Paste a YouTube video id
   (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
@@ -541,6 +543,42 @@ belongs to a child.
   **month** back out of the catch log rather than repeating them, so the two
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
+
+### Le milieu
+
+`data/organizations.json` feeds the *Les organismes qu'on appuie* section of
+`sponsors.html` through `assets/js/organizations.js`. A list like this is an
+easy place to imply a membership nobody granted, so the module is built to
+make that hard: **nothing in the JSON can assert a relationship.** The only
+tie a card shows is *computed* from our own logs.
+
+```json
+{
+  "id": "muskies-canada-montreal",
+  "name": "Muskies Canada — section Montréal",
+  "kicker": { "fr": "Maskinongé · Montréal", "en": "Muskie · Montréal" },
+  "what": { "fr": "…", "en": "…" },
+  "link": "https://muskiescanada.ca/montreal/",
+  "organizerMatch": ["Muskies Canada"]
+}
+```
+
+- `organizerMatch` holds substrings tested against the `organizer` field of
+  `tournament-history.json` (tournaments we **fished**) and
+  `team-schedule.json` (tournaments **booked**). Matching ignores case and
+  accents, so `Muskies Canada Montréal` and `Muskies Canada — section
+  Montréal` are the same organization. Empty array, or no match: the card
+  falls back to *On suit leur travail* — never to a number.
+- The *fished since* year is the earliest matching result's year. Nothing is
+  written by hand, so a card cannot outrun the record.
+- `member: true` is the **only** way to claim membership, and setting it on
+  any organization automatically hides the *we belong to none of them*
+  disclaimer under the grid — so that line can never turn into a lie.
+- Empty file, no section.
+
+The external links here cannot be reached from a sandboxed session (the egress
+proxy blocks every outside host), so they are transcribed from search results
+and should be clicked by hand once before anyone leans on them.
 
 ### Catches
 
