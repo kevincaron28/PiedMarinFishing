@@ -71,13 +71,21 @@
     "media": {
       "type": "image",
       "src": "assets/img/catches/maskinonge-kevin-b.jpg",
-      "videoId": "PXwFXozk-5c"
+      "videoId": "PXwFXozk-5c",
+      "alt": {
+        "fr": "Kevin B. et BOBE tenant un maskinongé de 50 pouces à bord, sous la pluie",
+        "en": "Kevin B. and BOBE holding a 50-inch muskie aboard, in the rain"
+      }
     },
     "gallery": [],
     "featured": true,
     "notes": {
       "fr": "Le record personnel de Kevin B. Sorti du fleuve Saint-Laurent une journée de pluie, hors tournoi.",
       "en": "Kevin B.'s personal best. Off the St. Lawrence on a rainy day, outside competition."
+    },
+    "story": {
+      "fr": "Une journée de traîne sous la pluie fine, presque sans répit du matin au soir, et une eau si trouble qu'on n'y voyait rien. Ça mordait quand même — du doré, de l'achigan, une de ces journées où la ligne ne reste jamais tranquille bien longtemps. Kevin B. traînait un petit crankbait quand sa canne s'est arquée d'un coup : le fond, s'est-il dit. Quelques secondes plus tard, le moulinet se déroulait tout seul. « Criss, le fond bouge! » Cinq à dix bonnes minutes de combat et deux passages sous la chaloupe à se demander s'il tiendrait, puis BOBE l'a cueilli du premier coup dès que Kevin l'a ramené le long du bord. Cinquante pouces sur la civière, une photo, et le maskinongé est reparti en quelques secondes — pas un hameçon resté pris. Il a replongé vers le fond aussi vite qu'il en était sorti.",
+      "en": "A day of trolling under fine rain, near enough without a break from morning to evening, and water so stained you couldn't see a thing in it. They were biting anyway — walleye, bass, one of those days when the line never stays quiet for long. Kevin B. was pulling a small crankbait when his rod loaded up all at once: the bottom, he figured. A few seconds later the reel started peeling on its own. « Criss, le fond bouge! » — the bottom's moving. A good five to ten minutes of fight and two passes under the boat that had everyone wondering, then BOBE scooped it first try the moment Kevin brought it alongside. Fifty inches on the cradle, one photo, and the muskie was gone in seconds — not a hook left in it. It went back down as fast as it had come up."
     }
   },
   {
