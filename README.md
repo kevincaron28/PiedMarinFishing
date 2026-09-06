@@ -124,6 +124,8 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
 | `tools/build-image-variants.py` | writes the 160/400/800px versions of every photo and the `data/image-variants.json` map that `srcset` is built from |
 | `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
+| `tools/build-angler-sheets.py` | writes one Letter-size pro-staff sheet per angler per language, from `data/team-members.json` and the results/catches logs |
+| `tools/render-angler-sheets.js` | renders those to `assets/docs/pro-staff-<id>-<lang>.pdf` |
 | `tools/render-sponsor-kit.js` | renders that HTML to PDF with Chromium |
 
 The usual order after a content change:
@@ -568,6 +570,44 @@ belongs to a child.
   **month** back out of the catch log rather than repeating them, so the two
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
+
+### Pro-staff sheets
+
+A pro-staff application is handled angler by angler — a rod brand wants to
+know what *this* angler holds, not what the crew averages. So each angler
+gets a one-page Letter PDF, in both languages, to send alongside the
+sponsorship kit:
+
+```bash
+python3 tools/build-angler-sheets.py          # writes sheet-<id>-<lang>.html
+node tools/render-angler-sheets.js <dir>      # → assets/docs/pro-staff-<id>-<lang>.pdf
+```
+
+Nothing is typed into the builder. The bio, the six spec rows, the gear, the
+tournament results and the catches all come from `data/`, so a sheet and the
+angler's web page at `pecheurs/<id>.html` cannot drift apart. An angler with
+no gear entries gets no gear section rather than an empty one — a half-filled
+list hurts the application.
+
+Both PDFs are linked from the angler's own page, side by side regardless of
+the displayed language: an English-speaking brand should not have to switch
+the interface to find theirs.
+
+Two things the renderer checks, because both bit once:
+
+- **Overflow.** `.sheet` is `overflow: hidden`, so a block that runs past the
+  page is silently clipped and `scrollHeight` reports nothing wrong. The
+  renderer instead compares the bottom of the last block against the top of
+  the footer, which catches content that is *covered* as well as content that
+  spills. It prints the remaining margin for every sheet; Kevin Caron's is the
+  tightest at 21 px, because he has five gear rows to the others' two.
+- **Whose boat.** BOBE owns the 1996 and Kevin B. skippers it. Labelling both
+  "his boat" is true but vague, so the sheet names the actual role — *Aux
+  commandes de* for the skipper, *Propriétaire de* for the owner.
+
+The "what I can't offer yet" block reuses `sponsors.honestBody` rather than a
+second copy, so the sheets and the kit make the same admission about having no
+audience numbers.
 
 ### Fédérations et associations
 

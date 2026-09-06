@@ -445,6 +445,22 @@ def render_angler(m, ui, results, catches, boats, tp_index):
         body.append(section({"fr": ui["fr"]["ap.boat"], "en": ui["en"]["ap.boat"]},
                             '<ul class="tp-related">%s</ul>' % rows, alt=True, key="ap.boat"))
 
+    # La fiche pro staff en PDF, écrite par tools/build-angler-sheets.py à
+    # partir des mêmes données que cette page. Les deux versions sont offertes
+    # côte à côte quelle que soit la langue affichée : une marque anglophone
+    # ne devrait pas avoir à basculer l'interface pour trouver la sienne.
+    sheets = "".join(
+        '<a class="btn btn-ghost" href="assets/docs/pro-staff-%s-%s.pdf" download>%s</a>'
+        % (esc(m["id"]), lang,
+           bilingual("span", {"fr": ui["fr"]["ap.sheet%s" % lang.capitalize()],
+                              "en": ui["en"]["ap.sheet%s" % lang.capitalize()]}))
+        for lang in ("fr", "en"))
+    body.append(section({"fr": ui["fr"]["ap.sheetTitle"], "en": ui["en"]["ap.sheetTitle"]},
+                        '%s<div class="callout-actions">%s</div>'
+                        % (bilingual("p", {"fr": ui["fr"]["ap.sheetBody"],
+                                           "en": ui["en"]["ap.sheetBody"]}, "tp-notes"), sheets),
+                        alt=True, key="ap.sheetTitle"))
+
     body.append('<section><div class="container"><div class="callout-actions">'
                 '<a class="btn btn-ghost" href="team.html">%s</a></div></div></section>'
                 % bilingual("span", {"fr": ui["fr"]["ap.back"], "en": ui["en"]["ap.back"]}))
