@@ -89,6 +89,12 @@
     800,
     1200
   ],
+  "assets/img/catches/maskinonge-kevin-b-approche.jpg": [
+    160,
+    400,
+    800,
+    1080
+  ],
   "assets/img/catches/maskinonge-kevin-b-epuisette.jpg": [
     160,
     400,
@@ -104,13 +110,14 @@
   "assets/img/catches/maskinonge-kevin-b-remonte.jpg": [
     160,
     400,
-    608
+    800,
+    1000
   ],
   "assets/img/catches/maskinonge-kevin-b-surface.jpg": [
     160,
     400,
     800,
-    1080
+    1022
   ],
   "assets/img/catches/maskinonge-kevin-b.jpg": [
     160,
