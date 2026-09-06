@@ -207,11 +207,16 @@ async function initCatches(options) {
   let catches = [];
   let members = [];
   let events = [];
+  // Les prises assez documentées ont leur propre fiche dans prises/. La liste
+  // est écrite par tools/build-catch-pages.py; si elle manque, les cartes
+  // s'affichent simplement sans le lien.
+  let pageIds = [];
   try {
-    [catches, members, events] = await Promise.all([
+    [catches, members, events, pageIds] = await Promise.all([
       PMF_CATCHES.load(),
       fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
       fetch("data/tournament-history.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
+      fetch("data/catch-pages.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
     ]);
   } catch (e) {
     grid.innerHTML = `<div class="empty-state">${escapeHTML(t("catches.loadError"))}</div>`;
@@ -381,7 +386,19 @@ async function initCatches(options) {
       ${chip ? `<div class="catch-anglers">${chip}</div>` : ""}
       ${d.facts.length ? `<div class="catch-facts">${d.facts.map((f) => `<span>${escapeHTML(f)}</span>`).join("")}</div>` : ""}
       ${d.notes ? `<p class="catch-notes">${escapeHTML(d.notes)}</p>` : ""}
+      ${storyLinkHTML(c)}
       ${videoLinkHTML(c)}`;
+  }
+
+  // Le récit complet vit sur la fiche de la prise quand elle en a une. La
+  // carte n'en montre rien : elle garde sa note courte, et le lien mène au
+  // reste plutôt que d'allonger une liste de sept prises.
+  function storyLinkHTML(c) {
+    if (!pageIds.includes(c.id)) return "";
+    return `
+      <a class="catch-story-link" href="prises/${escapeHTML(c.id)}.html">
+        ${escapeHTML(t("catches.readStory"))}
+      </a>`;
   }
 
   // Une prise illustrée par une photo peut quand même avoir été filmée : le

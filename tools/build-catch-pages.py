@@ -8,11 +8,15 @@ si elle a de quoi remplir une page :
 
     une date       au moins l'année et le mois
     un plan d'eau
-    au moins PHOTOS_MIN photos  (la couverture plus la galerie)
+    au moins PHOTOS_MIN photo   (la couverture plus la galerie)
     un récit d'au moins STORY_MIN mots  (champ « story », bilingue)
 
-Le seuil du récit est calé sur seo.js, qui refuse une page sous 120 mots :
-un récit de 40 mots donnait 118 mots en anglais, plus court que le français.
+Le seuil portait d'abord sur les photos — trois — et pas assez sur le texte.
+C'était l'inverse du bon reglage : la substance d'une fiche, c'est le récit,
+pas le compte de photos. Une grande photo et 120 mots de récit font une page
+qui merite son adresse; trois photos et deux phrases n'en font pas une.
+
+Le seuil du récit est cale sur seo.js, qui refuse une page sous 120 mots.
 
 Sur les données d'aujourd'hui, ce seuil produit ZÉRO page — et c'est la bonne
 réponse, pas un bogue. Le script dit ce qui manque à chacune, prise par prise,
@@ -33,8 +37,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(REPO, "prises")
 SITE = "https://piedmarinfishing.com"
 
-PHOTOS_MIN = 3
-STORY_MIN = 60
+PHOTOS_MIN = 1
+STORY_MIN = 120
 
 _spec = importlib.util.spec_from_file_location(
     "pages", os.path.join(REPO, "tools", "build-tournament-pages.py"))
@@ -243,8 +247,10 @@ def render(c, ui, members, events, kept):
 
     gallery = gallery_html(c, ui)
     if gallery:
-        body.append(section({"fr": ui["fr"]["cp.gallery"], "en": ui["en"]["cp.gallery"]},
-                            gallery, key="cp.gallery"))
+        # Une seule photo sous un titre au pluriel se remarque.
+        gkey = "cp.gallery" if len(photos_of(c)) > 1 else "cp.photo"
+        body.append(section({"fr": ui["fr"][gkey], "en": ui["en"][gkey]},
+                            gallery, key=gkey))
 
     gear = gear_html(c, ui, members)
     if gear:
@@ -332,16 +338,24 @@ def main():
         path = os.path.join(OUT_DIR, "%s.html" % c["id"])
         with io.open(path, "w", encoding="utf-8") as fh:
             fh.write(render(c, ui, members, events, kept))
-        print("  prises/%s.html  %d photo(s), récit de %d mots"
-              % (c["id"], len(photos_of(c)), len(pick(c.get("story"), "fr").split())))
+        n = len(photos_of(c))
+        print("  prises/%s.html  %d photo%s, récit de %d mots"
+              % (c["id"], n, "s" if n > 1 else "",
+                 len(pick(c.get("story"), "fr").split())))
+
+    # L'index que lisent les cartes de prises et les fiches de pêcheur : sans
+    # lui, une page generee n'aurait aucun lien entrant — une orpheline.
+    index_path = os.path.join(REPO, "data", "catch-pages.json")
+    with io.open(index_path, "w", encoding="utf-8") as fh:
+        fh.write(json.dumps(sorted(c["id"] for c in kept), ensure_ascii=False, indent=2) + "\n")
 
     print("\n%d fiche(s) sur %d prise(s)." % (len(kept), len(catches)))
     if below:
         print("\nSous le seuil — il manque :")
         for c, gaps in below:
             print("  %-24s %s" % (c["id"], ", ".join(gaps)))
-        print("\n(seuil : date, plan d'eau, %d photos, récit de %d mots)"
-              % (PHOTOS_MIN, STORY_MIN))
+        print("\n(seuil : date, plan d'eau, %d photo%s, récit de %d mots)"
+              % (PHOTOS_MIN, "s" if PHOTOS_MIN > 1 else "", STORY_MIN))
     if kept:
         print("\nÉtape suivante :\n  python3 tools/build-sitemap.py")
 

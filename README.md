@@ -595,20 +595,30 @@ catches that deserve one:
 |---|---|
 | a date (year and month at least) | |
 | a body of water | |
-| **3 photos** (cover + gallery) | a catch page exists for its photos |
-| **a 60-word story** (`story`, bilingual) | below that the page fails `seo.js` |
+| **1 photo** | |
+| **a 120-word story** (`story`, bilingual) | below that the page fails `seo.js` |
 
-That last number is calibrated, not guessed: `seo.js` rejects a page under 120
-words, and a 40-word story produced 118 words in English — English runs shorter
-than French. A generated page passes our own audit, or it is not generated.
+The first cut of this threshold asked for three photos and a 60-word story.
+That was the wrong balance: a catch page's substance is the story, not the
+photo count. One good photo and 120 words earn an address; three photos and
+two sentences do not. The word count is calibrated, not guessed — `seo.js`
+rejects a page under 120 words, and the resulting page comes in at 223 words
+in French, 219 in English. A generated page passes our own audit, or it is not
+generated.
 
-**On today's data the threshold produces zero pages, and that is the correct
-answer, not a bug.** The script prints what each catch is missing, so the first
-one to clear the bar is obvious:
+The script prints what each catch is missing, so the next one to clear the bar
+is obvious:
 
 ```
-maskinonge-kevin-b       2 photos de plus, récit (0/60 mots)
+malachigan-2025          récit (0/120 mots)
 ```
+
+**Inbound links matter as much as the page.** A generated page nobody links to
+is the orphan problem this repo already fixed once. So the generator also
+writes `data/catch-pages.json`, and two readers use it: the card on
+`catches.html` grows a *Lire le récit →* link, and the thumbnail on the
+angler's profile points at the page instead of the `#c-` anchor. Catches
+without a page keep the anchor.
 
 A catch that later drops back below the threshold has its page deleted on the
 next run — otherwise an orphan would stay served while absent from the sitemap.

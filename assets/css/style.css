@@ -2258,7 +2258,8 @@ body.has-lightbox { overflow: hidden; }
 .video-item-date { display: block; margin-top: 3px; font-size: 0.85rem; color: var(--ink-600); }
 
 /* Renvoi d'une prise vers son clip. Hauteur de cible tactile assurée. */
-.catch-video-link {
+.catch-video-link,
+.catch-story-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;

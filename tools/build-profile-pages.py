@@ -329,7 +329,7 @@ def person_ld(m, url, photo):
     return ld
 
 
-def render_angler(m, ui, results, catches, boats, tp_index):
+def render_angler(m, ui, results, catches, boats, tp_index, cp_index):
     name = m.get("name") or m.get("id")
     role = m.get("role") or {}
     title = {lang: clamp_title(", ".join(x for x in (name, pick(role, lang)) if x))
@@ -414,11 +414,13 @@ def render_angler(m, ui, results, catches, boats, tp_index):
 
     mine_catches = [c for c in catches if c.get("angler") == m["id"]]
     if mine_catches:
-        # Chaque vignette mène désormais à SA prise, pas à la liste filtrée du
-        # pêcheur : « le maskinongé de 50 po » a maintenant une adresse.
+        # Chaque vignette mène à SA prise, pas à la liste filtrée du pêcheur.
+        # Quand la prise a sa propre fiche, c'est là qu'on va — sinon vers son
+        # ancre sur la page des prises.
         cards = "".join(
-            '<a class="ap-catch" href="catches.html#c-%s">%s%s</a>'
-            % (esc(c["id"]),
+            '<a class="ap-catch" href="%s">%s%s</a>'
+            % ("prises/%s.html" % esc(c["id"]) if c["id"] in cp_index
+               else "catches.html#c-%s" % esc(c["id"]),
                '<img src="%s"%s alt="" loading="lazy" width="120" height="90">'
                % (esc((c.get("media") or {}).get("src") or ""),
                   srcset_attrs((c.get("media") or {}).get("src") or "", "68px"))
@@ -647,12 +649,16 @@ if __name__ == "__main__":
     results = load("tournament-history.json")
     catches = load("catches.json")
     tp_index = set(load("tournament-pages.json"))
+    try:
+        cp_index = set(load("catch-pages.json"))
+    except (IOError, OSError, ValueError):
+        cp_index = set()
     i18n = load("i18n.json")
     ui = {"fr": i18n["fr"], "en": i18n["en"]}
     members_by_id = {m["id"]: m for m in members}
 
     write_dir("pecheurs", {"%s.html" % m["id"]:
-                           render_angler(m, ui, results, catches, boats, tp_index)
+                           render_angler(m, ui, results, catches, boats, tp_index, cp_index)
                            for m in members})
     write_dir("bateaux", {"%s.html" % b["id"]: render_boat(b, ui, members_by_id)
                           for b in boats})
