@@ -599,6 +599,29 @@ B.'s go-to lure on his profile is a chatterbait; the page was printing
 Only what the angler actually reported goes in. No brand or model was given for
 that crankbait, so none is printed.
 
+### Approximate dates, and what the story does not say
+
+**Rule: when a fish was landed outside its open season, the catch carries a
+coarse date and the story does not name the season.** Not because anything was
+done wrong — the crew fishes legally for an open species and releases anything
+else at once — but a public page with a precise date next to a closed-season
+species invites a fine over conduct that was lawful.
+
+Coarsen the `date` field: `"2025-05-23"` becomes `"2025"`. Every renderer
+already handles partial dates and prints only what it knows, on the card, the
+page and the profile alike. The page threshold accepts a year alone for exactly
+this reason — a deliberately rounded date must not delete a page.
+
+Say less, do not say anything false. The 50-inch muskie's story still carries
+what matters and what reflects well: *on était au brochet, pas au maskinongé*,
+measured on the cradle, back in the water in seconds, not a hook left in it.
+Only the words *hors saison* and the exact day came out. Nothing in the text
+became untrue; the page simply stops dating something it has no reason to date.
+
+This cannot be checked automatically — it needs a species-and-zone regulation
+table nobody maintains here — so it lives as a rule. Québec muskie and bass in
+zones 7 and 8 open 15 June; walleye opens 10 May; pike opens in early May.
+
 ### Never publish an identifying number
 
 ```bash

@@ -6,7 +6,7 @@ plus qu'elles n'aideraient : elles seraient plus minces que merch.html, qui
 échoue déjà notre propre contrôle SEO. Une prise n'a donc droit à sa page que
 si elle a de quoi remplir une page :
 
-    une date       au moins l'année et le mois
+    une date       au moins l'année
     un plan d'eau
     au moins PHOTOS_MIN photo   (la couverture plus la galerie)
     un récit d'au moins STORY_MIN mots  (champ « story », bilingue)
@@ -76,8 +76,11 @@ def photos_of(c):
 def missing(c):
     """Ce qui manque à cette prise pour mériter sa page. Vide = elle l'a."""
     gaps = []
+    # L'annee suffit. Le seuil exigeait annee-mois, mais une date peut etre
+    # volontairement approximative — voir « Dates approximatives » dans le
+    # README — et une fiche ne doit pas disparaitre parce qu'on a arrondi.
     date = str(c.get("date") or "")
-    if len(date) < 7:
+    if len(date) < 4 or not date[:4].isdigit():
         gaps.append("date")
     if not pick(c.get("water"), "fr"):
         gaps.append("plan d'eau")
