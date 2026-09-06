@@ -503,12 +503,24 @@ def tasks_html(tasks, ui):
         return ""
     done = [t for t in tasks if t.get("done")]
     todo = [t for t in tasks if not t.get("done")]
+    # Un chantier a trois états, pas deux : le plancher dont le bois est taillé
+    # mais qui attend le sablage et le tapis n'est ni fait ni intact. Il reste
+    # du côté « à faire » — c'est là qu'il est vrai — mais il se distingue, et
+    # il ne compte pas dans le pourcentage tant qu'il n'est pas fini.
     pct = int(round(100.0 * len(done) / len(tasks)))
 
     def column(rows, key, cls):
         if not rows:
             return ""
-        items = "".join("<li>%s</li>" % bilingual("span", t.get("label")) for t in rows)
+        items = ""
+        for t in rows:
+            tag = ""
+            if t.get("progress"):
+                tag = bilingual("span", {"fr": ui["fr"]["bp.taskProgress"],
+                                         "en": ui["en"]["bp.taskProgress"]}, "bp-task-now")
+            items += ('<li%s>%s%s</li>'
+                      % (' class="is-progress"' if t.get("progress") else "",
+                         bilingual("span", t.get("label")), tag))
         return ('<div class="bp-task-col %s">%s<ul>%s</ul></div>'
                 % (cls, bilingual("h3", {"fr": ui["fr"][key], "en": ui["en"][key]},
                                   "bp-task-head"), items))

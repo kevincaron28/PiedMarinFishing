@@ -121,6 +121,20 @@
           "fr": "L'intérieur vu de l'arrière : deux jeux de trois porte-cannes noirs fixés de chaque côté de la plateforme avant, le plancher de contreplaqué encore nu, et les outils posés sur la plateforme.",
           "en": "The interior seen from the stern: two sets of three black rod holders mounted on either side of the front platform, the plywood floor still bare, and tools set down on the platform."
         }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-plancher-retire.jpg",
+        "alt": {
+          "fr": "Le cockpit vidé jusqu'aux membrures : l'ancien plancher est sorti, l'isolant et le filage sont à nu entre les longerons d'aluminium.",
+          "en": "The cockpit stripped back to the ribs: the old floor is out, insulation and wiring exposed between the aluminium stringers."
+        }
+      },
+      {
+        "src": "assets/img/boats/princecraft-1995-plancher-taille.jpg",
+        "alt": {
+          "fr": "Le nouveau plancher vu d'en haut : les panneaux de contreplaqué taillés et posés d'un bord à l'autre, en attente du sablage et du tapis.",
+          "en": "The new floor from above: plywood panels cut to shape and laid in from side to side, waiting on sanding and carpet."
+        }
       }
     ],
     "restoration": {
@@ -184,7 +198,8 @@
             "fr": "Planchers et tapis",
             "en": "Flooring and carpet"
           },
-          "done": false
+          "done": false,
+          "progress": true
         },
         {
           "label": {

@@ -970,6 +970,23 @@ a.nextgen-parent { font-weight: 600; }
 }
 .nextgen-first b { color: var(--navy-900); }
 
+/* Une étape commencée mais pas finie : elle reste du côté « à faire », où
+   elle est vraie, mais on voit qu'elle bouge. */
+.bp-task-col li.is-progress { color: var(--navy-900); font-weight: 600; }
+.bp-task-now {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(217, 164, 65, 0.18);
+  border: 1px solid rgba(217, 164, 65, 0.45);
+  color: #7a5810;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 /* ---------- Fiche de prise ---------- */
 
 /* Une fiche de prise existe d'abord pour ses photos — c'est la condition du
