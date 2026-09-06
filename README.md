@@ -122,6 +122,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
+| `tools/check-private.py` | refuses to let a registration number, plate or serial reach `data/` or a generated page; exits 1 on a hit |
 | `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
 | `tools/build-image-variants.py` | writes the 160/400/800px versions of every photo and the `data/image-variants.json` map that `srcset` is built from |
 | `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
@@ -571,6 +572,30 @@ belongs to a child.
   **month** back out of the catch log rather than repeating them, so the two
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
+
+### Never publish an identifying number
+
+```bash
+python3 tools/check-private.py    # exits 1 on a hit — run it before pushing
+```
+
+The repository is public. A boat registration, a plate or a serial has no place
+in `data/` or in a generated page — not in a photo, and **not in the text that
+describes the photo**, which is the mistake that prompted this script. The
+1995's registration was masked out of the image, then written back into its
+alt text, where it sat unseen until captions became visible.
+
+The word `registration` is deliberately *not* a trigger: in tournament English
+it means *inscription* and appears throughout the directory. A check that cries
+wolf gets ignored. The named-number rule fires on `immatriculation`, `plaque
+d'immatriculation`, `licence plate`, `numéro de série`, `serial number`, `hull
+id` and `VIN`, and only when what follows actually looks like an identifier —
+six or more digits, or letters mixed with digits.
+
+Verified both ways: it blocks the exact sentence that went live, the same with
+a space, the English wording, a trailer plate and an engine serial; it passes
+`Inscription jusqu'au 14 août`, `Pre-registration rate ran until 14 August`
+and `un maskinongé de 50 po`.
 
 ### Galleries: captions and the lightbox
 
