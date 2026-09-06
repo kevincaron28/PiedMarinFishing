@@ -79,6 +79,13 @@
     },
     "gallery": [
       {
+        "src": "assets/img/catches/maskinonge-kevin-b-remonte.jpg",
+        "alt": {
+          "fr": "Le maskinongé qui remonte : une forme pâle sous l'eau brouillée, la ligne tendue et l'épuisette qui attend le long de la proue.",
+          "en": "The muskie coming up: a pale shape under the stained water, the line tight and the net waiting alongside the bow."
+        }
+      },
+      {
         "src": "assets/img/catches/maskinonge-kevin-b-surface.jpg",
         "alt": {
           "fr": "Le maskinongé qui bardasse en surface dans une gerbe d'eau blanche, l'épuisette qui entre dans le cadre le long du plat-bord.",
