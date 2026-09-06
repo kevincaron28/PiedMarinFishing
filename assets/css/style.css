@@ -998,6 +998,7 @@ a.nextgen-parent { font-weight: 600; }
   max-width: 720px;
 }
 .cp-shot { margin: 0; }
+.cp-shot .gal-cap { max-width: 62ch; }
 .cp-shot img {
   display: block;
   width: 100%;
@@ -1444,7 +1445,10 @@ body.has-lightbox { overflow: hidden; }
   padding: 24px;
 }
 .lightbox[hidden] { display: none; }
-.lightbox-backdrop { position: absolute; inset: 0; background: rgba(7, 23, 38, 0.92); }
+/* Opaque, pas translucide. A 0,92 le texte de la page transparaissait et
+   tombait pile sur la legende de la visionneuse : les deux devenaient
+   illisibles. Une visionneuse photo isole la photo, c'est tout son role. */
+.lightbox-backdrop { position: absolute; inset: 0; background: #071726; }
 
 .lightbox-figure {
   position: relative;
@@ -2466,7 +2470,32 @@ body.has-lightbox { overflow: hidden; }
 .gal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
+  gap: 18px 14px;
+  align-items: start;
+}
+.gal-item { margin: 0; }
+
+/* Le bouton n'est qu'une zone cliquable : il ne doit rien ajouter autour de
+   la photo, sauf un anneau de focus au clavier. */
+.gal-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+  border-radius: var(--radius-md);
+}
+.gal-btn:focus-visible { outline: 3px solid var(--teal-400); outline-offset: 3px; }
+.gal-btn:hover .gal-img { border-color: var(--teal-400); }
+
+/* La legende etait deja ecrite dans alt, ou elle ne servait qu'aux lecteurs
+   d'ecran. Visible, elle transforme une grille de photos en journal. */
+.gal-cap {
+  margin-top: 7px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  color: var(--ink-600);
 }
 .gal-img {
   width: 100%;

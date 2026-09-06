@@ -122,5 +122,9 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/tournament-page.js"></script>
+<!-- La visionneuse ne fait rien sans galerie : sur une fiche de tournoi, qui
+     n'en a pas, initGalleryLightbox sort immediatement. -->
+<script src="assets/js/lightbox.js"></script>
+<script>initGalleryLightbox("[data-gallery]");</script>
 </body>
 </html>

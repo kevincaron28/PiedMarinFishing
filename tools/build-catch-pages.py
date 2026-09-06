@@ -181,8 +181,9 @@ def gallery_html(c, ui):
                   esc(pick(alt, "fr")), "eager" if i == 0 else "lazy"))
         if pick(alt, "en") and pick(alt, "en") != pick(alt, "fr"):
             img = img.replace("<img ", '<img data-en-alt="%s" ' % esc(pick(alt, "en")), 1)
-        cells.append('<figure class="cp-shot">%s</figure>' % img)
-    return '<div class="cp-gallery">%s</div>' % "".join(cells)
+        cap = bilingual("figcaption", ph.get("alt") or c.get("species"), "gal-cap")
+        cells.append('<figure class="cp-shot">%s%s</figure>' % (img, cap))
+    return '<div class="cp-gallery" data-gallery>%s</div>' % "".join(cells)
 
 
 def gear_html(c, ui, members):

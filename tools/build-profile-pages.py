@@ -128,8 +128,12 @@ def gallery_html(photos, alt):
         if isinstance(photo, dict) and pick(photo.get("alt"), "en") not in ("", legende):
             img = img.replace("<img ", '<img data-en-alt="%s" '
                               % esc(pick(photo.get("alt"), "en")), 1)
-        out.append(img)
-    return '<div class="gal-grid">%s</div>' % "".join(out)
+        # La description existait deja, mais seulement dans alt : elle ne
+        # servait qu'aux lecteurs d'ecran. Elle devient visible — c'est ce qui
+        # fait la difference entre un tas de photos et un journal de chantier.
+        cap = bilingual("figcaption", photo.get("alt"), "gal-cap") if isinstance(photo, dict) else ""
+        out.append('<figure class="gal-item">%s%s</figure>' % (img, cap))
+    return '<div class="gal-grid" data-gallery>%s</div>' % "".join(out)
 
 
 def ordinal(n, lang):

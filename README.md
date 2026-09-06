@@ -572,6 +572,37 @@ belongs to a child.
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
 
+### Galleries: captions and the lightbox
+
+`assets/js/lightbox.js` holds `PMF_LIGHTBOX` — swipe, arrows, Esc, focus trap,
+counter, neighbour preloading. It used to live inside `catches.js`, so only
+`catches.html` had it. The generated pages showed their galleries with no way
+to open them, and that was a real defect rather than a missing luxury: the boat
+grid crops every photo to 4:3 with `object-fit: cover`, so **three of the ten
+restoration photos could not be seen in full anywhere on the site.**
+
+One definition, several consumers. `catches.html` must load `lightbox.js`
+*before* `catches.js`; the generated pages load it from the shared footer in
+`build-tournament-pages.py` and call `initGalleryLightbox("[data-gallery]")`.
+On a tournament page, which has no gallery, that call returns immediately.
+
+**Captions.** Every photo in `boats.json` and `catches.json` already carried a
+rich bilingual description — but only in `alt`, where it reached screen readers
+and nobody else. It is now a visible `<figcaption>`, and the img drops to
+`alt=""`: the caption sits directly below and repeating the text would have it
+announced twice. `seo.js` accepts an empty alt inside a `<button>`, which is
+exactly where these live. The gain is measurable — the catch page went from 236
+to 336 words, the boat page to 422, all of it text that was already written.
+
+`initGalleryLightbox` rebuilds its slide list on every open rather than caching
+it. On a generated page French and English live in the same DOM and the visible
+caption changes when the language does; ten photos make that free.
+
+One fix came out of this. The backdrop was `rgba(7, 23, 38, 0.92)` — at 8%
+the page's own text showed through and landed directly on the lightbox
+caption, making both unreadable. It is opaque now. That was pre-existing on
+`catches.html`; making more galleries clickable is what exposed it.
+
 ### Catch pages, and the threshold that decides them
 
 Every catch card on `catches.html` carries an `id="c-<id>"`, so a single catch
