@@ -77,7 +77,29 @@
         "en": "Kevin B. and BOBE holding a 50-inch muskie aboard, in the rain"
       }
     },
-    "gallery": [],
+    "gallery": [
+      {
+        "src": "assets/img/catches/maskinonge-kevin-b-surface.jpg",
+        "alt": {
+          "fr": "Le maskinongé qui bardasse en surface dans une gerbe d'eau blanche, l'épuisette qui entre dans le cadre le long du plat-bord.",
+          "en": "The muskie thrashing at the surface in a burst of white water, the net just entering the frame alongside the gunwale."
+        }
+      },
+      {
+        "src": "assets/img/catches/maskinonge-kevin-b-epuisette.jpg",
+        "alt": {
+          "fr": "Le maskinongé dans l'épuisette, le long de la chaloupe : BOBE, en ciré bleu, soulève le panier hors de l'eau.",
+          "en": "The muskie in the net alongside the boat: BOBE, in blue rain gear, lifting the hoop clear of the water."
+        }
+      },
+      {
+        "src": "assets/img/catches/maskinonge-kevin-b-reaction.jpg",
+        "alt": {
+          "fr": "Kevin B., bouche grande ouverte, la canne encore pliée : la réaction juste après que le poisson soit entré dans l'épuisette.",
+          "en": "Kevin B., mouth wide open, rod still bent: the reaction the moment the fish went into the net."
+        }
+      }
+    ],
     "featured": true,
     "notes": {
       "fr": "Le record personnel de Kevin B. Sorti du fleuve Saint-Laurent une journée de pluie, hors tournoi.",

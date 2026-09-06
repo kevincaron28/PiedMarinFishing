@@ -1007,9 +1007,14 @@ a.nextgen-parent { font-weight: 600; }
   box-shadow: var(--shadow);
 }
 @media (min-width: 900px) {
-  /* Au-delà de la couverture, deux de front : la première photo raconte, les
-     suivantes détaillent. */
-  .cp-gallery { grid-template-columns: 1fr 1fr; max-width: none; }
+  /* La couverture pleine largeur, les autres en rang. Deux colonnes fixes
+     laissaient une troisième photo seule en bas; auto-fit les range selon
+     leur nombre. */
+  .cp-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    align-items: start;
+    max-width: none;
+  }
   .cp-shot:first-child { grid-column: 1 / -1; max-width: 720px; }
 }
 
