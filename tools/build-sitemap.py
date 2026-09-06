@@ -81,11 +81,12 @@ def url(page, priority, freq, deps):
 # Les dossiers de fiches générées, avec la priorité qui leur revient : une
 # fiche de pêcheur est une adresse qu'on donne à une marque, elle vaut plus
 # qu'une fiche de tournoi parmi trente-quatre.
-GENERATED_DIRS = [("tournois", "0.6"), ("pecheurs", "0.7"), ("bateaux", "0.5")]
+GENERATED_DIRS = [("tournois", "0.6"), ("pecheurs", "0.7"), ("bateaux", "0.5"),
+                  ("prises", "0.6")]
 
 
 def generated_pages():
-    """Une entrée par fiche écrite dans tournois/, pecheurs/ et bateaux/."""
+    """Une entrée par fiche écrite dans tournois/, pecheurs/, bateaux/ et prises/."""
     out = []
     for dirname, priority in GENERATED_DIRS:
         directory = os.path.join(REPO, dirname)

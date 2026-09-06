@@ -414,9 +414,11 @@ def render_angler(m, ui, results, catches, boats, tp_index):
 
     mine_catches = [c for c in catches if c.get("angler") == m["id"]]
     if mine_catches:
+        # Chaque vignette mène désormais à SA prise, pas à la liste filtrée du
+        # pêcheur : « le maskinongé de 50 po » a maintenant une adresse.
         cards = "".join(
-            '<a class="ap-catch" href="catches.html?angler=%s">%s%s</a>'
-            % (esc(m["id"]),
+            '<a class="ap-catch" href="catches.html#c-%s">%s%s</a>'
+            % (esc(c["id"]),
                '<img src="%s"%s alt="" loading="lazy" width="120" height="90">'
                % (esc((c.get("media") or {}).get("src") or ""),
                   srcset_attrs((c.get("media") or {}).get("src") or "", "68px"))

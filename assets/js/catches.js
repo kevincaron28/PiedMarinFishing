@@ -402,7 +402,7 @@ async function initCatches(options) {
   function cardHTML(c) {
     const d = describe(c);
     return `
-      <article class="catch-card">
+      <article class="catch-card" id="c-${escapeHTML(c.id || "")}">
         <div class="catch-media">${mediaHTML(c, d)}</div>
         <div class="catch-body">${bodyHTML(c, d, "h3")}</div>
       </article>`;
@@ -412,7 +412,7 @@ async function initCatches(options) {
     const d = describe(c);
     // Pas de bouton « voir en grand » : la photo elle-même ouvre la visionneuse.
     return `
-      <article class="featured-catch">
+      <article class="featured-catch" id="c-${escapeHTML(c.id || "")}">
         <div class="catch-media featured-media">
           ${mediaHTML(c, d, "(max-width: 760px) 92vw, 583px")}
           <span class="featured-flag">${escapeHTML(t("catches.featured"))}</span>
@@ -531,4 +531,29 @@ async function initCatches(options) {
   if (anglerSelect && preselect && memberById.has(preselect)) anglerSelect.value = preselect;
 
   render();
+
+  // Lien profond vers UNE prise : catches.html#c-maskinonge-kevin-b. Les
+  // cartes n'existent pas au chargement, alors le navigateur a déjà renoncé
+  // à sauter quand elles apparaissent — on refait le saut ici. Un filtre
+  // actif peut avoir écarté la cible : on le lève plutôt que de rester sur
+  // une page qui n'a pas ce qu'on est venu voir.
+  function jumpToCatch() {
+    const id = (location.hash || "").slice(1);
+    if (!/^c-/.test(id)) return;
+    if (!document.getElementById(id) && anglerSelect && anglerSelect.value) {
+      anglerSelect.value = "";
+      render();
+    }
+    const el = document.getElementById(id);
+    if (!el) return;
+    const header = document.querySelector(".site-header");
+    const offset = (header ? header.getBoundingClientRect().height : 0) + 12;
+    window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.scrollY - offset),
+                      behavior: "smooth" });
+    // Un repère visuel : sur une page de sept prises, « laquelle déjà? »
+    el.classList.add("catch-targeted");
+    setTimeout(() => el.classList.remove("catch-targeted"), 2600);
+  }
+  window.addEventListener("hashchange", jumpToCatch);
+  jumpToCatch();
 }

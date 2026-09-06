@@ -970,6 +970,49 @@ a.nextgen-parent { font-weight: 600; }
 }
 .nextgen-first b { color: var(--navy-900); }
 
+/* ---------- Fiche de prise ---------- */
+
+/* Une fiche de prise existe d'abord pour ses photos — c'est la condition du
+   seuil qui autorise sa page. Elles sont donc grandes, en une colonne, dans
+   l'ordre où on les regarde : la couverture, puis le reste. */
+.cp-gallery {
+  display: grid;
+  gap: 18px;
+  max-width: 720px;
+}
+.cp-shot { margin: 0; }
+.cp-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+@media (min-width: 900px) {
+  /* Au-delà de la couverture, deux de front : la première photo raconte, les
+     suivantes détaillent. */
+  .cp-gallery { grid-template-columns: 1fr 1fr; max-width: none; }
+  .cp-shot:first-child { grid-column: 1 / -1; max-width: 720px; }
+}
+
+/* Prise visée par une ancre : sur une page de sept, il faut dire laquelle.
+   La bordure s'efface d'elle-même — un surlignage permanent finirait par
+   ressembler à un état, pas à une réponse. */
+.catch-targeted {
+  outline: 3px solid var(--teal-400);
+  outline-offset: 4px;
+  border-radius: var(--radius-lg);
+  animation: catch-fade 2.6s ease forwards;
+}
+@keyframes catch-fade {
+  0%, 62% { outline-color: var(--teal-400); }
+  100% { outline-color: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catch-targeted { animation: none; outline-color: var(--teal-400); }
+}
+
 /* ---------- Le milieu (organismes) ---------- */
 
 /* Les organismes vivent dans une .resource-list du répertoire; il ne reste

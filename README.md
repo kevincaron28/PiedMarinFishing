@@ -118,6 +118,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 |---|---|
 | `tools/build-tournament-pages.py` | writes `tournois/*.html` from `data/quebec-tournaments.json`, and the index `data/tournament-pages.json` |
 | `tools/build-profile-pages.py` | writes `pecheurs/*.html` and `bateaux/*.html` from `data/team-members.json` and `data/boats.json` |
+| `tools/build-catch-pages.py` | writes `prises/*.html` for the catches that clear the threshold, from `data/catches.json` |
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
@@ -570,6 +571,54 @@ belongs to a child.
   **month** back out of the catch log rather than repeating them, so the two
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
+
+### Catch pages, and the threshold that decides them
+
+Every catch card on `catches.html` carries an `id="c-<id>"`, so a single catch
+has an address. That is what the angler profiles link to: a thumbnail on
+`pecheurs/kevin-b.html` goes to `catches.html#c-maskinonge-kevin-b`, not to the
+filtered list. Three things make that anchor actually work:
+
+- The cards are rendered by JavaScript, so the browser has already given up
+  scrolling by the time they exist — `catches.js` redoes the jump itself, and
+  clears the header height so the card is not hidden under it.
+- If a filter is active and excludes the target, the filter is lifted rather
+  than leaving the visitor on a page that lacks what they came for.
+- The card gets `.catch-targeted` for 2.6 s. On a page of seven catches,
+  "which one?" is a real question; a permanent highlight would read as state
+  rather than as an answer.
+
+`tools/build-catch-pages.py` then writes a full page per catch — but only for
+catches that deserve one:
+
+| Requirement | Why |
+|---|---|
+| a date (year and month at least) | |
+| a body of water | |
+| **3 photos** (cover + gallery) | a catch page exists for its photos |
+| **a 60-word story** (`story`, bilingual) | below that the page fails `seo.js` |
+
+That last number is calibrated, not guessed: `seo.js` rejects a page under 120
+words, and a 40-word story produced 118 words in English — English runs shorter
+than French. A generated page passes our own audit, or it is not generated.
+
+**On today's data the threshold produces zero pages, and that is the correct
+answer, not a bug.** The script prints what each catch is missing, so the first
+one to clear the bar is obvious:
+
+```
+maskinonge-kevin-b       2 photos de plus, récit (0/60 mots)
+```
+
+A catch that later drops back below the threshold has its page deleted on the
+next run — otherwise an orphan would stay served while absent from the sitemap.
+
+The page itself pulls the gear straight from `team-members.json` rather than
+copying it into the catch: "caught on what?" is the question a reader and a
+brand both ask, and there should be one answer, not two. JSON-LD is `Article`
+— a catch report is an illustrated story, not an event or a product — and it
+declares only what is true: no invented publication date, and no author unless
+the angler is on the roster.
 
 ### Pro-staff sheets
 
