@@ -144,9 +144,13 @@ def facts_html(c, ui, members, events):
         inner = bilingual("span", value, "event-spec-value")
         if href:
             inner = '<a href="%s">%s</a>' % (esc(href), inner)
+        # L'etiquette etait figee en francais : « Pecheur », « Plan d'eau »
+        # restaient tels quels en anglais. Elle passe par bilingual comme le
+        # reste de la fiche.
+        label = bilingual("span", {"fr": ui["fr"][key], "en": ui["en"][key]})
         rows.append('<div class="event-spec"><span class="event-spec-label">'
                     '<span aria-hidden="true">%s</span> %s</span>%s</div>'
-                    % (icon, esc(ui["fr"][key]), inner))
+                    % (icon, label, inner))
 
     if who:
         row("🎣", "catches.angler", who.get("name"), "pecheurs/%s.html" % who["id"])
@@ -187,24 +191,43 @@ def gallery_html(c, ui):
 
 
 def gear_html(c, ui, members):
-    """Le matériel du pêcheur, lu sur sa fiche.
+    """Avec quoi? — la question que posent le lecteur et la marque.
 
-    C'est la question qu'une marque et un lecteur posent tous les deux devant
-    une grosse prise : avec quoi? On ne le recopie pas dans catches.json — il
-    vit dans team-members.json, et le lien vers la fiche du pêcheur suit.
+    Deux sources, et il ne faut surtout pas les confondre. Si la prise porte
+    son propre « gear », c'est ce qui a servi CE jour-la : on l'affiche sous
+    « Le materiel ». Sinon on retombe sur l'equipement general du pecheur,
+    mais sous un titre qui dit que c'est son kit habituel — le presenter comme
+    celui de la prise serait faux. Le maskinonge de 50 po a ete pris a la
+    traine sur un crankbait, alors que le leurre de predilection de Kevin B.
+    est un chatterbait : c'est exactement l'erreur que ce partage evite.
+
+    Renvoie (titre_cle, html) ou (None, "").
     """
+    own = [g for g in (c.get("gear") or []) if pick(g.get("value"), "fr")]
     who = members.get(c.get("angler"))
-    gear = [g for g in ((who or {}).get("gear") or []) if pick(g.get("value"), "fr")]
-    if not gear:
-        return ""
-    rows = "".join(
-        '<div class="event-spec"><span class="event-spec-label">%s</span>%s</div>'
-        % (bilingual("span", g.get("label")), bilingual("span", g.get("value"), "event-spec-value"))
-        for g in gear)
-    link = ('<a class="member-history-link" href="pecheurs/%s.html">%s</a>'
-            % (esc(who["id"]), bilingual("span", {"fr": ui["fr"]["team.viewProfile"],
-                                                  "en": ui["en"]["team.viewProfile"]})))
-    return '<div class="event-specs tp-specs">%s</div>%s' % (rows, link)
+
+    def rows_of(gear):
+        return "".join(
+            '<div class="event-spec"><span class="event-spec-label">%s</span>%s</div>'
+            % (bilingual("span", g.get("label")),
+               bilingual("span", g.get("value"), "event-spec-value"))
+            for g in gear)
+
+    link = ""
+    if who:
+        link = ('<a class="member-history-link" href="pecheurs/%s.html">%s</a>'
+                % (esc(who["id"]), bilingual("span", {"fr": ui["fr"]["team.viewProfile"],
+                                                      "en": ui["en"]["team.viewProfile"]})))
+    if own:
+        return "cp.gear", '<div class="event-specs tp-specs">%s</div>%s' % (rows_of(own), link)
+
+    usual = [g for g in ((who or {}).get("gear") or []) if pick(g.get("value"), "fr")]
+    if not usual:
+        return None, ""
+    name = who.get("name") or ""
+    note = {lang: ui[lang]["cp.gearUsualNote"].replace("{name}", name) for lang in ("fr", "en")}
+    return "cp.gearUsual", '%s<div class="event-specs tp-specs">%s</div>%s' % (
+        bilingual("p", note, "tp-notes"), rows_of(usual), link)
 
 
 def related(c, kept):
@@ -253,10 +276,14 @@ def render(c, ui, members, events, kept):
         body.append(section({"fr": ui["fr"][gkey], "en": ui["en"][gkey]},
                             gallery, key=gkey))
 
-    gear = gear_html(c, ui, members)
+    gear_key, gear = gear_html(c, ui, members)
     if gear:
-        body.append(section({"fr": ui["fr"]["cp.gear"], "en": ui["en"]["cp.gear"]},
-                            gear, alt=True, key="cp.gear"))
+        who = members.get(c.get("angler")) or {}
+        # Surtout pas « title » : ce nom porte deja le <title> de la page, et
+        # l'ecraser ici le remplacait par « Le materiel ».
+        gear_title = {lang: ui[lang][gear_key].replace("{name}", who.get("name") or "")
+                      for lang in ("fr", "en")}
+        body.append(section(gear_title, gear, alt=True, key=gear_key))
 
     near = related(c, kept)
     if near:

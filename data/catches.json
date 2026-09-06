@@ -68,6 +68,28 @@
       "en": "St. Lawrence River"
     },
     "event": "",
+    "gear": [
+      {
+        "label": {
+          "fr": "Présentation",
+          "en": "Presentation"
+        },
+        "value": {
+          "fr": "À la traîne",
+          "en": "Trolling"
+        }
+      },
+      {
+        "label": {
+          "fr": "Leurre",
+          "en": "Lure"
+        },
+        "value": {
+          "fr": "Petit crankbait",
+          "en": "Small crankbait"
+        }
+      }
+    ],
     "media": {
       "type": "image",
       "src": "assets/img/catches/maskinonge-kevin-b.jpg",

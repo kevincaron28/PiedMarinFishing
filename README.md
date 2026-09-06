@@ -573,6 +573,32 @@ belongs to a child.
   cannot drift — and the exact day of a child's outing stays off the page.
 - Empty file, no section: it hides itself like every other block on the site.
 
+### Two kinds of gear, and why they must not be mixed
+
+A catch page answers "caught on what?" — but there are two possible answers and
+confusing them prints something false. If the catch carries its own `gear`
+array, that is what was used *that day* and it appears under **Le matériel**.
+If it does not, the page falls back to the angler's kit from
+`team-members.json`, under a heading that says so — **L'équipement habituel de
+Kevin B.** — with a line noting it is not necessarily what was in his hands.
+
+The 50-inch muskie is why. It was trolled on a small crankbait, while Kevin
+B.'s go-to lure on his profile is a chatterbait; the page was printing
+*chatterbait* under a heading that read as this catch's gear. A per-catch
+`gear` entry now carries the truth:
+
+```json
+"gear": [
+  { "label": {"fr": "Présentation", "en": "Presentation"},
+    "value": {"fr": "À la traîne",  "en": "Trolling"} },
+  { "label": {"fr": "Leurre",       "en": "Lure"},
+    "value": {"fr": "Petit crankbait", "en": "Small crankbait"} }
+]
+```
+
+Only what the angler actually reported goes in. No brand or model was given for
+that crankbait, so none is printed.
+
 ### Never publish an identifying number
 
 ```bash
