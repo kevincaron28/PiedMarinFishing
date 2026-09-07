@@ -16,6 +16,7 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `history.html` | *Résultats / Results* — every tournament fished, filterable by member and season |
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
+| `reglementation.html` | Verified fishing rules for the zones we fish, with the date they were checked |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
 | `404.html` | Not-found page, served by GitHub Pages at any depth |
@@ -98,6 +99,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `merch.js` | shop product grid |
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 | `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
+| `regulations.js` | the rules table — stamps the check date, and erases itself once the data goes stale |
 | `sponsors.js` | partner logos — hides its whole section when there are none |
 | `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
 
@@ -748,6 +750,39 @@ error this split exists to prevent. JSON-LD is `Article`
 — a catch report is an illustrated story, not an event or a product — and it
 declares only what is true: no invented publication date, and no author unless
 the angler is on the roster.
+
+### The regulations page, and why it expires
+
+`reglementation.html` is the only page on this site that can cost somebody a
+fine. It carries two guards, not one.
+
+**The date is always on screen.** A visitor sees when the table was last
+checked and judges its freshness for themselves. Dated information is honest
+information.
+
+**The table erases itself when it goes stale.** "I'll update it every year" is
+a promise, and a promise kept by a busy human is not a mechanism. Past
+`staleAfterMonths` (12), `regulations.js` drops the table entirely and puts an
+explanation and the official link in its place. The boundary is inclusive of
+the twelfth month: data stamped 2026-09-07 stays live through 2027-09-30 and
+goes dark on 2027-10-01. The page therefore cannot mislead anyone even if
+nobody touches it for three years.
+
+Note that the stale block *replaces* the table rather than sitting above it. A
+stale rule under a warning is still a stale rule on screen.
+
+Two smaller rules carry over from the species pages:
+
+- **A rule with no `verified` stamp does not render.** Same gate as
+  `claim_ok()`, and `data/sources.json` is the same registry — here the stake
+  is not credibility, it is a ticket.
+- **The page never claims to be complete or authoritative.** It says what was
+  verified, when, and links to Quebec's official regulations.
+
+The "read more" link to a species page is gated on `data/species-pages.json`,
+because those pages only exist once they clear their own threshold — without
+the check, a rule naming a species whose page has not been generated would
+link to a 404.
 
 ### Species pages, and the citation gate
 

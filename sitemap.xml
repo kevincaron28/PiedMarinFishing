@@ -65,6 +65,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/reglementation.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/reglementation.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/reglementation.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/reglementation.html"/>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/social.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/social.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/social.html?lang=en"/>

@@ -1,0 +1,39 @@
+{
+  "updated": "2026-09-07",
+  "staleAfterMonths": 12,
+  "official": {
+    "name": {
+      "fr": "Réglementation de la pêche sportive — Gouvernement du Québec",
+      "en": "Sport fishing regulations — Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive"
+  },
+  "zones": [
+    {"id": "8", "name": {"fr": "Zone 8", "en": "Zone 8"},
+     "note": {"fr": "Notre secteur du fleuve Saint-Laurent.",
+              "en": "Our stretch of the St. Lawrence."}},
+    {"id": "7", "name": {"fr": "Zone 7", "en": "Zone 7"},
+     "note": {"fr": "", "en": ""}}
+  ],
+  "rules": [
+    {
+      "id": "chevaliers-meuniers-remise-eau",
+      "zones": ["7", "8"],
+      "species": {"fr": "Chevaliers et meuniers", "en": "Redhorse and suckers"},
+      "rule": {
+        "fr": "Remise à l'eau immédiate obligatoire",
+        "en": "Immediate release required"
+      },
+      "detail": {
+        "fr": "Tous les spécimens de chevaliers ou de meuniers capturés accidentellement dans l'aire de répartition du chevalier cuivré — plusieurs plans d'eau des zones 7 et 8 — doivent être remis à l'eau immédiatement. La pêche sportive et commerciale du chevalier cuivré est interdite.",
+        "en": "Any redhorse or sucker caught accidentally within the copper redhorse's range — a number of water bodies in zones 7 and 8 — must be released immediately. Sport and commercial fishing for the copper redhorse is prohibited."
+      },
+      "species_page": "chevalier-cuivre",
+      "source": "qc-fiche-chevalier-cuivre",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    }
+  ]
+}

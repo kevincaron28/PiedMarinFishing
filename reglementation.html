@@ -3,34 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-text="merch.title">Boutique — Pied Marin Fishing</title>
-<meta name="description" data-i18n-content="merch.desc" content="Vêtements et accessoires aux couleurs de Pied Marin Fishing — chandails, casquettes et cotons ouatés. La boutique ouvre bientôt; écris-nous pour être averti.">
-<link rel="canonical" href="https://piedmarinfishing.com/merch.html">
-<!-- Le site sert les deux langues sur la même URL; ?lang=en est la version
-     anglaise liable. Le français reste la version par défaut. -->
-<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/merch.html">
-<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/merch.html?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/merch.html">
-<!-- Hors du menu et hors de l'index tant que la boutique est vide.
-     Retirer cette ligne et remettre le lien dans la nav quand les produits existent. -->
-<meta name="robots" content="noindex, follow">
+<title data-i18n-text="reg.title">Réglementation par zone — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="reg.desc" content="Les règles de pêche qu'on a vérifiées pour les zones 7 et 8 du fleuve Saint-Laurent, avec la date de vérification et le lien vers la source officielle.">
+<link rel="canonical" href="https://piedmarinfishing.com/reglementation.html">
+<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/reglementation.html">
+<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/reglementation.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/reglementation.html">
 <meta name="theme-color" content="#0b1e33">
-<!-- Link previews on Facebook, Messenger, Instagram and WhatsApp. Crawlers read
-     the static markup, so these carry the French copy — the site default. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pied Marin Fishing">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:locale:alternate" content="en_CA">
-<meta property="og:title" content="Boutique — Pied Marin Fishing">
-<meta property="og:description" content="Vêtements et accessoires aux couleurs de Pied Marin Fishing — chandails, casquettes et cotons ouatés. La boutique ouvre bientôt; écris-nous pour être averti.">
-<meta property="og:url" content="https://piedmarinfishing.com/merch.html">
+<meta property="og:title" content="Réglementation par zone — Pied Marin Fishing">
+<meta property="og:description" content="Les règles de pêche qu'on a vérifiées pour les zones 7 et 8 du fleuve Saint-Laurent, avec la date de vérification et le lien vers la source officielle.">
+<meta property="og:url" content="https://piedmarinfishing.com/reglementation.html">
 <meta property="og:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Écusson de l'équipe Pied Marin Fishing : un brochet au-dessus de l'eau">
+<meta property="og:image:alt" content="">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Boutique — Pied Marin Fishing">
-<meta name="twitter:description" content="Vêtements et accessoires aux couleurs de Pied Marin Fishing — chandails, casquettes et cotons ouatés. La boutique ouvre bientôt; écris-nous pour être averti.">
+<meta name="twitter:title" content="Réglementation par zone — Pied Marin Fishing">
+<meta name="twitter:description" content="Les règles de pêche qu'on a vérifiées pour les zones 7 et 8 du fleuve Saint-Laurent, avec la date de vérification et le lien vers la source officielle.">
 <meta name="twitter:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
@@ -51,7 +44,7 @@
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="reglementation.html" data-i18n="nav.regs">Réglementation</a></li>
+      <li><a href="reglementation.html" aria-current="page" data-i18n="nav.regs">Réglementation</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
     </ul>
@@ -67,25 +60,22 @@
 
 <div class="page-header">
   <div class="container">
-    <h1 data-i18n="merch.h1">Boutique</h1>
-    <p data-i18n="merch.intro">Porte les couleurs de la gang. Voici ce qui s'en vient.</p>
+    <span class="kicker" data-i18n="reg.kicker">Fleuve Saint-Laurent</span>
+    <h1 data-i18n="reg.h1">Réglementation par zone</h1>
+    <p class="tp-notes" data-i18n="reg.intro">On pêche les zones 7 et 8 du fleuve. Voici les règles qu'on a vérifiées nous-mêmes dans une source gouvernementale, avec la date à laquelle on l'a fait. Ce n'est pas la réglementation au complet et ça ne la remplace pas : c'est ce qu'on a validé, daté, pour que tu saches à quoi t'en tenir.</p>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="notice" data-i18n="merch.notice">La boutique est en construction. On fabrique la première série et on prend les photos — les modèles, les tailles et les prix s'en viennent.</div>
-    <div id="merch-grid" class="grid grid-3"></div>
+    <div data-regulations></div>
   </div>
 </section>
 
 <section class="alt">
   <div class="container">
-    <div class="callout">
-      <h3 data-i18n="merch.helpTitle">Tu veux être averti quand ça sort?</h3>
-      <p data-i18n="merch.helpBody">Écris-nous et on te fait signe dès que la première série est prête.</p>
-      <a class="btn btn-teal" href="mailto:info@piedmarinfishing.com" data-i18n="merch.helpCta">Nous écrire →</a>
-    </div>
+    <div class="section-head"><h2 data-i18n="reg.whyTitle">Pourquoi une date, et pourquoi elle disparaît</h2></div>
+    <p class="tp-notes" data-i18n="reg.whyBody">Une règle de pêche change, et une limite périmée affichée sur un site est pire que pas de limite du tout. La date te dit quand on a vérifié. Et si personne ne repasse dessus dans les douze mois, le tableau s'efface tout seul et te renvoie à la source officielle — pour que cette page ne puisse pas mentir, même si on l'oublie.</p>
   </div>
 </section>
 
@@ -102,9 +92,9 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
-<script src="assets/js/merch.js"></script>
+<script src="assets/js/regulations.js"></script>
 <script>
-  initMerch("#merch-grid");
+  initRegulations("[data-regulations]");
 </script>
 </body>
 </html>

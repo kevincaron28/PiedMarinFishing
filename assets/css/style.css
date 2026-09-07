@@ -2801,3 +2801,77 @@ body.has-lightbox { overflow: hidden; }
   white-space: nowrap;
 }
 .sp-src-link:hover, .sp-src-link:focus-visible { border-color: var(--teal-400); }
+
+/* Réglementation par zone.
+   La date de vérification est affichée en permanence, et le bloc « périmé »
+   remplace le tableau au complet plutôt que de s'ajouter à côté : une règle
+   périmée sous un avertissement reste une règle périmée à l'écran. */
+.reg-stamp {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: var(--sand-100);
+  border: 1px solid var(--line);
+  color: var(--ink-900);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+.reg-list { display: grid; gap: 14px; }
+.reg-row {
+  display: grid;
+  grid-template-columns: minmax(88px, auto) 1fr;
+  gap: 16px;
+  align-items: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+.reg-zone {
+  font-weight: 700;
+  color: var(--ink-900);
+  font-size: 0.95rem;
+}
+.reg-species {
+  margin: 0 0 2px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.reg-rule {
+  margin: 0 0 8px;
+  font-weight: 600;
+  color: var(--teal-600);
+}
+.reg-detail { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+.reg-more {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+.reg-note, .reg-empty {
+  max-width: 62ch;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.reg-stale {
+  background: var(--sand-100);
+  border: 1px solid var(--gold-400);
+  border-left-width: 4px;
+  border-radius: 12px;
+  padding: 18px 20px;
+  max-width: 62ch;
+}
+.reg-stale-head {
+  margin: 0 0 8px;
+  font-weight: 700;
+  color: var(--ink-900);
+}
+.reg-stale p:last-child { margin-bottom: 0; }
+@media (max-width: 560px) {
+  .reg-row { grid-template-columns: 1fr; gap: 6px; }
+}
