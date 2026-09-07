@@ -1156,5 +1156,51 @@
       "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
       "date": "2026-09-07"
     }
+  },
+  {
+    "id": "qc-zone-7",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "2026",
+    "title": {
+      "fr": "Pêcher dans la zone 7 — périodes, limites et exceptions (saison 2026-2027)",
+      "en": "Fishing in zone 7 — seasons, limits and exceptions (2026-2027)"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/zones-periodes/zones-de-peche/zone-7",
+    "covers": {
+      "fr": "Dates, limites de prise, limites de longueur et engins autorisés.",
+      "en": "Dates, catch limits, length limits and permitted gear."
+    },
+    "verified": {
+      "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-zone-8",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "2026",
+    "title": {
+      "fr": "Pêcher dans la zone 8 — périodes, limites et exceptions (saison 2026-2027)",
+      "en": "Fishing in zone 8 — seasons, limits and exceptions (2026-2027)"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/zones-periodes/zones-de-peche/zone-8",
+    "covers": {
+      "fr": "Dates, limites de prise, limites de longueur et engins autorisés.",
+      "en": "Dates, catch limits, length limits and permitted gear."
+    },
+    "verified": {
+      "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+      "date": "2026-09-07"
+    }
   }
 ]

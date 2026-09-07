@@ -56,29 +56,460 @@
   ],
   "rules": [
     {
-      "id": "chevaliers-meuniers-remise-eau",
+      "id": "maskinonge-z78",
       "zones": [
-        "7",
-        "8"
+        "8",
+        "7"
+      ],
+      "speciesPages": [
+        "maskinonge"
       ],
       "species": {
-        "fr": "Chevaliers et meuniers",
-        "en": "Redhorse and suckers"
+        "fr": "Maskinongé et maskinongé tigré",
+        "en": "Muskellunge and tiger muskellunge"
       },
-      "rule": {
-        "fr": "Remise à l'eau immédiate obligatoire",
-        "en": "Immediate release required"
+      "period": {
+        "fr": "15 juin 2026 au 19 décembre 2026",
+        "en": "June 15 to December 19, 2026"
+      },
+      "limit": {
+        "fr": "1 en tout",
+        "en": "1 in total"
+      },
+      "length": {
+        "fr": "137 cm et plus",
+        "en": "137 cm and over"
+      },
+      "gear": {
+        "fr": "Pêche à la ligne seulement",
+        "en": "Angling only"
       },
       "detail": {
-        "fr": "Tous les spécimens de chevaliers ou de meuniers capturés accidentellement dans l'aire de répartition du chevalier cuivré — plusieurs plans d'eau des zones 7 et 8 — doivent être remis à l'eau immédiatement. La pêche sportive et commerciale du chevalier cuivré est interdite.",
-        "en": "Any redhorse or sucker caught accidentally within the copper redhorse's range — a number of water bodies in zones 7 and 8 — must be released immediately. Sport and commercial fishing for the copper redhorse is prohibited."
+        "fr": "La limite de longueur s'applique à tous les plans d'eau des zones 7 et 8, sauf le lac à la Tortue (zone 7).",
+        "en": "The length limit applies to every water body in zones 7 and 8, except Lac à la Tortue (zone 7)."
       },
-      "species_page": "chevalier-cuivre",
-      "source": "qc-fiche-chevalier-cuivre",
+      "source": "qc-zone-8",
       "verified": {
-        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
         "date": "2026-09-07"
       }
+    },
+    {
+      "id": "dore-z8-mai",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "dore-jaune"
+      ],
+      "species": {
+        "fr": "Doré jaune",
+        "en": "Walleye"
+      },
+      "period": {
+        "fr": "10 mai 2026 au 31 mai 2026",
+        "en": "May 10 to May 31, 2026"
+      },
+      "limit": {
+        "fr": "6",
+        "en": "6"
+      },
+      "length": {
+        "fr": "37 cm à 53 cm inclusivement",
+        "en": "37 cm to 53 cm inclusive"
+      },
+      "gear": {
+        "fr": "Pêche à la ligne seulement",
+        "en": "Angling only"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "dore-z8-juin",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "dore-jaune",
+        "dore-noir"
+      ],
+      "species": {
+        "fr": "Doré jaune et doré noir",
+        "en": "Walleye and sauger"
+      },
+      "period": {
+        "fr": "1er juin 2026 au 31 mars 2027",
+        "en": "June 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "6 en tout",
+        "en": "6 in total"
+      },
+      "length": {
+        "fr": "Doré jaune : 37 cm à 53 cm inclusivement. Doré noir : aucune limite de longueur.",
+        "en": "Walleye: 37 cm to 53 cm inclusive. Sauger: no length limit."
+      },
+      "gear": {
+        "fr": "Pêche à la ligne seulement",
+        "en": "Angling only"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "achigans-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "achigan-petite-bouche",
+        "achigan-grande-bouche"
+      ],
+      "species": {
+        "fr": "Achigans",
+        "en": "Bass"
+      },
+      "period": {
+        "fr": "15 juin 2026 au 31 mars 2027",
+        "en": "June 15, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "6 en tout",
+        "en": "6 in total"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "brochets-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "grand-brochet",
+        "brochet-maille",
+        "brochet-vermicule"
+      ],
+      "species": {
+        "fr": "Brochets",
+        "en": "Pike"
+      },
+      "period": {
+        "fr": "Ouverture le 1er mai 2026",
+        "en": "Opens May 1, 2026"
+      },
+      "limit": {
+        "fr": "6 en tout",
+        "en": "6 in total"
+      },
+      "length": {
+        "fr": "56 cm à 70 cm inclusivement",
+        "en": "56 cm to 70 cm inclusive"
+      },
+      "detail": {
+        "fr": "La date de fermeture est coupée par un saut de page dans le document officiel : on ne la reproduit pas de mémoire. La limite de longueur s'applique au fleuve, au lac des Deux Montagnes, aux rivières des Outaouais, des Prairies et des Mille Îles, et à la portion aval de plusieurs tributaires.",
+        "en": "The closing date is cut off by a page break in the official document, so we do not reproduce it from memory. The length limit applies to the St. Lawrence, Lac des Deux Montagnes, the Ottawa, des Prairies and Mille Îles rivers, and the lower reaches of several tributaries."
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "brochets-z7",
+      "zones": [
+        "7"
+      ],
+      "speciesPages": [
+        "grand-brochet",
+        "brochet-maille",
+        "brochet-vermicule"
+      ],
+      "species": {
+        "fr": "Brochets",
+        "en": "Pike"
+      },
+      "period": {
+        "fr": "Ouverture le 15 mai 2026",
+        "en": "Opens May 15, 2026"
+      },
+      "limit": {
+        "fr": "6 en tout",
+        "en": "6 in total"
+      },
+      "length": {
+        "fr": "56 cm à 70 cm inclusivement",
+        "en": "56 cm to 70 cm inclusive"
+      },
+      "detail": {
+        "fr": "La zone 7 ouvre deux semaines plus tard que la zone 8. La limite de longueur s'applique à l'aire faunique communautaire du lac Saint-Pierre, au fleuve et à la partie aval de certains tributaires.",
+        "en": "Zone 7 opens two weeks later than zone 8. The length limit applies to the Lac Saint-Pierre community wildlife area, the river and the lower reaches of certain tributaries."
+      },
+      "source": "qc-zone-7",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "esturgeons-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "esturgeon-jaune",
+        "esturgeon-noir"
+      ],
+      "species": {
+        "fr": "Esturgeons",
+        "en": "Sturgeon"
+      },
+      "period": {
+        "fr": "15 juin 2026 au 31 octobre 2026",
+        "en": "June 15 to October 31, 2026"
+      },
+      "limit": {
+        "fr": "1 en tout",
+        "en": "1 in total"
+      },
+      "length": {
+        "fr": "Esturgeon jaune : 80 cm à 130 cm inclusivement. Esturgeon noir : aucune limite de longueur.",
+        "en": "Lake sturgeon: 80 cm to 130 cm inclusive. Atlantic sturgeon: no length limit."
+      },
+      "gear": {
+        "fr": "Pêche à la ligne seulement",
+        "en": "Angling only"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "perchaude-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "perchaude"
+      ],
+      "species": {
+        "fr": "Perchaude",
+        "en": "Yellow perch"
+      },
+      "period": {
+        "fr": "1er mai 2026 au 31 mars 2027",
+        "en": "May 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "50",
+        "en": "50"
+      },
+      "detail": {
+        "fr": "Un moratoire sur la pêche sportive et commerciale s'applique au lac Saint-Pierre et au secteur du fleuve entre le pont Laviolette et Saint-Pierre-les-Becquets. Il a été reconduit le 4 mai 2022 pour cinq ans.",
+        "en": "A moratorium on sport and commercial fishing applies at Lac Saint-Pierre and the stretch of river between the Laviolette bridge and Saint-Pierre-les-Becquets. It was renewed on May 4, 2022 for five years."
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "bar-raye-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "bar-raye"
+      ],
+      "species": {
+        "fr": "Bar rayé",
+        "en": "Striped bass"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "Pêche interdite",
+        "en": "Fishing prohibited"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "chevalier-cuivre-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "chevalier-cuivre"
+      ],
+      "species": {
+        "fr": "Chevalier cuivré",
+        "en": "Copper redhorse"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "Pêche interdite",
+        "en": "Fishing prohibited"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "aloses-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "alose-savoureuse"
+      ],
+      "species": {
+        "fr": "Aloses",
+        "en": "Shad"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "5 en tout",
+        "en": "5 in total"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "eperlan-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [
+        "eperlan-arc-en-ciel",
+        "eperlan-arc-en-ciel-estuaire-sud"
+      ],
+      "species": {
+        "fr": "Éperlan arc-en-ciel",
+        "en": "Rainbow smelt"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "120",
+        "en": "120"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "autres-especes-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [],
+      "species": {
+        "fr": "Autres espèces",
+        "en": "Other species"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "Aucune limite",
+        "en": "No limit"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      },
+      "general": true
+    },
+    {
+      "id": "lignes-hiver-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [],
+      "species": {
+        "fr": "Nombre de lignes l'hiver",
+        "en": "Lines allowed in winter"
+      },
+      "period": {
+        "fr": "20 décembre au 31 mars",
+        "en": "December 20 to March 31"
+      },
+      "limit": {
+        "fr": "10 lignes",
+        "en": "10 lines"
+      },
+      "detail": {
+        "fr": "Sur un plan d'eau couvert de glace ou non. Une exception réduit ce nombre dans la partie du lac Saint-François située à l'ouest d'une ligne tirée de la pointe Beaudette à la pointe Saint-Louis.",
+        "en": "On a water body whether ice-covered or not. An exception reduces that number in the part of Lac Saint-François west of a line drawn from Pointe Beaudette to Pointe Saint-Louis."
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      },
+      "general": true
+    },
+    {
+      "id": "appats-morts-z8",
+      "zones": [
+        "8"
+      ],
+      "speciesPages": [],
+      "species": {
+        "fr": "Poissons appâts morts",
+        "en": "Dead baitfish"
+      },
+      "period": {
+        "fr": "20 décembre au 31 mars",
+        "en": "December 20 to March 31"
+      },
+      "limit": {
+        "fr": "Toutes les espèces sauf les espèces interdites",
+        "en": "All species except the prohibited ones"
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
+        "date": "2026-09-07"
+      },
+      "general": true
     },
     {
       "id": "tanche-possession-vivante",
@@ -101,7 +532,11 @@
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"
-      }
+      },
+      "general": true,
+      "speciesPages": [
+        "tanche"
+      ]
     },
     {
       "id": "tanche-remise-eau",
@@ -124,7 +559,11 @@
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"
-      }
+      },
+      "general": true,
+      "speciesPages": [
+        "tanche"
+      ]
     },
     {
       "id": "carpes-envahissantes-remise-eau-interdite",
@@ -143,35 +582,15 @@
         "fr": "C'est l'exception à la règle d'à côté. Les carpes envahissantes, dont la carpe de roseau, sont les seules dont la remise à l'eau est interdite au Québec. La carpe de roseau est présente dans le système du fleuve Saint-Laurent et la rivière Richelieu : deux individus capturés, en mai 2016 et en juillet 2020, et de l'ADN de l'espèce détecté chaque année depuis 2015.",
         "en": "This is the exception to the rule beside it. Invasive carps, grass carp among them, are the only fish whose release is prohibited in Quebec. Grass carp is present in the St. Lawrence system and the Richelieu River: two fish caught, in May 2016 and July 2020, and the species' DNA detected every year since 2015."
       },
-      "species_page": "carpe-de-roseau",
       "source": "qc-fiche-carpe-roseau",
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"
-      }
-    },
-    {
-      "id": "perchaude-moratoire-lsp",
-      "zones": [
-        "lsp"
-      ],
-      "species": {
-        "fr": "Perchaude",
-        "en": "Yellow perch"
       },
-      "rule": {
-        "fr": "Moratoire sur la pêche récréative et commerciale",
-        "en": "Moratorium on recreational and commercial fishing"
-      },
-      "detail": {
-        "fr": "La situation de la perchaude au lac Saint-Pierre est jugée si fragile qu'un moratoire y a été instauré en 2012, puis étendu en 2013 au secteur immédiatement en aval, entre le pont Laviolette et Saint-Pierre-les-Becquets. Il a été reconduit en 2017, puis en 2022.",
-        "en": "The state of yellow perch in Lac Saint-Pierre was judged fragile enough that a moratorium was imposed in 2012, then extended in 2013 to the stretch immediately downstream, between the Laviolette bridge and Saint-Pierre-les-Becquets. It was renewed in 2017, then in 2022."
-      },
-      "source": "qc-fiche-perchaude",
-      "verified": {
-        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-        "date": "2026-09-07"
-      }
+      "general": true,
+      "speciesPages": [
+        "carpe-de-roseau"
+      ]
     },
     {
       "id": "signalement-envahissantes",
@@ -194,7 +613,11 @@
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"
-      }
+      },
+      "general": true,
+      "speciesPages": [
+        "poisson-rouge"
+      ]
     },
     {
       "id": "transport-poissons-vivants",
@@ -217,7 +640,13 @@
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"
-      }
+      },
+      "general": true,
+      "speciesPages": []
     }
-  ]
+  ],
+  "season": {
+    "fr": "Saison 2026-2027 — du 1er avril 2026 au 31 mars 2027",
+    "en": "2026-2027 season — April 1, 2026 to March 31, 2027"
+  }
 }

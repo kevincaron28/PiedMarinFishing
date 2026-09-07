@@ -65,7 +65,6 @@
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="reglementation.html" data-i18n="nav.regs">Réglementation</a></li>
       <li><a href="especes.html" data-i18n="nav.species">Espèces</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
@@ -94,7 +93,7 @@
 
 <section class="alt"><div class="container"><div class="section-head"><h2 data-i18n="sp.sources">Sources</h2></div><p class="sp-origin"><span data-en="Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (s.d.). Round goby — wildlife species profile. Government of Quebec.">Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs (s.d.). Gobie à taches noires — fiche d'espèce faunique. Gouvernement du Québec.</span> <a class="sp-src-link" href="https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gobie-taches-noires" target="_blank" rel="noopener"><span data-en="open">consulter</span></a></p><p class="sp-origin-note" data-en="This information comes from the Government of Quebec's official species profile, consulted on September 7, 2026. The source is in French; the English on this page is our translation.">Ces informations proviennent de la fiche officielle du gouvernement du Québec, consultée le 7 septembre 2026. La source est en français; la version anglaise de cette page est notre traduction.</p></div></section>
 
-<section><div class="container"><p class="tp-notes" data-en="This page gives no fishing rules: dates, limits and quotas change, and an out-of-date rule shown here would be worse than none at all. For current regulations, consult the official Government of Quebec sources.">Cette fiche ne donne aucune règle de pêche : dates, limites et quotas changent, et une règle périmée affichée ici serait pire que pas de règle du tout. Pour la réglementation en vigueur, consultez les sources officielles du gouvernement du Québec.</p><div class="callout-actions"><a class="btn btn-ghost" href="especes.html"><span data-en="← All species">← Toutes les espèces</span></a></div></div></section>
+<section><div class="container"><p class="tp-notes" data-en="This page does not replace the official regulations and is not complete. Always check before you fish, and remember that dates and limits can vary from one water body to another within the same zone.">Cette fiche ne remplace pas la réglementation officielle et n'est pas complète. Vérifie toujours avant de pêcher, et rappelle-toi que les dates et les limites peuvent varier d'un plan d'eau à l'autre dans une même zone.</p><div class="callout-actions"><a class="btn btn-ghost" href="especes.html"><span data-en="← All species">← Toutes les espèces</span></a></div></div></section>
 
 <footer class="site-footer">
   <div class="container">
@@ -114,5 +113,8 @@
      n'en a pas, initGalleryLightbox sort immediatement. -->
 <script src="assets/js/lightbox.js"></script>
 <script>initGalleryLightbox("[data-gallery]");</script>
+<!-- Efface un bloc de reglementation trop vieux. Inerte sur une page qui n'en
+     porte pas : il cherche [data-reg-updated] et ne trouve rien. -->
+<script src="assets/js/reg-guard.js"></script>
 </body>
 </html>

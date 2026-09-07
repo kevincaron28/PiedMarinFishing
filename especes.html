@@ -44,7 +44,6 @@
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="reglementation.html" data-i18n="nav.regs">Réglementation</a></li>
       <li><a href="especes.html" aria-current="page" data-i18n="nav.species">Espèces</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
@@ -73,6 +72,14 @@
   </div>
 </section>
 
+<section class="alt">
+  <div class="container">
+    <div class="section-head"><h2 data-i18n="reg.generalTitle">Les règles qui s'appliquent à tout le monde</h2></div>
+    <p class="tp-notes" data-i18n="reg.generalIntro">La réglementation propre à une espèce est sur sa fiche — c'est là qu'on se pose la question. Celles-ci ne visent aucun poisson en particulier, alors elles sont ici.</p>
+    <div data-general-rules></div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
@@ -89,6 +96,7 @@
 <script src="assets/js/species.js"></script>
 <script>
   initSpecies("[data-species-grid]", "[data-species-count]");
+  initGeneralRules("[data-general-rules]");
 </script>
 </body>
 </html>

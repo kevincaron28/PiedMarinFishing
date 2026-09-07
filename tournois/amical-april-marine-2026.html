@@ -75,7 +75,6 @@
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" aria-current="page" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="reglementation.html" data-i18n="nav.regs">Réglementation</a></li>
       <li><a href="especes.html" data-i18n="nav.species">Espèces</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
@@ -127,5 +126,8 @@
      n'en a pas, initGalleryLightbox sort immediatement. -->
 <script src="assets/js/lightbox.js"></script>
 <script>initGalleryLightbox("[data-gallery]");</script>
+<!-- Efface un bloc de reglementation trop vieux. Inerte sur une page qui n'en
+     porte pas : il cherche [data-reg-updated] et ne trouve rien. -->
+<script src="assets/js/reg-guard.js"></script>
 </body>
 </html>

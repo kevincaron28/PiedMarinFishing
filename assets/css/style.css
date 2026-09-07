@@ -2801,7 +2801,11 @@ body.has-lightbox { overflow: hidden; }
   font-weight: 600;
   font-size: 0.85rem;
   text-decoration: none;
-  white-space: nowrap;
+  max-width: 100%;
+  /* Pas de white-space: nowrap. Le libelle etait « consulter » quand cette
+     regle a ete ecrite; sur une fiche d'espece c'est « Reglementation de la
+     peche sportive du Quebec », et 44 caracteres insecables debordaient
+     l'ecran a 390 px sur les 19 fiches qui portent une regle. */
 }
 .sp-src-link:hover, .sp-src-link:focus-visible { border-color: var(--teal-400); }
 
@@ -2939,3 +2943,16 @@ body.has-lightbox { overflow: hidden; }
 .sp-rules strong { display: block; font-size: 0.85rem; color: var(--ink-900); }
 .sp-origin { max-width: 74ch; margin: 0 0 8px; font-size: 0.95rem; line-height: 1.6; }
 .sp-origin-note { max-width: 74ch; font-size: 0.85rem; line-height: 1.55; }
+
+/* Réglementation sur une fiche d'espèce. */
+.sp-regs { max-width: 74ch; }
+.reg-season { margin: 0 0 6px; font-weight: 600; color: var(--ink-900); }
+.sp-reg { margin: 0 0 18px; }
+.sp-reg:last-of-type { margin-bottom: 0; }
+.sp-reg-scope {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--ink-900);
+}
+.sp-regs .reg-detail { margin: 8px 0 0; font-size: 0.92rem; line-height: 1.55; }
+.sp-regs .reg-note { margin-top: 18px; }

@@ -288,26 +288,62 @@ def blocks_html(sp, ui):
     return "".join(out)
 
 
-def rules_html(sp, rules, zones, ui):
-    """Les règles qui visent cette espèce, tirées de data/regulations.json.
+def rules_html(sp, rules, zones, ui, regs):
+    """La réglementation qui vise CETTE espèce, tirée de data/regulations.json.
 
-    Rien n'est recopié : la page de réglementation reste la seule source, et
-    une règle ajoutée là-bas apparaît ici au prochain build. Deux textes qui
-    disent la même règle finissent toujours par diverger."""
-    mine = [r for r in rules if r.get("species_page") == sp["id"]]
+    Kevin : « je pense pas qu'on devrait avoir une page juste pour les
+    règlements, cela devrait être sur chaque fiche du poisson. » Il a raison —
+    la question « je peux-tu le garder? » se pose en regardant le poisson, pas
+    en cherchant une autre page. La page dédiée a donc disparu et son contenu
+    vit ici.
+
+    Rien n'est recopié à la main : une règle ajoutée au fichier apparaît sur
+    toutes les fiches qu'elle nomme au prochain build.
+    """
+    mine = [r for r in rules if sp["id"] in (r.get("speciesPages") or [])]
     if not mine:
         return ""
     names = {z["id"]: z.get("name") for z in zones}
-    rows = []
+    ROWS = [("period", "reg.period", "📅"), ("limit", "reg.limit", "🎣"),
+            ("length", "reg.length", "📏"), ("gear", "reg.gear", "🪝")]
+    cards = []
     for r in mine:
-        scope = " · ".join(pick(names.get(z), "fr") or z for z in (r.get("zones") or []))
-        scope_en = " · ".join(pick(names.get(z), "en") or z for z in (r.get("zones") or []))
-        rows.append('<li>%s %s</li>'
-                    % (bilingual("strong", {"fr": scope, "en": scope_en}),
-                       bilingual("span", r.get("rule"))))
-    link = '<a class="member-history-link" href="reglementation.html">%s</a>' % bilingual(
-        "span", {"fr": ui["fr"]["sp.seeRules"], "en": ui["en"]["sp.seeRules"]})
-    return '<ul class="sp-rules">%s</ul>%s' % ("".join(rows), link)
+        scope = {lang: " · ".join(pick(names.get(z), lang) or z
+                                  for z in (r.get("zones") or [])) for lang in ("fr", "en")}
+        rows = []
+        for key, label, icon in ROWS:
+            if not pick(r.get(key), "fr"):
+                continue
+            lab = bilingual("span", {"fr": ui["fr"][label], "en": ui["en"][label]})
+            rows.append('<div class="event-spec"><span class="event-spec-label">'
+                        '<span aria-hidden="true">%s</span> %s</span>%s</div>'
+                        % (icon, lab, bilingual("span", r.get(key), "event-spec-value")))
+        note = bilingual("p", r.get("detail"), "reg-detail")
+        cards.append('<div class="sp-reg">%s<div class="event-specs tp-specs">%s</div>%s</div>'
+                     % (bilingual("h3", scope, "sp-reg-scope"), "".join(rows), note))
+
+    src = (regs.get("official") or {})
+    link = ""
+    if src.get("url"):
+        link = ' <a class="sp-src-link" href="%s" target="_blank" rel="noopener">%s</a>' % (
+            esc(src["url"]),
+            bilingual("span", {"fr": ui["fr"]["reg.official"], "en": ui["en"]["reg.official"]}))
+    season = bilingual("p", regs.get("season"), "reg-season")
+    stamp = {lang: ui[lang]["reg.updated"].replace(
+        "{date}", long_date(regs.get("updated"), lang) or (regs.get("updated") or ""))
+        for lang in ("fr", "en")}
+    foot = ('<p class="reg-note">%s%s</p>'
+            % (bilingual("span", {"fr": ui["fr"]["reg.disclaimer"],
+                                  "en": ui["en"]["reg.disclaimer"]}), link))
+    # data-reg-updated : le garde-fou d'obsolescence. Ces pages sont generees,
+    # donc rien ne peut expirer au build — c'est assets/js/reg-guard.js qui
+    # efface le bloc quand la date depasse le delai. Sans lui, deplacer la
+    # reglementation sur des pages statiques perdait la garantie que la page
+    # ne peut pas mentir si personne n'y touche.
+    return ('<div class="sp-regs" data-reg-updated="%s" data-reg-months="%s">'
+            '%s%s%s%s</div>'
+            % (esc(regs.get("updated") or ""), esc(str(regs.get("staleAfterMonths") or 12)),
+               season, bilingual("p", stamp, "reg-stamp"), "".join(cards), foot))
 
 
 def source_html(sp, sources, ui, order=()):
@@ -333,12 +369,13 @@ def source_html(sp, sources, ui, order=()):
     return head + bilingual("p", note, "sp-origin-note")
 
 
-def render(sp, ui, sources, rules=(), zones=()):
+def render(sp, ui, sources, rules=(), zones=(), regs=None):
     name = sp.get("name")
     title = {lang: clamp_title(pick(name, lang)) for lang in ("fr", "en")}
     desc = {lang: description(sp, lang) for lang in ("fr", "en")}
     url = "%s/especes/%s.html" % (SITE, sp["id"])
     image = "%s/assets/img/og-card.png" % SITE
+    regs = regs or {}
     order = cited(sp, sources)
 
     body = []
@@ -362,7 +399,7 @@ def render(sp, ui, sources, rules=(), zones=()):
 
     # Les règles ne sont pas recopiées : elles viennent de regulations.json,
     # dont la page de réglementation reste la seule source.
-    reg = rules_html(sp, rules, zones, ui)
+    reg = rules_html(sp, rules, zones, ui, regs)
     if reg:
         body.append(section({"fr": ui["fr"]["sp.rules"], "en": ui["en"]["sp.rules"]},
                             reg, key="sp.rules"))
@@ -471,7 +508,8 @@ def main():
 
     for sp in kept:
         with io.open(os.path.join(OUT_DIR, "%s.html" % sp["id"]), "w", encoding="utf-8") as fh:
-            fh.write(render(sp, ui, sources, regs.get("rules") or [], regs.get("zones") or []))
+            fh.write(render(sp, ui, sources, regs.get("rules") or [],
+                            regs.get("zones") or [], regs))
         print("  especes/%-22s %d repère(s), %d bloc(s), %d affirmation(s)"
               % (sp["id"] + ".html", len(marks_of(sp)), len(blocks_of(sp)),
                  len([c for c in (sp.get("claims") or []) if claim_ok(c, sources)])))

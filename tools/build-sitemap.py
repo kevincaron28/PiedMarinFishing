@@ -38,7 +38,6 @@ PAGES = [
                                             "data/tournament-history.json"]),
     ("history.html",     "0.6", "monthly", ["data/tournament-history.json",
                                             "data/team-members.json"]),
-    ("reglementation.html", "0.6", "yearly", ["data/regulations.json"]),
     ("especes.html",     "0.7", "monthly", ["data/species.json", "data/species-pages.json"]),
     ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
 ]

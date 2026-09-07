@@ -6,6 +6,64 @@
 // pointerait vers elle serait un 404. Les deux fichiers ne peuvent donc pas
 // diverger.
 
+// Les règles qui ne visent aucune espèce en particulier — transport de
+// poissons vivants, signalement, nombre de lignes l'hiver — n'ont pas de fiche
+// où atterrir. Elles vivent donc ici, sur l'index, plutôt que sur une page de
+// réglementation à part que Kevin ne voulait pas.
+async function initGeneralRules(selector) {
+  const root = document.querySelector(selector);
+  if (!root) return;
+  await PMF_I18N.ready;
+  const { t, tr } = PMF_I18N;
+
+  let data = null;
+  try {
+    data = await (await fetch("data/regulations.json", DATA_FETCH)).json();
+  } catch (e) {
+    data = null;
+  }
+  const rules = ((data && data.rules) || []).filter((r) => r && r.general && r.verified);
+  if (!rules.length) {
+    root.hidden = true;
+    return;
+  }
+
+  function monthsSince(iso) {
+    const d = new Date(iso + "T00:00:00");
+    if (isNaN(d)) return Infinity;
+    const now = new Date();
+    return (now.getFullYear() - d.getFullYear()) * 12 + (now.getMonth() - d.getMonth());
+  }
+
+  function render() {
+    const stale = monthsSince(data.updated) > (Number(data.staleAfterMonths) || 12);
+    const link = (data.official && data.official.url)
+      ? `<a href="${escapeHTML(data.official.url)}" target="_blank" rel="noopener">${
+          escapeHTML(t("reg.official"))}</a>`
+      : "";
+    if (stale) {
+      root.innerHTML = `<div class="reg-stale" role="status"><p class="reg-stale-head">${
+        escapeHTML(t("reg.staleTitle"))}</p><p>${
+        escapeHTML(t("reg.staleBody", { date: data.updated }))}</p><p>${link}</p></div>`;
+      return;
+    }
+    root.innerHTML =
+      `<p class="reg-stamp">${escapeHTML(t("reg.updated", { date: data.updated }))}</p>` +
+      `<div class="reg-list">` + rules.map((r) => `<div class="reg-row">
+  <div class="reg-body">
+    <p class="reg-species">${escapeHTML(tr(r.species))}</p>
+    <p class="reg-rule">${escapeHTML(tr(r.rule) || tr(r.limit))}</p>
+    ${tr(r.period) ? `<p class="reg-detail">${escapeHTML(tr(r.period))}</p>` : ""}
+    ${tr(r.detail) ? `<p class="reg-detail">${escapeHTML(tr(r.detail))}</p>` : ""}
+  </div>
+</div>`).join("") + `</div>` +
+      `<p class="reg-note">${escapeHTML(t("reg.disclaimer"))} ${link}</p>`;
+  }
+
+  PMF_I18N.onChange(render);
+  render();
+}
+
 async function initSpecies(gridSelector, countSelector) {
   const grid = document.querySelector(gridSelector);
   if (!grid) return;

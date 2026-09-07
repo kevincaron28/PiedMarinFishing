@@ -16,7 +16,6 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `history.html` | *Résultats / Results* — every tournament fished, filterable by member and season |
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
-| `reglementation.html` | Verified fishing rules for the zones we fish, with the date they were checked |
 | `especes.html` | Index of the species reference sheets |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
@@ -101,7 +100,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 | `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
 | `species.js` | the species index — reads `species-pages.json`, so a card can never point at an ungenerated sheet |
-| `regulations.js` | the rules table — stamps the check date, and erases itself once the data goes stale |
+| `reg-guard.js` | erases a regulation block on a generated page once it goes stale |
 | `sponsors.js` | partner logos — hides its whole section when there are none |
 | `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
 
@@ -755,38 +754,34 @@ error this split exists to prevent. JSON-LD is `Article`
 declares only what is true: no invented publication date, and no author unless
 the angler is on the roster.
 
-### The regulations page, and why it expires
+### Regulations live on the fish, not on a page of their own
 
-`reglementation.html` is the only page on this site that can cost somebody a
-fine. It carries two guards, not one.
+There was a `reglementation.html`. It is gone, on Kevin's call: *"je pense pas
+qu'on devrait avoir une page juste pour les règlements, cela devrait être sur
+chaque fiche du poisson."* He is right — "can I keep this one?" is a question
+you ask while holding the fish, not while looking for another page. Each
+species sheet now carries the rules that name it, pulled from
+`data/regulations.json` by `speciesPages`. Nothing is copied by hand: a rule
+added to the file appears on every sheet it names at the next build.
 
-**The date is always on screen.** A visitor sees when the table was last
-checked and judges its freshness for themselves. Dated information is honest
-information.
+The handful of rules that name no species — moving live fish, reporting an
+invasive, lines allowed in winter, dead baitfish — have no sheet to land on, so
+they render on `especes.html` instead.
 
-**The table erases itself when it goes stale.** "I'll update it every year" is
-a promise, and a promise kept by a busy human is not a mechanism. Past
-`staleAfterMonths` (12), `regulations.js` drops the table entirely and puts an
-explanation and the official link in its place. The boundary is inclusive of
-the twelfth month: data stamped 2026-09-07 stays live through 2027-09-30 and
-goes dark on 2027-10-01. The page therefore cannot mislead anyone even if
-nobody touches it for three years.
+**Moving the rules onto generated pages nearly cost the expiry guard.** Those
+pages are built, so nothing can go stale at build time — the build happened the
+day the rules were written. `assets/js/reg-guard.js` restores the guarantee: it
+reads `data-reg-updated` and, past `staleAfterMonths`, replaces the block with
+the warning and the official link. Same boundary on both surfaces: data stamped
+2026-09-07 is live through 2027-09-30 and dark on 2027-10-01.
 
-Note that the stale block *replaces* the table rather than sitting above it. A
-stale rule under a warning is still a stale rule on screen.
-
-Two smaller rules carry over from the species pages:
-
-- **A rule with no `verified` stamp does not render.** Same gate as
-  `claim_ok()`, and `data/sources.json` is the same registry — here the stake
-  is not credibility, it is a ticket.
-- **The page never claims to be complete or authoritative.** It says what was
-  verified, when, and links to Quebec's official regulations.
-
-The "read more" link to a species page is gated on `data/species-pages.json`,
-because those pages only exist once they clear their own threshold — without
-the check, a rule naming a species whose page has not been generated would
-link to a 404.
+That file also carries the session's most instructive bug. Its entry test was
+`if (window.PMF_I18N && …)`. But `i18n.js` exposes a top-level `const`, which is
+visible as an identifier and is **not** a property of `window`. The test was
+always false, the guard never ran, and nothing failed — no error, no warning,
+the rules simply never expired. A safety mechanism that silently does not run is
+worse than none, because you believe you have it. It is now
+`typeof PMF_I18N !== "undefined"`.
 
 ### The species sheets are a field reference, not an essay
 
