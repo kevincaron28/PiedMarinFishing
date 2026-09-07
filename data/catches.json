@@ -265,7 +265,29 @@
     "story": {
       "fr": "Même sortie que le maskinongé de 45 pouces de BOBE : le 4 juillet 2025, du début d'après-midi jusqu'à un peu passé minuit, sur le fleuve. Ciel couvert, averses par vagues, une vingtaine de degrés qui ont fini par tomber en fin de soirée — l'humidité et la pluie de la journée ont fini par nous rattraper. C'est la meilleure journée qu'on ait eue en variété d'espèces, et le malachigan de BOBE en fait partie. On ne le visait pas : on cherchait l'achigan et le doré. C'est un poisson que bien du monde regarde de haut au Québec, et qui ne le mérite pas — le combat est intense, il tire fort et il ne lâche pas. Onze livres au peson. La longueur n'a pas été mesurée. C'est ça qui est surprenant avec le fleuve : on ne sait jamais ce qui va prendre.",
       "en": "Same outing as BOBE's 45-inch muskie: July 4th, 2025, from early afternoon until a little past midnight, on the river. Overcast, showers in waves, around twenty degrees that finally dropped off late in the evening — the day's damp and rain caught up with us. It was the best day we have had for sheer variety of species, and BOBE's freshwater drum was part of it. We were not fishing for it: we were working bass and walleye. It is a fish plenty of people in Quebec look down on, and it does not deserve that — the fight is intense, it pulls hard and it does not quit. Eleven pounds on the scale. Length was not measured. That is what is surprising about the St. Lawrence: you never know what is going to take."
-    }
+    },
+    "gear": [
+      {
+        "label": {
+          "fr": "Leurre",
+          "en": "Lure"
+        },
+        "value": {
+          "fr": "Crankbait de 3,5 po",
+          "en": "3.5-inch crankbait"
+        }
+      },
+      {
+        "label": {
+          "fr": "Couleur",
+          "en": "Colour"
+        },
+        "value": {
+          "fr": "Firetiger",
+          "en": "Firetiger"
+        }
+      }
+    ]
   },
   {
     "id": "barbue-2025",
