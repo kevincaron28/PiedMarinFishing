@@ -1,0 +1,79 @@
+[
+  {
+    "id": "chevalier-cuivre",
+    "name": {"fr": "Chevalier cuivré", "en": "Copper redhorse"},
+    "scientificName": "Moxostoma hubbsi",
+    "protected": true,
+    "intro": {
+      "fr": "Il y a un poisson dans notre secteur du fleuve qu'on ne pêche pas, qu'on ne ciblera jamais, et que la plupart des pêcheurs ne sauraient pas reconnaître s'il remontait au bout de leur ligne. C'est probablement le poisson le plus fragile du Saint-Laurent, et son aire de répartition recoupe exactement l'eau qu'on travaille en tournoi. On lui consacre une fiche pour cette raison : parce qu'un pêcheur qui sait ce qu'il tient prend deux secondes de plus pour bien le remettre à l'eau.",
+      "en": "There is a fish in our stretch of the river that we do not fish for, will never target, and that most anglers would not recognize if it came up on their line. It is likely the most fragile fish in the St. Lawrence, and its range overlaps exactly the water we work during tournaments. That is why it gets a page here: an angler who knows what he is holding takes two extra seconds to release it properly."
+    },
+    "claims": [
+      {
+        "id": "endemique",
+        "text": {
+          "fr": "Le chevalier cuivré ne vit nulle part ailleurs sur la planète qu'au Québec.",
+          "en": "The copper redhorse lives nowhere else in the world but Quebec."
+        },
+        "sources": ["qc-fiche-chevalier-cuivre"],
+        "verify": "Confirmer la formulation exacte : « endémique au Québec » ou « seul poisson dont l'aire de répartition est exclusive au Québec »? Les deux ne disent pas tout à fait la même chose.",
+        "verified": null
+      },
+      {
+        "id": "aire",
+        "text": {
+          "fr": "Son aire de répartition se limite au tronçon d'eau douce du fleuve entre le lac Saint-Louis et le lac Saint-Pierre, et à quelques tributaires — dont le Richelieu, la rivière des Mille Îles et la rivière des Prairies.",
+          "en": "Its range is limited to the freshwater stretch of the river between Lac Saint-Louis and Lac Saint-Pierre, plus a few tributaries — among them the Richelieu, Mille Îles and des Prairies rivers."
+        },
+        "sources": ["qc-fiche-chevalier-cuivre", "eccc-retablissement-chevalier-2022"],
+        "verify": "Confirmer la liste des tributaires. La recherche en nommait cinq; ne garder que ceux que la source nomme vraiment.",
+        "verified": null
+      },
+      {
+        "id": "peche-interdite",
+        "text": {
+          "fr": "Sa pêche est interdite, sportive comme commerciale.",
+          "en": "Fishing for it is prohibited, both sport and commercial."
+        },
+        "sources": ["qc-fiche-chevalier-cuivre"],
+        "verify": "Le point le plus important de la fiche — le vérifier sur une source gouvernementale, et vérifier si l'interdiction porte sur le chevalier cuivré seul ou sur l'ensemble des chevaliers et meuniers dans certains secteurs.",
+        "verified": null
+      },
+      {
+        "id": "lep",
+        "text": {
+          "fr": "Il est protégé par la Loi fédérale sur les espèces en péril depuis 2007, après avoir été désigné espèce menacée au Québec en 1999.",
+          "en": "It has been protected under the federal Species at Risk Act since 2007, after being designated a threatened species in Quebec in 1999."
+        },
+        "sources": ["eccc-retablissement-chevalier-2022", "qc-fiche-chevalier-cuivre"],
+        "verify": "Confirmer les deux années et le statut exact (« menacée » ou « en voie de disparition » — ils ont changé).",
+        "verified": null
+      },
+      {
+        "id": "habitat-essentiel",
+        "text": {
+          "fr": "Un arrêté ministériel publié en 2021 interdit la destruction de son habitat essentiel.",
+          "en": "A 2021 ministerial order prohibits the destruction of its critical habitat."
+        },
+        "sources": ["eccc-retablissement-chevalier-2022", "cqde-chevalier-cuivre"],
+        "verify": "Confirmer la date et la portée. Vérifier aussi si l'arrêté couvre notre secteur.",
+        "verified": null
+      },
+      {
+        "id": "identification",
+        "text": {"fr": "", "en": ""},
+        "sources": [],
+        "verify": "MANQUANT ET IMPORTANT — comment distinguer un chevalier cuivré d'un meunier ou d'un autre chevalier, sur le bateau, en dix secondes. Sans ça, la fiche dit « ne le pêchez pas » sans dire à quoi il ressemble. Il faut une source avec des critères d'identification.",
+        "verified": null
+      },
+      {
+        "id": "quoi-faire",
+        "text": {"fr": "", "en": ""},
+        "sources": [],
+        "verify": "MANQUANT — la marche à suivre officielle si on en capture un accidentellement. Y a-t-il une obligation de signalement? À qui?",
+        "verified": null
+      }
+    ],
+    "field": {"fr": "", "en": ""}
+  }
+]

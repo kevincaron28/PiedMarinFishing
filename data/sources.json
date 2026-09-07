@@ -1,0 +1,104 @@
+[
+  {
+    "id": "qc-fiche-chevalier-cuivre",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Chevalier cuivré — fiche d'espèce faunique",
+      "en": "Copper redhorse — wildlife species profile"
+    },
+    "publisher": {"fr": "Gouvernement du Québec", "en": "Government of Quebec"},
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chevalier-cuivre",
+    "covers": {
+      "fr": "Répartition, statut provincial, biologie générale.",
+      "en": "Range, provincial status, general biology."
+    },
+    "verified": null
+  },
+  {
+    "id": "eccc-retablissement-chevalier-2022",
+    "kind": "gov",
+    "authors": "Environnement et Changement climatique Canada",
+    "year": "2022",
+    "title": {
+      "fr": "Rapport sur les progrès de la mise en œuvre du programme de rétablissement du chevalier cuivré",
+      "en": "Report on the Progress of Recovery Strategy Implementation for the Copper Redhorse"
+    },
+    "publisher": {"fr": "Gouvernement du Canada", "en": "Government of Canada"},
+    "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/lep-sara/2022/20220526-CopperRedhorseProgressReport-fra.pdf",
+    "covers": {
+      "fr": "Statut LEP, habitat essentiel, mesures de rétablissement.",
+      "en": "SARA status, critical habitat, recovery measures."
+    },
+    "verified": null
+  },
+  {
+    "id": "cqde-chevalier-cuivre",
+    "kind": "ngo",
+    "authors": "Centre québécois du droit de l'environnement",
+    "year": "s.d.",
+    "title": {"fr": "Chevalier cuivré — dossier", "en": "Copper redhorse — case file"},
+    "publisher": {"fr": "CQDE", "en": "CQDE"},
+    "url": "https://cqde.org/nos-actions/chevalier-cuivre/",
+    "covers": {
+      "fr": "Historique juridique de la protection de l'habitat. Organisme de plaidoyer — à croiser avec une source gouvernementale.",
+      "en": "Legal history of habitat protection. Advocacy group — cross-check against a government source."
+    },
+    "verified": null
+  },
+  {
+    "id": "muskies-canada-ppmf",
+    "kind": "ngo",
+    "authors": "Muskies Canada",
+    "year": "s.d.",
+    "title": {
+      "fr": "Publications de l'OMNR / PPMF",
+      "en": "OMNR / MFPP publications"
+    },
+    "publisher": {"fr": "Muskies Canada", "en": "Muskies Canada"},
+    "url": "https://muskiescanada.ca/fr/categorie/publications-de-lomnr-mfpp/",
+    "covers": {
+      "fr": "Compilation de travaux sur le maskinongé. Point d'entrée vers les études, pas une étude.",
+      "en": "Compilation of muskellunge work. An entry point to studies, not a study."
+    },
+    "verified": null
+  },
+  {
+    "id": "robitaille-cotton-1992",
+    "kind": "gov",
+    "authors": "Robitaille, J. et Cotton, P.",
+    "year": "1992",
+    "title": {
+      "fr": "Bilan des connaissances sur le maskinongé (Esox masquinongy) et sur ses populations dans le Saint-Laurent",
+      "en": "Review of knowledge on the muskellunge (Esox masquinongy) and its St. Lawrence populations"
+    },
+    "publisher": {
+      "fr": "Ministère du Loisir, de la Chasse et de la Pêche — rapport technique",
+      "en": "Ministère du Loisir, de la Chasse et de la Pêche — technical report"
+    },
+    "url": "",
+    "covers": {
+      "fr": "Référence historique sur le maskinongé du fleuve. Citation repérée par recherche — ni le titre exact, ni la pagination, ni le contenu ne sont confirmés.",
+      "en": "Historical reference on St. Lawrence muskellunge. Citation found by search — exact title, pagination and content all unconfirmed."
+    },
+    "verified": null
+  },
+  {
+    "id": "brodeur-hatin-bacon-2013",
+    "kind": "gov",
+    "authors": "Brodeur, P., Hatin, D. et Bacon, J.",
+    "year": "2013",
+    "title": {
+      "fr": "Suivi du maskinongé dans le fleuve Saint-Laurent et le lac des Deux Montagnes",
+      "en": "Muskellunge monitoring in the St. Lawrence River and Lac des Deux Montagnes"
+    },
+    "publisher": {"fr": "Gouvernement du Québec", "en": "Government of Quebec"},
+    "url": "",
+    "covers": {
+      "fr": "Suivi de population. Citation repérée par recherche — rien n'est confirmé.",
+      "en": "Population monitoring. Citation found by search — nothing confirmed."
+    },
+    "verified": null
+  }
+]

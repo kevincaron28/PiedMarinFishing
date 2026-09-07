@@ -2716,3 +2716,88 @@ body.has-lightbox { overflow: hidden; }
   color: var(--gold-400);
 }
 .page-header .cross-link:hover { color: var(--gold-500); }
+
+/* Fiches d'espèce — les affirmations et leurs sources.
+   Le renvoi vers une source est un lien : il doit donc rester une cible
+   tactile de 24x24 (WCAG 2.5.8). Un exposant nu fait 8 pixels de haut, ce
+   qui est intouchable au pouce — d'où la pastille. Le <sup> reste dans le
+   balisage pour le sens, mais son décalage est neutralisé ici. */
+.sp-claims {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 62ch;
+}
+.sp-claims li {
+  position: relative;
+  padding: 0 0 14px 26px;
+  margin: 0 0 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-600);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+.sp-claims li:last-child { border-bottom: 0; margin-bottom: 0; }
+.sp-claims li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--teal-400);
+}
+.sp-ref {
+  display: inline-block;
+  min-width: 24px;
+  min-height: 24px;
+  line-height: 24px;
+  margin-left: 2px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 6px;
+  background: var(--sand-100);
+  color: var(--ink-900);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.sp-ref sup { vertical-align: baseline; font-size: inherit; }
+.sp-ref:hover, .sp-ref:focus-visible { background: var(--teal-400); color: var(--white); }
+
+.sp-sources {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 74ch;
+}
+.sp-sources li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-600);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.sp-sources li:last-child { border-bottom: 0; }
+.sp-sources li:target { background: var(--sand-100); }
+.sp-num {
+  font-weight: 700;
+  color: var(--ink-900);
+  margin-right: 6px;
+}
+.sp-src-link {
+  display: inline-block;
+  min-height: 24px;
+  line-height: 24px;
+  padding: 0 8px;
+  margin-left: 4px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  color: var(--ink-900);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.sp-src-link:hover, .sp-src-link:focus-visible { border-color: var(--teal-400); }

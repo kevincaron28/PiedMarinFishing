@@ -20,7 +20,7 @@ import sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Dossiers qui partent en ligne. Le bac a sable et .git n'y sont pas.
-SCAN_DIRS = ["data", "tournois", "pecheurs", "bateaux", "prises"]
+SCAN_DIRS = ["data", "tournois", "pecheurs", "bateaux", "prises", "especes"]
 SCAN_ROOT_EXT = (".html",)
 
 # Chaque motif : (nom, expression, raison). On vise juste plutot que large —

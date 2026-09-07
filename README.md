@@ -119,6 +119,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-tournament-pages.py` | writes `tournois/*.html` from `data/quebec-tournaments.json`, and the index `data/tournament-pages.json` |
 | `tools/build-profile-pages.py` | writes `pecheurs/*.html` and `bateaux/*.html` from `data/team-members.json` and `data/boats.json` |
 | `tools/build-catch-pages.py` | writes `prises/*.html` for the catches that clear the threshold, from `data/catches.json` |
+| `tools/build-species-pages.py` | writes `especes/*.html` for the species whose claims are **verified**, from `data/species.json` and `data/sources.json` |
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
@@ -706,7 +707,7 @@ catches that deserve one:
 
 | Requirement | Why |
 |---|---|
-| a date (year and month at least) | |
+| a date (the year is enough) | a date can be deliberately rounded — see *Approximate dates* |
 | a body of water | |
 | **1 photo** | |
 | **a 120-word story** (`story`, bilingual) | below that the page fails `seo.js` |
@@ -736,12 +737,81 @@ without a page keep the anchor.
 A catch that later drops back below the threshold has its page deleted on the
 next run — otherwise an orphan would stay served while absent from the sitemap.
 
-The page itself pulls the gear straight from `team-members.json` rather than
-copying it into the catch: "caught on what?" is the question a reader and a
-brand both ask, and there should be one answer, not two. JSON-LD is `Article`
+"Caught on what?" is the question a reader and a brand both ask, and the page
+answers it from two sources that must never be confused. If the catch carries
+its own `gear`, that is what was in the water *that day*, shown under **Le
+matériel**. Otherwise the page falls back to the angler's general kit from
+`team-members.json` — but under a heading that says so, because presenting a
+habitual kit as the day's gear is simply false. The 50" muskie was taken
+trolling a crankbait while Kevin B.'s go-to lure is a chatterbait: that is the
+error this split exists to prevent. JSON-LD is `Article`
 — a catch report is an illustrated story, not an event or a product — and it
 declares only what is true: no invented publication date, and no author unless
 the angler is on the roster.
+
+### Species pages, and the citation gate
+
+Species pages exist for one reason: corridor knowledge is the one thing a
+content farm cannot fake. "How to catch walleye" exists in four hundred
+better-written versions; what the St. Lawrence does between two locks after a
+day of rain does not. So these pages are narrow on purpose — St. Lawrence
+species, St. Lawrence water.
+
+Citing science raises the bar rather than lowering it. A page with no citation
+that gets something wrong is an angler telling a story. A page **with**
+citations that gets something wrong is a team that cannot read a report — in
+front of a sponsor, that is worse than saying nothing.
+
+The risk is not hypothetical. The first search run for this work returned, on
+St. Lawrence muskellunge:
+
+> "The St. Lawrence River population is entirely closed to fishing and remains
+> protected under the federal Species at Risk Act."
+
+That is false. We fish muskie in the river and release it, legally. The summary
+had conflated it with the copper redhorse. Copied across as written, that
+sentence would have published something both wrong *and* self-incriminating on
+our own site.
+
+Hence the rule, enforced by code rather than by good intentions:
+
+> **A claim is never published unless it has been checked in the source
+> itself.**
+
+`claim_ok()` publishes a claim only when *both* hold: the claim carries
+`verified`, **and** every source it cites carries `verified` too. Checking a
+sentence against a document nobody has confirmed exists verifies nothing. An
+unverified claim is not flagged on the page — it simply is not there. A
+published "to be confirmed" is still a publication.
+
+| Requirement | Why |
+|---|---|
+| a 60-word intro | |
+| **3 verified claims** | fewer than that is a stub with footnotes |
+| **40 words of field notes** (`field`, no source required) | the only part of the page nobody else can write |
+
+The field block is not decoration. A page carrying nothing but restated science
+has no business on a team site — four hundred better ones already exist.
+No field notes, no page.
+
+Two more things the gate does *not* try to do:
+
+- **Regulations never live on these pages.** Dates, limits and quotas change,
+  and a stale limit shown here would be worse than none at all. The pages link
+  to the official sources instead, so they cannot rot.
+- **`data/sources.json` stores the full citation, not just a URL.** Government
+  PDFs move without warning, and a dead link is no longer a source; authors,
+  year, title and publisher survive the URL.
+
+```bash
+python3 tools/build-species-pages.py
+```
+
+On today's data this produces **zero pages**, which is the right answer rather
+than a bug: nothing has been verified yet. The script then prints exactly what
+to go check — source by source, claim by claim, with the specific question to
+answer for each. That checklist lives in the script's output rather than in a
+document, so it can never describe a state the data has left behind.
 
 ### Pro-staff sheets
 
