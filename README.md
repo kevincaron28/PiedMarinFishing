@@ -128,6 +128,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
+| `tools/check-links.py` | every internal link resolves, every image and `srcset` width is on disk, and pages about the same subject actually point at each other |
 | `tools/check-private.py` | refuses to let a registration number, plate or serial reach `data/` or a generated page; exits 1 on a hit |
 | `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
 | `tools/build-image-variants.py` | writes the 160/400/800px versions of every photo and the `data/image-variants.json` map that `srcset` is built from |
@@ -866,6 +867,37 @@ Four rules earned by looking at the output:
 
 Temperatures, conservation ranks (`S4`), egg counts and years are left alone —
 `tools/units.py` run directly prints its own test cases.
+
+### Two kinds of broken link, and only one of them is visible
+
+`tools/check-links.py` answers two different questions:
+
+1. **Broken** — an `href` points at a file that is not there.
+2. **Missing** — two pages are about the same fish, the same angler or the same
+   boat, and neither points at the other. Nothing is broken. The visitor just
+   hits a dead end.
+
+An ordinary link checker only sees the first. It was the second that found the
+real gap: five catch pages and forty-seven species sheets were writing about the
+same fish and never linking to each other, and `data/videos.json` carried an
+`angler` field on every entry that led nowhere — the video of Kevin B.'s
+50-incher appeared neither on his profile nor on the catch page. **A data field
+that goes nowhere is a missing link you cannot see.**
+
+The expected-link rules live in `expected()`: catch ↔ species, catch → angler,
+boat → skipper and owner, video → angler, video → catch. Adding a rule there is
+how a new connection becomes enforceable rather than remembered.
+
+Two traps this tooling walked into and now avoids:
+
+- **`srcset` was unchecked.** A page can offer four widths of a photo when only
+  one exists on disk; the browser sometimes picks a missing one and nothing
+  fails on the developer's screen. Both the markup and
+  `data/image-variants.json` are now verified against the filesystem.
+- **`naturalWidth === 0` does not mean broken.** A `loading="lazy"` image below
+  the fold has not started loading, and the browser audit flagged nine perfectly
+  healthy photos. The test is `complete && !naturalWidth`, after scrolling the
+  page. An audit that cries wolf gets ignored, which is worse than no audit.
 
 ### Reading a source from inside this workspace
 

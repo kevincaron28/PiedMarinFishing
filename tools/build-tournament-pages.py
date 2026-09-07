@@ -307,6 +307,28 @@ def stop_rows(stops):
     return "".join(out)
 
 
+def video_card(v, subtitle=None):
+    """Une vignette qui mene a YouTube, sans iframe ni témoin.
+
+    Les fiches générées ne rendent rien en JavaScript, donc pas de lecteur
+    intégré comme sur l'accueil. La vignette vient d'i.ytimg et rien n'est
+    demandé à YouTube avant que le visiteur clique — même politique que
+    assets/js/video.js, écrite en dur.
+    """
+    vid = (v.get("videoId") or "").strip()
+    if not vid:
+        return ""
+    body = bilingual("span", v.get("title"), "video-item-title")
+    if subtitle:
+        body += bilingual("span", subtitle, "video-item-date")
+    return ('<a class="video-item" href="https://www.youtube.com/watch?v=%s" '
+            'target="_blank" rel="noopener">'
+            '<img class="video-item-thumb" loading="lazy" width="320" height="180" alt="" '
+            'src="https://i.ytimg.com/vi/%s/mqdefault.jpg">'
+            '<span class="video-item-body">%s</span></a>'
+            % (esc(vid), esc(vid), body))
+
+
 def section(title, body, alt=False, key=None):
     head = '<div class="section-head">%s</div>' % bilingual(
         "h2", title, extra=('data-i18n="%s"' % key) if key else "")

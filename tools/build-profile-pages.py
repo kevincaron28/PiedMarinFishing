@@ -333,7 +333,7 @@ def person_ld(m, url, photo):
     return ld
 
 
-def render_angler(m, ui, results, catches, boats, tp_index, cp_index):
+def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=()):
     name = m.get("name") or m.get("id")
     role = m.get("role") or {}
     title = {lang: clamp_title(", ".join(x for x in (name, pick(role, lang)) if x))
@@ -452,6 +452,18 @@ def render_angler(m, ui, results, catches, boats, tp_index, cp_index):
             for b in his)
         body.append(section({"fr": ui["fr"]["ap.boat"], "en": ui["en"]["ap.boat"]},
                             '<ul class="tp-related">%s</ul>' % rows, alt=True, key="ap.boat"))
+
+    # Ses vidéos. Le champ « angler » de data/videos.json existait depuis le
+    # début et ne servait à rien : la vidéo du 50 po de Kevin B. n'apparaissait
+    # ni sur sa fiche ni sur la page de la prise. Un champ de données qui ne
+    # mène nulle part est un lien manquant qui ne se voit pas.
+    mine = [v for v in videos if v.get("angler") == m["id"] and v.get("videoId")]
+    if mine:
+        cards = "".join(pages.video_card(v, {"fr": long_date(v.get("date"), "fr"),
+                                             "en": long_date(v.get("date"), "en")})
+                        for v in mine)
+        body.append(section({"fr": ui["fr"]["member.videos"], "en": ui["en"]["member.videos"]},
+                            '<div class="video-list">%s</div>' % cards, key="member.videos"))
 
     # La fiche pro staff en PDF, écrite par tools/build-angler-sheets.py à
     # partir des mêmes données que cette page. Les deux versions sont offertes
@@ -673,8 +685,10 @@ if __name__ == "__main__":
     ui = {"fr": i18n["fr"], "en": i18n["en"]}
     members_by_id = {m["id"]: m for m in members}
 
+    videos = (load("videos.json") or {}).get("videos") or []
     write_dir("pecheurs", {"%s.html" % m["id"]:
-                           render_angler(m, ui, results, catches, boats, tp_index, cp_index)
+                           render_angler(m, ui, results, catches, boats, tp_index,
+                                         cp_index, videos)
                            for m in members})
     write_dir("bateaux", {"%s.html" % b["id"]: render_boat(b, ui, members_by_id)
                           for b in boats})

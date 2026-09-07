@@ -346,6 +346,31 @@ def rules_html(sp, rules, zones, ui, regs):
                season, bilingual("p", stamp, "reg-stamp"), "".join(cards), foot))
 
 
+def catches_html(sp, catches, cp_index, members, ui):
+    """Nos prises de cette espèce, avec leur fiche.
+
+    L'autre moitié du lien : une fiche d'espèce qui ne dit pas qu'on en a
+    sorti une est un cul-de-sac, alors que c'est justement ce qui distingue
+    nos fiches de celles du ministère.
+    """
+    name = pick(sp.get("name"), "fr").strip().lower()
+    mine = [c for c in catches
+            if pick(c.get("species"), "fr").strip().lower() == name
+            and c["id"] in cp_index]
+    if not mine:
+        return ""
+    rows = []
+    for c in mine:
+        who = members.get(c.get("angler")) or {}
+        label = {lang: " — ".join(x for x in (
+            pick(c.get("measure"), lang),
+            who.get("name") or pick(c.get("anglerName"), lang),
+            long_date(c.get("date"), lang)) if x) for lang in ("fr", "en")}
+        rows.append('<li><a href="prises/%s.html">%s</a></li>'
+                    % (esc(c["id"]), bilingual("span", label)))
+    return '<ul class="tp-related">%s</ul>' % "".join(rows)
+
+
 def source_html(sp, sources, ui, order=()):
     """D'où vient tout ça, et quand on l'a lu. La page le dit en toutes
     lettres, y compris que l'anglais est notre traduction d'une source
@@ -384,13 +409,15 @@ def source_html(sp, sources, ui, order=()):
     return head + bilingual("p", note, "sp-origin-note")
 
 
-def render(sp, ui, sources, rules=(), zones=(), regs=None):
+def render(sp, ui, sources, rules=(), zones=(), regs=None,
+           catches=(), cp_index=(), members=None):
     name = sp.get("name")
     title = {lang: clamp_title(pick(name, lang)) for lang in ("fr", "en")}
     desc = {lang: description(sp, lang) for lang in ("fr", "en")}
     url = "%s/especes/%s.html" % (SITE, sp["id"])
     image = "%s/assets/img/og-card.png" % SITE
     regs = regs or {}
+    members = members or {}
     order = cited(sp, sources)
 
     # L'ORDRE COMPTE, et il a été mesuré. Les repères venaient après
@@ -417,9 +444,10 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None):
     # et c'est la seule partie de la fiche que personne d'autre ne peut
     # écrire. Il sortait avant-dernier.
     field = bilingual("p", sp.get("field"), "tp-notes")
-    if field:
+    ours = catches_html(sp, catches, cp_index, members, ui)
+    if field or ours:
         body.append(section({"fr": ui["fr"]["sp.field"], "en": ui["en"]["sp.field"]},
-                            field, key="sp.field"))
+                            (field or "") + ours, key="sp.field"))
 
     blocks = blocks_html(sp, ui)
     if blocks:
@@ -516,6 +544,12 @@ def main():
     ui = load("i18n.json")
     species = load("species.json")
     src_list = load("sources.json")
+    catches = load("catches.json")
+    members = {m["id"]: m for m in load("team-members.json")}
+    try:
+        cp_index = set(load("catch-pages.json"))
+    except (IOError, OSError, ValueError):
+        cp_index = set()
     try:
         regs = load("regulations.json")
     except (IOError, OSError, ValueError):
@@ -544,7 +578,7 @@ def main():
     for sp in kept:
         with io.open(os.path.join(OUT_DIR, "%s.html" % sp["id"]), "w", encoding="utf-8") as fh:
             fh.write(render(sp, ui, sources, regs.get("rules") or [],
-                            regs.get("zones") or [], regs))
+                            regs.get("zones") or [], regs, catches, cp_index, members))
         print("  especes/%-22s %d repère(s), %d bloc(s), %d affirmation(s)"
               % (sp["id"] + ".html", len(marks_of(sp)), len(blocks_of(sp)),
                  len([c for c in (sp.get("claims") or []) if claim_ok(c, sources)])))

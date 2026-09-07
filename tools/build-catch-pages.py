@@ -136,6 +136,11 @@ def description(c, lang, members):
     return text
 
 
+VIDEOS_BY_CATCH = {}
+SPECIES_PAGES = set()
+SPECIES_BY_NAME = {}
+
+
 def facts_html(c, ui, members, events):
     """Les faits en grille, dans le style des specs de tournoi."""
     who = members.get(c.get("angler"))
@@ -155,6 +160,12 @@ def facts_html(c, ui, members, events):
                     '<span aria-hidden="true">%s</span> %s</span>%s</div>'
                     % (icon, label, inner))
 
+    # L'espèce mène à sa fiche quand elle en a une. C'est le lien qui manquait :
+    # cinq fiches de prise et quarante-sept fiches d'espèce parlaient des mêmes
+    # poissons sans jamais se renvoyer l'une à l'autre.
+    sid = SPECIES_BY_NAME.get(pick(c.get("species"), "fr").strip().lower())
+    row("🐟", "catches.species", c.get("species"),
+        "especes/%s.html" % sid if sid in SPECIES_PAGES else None)
     if who:
         row("🎣", "catches.angler", who.get("name"), "pecheurs/%s.html" % who["id"])
     elif pick(c.get("anglerName"), "fr"):
@@ -279,6 +290,12 @@ def render(c, ui, members, events, kept):
         body.append(section({"fr": ui["fr"][gkey], "en": ui["en"][gkey]},
                             gallery, key=gkey))
 
+    vid = VIDEOS_BY_CATCH.get(c["id"])
+    if vid:
+        body.append(section({"fr": ui["fr"]["cp.video"], "en": ui["en"]["cp.video"]},
+                            '<div class="video-list">%s</div>' % pages.video_card(vid),
+                            key="cp.video"))
+
     gear_key, gear = gear_html(c, ui, members)
     if gear:
         who = members.get(c.get("angler")) or {}
@@ -348,6 +365,18 @@ def main():
     # que dans SON main() : importé comme module, il reste vide et les fiches
     # sortaient sans srcset. On le remplit ici aussi.
     profiles.VARIANTS.update(load("image-variants.json"))
+    # Index croise : les deux generateurs se lisent l'un l'autre. Chacun
+    # tolere l'absence de l'index de l'autre, sinon un premier build sur un
+    # depot frais echouerait.
+    try:
+        SPECIES_PAGES.update(load("species-pages.json"))
+        for sp in load("species.json"):
+            SPECIES_BY_NAME[(sp.get("name") or {}).get("fr", "").strip().lower()] = sp["id"]
+    except (IOError, OSError, ValueError):
+        pass
+    for v in (load("videos.json") or {}).get("videos") or []:
+        if v.get("catch"):
+            VIDEOS_BY_CATCH[v["catch"]] = v
     ui = load("i18n.json")
     catches = load("catches.json")
     members = {m["id"]: m for m in load("team-members.json")}
