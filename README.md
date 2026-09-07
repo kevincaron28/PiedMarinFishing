@@ -121,6 +121,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-tournament-pages.py` | writes `tournois/*.html` from `data/quebec-tournaments.json`, and the index `data/tournament-pages.json` |
 | `tools/build-profile-pages.py` | writes `pecheurs/*.html` and `bateaux/*.html` from `data/team-members.json` and `data/boats.json` |
 | `tools/build-catch-pages.py` | writes `prises/*.html` for the catches that clear the threshold, from `data/catches.json` |
+| `tools/import-qc-species.py` | reads a quebec.ca species page saved as `.mht` and prints its facts — the only way to read a source from this workspace |
 | `tools/build-species-pages.py` | writes `especes/*.html` for the species whose claims are **verified**, from `data/species.json` and `data/sources.json` |
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
@@ -783,6 +784,40 @@ The "read more" link to a species page is gated on `data/species-pages.json`,
 because those pages only exist once they clear their own threshold — without
 the check, a rule naming a species whose page has not been generated would
 link to a 404.
+
+### Reading a source from inside this workspace
+
+The network here reaches no external site — `WebFetch` on quebec.ca returns
+`EGRESS_BLOCKED`, and web search returns AI-written summaries whose reliability
+is exactly the problem the citation gate exists to solve. One such summary
+claimed the St. Lawrence muskellunge population is closed to fishing under the
+federal Species at Risk Act. It is not; the summary had conflated it with the
+copper redhorse.
+
+So the source has to come in by hand: save the page from a browser
+(Ctrl+S, "web page, complete") and send the `.mht`.
+`tools/import-qc-species.py` turns that file into structured facts.
+
+```bash
+python3 tools/import-qc-species.py fiche.mht          # identity + section list
+python3 tools/import-qc-species.py --table *.mht      # one row per species
+python3 tools/import-qc-species.py --json fiche.mht   # everything, for a draft
+```
+
+It reads the page's own "Dans cette page" table of contents to discover the
+section titles rather than hard-coding a list, because they vary by species —
+`Prévention et contrôle de son introduction` appears only on invasive species,
+`En complément` only on some. It also rejoins values quebec.ca splits across
+lines (`54 et 68` / `cm`).
+
+**It writes nothing into `data/`, on purpose.** A species page copied in
+automatically would be exactly the generic content the whole approach exists to
+avoid, and the verification gate would be meaningless if the script were the
+thing verifying. It extracts; a human chooses.
+
+This is also how the copper redhorse draft got corrected: the saved page put
+the range between **Île Perrot** and Lac Saint-Pierre, not Lac Saint-Louis as
+the search summary had it, and named two tributaries the summary omitted.
 
 ### Species pages, and the citation gate
 

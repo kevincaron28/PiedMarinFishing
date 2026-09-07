@@ -9,17 +9,62 @@
     "url": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive"
   },
   "zones": [
-    {"id": "8", "name": {"fr": "Zone 8", "en": "Zone 8"},
-     "note": {"fr": "Notre secteur du fleuve Saint-Laurent.",
-              "en": "Our stretch of the St. Lawrence."}},
-    {"id": "7", "name": {"fr": "Zone 7", "en": "Zone 7"},
-     "note": {"fr": "", "en": ""}}
+    {
+      "id": "8",
+      "name": {
+        "fr": "Zone 8",
+        "en": "Zone 8"
+      },
+      "note": {
+        "fr": "Notre secteur du fleuve Saint-Laurent.",
+        "en": "Our stretch of the St. Lawrence."
+      }
+    },
+    {
+      "id": "7",
+      "name": {
+        "fr": "Zone 7",
+        "en": "Zone 7"
+      },
+      "note": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "qc",
+      "name": {
+        "fr": "Tout le Québec",
+        "en": "All of Quebec"
+      },
+      "note": {
+        "fr": "",
+        "en": ""
+      }
+    },
+    {
+      "id": "lsp",
+      "name": {
+        "fr": "Lac Saint-Pierre",
+        "en": "Lac Saint-Pierre"
+      },
+      "note": {
+        "fr": "",
+        "en": ""
+      }
+    }
   ],
   "rules": [
     {
       "id": "chevaliers-meuniers-remise-eau",
-      "zones": ["7", "8"],
-      "species": {"fr": "Chevaliers et meuniers", "en": "Redhorse and suckers"},
+      "zones": [
+        "7",
+        "8"
+      ],
+      "species": {
+        "fr": "Chevaliers et meuniers",
+        "en": "Redhorse and suckers"
+      },
       "rule": {
         "fr": "Remise à l'eau immédiate obligatoire",
         "en": "Immediate release required"
@@ -30,6 +75,121 @@
       },
       "species_page": "chevalier-cuivre",
       "source": "qc-fiche-chevalier-cuivre",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "tanche-possession-vivante",
+      "zones": [
+        "qc"
+      ],
+      "species": {
+        "fr": "Tanche",
+        "en": "Tench"
+      },
+      "rule": {
+        "fr": "Interdit d'en avoir une vivante en sa possession",
+        "en": "Illegal to possess a live one"
+      },
+      "detail": {
+        "fr": "Au Québec, il est illégal de garder une tanche comme animal de compagnie, de l'utiliser comme appât, ou d'avoir une tanche vivante en sa possession. C'est une espèce envahissante dont l'abondance augmente d'année en année dans le corridor fluvial du Saint-Laurent.",
+        "en": "In Quebec it is illegal to keep a tench as a pet, to use one as bait, or to have a live tench in your possession. It is an invasive species whose abundance in the St. Lawrence corridor increases year over year."
+      },
+      "source": "qc-fiche-tanche",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "tanche-remise-eau",
+      "zones": [
+        "qc"
+      ],
+      "species": {
+        "fr": "Tanche et gobies",
+        "en": "Tench and gobies"
+      },
+      "rule": {
+        "fr": "Remise à l'eau obligatoire si tu ne la gardes pas pour manger",
+        "en": "Must be released unless you keep it to eat"
+      },
+      "detail": {
+        "fr": "C'est le contraire de ce que bien du monde pense. Seule la remise à l'eau des carpes envahissantes, dont la carpe de roseau, est interdite au Québec. La tanche, le gobie à taches noires et le gobie à nez tubulaire, eux, doivent être remis à l'eau si le pêcheur ne désire pas les garder pour sa propre consommation.",
+        "en": "This is the opposite of what many anglers assume. Only invasive carps, grass carp among them, may not be released in Quebec. Tench, round goby and tubenose goby must be released if the angler does not intend to keep them to eat."
+      },
+      "source": "qc-fiche-tanche",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "perchaude-moratoire-lsp",
+      "zones": [
+        "lsp"
+      ],
+      "species": {
+        "fr": "Perchaude",
+        "en": "Yellow perch"
+      },
+      "rule": {
+        "fr": "Moratoire sur la pêche récréative et commerciale",
+        "en": "Moratorium on recreational and commercial fishing"
+      },
+      "detail": {
+        "fr": "La situation de la perchaude au lac Saint-Pierre est jugée si fragile qu'un moratoire y a été instauré en 2012, puis étendu en 2013 au secteur immédiatement en aval, entre le pont Laviolette et Saint-Pierre-les-Becquets. Il a été reconduit en 2017, puis en 2022.",
+        "en": "The state of yellow perch in Lac Saint-Pierre was judged fragile enough that a moratorium was imposed in 2012, then extended in 2013 to the stretch immediately downstream, between the Laviolette bridge and Saint-Pierre-les-Becquets. It was renewed in 2017, then in 2022."
+      },
+      "source": "qc-fiche-perchaude",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "signalement-envahissantes",
+      "zones": [
+        "qc"
+      ],
+      "species": {
+        "fr": "Espèces exotiques envahissantes",
+        "en": "Invasive alien species"
+      },
+      "rule": {
+        "fr": "Leur présence doit être signalée",
+        "en": "Their presence must be reported"
+      },
+      "detail": {
+        "fr": "La présence d'une espèce exotique envahissante dans un plan d'eau doit être signalée au gouvernement. C'est le cas du poisson rouge, qui est établi autour de Montréal, comme du poisson à tête de serpent du Nord, qui est absent du Québec pour l'instant.",
+        "en": "The presence of an invasive alien species in a body of water must be reported to the government. That applies to goldfish, which is established around Montreal, and to northern snakehead, which is absent from Quebec for now."
+      },
+      "source": "qc-fiche-poisson-rouge",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
+      "id": "transport-poissons-vivants",
+      "zones": [
+        "qc"
+      ],
+      "species": {
+        "fr": "Tous les poissons",
+        "en": "All fish"
+      },
+      "rule": {
+        "fr": "Ne transporte pas de poissons vivants d'un plan d'eau à un autre",
+        "en": "Do not move live fish from one water body to another"
+      },
+      "detail": {
+        "fr": "Le transport de poissons vivants et l'ensemencement d'un plan d'eau exigent un permis délivré par le gouvernement. Une fois une espèce envahissante établie dans un plan d'eau, son éradication est presque impossible.",
+        "en": "Transporting live fish and stocking a water body require a government permit. Once an invasive species is established in a body of water, eradicating it is nearly impossible."
+      },
+      "source": "qc-fiche-tanche",
       "verified": {
         "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
         "date": "2026-09-07"

@@ -121,5 +121,120 @@
       "en": "Population monitoring. Citation found by search — nothing confirmed."
     },
     "verified": null
+  },
+  {
+    "id": "qc-fiche-maskinonge",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Maskinongé — fiche d'espèce faunique",
+      "en": "Muskellunge — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/maskinonge",
+    "covers": {
+      "fr": "Identification, répartition, état des populations du fleuve, rang de précarité, suivi.",
+      "en": "Identification, range, state of the St. Lawrence populations, conservation rank, monitoring."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-perchaude",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Perchaude — fiche d'espèce faunique",
+      "en": "Yellow perch — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/perchaude",
+    "covers": {
+      "fr": "Identification, répartition, et le moratoire du lac Saint-Pierre.",
+      "en": "Identification, range, and the Lac Saint-Pierre moratorium."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-tanche",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Tanche — fiche d'espèce faunique",
+      "en": "Tench — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/tanche",
+    "covers": {
+      "fr": "Espèce envahissante : progression dans le corridor fluvial, interdictions de possession et règle de remise à l'eau.",
+      "en": "Invasive species: spread through the river corridor, possession bans and the release rule."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poisson-rouge",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poisson rouge — fiche d'espèce faunique",
+      "en": "Goldfish — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-rouge",
+    "covers": {
+      "fr": "Espèce envahissante établie : répartition et obligation de signalement.",
+      "en": "Established invasive species: range and the mandatory reporting rule."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poulamon-atlantique",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poulamon atlantique — fiche d'espèce faunique",
+      "en": "Atlantic tomcod — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poulamon-atlantique",
+    "covers": {
+      "fr": "Identification, répartition et cycle de vie.",
+      "en": "Identification, range and life cycle."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
   }
 ]

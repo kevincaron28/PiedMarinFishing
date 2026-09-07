@@ -2875,3 +2875,10 @@ body.has-lightbox { overflow: hidden; }
 @media (max-width: 560px) {
   .reg-row { grid-template-columns: 1fr; gap: 6px; }
 }
+.reg-src {
+  margin: 10px 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink-600);
+}
+.reg-src a { color: var(--ink-600); }

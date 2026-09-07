@@ -196,5 +196,265 @@
       "fr": "",
       "en": ""
     }
+  },
+  {
+    "id": "maskinonge",
+    "name": {
+      "fr": "Maskinongé",
+      "en": "Muskellunge"
+    },
+    "scientificName": "Esox masquinongy",
+    "intro": {
+      "fr": "C'est le poisson de l'équipe. Celui qu'on cherche, celui qui nous a donné nos deux plus belles prises, et celui qu'on remet à l'eau chaque fois. Ce qui suit ne vient pas de nous : c'est ce que le ministère écrit sur l'espèce et sur les populations du fleuve. On le met ici parce que la partie sur les poissons de taille trophée dit quelque chose d'encourageant sur l'eau qu'on pêche.",
+      "en": "This is the crew's fish. The one we look for, the one behind our two best catches, and the one we release every time. What follows is not ours: it is what the ministry writes about the species and about the St. Lawrence populations. We put it here because the part on trophy-size fish says something encouraging about the water we fish."
+    },
+    "claims": [
+      {
+        "id": "plus-grand",
+        "text": {
+          "fr": "Le maskinongé est le plus grand représentant de la famille des brochets et l'un des plus grands poissons d'eau douce du Québec et du Canada.",
+          "en": "The muskellunge is the largest member of the pike family and one of the largest freshwater fish in Quebec and Canada."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "remise-eau",
+        "text": {
+          "fr": "Le ministère note que la pêche récréative au maskinongé est souvent pratiquée avec remise à l'eau, par des adeptes qui se spécialisent sur l'espèce.",
+          "en": "The ministry notes that recreational muskellunge fishing is often practised catch-and-release, by anglers who specialize in the species."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "taille",
+        "text": {
+          "fr": "Les tailles observées au Québec vont généralement de 25 à 113 cm. L'espèce peut dépasser 1,5 m et peser plus de 40 kg.",
+          "en": "Sizes recorded in Quebec generally run from 25 to 113 cm. The species can exceed 1.5 m and weigh more than 40 kg."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "declin-reprise",
+        "text": {
+          "fr": "Le maskinongé a connu une forte baisse d'abondance au siècle dernier dans le bassin du fleuve Saint-Laurent. Les ensemencements menés pendant des décennies, combinés à une taille minimale légale à la pêche sportive, ont graduellement fait remonter l'abondance et amélioré la structure des populations.",
+          "en": "Muskellunge abundance dropped sharply last century in the St. Lawrence basin. Decades of stocking, combined with a legal minimum size for sport fishing, gradually brought abundance back and improved the structure of the populations."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "trophees",
+        "text": {
+          "fr": "Les suivis du succès de pêche récréative dans le fleuve Saint-Laurent et le lac des Deux Montagnes suggèrent une proportion plus élevée de poissons de taille trophée que lors des inventaires des années 1990.",
+          "en": "Recreational fishing surveys on the St. Lawrence and Lac des Deux Montagnes suggest a higher proportion of trophy-size fish than the 1990s inventories showed."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "precarite",
+        "text": {
+          "fr": "Son rang de précarité provincial est S4.",
+          "en": "Its provincial conservation rank is S4."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "suivi-guides",
+        "text": {
+          "fr": "Dans le fleuve et ses lacs fluviaux, le maskinongé est suivi en collaboration avec des guides de pêche spécialisés, et un suivi télémétrique sert à identifier ses habitats essentiels.",
+          "en": "In the river and its fluvial lakes, muskellunge are monitored in collaboration with specialized fishing guides, and telemetry is used to identify critical habitat."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "habitat",
+        "text": {
+          "fr": "Il fréquente les lacs, les baies et les zones de courant modéré, généralement en eau claire, peu profonde, chaude (20 à 26 °C) et à végétation dense. Il se tient à des endroits stratégiques, par exemple en marge des herbiers.",
+          "en": "It uses lakes, bays and moderate-current stretches, generally in clear, shallow, warm water (20 to 26 °C) with dense vegetation. It holds at strategic spots, such as the edge of weed beds."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "envahissant",
+        "text": {
+          "fr": "L'espèce est considérée envahissante lorsqu'elle est introduite dans un plan d'eau où elle n'est pas présente naturellement.",
+          "en": "The species is considered invasive when introduced into a water body where it does not occur naturally."
+        },
+        "sources": [
+          "qc-fiche-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "perchaude",
+    "name": {
+      "fr": "Perchaude",
+      "en": "Yellow perch"
+    },
+    "scientificName": "Perca flavescens",
+    "intro": {
+      "fr": "C'est la première prise de la nouvelle génération chez nous — Romy l'a sortie sur la glace. Ce n'est pas un hasard : le ministère lui-même note que la perchaude sert souvent à initier les jeunes à la pêche, l'été comme l'hiver. Mais c'est aussi une espèce dont l'état varie beaucoup d'un plan d'eau à l'autre dans le corridor du fleuve, au point qu'un moratoire s'applique au lac Saint-Pierre.",
+      "en": "This is the first catch of our next generation — Romy brought hers up through the ice. That is no accident: the ministry itself notes that yellow perch is often the species that introduces young anglers to fishing, in summer and in winter. But it is also a species whose condition varies widely from one water body to another along the river corridor, to the point that a moratorium applies at Lac Saint-Pierre."
+    },
+    "claims": [
+      {
+        "id": "initiation",
+        "text": {
+          "fr": "Le ministère note que la perchaude est populaire auprès des adeptes de la pêche récréative, particulièrement pour l'initiation des jeunes, en été comme en hiver.",
+          "en": "The ministry notes that yellow perch is popular with recreational anglers, particularly for introducing young people to the sport, in summer and in winter."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "taille",
+        "text": {
+          "fr": "Les tailles observées au Québec vont généralement de 14 à 23 cm. Elle peut dépasser 30 cm et peser plus de 1 kg.",
+          "en": "Sizes recorded in Quebec generally run from 14 to 23 cm. It can exceed 30 cm and weigh more than 1 kg."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "etat-variable",
+        "text": {
+          "fr": "Son état de situation varie d'un plan d'eau à l'autre au Québec : bon dans certains, problématique dans d'autres.",
+          "en": "Its status varies from one Quebec water body to another: healthy in some, problematic in others."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "moratoire",
+        "text": {
+          "fr": "Au lac Saint-Pierre, la situation est jugée si fragile qu'un moratoire sur les pêches récréative et commerciale a été instauré en 2012, étendu en 2013 au secteur entre le pont Laviolette et Saint-Pierre-les-Becquets, puis reconduit en 2017 et en 2022.",
+          "en": "At Lac Saint-Pierre the situation was judged fragile enough that a moratorium on recreational and commercial fishing was imposed in 2012, extended in 2013 to the stretch between the Laviolette bridge and Saint-Pierre-les-Becquets, then renewed in 2017 and 2022."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "identification",
+        "text": {
+          "fr": "Son corps est comprimé sur les côtés et relativement haut, le dos vert ou bronzé, les flancs vert jaune barrés de 5 à 8 bandes verticales foncées. Elle porte une épine au bout de l'opercule, et des épines défensives sur la première dorsale et l'anale.",
+          "en": "Its body is laterally compressed and relatively deep, the back green or bronze, the flanks yellow-green crossed by 5 to 8 dark vertical bars. It carries a spine at the tip of the gill cover, and defensive spines on the first dorsal and anal fins."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "habitat",
+        "text": {
+          "fr": "Elle fréquente les eaux peu turbides à fonds rocheux, graveleux, boueux ou sablonneux, et affectionne les habitats à végétation aquatique. On la trouve surtout à moins de 9 m de profondeur.",
+          "en": "It uses water of low to moderate turbidity over rock, gravel, mud or sand, and favours habitats with aquatic vegetation. It is found mostly in less than 9 m of water."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "introductions",
+        "text": {
+          "fr": "Elle a été introduite, accidentellement ou illégalement, dans plusieurs plans d'eau du Québec.",
+          "en": "It has been introduced, accidentally or illegally, into a number of Quebec water bodies."
+        },
+        "sources": [
+          "qc-fiche-perchaude"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
   }
 ]

@@ -46,10 +46,42 @@ async function initRegulations(rootSelector) {
     pages = [];
   }
   if (!Array.isArray(pages)) pages = [];
+  // Le même registre de citations que les fiches d'espèce. Une règle affichée
+  // sans sa source demanderait au lecteur de nous croire sur parole — sur une
+  // page qui peut lui coûter une amende, ça ne suffit pas.
+  let sources = {};
+  try {
+    const list = await (await fetch("data/sources.json", DATA_FETCH)).json();
+    (Array.isArray(list) ? list : []).forEach((x) => { if (x && x.id) sources[x.id] = x; });
+  } catch (e) {
+    sources = {};
+  }
+
+  function citation(id) {
+    const src = sources[id];
+    if (!src || !src.verified) return "";
+    // Titre et éditeur seulement. Le nom complet du ministère fait 104
+    // caractères : répété sous chaque règle, il noyait la règle elle-même.
+    // La citation complète vit dans data/sources.json et sur les fiches
+    // d'espèce, où elle a la place de s'écrire au long.
+    const title = tr(src.title);
+    if (!title) return "";
+    const pub = tr(src.publisher);
+    const text = t("reg.source") + " " + title + (pub ? ", " + pub : "") + ".";
+    return src.url
+      ? `<p class="reg-src"><a href="${escapeHTML(src.url)}" target="_blank" rel="noopener">${
+          escapeHTML(text)}</a></p>`
+      : `<p class="reg-src">${escapeHTML(text)}</p>`;
+  }
   const rules = (data && Array.isArray(data.rules)) ? data.rules : [];
   // Une règle non vérifiée n'existe pas — même discipline que les fiches
   // d'espèce. Ici l'enjeu n'est plus la crédibilité, c'est une amende.
-  const shown = rules.filter((r) => r && r.verified && tr(r.rule));
+  // Deux conditions, comme claim_ok() pour les fiches d'espèce : la règle est
+  // vérifiée, ET la source qu'elle cite l'est aussi. Vérifier une règle contre
+  // un document dont personne n'a confirmé l'existence ne vérifie rien.
+  const shown = rules.filter((r) =>
+    r && r.verified && tr(r.rule) && r.source &&
+    sources[r.source] && sources[r.source].verified);
 
   function monthsSince(iso) {
     const d = new Date(iso + "T00:00:00");
@@ -110,6 +142,7 @@ async function initRegulations(rootSelector) {
     <p class="reg-species">${escapeHTML(tr(r.species))}</p>
     <p class="reg-rule">${escapeHTML(tr(r.rule))}</p>
     ${detail ? `<p class="reg-detail">${escapeHTML(detail)}</p>` : ""}
+    ${citation(r.source)}
     ${link}
   </div>
 </div>`;
