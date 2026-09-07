@@ -357,7 +357,12 @@ def source_html(sp, sources, ui, order=()):
     text = ({"fr": "", "en": ""} if listed
             else {lang: citation_text(src, lang) for lang in ("fr", "en")})
     when = sp.get("consulted") or ""
-    note = {lang: ui[lang]["sp.sourceNote"].replace("{date}", long_date(when, lang) or when)
+    # Deux notes selon ce que la fiche porte : dès qu'un bloc « sur l'eau »
+    # existe, dire que TOUT vient du ministère serait faux — et c'est
+    # exactement le genre de fausse attribution que la barrière existe pour
+    # empêcher, dans l'autre sens.
+    key = "sp.sourceNoteField" if pick(sp.get("field"), "fr") else "sp.sourceNote"
+    note = {lang: ui[lang][key].replace("{date}", long_date(when, lang) or when)
             for lang in ("fr", "en")}
     link = ""
     if src.get("url"):
@@ -397,6 +402,15 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None):
         body.append(section({"fr": ui["fr"]["sp.rules"], "en": ui["en"]["sp.rules"]},
                             reg, alt=True, key="sp.rules"))
 
+    # Le bloc de l'équipe passe devant la prose du ministère. Sur un bateau,
+    # « comment NOUS on le pêche » vaut plus que la description officielle —
+    # et c'est la seule partie de la fiche que personne d'autre ne peut
+    # écrire. Il sortait avant-dernier.
+    field = bilingual("p", sp.get("field"), "tp-notes")
+    if field:
+        body.append(section({"fr": ui["fr"]["sp.field"], "en": ui["en"]["sp.field"]},
+                            field, key="sp.field"))
+
     blocks = blocks_html(sp, ui)
     if blocks:
         body.append('<section><div class="container">%s</div></section>' % blocks)
@@ -409,11 +423,6 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None):
     if claims:
         body.append(section({"fr": ui["fr"]["sp.science"], "en": ui["en"]["sp.science"]},
                             claims, key="sp.science"))
-
-    field = bilingual("p", sp.get("field"), "tp-notes")
-    if field:
-        body.append(section({"fr": ui["fr"]["sp.field"], "en": ui["en"]["sp.field"]},
-                            field, alt=True, key="sp.field"))
 
     origin = source_html(sp, sources, ui, order)
     srcs = sources_html(sources, order, ui)
