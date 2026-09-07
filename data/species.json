@@ -236,6 +236,371 @@
     ]
   },
   {
+    "id": "grand-brochet",
+    "name": {
+      "fr": "Grand brochet",
+      "en": "Northern pike"
+    },
+    "scientificName": "Esox lucius",
+    "otherNames": {
+      "fr": "Brochet du Nord, brochet, brochet commun, requin d'eau douce",
+      "en": "Pike, northern, jackfish"
+    },
+    "source": "qc-fiche-grand-brochet",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "46 à 78 cm — peut dépasser 1 m",
+          "en": "46 to 78 cm — can exceed 1 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 20 kg",
+          "en": "Can exceed 20 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Surtout en lac, et dans les zones calmes des cours d'eau; il préfère l'eau peu profonde",
+          "en": "Mostly lakes, and the calm stretches of rivers; it prefers shallow water"
+        }
+      },
+      {
+        "label": {
+          "fr": "L'été",
+          "en": "In summer"
+        },
+        "value": {
+          "fr": "Lors des chaleurs, il se déplace en eau plus profonde et plus fraîche",
+          "en": "In hot spells it moves into deeper, cooler water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De jour, au printemps, après la fonte des glaces",
+          "en": "During the day, in spring, after ice-out"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Zones inondées et marécages adjacents, à végétation dense",
+          "en": "Flooded areas and adjacent marshes, with dense vegetation"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S4",
+          "en": "S4"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des taches pâles sur fond sombre — c'est l'inverse du maskinongé, qui porte des taches sombres sur fond pâle. Le grand brochet a aussi moins de pores sous la mâchoire que le maskinongé, qui en compte habituellement de 6 à 9 de chaque côté.",
+          "en": "Pale spots on a dark ground — the reverse of muskellunge, which carries dark spots on a pale ground. Northern pike also has fewer pores under the jaw than muskellunge, which usually shows 6 to 9 per side."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Carnivore opportuniste, il mange tout ce qui est facile à capturer : poissons, crustacés, amphibiens, petits mammifères et jeunes oiseaux aquatiques.",
+          "en": "An opportunistic carnivore, it eats whatever is easy to catch: fish, crustaceans, amphibians, small mammals and young waterbirds."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Dans plusieurs plans d'eau du Québec, dont le lac Saint-François et le fleuve Saint-Laurent, la situation du grand brochet est considérée comme précaire. Il est suivi dans le fleuve et ses lacs fluviaux.",
+          "en": "In several Quebec waters, including Lac Saint-François and the St. Lawrence, the northern pike's situation is considered precarious. It is monitored in the river and its fluvial lakes."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "dore-jaune",
+    "name": {
+      "fr": "Doré jaune",
+      "en": "Walleye"
+    },
+    "scientificName": "Sander vitreus",
+    "otherNames": {
+      "fr": "Doré, doré blanc, doré bleu, sandre",
+      "en": "Walleye, yellow pickerel"
+    },
+    "source": "qc-fiche-dore-jaune",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "27 à 57 cm — certains dépassent 80 cm",
+          "en": "27 to 57 cm — some exceed 80 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 6 kg",
+          "en": "Can exceed 6 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fonds",
+          "en": "Bottom"
+        },
+        "value": {
+          "fr": "Rocheux, gros gravier, argile ou sable — en rivière, en fleuve et en lac",
+          "en": "Rock, coarse gravel, clay or sand — in rivers, the St. Lawrence and lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "La lumière",
+          "en": "Light"
+        },
+        "value": {
+          "fr": "Ses yeux sont sensibles : en eau claire il se protège en profondeur ou à l'ombre",
+          "en": "Its eyes are light-sensitive: in clear water it takes cover deep or in shade"
+        }
+      },
+      {
+        "label": {
+          "fr": "Quand il mange",
+          "en": "Feeding window"
+        },
+        "value": {
+          "fr": "Surtout à la tombée du jour, souvent en eau peu profonde",
+          "en": "Mainly at dusk, often in shallow water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, de nuit, en eau de 5,6 à 11,1 °C",
+          "en": "In spring, at night, in water of 5.6 to 11.1 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Roches ou gros gravier — pied des chutes, rapides et barrages, hauts-fonds en lac",
+          "en": "Rock or coarse gravel — below falls, rapids and dams, and lake shoals"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des marbrures diffuses sur la membrane de sa première dorsale, et une marque noire à la base arrière de cette nageoire. Le doré noir, lui, a des taches foncées bien définies sur une membrane claire, et pas de marque noire à la base.",
+          "en": "Diffuse mottling on the membrane of its first dorsal fin, and a black mark at the rear base of that fin. Sauger instead shows well-defined dark spots on a clear membrane, and no black basal mark."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson grégaire, actif toute l'année. Le prédateur adulte est opportuniste : surtout des poissons, mais aussi des invertébrés, des amphibiens et de petits mammifères.",
+          "en": "A schooling fish, active year-round. The adult is an opportunistic predator: mostly fish, but also invertebrates, amphibians and small mammals."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Le doré jaune est plus sensible que le doré noir à la pression de pêche : il devient une prise intéressante avant même d'avoir frayé une première fois, et une exploitation trop forte réduit la densité et le renouvellement de la population.",
+          "en": "Walleye is more sensitive to fishing pressure than sauger: it becomes a worthwhile catch before it has spawned even once, and heavy exploitation reduces both density and renewal of the population."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "dore-noir",
+    "name": {
+      "fr": "Doré noir",
+      "en": "Sauger"
+    },
+    "scientificName": "Sander canadensis",
+    "otherNames": {
+      "fr": "Doré charbonnier",
+      "en": "Sand pike"
+    },
+    "source": "qc-fiche-dore-noir",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "28 à 45 cm — certains dépassent 50 cm",
+          "en": "28 to 45 cm — some exceed 50 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 2 kg",
+          "en": "Can exceed 2 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Profondeur",
+          "en": "Depth"
+        },
+        "value": {
+          "fr": "Surtout les faibles profondeurs, parfois jusqu'à environ 15 m",
+          "en": "Mostly shallow, occasionally down to about 15 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "L'eau",
+          "en": "Water"
+        },
+        "value": {
+          "fr": "Il préfère l'eau turbide — ses yeux craignent la lumière intense",
+          "en": "It prefers turbid water — its eyes are sensitive to bright light"
+        }
+      },
+      {
+        "label": {
+          "fr": "Quand il mange",
+          "en": "Feeding window"
+        },
+        "value": {
+          "fr": "À toute heure en eau très turbide; le jour seulement quand l'eau est claire",
+          "en": "At any hour in very turbid water; only by day when the water is clear"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De la mi-mai au début juin, de nuit, en eau peu profonde — plus tard que le doré jaune",
+          "en": "Mid-May to early June, at night, in shallow water — later than walleye"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des taches foncées bien définies sur la membrane claire de sa première dorsale. Le doré jaune, lui, a des marbrures diffuses et une marque noire à la base arrière de cette nageoire.",
+          "en": "Well-defined dark spots on the clear membrane of its first dorsal fin. Walleye instead shows diffuse mottling and a black mark at the rear base of that fin."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il se nourrit de sangsues, d'écrevisses, de larves aquatiques d'insectes, d'autres invertébrés et de poissons. Il peut utiliser les mêmes sites de fraie que le doré jaune.",
+          "en": "It feeds on leeches, crayfish, aquatic insect larvae, other invertebrates and fish. It may use the same spawning sites as walleye."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il croît plus lentement que le doré jaune et atteint la maturité à une plus petite taille. Peu de pêcheurs conservent un doré noir immature, qui offre peu de chair.",
+          "en": "It grows more slowly than walleye and matures at a smaller size. Few anglers keep an immature sauger, which yields little meat."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "perchaude",
     "name": {
       "fr": "Perchaude",
@@ -428,6 +793,603 @@
         }
       }
     ]
+  },
+  {
+    "id": "crapet-de-roche",
+    "name": {
+      "fr": "Crapet de roche",
+      "en": "Rock bass"
+    },
+    "scientificName": "Ambloplites rupestris",
+    "otherNames": {
+      "fr": "Crapet aux yeux rouges, achigan de roche",
+      "en": "Redeye, goggle-eye"
+    },
+    "source": "qc-fiche-crapet-roche",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "11 à 21 cm — peut dépasser 40 cm",
+          "en": "11 to 21 cm — can exceed 40 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Plus de 600 g dans le fleuve et ses lacs fluviaux",
+          "en": "Over 600 g in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De juin au début juillet, en eau peu profonde; nid jusqu'à 65 cm de diamètre sur sable, gravier ou fond organique",
+          "en": "June to early July, in shallow water; nest up to 65 cm across on sand, gravel or organic bottom"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S5",
+          "en": "S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Une vague tache noire qui n'atteint pas le bord du volet operculaire. Le crapet arlequin l'a entièrement noir; le crapet vert et le crapet-soleil ont une marge plus colorée.",
+          "en": "A vague dark blotch that does not reach the edge of the opercular flap. Bluegill's is entirely black; green sunfish and pumpkinseed have a more colourful margin."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il s'accommode d'une large gamme d'habitats : eaux chaudes des lacs de toutes tailles, étangs et rivières à faible courant. Il préfère l'eau peu profonde et claire à fond de roches et de graviers, mais fréquente aussi les talus végétalisés.",
+          "en": "It tolerates a wide range of habitats: warm water in lakes of every size, ponds and slow rivers. It prefers shallow clear water over rock and gravel, but also uses vegetated slopes."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les populations sont considérées en bonne situation au Québec.",
+          "en": "Populations are considered healthy in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "crapet-soleil",
+    "name": {
+      "fr": "Crapet-soleil",
+      "en": "Pumpkinseed"
+    },
+    "scientificName": "Lepomis gibbosus",
+    "otherNames": {
+      "fr": "Crapet jaune, perche-soleil, montre d'or",
+      "en": "Sunfish, common sunfish"
+    },
+    "source": "qc-fiche-crapet-soleil",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "10 à 20 cm — jusqu'à environ 25 cm",
+          "en": "10 to 20 cm — up to about 25 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Jusqu'à environ 300 g dans le fleuve et ses lacs fluviaux",
+          "en": "Up to about 300 g in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En juin, quand l'eau atteint environ 20 °C, en eau peu profonde à végétation submergée",
+          "en": "In June, once the water reaches about 20 °C, in shallow water with submerged vegetation"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S5",
+          "en": "S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Un volet operculaire petit, à partie centrale noire et marge rouge ou orangée. Celui du crapet arlequin est entièrement noir; celui du crapet de roche porte une vague tache qui n'atteint pas le bord.",
+          "en": "A small opercular flap with a black centre and a red or orange margin. Bluegill's is entirely black; rock bass shows a vague blotch that does not reach the edge."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Eaux claires, tranquilles, peu profondes et végétalisées : lacs, étangs et cours d'eau à courant lent. Il s'alimente en surface, entre deux eaux et près du fond.",
+          "en": "Clear, quiet, shallow, vegetated water: lakes, ponds and slow streams. It feeds at the surface, in mid-water and near the bottom."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les populations sont considérées en bonne situation. Là où l'espèce a été introduite, elle peut causer des problèmes aux espèces indigènes.",
+          "en": "Populations are considered healthy. Where the species has been introduced, it can cause problems for native species."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "crapet-arlequin",
+    "name": {
+      "fr": "Crapet arlequin",
+      "en": "Bluegill"
+    },
+    "scientificName": "Lepomis macrochirus",
+    "otherNames": {
+      "fr": "Crapet à oreilles bleues",
+      "en": "Bream, bluegill"
+    },
+    "source": "qc-fiche-crapet-arlequin",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "18 à 20 cm — peut atteindre 40 cm",
+          "en": "18 to 20 cm — can reach 40 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Jusqu'à environ 300 g dans le fleuve et ses lacs fluviaux",
+          "en": "Up to about 300 g in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De juin à août, en eau peu profonde; le mâle creuse un nid de 50 à 65 cm de diamètre sur gravier, sable ou vase",
+          "en": "June to August, in shallow water; the male digs a nest 50 to 65 cm across on gravel, sand or mud"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S4",
+          "en": "S4"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Un volet operculaire entièrement noir. Celui du crapet vert, du crapet-soleil et du crapet du Nord a une marge plus colorée; celui du crapet de roche porte une vague tache qui n'atteint pas le bord.",
+          "en": "An entirely black opercular flap. Green sunfish, pumpkinseed and longear sunfish have a more colourful margin; rock bass shows a vague blotch that does not reach the edge."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Eaux chaudes et peu profondes des lacs et étangs, et secteurs tranquilles des cours d'eau, plus souvent avec de la végétation. L'été il bouge peu et occupe un petit territoire; l'hiver, les crapets se rassemblent en colonies.",
+          "en": "Warm shallow water in lakes and ponds, and quiet stretches of streams, usually with vegetation. In summer it moves little and holds a small territory; in winter they gather in colonies."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Nettement plus rare que le crapet-soleil au Québec, sans signe évident de déclin.",
+          "en": "Noticeably rarer than pumpkinseed in Quebec, with no obvious sign of decline."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "poulamon-atlantique",
+    "name": {
+      "fr": "Poulamon atlantique",
+      "en": "Atlantic tomcod"
+    },
+    "scientificName": "Microgadus tomcod",
+    "otherNames": {
+      "fr": "Petit poisson des chenaux, poulamon, petite morue, loche",
+      "en": "Tomcod, frostfish"
+    },
+    "source": "qc-fiche-poulamon-atlantique",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "16 à 25 cm — jusqu'à 45 cm",
+          "en": "16 to 25 cm — up to 45 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Généralement moins de 150 g",
+          "en": "Generally under 150 g"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De la mi-décembre à la fin janvier, en eau douce, SOUS LA GLACE",
+          "en": "Mid-December to late January, in fresh water, UNDER THE ICE"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Sable ou gravier, au pied de rapides ou dans les interstices du frasil",
+          "en": "Sand or gravel, at the foot of rapids or in the gaps of frazil ice"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Petits crustacés, vers, poissons, mollusques",
+          "en": "Small crustaceans, worms, fish, molluscs"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Trois nageoires dorsales et deux nageoires anales. La lotte, avec qui on le confond, n'a que deux dorsales — une courte à l'avant, une longue qui va jusqu'à la caudale — et une seule anale qui s'étend elle aussi jusqu'à la caudale.",
+          "en": "Three dorsal fins and two anal fins. Burbot, the fish it gets confused with, has only two dorsals — a short front one and a long one running to the tail — and a single anal fin that also runs to the tail."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il fréquente les eaux côtières, saumâtres et salées. En hiver il migre en eau douce pour se reproduire — c'est la pêche des petits poissons des chenaux. Il peut aussi accomplir tout son cycle de vie en eau douce.",
+          "en": "It uses coastal, brackish and salt water. In winter it migrates into fresh water to spawn — this is the classic Quebec ice fishery. It can also complete its whole life cycle in fresh water."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "esturgeon-jaune",
+    "name": {
+      "fr": "Esturgeon jaune",
+      "en": "Lake sturgeon"
+    },
+    "scientificName": "Acipenser fulvescens",
+    "otherNames": {
+      "fr": "Esturgeon de lac, camus",
+      "en": "Lake sturgeon, rock sturgeon"
+    },
+    "status": {
+      "fr": "Susceptible d'être désignée menacée ou vulnérable",
+      "en": "Likely to be designated threatened or vulnerable"
+    },
+    "source": "qc-fiche-esturgeon-jaune",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "52 à 136 cm — peut atteindre plus de 2 m",
+          "en": "52 to 136 cm — can exceed 2 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 100 kg, mais de tels spécimens sont très rares",
+          "en": "Can exceed 100 kg, though such fish are very rare"
+        }
+      },
+      {
+        "label": {
+          "fr": "Profondeur",
+          "en": "Depth"
+        },
+        "value": {
+          "fr": "Habituellement à moins de 10 m",
+          "en": "Usually under 10 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fonds",
+          "en": "Bottom"
+        },
+        "value": {
+          "fr": "Vaseux, de sable ou de gravier, sur les hauts-fonds des grands cours d'eau et des lacs",
+          "en": "Mud, sand or gravel, on the shoals of large rivers and lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en rivière, en eau vive de 1 à 5 m sur substrat rocheux",
+          "en": "In spring, in rivers, in fast water of 1 to 5 m over rock"
+        }
+      },
+      {
+        "label": {
+          "fr": "Éclosion",
+          "en": "Hatching"
+        },
+        "value": {
+          "fr": "Environ 7 jours",
+          "en": "About 7 days"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses nageoires ne sont PAS bordées de blanc — celles de l'esturgeon noir le sont. Son museau est généralement plus court, sauf chez les jeunes.",
+          "en": "Its fins are NOT edged in white — Atlantic sturgeon's are. Its snout is generally shorter, except in young fish."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il s'alimente au fond, localisant ses proies avec ses barbillons tactiles puis les aspirant : crustacés, mollusques, larves d'insectes, poissons et œufs, vers et matières végétales. On peut aussi le trouver en eau saumâtre, comme dans l'estuaire moyen.",
+          "en": "It feeds on the bottom, locating prey with its tactile barbels then vacuuming it up: crustaceans, molluscs, insect larvae, fish and eggs, worms and plant matter. It also occurs in brackish water, as in the middle estuary."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'état des populations varie selon les régions. Dans le fleuve Saint-Laurent, l'esturgeon jaune se porte assez bien — c'est un des endroits où l'espèce est la plus abondante de toute son aire de répartition.",
+          "en": "Population status varies by region. In the St. Lawrence, lake sturgeon is doing reasonably well — it is one of the places where the species is most abundant across its whole range."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "esturgeon-noir",
+    "name": {
+      "fr": "Esturgeon noir",
+      "en": "Atlantic sturgeon"
+    },
+    "scientificName": "Acipenser oxyrinchus",
+    "otherNames": {
+      "fr": "Esturgeon d'eau salée, écaillé",
+      "en": "Atlantic sturgeon"
+    },
+    "status": {
+      "fr": "Susceptible d'être désignée menacée ou vulnérable",
+      "en": "Likely to be designated threatened or vulnerable"
+    },
+    "source": "qc-fiche-esturgeon-noir",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "Environ 1,5 m en général — jusqu'à 4,3 m; 2,7 m observés dans le fleuve",
+          "en": "About 1.5 m typically — up to 4.3 m; 2.7 m recorded in the St. Lawrence"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Un spécimen de 160 kg a été observé dans le fleuve",
+          "en": "A 160 kg fish has been recorded in the St. Lawrence"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au début de l'été, en eau douce, entre 16 et 20 °C",
+          "en": "In early summer, in fresh water, between 16 and 20 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Ponte",
+          "en": "Egg count"
+        },
+        "value": {
+          "fr": "La femelle peut pondre plus de 3,7 millions d'œufs",
+          "en": "A female can lay more than 3.7 million eggs"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses nageoires sont bordées de blanc — celles de l'esturgeon jaune ne le sont pas.",
+          "en": "Its fins are edged in white — lake sturgeon's are not."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson anadrome : il passe jusqu'à quatre ans en eau douce, puis l'essentiel de sa vie en eau salée, avec des déplacements sur de grandes distances. Il s'alimente au fond à l'aide de ses barbillons tactiles.",
+          "en": "An anadromous fish: it spends up to four years in fresh water, then most of its life at sea, moving over long distances. It feeds on the bottom using its tactile barbels."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les sites de fraie ne sont toujours pas connus au Québec. Des travaux sont en cours pour repérer les géniteurs marqués d'émetteurs qui signalent leur présence dans le fleuve.",
+          "en": "Its spawning sites are still unknown in Quebec. Work is under way to track tagged spawners whose transmitters signal their presence in the river."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
   },
   {
     "id": "chevalier-cuivre",
@@ -704,100 +1666,6 @@
         }
       }
     ]
-  },
-  {
-    "id": "poulamon-atlantique",
-    "name": {
-      "fr": "Poulamon atlantique",
-      "en": "Atlantic tomcod"
-    },
-    "scientificName": "Microgadus tomcod",
-    "otherNames": {
-      "fr": "Petit poisson des chenaux, poulamon, petite morue, loche",
-      "en": "Tomcod, frostfish"
-    },
-    "source": "qc-fiche-poulamon-atlantique",
-    "consulted": "2026-09-07",
-    "marks": [
-      {
-        "label": {
-          "fr": "Taille",
-          "en": "Size"
-        },
-        "value": {
-          "fr": "16 à 25 cm — jusqu'à 45 cm",
-          "en": "16 to 25 cm — up to 45 cm"
-        }
-      },
-      {
-        "label": {
-          "fr": "Poids",
-          "en": "Weight"
-        },
-        "value": {
-          "fr": "Généralement moins de 150 g",
-          "en": "Generally under 150 g"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fraie",
-          "en": "Spawning"
-        },
-        "value": {
-          "fr": "De la mi-décembre à la fin janvier, en eau douce, SOUS LA GLACE",
-          "en": "Mid-December to late January, in fresh water, UNDER THE ICE"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fond de fraie",
-          "en": "Spawning bottom"
-        },
-        "value": {
-          "fr": "Sable ou gravier, au pied de rapides ou dans les interstices du frasil",
-          "en": "Sand or gravel, at the foot of rapids or in the gaps of frazil ice"
-        }
-      },
-      {
-        "label": {
-          "fr": "Régime",
-          "en": "Diet"
-        },
-        "value": {
-          "fr": "Petits crustacés, vers, poissons, mollusques",
-          "en": "Small crustaceans, worms, fish, molluscs"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "key": "reconnaitre",
-        "title": {
-          "fr": "Le reconnaître",
-          "en": "Telling it apart"
-        },
-        "body": {
-          "fr": "Trois nageoires dorsales et deux nageoires anales. La lotte, avec qui on le confond, n'a que deux dorsales — une courte à l'avant, une longue qui va jusqu'à la caudale — et une seule anale qui s'étend elle aussi jusqu'à la caudale.",
-          "en": "Three dorsal fins and two anal fins. Burbot, the fish it gets confused with, has only two dorsals — a short front one and a long one running to the tail — and a single anal fin that also runs to the tail."
-        }
-      },
-      {
-        "key": "habitat",
-        "title": {
-          "fr": "Où il se tient",
-          "en": "Where it holds"
-        },
-        "body": {
-          "fr": "Il fréquente les eaux côtières, saumâtres et salées. En hiver il migre en eau douce pour se reproduire — c'est la pêche des petits poissons des chenaux. Il peut aussi accomplir tout son cycle de vie en eau douce.",
-          "en": "It uses coastal, brackish and salt water. In winter it migrates into fresh water to spawn — this is the classic Quebec ice fishery. It can also complete its whole life cycle in fresh water."
-        }
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
   },
   {
     "id": "touladi",
@@ -1473,6 +2341,175 @@
     }
   },
   {
+    "id": "eperlan-arc-en-ciel",
+    "name": {
+      "fr": "Éperlan arc-en-ciel",
+      "en": "Rainbow smelt"
+    },
+    "scientificName": "Osmerus mordax",
+    "otherNames": {
+      "fr": "Éperlan, éperlan d'Amérique",
+      "en": "Smelt, American smelt"
+    },
+    "source": "qc-fiche-eperlan-arc-en-ciel",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "4 à 23 cm — jusqu'à 35 cm",
+          "en": "4 to 23 cm — up to 35 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps; les poissons migrent en masse vers les frayères d'eau douce",
+          "en": "In spring; the fish migrate en masse to freshwater spawning grounds"
+        }
+      },
+      {
+        "label": {
+          "fr": "Les œufs",
+          "en": "The eggs"
+        },
+        "value": {
+          "fr": "Libérés directement dans le courant, ils se fixent au fond par une enveloppe adhérente",
+          "en": "Released straight into the current, they stick to the bottom by an adhesive coat"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Crustacés, vers, mollusques et petits poissons",
+          "en": "Crustaceans, worms, molluscs and small fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "L'éperlan et le capelan sont les deux seules espèces de la famille des osméridés au Québec. Le capelan est exclusivement marin et lui ressemble beaucoup; c'est surtout le museau plus allongé de l'éperlan qui les sépare.",
+          "en": "Smelt and capelin are the only two osmerids in Quebec. Capelin is strictly marine and looks much like it; the smelt's longer snout is the main thing that separates them."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il se déplace en bancs près des côtes et dans la colonne d'eau. Dans l'estuaire du Saint-Laurent et la baie des Chaleurs, il utilise des habitats de salinités variées.",
+          "en": "It moves in schools near shore and through the water column. In the St. Lawrence estuary and Chaleur Bay it uses habitats of varying salinity."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les populations sont considérées en bonne situation, mais l'état de situation reste peu connu et des travaux sont en cours. La population du sud de l'estuaire a un statut distinct.",
+          "en": "Populations are considered healthy, but the picture remains poorly known and work is under way. The southern estuary population has a separate status."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "eperlan-arc-en-ciel-estuaire-sud",
+    "name": {
+      "fr": "Éperlan arc-en-ciel — population du sud de l'estuaire",
+      "en": "Rainbow smelt — southern estuary population"
+    },
+    "scientificName": "Osmerus mordax",
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-eperlan-arc-en-ciel-pop-st-laurent",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "15 à 20 cm — jusqu'à 35 cm",
+          "en": "15 to 20 cm — up to 35 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en eau douce",
+          "en": "In spring, in fresh water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Crustacés, vers, mollusques et petits poissons",
+          "en": "Crustaceans, worms, molluscs and small fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Cette population est confinée surtout aux battures et aux baies peu profondes de la rive sud de l'estuaire du Saint-Laurent.",
+          "en": "This population is confined mostly to the tidal flats and shallow bays of the south shore of the St. Lawrence estuary."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Elle a été désignée vulnérable, en raison d'un déclin important observé au cours des trente dernières années et de l'abandon de sa plus importante frayère.",
+          "en": "It has been designated vulnerable, because of a substantial decline over the past thirty years and the abandonment of its most important spawning ground."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "tanche",
     "name": {
       "fr": "Tanche",
@@ -1582,6 +2619,243 @@
     }
   },
   {
+    "id": "gobie-taches-noires",
+    "name": {
+      "fr": "Gobie à taches noires",
+      "en": "Round goby"
+    },
+    "scientificName": "Neogobius melanostomus",
+    "otherNames": {
+      "fr": "Gobie arrondi",
+      "en": "Round goby"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-gobie-taches-noires",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "8 à 15 cm — peut atteindre 25 cm",
+          "en": "8 to 15 cm — can reach 25 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "D'avril à septembre; au printemps le mâle établit et défend un territoire",
+          "en": "April to September; in spring the male sets up and defends a territory"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Les nageoires pelviennes SOUDÉES séparent les gobies des espèces qui leur ressemblent, comme les chabots. Le gobie à nez tubulaire, autre envahissante trouvée dans le fleuve en 2022, peut aussi être confondu avec lui.",
+          "en": "FUSED pelvic fins separate gobies from lookalikes such as sculpins. Tubenose goby, another invasive found in the river in 2022, can also be confused with it."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson benthique : il se tient au fond. Il tolère diverses profondeurs mais préfère les berges, et évolue surtout sur des substrats rocheux qui lui offrent des abris. Il mange des larves d'insectes, des œufs de poissons et des moules zébrées.",
+          "en": "A benthic fish: it holds on the bottom. It tolerates a range of depths but prefers shorelines, and works mostly over rocky substrate that gives it shelter. It eats insect larvae, fish eggs and zebra mussels."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il est établi au Bas-Saint-Laurent, dans la Capitale-Nationale, Chaudière-Appalaches, Lanaudière, les Laurentides, la Mauricie, le Centre-du-Québec, à Montréal, à Laval et en Montérégie. Sa présence doit être signalée.",
+          "en": "It is established in Bas-Saint-Laurent, Capitale-Nationale, Chaudière-Appalaches, Lanaudière, the Laurentians, Mauricie, Centre-du-Québec, Montreal, Laval and Montérégie. Sightings must be reported."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "gobie-nez-tubulaire",
+    "name": {
+      "fr": "Gobie à nez tubulaire",
+      "en": "Tubenose goby"
+    },
+    "scientificName": "Proterorhinus semilunaris",
+    "otherNames": {
+      "fr": "Gobie demi-lune, gobie de la mer Noire",
+      "en": "Western tubenose goby"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-gobie-nez-tubulaire",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "Taille maximale d'environ 9 cm",
+          "en": "Maximum size about 9 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En été; les femelles peuvent frayer plus d'une fois par saison",
+          "en": "In summer; females can spawn more than once per season"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Contrairement au gobie à taches noires, il n'a PAS de grosse tache noire à l'arrière de la première dorsale. Son corps est couvert d'écailles, contrairement aux chabots indigènes qui peuvent lui ressembler.",
+          "en": "Unlike round goby, it has NO large black blotch at the rear of the first dorsal fin. Its body is covered in scales, unlike the native sculpins it can resemble."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Eaux douces ou légèrement saumâtres, surtout les zones calmes et peu profondes — moins de 5 m — au bord des rivières, des lacs et des estuaires. Il vit dans la végétation comme sur le sable et la roche, et migre plus profond l'hiver.",
+          "en": "Fresh or slightly brackish water, mostly calm shallow zones — under 5 m — along rivers, lakes and estuaries. It lives in vegetation as well as over sand and rock, and moves deeper in winter."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il a été capturé pour la première fois au lac Saint-François en 2022, dans le cadre du Réseau de suivi ichtyologique. C'est pour l'instant la mention la plus à l'est de sa distribution.",
+          "en": "It was first caught at Lac Saint-François in 2022, through the provincial fish monitoring network. That is for now the easternmost record of its distribution."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "gardon-rouge",
+    "name": {
+      "fr": "Gardon rouge",
+      "en": "Rudd"
+    },
+    "scientificName": "Scardinius erythrophthalmus",
+    "otherNames": {
+      "fr": "Gardon rotengle",
+      "en": "Rudd"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-gardon-rouge",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "15 à 25 cm — peut atteindre 50 cm",
+          "en": "15 to 25 cm — can reach 50 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "D'avril à août, quand l'eau atteint 14 à 20 °C; 100 000 à 200 000 œufs par année",
+          "en": "April to August, once the water reaches 14 to 20 °C; 100,000 to 200,000 eggs per year"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Il ressemble beaucoup au méné jaune, mais atteint de plus grandes tailles. Le méné jaune adulte a une carène sans écaille, alors que le ventre du gardon rouge est couvert d'écailles.",
+          "en": "It closely resembles golden shiner, but reaches larger sizes. Adult golden shiner has a scaleless keel, where rudd's belly is covered in scales."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson benthique, régulier en eau douce mais capable de vivre en eau saumâtre. Il fréquente les eaux calmes à forte proportion de végétation. L'adulte mange surtout de la végétation aquatique et des insectes qu'il chasse en surface.",
+          "en": "A benthic fish, regular in fresh water but able to live in brackish water. It uses calm water with abundant vegetation. Adults eat mostly aquatic plants and insects taken at the surface."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est établie au Québec, dans les régions de Montréal, de Laval et de la Montérégie. Sa présence doit être signalée.",
+          "en": "The species is established in Quebec, in the Montreal, Laval and Montérégie regions. Sightings must be reported."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "poisson-rouge",
     "name": {
       "fr": "Poisson rouge",
@@ -1672,6 +2946,91 @@
         "body": {
           "fr": "Parmi les espèces aquatiques envahissantes, c'est celle qui s'établit le mieux durablement. Elle est établie autour de Montréal et dans des plans d'eau près de Québec et de Lévis, surtout dans les petits cours d'eau.",
           "en": "Among invasive aquatic species it is the one that establishes most durably. It is established around Montreal and in water bodies near Quebec City and Lévis, mostly in smaller waters."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "crapet-vert",
+    "name": {
+      "fr": "Crapet vert",
+      "en": "Green sunfish"
+    },
+    "scientificName": "Lepomis cyanellus",
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-crapet-vert",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "20 cm en moyenne — jusqu'à près de 30 cm",
+          "en": "20 cm on average — up to nearly 30 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En mai, parfois tard en été dans le nord de l'aire",
+          "en": "In May, sometimes into late summer in the north of the range"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Insectes, larves aquatiques, gastéropodes, crustacés, poissons",
+          "en": "Insects, aquatic larvae, gastropods, crustaceans, fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Un volet operculaire à partie centrale noire et marge toujours plus pâle, blanche ou jaune — parfois un peu de rouge chez les jeunes. Le crapet de roche porte une vague tache qui n'atteint pas le bord.",
+          "en": "An opercular flap with a black centre and a consistently paler margin, white or yellow — sometimes with a little red in young fish. Rock bass shows a vague blotch that does not reach the edge."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il cherche les milieux calmes : étangs, petits lacs et sections tranquilles de cours d'eau, souvent là où la végétation aquatique est bien établie. L'achigan à grande bouche s'en nourrit.",
+          "en": "It seeks calm water: ponds, small lakes and quiet stretches of streams, often where aquatic vegetation is well established. Largemouth bass prey on it."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Neuf crapets verts ont été rapportés en 2007 dans le cours principal de la rivière Yamaska, et trois autres dans un marais d'un bras secondaire.",
+          "en": "Nine green sunfish were reported in 2007 in the main stem of the Yamaska River, and three more in a marsh on a side channel."
         }
       }
     ],
@@ -1915,6 +3274,194 @@
         "body": {
           "fr": "L'espèce est susceptible d'être désignée menacée ou vulnérable au Québec.",
           "en": "The species is likely to be designated threatened or vulnerable in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "fouille-roche-gris",
+    "name": {
+      "fr": "Fouille-roche gris",
+      "en": "Channel darter"
+    },
+    "scientificName": "Percina copelandi",
+    "otherNames": {
+      "fr": "Dard gris",
+      "en": "Channel darter"
+    },
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-fouille-roche-gris",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "5 à 8 cm",
+          "en": "5 to 8 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De mai à juillet, sur roches et gravier avec un peu de sable",
+          "en": "May to July, over rock and gravel with a little sand"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Surtout des insectes — larves d'éphémères et de moucherons — plus des algues et des débris végétaux",
+          "en": "Mostly insects — mayfly and midge larvae — plus algae and plant debris"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "On peut le confondre avec le raseux-de-terre noir et le raseux-de-terre gris. Ses taches latérales sont surtout rondes et souvent unies par une ligne noire, et sa queue est légèrement fourchue.",
+          "en": "It can be confused with the tessellated and Iowa darters. Its flank blotches are mostly round and often joined by a black line, and its tail is slightly forked."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "On l'observe dans des habitats très variés, du fleuve Saint-Laurent jusqu'à de petits ruisseaux. En rivière et en petit cours d'eau, il est souvent associé à un substrat mixte de sable et de gravier.",
+          "en": "It turns up in a wide range of habitats, from the St. Lawrence down to small brooks. In rivers and small streams it is often associated with mixed sand and gravel substrate."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il est rare, et sa répartition au Québec est isolée des autres populations d'Amérique du Nord. Des échantillonnages laissent croire que certaines populations auraient disparu.",
+          "en": "It is rare, and its Quebec distribution is isolated from other North American populations. Sampling suggests some populations may have disappeared."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "dard-de-sable",
+    "name": {
+      "fr": "Dard de sable",
+      "en": "Eastern sand darter"
+    },
+    "scientificName": "Ammocrypta pellucida",
+    "otherNames": {
+      "fr": "Dard de sable du Nord",
+      "en": "Eastern sand darter"
+    },
+    "status": {
+      "fr": "Menacée",
+      "en": "Threatened"
+    },
+    "source": "qc-fiche-dard-sable",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "4 à 5 cm — jusqu'à environ 8 cm",
+          "en": "4 to 5 cm — up to about 8 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Généralement moins de 2 g",
+          "en": "Generally under 2 g"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "D'avril à août dans l'aire; au Québec, peut-être vers la fin juin",
+          "en": "April to August across the range; in Quebec, possibly toward late June"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Substrat bien oxygéné, principalement du sable",
+          "en": "Well-oxygenated substrate, mostly sand"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses deux nageoires dorsales sont incolores et nettement séparées, sa forme est allongée, et il est pratiquement transparent — c'est ce qui le sépare du dard à ventre jaune et du dard barré.",
+          "en": "Its two dorsal fins are colourless and clearly separated, its shape is elongate, and it is nearly transparent — that is what separates it from yellowbelly and barred darters."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson sédentaire, il s'enfouit dans le sable et ne laisse dépasser que ses yeux, à l'affût. Ça le cache des prédateurs et lui épargne l'énergie de nager dans le courant.",
+          "en": "A sedentary fish, it buries itself in sand leaving only its eyes exposed, waiting. That hides it from predators and spares it the energy of swimming in current."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Peu de données existent sur la taille des populations, et les tendances sont difficiles à dégager. Les inventaires récents ont confirmé sa présence dans tous les sites historiques.",
+          "en": "Little data exists on population size, and trends are hard to establish. Recent surveys confirmed its presence at all historical sites."
         }
       }
     ],

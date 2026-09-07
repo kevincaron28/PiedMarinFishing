@@ -85,6 +85,12 @@ esc, pick, bilingual, section = pages.esc, pages.pick, pages.bilingual, pages.se
 clamp_title, long_date = pages.clamp_title, pages.long_date
 
 
+_uspec = importlib.util.spec_from_file_location(
+    "units", os.path.join(REPO, "tools", "units.py"))
+units = importlib.util.module_from_spec(_uspec)
+_uspec.loader.exec_module(units)
+
+
 def load(name):
     with io.open(os.path.join(REPO, "data", name), encoding="utf-8") as fh:
         return json.load(fh)
@@ -257,9 +263,14 @@ def marks_html(sp):
     on cherche une valeur, on ne lit pas un paragraphe."""
     rows = []
     for m in marks_of(sp):
+        # Le métrique reste la seule valeur enregistrée; l'impérial est
+        # calculé ici. Écrire les deux dans data/ garantirait qu'ils finissent
+        # par se contredire, et c'est le chiffre du bateau qu'on lirait mal.
+        value = {lang: units.convert(pick(m.get("value"), lang), lang)
+                 for lang in ("fr", "en")}
         rows.append('<div class="event-spec"><span class="event-spec-label">%s</span>%s</div>'
                     % (bilingual("span", m.get("label")),
-                       bilingual("span", m.get("value"), "event-spec-value")))
+                       bilingual("span", value, "event-spec-value")))
     return '<div class="event-specs tp-specs">%s</div>' % "".join(rows) if rows else ""
 
 

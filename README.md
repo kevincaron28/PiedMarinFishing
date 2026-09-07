@@ -123,6 +123,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-tournament-pages.py` | writes `tournois/*.html` from `data/quebec-tournaments.json`, and the index `data/tournament-pages.json` |
 | `tools/build-profile-pages.py` | writes `pecheurs/*.html` and `bateaux/*.html` from `data/team-members.json` and `data/boats.json` |
 | `tools/build-catch-pages.py` | writes `prises/*.html` for the catches that clear the threshold, from `data/catches.json` |
+| `tools/units.py` | metric → imperial for the species sheets: cm→in, m→ft/in, kg→lb, g→oz or lb |
 | `tools/import-qc-species.py` | reads a quebec.ca species page saved as `.mht` and prints its facts — the only way to read a source from this workspace |
 | `tools/build-species-pages.py` | writes `especes/*.html` for the species whose claims are **verified**, from `data/species.json` and `data/sources.json` |
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
@@ -824,6 +825,30 @@ Two details worth keeping:
 - When the sheet's own source already appears in the numbered citation list
   (species that carry hand-written claims), the origin paragraph drops its
   citation text rather than printing the same reference twice in a row.
+
+### Imperial units are computed, never stored
+
+The ministry publishes in centimetres and kilograms. On a boat in Quebec people
+talk in inches and pounds. Writing both into `data/species.json` would
+guarantee they eventually contradict each other — and it is the boat number
+that would be read wrong. So the metric value stays the only stored value and
+`tools/units.py` appends the conversion at build time.
+
+Four rules earned by looking at the output:
+
+- **Ranges are converted before single values, and held aside as tokens.**
+  Without that, `25 à 113 cm` became `25 à 113 cm (44 po) (10 à 44 po)`, the
+  single-value pass having found `113 cm` inside its own output.
+- **Metres become feet-and-inches under 3 m, whole feet above.** Under 3 m is
+  fish scale, and `4 pi 11 po` is what gets said out loud, not `4,9 pi`. Above
+  it is a depth, where `147 pi 8 po` would be invented precision.
+- **Inches carry one decimal under 3 in.** `4 à 5 cm` was rendering as
+  `2 à 2 po`.
+- **Grams become pounds past 454 g.** `600 g (21,2 oz)` is exact and useless to
+  someone who weighs fish.
+
+Temperatures, conservation ranks (`S4`), egg counts and years are left alone —
+`tools/units.py` run directly prints its own test cases.
 
 ### Reading a source from inside this workspace
 
