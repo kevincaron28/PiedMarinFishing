@@ -1202,5 +1202,74 @@
       "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
       "date": "2026-09-07"
     }
+  },
+  {
+    "id": "g3e-malachigan",
+    "kind": "ngo",
+    "authors": "Groupe d'éducation et d'écosurveillance de l'eau (G3E)",
+    "year": "2025",
+    "title": {
+      "fr": "Malachigan — Les capsules du G3E",
+      "en": "Freshwater drum — G3E capsules"
+    },
+    "publisher": {
+      "fr": "G3E",
+      "en": "G3E"
+    },
+    "url": "https://www.g3e-ewag.ca/ressources-interactives/capsules/biologie/faune/poissons/malachigan.html",
+    "covers": {
+      "fr": "Identification, habitat, reproduction, alimentation. Organisme d'éducation à l'eau, pas une source gouvernementale.",
+      "en": "Identification, habitat, reproduction, diet. A water-education non-profit, not a government source."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "decclic-malachigan",
+    "kind": "edu",
+    "authors": "Réseau d'enseignement et d'apprentissage (DECclic) — cours de biologie 101-NYA-05",
+    "year": "s.d.",
+    "title": {
+      "fr": "Fiche descriptive du malachigan",
+      "en": "Freshwater drum species sheet"
+    },
+    "publisher": {
+      "fr": "DECclic — Dec virtuel",
+      "en": "DECclic — Dec virtuel"
+    },
+    "url": "http://rea.decclic.qc.ca/dec_virtuel/Biologie/101-NYA-05/Cellule_et_evolution/3.Evolution_et_ecologie/Ecosysteme/malachigan/fchdesmalachigan.htm",
+    "covers": {
+      "fr": "Description, alimentation, habitat. Support de cours collégial.",
+      "en": "Description, diet, habitat. A college course resource."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "bestioles-malachigan",
+    "kind": "web",
+    "authors": "Bestioles.ca",
+    "year": "s.d.",
+    "title": {
+      "fr": "Le malachigan est un poisson d'eau douce",
+      "en": "The freshwater drum"
+    },
+    "publisher": {
+      "fr": "Bestioles.ca",
+      "en": "Bestioles.ca"
+    },
+    "url": "https://www.bestioles.ca/poissons/malachigans.html",
+    "covers": {
+      "fr": "Taille, poids, reproduction. Site généraliste — retenu seulement là où il recoupe les deux autres.",
+      "en": "Size, weight, reproduction. A general-interest site — used only where it agrees with the other two."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
   }
 ]

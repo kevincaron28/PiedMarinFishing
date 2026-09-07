@@ -361,7 +361,17 @@ def source_html(sp, sources, ui, order=()):
     # existe, dire que TOUT vient du ministère serait faux — et c'est
     # exactement le genre de fausse attribution que la barrière existe pour
     # empêcher, dans l'autre sens.
-    key = "sp.sourceNoteField" if pick(sp.get("field"), "fr") else "sp.sourceNote"
+    # Une espèce sans fiche gouvernementale ne peut pas porter la même note que
+    # les 46 autres. Le dire est plus important que d'avoir la fiche : un
+    # lecteur qui voit partout « source : gouvernement du Québec » supposerait
+    # que celle-ci aussi, et c'est exactement la fausse attribution qu'on
+    # refuse depuis le début.
+    if sp.get("noGov"):
+        key = "sp.sourceNoteNoGov"
+    elif pick(sp.get("field"), "fr"):
+        key = "sp.sourceNoteField"
+    else:
+        key = "sp.sourceNote"
     note = {lang: ui[lang][key].replace("{date}", long_date(when, lang) or when)
             for lang in ("fr", "en")}
     link = ""
@@ -424,8 +434,18 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None):
         body.append(section({"fr": ui["fr"]["sp.science"], "en": ui["en"]["sp.science"]},
                             claims, key="sp.science"))
 
-    origin = source_html(sp, sources, ui, order)
-    srcs = sources_html(sources, order, ui)
+    # Quand une fiche est batie sur plusieurs sources croisees, elles doivent
+    # TOUTES apparaitre : dire « selon le G3E » en cachant les deux autres
+    # laisserait croire a une source unique la ou il y en a trois qui
+    # s'accordent — et c'est precisement l'accord qui donne sa valeur au
+    # chiffre publie.
+    extra = [x for x in ([sp.get("source")] + (sp.get("alsoSources") or []))
+             if x and x in sources and x not in order]
+    listed = order + extra
+    # source_html doit voir la liste FINALE, sinon il reecrit en tete une
+    # citation que la liste numerotee donne juste en dessous.
+    origin = source_html(sp, sources, ui, listed)
+    srcs = sources_html(sources, listed, ui)
     body.append(section({"fr": ui["fr"]["sp.sources"], "en": ui["en"]["sp.sources"]},
                         origin + srcs, alt=not bool(field), key="sp.sources"))
 
