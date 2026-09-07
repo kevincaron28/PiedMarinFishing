@@ -754,6 +754,28 @@ error this split exists to prevent. JSON-LD is `Article`
 declares only what is true: no invented publication date, and no author unless
 the angler is on the roster.
 
+### The solunar times are location-aware, and the location is never ours
+
+Kevin asked whether the lunar calendar could be tuned to our fishing zone. It
+could, and it would buy nothing. Measured across zone 8, west end to east:
+sunrise moves 4 to 7 minutes, the moon's transit 0 to 4. That is less than the
+precision of the short-series ephemeris itself, and nothing against a solunar
+window one to two hours wide.
+
+It would also publish, in a public repository, the one thing this project has
+protected from the first session: where the crew actually fishes.
+
+So the reference points are four public towns along the corridor — Valleyfield,
+Montréal, Sorel-Tracy, Trois-Rivières — and the visitor can substitute their own
+position through the browser's geolocation API. That position is written to
+their own `localStorage` and nowhere else: the site has no server, so there is
+nothing for it to reach. An angler on the water gets times exact for where he
+is; the repository still says nothing about where that is.
+
+All three paths are tested: default, a chosen reference point (persisting across
+a reload), a granted location, and a declined one — the calendar keeps working
+in every case.
+
 ### Regulations live on the fish, not on a page of their own
 
 There was a `reglementation.html`. It is gone, on Kevin's call: *"je pense pas

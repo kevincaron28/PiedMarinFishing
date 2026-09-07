@@ -12,8 +12,28 @@
 
 const PMF_SKY = (function () {
   const RAD = Math.PI / 180;
-  const LAT = 45.5019, LON = -73.5674;          // Montréal
   const J2000 = Date.UTC(2000, 0, 1, 12) / 86400000;
+
+  // POINTS DE RÉFÉRENCE — publics, jamais notre secteur.
+  //
+  // Mesuré d'un bout à l'autre de la zone 8 : l'écart sur le lever du soleil
+  // est de 4 à 7 minutes, et de 0 à 4 minutes sur le passage de la Lune au
+  // méridien. C'est moins que la précision de l'éphéméride elle-même, et sans
+  // commune mesure avec des fenêtres solunaires d'une à deux heures.
+  //
+  // Coder les coordonnées de notre secteur ne gagnerait donc rien d'utile, et
+  // publierait sur un dépôt public exactement ce qu'on protège depuis le
+  // début. Le pêcheur qui veut ses vraies heures utilise plutôt sa propre
+  // position : elle reste dans SON navigateur et ne touche jamais le site.
+  const PLACES = [
+    { id: "valleyfield", name: "Valleyfield", lat: 45.25, lon: -74.13 },
+    { id: "montreal", name: "Montréal", lat: 45.5019, lon: -73.5674 },
+    { id: "sorel", name: "Sorel-Tracy", lat: 46.04, lon: -73.11 },
+    { id: "trois-rivieres", name: "Trois-Rivières", lat: 46.34, lon: -72.55 },
+  ];
+  const DEFAULT = PLACES[1];
+  let LAT = DEFAULT.lat, LON = DEFAULT.lon;
+  let placeLabel = DEFAULT.name;
 
   const sin = (d) => Math.sin(d * RAD), cos = (d) => Math.cos(d * RAD);
   const norm = (d) => ((d % 360) + 360) % 360;
@@ -162,8 +182,17 @@ const PMF_SKY = (function () {
     return { periods: periods, moon: m, sun: events(sun, dayStart, -0.833) };
   }
 
+  function setPlace(p) {
+    if (!p || typeof p.lat !== "number" || typeof p.lon !== "number") return;
+    LAT = p.lat; LON = p.lon;
+    placeLabel = p.name || "";
+  }
+
   return {
-    place: { lat: LAT, lon: LON, name: "Montréal" },
+    places: PLACES,
+    defaultPlace: DEFAULT,
+    setPlace,
+    place: () => ({ lat: LAT, lon: LON, name: placeLabel }),
     solunar,
     sun: (dayStart) => events(sun, dayStart, -0.833),
     moon: (dayStart) => events(moon, dayStart, 0.125),

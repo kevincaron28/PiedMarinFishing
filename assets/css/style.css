@@ -3019,3 +3019,13 @@ body.has-lightbox { overflow: hidden; }
 .sol-time { font-size: 0.95rem; color: var(--ink-600); }
 .sol-place { margin-top: 12px; font-size: 0.85rem; line-height: 1.5; color: var(--ink-600); }
 .moon-what { margin: 26px 0 6px; font-size: 1.05rem; color: var(--ink-900); }
+
+/* Choix du lieu pour les heures solunaires. */
+.sky-place { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-top:20px; max-width:520px; }
+.sky-place-label { font-size:.85rem; font-weight:700; color:var(--ink-900); }
+.sky-place select {
+  min-height:40px; padding:6px 10px;
+  border:1px solid var(--line); border-radius:10px;
+  background:var(--white); color:var(--ink-900); font:inherit; font-size:.9rem;
+}
+.sky-locate { min-height:40px; padding:6px 14px; font-size:.85rem; }

@@ -20,6 +20,70 @@ async function initMoonCalendar(rootSelector) {
   let shown = new Date(today.getFullYear(), today.getMonth(), 1, 12);
   let picked = new Date(today);
 
+  // LE LIEU. Quatre points publics du corridor, plus la position du visiteur
+  // s'il l'accorde. Sa position n'est ni envoyée ni enregistrée ailleurs que
+  // dans son propre navigateur — le site n'a aucun serveur, et de toute façon
+  // ce n'est pas notre affaire de savoir d'où quelqu'un pêche.
+  const PLACE_KEY = "pmf-sky-place";
+  let custom = null;
+  function restorePlace() {
+    if (typeof PMF_SKY === "undefined") return;
+    try {
+      const raw = localStorage.getItem(PLACE_KEY);
+      if (!raw) return;
+      const saved = JSON.parse(raw);
+      if (saved && saved.mine && typeof saved.lat === "number") {
+        custom = { lat: saved.lat, lon: saved.lon, name: t("sky.mine") };
+        PMF_SKY.setPlace(custom);
+        return;
+      }
+      const p = PMF_SKY.places.find((x) => x.id === saved.id);
+      if (p) PMF_SKY.setPlace(p);
+    } catch (e) { /* navigation privée, ou stockage bloqué */ }
+  }
+  function rememberPlace(value) {
+    try { localStorage.setItem(PLACE_KEY, JSON.stringify(value)); } catch (e) { /* ignore */ }
+  }
+
+  function placeHtml() {
+    if (typeof PMF_SKY === "undefined") return "";
+    const now = PMF_SKY.place();
+    const opts = PMF_SKY.places.map((p) =>
+      `<option value="${escapeHTML(p.id)}"${p.name === now.name ? " selected" : ""}>${
+        escapeHTML(p.name)}</option>`).join("");
+    const mine = custom
+      ? `<option value="__mine" selected>${escapeHTML(t("sky.mine"))}</option>` : "";
+    return `<div class="sky-place">
+  <label class="sky-place-label" for="sky-place">${escapeHTML(t("sky.placeLabel"))}</label>
+  <select id="sky-place" data-sky-place>${opts}${mine}</select>
+  <button type="button" class="btn btn-ghost sky-locate" data-sky-locate>${
+    escapeHTML(t("sky.locate"))}</button>
+</div>`;
+  }
+
+  function bindPlace() {
+    const sel = root.querySelector("[data-sky-place]");
+    if (sel) sel.addEventListener("change", () => {
+      const p = PMF_SKY.places.find((x) => x.id === sel.value);
+      if (p) { custom = null; PMF_SKY.setPlace(p); rememberPlace({ id: p.id }); render(); }
+    });
+    const btn = root.querySelector("[data-sky-locate]");
+    if (btn) btn.addEventListener("click", () => {
+      if (!navigator.geolocation) { btn.textContent = t("sky.locateNo"); return; }
+      btn.disabled = true;
+      btn.textContent = t("sky.locating");
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          custom = { lat: pos.coords.latitude, lon: pos.coords.longitude, name: t("sky.mine") };
+          PMF_SKY.setPlace(custom);
+          rememberPlace({ mine: true, lat: custom.lat, lon: custom.lon });
+          render();
+        },
+        () => { btn.disabled = false; btn.textContent = t("sky.locateNo"); },
+        { timeout: 8000, maximumAge: 600000 });
+    });
+  }
+
   function iso(d) {
     return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0")
       + "-" + String(d.getDate()).padStart(2, "0");
@@ -58,7 +122,8 @@ async function initMoonCalendar(rootSelector) {
 <div class="event-specs tp-specs">${specs}</div>
 <p class="sol-head">${escapeHTML(t("sky.periods"))}</p>
 <ul class="sol-list">${periods}</ul>
-<p class="sol-place">${escapeHTML(t("sky.place"))}</p>`;
+<p class="sol-place">${escapeHTML(
+      t("sky.placeNote", { place: PMF_SKY.place().name }))}</p>`;
   }
 
   function render() {
@@ -98,7 +163,9 @@ async function initMoonCalendar(rootSelector) {
   <button type="button" class="moon-nav" data-moon-next aria-label="${escapeHTML(t("moon.next"))}">→</button>
 </div>
 <div class="moon-grid">${dows.join("")}${cells.join("")}</div>
-<div class="moon-detail">${detailHtml(picked)}</div>`;
+<div class="moon-detail">${detailHtml(picked)}</div>
+${placeHtml()}`;
+    bindPlace();
     root.querySelectorAll("[data-day]").forEach((btn) => {
       btn.addEventListener("click", () => {
         picked = new Date(shown.getFullYear(), shown.getMonth(),
@@ -114,6 +181,7 @@ async function initMoonCalendar(rootSelector) {
     });
   }
 
+  restorePlace();
   PMF_I18N.onChange(render);
   render();
 }
