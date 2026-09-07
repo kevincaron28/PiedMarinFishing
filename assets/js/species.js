@@ -83,12 +83,29 @@ async function initGeneralRules(selector) {
   render();
 }
 
-async function initSpecies(gridSelector, countSelector) {
+// Le statut officiel range les 47 fiches en trois familles sans qu'on ait à
+// juger quoi que ce soit : le gouvernement l'a déjà écrit. On lit la valeur
+// FRANÇAISE plutôt que la traduite — la carte doit tomber dans le même groupe
+// dans les deux langues, et « invasive » ne contient pas « envahissant ».
+function frValue(v) {
+  return (v && typeof v === "object" ? v.fr || v.en : v) || "";
+}
+
+const SPECIES_GROUPS = [
+  { id: "sportive", key: "sp.groupSport", openByDefault: true,
+    match: (s) => !frValue(s.status) },
+  { id: "statut", key: "sp.groupStatus",
+    match: (s) => frValue(s.status) && !/envahissant/i.test(frValue(s.status)) },
+  { id: "envahissante", key: "sp.groupInvasive",
+    match: (s) => /envahissant/i.test(frValue(s.status)) },
+];
+
+async function initSpecies(gridSelector, countSelector, searchSelector, navSelector) {
   const grid = document.querySelector(gridSelector);
   if (!grid) return;
 
   await PMF_I18N.ready;
-  const { t, tr, key } = PMF_I18N;
+  const { t, tr, plural } = PMF_I18N;
 
   let species = [];
   let published = [];
@@ -104,31 +121,127 @@ async function initSpecies(gridSelector, countSelector) {
   const live = new Set(Array.isArray(published) ? published : []);
   const list = (Array.isArray(species) ? species : []).filter((s) => s && live.has(s.id));
 
-  function render() {
-    const count = document.querySelector(countSelector);
-    if (count) count.textContent = t("sp.indexCount", { n: list.length });
-    if (!list.length) {
-      grid.innerHTML = "";
-      return;
-    }
-    grid.innerHTML = list.map((s) => {
-      const status = tr(s.status);
-      // Deux repères en aperçu : la taille et ce qui vient après. Toute la
-      // grille tiendrait sur la carte, mais on ne lit pas une carte, on la
-      // balaie — et la fiche est à un clic.
-      const marks = (s.marks || []).filter((m) => tr(m.value)).slice(0, 2);
-      const rows = marks.map((m) =>
-        `<div class="sp-card-mark"><span>${escapeHTML(tr(m.label))}</span>${
-          escapeHTML(tr(m.value))}</div>`).join("");
-      return `<a class="sp-card" href="especes/${escapeHTML(s.id)}.html">
+  const search = searchSelector ? document.querySelector(searchSelector) : null;
+  const nav = navSelector ? document.querySelector(navSelector) : null;
+
+  // « walleye », « doré jaune » et « Sander vitreus » doivent tous mener au
+  // doré, quelle que soit la langue affichée. tr() ne rend que la langue
+  // courante : chercher « walleye » en français ne trouvait rien. On aplatit
+  // donc les DEUX côtés de chaque champ bilingue.
+  function bothLangs(v) {
+    if (!v) return [];
+    if (typeof v === "object") return [v.fr || "", v.en || ""];
+    return [String(v)];
+  }
+  function haystack(s) {
+    return [s.name, s.status]
+      .concat(s.otherNames || [])
+      .map(bothLangs)
+      .flat()
+      .concat([s.scientificName || ""])
+      .join(" ")
+      .toLowerCase();
+  }
+
+  function card(s) {
+    const status = tr(s.status);
+    // Deux repères en aperçu : la taille et ce qui vient après. Toute la
+    // grille tiendrait sur la carte, mais on ne lit pas une carte, on la
+    // balaie — et la fiche est à un clic.
+    const marks = (s.marks || []).filter((m) => tr(m.value)).slice(0, 2);
+    const rows = marks.map((m) =>
+      `<div class="sp-card-mark"><span>${escapeHTML(tr(m.label))}</span>${
+        escapeHTML(tr(m.value))}</div>`).join("");
+    return `<a class="sp-card" href="especes/${escapeHTML(s.id)}.html">
   <span class="sp-card-name">${escapeHTML(tr(s.name))}</span>
   ${s.scientificName ? `<em class="sp-card-sci">${escapeHTML(s.scientificName)}</em>` : ""}
   ${status ? `<span class="sp-card-status">${escapeHTML(status)}</span>` : ""}
   ${rows}
 </a>`;
+  }
+
+  function render() {
+    const q = (search ? search.value : "").trim().toLowerCase();
+    const shown = q ? list.filter((s) => haystack(s).indexOf(q) !== -1) : list;
+
+    const count = document.querySelector(countSelector);
+    if (count) count.textContent = t("sp.indexCount", { n: list.length });
+
+    if (nav) {
+      // Les liens rapides suivent le filtre : pointer vers un groupe vide
+      // ferait défiler vers rien, ce qui se lit comme un lien cassé.
+      const chips = SPECIES_GROUPS
+        .map((g) => [g, shown.filter(g.match).length])
+        .filter(([, n]) => n > 0)
+        .map(([g, n]) => `<a class="sp-chip" href="especes.html#sp-${g.id}">${
+          escapeHTML(t(g.key))} <span class="sp-chip-n">${n}</span></a>`);
+      nav.innerHTML = chips.join("");
+      nav.hidden = chips.length < 2;
+    }
+
+    if (!shown.length) {
+      grid.innerHTML = `<p class="empty-state">${escapeHTML(t("sp.empty"))}</p>`;
+      return;
+    }
+
+    // Trois titres et trois intros ajoutaient 1,4 écran à une page dont le
+    // reproche était justement la longueur. Repliés comme les mois du guide,
+    // les deux groupes qu'on ne parcourt pas la ramènent sous la moitié. Une
+    // recherche rouvre tout ce qu'elle touche, sinon ses résultats seraient
+    // cachés derrière un titre fermé.
+    // Changer de langue reconstruit la grille : sans ça, un groupe qu'on vient
+    // d'ouvrir se refermait au clic sur EN, ce qui se lit comme un bogue.
+    const openNow = new Set([...grid.querySelectorAll(".sp-group[open]")]
+      .map((el) => el.id.replace(/^sp-/, "")));
+
+    grid.innerHTML = SPECIES_GROUPS.map((g) => {
+      const members = shown.filter(g.match);
+      if (!members.length) return "";
+      const wasOpen = openNow.has(g.id);
+      const open = q || (openNow.size ? wasOpen : g.openByDefault) ? " open" : "";
+      return `<details class="sp-group" id="sp-${g.id}"${open}>
+  <summary class="sp-group-head">
+    <h2>${escapeHTML(t(g.key))}</h2>
+    <span class="sp-group-count">${escapeHTML(plural("sp.groupCount", members.length))}</span>
+  </summary>
+  <p class="tp-notes sp-group-note">${escapeHTML(t(g.key + "Note"))}</p>
+  <div class="sp-grid">${members.map(card).join("")}</div>
+</details>`;
     }).join("");
   }
 
+  // Une pastille qui mène à un groupe replié dépose le visiteur sur un titre
+  // fermé — il croit que le groupe est vide. On l'ouvre avant d'y aller.
+  if (nav) {
+    nav.addEventListener("click", (e) => {
+      const chip = e.target.closest(".sp-chip");
+      if (!chip) return;
+      const box = document.getElementById(chip.getAttribute("href").split("#")[1]);
+      if (box) box.open = true;
+    });
+  }
+
+  // Un lien partagé vers #sp-statut arrive avant que la grille existe : le
+  // navigateur ne trouve rien, puis la grille se construit et le groupe reste
+  // fermé. On refait le saut une fois le rendu fait, sans animation au
+  // chargement puisque le visiteur n'a encore rien vu bouger.
+  function openHashGroup(atLoad) {
+    const id = (location.hash || "").slice(1);
+    if (!/^sp-/.test(id)) return;
+    const box = document.getElementById(id);
+    if (!box) return;
+    box.open = true;
+    const header = document.querySelector(".site-header");
+    const offset = (header ? header.getBoundingClientRect().height : 0) + 10;
+    window.scrollTo({
+      top: Math.max(0, box.getBoundingClientRect().top + window.scrollY - offset),
+      behavior: atLoad ? "auto" : "smooth",
+    });
+  }
+  window.addEventListener("hashchange", () => openHashGroup(false));
+
+  if (search) search.addEventListener("input", render);
   PMF_I18N.onChange(render);
   render();
+  openHashGroup(true);
 }

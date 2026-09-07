@@ -60,7 +60,6 @@
 
 <div class="page-header">
   <div class="container">
-    <span class="kicker" data-species-count></span>
     <h1 data-i18n="sp.index">Les espèces du fleuve</h1>
     <p class="tp-notes" data-i18n="sp.indexIntro">On consulte ces fiches avant de viser une espèce : la profondeur où elle se tient, la température qu'elle cherche, quand elle fraie, et comment la distinguer de celle qui lui ressemble. Tout vient des fiches officielles du gouvernement du Québec, avec la date à laquelle on les a lues.</p>
   </div>
@@ -68,7 +67,12 @@
 
 <section>
   <div class="container">
-    <div class="sp-grid" data-species-grid></div>
+    <div class="filters">
+      <input id="sp-search" type="text" data-i18n-placeholder="sp.search" data-i18n-aria-label="sp.searchLabel" placeholder="Rechercher une espèce…" aria-label="Rechercher une espèce">
+      <span class="result-count" data-species-count></span>
+    </div>
+    <nav class="sp-nav" data-species-nav hidden data-i18n-aria-label="sp.jumpLabel" aria-label="Aller à un groupe"></nav>
+    <div data-species-grid></div>
   </div>
 </section>
 
@@ -95,7 +99,8 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/species.js"></script>
 <script>
-  initSpecies("[data-species-grid]", "[data-species-count]");
+  initSpecies("[data-species-grid]", "[data-species-count]",
+              "#sp-search", "[data-species-nav]");
   initGeneralRules("[data-general-rules]");
 </script>
 </body>

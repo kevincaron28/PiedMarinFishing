@@ -2890,6 +2890,53 @@ body.has-lightbox { overflow: hidden; }
 }
 .reg-src a { color: var(--ink-600); }
 
+/* Index des espèces : liens rapides et groupes. */
+.sp-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: -10px 0 26px; }
+/* Volontairement PAS la barre de mois du guide : trois pastilles tiennent sur
+   une ligne, alors elles se replient au lieu de défiler, et rien n'est collant. */
+.sp-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy-900);
+}
+.sp-chip:hover, .sp-chip:focus-visible {
+  text-decoration: none; border-color: var(--teal-400); color: var(--teal-600);
+}
+.sp-chip-n {
+  font-weight: 600; font-size: 0.72rem; color: var(--ink-600);
+  background: var(--sand-100); border-radius: 999px; padding: 1px 7px;
+}
+
+.sp-group { margin-bottom: 40px; }
+.sp-group:last-child { margin-bottom: 0; }
+/* L'en-tête est collant : sans cette marge, la pastille dépose le titre du
+   groupe dessous et on atterrit au milieu des cartes. */
+.sp-group { scroll-margin-top: 84px; }
+.sp-group-head {
+  display: flex; align-items: baseline; gap: 12px;
+  cursor: pointer; list-style: none; padding: 10px 0;
+  border-bottom: 1px solid var(--line); margin-bottom: 16px;
+}
+.sp-group-head::-webkit-details-marker { display: none; }
+.sp-group-head h2 { margin: 0; font-size: 1.35rem; }
+/* Le chevron dit qu'on peut ouvrir; il pivote quand c'est fait. */
+.sp-group-head::after {
+  content: "›"; margin-left: auto; font-size: 1.4rem; line-height: 1;
+  color: var(--ink-600); transform: rotate(90deg); transition: transform .18s ease;
+}
+.sp-group[open] > .sp-group-head::after { transform: rotate(-90deg); }
+.sp-group-head:hover h2 { color: var(--teal-600); }
+.sp-group-count { font-size: 0.85rem; color: var(--ink-600); white-space: nowrap; }
+.sp-group-note { margin-bottom: 18px; }
+
 /* Index des espèces. */
 .sp-grid {
   display: grid;

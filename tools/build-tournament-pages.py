@@ -119,15 +119,48 @@ def score_max(ev):
     return len(fields) + len(spec_fields)
 
 
-def qualifies(ev, by_id):
-    # Un circuit a toujours sa fiche, quel que soit son pointage : sa valeur
-    # vient de ce qu'il regroupe, pas de ses propres champs. « Programme Big
-    # Bass Québec » comptait sept étapes et aucune page où les voir ensemble.
-    # Même un circuit annulé mérite la sienne : « est-ce que ça roule cette
-    # année? » est exactement la question qu'on vient poser.
-    if ev.get("kind") == "circuit":
+def stop_count(ev, events):
+    return sum(1 for e in events if e.get("kind") == "stop"
+               and e.get("circuit") == ev.get("id"))
+
+
+def circuit_exempt(ev, events):
+    """Un circuit échappe au pointage pour l'une des deux raisons énoncées.
+
+    L'exemption disait « un circuit a toujours sa fiche », mais elle ne la
+    justifiait que de deux façons : la valeur vient de ce qu'il regroupe, et
+    un circuit annulé répond à « est-ce que ça roule cette année? ». Cinq des
+    huit circuits ne regroupent aucune étape; pour eux la première raison est
+    fausse, et « Backlash FC » en profitait pour publier une page sans date,
+    sans lieu, sans espèce, dont le texte entier dit d'aller voir ailleurs.
+    On vérifie donc la raison plutôt que de la supposer.
+    """
+    if ev.get("kind") != "circuit":
+        return False
+    return stop_count(ev, events) > 0 or ev.get("status") == "cancelled"
+
+
+# Une fiche doit pouvoir répondre à quelque chose que la carte du guide ne dit
+# pas déjà. Le pointage vérifie les faits; celui-ci vérifie qu'il reste une
+# phrase à lire. « 13e édition. » n'en est pas une, et c'était tout ce que la
+# fiche de Lavaltrie avait en propre. Un tableau bien rempli s'en passe : trois
+# lignes de détails valent le déplacement même sans texte.
+NOTES_MIN = 40
+SPECS_MIN = 3
+
+
+def has_substance(ev):
+    specs = ev.get("specs") or {}
+    filled = sum(1 for f in SPEC_FIELDS if pick(specs.get(f), "fr").strip())
+    return len(pick(ev.get("notes"), "fr").strip()) >= NOTES_MIN or filled >= SPECS_MIN
+
+
+def qualifies(ev, by_id, events):
+    if circuit_exempt(ev, events):
         return True
     if score(ev) < rubric(ev)[2]:
+        return False
+    if not has_substance(ev):
         return False
     if ev.get("kind") == "stop":
         parent = by_id.get(ev.get("circuit"))
@@ -138,6 +171,18 @@ def qualifies(ev, by_id):
 
 
 def qualifies_circuit(ev):
+    """Le circuit couvre-t-il assez ses étapes pour qu'elles s'effacent?
+
+    Volontairement distinct de circuit_exempt : celui-ci décide si le CIRCUIT
+    obtient une page, celui-là si ses ÉTAPES perdent la leur. Les coupler
+    supprimait sept étapes d'un coup, dont « Big Bass Challenge — Cornwall »
+    et ses 268 caractères de notes, au profit d'une ligne de tableau.
+
+    À revoir : la page d'un circuit ne liste ses étapes qu'en nom, date et
+    lieu — ni frais, ni épreuve, ni horaire, ni texte. « L'étape est déjà
+    détaillée sur la page de son circuit » n'est donc pas exact, et huit
+    étapes bien documentées s'effacent aujourd'hui sur cette base.
+    """
     return ev.get("kind") == "circuit" and score(ev) >= SCORE_MIN
 
 
@@ -452,7 +497,9 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
     parent = by_id.get(ev.get("circuit")) if ev.get("kind") == "stop" else None
     if parent:
         inner = bilingual("strong", parent.get("name"))
-        if qualifies_circuit(parent):
+        # Le lien existe si et seulement si la page existe : on regarde la
+        # liste retenue plutôt que de rejouer le seuil et risquer d'en diverger.
+        if any(k["id"] == parent["id"] for k in kept):
             inner = '<a href="tournois/%s.html">%s</a>' % (esc(parent["id"]), inner)
         body.append(section({"fr": ui["fr"]["tp.partOfTitle"], "en": ui["en"]["tp.partOfTitle"]},
                             '<p class="tp-parent">%s</p>' % inner, alt=True))
@@ -594,7 +641,7 @@ if __name__ == "__main__":
         if e.get("kind") == "stop" and e.get("circuit"):
             stops_of.setdefault(e["circuit"], []).append(e)
 
-    kept = [e for e in events if qualifies(e, by_id)]
+    kept = [e for e in events if qualifies(e, by_id, events)]
     if not os.path.isdir(OUT_DIR):
         os.makedirs(OUT_DIR)
 

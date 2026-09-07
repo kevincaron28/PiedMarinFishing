@@ -620,9 +620,14 @@ async function initEventList(options) {
 
     const undated = filtered.filter((e) => !seasonOf(e));
     if (undated.length) {
-      // Sans date, rien n'est passé : ce bloc reste ouvert.
+      // « Sans date, rien n'est passé » disait qu'il fallait le laisser ouvert.
+      // Mais on ne replie pas un mois parce qu'il est passé : on le replie
+      // parce qu'on ne planifie rien autour. Une date non publiée, c'est
+      // exactement ça — et ces douze entrées occupaient 7,5 écrans, 39 % du
+      // guide, devant les mois à venir. Le titre et le compte restent visibles,
+      // la barre de mois y mène toujours, et un filtre actif rouvre tout.
       out.push(block("m-undated", t("events.undatedTitle"), undated.length,
-        `<div class="event-list">${undated.map(renderCard).join("")}</div>`, false));
+        `<div class="event-list">${undated.map(renderCard).join("")}</div>`, !frozen));
       monthAnchors.push({ id: "m-undated", label: t("events.undatedShort"), state: "" });
     }
     return out.join("");
