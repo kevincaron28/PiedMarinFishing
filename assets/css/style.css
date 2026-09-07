@@ -2956,3 +2956,47 @@ body.has-lightbox { overflow: hidden; }
 }
 .sp-regs .reg-detail { margin: 8px 0 0; font-size: 0.92rem; line-height: 1.55; }
 .sp-regs .reg-note { margin-top: 18px; }
+
+/* Cartes de zone téléchargeables. */
+.reg-maps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 18px; }
+.reg-map {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--ink-600);
+}
+.reg-map:hover, .reg-map:focus-visible { border-color: var(--teal-400); }
+.reg-map-name { display: block; font-weight: 700; color: var(--ink-900); }
+.reg-map-kind { display: block; font-size: 0.85rem; color: var(--teal-600); font-weight: 600; }
+.reg-map-note { display: block; font-size: 0.85rem; margin-top: 4px; }
+
+/* Calendrier lunaire. */
+.moon-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; max-width: 520px; }
+.moon-month { font-weight: 700; color: var(--ink-900); text-transform: capitalize; }
+.moon-nav {
+  min-width: 40px; min-height: 40px;
+  border: 1px solid var(--line); border-radius: 10px;
+  background: var(--white); color: var(--ink-900);
+  font-size: 1.1rem; cursor: pointer;
+}
+.moon-nav:hover, .moon-nav:focus-visible { border-color: var(--teal-400); }
+.moon-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; max-width: 520px; }
+.moon-dow { text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--ink-600); padding-bottom: 2px; text-transform: uppercase; }
+.moon-cell {
+  min-height: 62px;
+  border: 1px solid var(--line); border-radius: 8px;
+  background: var(--white);
+  padding: 4px 2px; text-align: center;
+  display: flex; flex-direction: column; align-items: center; gap: 1px;
+}
+.moon-empty { border: 0; background: none; min-height: 0; }
+.moon-day { font-size: 0.75rem; font-weight: 700; color: var(--ink-900); }
+.moon-glyph { font-size: 1.05rem; line-height: 1.1; }
+.moon-name { font-size: 0.6rem; line-height: 1.1; color: var(--teal-600); font-weight: 700; }
+.moon-illum { font-size: 0.65rem; color: var(--ink-600); }
+.moon-key { border-color: var(--gold-400); background: var(--sand-100); }
+.moon-today { outline: 2px solid var(--teal-400); outline-offset: -2px; }
+.moon-note { margin-top: 18px; }

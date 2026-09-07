@@ -35,6 +35,21 @@ async function initGeneralRules(selector) {
     return (now.getFullYear() - d.getFullYear()) * 12 + (now.getMonth() - d.getMonth());
   }
 
+  function zonesHtml() {
+    // Les cartes officielles, servies depuis le site : sur le fleuve le
+    // signal tombe, et une carte de zone en PDF sur le telephone marche
+    // sans reseau. Le lien vers la page du gouvernement reste a cote, parce
+    // que c'est elle qui fait foi.
+    const zones = (data.zones || []).filter((z) => z.map);
+    if (!zones.length) return "";
+    return `<div class="reg-maps">` + zones.map((z) => `
+  <a class="reg-map" href="${escapeHTML(z.map)}" download>
+    <span class="reg-map-name">${escapeHTML(tr(z.name))}</span>
+    <span class="reg-map-kind">${escapeHTML(t("reg.mapKind"))}</span>
+    ${tr(z.note) ? `<span class="reg-map-note">${escapeHTML(tr(z.note))}</span>` : ""}
+  </a>`).join("") + `</div>`;
+  }
+
   function render() {
     const stale = monthsSince(data.updated) > (Number(data.staleAfterMonths) || 12);
     const link = (data.official && data.official.url)
@@ -42,9 +57,12 @@ async function initGeneralRules(selector) {
           escapeHTML(t("reg.official"))}</a>`
       : "";
     if (stale) {
+      // Les cartes de zone survivent a la peremption : les limites d'une zone
+      // ne changent pas d'une saison a l'autre, contrairement aux dates.
       root.innerHTML = `<div class="reg-stale" role="status"><p class="reg-stale-head">${
         escapeHTML(t("reg.staleTitle"))}</p><p>${
-        escapeHTML(t("reg.staleBody", { date: data.updated }))}</p><p>${link}</p></div>`;
+        escapeHTML(t("reg.staleBody", { date: data.updated }))}</p><p>${link}</p></div>`
+        + zonesHtml();
       return;
     }
     root.innerHTML =
@@ -57,6 +75,7 @@ async function initGeneralRules(selector) {
     ${tr(r.detail) ? `<p class="reg-detail">${escapeHTML(tr(r.detail))}</p>` : ""}
   </div>
 </div>`).join("") + `</div>` +
+      zonesHtml() +
       `<p class="reg-note">${escapeHTML(t("reg.disclaimer"))} ${link}</p>`;
   }
 

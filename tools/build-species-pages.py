@@ -378,31 +378,37 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None):
     regs = regs or {}
     order = cited(sp, sources)
 
+    # L'ORDRE COMPTE, et il a été mesuré. Les repères venaient après
+    # l'introduction : 425 px avant le premier chiffre sur un écran de 844, soit
+    # la moitié d'un écran brûlée avant ce qu'on est venu chercher. Et la
+    # réglementation arrivait cinquième, alors que « je peux-tu le garder? » est
+    # la deuxième question, pas la cinquième.
+    #
+    # Les chiffres d'abord, la règle ensuite, la prose après. Une fiche qu'on
+    # ouvre sur un bateau se lit de haut en bas une seule fois.
     body = []
-    intro = bilingual("p", sp.get("intro"), "tp-notes")
-    if intro:
-        body.append('<section><div class="container">%s</div></section>' % intro)
-
     marks = marks_html(sp)
     if marks:
         body.append(section({"fr": ui["fr"]["sp.marks"], "en": ui["en"]["sp.marks"]},
-                            marks, alt=True, key="sp.marks"))
+                            marks, key="sp.marks"))
+
+    reg = rules_html(sp, rules, zones, ui, regs)
+    if reg:
+        body.append(section({"fr": ui["fr"]["sp.rules"], "en": ui["en"]["sp.rules"]},
+                            reg, alt=True, key="sp.rules"))
 
     blocks = blocks_html(sp, ui)
     if blocks:
         body.append('<section><div class="container">%s</div></section>' % blocks)
 
+    intro = bilingual("p", sp.get("intro"), "tp-notes")
+    if intro:
+        body.append('<section class="alt"><div class="container">%s</div></section>' % intro)
+
     claims = claims_html(sp, sources, order)
     if claims:
         body.append(section({"fr": ui["fr"]["sp.science"], "en": ui["en"]["sp.science"]},
-                            claims, alt=True, key="sp.science"))
-
-    # Les règles ne sont pas recopiées : elles viennent de regulations.json,
-    # dont la page de réglementation reste la seule source.
-    reg = rules_html(sp, rules, zones, ui, regs)
-    if reg:
-        body.append(section({"fr": ui["fr"]["sp.rules"], "en": ui["en"]["sp.rules"]},
-                            reg, key="sp.rules"))
+                            claims, key="sp.science"))
 
     field = bilingual("p", sp.get("field"), "tp-notes")
     if field:

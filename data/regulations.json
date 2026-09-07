@@ -18,7 +18,9 @@
       "note": {
         "fr": "Notre secteur du fleuve Saint-Laurent.",
         "en": "Our stretch of the St. Lawrence."
-      }
+      },
+      "map": "assets/docs/carte-zone-8.pdf",
+      "mapUrl": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/zones-periodes/zones-de-peche/zone-8"
     },
     {
       "id": "7",
@@ -29,7 +31,9 @@
       "note": {
         "fr": "",
         "en": ""
-      }
+      },
+      "map": "assets/docs/carte-zone-7.pdf",
+      "mapUrl": "https://www.quebec.ca/tourisme-loisirs-sport/activites-sportives-et-de-plein-air/peche-sportive/zones-periodes/zones-de-peche/zone-7"
     },
     {
       "id": "qc",
