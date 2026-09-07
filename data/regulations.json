@@ -127,6 +127,30 @@
       }
     },
     {
+      "id": "carpes-envahissantes-remise-eau-interdite",
+      "zones": [
+        "qc"
+      ],
+      "species": {
+        "fr": "Carpes envahissantes",
+        "en": "Invasive carps"
+      },
+      "rule": {
+        "fr": "Remise à l'eau INTERDITE",
+        "en": "Release PROHIBITED"
+      },
+      "detail": {
+        "fr": "C'est l'exception à la règle d'à côté. Les carpes envahissantes, dont la carpe de roseau, sont les seules dont la remise à l'eau est interdite au Québec. La carpe de roseau est présente dans le système du fleuve Saint-Laurent et la rivière Richelieu : deux individus capturés, en mai 2016 et en juillet 2020, et de l'ADN de l'espèce détecté chaque année depuis 2015.",
+        "en": "This is the exception to the rule beside it. Invasive carps, grass carp among them, are the only fish whose release is prohibited in Quebec. Grass carp is present in the St. Lawrence system and the Richelieu River: two fish caught, in May 2016 and July 2020, and the species' DNA detected every year since 2015."
+      },
+      "species_page": "carpe-de-roseau",
+      "source": "qc-fiche-carpe-roseau",
+      "verified": {
+        "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+        "date": "2026-09-07"
+      }
+    },
+    {
       "id": "perchaude-moratoire-lsp",
       "zones": [
         "lsp"

@@ -361,6 +361,193 @@
     }
   },
   {
+    "id": "brochet-maille",
+    "name": {
+      "fr": "Brochet maillé",
+      "en": "Chain pickerel"
+    },
+    "scientificName": "Esox niger",
+    "otherNames": {
+      "fr": "Brochet de rivière",
+      "en": "Chain pickerel"
+    },
+    "status": {
+      "fr": "Susceptible d'être désignée menacée ou vulnérable",
+      "en": "Likely to be designated threatened or vulnerable"
+    },
+    "source": "qc-fiche-brochet-maille",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "31 à 50 cm — peut approcher 80 cm",
+          "en": "31 to 50 cm — can approach 80 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "0,6 à 2 kg; les plus gros approchent 4 kg",
+          "en": "0.6 to 2 kg; the largest approach 4 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Température",
+          "en": "Temperature"
+        },
+        "value": {
+          "fr": "Eaux chaudes : 21 à 30 °C l'été",
+          "en": "Warm water: 21 to 30 °C in summer"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Eaux calmes, claires et peu profondes à végétation abondante — baies de lacs, réservoirs, étangs, marécages",
+          "en": "Calm, clear, shallow water with abundant vegetation — lake bays, reservoirs, ponds, marshes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En avril ou mai, après la fonte des glaces, en zones peu profondes et inondées",
+          "en": "In April or May, after ice-out, in shallow flooded areas"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des taches pâles sur fond sombre, comme le grand brochet et à l'inverse du maskinongé. Ses taches rappellent les maillons d'une chaîne. Il a habituellement moins de pores sous la mâchoire que le grand brochet.",
+          "en": "Pale spots on a dark ground, like northern pike and the reverse of muskellunge. Its markings recall the links of a chain. It usually has fewer pores under the jaw than northern pike."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Prédateur opportuniste à l'affût : il attend qu'une proie passe à sa portée. Surtout des poissons, mais aussi crustacés, amphibiens, couleuvres et petits mammifères.",
+          "en": "An opportunistic ambush predator: it waits for prey to pass within reach. Mostly fish, but also crustaceans, amphibians, snakes and small mammals."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Sa situation a longtemps été jugée précaire, mais la mise en commun des données n'a pas montré de tendance nette à la baisse. L'espèce est bien établie dans le bassin versant de la Chaudière.",
+          "en": "Its situation was long judged precarious, but pooling the data showed no clear downward trend. The species is well established in the Chaudière watershed."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "brochet-vermicule",
+    "name": {
+      "fr": "Brochet vermiculé",
+      "en": "Grass pickerel"
+    },
+    "scientificName": "Esox americanus vermiculatus",
+    "otherNames": {
+      "fr": "Brochet d'herbe, brochet de vase, brochet de fossé",
+      "en": "Grass pickerel"
+    },
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-brochet-vermicule",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "12 à 22 cm — dépasse rarement 30 cm",
+          "en": "12 to 22 cm — rarely over 30 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Secteurs calmes et bien garnis en végétation des petits cours d'eau, et baies herbeuses des lacs fluviaux",
+          "en": "Calm, well-vegetated stretches of small streams, and the grassy bays of the fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps — déjà observée à l'automne — dans les zones herbeuses inondées",
+          "en": "In spring — occasionally observed in fall — in flooded grassy areas"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses taches ne forment pas les maillons de chaîne du brochet maillé. Contre le grand brochet : il porte des bandes verticales ET horizontales autour des yeux.",
+          "en": "Its markings do not form the chain links of chain pickerel. Against northern pike: it carries both vertical AND horizontal bars around the eyes."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il est particulièrement rare au Québec, localisé dans les petits tributaires du lac Saint-François. Il y a peu d'information sur la taille des populations et les tendances sont difficiles à dégager.",
+          "en": "It is particularly rare in Quebec, confined to the small tributaries of Lac Saint-François. There is little information on population size and trends are hard to establish."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "dore-jaune",
     "name": {
       "fr": "Doré jaune",
@@ -592,6 +779,268 @@
         "body": {
           "fr": "Il croît plus lentement que le doré jaune et atteint la maturité à une plus petite taille. Peu de pêcheurs conservent un doré noir immature, qui offre peu de chair.",
           "en": "It grows more slowly than walleye and matures at a smaller size. Few anglers keep an immature sauger, which yields little meat."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "achigan-petite-bouche",
+    "name": {
+      "fr": "Achigan à petite bouche",
+      "en": "Smallmouth bass"
+    },
+    "scientificName": "Micropterus dolomieu",
+    "source": "qc-fiche-achigan-petite-bouche",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "22 à 45 cm",
+          "en": "22 to 45 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Plus de 4 kg dans le fleuve et ses lacs fluviaux",
+          "en": "Over 4 kg in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Fonds de gravier ou de sable près de prolongements rocheux en rivière; berges et îlots submergés en lac",
+          "en": "Gravel or sand bottoms near rock outcrops in rivers; shorelines and submerged islets in lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "À l'affût",
+          "en": "Ambush"
+        },
+        "value": {
+          "fr": "Souvent sous les quais flottants ou la végétation qui borde les talus",
+          "en": "Often under floating docks or the weeds along drop-offs"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Printemps et début d'été, quand l'eau atteint 16 à 18 °C",
+          "en": "Spring and early summer, once the water reaches 16 to 18 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Nid",
+          "en": "Nest"
+        },
+        "value": {
+          "fr": "30 à 180 cm de diamètre, sur sable ou gravier, souvent près d'un obstacle",
+          "en": "30 to 180 cm across, on sand or gravel, often beside an obstruction"
+        }
+      },
+      {
+        "label": {
+          "fr": "L'hiver",
+          "en": "In winter"
+        },
+        "value": {
+          "fr": "Il se regroupe près du fond et devient très peu actif",
+          "en": "It gathers near the bottom and becomes very inactive"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S5",
+          "en": "S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Bouche plus petite que celle de l'achigan à grande bouche, et surtout : le maxillaire supérieur NE dépasse PAS l'œil. C'est plus net chez l'adulte que chez le jeune. Les deux lobes de sa dorsale sont aussi moins séparés.",
+          "en": "A smaller mouth than largemouth, and above all: the upper jaw does NOT extend past the eye. That is clearer in adults than in young fish. The two lobes of its dorsal fin are also less separated."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il mange des crustacés, des poissons, des amphibiens, des insectes et des larves aquatiques, et s'alimente aussi bien en surface qu'entre deux eaux ou près du fond. Les jeunes commencent par le plancton, puis les insectes.",
+          "en": "It eats crustaceans, fish, amphibians, insects and aquatic larvae, feeding at the surface, in mid-water and near the bottom alike. Young fish start on plankton, then insects."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les populations sont considérées en bonne situation au Québec. L'espèce est suivie dans le fleuve et ses lacs fluviaux par le Réseau de suivi ichtyologique.",
+          "en": "Populations are considered healthy in Quebec. The species is monitored in the river and its fluvial lakes by the provincial fish monitoring network."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "achigan-grande-bouche",
+    "name": {
+      "fr": "Achigan à grande bouche",
+      "en": "Largemouth bass"
+    },
+    "scientificName": "Micropterus nigricans",
+    "source": "qc-fiche-achigan-grande-bouche",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "9 à 36 cm au Québec — plus de 80 cm au sud de son aire",
+          "en": "9 to 36 cm in Quebec — over 80 cm in the south of its range"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Plus de 1,6 kg dans le fleuve et ses lacs fluviaux",
+          "en": "Over 1.6 kg in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Température",
+          "en": "Temperature"
+        },
+        "value": {
+          "fr": "Il préfère 26 à 29 °C — plus chaud que l'achigan à petite bouche",
+          "en": "It prefers 26 to 29 °C — warmer than smallmouth"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Eaux calmes des lacs, réservoirs et étangs, et secteurs tranquilles des cours d'eau",
+          "en": "Calm water in lakes, reservoirs and ponds, and quiet stretches of streams"
+        }
+      },
+      {
+        "label": {
+          "fr": "Quand il mange",
+          "en": "Feeding window"
+        },
+        "value": {
+          "fr": "En bancs près de la végétation du fond, en surface le matin et le soir, entre deux eaux le jour",
+          "en": "In schools near bottom vegetation, at the surface morning and evening, mid-water during the day"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Fin du printemps ou été, plus haut que l'achigan à petite bouche, sur dépôt meuble à travers la végétation émergente",
+          "en": "Late spring or summer, shallower than smallmouth, on soft bottom through emergent vegetation"
+        }
+      },
+      {
+        "label": {
+          "fr": "Nid",
+          "en": "Nest"
+        },
+        "value": {
+          "fr": "0,6 à 1 m de diamètre",
+          "en": "0.6 to 1 m across"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S4S5",
+          "en": "S4S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Bouche plus grande, et le maxillaire supérieur DÉPASSE l'œil — c'est le repère le plus sûr contre l'achigan à petite bouche. Les deux lobes de sa dorsale sont aussi plus nettement séparés.",
+          "en": "A larger mouth, and the upper jaw EXTENDS past the eye — the surest mark against smallmouth. The two lobes of its dorsal fin are also more clearly separated."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il tolère des eaux plus chaudes que l'achigan à petite bouche et se contente de rester inactif quand la température ne lui convient plus. Il mange poissons, insectes et larves, crustacés, vers, mollusques, amphibiens, petits mammifères et jeunes oiseaux.",
+          "en": "It tolerates warmer water than smallmouth and simply goes inactive when the temperature no longer suits it. It eats fish, insects and larvae, crustaceans, worms, molluscs, amphibians, small mammals and young birds."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Les populations sont considérées en bonne situation au Québec, et l'espèce est suivie dans le fleuve et ses lacs fluviaux.",
+          "en": "Populations are considered healthy in Quebec, and the species is monitored in the river and its fluvial lakes."
         }
       }
     ],
@@ -1080,6 +1529,245 @@
     }
   },
   {
+    "id": "barbue-de-riviere",
+    "name": {
+      "fr": "Barbue de rivière",
+      "en": "Channel catfish"
+    },
+    "scientificName": "Ictalurus punctatus",
+    "otherNames": {
+      "fr": "Barbue, barbue du Nord",
+      "en": "Channel cat"
+    },
+    "source": "qc-fiche-barbue-riviere",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "33 à 68 cm — peut dépasser 1 m",
+          "en": "33 to 68 cm — can exceed 1 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Plus de 9 kg dans le fleuve et ses lacs fluviaux",
+          "en": "Over 9 kg in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où la chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Les fosses profondes des grands cours d'eau, clairs ou turbides, à fond rocheux et graveleux",
+          "en": "The deep pools of large rivers, clear or turbid, over rock and gravel"
+        }
+      },
+      {
+        "label": {
+          "fr": "Quand elle mange",
+          "en": "Feeding window"
+        },
+        "value": {
+          "fr": "De jour comme de nuit, surtout au fond",
+          "en": "Day and night alike, mostly on the bottom"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "À partir de juin, dans un nid aménagé par le mâle près d'un abri ombragé",
+          "en": "From June, in a nest the male builds near shaded cover"
+        }
+      },
+      {
+        "label": {
+          "fr": "Éclosion",
+          "en": "Hatching"
+        },
+        "value": {
+          "fr": "5 à 10 jours",
+          "en": "5 to 10 days"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S5",
+          "en": "S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Sa nageoire caudale est FOURCHUE. Celle des barbottes et des chats-fous est carrée ou arrondie — c'est le seul repère dont on a besoin.",
+          "en": "Its tail is FORKED. Bullheads and madtoms have a square or rounded tail — that is the only mark you need."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Elle est adaptée à l'eau courante. Elle mange larves aquatiques d'insectes, crustacés, mollusques, vers, poissons et végétaux, au fond surtout, mais aussi entre deux eaux et en surface chez les jeunes.",
+          "en": "It is adapted to moving water. It eats aquatic insect larvae, crustaceans, molluscs, worms, fish and plants, mostly on the bottom, but also in mid-water and at the surface when young."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Elle est considérée comme abondante au Québec, particulièrement dans le fleuve Saint-Laurent, où elle est exploitée commercialement.",
+          "en": "It is considered abundant in Quebec, particularly in the St. Lawrence, where it supports a commercial fishery."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "barbotte-brune",
+    "name": {
+      "fr": "Barbotte brune",
+      "en": "Brown bullhead"
+    },
+    "scientificName": "Ameiurus nebulosus",
+    "otherNames": {
+      "fr": "Barbotte, barbotte brune du Nord",
+      "en": "Bullhead, mudcat"
+    },
+    "source": "qc-fiche-barbotte-brune",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "22 à 30 cm",
+          "en": "22 to 30 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Plus de 700 g dans le fleuve et ses lacs fluviaux",
+          "en": "Over 700 g in the river and its fluvial lakes"
+        }
+      },
+      {
+        "label": {
+          "fr": "Ce qu'elle tolère",
+          "en": "What it tolerates"
+        },
+        "value": {
+          "fr": "Plus de 35 °C et de faibles taux d'oxygène dissous",
+          "en": "Over 35 °C and low dissolved oxygen"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où la chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Au fond, sur sols mous, sablonneux ou boueux, en eau peu profonde, chaude et souvent stagnante",
+          "en": "On the bottom, over soft sand or mud, in shallow, warm, often still water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Quand elle mange",
+          "en": "Feeding window"
+        },
+        "value": {
+          "fr": "Surtout la nuit, en trouvant sa nourriture au fond avec ses barbillons",
+          "en": "Mainly at night, finding food on the bottom with its barbels"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En mai ou juin, quand l'eau atteint 21 à 24 °C",
+          "en": "In May or June, once the water reaches 21 to 24 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S5",
+          "en": "S5"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Nageoire caudale CARRÉE, contre la caudale fourchue de la barbue de rivière. Ses barbillons sont foncés — ceux de la barbotte jaune sont pâles — et son œil est plus grand que celui de la barbotte jaune.",
+          "en": "A SQUARE tail, against channel catfish's forked one. Its barbels are dark — yellow bullhead's are pale — and its eye is larger than yellow bullhead's."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Elle est considérée comme abondante au Québec et exploitée commercialement dans le fleuve Saint-Laurent.",
+          "en": "It is considered abundant in Quebec and supports a commercial fishery in the St. Lawrence."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "poulamon-atlantique",
     "name": {
       "fr": "Poulamon atlantique",
@@ -1165,6 +1853,220 @@
         "body": {
           "fr": "Il fréquente les eaux côtières, saumâtres et salées. En hiver il migre en eau douce pour se reproduire — c'est la pêche des petits poissons des chenaux. Il peut aussi accomplir tout son cycle de vie en eau douce.",
           "en": "It uses coastal, brackish and salt water. In winter it migrates into fresh water to spawn — this is the classic Quebec ice fishery. It can also complete its whole life cycle in fresh water."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "bar-raye",
+    "name": {
+      "fr": "Bar rayé",
+      "en": "Striped bass"
+    },
+    "scientificName": "Morone saxatilis",
+    "otherNames": {
+      "fr": "Bar d'Amérique, bar",
+      "en": "Striper, rockfish"
+    },
+    "source": "qc-fiche-bar-raye",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "10 à 70 cm — rarement plus de 80 cm, mais près de 100 cm est possible",
+          "en": "10 to 70 cm — rarely over 80 cm, but close to 100 cm is possible"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "De quelques grammes à 3,5 kg; rarement plus de 5 kg, jusqu'à 9 kg capturés",
+          "en": "From a few grams to 3.5 kg; rarely over 5 kg, up to 9 kg caught"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Espèce côtière, rarement observée à plus de 10 km des rives",
+          "en": "A coastal species, rarely seen more than 10 km from shore"
+        }
+      },
+      {
+        "label": {
+          "fr": "Son cycle",
+          "en": "Its cycle"
+        },
+        "value": {
+          "fr": "Il hiverne et se reproduit en eau douce, puis migre en eau saumâtre ou salée pour s'alimenter l'été",
+          "en": "It winters and spawns in fresh water, then moves to brackish or salt water to feed in summer"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De la mi-mai à la mi-juin; sommet quand l'eau atteint 13 à 18 °C",
+          "en": "Mid-May to mid-June; peaking once the water reaches 13 to 18 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où il fraie",
+          "en": "Spawning water"
+        },
+        "value": {
+          "fr": "Dans la colonne d'eau, dans les secteurs dynamiques des grands cours d'eau",
+          "en": "In the water column, in the dynamic reaches of large rivers"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Corps plus allongé et fuselé que le baret et le bar blanc, moins comprimé, et la courbe avant du dos moins prononcée. Le baret n'a aucune rayure horizontale.",
+          "en": "A longer, more streamlined body than white perch and white bass, less compressed, with a less pronounced curve to the forward back. White perch has no horizontal stripes at all."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il s'alimente en banc, le long des côtes et dans les embouchures de rivières, surtout de poissons, de crustacés et de vers. Les jeunes de l'année se tiennent principalement en estuaire.",
+          "en": "It feeds in schools along the coast and in river mouths, mostly on fish, crustaceans and worms. Young of the year hold mainly in the estuary."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Le fleuve Saint-Laurent abritait une population distincte, disparue à la fin des années 1960 par dégradation de l'habitat et surpêche. La population actuelle du fleuve a été réintroduite à partir de celle du sud du golfe.",
+          "en": "The St. Lawrence held a distinct population, lost in the late 1960s to habitat degradation and overfishing. The river's current population was reintroduced from the southern Gulf stock."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "alose-savoureuse",
+    "name": {
+      "fr": "Alose savoureuse",
+      "en": "American shad"
+    },
+    "scientificName": "Alosa sapidissima",
+    "otherNames": {
+      "fr": "Alose, alose d'Amérique",
+      "en": "Shad"
+    },
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-alose-savoureuse",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "11 à 61 cm — l'adulte fait environ 40 à 60 cm",
+          "en": "11 to 61 cm — adults run about 40 to 60 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Les plus gros spécimens approchent 4,5 kg",
+          "en": "The largest fish approach 4.5 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps; sa présence dans l'estuaire est détectée à partir de la mi-mai",
+          "en": "In spring; it is detected in the estuary from mid-May"
+        }
+      },
+      {
+        "label": {
+          "fr": "En rivière",
+          "en": "In the river"
+        },
+        "value": {
+          "fr": "Les adultes reproducteurs remontent jusqu'aux obstacles infranchissables et ne semblent pas s'alimenter",
+          "en": "Spawning adults run up to the first impassable barrier and appear not to feed"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Une importante tache noire sur le bord supérieur de l'opercule, suivie de plusieurs petites taches foncées sur les flancs — c'est ce qui la sépare des autres aloses et du gaspareau. Au stade juvénile, la confusion est facile.",
+          "en": "A large dark blotch on the upper edge of the gill cover, followed by several smaller dark spots along the flank — that is what separates it from other shads and from alewife. As a juvenile it is easily confused."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Elle passe par le marin et l'eau douce. Les jeunes passent leur premier été en eau douce puis dévalent vers l'estuaire et le golfe. En mer, elle filtre surtout des crustacés planctoniques.",
+          "en": "It uses both marine and fresh water. Young fish spend their first summer in fresh water, then drop down to the estuary and the Gulf. At sea it mostly filters planktonic crustaceans."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce a été désignée vulnérable en 2003 : sa population dépendrait d'une seule frayère confirmée. La découverte de nouvelles frayères remet cette désignation en question.",
+          "en": "The species was designated vulnerable in 2003: its population was thought to depend on a single confirmed spawning ground. The discovery of new spawning grounds now puts that designation in question."
         }
       }
     ],
@@ -2510,6 +3412,907 @@
     }
   },
   {
+    "id": "mene-herbe",
+    "name": {
+      "fr": "Méné d'herbe",
+      "en": "Bridle shiner"
+    },
+    "scientificName": "Notropis bifrenatus",
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-mene-herbe",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "4 à 6 cm — jusqu'à environ 7 cm",
+          "en": "4 to 6 cm — up to about 7 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Printemps et début d'été, parfois jusqu'en août",
+          "en": "Spring and early summer, sometimes into August"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Petits crustacés zooplanctoniques et larves d'insectes",
+          "en": "Small zooplanktonic crustaceans and insect larvae"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Il est difficile à identifier et se confond facilement avec le méné à museau noir, le méné à menton noir et le méné paille. Sa bande noire latérale en dents de scie, qui se rend jusqu'au museau, est le meilleur repère.",
+          "en": "It is hard to identify and is easily confused with blackchin, blacknose and mimic shiners. Its saw-toothed black lateral band, running all the way to the snout, is the best mark."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les zones calmes des rivières, ruisseaux et lacs, presque toujours dans une végétation aquatique submergée abondante. Il peut y être nombreux : il s'y reproduit, s'y abrite des prédateurs et s'y nourrit. Les herbiers de myriophylle indigènes lui conviennent particulièrement pour la fraie.",
+          "en": "Calm stretches of rivers, streams and lakes, almost always in abundant submerged vegetation. It can be numerous there: it spawns, shelters and feeds in it. Native milfoil beds suit it particularly well for spawning."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est désignée vulnérable au Québec.",
+          "en": "The species is designated vulnerable in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "mene-laiton",
+    "name": {
+      "fr": "Méné laiton",
+      "en": "Brassy minnow"
+    },
+    "scientificName": "Hybognathus hankinsoni",
+    "status": {
+      "fr": "Susceptible d'être désignée menacée ou vulnérable",
+      "en": "Likely to be designated threatened or vulnerable"
+    },
+    "source": "qc-fiche-mene-laiton",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "6 à 10 cm",
+          "en": "6 to 10 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en eau calme sur substrat vaseux avec plantes aquatiques",
+          "en": "In spring, in calm water over mud with aquatic plants"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Planctophage, avec probablement une forte part de matières végétales",
+          "en": "Plankton feeder, likely with a large share of plant matter"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les petits cours d'eau lents, parfois acides, chargés en matières organiques en suspension — souvent à proximité de tourbières.",
+          "en": "Small slow streams, sometimes acidic, carrying a high load of suspended organic matter — often near peat bogs."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est susceptible d'être désignée menacée ou vulnérable au Québec.",
+          "en": "The species is likely to be designated threatened or vulnerable in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "fouille-roche-gris",
+    "name": {
+      "fr": "Fouille-roche gris",
+      "en": "Channel darter"
+    },
+    "scientificName": "Percina copelandi",
+    "otherNames": {
+      "fr": "Dard gris",
+      "en": "Channel darter"
+    },
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-fouille-roche-gris",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "5 à 8 cm",
+          "en": "5 to 8 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De mai à juillet, sur roches et gravier avec un peu de sable",
+          "en": "May to July, over rock and gravel with a little sand"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Surtout des insectes — larves d'éphémères et de moucherons — plus des algues et des débris végétaux",
+          "en": "Mostly insects — mayfly and midge larvae — plus algae and plant debris"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "On peut le confondre avec le raseux-de-terre noir et le raseux-de-terre gris. Ses taches latérales sont surtout rondes et souvent unies par une ligne noire, et sa queue est légèrement fourchue.",
+          "en": "It can be confused with the tessellated and Iowa darters. Its flank blotches are mostly round and often joined by a black line, and its tail is slightly forked."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "On l'observe dans des habitats très variés, du fleuve Saint-Laurent jusqu'à de petits ruisseaux. En rivière et en petit cours d'eau, il est souvent associé à un substrat mixte de sable et de gravier.",
+          "en": "It turns up in a wide range of habitats, from the St. Lawrence down to small brooks. In rivers and small streams it is often associated with mixed sand and gravel substrate."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il est rare, et sa répartition au Québec est isolée des autres populations d'Amérique du Nord. Des échantillonnages laissent croire que certaines populations auraient disparu.",
+          "en": "It is rare, and its Quebec distribution is isolated from other North American populations. Sampling suggests some populations may have disappeared."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "dard-de-sable",
+    "name": {
+      "fr": "Dard de sable",
+      "en": "Eastern sand darter"
+    },
+    "scientificName": "Ammocrypta pellucida",
+    "otherNames": {
+      "fr": "Dard de sable du Nord",
+      "en": "Eastern sand darter"
+    },
+    "status": {
+      "fr": "Menacée",
+      "en": "Threatened"
+    },
+    "source": "qc-fiche-dard-sable",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "4 à 5 cm — jusqu'à environ 8 cm",
+          "en": "4 to 5 cm — up to about 8 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Généralement moins de 2 g",
+          "en": "Generally under 2 g"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "D'avril à août dans l'aire; au Québec, peut-être vers la fin juin",
+          "en": "April to August across the range; in Quebec, possibly toward late June"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Substrat bien oxygéné, principalement du sable",
+          "en": "Well-oxygenated substrate, mostly sand"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses deux nageoires dorsales sont incolores et nettement séparées, sa forme est allongée, et il est pratiquement transparent — c'est ce qui le sépare du dard à ventre jaune et du dard barré.",
+          "en": "Its two dorsal fins are colourless and clearly separated, its shape is elongate, and it is nearly transparent — that is what separates it from yellowbelly and barred darters."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Poisson sédentaire, il s'enfouit dans le sable et ne laisse dépasser que ses yeux, à l'affût. Ça le cache des prédateurs et lui épargne l'énergie de nager dans le courant.",
+          "en": "A sedentary fish, it buries itself in sand leaving only its eyes exposed, waiting. That hides it from predators and spares it the energy of swimming in current."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Peu de données existent sur la taille des populations, et les tendances sont difficiles à dégager. Les inventaires récents ont confirmé sa présence dans tous les sites historiques.",
+          "en": "Little data exists on population size, and trends are hard to establish. Recent surveys confirmed its presence at all historical sites."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "chabot-de-profondeur",
+    "name": {
+      "fr": "Chabot de profondeur",
+      "en": "Deepwater sculpin"
+    },
+    "scientificName": "Myoxocephalus thompsonii",
+    "status": {
+      "fr": "Menacée",
+      "en": "Threatened"
+    },
+    "source": "qc-fiche-chabot-prodonfeur",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "7 à 12 cm — dépasse rarement 25 cm",
+          "en": "7 to 12 cm — rarely over 25 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "value": {
+          "fr": "Au fond des lacs post-glaciaires, en eau claire, froide et bien oxygénée",
+          "en": "On the bottom of post-glacial lakes, in clear, cold, well-oxygenated water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Le fond",
+          "en": "The bottom"
+        },
+        "value": {
+          "fr": "Sable, vase et roches, sans végétation — la lumière n'y descend pas",
+          "en": "Sand, mud and rock, with no vegetation — light does not reach that far"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Entre la fin de l'été et le début de l'automne, selon le lac",
+          "en": "Between late summer and early fall, depending on the lake"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses nageoires pelviennes ne sont PAS fusionnées — c'est ce qui le sépare du gobie à taches noires, qui les a soudées. Ses dorsales sont bien séparées, alors que celles des autres chabots sont partiellement fusionnées.",
+          "en": "Its pelvic fins are NOT fused — that is what separates it from round goby, whose are. Its dorsal fins are well separated, where other sculpins' are partly fused."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Peu de données existent : il est difficile à échantillonner et rarement observé. Sa rareté, combinée aux menaces qui pèsent sur ses habitats, lui a valu le statut d'espèce menacée.",
+          "en": "Little data exists: it is hard to sample and rarely seen. Its rarity, combined with the threats to its habitat, earned it threatened status."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "carpe-de-roseau",
+    "name": {
+      "fr": "Carpe de roseau",
+      "en": "Grass carp"
+    },
+    "scientificName": "Ctenopharyngodon idella",
+    "otherNames": {
+      "fr": "Amour blanc",
+      "en": "White amur"
+    },
+    "status": {
+      "fr": "Envahissante — remise à l'eau INTERDITE",
+      "en": "Invasive — release PROHIBITED"
+    },
+    "source": "qc-fiche-carpe-roseau",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "50 à 90 cm — peut atteindre 1,3 m",
+          "en": "50 to 90 cm — can reach 1.3 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Près de 50 kg",
+          "en": "Close to 50 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où la chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Les herbiers de lacs, rivières et étangs; l'hiver, elle se réfugie dans les chenaux et les zones profondes",
+          "en": "Weed beds in lakes, rivers and ponds; in winter it retreats to channels and deeper water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Ce qu'elle mange",
+          "en": "What it eats"
+        },
+        "value": {
+          "fr": "Presque exclusivement des plantes aquatiques une fois adulte",
+          "en": "Almost exclusively aquatic plants once adult"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en rivière à fort débit, au-dessus de 18 °C",
+          "en": "In spring, in high-flow rivers, above 18 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Ses œufs",
+          "en": "Its eggs"
+        },
+        "value": {
+          "fr": "En suspension, ils peuvent voyager sur 50 à 180 km avant d'éclore",
+          "en": "Suspended in the current, they can travel 50 to 180 km before hatching"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Contrairement à la carpe commune, avec qui on la confond souvent, elle n'a PAS de barbillons aux coins de la bouche. La base de sa nageoire dorsale est aussi beaucoup plus courte.",
+          "en": "Unlike common carp, which it is often confused with, it has NO barbels at the corners of the mouth. The base of its dorsal fin is also much shorter."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Elle est présente dans le système du fleuve Saint-Laurent et la rivière Richelieu. Sa présence est confirmée par la capture de deux individus, en mai 2016 et en juillet 2020, et de l'ADN de l'espèce est détecté chaque année depuis 2015.",
+          "en": "It is present in the St. Lawrence system and the Richelieu River. Its presence is confirmed by two fish caught, in May 2016 and July 2020, and its DNA has been detected every year since 2015."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "carpe-commune",
+    "name": {
+      "fr": "Carpe commune",
+      "en": "Common carp"
+    },
+    "scientificName": "Cyprinus carpio",
+    "otherNames": {
+      "fr": "Carpe, carpe allemande, carpe européenne, koï",
+      "en": "Carp, koi"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-carpe-commune",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "17 à 75 cm — peut atteindre 1,2 m",
+          "en": "17 to 75 cm — can reach 1.2 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Jusqu'à 37 kg",
+          "en": "Up to 37 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où la chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Canaux, rivières et fleuves à courant lent, lacs et étangs — végétation aquatique et fond boueux",
+          "en": "Canals, slow rivers, lakes and ponds — aquatic vegetation and muddy bottom"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en eau peu profonde avec herbes aquatiques; plus de 2 millions d'œufs chez les grandes femelles",
+          "en": "In spring, in shallow weedy water; over 2 million eggs in large females"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des barbillons aux coins de la bouche, et une longue nageoire dorsale qui s'étend sur les deux tiers du dos. Le chevalier cuivré n'a pas de barbillons et sa dorsale est courte — c'est le repère qui compte dans notre secteur.",
+          "en": "Barbels at the corners of the mouth, and a long dorsal fin running two-thirds of the back. Copper redhorse has no barbels and a short dorsal fin — that is the mark that matters in our stretch of river."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Omnivore, elle fouille le fond avec ses barbillons : insectes et larves aquatiques, mollusques, vers, crustacés, poissons, plantes immergées, graines et algues.",
+          "en": "Omnivorous, it works the bottom with its barbels: aquatic insects and larvae, molluscs, worms, crustaceans, fish, submerged plants, seeds and algae."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Des populations naturalisées existent au Québec depuis plus de cent ans. Ailleurs dans le monde — en Australie notamment — elle est considérée comme une envahissante hautement nuisible.",
+          "en": "Naturalized populations have existed in Quebec for over a hundred years. Elsewhere in the world — Australia in particular — it is considered a highly damaging invasive."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "carpe-argentee",
+    "name": {
+      "fr": "Carpe argentée",
+      "en": "Silver carp"
+    },
+    "scientificName": "Hypophthalmichthys molitrix",
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-carpe-argentee",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "40 à 70 cm — peut atteindre 1,05 m",
+          "en": "40 to 70 cm — can reach 1.05 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Près de 40 kg",
+          "en": "Close to 40 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En rivière au-dessus de 15 °C, dans les rapides à fond de gravier ou de sable",
+          "en": "In rivers above 15 °C, in rapids over gravel or sand"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Contrairement à la carpe commune, avec qui on la confond souvent, elle n'a PAS de barbillons aux coins de la bouche. La base de sa nageoire dorsale est aussi beaucoup plus courte.",
+          "en": "Unlike common carp, which it is often confused with, it has NO barbels at the corners of the mouth. The base of its dorsal fin is also much shorter."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les grands cours d'eau à courant lent, et l'eau saumâtre des estuaires. Elle nage généralement près de la surface et tolère de faibles niveaux d'oxygène. Elle se nourrit d'algues vertes, de diatomées, de rotifères, de petits arthropodes et même de cyanobactéries.",
+          "en": "Large slow rivers, and the brackish water of estuaries. It generally swims near the surface and tolerates low oxygen. It feeds on green algae, diatoms, rotifers, small arthropods and even cyanobacteria."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Elle n'est pas présente au Québec. Plusieurs protocoles de détection sont en place, dont la collecte d'ADN environnemental.",
+          "en": "It is not present in Quebec. Several detection protocols are in place, including environmental DNA sampling."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "carpe-grosse-tete",
+    "name": {
+      "fr": "Carpe à grosse tête",
+      "en": "Bighead carp"
+    },
+    "scientificName": "Hypophthalmichthys nobilis",
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-carpe-grosse-tete",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "55 à 70 cm — peut atteindre 1,46 m",
+          "en": "55 to 70 cm — can reach 1.46 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Près de 40 kg",
+          "en": "Close to 40 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au-dessus de 22 °C, en zone profonde et turbide à fort courant; plus de 100 000 œufs, éclosion en 2 jours",
+          "en": "Above 22 °C, in deep turbid water with strong current; over 100,000 eggs, hatching in 2 days"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Contrairement à la carpe commune, avec qui on la confond souvent, elle n'a PAS de barbillons aux coins de la bouche. La base de sa nageoire dorsale est aussi beaucoup plus courte.",
+          "en": "Unlike common carp, which it is often confused with, it has NO barbels at the corners of the mouth. The base of its dorsal fin is also much shorter."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les grands cours d'eau dont le niveau varie et leurs estuaires. Elle vit aussi en lac et en réservoir, et tolère l'eau saumâtre. Elle se nourrit principalement de zooplancton, et d'algues dans une moindre mesure.",
+          "en": "Large rivers with fluctuating levels, and their estuaries. It also lives in lakes and reservoirs, and tolerates brackish water. It feeds mainly on zooplankton, and on algae to a lesser degree."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Sa présence dans un plan d'eau doit être signalée. Plusieurs protocoles de détection et de suivi sont en place, dont la collecte d'ADN environnemental.",
+          "en": "Its presence in a water body must be reported. Several detection and monitoring protocols are in place, including environmental DNA sampling."
+        }
+      }
+    ],
+    "otherNames": {
+      "fr": "Carpe marbrée",
+      "en": "Bighead"
+    },
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "carpe-noire",
+    "name": {
+      "fr": "Carpe noire",
+      "en": "Black carp"
+    },
+    "scientificName": "Mylopharyngodon piceus",
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-carpe-noire",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "60 à 120 cm — peut atteindre 1,8 m",
+          "en": "60 to 120 cm — can reach 1.8 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Près de 80 kg",
+          "en": "Close to 80 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en eau vive en amont des cours d'eau à fort débit; plus de 1 million d'œufs par fraie",
+          "en": "In spring, in fast water upstream in high-flow rivers; over 1 million eggs per spawning"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Contrairement à la carpe commune, avec qui on la confond souvent, elle n'a PAS de barbillons aux coins de la bouche. La base de sa nageoire dorsale est aussi beaucoup plus courte.",
+          "en": "Unlike common carp, which it is often confused with, it has NO barbels at the corners of the mouth. The base of its dorsal fin is also much shorter."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les grands cours d'eau de basses terres et les lacs. Elle réside sur le fond et dans les strates profondes des chenaux, et tolère l'eau saumâtre. Adulte, elle se nourrit de mollusques — moules et escargots — de crustacés et d'autres organismes du fond.",
+          "en": "Large lowland rivers and lakes. It stays on the bottom and in the deep strata of channels, and tolerates brackish water. As an adult it feeds on molluscs — mussels and snails — crustaceans and other bottom organisms."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Plusieurs protocoles de détection et de suivi des espèces aquatiques envahissantes sont en place au Québec, dont la collecte d'ADN environnemental.",
+          "en": "Several detection and monitoring protocols for invasive aquatic species are in place in Quebec, including environmental DNA sampling."
+        }
+      }
+    ],
+    "otherNames": {
+      "fr": "Amour noir",
+      "en": "Black amur"
+    },
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "tanche",
     "name": {
       "fr": "Tanche",
@@ -3115,353 +4918,6 @@
         "body": {
           "fr": "Il est absent du Québec. Un poisson à tête de serpent d'Indonésie, relâché par son propriétaire, a été trouvé près de la rivière Saint-Charles en 2010, mais cette espèce tropicale n'a pas survécu à l'hiver. Le poisson à tête de serpent du Nord, lui, pourrait s'implanter.",
           "en": "It is absent from Quebec. An Indonesian snakehead released by its owner was found near the Saint-Charles River in 2010, but that tropical species did not survive the winter. Northern snakehead, however, could establish itself."
-        }
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
-  },
-  {
-    "id": "mene-herbe",
-    "name": {
-      "fr": "Méné d'herbe",
-      "en": "Bridle shiner"
-    },
-    "scientificName": "Notropis bifrenatus",
-    "status": {
-      "fr": "Vulnérable",
-      "en": "Vulnerable"
-    },
-    "source": "qc-fiche-mene-herbe",
-    "consulted": "2026-09-07",
-    "marks": [
-      {
-        "label": {
-          "fr": "Taille",
-          "en": "Size"
-        },
-        "value": {
-          "fr": "4 à 6 cm — jusqu'à environ 7 cm",
-          "en": "4 to 6 cm — up to about 7 cm"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fraie",
-          "en": "Spawning"
-        },
-        "value": {
-          "fr": "Printemps et début d'été, parfois jusqu'en août",
-          "en": "Spring and early summer, sometimes into August"
-        }
-      },
-      {
-        "label": {
-          "fr": "Régime",
-          "en": "Diet"
-        },
-        "value": {
-          "fr": "Petits crustacés zooplanctoniques et larves d'insectes",
-          "en": "Small zooplanktonic crustaceans and insect larvae"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "key": "reconnaitre",
-        "title": {
-          "fr": "Le reconnaître",
-          "en": "Telling it apart"
-        },
-        "body": {
-          "fr": "Il est difficile à identifier et se confond facilement avec le méné à museau noir, le méné à menton noir et le méné paille. Sa bande noire latérale en dents de scie, qui se rend jusqu'au museau, est le meilleur repère.",
-          "en": "It is hard to identify and is easily confused with blackchin, blacknose and mimic shiners. Its saw-toothed black lateral band, running all the way to the snout, is the best mark."
-        }
-      },
-      {
-        "key": "habitat",
-        "title": {
-          "fr": "Où il se tient",
-          "en": "Where it holds"
-        },
-        "body": {
-          "fr": "Les zones calmes des rivières, ruisseaux et lacs, presque toujours dans une végétation aquatique submergée abondante. Il peut y être nombreux : il s'y reproduit, s'y abrite des prédateurs et s'y nourrit. Les herbiers de myriophylle indigènes lui conviennent particulièrement pour la fraie.",
-          "en": "Calm stretches of rivers, streams and lakes, almost always in abundant submerged vegetation. It can be numerous there: it spawns, shelters and feeds in it. Native milfoil beds suit it particularly well for spawning."
-        }
-      },
-      {
-        "key": "situation",
-        "title": {
-          "fr": "Sa situation au Québec",
-          "en": "Its status in Quebec"
-        },
-        "body": {
-          "fr": "L'espèce est désignée vulnérable au Québec.",
-          "en": "The species is designated vulnerable in Quebec."
-        }
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
-  },
-  {
-    "id": "mene-laiton",
-    "name": {
-      "fr": "Méné laiton",
-      "en": "Brassy minnow"
-    },
-    "scientificName": "Hybognathus hankinsoni",
-    "status": {
-      "fr": "Susceptible d'être désignée menacée ou vulnérable",
-      "en": "Likely to be designated threatened or vulnerable"
-    },
-    "source": "qc-fiche-mene-laiton",
-    "consulted": "2026-09-07",
-    "marks": [
-      {
-        "label": {
-          "fr": "Taille",
-          "en": "Size"
-        },
-        "value": {
-          "fr": "6 à 10 cm",
-          "en": "6 to 10 cm"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fraie",
-          "en": "Spawning"
-        },
-        "value": {
-          "fr": "Au printemps, en eau calme sur substrat vaseux avec plantes aquatiques",
-          "en": "In spring, in calm water over mud with aquatic plants"
-        }
-      },
-      {
-        "label": {
-          "fr": "Régime",
-          "en": "Diet"
-        },
-        "value": {
-          "fr": "Planctophage, avec probablement une forte part de matières végétales",
-          "en": "Plankton feeder, likely with a large share of plant matter"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "key": "habitat",
-        "title": {
-          "fr": "Où il se tient",
-          "en": "Where it holds"
-        },
-        "body": {
-          "fr": "Les petits cours d'eau lents, parfois acides, chargés en matières organiques en suspension — souvent à proximité de tourbières.",
-          "en": "Small slow streams, sometimes acidic, carrying a high load of suspended organic matter — often near peat bogs."
-        }
-      },
-      {
-        "key": "situation",
-        "title": {
-          "fr": "Sa situation au Québec",
-          "en": "Its status in Quebec"
-        },
-        "body": {
-          "fr": "L'espèce est susceptible d'être désignée menacée ou vulnérable au Québec.",
-          "en": "The species is likely to be designated threatened or vulnerable in Quebec."
-        }
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
-  },
-  {
-    "id": "fouille-roche-gris",
-    "name": {
-      "fr": "Fouille-roche gris",
-      "en": "Channel darter"
-    },
-    "scientificName": "Percina copelandi",
-    "otherNames": {
-      "fr": "Dard gris",
-      "en": "Channel darter"
-    },
-    "status": {
-      "fr": "Vulnérable",
-      "en": "Vulnerable"
-    },
-    "source": "qc-fiche-fouille-roche-gris",
-    "consulted": "2026-09-07",
-    "marks": [
-      {
-        "label": {
-          "fr": "Taille",
-          "en": "Size"
-        },
-        "value": {
-          "fr": "5 à 8 cm",
-          "en": "5 to 8 cm"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fraie",
-          "en": "Spawning"
-        },
-        "value": {
-          "fr": "De mai à juillet, sur roches et gravier avec un peu de sable",
-          "en": "May to July, over rock and gravel with a little sand"
-        }
-      },
-      {
-        "label": {
-          "fr": "Régime",
-          "en": "Diet"
-        },
-        "value": {
-          "fr": "Surtout des insectes — larves d'éphémères et de moucherons — plus des algues et des débris végétaux",
-          "en": "Mostly insects — mayfly and midge larvae — plus algae and plant debris"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "key": "reconnaitre",
-        "title": {
-          "fr": "Le reconnaître",
-          "en": "Telling it apart"
-        },
-        "body": {
-          "fr": "On peut le confondre avec le raseux-de-terre noir et le raseux-de-terre gris. Ses taches latérales sont surtout rondes et souvent unies par une ligne noire, et sa queue est légèrement fourchue.",
-          "en": "It can be confused with the tessellated and Iowa darters. Its flank blotches are mostly round and often joined by a black line, and its tail is slightly forked."
-        }
-      },
-      {
-        "key": "habitat",
-        "title": {
-          "fr": "Où il se tient",
-          "en": "Where it holds"
-        },
-        "body": {
-          "fr": "On l'observe dans des habitats très variés, du fleuve Saint-Laurent jusqu'à de petits ruisseaux. En rivière et en petit cours d'eau, il est souvent associé à un substrat mixte de sable et de gravier.",
-          "en": "It turns up in a wide range of habitats, from the St. Lawrence down to small brooks. In rivers and small streams it is often associated with mixed sand and gravel substrate."
-        }
-      },
-      {
-        "key": "situation",
-        "title": {
-          "fr": "Sa situation au Québec",
-          "en": "Its status in Quebec"
-        },
-        "body": {
-          "fr": "Il est rare, et sa répartition au Québec est isolée des autres populations d'Amérique du Nord. Des échantillonnages laissent croire que certaines populations auraient disparu.",
-          "en": "It is rare, and its Quebec distribution is isolated from other North American populations. Sampling suggests some populations may have disappeared."
-        }
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
-  },
-  {
-    "id": "dard-de-sable",
-    "name": {
-      "fr": "Dard de sable",
-      "en": "Eastern sand darter"
-    },
-    "scientificName": "Ammocrypta pellucida",
-    "otherNames": {
-      "fr": "Dard de sable du Nord",
-      "en": "Eastern sand darter"
-    },
-    "status": {
-      "fr": "Menacée",
-      "en": "Threatened"
-    },
-    "source": "qc-fiche-dard-sable",
-    "consulted": "2026-09-07",
-    "marks": [
-      {
-        "label": {
-          "fr": "Taille",
-          "en": "Size"
-        },
-        "value": {
-          "fr": "4 à 5 cm — jusqu'à environ 8 cm",
-          "en": "4 to 5 cm — up to about 8 cm"
-        }
-      },
-      {
-        "label": {
-          "fr": "Poids",
-          "en": "Weight"
-        },
-        "value": {
-          "fr": "Généralement moins de 2 g",
-          "en": "Generally under 2 g"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fraie",
-          "en": "Spawning"
-        },
-        "value": {
-          "fr": "D'avril à août dans l'aire; au Québec, peut-être vers la fin juin",
-          "en": "April to August across the range; in Quebec, possibly toward late June"
-        }
-      },
-      {
-        "label": {
-          "fr": "Fond de fraie",
-          "en": "Spawning bottom"
-        },
-        "value": {
-          "fr": "Substrat bien oxygéné, principalement du sable",
-          "en": "Well-oxygenated substrate, mostly sand"
-        }
-      }
-    ],
-    "blocks": [
-      {
-        "key": "reconnaitre",
-        "title": {
-          "fr": "Le reconnaître",
-          "en": "Telling it apart"
-        },
-        "body": {
-          "fr": "Ses deux nageoires dorsales sont incolores et nettement séparées, sa forme est allongée, et il est pratiquement transparent — c'est ce qui le sépare du dard à ventre jaune et du dard barré.",
-          "en": "Its two dorsal fins are colourless and clearly separated, its shape is elongate, and it is nearly transparent — that is what separates it from yellowbelly and barred darters."
-        }
-      },
-      {
-        "key": "habitat",
-        "title": {
-          "fr": "Où il se tient",
-          "en": "Where it holds"
-        },
-        "body": {
-          "fr": "Poisson sédentaire, il s'enfouit dans le sable et ne laisse dépasser que ses yeux, à l'affût. Ça le cache des prédateurs et lui épargne l'énergie de nager dans le courant.",
-          "en": "A sedentary fish, it buries itself in sand leaving only its eyes exposed, waiting. That hides it from predators and spares it the energy of swimming in current."
-        }
-      },
-      {
-        "key": "situation",
-        "title": {
-          "fr": "Sa situation au Québec",
-          "en": "Its status in Quebec"
-        },
-        "body": {
-          "fr": "Peu de données existent sur la taille des populations, et les tendances sont difficiles à dégager. Les inventaires récents ont confirmé sa présence dans tous les sites historiques.",
-          "en": "Little data exists on population size, and trends are hard to establish. Recent surveys confirmed its presence at all historical sites."
         }
       }
     ],
