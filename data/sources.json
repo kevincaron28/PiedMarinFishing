@@ -8,13 +8,19 @@
       "fr": "Chevalier cuivré — fiche d'espèce faunique",
       "en": "Copper redhorse — wildlife species profile"
     },
-    "publisher": {"fr": "Gouvernement du Québec", "en": "Government of Quebec"},
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
     "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chevalier-cuivre",
     "covers": {
-      "fr": "Répartition, statut provincial, biologie générale.",
-      "en": "Range, provincial status, general biology."
+      "fr": "Identification, répartition, statut provincial, habitat, alimentation, menaces, et la règle de remise à l'eau des zones 7 et 8.",
+      "en": "Identification, range, provincial status, habitat, diet, threats, and the mandatory-release rule for zones 7 and 8."
     },
-    "verified": null
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
   },
   {
     "id": "eccc-retablissement-chevalier-2022",
@@ -25,7 +31,10 @@
       "fr": "Rapport sur les progrès de la mise en œuvre du programme de rétablissement du chevalier cuivré",
       "en": "Report on the Progress of Recovery Strategy Implementation for the Copper Redhorse"
     },
-    "publisher": {"fr": "Gouvernement du Canada", "en": "Government of Canada"},
+    "publisher": {
+      "fr": "Gouvernement du Canada",
+      "en": "Government of Canada"
+    },
     "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/lep-sara/2022/20220526-CopperRedhorseProgressReport-fra.pdf",
     "covers": {
       "fr": "Statut LEP, habitat essentiel, mesures de rétablissement.",
@@ -38,8 +47,14 @@
     "kind": "ngo",
     "authors": "Centre québécois du droit de l'environnement",
     "year": "s.d.",
-    "title": {"fr": "Chevalier cuivré — dossier", "en": "Copper redhorse — case file"},
-    "publisher": {"fr": "CQDE", "en": "CQDE"},
+    "title": {
+      "fr": "Chevalier cuivré — dossier",
+      "en": "Copper redhorse — case file"
+    },
+    "publisher": {
+      "fr": "CQDE",
+      "en": "CQDE"
+    },
     "url": "https://cqde.org/nos-actions/chevalier-cuivre/",
     "covers": {
       "fr": "Historique juridique de la protection de l'habitat. Organisme de plaidoyer — à croiser avec une source gouvernementale.",
@@ -56,7 +71,10 @@
       "fr": "Publications de l'OMNR / PPMF",
       "en": "OMNR / MFPP publications"
     },
-    "publisher": {"fr": "Muskies Canada", "en": "Muskies Canada"},
+    "publisher": {
+      "fr": "Muskies Canada",
+      "en": "Muskies Canada"
+    },
     "url": "https://muskiescanada.ca/fr/categorie/publications-de-lomnr-mfpp/",
     "covers": {
       "fr": "Compilation de travaux sur le maskinongé. Point d'entrée vers les études, pas une étude.",
@@ -93,7 +111,10 @@
       "fr": "Suivi du maskinongé dans le fleuve Saint-Laurent et le lac des Deux Montagnes",
       "en": "Muskellunge monitoring in the St. Lawrence River and Lac des Deux Montagnes"
     },
-    "publisher": {"fr": "Gouvernement du Québec", "en": "Government of Quebec"},
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
     "url": "",
     "covers": {
       "fr": "Suivi de population. Citation repérée par recherche — rien n'est confirmé.",

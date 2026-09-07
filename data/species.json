@@ -1,52 +1,181 @@
 [
   {
     "id": "chevalier-cuivre",
-    "name": {"fr": "Chevalier cuivré", "en": "Copper redhorse"},
+    "name": {
+      "fr": "Chevalier cuivré",
+      "en": "Copper redhorse"
+    },
     "scientificName": "Moxostoma hubbsi",
     "protected": true,
     "intro": {
-      "fr": "Il y a un poisson dans notre secteur du fleuve qu'on ne pêche pas, qu'on ne ciblera jamais, et que la plupart des pêcheurs ne sauraient pas reconnaître s'il remontait au bout de leur ligne. C'est probablement le poisson le plus fragile du Saint-Laurent, et son aire de répartition recoupe exactement l'eau qu'on travaille en tournoi. On lui consacre une fiche pour cette raison : parce qu'un pêcheur qui sait ce qu'il tient prend deux secondes de plus pour bien le remettre à l'eau.",
-      "en": "There is a fish in our stretch of the river that we do not fish for, will never target, and that most anglers would not recognize if it came up on their line. It is likely the most fragile fish in the St. Lawrence, and its range overlaps exactly the water we work during tournaments. That is why it gets a page here: an angler who knows what he is holding takes two extra seconds to release it properly."
+      "fr": "Il y a un poisson dans notre secteur du fleuve qu'on ne pêche pas, qu'on ne ciblera jamais, et que la plupart des pêcheurs ne sauraient pas reconnaître s'il remontait au bout de leur ligne. C'est probablement le poisson le plus fragile du Saint-Laurent, et son aire de répartition recoupe exactement l'eau qu'on travaille. On lui consacre une fiche pour une raison simple : la règle qui le protège ne s'applique pas seulement à lui, elle s'applique à tous les chevaliers et à tous les meuniers remontés dans les zones 7 et 8 — donc à nous, à chaque sortie.",
+      "en": "There is a fish in our stretch of the river that we do not fish for, will never target, and that most anglers would not recognize if it came up on their line. It is likely the most fragile fish in the St. Lawrence, and its range overlaps exactly the water we work. It gets a page here for a simple reason: the rule that protects it does not apply to it alone — it applies to every redhorse and every sucker brought up in zones 7 and 8, which means it applies to us, on every outing."
     },
     "claims": [
       {
-        "id": "endemique",
+        "id": "remise-eau",
         "text": {
-          "fr": "Le chevalier cuivré ne vit nulle part ailleurs sur la planète qu'au Québec.",
-          "en": "The copper redhorse lives nowhere else in the world but Quebec."
+          "fr": "Tous les spécimens de chevaliers ou de meuniers capturés accidentellement dans l'aire de répartition du chevalier cuivré — plusieurs plans d'eau des zones 7 et 8 — doivent être remis à l'eau immédiatement.",
+          "en": "Any redhorse or sucker caught accidentally within the copper redhorse's range — a number of water bodies in zones 7 and 8 — must be released immediately."
         },
-        "sources": ["qc-fiche-chevalier-cuivre"],
-        "verify": "Confirmer la formulation exacte : « endémique au Québec » ou « seul poisson dont l'aire de répartition est exclusive au Québec »? Les deux ne disent pas tout à fait la même chose.",
-        "verified": null
-      },
-      {
-        "id": "aire",
-        "text": {
-          "fr": "Son aire de répartition se limite au tronçon d'eau douce du fleuve entre le lac Saint-Louis et le lac Saint-Pierre, et à quelques tributaires — dont le Richelieu, la rivière des Mille Îles et la rivière des Prairies.",
-          "en": "Its range is limited to the freshwater stretch of the river between Lac Saint-Louis and Lac Saint-Pierre, plus a few tributaries — among them the Richelieu, Mille Îles and des Prairies rivers."
-        },
-        "sources": ["qc-fiche-chevalier-cuivre", "eccc-retablissement-chevalier-2022"],
-        "verify": "Confirmer la liste des tributaires. La recherche en nommait cinq; ne garder que ceux que la source nomme vraiment.",
-        "verified": null
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
       },
       {
         "id": "peche-interdite",
         "text": {
-          "fr": "Sa pêche est interdite, sportive comme commerciale.",
-          "en": "Fishing for it is prohibited, both sport and commercial."
+          "fr": "La pêche sportive et commerciale du chevalier cuivré est interdite.",
+          "en": "Sport and commercial fishing for the copper redhorse is prohibited."
         },
-        "sources": ["qc-fiche-chevalier-cuivre"],
-        "verify": "Le point le plus important de la fiche — le vérifier sur une source gouvernementale, et vérifier si l'interdiction porte sur le chevalier cuivré seul ou sur l'ensemble des chevaliers et meuniers dans certains secteurs.",
-        "verified": null
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
       },
       {
-        "id": "lep",
+        "id": "endemique",
         "text": {
-          "fr": "Il est protégé par la Loi fédérale sur les espèces en péril depuis 2007, après avoir été désigné espèce menacée au Québec en 1999.",
-          "en": "It has been protected under the federal Species at Risk Act since 2007, after being designated a threatened species in Quebec in 1999."
+          "fr": "C'est la seule espèce vertébrée dont l'aire de répartition est exclusive au Québec.",
+          "en": "It is the only vertebrate species whose entire range lies within Quebec."
         },
-        "sources": ["eccc-retablissement-chevalier-2022", "qc-fiche-chevalier-cuivre"],
-        "verify": "Confirmer les deux années et le statut exact (« menacée » ou « en voie de disparition » — ils ont changé).",
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "aire",
+        "text": {
+          "fr": "Il vit dans un tronçon du fleuve Saint-Laurent entre l'île Perrot et le lac Saint-Pierre, ainsi que dans la rivière Richelieu jusqu'à Chambly. Il fréquente aussi les rivières des Mille Îles, des Prairies, L'Acadie et Saint-François.",
+          "en": "It lives in a stretch of the St. Lawrence between Île Perrot and Lac Saint-Pierre, and in the Richelieu River as far as Chambly. It also frequents the Mille Îles, des Prairies, L'Acadie and Saint-François rivers."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "statut",
+        "text": {
+          "fr": "Il est désigné espèce menacée au Québec depuis 1999, en vertu de la Loi sur les espèces menacées ou vulnérables.",
+          "en": "It has been designated a threatened species in Quebec since 1999, under the Act respecting threatened or vulnerable species."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "abondance",
+        "text": {
+          "fr": "Son abondance actuelle est faible et son rang de précarité provincial est S1.",
+          "en": "Its current abundance is low and its provincial conservation rank is S1."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "identification",
+        "text": {
+          "fr": "On le reconnaît à son dos nettement arqué, qui lui donne une apparence bossue, à sa tête courte en triangle et à sa petite bouche dirigée vers le bas. Ses lèvres charnues sont marquées de sillons, alors que celles des meuniers portent des papilles.",
+          "en": "It is recognized by a sharply arched back that gives it a humped look, a short triangular head and a small downturned mouth. Its fleshy lips are marked with grooves, where a sucker's lips carry papillae."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "distinction",
+        "text": {
+          "fr": "Il se distingue des autres chevaliers par ses 15 ou 16 rangées d'écailles autour du pédoncule caudal, au lieu de 12. La carpe commune, qui lui ressemble, porte des barbillons au bord de la bouche — pas lui.",
+          "en": "It differs from other redhorse by having 15 or 16 rows of scales around the caudal peduncle instead of 12. The common carp, which resembles it, has barbels at the corners of its mouth — the copper redhorse does not."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "taille",
+        "text": {
+          "fr": "Les tailles observées au Québec vont généralement de 54 à 68 cm, les adultes pouvant dépasser 70 cm pour un poids atteignant 5,5 kg.",
+          "en": "Sizes recorded in Quebec generally run from 54 to 68 cm, with adults exceeding 70 cm and weights reaching 5.5 kg."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "alimentation",
+        "text": {
+          "fr": "L'adulte se nourrit presque exclusivement de mollusques et de gastéropodes, qu'il broie avec un appareil pharyngien à dents en forme de molaires.",
+          "en": "Adults feed almost exclusively on molluscs and gastropods, crushed with a specialized pharyngeal apparatus bearing molar-like teeth."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "menaces",
+        "text": {
+          "fr": "Parmi les menaces qui pèsent sur lui, le ministère nomme les prises accidentelles à la pêche, ainsi que les vagues causées par les embarcations — de plaisance comme commerciales — qui font disparaître les herbiers aquatiques dont il dépend à toutes les étapes de sa vie.",
+          "en": "Among the threats the ministry lists are accidental catches by anglers, and wakes from boats — pleasure and commercial alike — which destroy the submerged aquatic vegetation it depends on at every stage of its life."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "lep-federal",
+        "text": {
+          "fr": "Il est protégé par la Loi fédérale sur les espèces en péril depuis 2007.",
+          "en": "It has been protected under the federal Species at Risk Act since 2007."
+        },
+        "sources": [
+          "eccc-retablissement-chevalier-2022"
+        ],
+        "verify": "La fiche de Québec ne donne PAS cette date — elle renvoie au Registre public des espèces en péril. À confirmer sur le registre fédéral ou dans le rapport ECCC avant publication.",
         "verified": null
       },
       {
@@ -55,25 +184,17 @@
           "fr": "Un arrêté ministériel publié en 2021 interdit la destruction de son habitat essentiel.",
           "en": "A 2021 ministerial order prohibits the destruction of its critical habitat."
         },
-        "sources": ["eccc-retablissement-chevalier-2022", "cqde-chevalier-cuivre"],
-        "verify": "Confirmer la date et la portée. Vérifier aussi si l'arrêté couvre notre secteur.",
-        "verified": null
-      },
-      {
-        "id": "identification",
-        "text": {"fr": "", "en": ""},
-        "sources": [],
-        "verify": "MANQUANT ET IMPORTANT — comment distinguer un chevalier cuivré d'un meunier ou d'un autre chevalier, sur le bateau, en dix secondes. Sans ça, la fiche dit « ne le pêchez pas » sans dire à quoi il ressemble. Il faut une source avec des critères d'identification.",
-        "verified": null
-      },
-      {
-        "id": "quoi-faire",
-        "text": {"fr": "", "en": ""},
-        "sources": [],
-        "verify": "MANQUANT — la marche à suivre officielle si on en capture un accidentellement. Y a-t-il une obligation de signalement? À qui?",
+        "sources": [
+          "eccc-retablissement-chevalier-2022",
+          "cqde-chevalier-cuivre"
+        ],
+        "verify": "Absent de la fiche de Québec. À confirmer dans le rapport ECCC, avec la portée exacte.",
         "verified": null
       }
     ],
-    "field": {"fr": "", "en": ""}
+    "field": {
+      "fr": "",
+      "en": ""
+    }
   }
 ]
