@@ -236,5 +236,235 @@
       "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
       "date": "2026-09-07"
     }
+  },
+  {
+    "id": "qc-fiche-mene-herbe",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Méné d’herbe — fiche d'espèce faunique",
+      "en": "Bridle shiner — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-herbe",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-omble-chevalier-oquassa",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Omble chevalier oquassa — fiche d'espèce faunique",
+      "en": "Landlocked arctic char — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier-oquassa",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-omble-chevalier",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Omble chevalier — fiche d'espèce faunique",
+      "en": "Arctic char — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-touladi",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Touladi — fiche d'espèce faunique",
+      "en": "Lake trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/touladi",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-truite-arc-en-ciel",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Truite arc-en-ciel — fiche d'espèce faunique",
+      "en": "Rainbow trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-arc-en-ciel",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-omble-fontaine",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Omble de fontaine — fiche d'espèce faunique",
+      "en": "Brook trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-fontaine",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-truite-brune",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Truite brune — fiche d'espèce faunique",
+      "en": "Brown trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-brune",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-mene-laiton",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Méné laiton — fiche d'espèce faunique",
+      "en": "Brassy minnow — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-laiton",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poisson-tete-serpent-nord",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poisson à tête de serpent du Nord — fiche d'espèce faunique",
+      "en": "Snakehead — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-tete-serpent-nord",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-saumon-atlantique",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Saumon atlantique — fiche d'espèce faunique",
+      "en": "Atlantic salmon — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/saumon-atlantique",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
   }
 ]

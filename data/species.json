@@ -1,203 +1,5 @@
 [
   {
-    "id": "chevalier-cuivre",
-    "name": {
-      "fr": "Chevalier cuivré",
-      "en": "Copper redhorse"
-    },
-    "scientificName": "Moxostoma hubbsi",
-    "protected": true,
-    "intro": {
-      "fr": "Il y a un poisson dans notre secteur du fleuve qu'on ne pêche pas, qu'on ne ciblera jamais, et que la plupart des pêcheurs ne sauraient pas reconnaître s'il remontait au bout de leur ligne. C'est probablement le poisson le plus fragile du Saint-Laurent, et son aire de répartition recoupe exactement l'eau qu'on travaille. On lui consacre une fiche pour une raison simple : la règle qui le protège ne s'applique pas seulement à lui, elle s'applique à tous les chevaliers et à tous les meuniers remontés dans les zones 7 et 8 — donc à nous, à chaque sortie.",
-      "en": "There is a fish in our stretch of the river that we do not fish for, will never target, and that most anglers would not recognize if it came up on their line. It is likely the most fragile fish in the St. Lawrence, and its range overlaps exactly the water we work. It gets a page here for a simple reason: the rule that protects it does not apply to it alone — it applies to every redhorse and every sucker brought up in zones 7 and 8, which means it applies to us, on every outing."
-    },
-    "claims": [
-      {
-        "id": "remise-eau",
-        "text": {
-          "fr": "Tous les spécimens de chevaliers ou de meuniers capturés accidentellement dans l'aire de répartition du chevalier cuivré — plusieurs plans d'eau des zones 7 et 8 — doivent être remis à l'eau immédiatement.",
-          "en": "Any redhorse or sucker caught accidentally within the copper redhorse's range — a number of water bodies in zones 7 and 8 — must be released immediately."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "peche-interdite",
-        "text": {
-          "fr": "La pêche sportive et commerciale du chevalier cuivré est interdite.",
-          "en": "Sport and commercial fishing for the copper redhorse is prohibited."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "endemique",
-        "text": {
-          "fr": "C'est la seule espèce vertébrée dont l'aire de répartition est exclusive au Québec.",
-          "en": "It is the only vertebrate species whose entire range lies within Quebec."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "aire",
-        "text": {
-          "fr": "Il vit dans un tronçon du fleuve Saint-Laurent entre l'île Perrot et le lac Saint-Pierre, ainsi que dans la rivière Richelieu jusqu'à Chambly. Il fréquente aussi les rivières des Mille Îles, des Prairies, L'Acadie et Saint-François.",
-          "en": "It lives in a stretch of the St. Lawrence between Île Perrot and Lac Saint-Pierre, and in the Richelieu River as far as Chambly. It also frequents the Mille Îles, des Prairies, L'Acadie and Saint-François rivers."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "statut",
-        "text": {
-          "fr": "Il est désigné espèce menacée au Québec depuis 1999, en vertu de la Loi sur les espèces menacées ou vulnérables.",
-          "en": "It has been designated a threatened species in Quebec since 1999, under the Act respecting threatened or vulnerable species."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "abondance",
-        "text": {
-          "fr": "Son abondance actuelle est faible et son rang de précarité provincial est S1.",
-          "en": "Its current abundance is low and its provincial conservation rank is S1."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "identification",
-        "text": {
-          "fr": "On le reconnaît à son dos nettement arqué, qui lui donne une apparence bossue, à sa tête courte en triangle et à sa petite bouche dirigée vers le bas. Ses lèvres charnues sont marquées de sillons, alors que celles des meuniers portent des papilles.",
-          "en": "It is recognized by a sharply arched back that gives it a humped look, a short triangular head and a small downturned mouth. Its fleshy lips are marked with grooves, where a sucker's lips carry papillae."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "distinction",
-        "text": {
-          "fr": "Il se distingue des autres chevaliers par ses 15 ou 16 rangées d'écailles autour du pédoncule caudal, au lieu de 12. La carpe commune, qui lui ressemble, porte des barbillons au bord de la bouche — pas lui.",
-          "en": "It differs from other redhorse by having 15 or 16 rows of scales around the caudal peduncle instead of 12. The common carp, which resembles it, has barbels at the corners of its mouth — the copper redhorse does not."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "taille",
-        "text": {
-          "fr": "Les tailles observées au Québec vont généralement de 54 à 68 cm, les adultes pouvant dépasser 70 cm pour un poids atteignant 5,5 kg.",
-          "en": "Sizes recorded in Quebec generally run from 54 to 68 cm, with adults exceeding 70 cm and weights reaching 5.5 kg."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "alimentation",
-        "text": {
-          "fr": "L'adulte se nourrit presque exclusivement de mollusques et de gastéropodes, qu'il broie avec un appareil pharyngien à dents en forme de molaires.",
-          "en": "Adults feed almost exclusively on molluscs and gastropods, crushed with a specialized pharyngeal apparatus bearing molar-like teeth."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "menaces",
-        "text": {
-          "fr": "Parmi les menaces qui pèsent sur lui, le ministère nomme les prises accidentelles à la pêche, ainsi que les vagues causées par les embarcations — de plaisance comme commerciales — qui font disparaître les herbiers aquatiques dont il dépend à toutes les étapes de sa vie.",
-          "en": "Among the threats the ministry lists are accidental catches by anglers, and wakes from boats — pleasure and commercial alike — which destroy the submerged aquatic vegetation it depends on at every stage of its life."
-        },
-        "sources": [
-          "qc-fiche-chevalier-cuivre"
-        ],
-        "verified": {
-          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-          "date": "2026-09-07"
-        }
-      },
-      {
-        "id": "lep-federal",
-        "text": {
-          "fr": "Il est protégé par la Loi fédérale sur les espèces en péril depuis 2007.",
-          "en": "It has been protected under the federal Species at Risk Act since 2007."
-        },
-        "sources": [
-          "eccc-retablissement-chevalier-2022"
-        ],
-        "verify": "La fiche de Québec ne donne PAS cette date — elle renvoie au Registre public des espèces en péril. À confirmer sur le registre fédéral ou dans le rapport ECCC avant publication.",
-        "verified": null
-      },
-      {
-        "id": "habitat-essentiel",
-        "text": {
-          "fr": "Un arrêté ministériel publié en 2021 interdit la destruction de son habitat essentiel.",
-          "en": "A 2021 ministerial order prohibits the destruction of its critical habitat."
-        },
-        "sources": [
-          "eccc-retablissement-chevalier-2022",
-          "cqde-chevalier-cuivre"
-        ],
-        "verify": "Absent de la fiche de Québec. À confirmer dans le rapport ECCC, avec la portée exacte.",
-        "verified": null
-      }
-    ],
-    "field": {
-      "fr": "",
-      "en": ""
-    }
-  },
-  {
     "id": "maskinonge",
     "name": {
       "fr": "Maskinongé",
@@ -339,7 +141,99 @@
     "field": {
       "fr": "",
       "en": ""
-    }
+    },
+    "source": "qc-fiche-maskinonge",
+    "consulted": "2026-09-07",
+    "otherNames": {
+      "fr": "",
+      "en": ""
+    },
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "25 à 113 cm — peut dépasser 1,5 m",
+          "en": "25 to 113 cm — can exceed 1.5 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 40 kg",
+          "en": "Can exceed 40 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Température",
+          "en": "Temperature"
+        },
+        "value": {
+          "fr": "Eaux chaudes, 20 à 26 °C",
+          "en": "Warm water, 20 to 26 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Où le chercher",
+          "en": "Where to look"
+        },
+        "value": {
+          "fr": "Eaux claires et peu profondes à végétation dense; en marge des herbiers",
+          "en": "Clear shallow water with dense vegetation; along weed-bed edges"
+        }
+      },
+      {
+        "label": {
+          "fr": "L'été",
+          "en": "In summer"
+        },
+        "value": {
+          "fr": "Il peut descendre en eau plus profonde et plus fraîche",
+          "en": "It can drop into deeper, cooler water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S4",
+          "en": "S4"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Des taches sombres sur fond pâle — le grand brochet, lui, porte des taches pâles sur fond sombre. Le maskinongé a aussi plus de pores sous la mâchoire : de 6 à 9 de chaque côté. Son museau allongé a la forme d'un bec de canard.",
+          "en": "Dark spots on a pale ground — northern pike carries pale spots on a dark ground. Muskellunge also has more pores under the jaw: 6 to 9 per side. Its long snout has the shape of a duck's bill."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Lacs, baies et zones de courant modéré. Il se poste à des endroits stratégiques, typiquement en marge des herbiers aquatiques, et bascule vers l'eau plus profonde quand la chaleur de l'été s'installe.",
+          "en": "Lakes, bays and moderate-current stretches. It sets up at strategic spots, typically along the edges of weed beds, and shifts into deeper water when summer heat settles in."
+        }
+      }
+    ]
   },
   {
     "id": "perchaude",
@@ -449,6 +343,1578 @@
         "verified": {
           "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
           "date": "2026-09-07"
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    },
+    "source": "qc-fiche-perchaude",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "14 à 23 cm — peut dépasser 30 cm",
+          "en": "14 to 23 cm — can exceed 30 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Peut dépasser 1 kg",
+          "en": "Can exceed 1 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Profondeur",
+          "en": "Depth"
+        },
+        "value": {
+          "fr": "Surtout à moins de 9 m, parfois à plus de 45 m",
+          "en": "Mostly under 9 m, occasionally over 45 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fonds",
+          "en": "Bottom"
+        },
+        "value": {
+          "fr": "Rocheux, graveleux, boueux ou sablonneux — avec végétation de préférence",
+          "en": "Rock, gravel, mud or sand — vegetated for preference"
+        }
+      },
+      {
+        "label": {
+          "fr": "Eau",
+          "en": "Water"
+        },
+        "value": {
+          "fr": "Turbidité faible ou modérée, faible courant",
+          "en": "Low to moderate turbidity, low current"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Corps comprimé sur les côtés et relativement haut, dos vert ou bronzé, flancs vert jaune barrés de 5 à 8 bandes verticales foncées. Une épine au bout de l'opercule, et des épines défensives sur la première dorsale et l'anale — attention aux doigts.",
+          "en": "Laterally compressed, relatively deep body, green or bronze back, yellow-green flanks crossed by 5 to 8 dark vertical bars. A spine at the tip of the gill cover, and defensive spines on the first dorsal and anal fins — mind your fingers."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Lacs, étangs et cours d'eau à faible courant. Elle affectionne particulièrement les habitats qui présentent de la végétation aquatique, et se tient généralement en eau peu profonde.",
+          "en": "Lakes, ponds and low-current waters. It particularly favours habitats with aquatic vegetation, and generally holds in shallow water."
+        }
+      }
+    ]
+  },
+  {
+    "id": "chevalier-cuivre",
+    "name": {
+      "fr": "Chevalier cuivré",
+      "en": "Copper redhorse"
+    },
+    "scientificName": "Moxostoma hubbsi",
+    "protected": true,
+    "intro": {
+      "fr": "Il y a un poisson dans notre secteur du fleuve qu'on ne pêche pas, qu'on ne ciblera jamais, et que la plupart des pêcheurs ne sauraient pas reconnaître s'il remontait au bout de leur ligne. C'est probablement le poisson le plus fragile du Saint-Laurent, et son aire de répartition recoupe exactement l'eau qu'on travaille. On lui consacre une fiche pour une raison simple : la règle qui le protège ne s'applique pas seulement à lui, elle s'applique à tous les chevaliers et à tous les meuniers remontés dans les zones 7 et 8 — donc à nous, à chaque sortie.",
+      "en": "There is a fish in our stretch of the river that we do not fish for, will never target, and that most anglers would not recognize if it came up on their line. It is likely the most fragile fish in the St. Lawrence, and its range overlaps exactly the water we work. It gets a page here for a simple reason: the rule that protects it does not apply to it alone — it applies to every redhorse and every sucker brought up in zones 7 and 8, which means it applies to us, on every outing."
+    },
+    "claims": [
+      {
+        "id": "remise-eau",
+        "text": {
+          "fr": "Tous les spécimens de chevaliers ou de meuniers capturés accidentellement dans l'aire de répartition du chevalier cuivré — plusieurs plans d'eau des zones 7 et 8 — doivent être remis à l'eau immédiatement.",
+          "en": "Any redhorse or sucker caught accidentally within the copper redhorse's range — a number of water bodies in zones 7 and 8 — must be released immediately."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "peche-interdite",
+        "text": {
+          "fr": "La pêche sportive et commerciale du chevalier cuivré est interdite.",
+          "en": "Sport and commercial fishing for the copper redhorse is prohibited."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "endemique",
+        "text": {
+          "fr": "C'est la seule espèce vertébrée dont l'aire de répartition est exclusive au Québec.",
+          "en": "It is the only vertebrate species whose entire range lies within Quebec."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "aire",
+        "text": {
+          "fr": "Il vit dans un tronçon du fleuve Saint-Laurent entre l'île Perrot et le lac Saint-Pierre, ainsi que dans la rivière Richelieu jusqu'à Chambly. Il fréquente aussi les rivières des Mille Îles, des Prairies, L'Acadie et Saint-François.",
+          "en": "It lives in a stretch of the St. Lawrence between Île Perrot and Lac Saint-Pierre, and in the Richelieu River as far as Chambly. It also frequents the Mille Îles, des Prairies, L'Acadie and Saint-François rivers."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "statut",
+        "text": {
+          "fr": "Il est désigné espèce menacée au Québec depuis 1999, en vertu de la Loi sur les espèces menacées ou vulnérables.",
+          "en": "It has been designated a threatened species in Quebec since 1999, under the Act respecting threatened or vulnerable species."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "abondance",
+        "text": {
+          "fr": "Son abondance actuelle est faible et son rang de précarité provincial est S1.",
+          "en": "Its current abundance is low and its provincial conservation rank is S1."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "taille",
+        "text": {
+          "fr": "Les tailles observées au Québec vont généralement de 54 à 68 cm, les adultes pouvant dépasser 70 cm pour un poids atteignant 5,5 kg.",
+          "en": "Sizes recorded in Quebec generally run from 54 to 68 cm, with adults exceeding 70 cm and weights reaching 5.5 kg."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "alimentation",
+        "text": {
+          "fr": "L'adulte se nourrit presque exclusivement de mollusques et de gastéropodes, qu'il broie avec un appareil pharyngien à dents en forme de molaires.",
+          "en": "Adults feed almost exclusively on molluscs and gastropods, crushed with a specialized pharyngeal apparatus bearing molar-like teeth."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "menaces",
+        "text": {
+          "fr": "Parmi les menaces qui pèsent sur lui, le ministère nomme les prises accidentelles à la pêche, ainsi que les vagues causées par les embarcations — de plaisance comme commerciales — qui font disparaître les herbiers aquatiques dont il dépend à toutes les étapes de sa vie.",
+          "en": "Among the threats the ministry lists are accidental catches by anglers, and wakes from boats — pleasure and commercial alike — which destroy the submerged aquatic vegetation it depends on at every stage of its life."
+        },
+        "sources": [
+          "qc-fiche-chevalier-cuivre"
+        ],
+        "verified": {
+          "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+          "date": "2026-09-07"
+        }
+      },
+      {
+        "id": "lep-federal",
+        "text": {
+          "fr": "Il est protégé par la Loi fédérale sur les espèces en péril depuis 2007.",
+          "en": "It has been protected under the federal Species at Risk Act since 2007."
+        },
+        "sources": [
+          "eccc-retablissement-chevalier-2022"
+        ],
+        "verify": "La fiche de Québec ne donne PAS cette date — elle renvoie au Registre public des espèces en péril. À confirmer sur le registre fédéral ou dans le rapport ECCC avant publication.",
+        "verified": null
+      },
+      {
+        "id": "habitat-essentiel",
+        "text": {
+          "fr": "Un arrêté ministériel publié en 2021 interdit la destruction de son habitat essentiel.",
+          "en": "A 2021 ministerial order prohibits the destruction of its critical habitat."
+        },
+        "sources": [
+          "eccc-retablissement-chevalier-2022",
+          "cqde-chevalier-cuivre"
+        ],
+        "verify": "Absent de la fiche de Québec. À confirmer dans le rapport ECCC, avec la portée exacte.",
+        "verified": null
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    },
+    "source": "qc-fiche-chevalier-cuivre",
+    "consulted": "2026-09-07",
+    "otherNames": {
+      "fr": "Suceur cuivré, moxostome cuivré, carpe cuivrée",
+      "en": "Copper sucker"
+    },
+    "status": {
+      "fr": "Menacée — pêche interdite",
+      "en": "Threatened — fishing prohibited"
+    },
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "54 à 68 cm — les adultes dépassent 70 cm",
+          "en": "54 to 68 cm — adults exceed 70 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Jusqu'à 5,5 kg",
+          "en": "Up to 5.5 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Presque exclusivement mollusques et gastéropodes, broyés par un appareil pharyngien à dents en molaires",
+          "en": "Almost exclusively molluscs and gastropods, crushed by a pharyngeal apparatus with molar-like teeth"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Mi-juin à juillet, en eau vive, quand l'eau approche 21 °C",
+          "en": "Mid-June to July, in fast water, as it nears 21 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Profondeur de fraie",
+          "en": "Spawning depth"
+        },
+        "value": {
+          "fr": "0,75 à 2 m, sur fond de roche et de gravier",
+          "en": "0.75 to 2 m, over rock and gravel"
+        }
+      },
+      {
+        "label": {
+          "fr": "Maturité",
+          "en": "Maturity"
+        },
+        "value": {
+          "fr": "Tard : vers 8 à 10 ans",
+          "en": "Late: around 8 to 10 years"
+        }
+      },
+      {
+        "label": {
+          "fr": "Rang de précarité",
+          "en": "Conservation rank"
+        },
+        "value": {
+          "fr": "S1",
+          "en": "S1"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître sur le bateau",
+          "en": "Recognizing it in the boat"
+        },
+        "body": {
+          "fr": "Un dos nettement arqué qui lui donne une apparence bossue, une tête courte en triangle, une petite bouche dirigée vers le bas. Ses lèvres charnues sont marquées de sillons — celles des meuniers portent des papilles. Il a 15 ou 16 rangées d'écailles autour du pédoncule caudal, au lieu de 12 chez le chevalier de rivière, le chevalier rouge et le chevalier blanc. La carpe commune lui ressemble mais porte des barbillons aux coins de la bouche.",
+          "en": "A sharply arched back that gives it a humped look, a short triangular head, a small downturned mouth. Its fleshy lips are marked with grooves — a sucker's lips carry papillae. It has 15 or 16 rows of scales around the caudal peduncle, against 12 in river, greater and shorthead redhorse. Common carp resembles it but has barbels at the corners of the mouth."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "L'adulte fréquente les herbiers des zones peu profondes autour des îles et des archipels du fleuve et des rivières Richelieu, des Prairies et des Mille Îles. Les jeunes de moins de deux ans tiennent les zones littorales peu profondes à substrat fin.",
+          "en": "Adults use the weed beds of shallow areas around the islands and archipelagos of the river and of the Richelieu, des Prairies and Mille Îles rivers. Fish under two years old hold in shallow littoral zones over fine substrate."
+        }
+      }
+    ]
+  },
+  {
+    "id": "poulamon-atlantique",
+    "name": {
+      "fr": "Poulamon atlantique",
+      "en": "Atlantic tomcod"
+    },
+    "scientificName": "Microgadus tomcod",
+    "otherNames": {
+      "fr": "Petit poisson des chenaux, poulamon, petite morue, loche",
+      "en": "Tomcod, frostfish"
+    },
+    "source": "qc-fiche-poulamon-atlantique",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "16 à 25 cm — jusqu'à 45 cm",
+          "en": "16 to 25 cm — up to 45 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Généralement moins de 150 g",
+          "en": "Generally under 150 g"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "De la mi-décembre à la fin janvier, en eau douce, SOUS LA GLACE",
+          "en": "Mid-December to late January, in fresh water, UNDER THE ICE"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Sable ou gravier, au pied de rapides ou dans les interstices du frasil",
+          "en": "Sand or gravel, at the foot of rapids or in the gaps of frazil ice"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Petits crustacés, vers, poissons, mollusques",
+          "en": "Small crustaceans, worms, fish, molluscs"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Trois nageoires dorsales et deux nageoires anales. La lotte, avec qui on le confond, n'a que deux dorsales — une courte à l'avant, une longue qui va jusqu'à la caudale — et une seule anale qui s'étend elle aussi jusqu'à la caudale.",
+          "en": "Three dorsal fins and two anal fins. Burbot, the fish it gets confused with, has only two dorsals — a short front one and a long one running to the tail — and a single anal fin that also runs to the tail."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il fréquente les eaux côtières, saumâtres et salées. En hiver il migre en eau douce pour se reproduire — c'est la pêche des petits poissons des chenaux. Il peut aussi accomplir tout son cycle de vie en eau douce.",
+          "en": "It uses coastal, brackish and salt water. In winter it migrates into fresh water to spawn — this is the classic Quebec ice fishery. It can also complete its whole life cycle in fresh water."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "touladi",
+    "name": {
+      "fr": "Touladi",
+      "en": "Lake trout"
+    },
+    "scientificName": "Salvelinus namaycush",
+    "otherNames": {
+      "fr": "Truite grise, truite de lac",
+      "en": "Grey trout, lake char"
+    },
+    "source": "qc-fiche-touladi",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "34 à 72 cm — peut dépasser 1 m",
+          "en": "34 to 72 cm — can exceed 1 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "0,5 à 1,5 kg en moyenne; plus de 5 kg possible",
+          "en": "0.5 to 1.5 kg on average; over 5 kg is possible"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Automne, eau entre 8 et 13 °C, de nuit",
+          "en": "Fall, water between 8 and 13 °C, at night"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Pierraille et roches, souvent à moins de 2 m",
+          "en": "Rubble and rock, often under 2 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Prédateur au sommet de la chaîne : poissons, crustacés, insectes, invertébrés du fond",
+          "en": "Top-of-the-chain predator: fish, crustaceans, insects, benthic invertebrates"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Sa queue nettement fourchue le sépare des autres salmonidés. Contrairement à l'omble de fontaine, il ne porte aucun point rouge sur le corps. À ne pas confondre non plus avec le saumon atlantique (ouananiche) ni l'omble chevalier.",
+          "en": "Its distinctly forked tail separates it from the other salmonids. Unlike brook trout, it carries no red spots on the body. Do not confuse it with Atlantic salmon (ouananiche) or Arctic char either."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il cherche les lacs d'eau froide et bien oxygénée, mais fréquente aussi les grands cours d'eau et parfois l'eau saumâtre dans le Nord. Dans le sud de son aire, ces conditions ne se trouvent que dans les lacs profonds.",
+          "en": "It looks for cold, well-oxygenated lakes, but also uses large rivers and sometimes brackish water in the north. In the southern part of its range, those conditions exist only in deep lakes."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "omble-de-fontaine",
+    "name": {
+      "fr": "Omble de fontaine",
+      "en": "Brook trout"
+    },
+    "scientificName": "Salvelinus fontinalis",
+    "otherNames": {
+      "fr": "Truite mouchetée, truite de mer, truite de ruisseau",
+      "en": "Speckled trout, sea trout, brook char"
+    },
+    "source": "qc-fiche-omble-fontaine",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "15 à 32 cm — des spécimens de plus de 55 cm existent au Québec",
+          "en": "15 to 32 cm — fish over 55 cm occur in Quebec"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "100 à 1 000 g, jusqu'à 2 kg",
+          "en": "100 to 1,000 g, up to 2 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Fin d'été ou début d'automne, de jour",
+          "en": "Late summer or early fall, during the day"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Souvent graveleux, en rivière ou près des berges bien oxygénées d'un lac",
+          "en": "Usually gravel, in rivers or along well-oxygenated lake shores"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Insectes terrestres et aquatiques, crustacés, vers, mollusques, amphibiens, poissons",
+          "en": "Terrestrial and aquatic insects, crustaceans, worms, molluscs, amphibians, fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Ses points rouges cerclés d'un halo bleu bien défini ne trompent pas. Ajoute les marbrures sur le dos, la dorsale et la caudale, et les nageoires pectorales et pelviennes bordées d'une bande blanche suivie d'une bande noire.",
+          "en": "Its red spots ringed by a well-defined blue halo are unmistakable. Add the vermiculations on the back, dorsal and caudal fins, and the pectoral and pelvic fins edged in white then black."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Espèce de lac et d'eau courante, il fréquente les plans d'eau de toutes tailles pourvu que l'eau soit fraîche, bien oxygénée et de qualité satisfaisante. Une forme anadrome existe dans les rivières de l'est du Québec quand rien ne bloque son accès à la mer.",
+          "en": "A fish of both lakes and moving water, it uses waters of every size as long as they are cool, well oxygenated and of decent quality. An anadromous form occurs in eastern Quebec rivers where nothing blocks access to the sea."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "truite-brune",
+    "name": {
+      "fr": "Truite brune",
+      "en": "Brown trout"
+    },
+    "scientificName": "Salmo trutta",
+    "otherNames": {
+      "fr": "Truite allemande, truite Loch Leven, truite fario",
+      "en": "German trout, Loch Leven trout"
+    },
+    "source": "qc-fiche-truite-brune",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "16 à 64 cm",
+          "en": "16 to 64 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "0,5 à 1 kg habituellement au Québec",
+          "en": "Usually 0.5 to 1 kg in Quebec"
+        }
+      },
+      {
+        "label": {
+          "fr": "Température",
+          "en": "Temperature"
+        },
+        "value": {
+          "fr": "Préfère 15 à 18 °C, tolère jusqu'à 24 °C",
+          "en": "Prefers 15 to 18 °C, tolerates up to 24 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Tard à l'automne, en eau de 5 à 10 °C",
+          "en": "Late fall, in water of 5 to 10 °C"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Surtout des poissons; s'alimente principalement au crépuscule",
+          "en": "Mostly fish; feeds mainly at dusk"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Sa nageoire adipeuse porte des taches foncées — celle du saumon atlantique et de la ouananiche n'en a aucune, celle de la truite arc-en-ciel a une bordure noire. Sa caudale est carrée, à peine échancrée.",
+          "en": "Its adipose fin carries dark spots — Atlantic salmon and ouananiche have none, and rainbow trout's has a black margin. Its tail is square, barely notched."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Elle fréquente surtout les cours d'eau à courant faible, parfois les eaux vives, et les lacs. Elle supporte des eaux plus turbides que les salmonidés indigènes du Québec — c'est ce qui la rend présente là où les autres ne tiennent pas.",
+          "en": "It mostly uses slow-moving water, sometimes faster stretches, and lakes. It tolerates more turbid water than Quebec's native salmonids — which is why it turns up where the others cannot hold."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "truite-arc-en-ciel",
+    "name": {
+      "fr": "Truite arc-en-ciel",
+      "en": "Rainbow trout"
+    },
+    "scientificName": "Oncorhynchus mykiss",
+    "otherNames": {
+      "fr": "Truite steelhead, truite argentée",
+      "en": "Steelhead"
+    },
+    "source": "qc-fiche-truite-arc-en-ciel",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "14 à 47 cm",
+          "en": "14 to 47 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Généralement d'avril à juin au Québec, parfois à l'automne selon la lignée",
+          "en": "Generally April to June in Quebec, sometimes fall depending on the strain"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Gravier, en eau courante peu profonde et bien oxygénée",
+          "en": "Gravel, in shallow, well-oxygenated moving water"
+        }
+      },
+      {
+        "label": {
+          "fr": "Éclosion",
+          "en": "Hatching"
+        },
+        "value": {
+          "fr": "4 à 7 semaines",
+          "en": "4 to 7 weeks"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Zooplancton, crustacés, vers, insectes, œufs de poisson, petits poissons — au fond comme en surface",
+          "en": "Zooplankton, crustaceans, worms, insects, fish eggs, small fish — on the bottom and at the surface"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Taches sombres sur fond pâle. Sa caudale porte des rangées régulières de taches noires, et sa nageoire adipeuse a une bordure noire.",
+          "en": "Dark spots on a pale ground. Its tail carries regular rows of black spots, and its adipose fin has a black margin."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Elle préfère les rivières peu profondes à fond de gravier, en eau claire et fraîche à courant modéré, et les lacs de profondeur moyenne à grande avec végétation. Elle monte dans les plus petits cours d'eau à débit rapide pour frayer.",
+          "en": "It prefers shallow gravel-bottomed rivers with clear, cool water and moderate current, and medium to deep lakes with vegetation. It moves into smaller fast-flowing streams to spawn."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "saumon-atlantique",
+    "name": {
+      "fr": "Saumon atlantique",
+      "en": "Atlantic salmon"
+    },
+    "scientificName": "Salmo salar",
+    "otherNames": {
+      "fr": "Saumon, ouananiche (forme confinée en eau douce)",
+      "en": "Salmon, ouananiche (landlocked form)"
+    },
+    "source": "qc-fiche-saumon-atlantique",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "45 à 110 cm; la forme anadrome peut atteindre 1,50 m",
+          "en": "45 to 110 cm; the anadromous form can reach 1.50 m"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "Jusqu'à 20 kg au Québec",
+          "en": "Up to 20 kg in Quebec"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "À l'automne, en eau courante peu profonde sur substrat graveleux",
+          "en": "In fall, in shallow moving water over gravel"
+        }
+      },
+      {
+        "label": {
+          "fr": "Montaison",
+          "en": "Run"
+        },
+        "value": {
+          "fr": "Les adultes remontent les rivières du printemps jusqu'en septembre",
+          "en": "Adults run the rivers from spring through September"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Surtout des poissons et des crustacés — il cesse habituellement de s'alimenter une fois en rivière",
+          "en": "Mostly fish and crustaceans — it usually stops feeding once in the river"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Taches foncées sur fond pâle, alors que l'omble chevalier, l'omble de fontaine et le touladi portent des taches pâles sur fond sombre. Contrairement à la truite arc-en-ciel, l'adulte n'a pas de bande rosée sur les flancs.",
+          "en": "Dark spots on a pale ground, where Arctic char, brook trout and lake trout carry pale spots on a dark ground. Unlike rainbow trout, the adult has no pink band along the flanks."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "En eau douce, le migrateur fréquente les rivières froides reliées à la mer. Les jeunes y passent de 2 à 5 ans, dans les eaux moyennement rapides à fond graveleux, avant de descendre vers la mer où la croissance est rapide.",
+          "en": "In fresh water the migratory form uses cold rivers connected to the sea. Young fish spend 2 to 5 years there, in moderately fast water over gravel, before dropping down to sea where growth is rapid."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "omble-chevalier",
+    "name": {
+      "fr": "Omble chevalier",
+      "en": "Arctic char"
+    },
+    "scientificName": "Salvelinus alpinus",
+    "otherNames": {
+      "fr": "Truite rouge",
+      "en": "Red trout"
+    },
+    "source": "qc-fiche-omble-chevalier",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "20 à 50 cm — parfois plus de 90 cm",
+          "en": "20 to 50 cm — sometimes over 90 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "0,5 à 4,5 kg en général",
+          "en": "Generally 0.5 to 4.5 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En septembre ou octobre selon la latitude, de jour",
+          "en": "September or October depending on latitude, during the day"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Hauts-fonds de gravier ou de roches en lac, bassins calmes graveleux en rivière",
+          "en": "Gravel or rock shoals in lakes, calm gravel-bottomed pools in rivers"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "En mer : crustacés et petits poissons. En eau douce : larves d'insectes, crustacés, petits poissons",
+          "en": "At sea: crustaceans and small fish. In fresh water: insect larvae, crustaceans, small fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Il n'a ni marbrures sur le dos et les nageoires dorsale et caudale, ni halos bleus bien définis autour des taches de ses flancs — c'est ce qui le sépare de l'omble de fontaine.",
+          "en": "It has no vermiculations on the back, dorsal or caudal fins, and no well-defined blue halos around the spots on its flanks — that is what separates it from brook trout."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "La forme anadrome fréquente au printemps et à l'été les estuaires et les eaux marines côtières près des embouchures. Elle s'alimente en mer avant de remonter les cours d'eau pour se reproduire et hiverner en eau douce; les jeunes restent en eau douce.",
+          "en": "The anadromous form uses estuaries and coastal marine water near river mouths in spring and summer. It feeds at sea before running up rivers to spawn and winter in fresh water; the young stay in fresh water."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "omble-chevalier-oquassa",
+    "name": {
+      "fr": "Omble chevalier oquassa",
+      "en": "Landlocked Arctic char"
+    },
+    "scientificName": "Salvelinus alpinus oquassa",
+    "otherNames": {
+      "fr": "Omble rouge, truite rouge",
+      "en": "Red char, red trout"
+    },
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-omble-chevalier-oquassa",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "20 à 40 cm chez l'adulte",
+          "en": "20 to 40 cm as an adult"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "0,1 à 2,0 kg",
+          "en": "0.1 to 2.0 kg"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Entre septembre et décembre selon les lacs, surtout en fonction de la température",
+          "en": "Between September and December depending on the lake, driven mainly by temperature"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fond de fraie",
+          "en": "Spawning bottom"
+        },
+        "value": {
+          "fr": "Zones alimentées par des sorties d'eaux souterraines, bien exposées au vent",
+          "en": "Areas fed by groundwater seeps, well exposed to wind"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Larves aquatiques d'insectes, crustacés, poissons",
+          "en": "Aquatic insect larvae, crustaceans, fish"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Comme l'omble chevalier, il n'a ni marbrures sur le dos et les nageoires dorsale et caudale, ni halos bleus bien définis autour des taches des flancs, contrairement à l'omble de fontaine.",
+          "en": "Like Arctic char, it has no vermiculations on the back, dorsal or caudal fins, and no well-defined blue halos around the flank spots, unlike brook trout."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Il vit dans les eaux froides des lacs profonds des régions montagneuses. L'été, il descend dans les zones plus profondes pour échapper au réchauffement de la surface; l'hiver, la température redevenant uniforme, il regagne toute la colonne d'eau.",
+          "en": "It lives in the cold water of deep mountain lakes. In summer it drops into deeper zones to escape surface warming; in winter, once the temperature evens out, it uses the whole water column again."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est désignée vulnérable au Québec.",
+          "en": "The species is designated vulnerable in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "tanche",
+    "name": {
+      "fr": "Tanche",
+      "en": "Tench"
+    },
+    "scientificName": "Tinca tinca",
+    "otherNames": {
+      "fr": "Tanche verte, tanche dorée, tanche de Mongolie",
+      "en": "Green tench, golden tench"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-tanche",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "15 à 40 cm — certains spécimens atteignent 80 cm",
+          "en": "15 to 40 cm — some reach 80 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Poids",
+          "en": "Weight"
+        },
+        "value": {
+          "fr": "3,5 à 4 kg à l'âge adulte",
+          "en": "3.5 to 4 kg as an adult"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "En eau peu profonde et végétalisée, dès que l'eau atteint 18 °C; plusieurs épisodes par année",
+          "en": "In shallow vegetated water once it reaches 18 °C; several bouts per year"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fécondité",
+          "en": "Fecundity"
+        },
+        "value": {
+          "fr": "300 000 à 600 000 œufs par kilo de poids corporel",
+          "en": "300,000 to 600,000 eggs per kilogram of body weight"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Omnivore, surtout des larves d'insectes et des invertébrés du fond — elle fouille la vase la nuit",
+          "en": "Omnivorous, mostly insect larvae and benthic invertebrates — it works the mud at night"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "La reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "De petites écailles et une peau visqueuse, couverte de mucus. Ses couleurs rappellent celles des achigans, mais elle n'a qu'une seule nageoire dorsale, molle et sans épine. Jeune, elle peut être confondue avec l'umbre de vase.",
+          "en": "Small scales and slimy, mucus-covered skin. Its colours recall a bass, but it has a single dorsal fin, soft and without spines. When young it can be mistaken for central mudminnow."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où elle se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Lacs, rivières à faible courant, fosses et étangs. Elle préfère les eaux chaudes, la végétation dense et les fonds vaseux, mais s'adapte à une grande variété de milieux et tolère les eaux peu oxygénées.",
+          "en": "Lakes, slow rivers, river pools and ponds. It prefers warm water, dense vegetation and muddy bottoms, but adapts to a wide range of habitats and tolerates low oxygen."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Introduite au Québec en 1991, elle a colonisé la rivière Richelieu et le fleuve. Son abondance augmente d'année en année dans le corridor fluvial du Saint-Laurent, particulièrement au lac Saint-Pierre.",
+          "en": "Introduced to Quebec in 1991, it has colonized the Richelieu River and the St. Lawrence. Its abundance rises year over year in the river corridor, particularly at Lac Saint-Pierre."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "poisson-rouge",
+    "name": {
+      "fr": "Poisson rouge",
+      "en": "Goldfish"
+    },
+    "scientificName": "Carassius auratus",
+    "otherNames": {
+      "fr": "Carassin doré, poisson doré",
+      "en": "Golden carp"
+    },
+    "status": {
+      "fr": "Espèce exotique envahissante",
+      "en": "Invasive alien species"
+    },
+    "source": "qc-fiche-poisson-rouge",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "18 à 25 cm — peut dépasser 40 cm",
+          "en": "18 to 25 cm — can exceed 40 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Longévité",
+          "en": "Lifespan"
+        },
+        "value": {
+          "fr": "Plus de 10 ans",
+          "en": "Over 10 years"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en zones peu profondes riches en végétation",
+          "en": "In spring, in shallow, heavily vegetated areas"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Omnivore : algues, plancton, larves d'insectes, œufs de poissons, petits poissons, détritus",
+          "en": "Omnivorous: algae, plankton, insect larvae, fish eggs, small fish, detritus"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Sa bouche est dirigée vers le bas et n'a pas de barbillons aux coins — c'est ce qui le sépare de la carpe commune.",
+          "en": "Its mouth points downward and carries no barbels at the corners — that is what separates it from common carp."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Rivières, étangs, fossés et lacs à végétation dense, faible courant et eau chaude. Il survit aux hivers québécois et tolère des périodes prolongées sans oxygène.",
+          "en": "Rivers, ponds, ditches and lakes with dense vegetation, low current and warm water. It survives Quebec winters and tolerates long stretches without oxygen."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Parmi les espèces aquatiques envahissantes, c'est celle qui s'établit le mieux durablement. Elle est établie autour de Montréal et dans des plans d'eau près de Québec et de Lévis, surtout dans les petits cours d'eau.",
+          "en": "Among invasive aquatic species it is the one that establishes most durably. It is established around Montreal and in water bodies near Quebec City and Lévis, mostly in smaller waters."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "poisson-tete-serpent-nord",
+    "name": {
+      "fr": "Poisson à tête de serpent du Nord",
+      "en": "Northern snakehead"
+    },
+    "scientificName": "Channa argus",
+    "status": {
+      "fr": "Espèce exotique envahissante — absente du Québec",
+      "en": "Invasive alien species — absent from Quebec"
+    },
+    "source": "qc-fiche-poisson-tete-serpent-nord",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "Jusqu'à 80 cm",
+          "en": "Up to 80 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Généralement l'été, 1 à 5 fois par saison",
+          "en": "Generally summer, 1 to 5 times per season"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fécondité",
+          "en": "Fecundity"
+        },
+        "value": {
+          "fr": "1 300 à 15 000 œufs par période de fraie",
+          "en": "1,300 to 15,000 eggs per spawning bout"
+        }
+      },
+      {
+        "label": {
+          "fr": "Présence au Québec",
+          "en": "Presence in Quebec"
+        },
+        "value": {
+          "fr": "Absent — mais sa présence doit être signalée",
+          "en": "Absent — but any sighting must be reported"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Sa silhouette rappelle celle du poisson-castor et de la lotte. Ce qui le distingue : une longue nageoire anale qui démarre au milieu du corps, et de larges écailles au-dessus de la tête.",
+          "en": "Its silhouette recalls bowfin and burbot. What sets it apart: a long anal fin starting at mid-body, and large scales on top of the head."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "Il est absent du Québec. Un poisson à tête de serpent d'Indonésie, relâché par son propriétaire, a été trouvé près de la rivière Saint-Charles en 2010, mais cette espèce tropicale n'a pas survécu à l'hiver. Le poisson à tête de serpent du Nord, lui, pourrait s'implanter.",
+          "en": "It is absent from Quebec. An Indonesian snakehead released by its owner was found near the Saint-Charles River in 2010, but that tropical species did not survive the winter. Northern snakehead, however, could establish itself."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "mene-herbe",
+    "name": {
+      "fr": "Méné d'herbe",
+      "en": "Bridle shiner"
+    },
+    "scientificName": "Notropis bifrenatus",
+    "status": {
+      "fr": "Vulnérable",
+      "en": "Vulnerable"
+    },
+    "source": "qc-fiche-mene-herbe",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "4 à 6 cm — jusqu'à environ 7 cm",
+          "en": "4 to 6 cm — up to about 7 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Printemps et début d'été, parfois jusqu'en août",
+          "en": "Spring and early summer, sometimes into August"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Petits crustacés zooplanctoniques et larves d'insectes",
+          "en": "Small zooplanktonic crustaceans and insect larvae"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "reconnaitre",
+        "title": {
+          "fr": "Le reconnaître",
+          "en": "Telling it apart"
+        },
+        "body": {
+          "fr": "Il est difficile à identifier et se confond facilement avec le méné à museau noir, le méné à menton noir et le méné paille. Sa bande noire latérale en dents de scie, qui se rend jusqu'au museau, est le meilleur repère.",
+          "en": "It is hard to identify and is easily confused with blackchin, blacknose and mimic shiners. Its saw-toothed black lateral band, running all the way to the snout, is the best mark."
+        }
+      },
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les zones calmes des rivières, ruisseaux et lacs, presque toujours dans une végétation aquatique submergée abondante. Il peut y être nombreux : il s'y reproduit, s'y abrite des prédateurs et s'y nourrit. Les herbiers de myriophylle indigènes lui conviennent particulièrement pour la fraie.",
+          "en": "Calm stretches of rivers, streams and lakes, almost always in abundant submerged vegetation. It can be numerous there: it spawns, shelters and feeds in it. Native milfoil beds suit it particularly well for spawning."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est désignée vulnérable au Québec.",
+          "en": "The species is designated vulnerable in Quebec."
+        }
+      }
+    ],
+    "field": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "mene-laiton",
+    "name": {
+      "fr": "Méné laiton",
+      "en": "Brassy minnow"
+    },
+    "scientificName": "Hybognathus hankinsoni",
+    "status": {
+      "fr": "Susceptible d'être désignée menacée ou vulnérable",
+      "en": "Likely to be designated threatened or vulnerable"
+    },
+    "source": "qc-fiche-mene-laiton",
+    "consulted": "2026-09-07",
+    "marks": [
+      {
+        "label": {
+          "fr": "Taille",
+          "en": "Size"
+        },
+        "value": {
+          "fr": "6 à 10 cm",
+          "en": "6 to 10 cm"
+        }
+      },
+      {
+        "label": {
+          "fr": "Fraie",
+          "en": "Spawning"
+        },
+        "value": {
+          "fr": "Au printemps, en eau calme sur substrat vaseux avec plantes aquatiques",
+          "en": "In spring, in calm water over mud with aquatic plants"
+        }
+      },
+      {
+        "label": {
+          "fr": "Régime",
+          "en": "Diet"
+        },
+        "value": {
+          "fr": "Planctophage, avec probablement une forte part de matières végétales",
+          "en": "Plankton feeder, likely with a large share of plant matter"
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "key": "habitat",
+        "title": {
+          "fr": "Où il se tient",
+          "en": "Where it holds"
+        },
+        "body": {
+          "fr": "Les petits cours d'eau lents, parfois acides, chargés en matières organiques en suspension — souvent à proximité de tourbières.",
+          "en": "Small slow streams, sometimes acidic, carrying a high load of suspended organic matter — often near peat bogs."
+        }
+      },
+      {
+        "key": "situation",
+        "title": {
+          "fr": "Sa situation au Québec",
+          "en": "Its status in Quebec"
+        },
+        "body": {
+          "fr": "L'espèce est susceptible d'être désignée menacée ou vulnérable au Québec.",
+          "en": "The species is likely to be designated threatened or vulnerable in Quebec."
         }
       }
     ],

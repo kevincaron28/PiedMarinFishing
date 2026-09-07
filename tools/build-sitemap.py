@@ -39,6 +39,7 @@ PAGES = [
     ("history.html",     "0.6", "monthly", ["data/tournament-history.json",
                                             "data/team-members.json"]),
     ("reglementation.html", "0.6", "yearly", ["data/regulations.json"]),
+    ("especes.html",     "0.7", "monthly", ["data/species.json", "data/species-pages.json"]),
     ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
 ]
 COMMON = ["data/i18n.json"]
@@ -82,19 +83,25 @@ def url(page, priority, freq, deps):
 # Les dossiers de fiches générées, avec la priorité qui leur revient : une
 # fiche de pêcheur est une adresse qu'on donne à une marque, elle vaut plus
 # qu'une fiche de tournoi parmi trente-quatre.
-GENERATED_DIRS = [("tournois", "0.6"), ("pecheurs", "0.7"), ("bateaux", "0.5"),
-                  ("prises", "0.6")]
+# Chaque dossier porte aussi ses propres dépendances : dater une fiche
+# d'espèce d'après le répertoire des tournois donnerait un <lastmod> faux, et
+# un sitemap qui ment sur ses dates est vite ignoré.
+SPECIES_DEPS = ["data/species.json", "data/sources.json", "data/regulations.json",
+                "tools/build-species-pages.py"]
+GENERATED_DIRS = [("tournois", "0.6", PAGE_DEPS), ("pecheurs", "0.7", PAGE_DEPS),
+                  ("bateaux", "0.5", PAGE_DEPS), ("prises", "0.6", PAGE_DEPS),
+                  ("especes", "0.6", SPECIES_DEPS)]
 
 
 def generated_pages():
-    """Une entrée par fiche écrite dans tournois/, pecheurs/, bateaux/ et prises/."""
+    """Une entrée par fiche générée, avec les données dont elle dépend."""
     out = []
-    for dirname, priority in GENERATED_DIRS:
+    for dirname, priority, deps in GENERATED_DIRS:
         directory = os.path.join(REPO, dirname)
         if not os.path.isdir(directory):
             continue
         for name in sorted(f for f in os.listdir(directory) if f.endswith(".html")):
-            out.append(("%s/%s" % (dirname, name), priority, "monthly", PAGE_DEPS))
+            out.append(("%s/%s" % (dirname, name), priority, "monthly", deps))
     return out
 
 

@@ -193,9 +193,12 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
-/* Eight nav items need the full 1140px row; below that the menu collapses
-   rather than wrapping onto two or three lines. */
-@media (max-width: 1150px) {
+/* Ten nav items need a wider row than eight did: at 1150px the bar overflowed
+   the viewport horizontally rather than wrapping. Measured at 1440 / 1180 /
+   1024 / 900 / 768 / 390 px — 1320 is the first breakpoint where ten items and
+   the language switch still fit on one line. Adding an eleventh means
+   re-measuring, not nudging this number. */
+@media (max-width: 1320px) {
   .nav-toggle { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .brand { font-size: 1.05rem; }
   .brand-logo { width: 36px; height: 36px; }
@@ -2882,3 +2885,57 @@ body.has-lightbox { overflow: hidden; }
   color: var(--ink-600);
 }
 .reg-src a { color: var(--ink-600); }
+
+/* Index des espèces. */
+.sp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+.sp-card {
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  text-decoration: none;
+  color: var(--ink-600);
+}
+.sp-card:hover, .sp-card:focus-visible { border-color: var(--teal-400); }
+.sp-card-name {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink-900);
+}
+.sp-card-sci { display: block; font-size: 0.85rem; margin-bottom: 8px; }
+.sp-card-status {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--sand-100);
+  border: 1px solid var(--gold-400);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--ink-900);
+}
+.sp-card-mark { font-size: 0.85rem; line-height: 1.45; }
+.sp-card-mark span { font-weight: 600; color: var(--ink-900); }
+.sp-card-mark span::after { content: " : "; }
+
+/* Fiche d'espèce : blocs et règles. */
+.sp-block { max-width: 62ch; margin-bottom: 22px; }
+.sp-block:last-child { margin-bottom: 0; }
+.sp-block-title { margin: 0 0 6px; font-size: 1.1rem; color: var(--ink-900); }
+.sp-block p { margin: 0; line-height: 1.65; }
+.sp-rules { list-style: none; margin: 0 0 4px; padding: 0; max-width: 62ch; }
+.sp-rules li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  line-height: 1.55;
+}
+.sp-rules li:last-child { border-bottom: 0; }
+.sp-rules strong { display: block; font-size: 0.85rem; color: var(--ink-900); }
+.sp-origin { max-width: 74ch; margin: 0 0 8px; font-size: 0.95rem; line-height: 1.6; }
+.sp-origin-note { max-width: 74ch; font-size: 0.85rem; line-height: 1.55; }

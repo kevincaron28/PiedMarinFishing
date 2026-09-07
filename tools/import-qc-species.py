@@ -95,8 +95,14 @@ def parse(path):
         i += 1
 
     # Le contenu commence après le sommaire, à la première répétition du
-    # premier titre.
+    # premier titre — et s'arrête avant le pied de page de quebec.ca, dont le
+    # formulaire d'évaluation et le menu du gouvernement se retrouvaient
+    # sinon collés à la dernière section.
     body = lines[i:]
+    for stop in ("Pour en savoir plus", "À consulter aussi", "Références",
+                 "Évaluation de la page", "Navigation de pied de page"):
+        if stop in body:
+            body = body[:body.index(stop)]
     idx = {}
     for t in titles:
         for j, line in enumerate(body):
@@ -111,6 +117,25 @@ def parse(path):
         if chunk:
             sections[title] = chunk
     doc["sections"] = sections
+
+    # Sous-champs. quebec.ca met chaque mesure sur sa propre ligne-titre :
+    # « Taille » puis la valeur, « Poids » puis la valeur. Les repérer donne
+    # directement les chiffres qu'on veut sur l'eau, sans relire la prose.
+    LABELS = ["Taille", "Poids", "Coloration", "Traits caractéristiques",
+              "Distinction", "Espèces similaires", "Origine",
+              "Statut de résidence des populations", "Rang de précarité",
+              "Suivi", "Observation", "Signalement", "Maladies",
+              "Conséquences de son introduction"]
+    fields = {}
+    for title, chunk in sections.items():
+        cur = None
+        for line in chunk:
+            if line in LABELS:
+                cur = line
+                fields.setdefault(cur, [])
+            elif cur:
+                fields[cur].append(line)
+    doc["fields"] = {k: " ".join(v).strip() for k, v in fields.items() if v}
 
     # Les liens utiles : la source officielle de la reglementation, le
     # registre federal, etc.

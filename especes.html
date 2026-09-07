@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n-text="sp.indexTitle">Les espèces du fleuve — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="sp.indexDesc" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
+<link rel="canonical" href="https://piedmarinfishing.com/especes.html">
+<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/especes.html">
+<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/especes.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/especes.html">
+<meta name="theme-color" content="#0b1e33">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pied Marin Fishing">
+<meta property="og:locale" content="fr_CA">
+<meta property="og:locale:alternate" content="en_CA">
+<meta property="og:title" content="Les espèces du fleuve — Pied Marin Fishing">
+<meta property="og:description" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
+<meta property="og:url" content="https://piedmarinfishing.com/especes.html">
+<meta property="og:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Les espèces du fleuve — Pied Marin Fishing">
+<meta name="twitter:description" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
+<meta name="twitter:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo.png" class="brand-logo" data-i18n-alt="brand.alt" alt="Écusson de l'équipe Pied Marin Fishing : un brochet au-dessus de l'eau">
+      <span>Pied Marin Fishing<span class="brand-sub" data-i18n="brand.sub">Équipe Québec</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+      <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
+      <li><a href="catches.html" data-i18n="nav.catches">Prises</a></li>
+      <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
+      <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
+      <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
+      <li><a href="reglementation.html" data-i18n="nav.regs">Réglementation</a></li>
+      <li><a href="especes.html" aria-current="page" data-i18n="nav.species">Espèces</a></li>
+      <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
+      <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="lang-switch" role="group" data-i18n-aria-label="lang.label" aria-label="Langue">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="nav-toggle" aria-expanded="false" data-i18n="nav.menu">☰ Menu</button>
+    </div>
+  </nav>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <span class="kicker" data-species-count></span>
+    <h1 data-i18n="sp.index">Les espèces du fleuve</h1>
+    <p class="tp-notes" data-i18n="sp.indexIntro">On consulte ces fiches avant de viser une espèce : la profondeur où elle se tient, la température qu'elle cherche, quand elle fraie, et comment la distinguer de celle qui lui ressemble. Tout vient des fiches officielles du gouvernement du Québec, avec la date à laquelle on les a lues.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="sp-grid" data-species-grid></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span data-i18n="footer.copyright">© <span data-year></span> Pied Marin Fishing</span>
+      <span><a href="index.html" data-i18n="footer.backHome">Retour à l'accueil</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/analytics.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/species.js"></script>
+<script>
+  initSpecies("[data-species-grid]", "[data-species-count]");
+</script>
+</body>
+</html>

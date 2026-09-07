@@ -35,18 +35,23 @@ pas. C'est voulu — un « à confirmer » publié est encore une publication.
 
 SEUIL — même discipline que build-catch-pages.py :
 
-    une introduction        au moins INTRO_MIN mots
-    des affirmations        au moins CLAIMS_MIN, vérifiées
-    du terrain              au moins FIELD_MIN mots d'observation de l'équipe
+    une source vérifiée     la fiche officielle, lue et datée
+    des repères            au moins MARKS_MIN mesures de terrain
+    de la substance        au moins BLOCKS_MIN blocs remplis
 
-Le bloc « terrain » n'est pas décoratif et n'exige aucune source : c'est le
-seul contenu de la page qu'aucune ferme à contenu ne peut produire. Une fiche
-qui n'a que de la science recopiée n'a pas sa place sur un site d'équipe — il
-en existe déjà quatre cents meilleures. Sans terrain, pas de fiche.
+Le seuil a change de nature en cours de route, et il faut dire pourquoi. Il
+exigeait d'abord 40 mots d'observation de l'equipe, au motif qu'une fiche
+sans vecu n'a pas sa place sur un site d'equipe. C'etait le bon reglage pour
+trois especes de vitrine; c'est le mauvais pour un ouvrage de reference que
+l'equipe consulte sur l'eau avant de viser un poisson. Une fiche qui donne la
+profondeur, la temperature et la periode de fraie rend service meme si
+personne n'a encore ecrit son paragraphe.
 
-Sur les données d'aujourd'hui, ce seuil produit ZÉRO page, et c'est la bonne
-réponse : rien n'est encore vérifié. Le script imprime alors la liste de ce
-qu'il faut aller vérifier, source par source et affirmation par affirmation.
+Le bloc « terrain » reste, et reste ce qui distingue nos fiches de quatre
+cents autres — il n'est simplement plus une condition d'existence.
+
+Ce qui n'a PAS bouge : rien ne se publie sans source verifiee. La barriere
+porte sur l'exactitude, pas sur l'ampleur.
 
     python3 tools/build-species-pages.py
     python3 tools/build-sitemap.py     # après
@@ -63,9 +68,8 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(REPO, "especes")
 SITE = "https://piedmarinfishing.com"
 
-INTRO_MIN = 60
-CLAIMS_MIN = 3
-FIELD_MIN = 40
+MARKS_MIN = 2
+BLOCKS_MIN = 2
 
 _spec = importlib.util.spec_from_file_location(
     "pages", os.path.join(REPO, "tools", "build-tournament-pages.py"))
@@ -78,7 +82,7 @@ profiles = importlib.util.module_from_spec(_pspec)
 _pspec.loader.exec_module(profiles)
 
 esc, pick, bilingual, section = pages.esc, pages.pick, pages.bilingual, pages.section
-clamp_title = pages.clamp_title
+clamp_title, long_date = pages.clamp_title, pages.long_date
 
 
 def load(name):
@@ -107,18 +111,26 @@ def claim_ok(claim, sources):
     return all((sources.get(sid) or {}).get("verified") for sid in ids)
 
 
+def marks_of(sp):
+    return [m for m in (sp.get("marks") or []) if pick(m.get("value"), "fr")]
+
+
+def blocks_of(sp):
+    return [b for b in (sp.get("blocks") or []) if pick(b.get("body"), "fr")]
+
+
 def missing(sp, sources):
     """Ce qui manque à cette espèce pour mériter sa page. Vide = elle l'a."""
     gaps = []
-    n = words(sp.get("intro"))
-    if n < INTRO_MIN:
-        gaps.append("introduction (%d/%d mots)" % (n, INTRO_MIN))
-    ok = [c for c in (sp.get("claims") or []) if claim_ok(c, sources)]
-    if len(ok) < CLAIMS_MIN:
-        gaps.append("affirmations vérifiées (%d/%d)" % (len(ok), CLAIMS_MIN))
-    f = words(sp.get("field"))
-    if f < FIELD_MIN:
-        gaps.append("terrain (%d/%d mots)" % (f, FIELD_MIN))
+    src = sources.get(sp.get("source"))
+    if not (src and src.get("verified")):
+        gaps.append("source vérifiée")
+    n = len(marks_of(sp))
+    if n < MARKS_MIN:
+        gaps.append("repères (%d/%d)" % (n, MARKS_MIN))
+    b = len(blocks_of(sp))
+    if b < BLOCKS_MIN:
+        gaps.append("blocs (%d/%d)" % (b, BLOCKS_MIN))
     return gaps
 
 
@@ -197,6 +209,12 @@ def description(sp, lang):
     """110–165 caractères, tirés de l'introduction plutôt qu'inventés."""
     name = pick(sp.get("name"), lang)
     intro = pick(sp.get("intro"), lang)
+    if not intro:
+        # Beaucoup de fiches n'ont pas d'introduction écrite à la main. Plutôt
+        # qu'une description tronquée sous le minimum de 110 caractères, on
+        # compose avec ce que la fiche porte vraiment.
+        bits = [pick(b.get("body"), lang) for b in blocks_of(sp)]
+        intro = " ".join(x for x in bits if x)
     text = "%s — %s" % (name, intro) if intro else name
     if len(text) > 165:
         text = text[:164].rsplit(" ", 1)[0].rstrip(" ,;:.—–-") + "…"
@@ -233,7 +251,78 @@ def species_ld(sp, url, sources, order):
             % json.dumps(ld, ensure_ascii=False, indent=2).replace("</", "<\\/"))
 
 
-def render(sp, ui, sources):
+def marks_html(sp):
+    """Les chiffres qu'on veut sur l'eau : taille, profondeur, température,
+    fraie. En grille plutôt qu'en prose — sur un téléphone, dans un bateau,
+    on cherche une valeur, on ne lit pas un paragraphe."""
+    rows = []
+    for m in marks_of(sp):
+        rows.append('<div class="event-spec"><span class="event-spec-label">%s</span>%s</div>'
+                    % (bilingual("span", m.get("label")),
+                       bilingual("span", m.get("value"), "event-spec-value")))
+    return '<div class="event-specs tp-specs">%s</div>' % "".join(rows) if rows else ""
+
+
+def blocks_html(sp, ui):
+    """Les sections descriptives : reconnaître, distinguer, où, état."""
+    out = []
+    for b in blocks_of(sp):
+        title = b.get("title")
+        # h2 et non h3 : ces blocs sont des sections de la page, pas des
+        # sous-sections des « repères » qui les précèdent. En h3 ils se
+        # rangeaient sous le mauvais titre dans la liste d'un lecteur d'écran.
+        out.append('<div class="sp-block">%s%s</div>'
+                   % (bilingual("h2", title, "sp-block-title"),
+                      bilingual("p", b.get("body"))))
+    return "".join(out)
+
+
+def rules_html(sp, rules, zones, ui):
+    """Les règles qui visent cette espèce, tirées de data/regulations.json.
+
+    Rien n'est recopié : la page de réglementation reste la seule source, et
+    une règle ajoutée là-bas apparaît ici au prochain build. Deux textes qui
+    disent la même règle finissent toujours par diverger."""
+    mine = [r for r in rules if r.get("species_page") == sp["id"]]
+    if not mine:
+        return ""
+    names = {z["id"]: z.get("name") for z in zones}
+    rows = []
+    for r in mine:
+        scope = " · ".join(pick(names.get(z), "fr") or z for z in (r.get("zones") or []))
+        scope_en = " · ".join(pick(names.get(z), "en") or z for z in (r.get("zones") or []))
+        rows.append('<li>%s %s</li>'
+                    % (bilingual("strong", {"fr": scope, "en": scope_en}),
+                       bilingual("span", r.get("rule"))))
+    link = '<a class="member-history-link" href="reglementation.html">%s</a>' % bilingual(
+        "span", {"fr": ui["fr"]["sp.seeRules"], "en": ui["en"]["sp.seeRules"]})
+    return '<ul class="sp-rules">%s</ul>%s' % ("".join(rows), link)
+
+
+def source_html(sp, sources, ui, order=()):
+    """D'où vient tout ça, et quand on l'a lu. La page le dit en toutes
+    lettres, y compris que l'anglais est notre traduction d'une source
+    française — ne pas le dire laisserait croire à une version officielle."""
+    src = sources.get(sp.get("source")) or {}
+    # Si la source de la fiche figure déjà dans la liste numérotée des
+    # renvois, la réécrire ici la donnerait deux fois de suite au lecteur.
+    listed = sp.get("source") in (order or ())
+    text = ({"fr": "", "en": ""} if listed
+            else {lang: citation_text(src, lang) for lang in ("fr", "en")})
+    when = sp.get("consulted") or ""
+    note = {lang: ui[lang]["sp.sourceNote"].replace("{date}", long_date(when, lang) or when)
+            for lang in ("fr", "en")}
+    link = ""
+    if src.get("url"):
+        link = ' <a class="sp-src-link" href="%s" target="_blank" rel="noopener">%s</a>' % (
+            esc(src["url"]),
+            bilingual("span", {"fr": ui["fr"]["sp.consult"], "en": ui["en"]["sp.consult"]}))
+    head = ('<p class="sp-origin">%s%s</p>' % (bilingual("span", text), link)
+            if (pick(text, "fr") or not listed) else "")
+    return head + bilingual("p", note, "sp-origin-note")
+
+
+def render(sp, ui, sources, rules=(), zones=()):
     name = sp.get("name")
     title = {lang: clamp_title(pick(name, lang)) for lang in ("fr", "en")}
     desc = {lang: description(sp, lang) for lang in ("fr", "en")}
@@ -246,23 +335,37 @@ def render(sp, ui, sources):
     if intro:
         body.append('<section><div class="container">%s</div></section>' % intro)
 
+    marks = marks_html(sp)
+    if marks:
+        body.append(section({"fr": ui["fr"]["sp.marks"], "en": ui["en"]["sp.marks"]},
+                            marks, alt=True, key="sp.marks"))
+
+    blocks = blocks_html(sp, ui)
+    if blocks:
+        body.append('<section><div class="container">%s</div></section>' % blocks)
+
     claims = claims_html(sp, sources, order)
     if claims:
         body.append(section({"fr": ui["fr"]["sp.science"], "en": ui["en"]["sp.science"]},
                             claims, alt=True, key="sp.science"))
 
+    # Les règles ne sont pas recopiées : elles viennent de regulations.json,
+    # dont la page de réglementation reste la seule source.
+    reg = rules_html(sp, rules, zones, ui)
+    if reg:
+        body.append(section({"fr": ui["fr"]["sp.rules"], "en": ui["en"]["sp.rules"]},
+                            reg, key="sp.rules"))
+
     field = bilingual("p", sp.get("field"), "tp-notes")
     if field:
         body.append(section({"fr": ui["fr"]["sp.field"], "en": ui["en"]["sp.field"]},
-                            field, key="sp.field"))
+                            field, alt=True, key="sp.field"))
 
+    origin = source_html(sp, sources, ui, order)
     srcs = sources_html(sources, order, ui)
-    if srcs:
-        body.append(section({"fr": ui["fr"]["sp.sources"], "en": ui["en"]["sp.sources"]},
-                            srcs, alt=True, key="sp.sources"))
+    body.append(section({"fr": ui["fr"]["sp.sources"], "en": ui["en"]["sp.sources"]},
+                        origin + srcs, alt=not bool(field), key="sp.sources"))
 
-    # La réglementation ne vit jamais sur cette page : elle change, et une
-    # limite périmée affichée chez nous est pire que pas de limite du tout.
     body.append('<section><div class="container">%s<div class="callout-actions">'
                 '<a class="btn btn-ghost" href="especes.html">%s</a></div></div></section>'
                 % (bilingual("p", {"fr": ui["fr"]["sp.regNote"], "en": ui["en"]["sp.regNote"]},
@@ -330,6 +433,10 @@ def main():
     ui = load("i18n.json")
     species = load("species.json")
     src_list = load("sources.json")
+    try:
+        regs = load("regulations.json")
+    except (IOError, OSError, ValueError):
+        regs = {}
     sources = {s["id"]: s for s in src_list}
 
     # Une source citée mais absente du registre casserait la numérotation
@@ -353,10 +460,10 @@ def main():
 
     for sp in kept:
         with io.open(os.path.join(OUT_DIR, "%s.html" % sp["id"]), "w", encoding="utf-8") as fh:
-            fh.write(render(sp, ui, sources))
-        print("  especes/%s.html  %d affirmation(s) vérifiée(s), %d source(s)"
-              % (sp["id"], len([c for c in sp["claims"] if claim_ok(c, sources)]),
-                 len(cited(sp, sources))))
+            fh.write(render(sp, ui, sources, regs.get("rules") or [], regs.get("zones") or []))
+        print("  especes/%-22s %d repère(s), %d bloc(s), %d affirmation(s)"
+              % (sp["id"] + ".html", len(marks_of(sp)), len(blocks_of(sp)),
+                 len([c for c in (sp.get("claims") or []) if claim_ok(c, sources)])))
 
     index_path = os.path.join(REPO, "data", "species-pages.json")
     with io.open(index_path, "w", encoding="utf-8") as fh:
@@ -369,8 +476,8 @@ def main():
         print("\nSous le seuil — il manque :")
         for sp, gaps in below:
             print("  %-20s %s" % (sp["id"], ", ".join(gaps)))
-        print("\n(seuil : introduction de %d mots, %d affirmations vérifiées, "
-              "%d mots de terrain)" % (INTRO_MIN, CLAIMS_MIN, FIELD_MIN))
+        print("\n(seuil : source vérifiée, %d repères, %d blocs)"
+              % (MARKS_MIN, BLOCKS_MIN))
     checklist(species, src_list)
     if kept:
         print("\nÉtape suivante :\n  une page d'index especes.html (sinon les fiches"

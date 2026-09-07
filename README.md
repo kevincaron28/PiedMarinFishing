@@ -17,6 +17,7 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
 | `reglementation.html` | Verified fishing rules for the zones we fish, with the date they were checked |
+| `especes.html` | Index of the species reference sheets |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
 | `404.html` | Not-found page, served by GitHub Pages at any depth |
@@ -99,6 +100,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `merch.js` | shop product grid |
 | `calendar-view.js` | season-at-a-glance calendar + list/calendar toggle |
 | `catches.js` | catch gallery **and** the shared `PMF_CATCHES` store |
+| `species.js` | the species index — reads `species-pages.json`, so a card can never point at an ungenerated sheet |
 | `regulations.js` | the rules table — stamps the check date, and erases itself once the data goes stale |
 | `sponsors.js` | partner logos — hides its whole section when there are none |
 | `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
@@ -784,6 +786,44 @@ The "read more" link to a species page is gated on `data/species-pages.json`,
 because those pages only exist once they clear their own threshold — without
 the check, a rule naming a species whose page has not been generated would
 link to a 404.
+
+### The species sheets are a field reference, not an essay
+
+The first threshold for these pages demanded 40 words of the crew's own
+observation, on the grounds that a sheet with no lived experience has no place
+on a team site. That was the right setting for three showcase species. It was
+the wrong one once the purpose changed: these are sheets **the crew opens on
+the water before targeting a fish**. A sheet that gives the depth, the
+temperature and the spawning window earns its place even if nobody has written
+its paragraph yet.
+
+So the threshold is now: a verified source, `MARKS_MIN` key numbers, and
+`BLOCKS_MIN` filled blocks. The `field` block stays — it is still what
+separates our sheets from four hundred others — it is simply no longer a
+condition of existence.
+
+**What did not move: nothing publishes without a verified source.** The gate is
+about accuracy, not about size.
+
+Each sheet carries, in this order:
+
+| Section | What it is for |
+|---|---|
+| Les repères | size, weight, depth, temperature, spawning window and bottom — the grid you scan on a phone in a boat |
+| Blocks | recognizing it, telling it from its lookalike, where it holds, its status |
+| Ce que dit la science | hand-written claims, each individually verified (only some species) |
+| Les règles qui la visent | pulled from `data/regulations.json`, never copied |
+| Sur l'eau | the crew's own notes, when there are any |
+| Sources | the citation, the consult date, and a plain statement that the English is our translation of a French-only source |
+
+Two details worth keeping:
+
+- The rules block reads `regulations.json` rather than restating the rule, so
+  a rule added to the regulations page appears on the species sheet at the next
+  build. Two texts stating the same rule always drift apart eventually.
+- When the sheet's own source already appears in the numbered citation list
+  (species that carry hand-written claims), the origin paragraph drops its
+  citation text rather than printing the same reference twice in a row.
 
 ### Reading a source from inside this workspace
 
