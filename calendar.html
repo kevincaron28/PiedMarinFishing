@@ -66,7 +66,10 @@
   <div class="container">
     <h1 data-i18n="calendar.h1">Notre calendrier</h1>
     <p data-i18n="calendar.intro">Où on s'en va cette saison — brochet, achigan, doré, partout au Québec, l'été comme l'hiver. Viens nous dire bonjour si tu y es!</p>
-    <a class="cross-link" href="history.html" data-i18n="calendar.crossLink">Ce qu'on a fait jusqu'ici →</a>
+    <div class="header-links">
+      <a class="cross-link" href="history.html" data-i18n="calendar.crossLink">Ce qu'on a fait jusqu'ici →</a>
+      <a class="cross-link" href="#lune" data-i18n="calendar.moonLink">La lune et les périodes solunaires ↓</a>
+    </div>
   </div>
 </div>
 
@@ -86,7 +89,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section class="alt" id="lune">
   <div class="container">
     <div class="section-head"><h2 data-i18n="moon.title">La lune du mois</h2></div>
     <div data-moon-calendar></div>

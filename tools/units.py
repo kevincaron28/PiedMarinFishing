@@ -40,6 +40,19 @@ def convert(text, lang="fr"):
         held.append(s)
         return "\x00%d\x00" % (len(held) - 1)
 
+    def celsius(m, *_):
+        """Les degres Celsius en Fahrenheit, arrondis au degre.
+
+        Ces temperatures etaient laissees intactes au depart. Elles sont
+        pourtant ce qu'on lit le plus sur l'eau — la fraie de l'achigan a
+        16-18 °C, le brochet maille a 21-30 °C l'ete — et au Quebec on parle
+        aussi bien en F qu'en C selon la sonde qu'on a devant les yeux.
+        """
+        vals = [g for g in m.groups() if g]
+        f = [fm(_n(v) * 9 / 5 + 32) for v in vals]
+        joined = JOIN.join(f) if len(set(f)) > 1 else f[0]
+        return keep("%s (%s °F)" % (m.group(0), joined))
+
     def pouces(v):
         """Un decimal sous 3 po : « 4 a 5 cm » donnait « 2 a 2 po »."""
         return fm(v, 1 if v < 3 else 0)
@@ -91,7 +104,8 @@ def convert(text, lang="fr"):
                 parts.append("%d %s" % (round(ft_total), U["ft"]))
         return keep("%s (%s)" % (m.group(0), JOIN.join(parts)))
 
-    SPEC = [(r"cm\b", 0.393701, U["in"], 0),
+    SPEC = [(r"[°⁰]\s?C\b", celsius, None, 0),
+            (r"cm\b", 0.393701, U["in"], 0),
             (r"m\b(?!m)", metres, None, 0),
             (r"kg\b", 2.20462, U["lb"], 1),
             (r"g\b(?!\w)", 0.035274, U["oz"], 1)]
@@ -99,7 +113,7 @@ def convert(text, lang="fr"):
     for pat, factor, unit, dec in SPEC:
         fn = factor if callable(factor) else (
             lambda m, f=factor, u=unit, d=dec: rng(m, f, u, d))
-        out = re.sub(r"(%s)\s*(?:à|to)\s*(%s)\s*%s" % (NUM, NUM, pat), fn, out)
+        out = re.sub(r"(%s)\s*(?:à|to|et|and)\s*(%s)\s*%s" % (NUM, NUM, pat), fn, out)
     for pat, factor, unit, dec in SPEC:
         fn = factor if callable(factor) else (
             lambda m, f=factor, u=unit, d=dec: one(m, f, u, d))

@@ -659,7 +659,7 @@ async function initEventList(options) {
   // Un mois replié doit s'ouvrir avant qu'on y saute, sinon le lien mène à un
   // titre et le visiteur croit que le mois est vide. L'ancre est ensuite
   // amenée sous l'en-tête collant plutôt que dessous.
-  function jumpTo(id) {
+  function jumpTo(id, behavior) {
     const target = document.getElementById(id);
     if (!target) return;
     if (target.tagName === "DETAILS") target.open = true;
@@ -667,7 +667,7 @@ async function initEventList(options) {
     const offset = (header ? header.getBoundingClientRect().height : 0)
       + (monthNavEl && !monthNavEl.hidden ? monthNavEl.getBoundingClientRect().height : 0) + 8;
     const y = target.getBoundingClientRect().top + window.scrollY - offset;
-    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+    window.scrollTo({ top: Math.max(0, y), behavior: behavior || "smooth" });
   }
 
   if (monthNavEl) {
@@ -683,14 +683,19 @@ async function initEventList(options) {
   // passés s'ouvrent repliés, un tel lien tomberait dans le vide : le
   // navigateur ne peut pas défiler vers un élément fermé. On rouvre le mois
   // qui contient la cible avant de l'atteindre.
-  function openHashTarget() {
+  // Une cible hors de la liste (la section de la lune, par exemple) a le meme
+  // probleme pour une autre raison : le navigateur saute vers elle avant que
+  // la liste des tournois soit construite, et la liste la repousse ensuite
+  // 1400 px plus bas. On refait donc le saut une fois le rendu termine, sans
+  // animation puisque le visiteur n'a encore rien vu bouger.
+  function openHashTarget(atLoad) {
     const id = (location.hash || "").slice(1);
     if (!id) return;
     const el = document.getElementById(id);
-    if (!el || !listEl.contains(el)) return;
+    if (!el) return;
     let box = el.closest("details");
     while (box) { box.open = true; box = box.parentElement && box.parentElement.closest("details"); }
-    jumpTo(id);
+    jumpTo(id, atLoad ? "auto" : "smooth");
   }
   window.addEventListener("hashchange", openHashTarget);
 
@@ -772,5 +777,5 @@ async function initEventList(options) {
   buildSeasons();
   renderSeasonSwitch();
   render();
-  openHashTarget();
+  openHashTarget(true);
 }

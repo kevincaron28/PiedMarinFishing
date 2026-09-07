@@ -3029,3 +3029,9 @@ body.has-lightbox { overflow: hidden; }
   background:var(--white); color:var(--ink-900); font:inherit; font-size:.9rem;
 }
 .sky-locate { min-height:40px; padding:6px 14px; font-size:.85rem; }
+
+/* Liens de tête d'une page qui en porte plusieurs. */
+.header-links { display: flex; flex-wrap: wrap; gap: 10px 22px; }
+/* L'en-tête est collant : sans cette marge, l'ancre amène la section
+   SOUS la barre de navigation et son titre reste caché. */
+#lune { scroll-margin-top: 84px; }
