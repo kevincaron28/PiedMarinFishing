@@ -119,6 +119,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/tournois/big-bass-lavaltrie-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/big-bass-lavaltrie-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/big-bass-lavaltrie-2026.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/tournois/big-bass-lavaltrie-2026.html"/>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/tournois/big-bass-quebec.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/big-bass-quebec.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/big-bass-quebec.html?lang=en"/>

@@ -519,8 +519,8 @@
       "fr": "Brochet à gué — Marina de Lachine",
       "en": "Wading for Pike — Marina de Lachine"
     },
-    "startDate": "2026-05",
-    "endDate": "2026-05",
+    "startDate": "2026-05-09",
+    "endDate": "2026-05-09",
     "region": {
       "fr": "Montréal / Lac Saint-Louis",
       "en": "Montréal / Lac Saint-Louis"
@@ -541,11 +541,11 @@
       "fr": "Tournoi à gué",
       "en": "Wading Tournament"
     },
-    "status": "tentative",
+    "status": "confirmed",
     "link": "https://en.bigbasschallengequebec.com/2026-programmation",
     "notes": {
-      "fr": "2e édition. Défi du plus gros brochet, à gué / de la rive. Le programme n'annonce qu'un samedi de mai sans date précise — confirmez auprès de l'organisateur.",
-      "en": "2nd edition. Biggest-pike challenge, wading or from shore. The program lists only a Saturday in May without a precise date — confirm with the organizer."
+      "fr": "3e édition. Défi du plus gros brochet, à gué / de la rive, organisé par François Larocque. La programmation 2026 de Big Bass Québec donne le samedi 9 mai; les frais et l'horaire n'y sont pas publiés.",
+      "en": "3rd edition. Biggest pike, wading or from shore, run by François Larocque. Big Bass Québec's 2026 programme gives Saturday 9 May; the entry fee and hours are not published there."
     },
     "specs": {
       "format": {
@@ -636,11 +636,11 @@
       "fr": "Étape de circuit",
       "en": "Circuit Stop"
     },
-    "status": "confirmed",
+    "status": "tentative",
     "link": "https://www.bigbasschallengequebec.com/2026-programmation",
     "notes": {
-      "fr": "13e édition.",
-      "en": "13th edition."
+      "fr": "13e édition. À vérifier : la programmation 2026 de Big Bass Québec — notre source pour cette entrée — énumère six tournois, et celui-ci n'en fait pas partie. L'absence n'est pas une annulation, mais la date du 20 juin nous vient d'ailleurs. Confirmez auprès du club avant de vous fier à cette ligne.",
+      "en": "13th edition. Needs checking: Big Bass Québec's 2026 programme — our source for this entry — lists six tournaments, and this is not one of them. Absence is not cancellation, but the 20 June date comes from elsewhere. Confirm with the club before relying on this line."
     },
     "specs": {
       "fee": "",
