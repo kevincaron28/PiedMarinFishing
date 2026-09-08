@@ -617,8 +617,8 @@
       "fr": "Big Bass Challenge — Lavaltrie",
       "en": "Big Bass Challenge — Lavaltrie"
     },
-    "startDate": "2026-06-20",
-    "endDate": "2026-06-20",
+    "startDate": "2026-06-21",
+    "endDate": "2026-06-21",
     "region": "Lanaudière",
     "location": {
       "fr": "Fleuve Saint-Laurent, quai municipal de Lavaltrie",
@@ -636,17 +636,25 @@
       "fr": "Étape de circuit",
       "en": "Circuit Stop"
     },
-    "status": "tentative",
+    "status": "cancelled",
     "link": "https://www.bigbasschallengequebec.com/2026-programmation",
     "notes": {
-      "fr": "13e édition. À vérifier : la programmation 2026 de Big Bass Québec — notre source pour cette entrée — énumère six tournois, et celui-ci n'en fait pas partie. L'absence n'est pas une annulation, mais la date du 20 juin nous vient d'ailleurs. Confirmez auprès du club avant de vous fier à cette ligne.",
-      "en": "13th edition. Needs checking: Big Bass Québec's 2026 programme — our source for this entry — lists six tournaments, and this is not one of them. Absence is not cancellation, but the 20 June date comes from elsewhere. Confirm with the club before relying on this line."
+      "fr": "13e édition, annulée. La page de l'organisateur porte la mention « TOURNOI ANNULÉ »; c'est aussi pourquoi le tournoi ne figure pas à la programmation 2026 du club. Ce qui était prévu : le dimanche 21 juin, de 7 h à 15 h, sur le fleuve au quai municipal de Lavaltrie (120, rue Saint-Antoine Sud), rampe et stationnement gratuits. Bourse garantie annoncée de 10 900 $ — 5 000 $, 2 000 $, 750 $ et 250 $ pour les quatre plus gros achigans de la journée, plus 500 $ et 250 $ dans chacune des quatre tranches horaires de 10 h 01 à 14 h.",
+      "en": "13th edition, cancelled. The organizer's page carries a « TOURNOI ANNULÉ » banner, which is also why the tournament is missing from the club's 2026 programme. What had been planned: Sunday 21 June, 7 am to 3 pm, on the river at Lavaltrie's municipal wharf (120 rue Saint-Antoine Sud), with a free ramp and parking. Advertised guaranteed purse of $10,900 — $5,000, $2,000, $750 and $250 for the four biggest bass of the day, plus $500 and $250 in each of four hourly windows from 10:01 am to 2 pm."
     },
     "specs": {
       "fee": "",
       "teamSize": {
         "fr": "Équipes de 2 pêcheurs",
         "en": "Teams of 2 anglers"
+      },
+      "hours": {
+        "fr": "7 h à 15 h",
+        "en": "7 am to 3 pm"
+      },
+      "format": {
+        "fr": "Plus gros achigan de la journée / de l'heure",
+        "en": "Biggest bass of the day / of the hour"
       }
     },
     "tier": "regional",
