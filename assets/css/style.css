@@ -783,7 +783,11 @@ details[open] > .season-summary .season-head::after {
   background: rgba(21, 122, 118, 0.1);
   color: var(--teal-600);
 }
-.event-deadline.urgent { background: rgba(197, 122, 26, 0.14); color: #a8600f; }
+/* #a8600f donnait 4,15:1 sur son propre fond ambre — sous les 4,5 exigés.
+   Le défaut ne se voyait que pendant les sept derniers jours avant une date
+   limite, donc quelques jours par tournoi : invisible à l'audit la plupart
+   du temps. #8f5208 donne 5,33:1 sans changer la teinte. */
+.event-deadline.urgent { background: rgba(197, 122, 26, 0.14); color: #8f5208; }
 .event-deadline.closed { background: rgba(71, 96, 111, 0.12); color: var(--ink-600); font-weight: 500; }
 .btn-ics { margin-top: 8px; font-size: 0.84rem; padding: 8px 14px; }
 
@@ -2974,6 +2978,40 @@ body.has-lightbox { overflow: hidden; }
 .sp-card-mark { font-size: 0.85rem; line-height: 1.45; }
 .sp-card-mark span { font-weight: 600; color: var(--ink-900); }
 .sp-card-mark span::after { content: " : "; }
+
+/* Fiche d'espèce : nos prises, une vignette chacune. */
+.sp-catches {
+  display: grid;
+  /* auto-fill compte ses colonnes sur le MINIMUM tant que le maximum est 1fr;
+     avec un maximum fixe il compterait sur le maximum et n'en poserait qu'une
+     sur un téléphone. D'où 1fr, et une largeur totale bornée pour que trois
+     photos ne se dispersent pas en six colonnes fantômes à 1280 px. */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  max-width: 620px;
+  gap: 14px;
+  margin-top: 18px;
+}
+.sp-catch {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--white);
+  text-decoration: none;
+  color: var(--ink-900);
+}
+.sp-catch:hover, .sp-catch:focus-visible { border-color: var(--teal-400); }
+/* Un ratio fixe : les photos de prise vont du portrait au paysage, et une
+   grille qui ondule se lit moins bien qu'une grille qui se tient. */
+.sp-catch img {
+  display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover;
+  background: var(--sand-100);
+}
+.sp-catch-cap {
+  display: block; padding: 10px 12px; font-size: 0.88rem; font-weight: 600;
+  line-height: 1.4;
+}
+.sp-catch:hover .sp-catch-cap { color: var(--teal-600); }
 
 /* Fiche d'espèce : blocs et règles. */
 .sp-block { max-width: 62ch; margin-bottom: 22px; }

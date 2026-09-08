@@ -347,28 +347,60 @@ def rules_html(sp, rules, zones, ui, regs):
 
 
 def catches_html(sp, catches, cp_index, members, ui):
-    """Nos prises de cette espèce, avec leur fiche.
+    """Nos prises de cette espèce : une photo chacune, avec sa légende.
 
     L'autre moitié du lien : une fiche d'espèce qui ne dit pas qu'on en a
     sorti une est un cul-de-sac, alors que c'est justement ce qui distingue
-    nos fiches de celles du ministère.
+    nos fiches de celles du ministère. La photo, elle, est la seule chose que
+    la fiche du ministère ne peut pas avoir — et pour identifier un malachigan
+    sur un quai, elle vaut trois lignes de description.
+
+    Une vignette par prise, jamais la galerie : le maskinongé de Kevin B. a
+    cinq photos sur SA fiche, les remettre ici la dupliquerait et enterrerait
+    l'identification. La couverture suffit, le reste est à un clic.
+
+    Le seuil d'ici n'est pas celui des fiches de prise. Une prise sans fiche
+    — faute d'un récit écrit — garde sa photo : ce qu'elle montre ne dépend
+    pas de savoir si on a raconté la journée. Elle mène alors à sa carte sur
+    l'index, qui porte déjà une ancre « #c-<id> » et se met en évidence à
+    l'arrivée; pas à l'index tout court, où il faudrait la chercher.
     """
     name = pick(sp.get("name"), "fr").strip().lower()
     mine = [c for c in catches
-            if pick(c.get("species"), "fr").strip().lower() == name
-            and c["id"] in cp_index]
+            if pick(c.get("species"), "fr").strip().lower() == name]
     if not mine:
         return ""
-    rows = []
+    cells = []
     for c in mine:
         who = members.get(c.get("angler")) or {}
         label = {lang: " — ".join(x for x in (
             pick(c.get("measure"), lang),
             who.get("name") or pick(c.get("anglerName"), lang),
             long_date(c.get("date"), lang)) if x) for lang in ("fr", "en")}
-        rows.append('<li><a href="prises/%s.html">%s</a></li>'
-                    % (esc(c["id"]), bilingual("span", label)))
-    return '<ul class="tp-related">%s</ul>' % "".join(rows)
+        href = ("prises/%s.html" % c["id"]) if c["id"] in cp_index \
+            else "catches.html#c-%s" % c["id"]
+        media = c.get("media") or {}
+        src = media.get("src") if media.get("type") == "image" else ""
+        shot = ""
+        if src:
+            alt = media.get("alt") or c.get("species")
+            # Toujours en différé : ce bloc vit au deuxième écran, jamais au
+            # premier, et une vignette qui bloque l'affichage des repères
+            # annulerait le travail fait pour les remonter.
+            img = ('<img src="%s"%s alt="%s" loading="lazy" width="400" height="300">'
+                   % (esc(src),
+                      profiles.srcset_attrs(src, "(max-width: 700px) 44vw, 220px"),
+                      esc(pick(alt, "fr"))))
+            if pick(alt, "en") and pick(alt, "en") != pick(alt, "fr"):
+                img = img.replace("<img ", '<img data-en-alt="%s" ' % esc(pick(alt, "en")), 1)
+            shot = img
+        # Sans mesure ni date ni pêcheur la légende serait vide : on met alors
+        # le nom de l'espèce, plutôt qu'une vignette qui ne dit rien.
+        if not pick(label, "fr"):
+            label = {lang: pick(sp.get("name"), lang) for lang in ("fr", "en")}
+        cells.append('<a class="sp-catch" href="%s">%s%s</a>'
+                     % (esc(href), shot, bilingual("span", label, "sp-catch-cap")))
+    return '<div class="sp-catches">%s</div>' % "".join(cells)
 
 
 def source_html(sp, sources, ui, order=()):
