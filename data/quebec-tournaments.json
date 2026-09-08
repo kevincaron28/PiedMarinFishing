@@ -1458,7 +1458,10 @@
         "fr": "Plus gros achigan de la journée / de l'heure",
         "en": "Biggest bass of the day / of the hour"
       },
-      "fee": "",
+      "fee": {
+        "fr": "260 $ / équipe de 2 pêcheurs",
+        "en": "$260 / team of 2 anglers"
+      },
       "deadlineDate": "2026-09-30"
     },
     "tier": "regional",
