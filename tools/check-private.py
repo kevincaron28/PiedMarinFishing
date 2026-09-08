@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Refuse qu'un numero identifiant parte en ligne.
+"""Refuse qu'un numero identifiant ou le prenom d'une mineure parte en ligne.
 
 Le depot est public. Un numero d'immatriculation de bateau, une plaque ou un
 numero de serie n'ont rien a faire dans data/ ni dans une page generee — ni
@@ -7,6 +7,12 @@ dans une photo, ni, et c'est l'erreur qui a motive ce script, dans le TEXTE
 qui decrit la photo. Le numero du Princecraft 1995 avait ete masque sur
 l'image puis reecrit dans son texte alternatif, ou il est reste invisible
 jusqu'a ce que les descriptions deviennent des legendes affichees.
+
+Deuxieme regle, ajoutee apres coup : le prenom d'une mineure. La relève de
+l'equipe est designee par ses initiales et rien d'autre — « R.C. », pas
+« Romy ». Un prenom ecrit une fois dans un alt-text se retrouve indexe, et
+c'est exactement la meme erreur que le numero d'immatriculation reecrit dans
+la description d'une photo. La regle vit ici plutot que dans ma memoire.
 
     python3 tools/check-private.py     # sort en code 1 si quelque chose passe
 
@@ -43,6 +49,17 @@ PATTERNS = [
                 r"((?=[A-Z0-9-]{6,})(?:[A-Z]+[\s-]?\d|\d{6})[A-Z0-9\s-]*)", re.I),
      "un identifiant suit un mot comme « immatriculation »"),
 ]
+
+
+# Prenoms de mineurs a ne jamais ecrire. Les initiales sont la seule forme
+# publiable. Ajouter un prenom ici est le geste qui protege; le retirer des
+# donnees sans l'ajouter ici laisse la porte ouverte au prochain ajout.
+MINORS = ["Romy"]
+for _first in MINORS:
+    PATTERNS.append((
+        "prenom d'une mineure",
+        re.compile(r"\b%s\b" % re.escape(_first)),
+        "la releve se designe par ses initiales, jamais par son prenom"))
 
 
 def files():

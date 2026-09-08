@@ -559,7 +559,7 @@ belongs to a child.
 ```json
 {
   "id": "romy",
-  "name": "Romy",
+  "name": "R.C.",
   "relation": { "fr": "Fille de Kevin Caron", "en": "Kevin Caron's daughter" },
   "parent": "kevin-caron",
   "status": "fishing",
@@ -629,7 +629,7 @@ This cannot be checked automatically — it needs a species-and-zone regulation
 table nobody maintains here — so it lives as a rule. Québec muskie and bass in
 zones 7 and 8 open 15 June; walleye opens 10 May; pike opens in early May.
 
-The same coarsening serves a second purpose. Romy's yellow perch is rounded to
+The same coarsening serves a second purpose. R.C.'s yellow perch is rounded to
 `"2025-02"` — not over a season question, which could not be settled for Lake
 Champlain, but because it is a child's outing: the month carries the fact that
 matters (it was caught through the ice) and the exact day carries nothing. It
