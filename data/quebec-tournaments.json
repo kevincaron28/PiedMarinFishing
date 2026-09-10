@@ -257,10 +257,13 @@
     "kind": "single"
   },
   {
-    "id": "super-walleye-challenge",
-    "name": "Super Walleye Challenge",
-    "startDate": "",
-    "endDate": "",
+    "id": "super-walleye-challenge-2027",
+    "name": {
+      "fr": "Super Walleye Challenge",
+      "en": "Super Walleye Challenge"
+    },
+    "startDate": "2027-05-22",
+    "endDate": "2027-05-22",
     "region": "Lanaudière",
     "location": {
       "fr": "Saint-Ignace-de-Loyola, lac Saint-Pierre / archipel des îles de Sorel",
@@ -278,15 +281,27 @@
       "fr": "Tournoi communautaire",
       "en": "Community Tournament"
     },
-    "status": "tentative",
+    "status": "confirmed",
     "link": "https://www.superwalleyechallenge.ca/",
     "notes": {
-      "fr": "Tournoi de doré présenté en mai, dans le secteur du lac Saint-Pierre et des îles de Sorel. La date exacte, les frais et le format de la prochaine édition n'étaient pas publiés au moment de la mise à jour — l'organisation annonce chaque édition sur son site et sa page Facebook. Vérifie avant de planifier un déplacement.",
-      "en": "Walleye tournament held in May, in the Lac Saint-Pierre and Sorel islands area. The exact date, fees and format of the next edition were not published at the time of this update — the organizers announce each edition on their website and Facebook page. Check before planning a trip."
+      "fr": "Samedi 22 mai 2027, sur le lac Saint-Pierre et l'archipel des îles de Sorel. L'organisation a annoncé les ajustements de l'édition 2027 : deux pesées, AM et PM, et fin du tournoi à 16 h. Les deux titres se jouent désormais sur une seule présentation plutôt que sur l'addition des deux — Champion Lunker va au doré le plus long de la journée, AM ou PM, et Champion Big Bag au plus gros sac de la journée. Le tournoi reste limité à 150 équipes, et les catégories Jeunesse et Féminine sont de retour. Les frais et l'heure de départ n'étaient pas annoncés.",
+      "en": "Saturday 22 May 2027, on Lac Saint-Pierre and the Sorel islands archipelago. The organizers announced the 2027 adjustments: two weigh-ins, AM and PM, with the tournament ending at 4 pm. Both titles are now decided on a single showing rather than the two added together — Lunker Champion goes to the longest walleye of the day, AM or PM, and Big Bag Champion to the heaviest bag of the day. The field stays capped at 150 teams, and the Youth and Women's categories are back. Entry fee and start time were not announced."
     },
     "specs": {
       "fee": "",
-      "teamSize": ""
+      "teamSize": "",
+      "maxTeams": {
+        "fr": "150 équipes",
+        "en": "150 teams"
+      },
+      "hours": {
+        "fr": "Fin à 16 h — deux pesées, AM et PM",
+        "en": "Ends at 4 pm — two weigh-ins, AM and PM"
+      },
+      "format": {
+        "fr": "Doré — plus long de la journée (Lunker) et plus gros sac de la journée (Big Bag); catégories Jeunesse et Féminine",
+        "en": "Walleye — longest of the day (Lunker) and heaviest bag of the day (Big Bag); Youth and Women's categories"
+      }
     },
     "tier": "regional",
     "kind": "single"
