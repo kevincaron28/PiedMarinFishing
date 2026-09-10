@@ -16,7 +16,8 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `history.html` | *Résultats / Results* — every tournament fished, filterable by member and season |
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
-| `especes.html` | Index of the species reference sheets |
+| `especes.html` | Index of the species reference sheets, grouped by official status |
+| `saison.html` | What is open right now — computed from the season dates in `data/regulations.json`. The only page whose content changes on its own, every day |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
 | `404.html` | Not-found page, served by GitHub Pages at any depth |
@@ -131,6 +132,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/check-links.py` | every internal link resolves, every image and `srcset` width is on disk, and pages about the same subject actually point at each other |
 | `tools/check-private.py` | refuses to let a registration number, plate or serial reach `data/` or a generated page; exits 1 on a hit |
 | `tools/check-stale.py` | lists what has gone by, what has no date, and what sits below the page threshold |
+| `tools/test-season.js` | 30 checks on the season engine without a browser: the periods that must NOT parse, the day before / of / after every opening and closing, and that a rule with an unknown closing date never says “open”. `node tools/test-season.js`, exits 1 on the first failure |
 | `tools/build-image-variants.py` | writes the 160/400/800px versions of every photo and the `data/image-variants.json` map that `srcset` is built from |
 | `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
 | `tools/build-angler-sheets.py` | writes one Letter-size pro-staff sheet per angler per language, from `data/team-members.json` and the results/catches logs |

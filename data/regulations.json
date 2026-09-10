@@ -536,7 +536,15 @@
       "zones": [
         "8"
       ],
-      "speciesPages": [],
+      "speciesPages": [
+        "crapet-de-roche",
+        "crapet-soleil",
+        "crapet-arlequin",
+        "barbue-de-riviere",
+        "barbotte-brune",
+        "malachigan",
+        "poulamon-atlantique"
+      ],
       "species": {
         "fr": "Autres espèces",
         "en": "Other species"
@@ -551,10 +559,49 @@
       },
       "source": "qc-zone-8",
       "verified": {
-        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
-        "date": "2026-09-07"
+        "by": "lecture des tableaux généraux des zones 7 et 8, PDF officiels générés le 7 septembre 2026, fournis par Kevin Caron; colonnes appariées par coordonnées",
+        "date": "2026-09-11"
       },
-      "general": true
+      "detail": {
+        "fr": "La ligne « Autres espèces » du tableau général vise ce que la zone ne nomme pas ailleurs. On ne la rattache QU'AUX espèces sans statut : l'appliquer au dard de sable ou au chabot de profondeur, tous deux menacés, publierait une permission que le tableau de pêche ne donne pas — les espèces désignées sont protégées par une autre loi que celle-ci. Le touladi en est écarté aussi : c'est un salmonidé, et le tableau ne le nomme dans aucune de ses lignes.",
+        "en": "The general table's “Other species” row covers what the zone does not name elsewhere. We attach it ONLY to species carrying no status: applying it to the eastern sand darter or the deepwater sculpin, both threatened, would publish a permission this table does not grant — designated species are protected by a different act. Lake trout is left out too: it is a salmonid, and the table names it in none of its rows."
+      }
+    },
+    {
+      "id": "autres-especes-z7",
+      "zones": [
+        "7"
+      ],
+      "speciesPages": [
+        "crapet-de-roche",
+        "crapet-soleil",
+        "crapet-arlequin",
+        "barbue-de-riviere",
+        "barbotte-brune",
+        "malachigan",
+        "poulamon-atlantique"
+      ],
+      "species": {
+        "fr": "Autres espèces",
+        "en": "Other species"
+      },
+      "period": {
+        "fr": "23 avril 2026 au 31 mars 2027",
+        "en": "April 23, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "Aucune limite",
+        "en": "No limit"
+      },
+      "detail": {
+        "fr": "La ligne « Autres espèces » du tableau général vise ce que la zone ne nomme pas ailleurs. On ne la rattache QU'AUX espèces sans statut : l'appliquer au dard de sable ou au chabot de profondeur, tous deux menacés, publierait une permission que le tableau de pêche ne donne pas — les espèces désignées sont protégées par une autre loi que celle-ci. Le touladi en est écarté aussi : c'est un salmonidé, et le tableau ne le nomme dans aucune de ses lignes.",
+        "en": "The general table's “Other species” row covers what the zone does not name elsewhere. We attach it ONLY to species carrying no status: applying it to the eastern sand darter or the deepwater sculpin, both threatened, would publish a permission this table does not grant — designated species are protected by a different act. Lake trout is left out too: it is a salmonid, and the table names it in none of its rows."
+      },
+      "source": "qc-zone-7",
+      "verified": {
+        "by": "lecture des tableaux généraux des zones 7 et 8, PDF officiels générés le 7 septembre 2026, fournis par Kevin Caron; colonnes appariées par coordonnées",
+        "date": "2026-09-11"
+      }
     },
     {
       "id": "lignes-hiver-z8",

@@ -129,7 +129,11 @@ const PMF_SEASON = (() => {
 // d'abord parce que c'est ce qui coûte une occasion manquée; ce qui est
 // interdit vient avant « on ne sait pas » parce qu'une interdiction est une
 // information certaine, et l'incertitude se lit mieux à la fin.
-const SEASON_ORDER = ["closingSoon", "openingSoon", "open", "banned", "closed", "unknown"];
+// « norule » ferme la marche : c'est un aveu, pas un état, et il se lit en
+// dernier. Mais il DOIT être là — une page qui s'appelle « Qu'est-ce qui est
+// ouvert » et qui tait sept salmonidés laisse croire qu'ils sont libres.
+const SEASON_ORDER = ["closingSoon", "openingSoon", "open", "banned", "closed",
+                      "unknown", "norule"];
 const SEASON_SOON_DAYS = 60;
 
 async function initSeason(rootSelector, options) {
@@ -330,7 +334,34 @@ async function initSeason(rootSelector, options) {
       return;
     }
 
+    // Les espèces publiées qu'AUCUNE règle ne couvre. Sans ce bloc elles
+    // n'apparaissent nulle part sur la page, et l'absence se lit comme une
+    // absence de contrainte — l'inverse exact de ce qu'on veut dire.
+    // On regarde TOUTES les règles vérifiées, pas seulement celles qui portent
+    // une saison. La carpe de roseau, la tanche et le poisson rouge sont
+    // couverts par des règles générales — remise à l'eau, signalement — qui
+    // vivent sur l'index des espèces. Les compter comme « on n'a rien » serait
+    // faux, et faux dans le sens qui rassure.
+    const couvertes = new Set();
+    (regs.rules || []).forEach((r) => {
+      if (!r || !r.verified) return;
+      (r.speciesPages || []).forEach((id) => couvertes.add(id));
+    });
+    const orphelines = [...byId.values()].filter((s) => !couvertes.has(s.id));
+
     const blocks = SEASON_ORDER.map((key) => {
+      if (key === "norule") {
+        if (!orphelines.length) return "";
+        return `<section class="season-group" id="sp-norule">
+  <div class="section-head sp-group-head"><h2>${escapeHTML(t("season.group.norule"))}</h2>
+    <span class="sp-group-count">${escapeHTML(plural("season.noRuleCount", orphelines.length))}</span>
+  </div>
+  <p class="tp-notes season-group-note">${escapeHTML(t("season.groupNote.norule"))}</p>
+  <div class="season-sheets">${orphelines.map((s) =>
+    `<a class="season-sheet" href="especes/${escapeHTML(s.id)}.html">${
+      escapeHTML(tr(s.name))}</a>`).join("")}</div>
+</section>`;
+      }
       const rows = groups.get(key);
       if (!rows.length) return "";
       return `<section class="season-group">
