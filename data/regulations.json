@@ -437,6 +437,101 @@
       }
     },
     {
+      "id": "ombles-z78",
+      "zones": [
+        "8",
+        "7"
+      ],
+      "speciesPages": [
+        "omble-de-fontaine",
+        "omble-chevalier",
+        "omble-chevalier-oquassa"
+      ],
+      "species": {
+        "fr": "Ombles (omble de fontaine, omble chevalier)",
+        "en": "Char (brook trout, Arctic char)"
+      },
+      "period": {
+        "fr": "23 avril 2026 au 15 septembre 2026",
+        "en": "April 23 to September 15, 2026"
+      },
+      "limit": {
+        "fr": "10 en tout",
+        "en": "10 in total"
+      },
+      "detail": {
+        "fr": "Le tableau général des deux zones donne la même période. Elle couvre aussi la ouananiche (3), le moulac et le lacmou (1 en tout, 60 cm et plus), la truite arc-en-ciel et la truite brune — mais le document officiel tronque la colonne des limites pour ces deux dernières, alors on ne la reproduit pas. Beaucoup de plans d'eau ont en plus leurs propres dates : le document de la zone 8 en compte 43 pages d'exceptions. Vérifie ton plan d'eau avant de partir.",
+        "en": "The general table for both zones gives the same period. It also covers landlocked salmon (3), splake and lake-brook hybrids (1 in total, 60 cm and over), rainbow trout and brown trout — but the official document truncates the limit column for the last two, so we do not reproduce it. Many water bodies also carry their own dates: the zone 8 document runs to 43 pages of exceptions. Check your water before you go."
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des tableaux généraux des zones 7 et 8, PDF officiels générés le 7 septembre 2026, fournis par Kevin Caron; colonnes appariées par coordonnées",
+        "date": "2026-09-11"
+      }
+    },
+    {
+      "id": "truites-z78",
+      "zones": [
+        "8",
+        "7"
+      ],
+      "speciesPages": [
+        "truite-arc-en-ciel",
+        "truite-brune"
+      ],
+      "species": {
+        "fr": "Truite arc-en-ciel et truite brune",
+        "en": "Rainbow trout and brown trout"
+      },
+      "period": {
+        "fr": "23 avril 2026 au 15 septembre 2026",
+        "en": "April 23 to September 15, 2026"
+      },
+      "limit": {
+        "fr": "",
+        "en": ""
+      },
+      "detail": {
+        "fr": "Même cellule de période que les ombles, dans les tableaux généraux des deux zones. La limite de prise n'est PAS reproduite : le texte du document officiel est tronqué à ces deux lignes, et une limite devinée vaut moins que pas de limite du tout. Consulte la fiche officielle avant de garder un poisson.",
+        "en": "Same period cell as the char, in the general tables of both zones. The catch limit is NOT reproduced: the official document's own text is truncated on these two rows, and a guessed limit is worth less than none. Check the official record before keeping a fish."
+      },
+      "source": "qc-zone-8",
+      "verified": {
+        "by": "lecture des tableaux généraux des zones 7 et 8, PDF officiels générés le 7 septembre 2026, fournis par Kevin Caron; colonnes appariées par coordonnées",
+        "date": "2026-09-11"
+      }
+    },
+    {
+      "id": "saumon-atlantique-z7",
+      "zones": [
+        "7"
+      ],
+      "speciesPages": [
+        "saumon-atlantique"
+      ],
+      "species": {
+        "fr": "Saumon atlantique",
+        "en": "Atlantic salmon"
+      },
+      "period": {
+        "fr": "1er avril 2026 au 31 mars 2027",
+        "en": "April 1, 2026 to March 31, 2027"
+      },
+      "limit": {
+        "fr": "Pêche interdite",
+        "en": "Fishing prohibited"
+      },
+      "detail": {
+        "fr": "Le tableau général de la zone 7 l'inscrit comme interdit toute l'année. Le tableau de la zone 8 ne mentionne pas l'espèce.",
+        "en": "Zone 7's general table lists it as closed year-round. Zone 8's table does not mention the species."
+      },
+      "source": "qc-zone-7",
+      "verified": {
+        "by": "lecture des tableaux généraux des zones 7 et 8, PDF officiels générés le 7 septembre 2026, fournis par Kevin Caron; colonnes appariées par coordonnées",
+        "date": "2026-09-11"
+      }
+    },
+    {
       "id": "autres-especes-z8",
       "zones": [
         "8"

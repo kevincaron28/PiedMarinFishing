@@ -2894,6 +2894,14 @@ body.has-lightbox { overflow: hidden; }
 }
 .reg-src a { color: var(--ink-600); }
 
+/* Guide : la saison affichée est entièrement passée. */
+.season-over {
+  border: 1px solid var(--gold-400); background: var(--sand-100);
+  border-radius: 12px; padding: 14px 18px; margin-bottom: 20px;
+}
+.season-over p { margin: 0; font-size: 0.92rem; }
+.season-over-head { font-weight: 700; color: var(--ink-900); margin-bottom: 4px !important; }
+
 /* Page saison : qu'est-ce qui est ouvert. */
 .season-group { margin-bottom: 34px; }
 .season-group:last-of-type { margin-bottom: 0; }

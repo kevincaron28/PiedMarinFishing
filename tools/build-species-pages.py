@@ -370,9 +370,11 @@ def catches_html(sp, catches, cp_index, members, ui):
     l'index, qui porte déjà une ancre « #c-<id> » et se met en évidence à
     l'arrivée; pas à l'index tout court, où il faudrait la chercher.
     """
-    name = pick(sp.get("name"), "fr").strip().lower()
-    mine = [c for c in catches
-            if pick(c.get("species"), "fr").strip().lower() == name]
+    # speciesId plutôt que le nom français. L'appariement par nom exigeait que
+    # « Saumon chinook » soit écrit à la lettre près dans deux fichiers; il ne
+    # l'était pas, et la prise ne rejoignait aucune fiche — sans erreur, sans
+    # avertissement, sans que rien ne paraisse. Un identifiant se vérifie.
+    mine = [c for c in catches if c.get("speciesId") == sp["id"]]
     if not mine:
         return ""
     cells = []

@@ -166,28 +166,20 @@ def qualifies(ev, by_id, events):
         return False
     if not has_substance(ev):
         return False
-    if ev.get("kind") == "stop":
-        parent = by_id.get(ev.get("circuit"))
-        # L'étape est déjà détaillée sur la page de son circuit.
-        if parent and qualifies_circuit(parent):
-            return False
     return True
 
 
-def qualifies_circuit(ev):
-    """Le circuit couvre-t-il assez ses étapes pour qu'elles s'effacent?
-
-    Volontairement distinct de circuit_exempt : celui-ci décide si le CIRCUIT
-    obtient une page, celui-là si ses ÉTAPES perdent la leur. Les coupler
-    supprimait sept étapes d'un coup, dont « Big Bass Challenge — Cornwall »
-    et ses 268 caractères de notes, au profit d'une ligne de tableau.
-
-    À revoir : la page d'un circuit ne liste ses étapes qu'en nom, date et
-    lieu — ni frais, ni épreuve, ni horaire, ni texte. « L'étape est déjà
-    détaillée sur la page de son circuit » n'est donc pas exact, et huit
-    étapes bien documentées s'effacent aujourd'hui sur cette base.
-    """
-    return ev.get("kind") == "circuit" and score(ev) >= SCORE_MIN
+# SUPPRIMÉ : « une étape n'a pas sa page, elle est déjà détaillée sur celle de
+# son circuit ». La page d'un circuit liste ses étapes en NOM, DATE et LIEU, et
+# rien d'autre — ni frais, ni épreuve, ni horaire, ni texte. La prémisse était
+# fausse, et huit étapes disparaissaient sur cette base, dont l'étape 1 de
+# l'Excellence Bass avec ses 197 caractères de notes et trois lignes de détails.
+#
+# Le plancher de substance ajouté ensuite fait déjà le vrai tri : une étape qui
+# n'a rien de plus que son nom, sa date et son lieu n'atteint pas NOTES_MIN et
+# tombe toute seule. C'est le cas de l'étape 3 (28 caractères, deux specs), et
+# c'est la seule qui reste sans page. Une règle de moins, le même résultat là
+# où il était juste.
 
 
 def clamp_title(name):

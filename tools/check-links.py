@@ -145,13 +145,10 @@ def expected():
     videos = (load("videos.json") or {}).get("videos") or []
     cp = set(load("catch-pages.json"))
     sp = set(load("species-pages.json"))
-    by_species = {}
-    for s in species:
-        by_species[(s.get("name") or {}).get("fr", "").strip().lower()] = s["id"]
+    known = {s["id"] for s in species}
 
     for c in catches:
-        name = ((c.get("species") or {}).get("fr") or "").strip().lower()
-        sid = by_species.get(name)
+        sid = c.get("speciesId")
         if c["id"] in cp and sid and sid in sp:
             want.append(("prises/%s.html" % c["id"], "especes/%s.html" % sid,
                          "la prise et la fiche de son espèce"))
@@ -192,18 +189,40 @@ def expected():
     return missing, want
 
 
+def orphans():
+    """Un speciesId qui ne mene a aucune espece.
+
+    Le lien prise -> fiche d'espece se faisait par nom francais exact. « Saumon
+    chinook » n'etait ecrit pareil nulle part ailleurs : la prise ne rejoignait
+    aucune fiche, et rien ne le disait — pas d'erreur, pas d'avertissement, une
+    section vide et personne pour s'en apercevoir. Un identifiant, lui, se
+    verifie. Un champ ABSENT est un oubli; un champ VIDE est une decision, et
+    ce controle respecte la difference.
+    """
+    species = {s["id"] for s in load("species.json")}
+    out = []
+    for c in load("catches.json"):
+        if "speciesId" not in c:
+            out.append((c["id"], "(champ absent)", "aucun speciesId sur cette prise"))
+        elif c["speciesId"] and c["speciesId"] not in species:
+            out.append((c["id"], c["speciesId"], "aucune espece ne porte cet identifiant"))
+    return out
+
+
 def main():
     brief = "--brief" in sys.argv
     bad = broken()
     imgs = images()
     vars_ = variants()
     missing, want = expected()
+    orph = orphans()
 
     print("%d pages examinées." % len(pages()))
     print("Liens cassés   : %d" % len(bad))
     print("Images absentes: %d" % len(imgs))
     print("Variantes absentes: %d" % len(vars_))
     print("Liens manquants: %d (sur %d attendus)" % (len(missing), len(want)))
+    print("speciesId orphelins: %d" % len(orph))
 
     if not brief:
         for page, href, root in bad:
@@ -216,7 +235,9 @@ def main():
             print("\nCES DEUX PAGES PARLENT DU MÊME SUJET ET NE SE POINTENT PAS :")
             for src, dst, why in missing:
                 print("  %-38s → %-34s  (%s)" % (src, dst, why))
-    return 1 if bad or imgs or vars_ else 0
+        for cid, sid, why in orph:
+            print("\n  ✗ data/catches.json — %s\n      %s : %s" % (cid, sid, why))
+    return 1 if bad or imgs or vars_ or orph else 0
 
 
 if __name__ == "__main__":

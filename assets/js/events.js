@@ -233,6 +233,39 @@ async function initEventList(options) {
     });
   }
 
+  // Le sélecteur suit l'ANNÉE COURANTE, pas la saison utile. Du 11 octobre au
+  // 31 décembre 2026, la saison 2026 était entièrement passée mais restait
+  // celle qu'on affichait par défaut, et un visiteur y voyait un calendrier
+  // périmé alors qu'une saison 2027 existait à un clic. Basculer d'office
+  // serait pire : quelqu'un qui vient chercher un résultat d'octobre le
+  // trouverait ailleurs que là où il l'a laissé. On le DIT, et on montre où
+  // aller.
+  // Un circuit hérite de la saison de ses étapes mais n'a pas de date propre,
+  // et isPastEvent ne déclare jamais passé ce qui n'a pas de date. Trois
+  // circuits gardaient donc la saison 2026 vivante pour toujours et le
+  // bandeau ne se déclenchait jamais. Un circuit est passé quand toutes ses
+  // étapes le sont — la même logique que seasonOf, qui lit déjà sa saison
+  // dans ses étapes.
+  function isPastInSeason(ev) {
+    if (ev.kind !== "circuit" || (ev.startDate || "")) return isPastEvent(ev);
+    const stops = stopsOf.get(ev.id) || [];
+    return stops.length > 0 && stops.every(isPastEvent);
+  }
+
+  function seasonOverHTML() {
+    if (!groupByMonth || !activeSeason) return "";
+    const inSeason = events.filter((e) => seasonOf(e) === activeSeason);
+    if (!inSeason.length || !inSeason.every(isPastInSeason)) return "";
+    const next = seasons.filter((y) => y > activeSeason);
+    const body = next.length
+      ? t("events.seasonOverNext", { next: next.join(", ") })
+      : t("events.seasonOverAlone");
+    return `<div class="season-over" role="status">
+  <p class="season-over-head">${escapeHTML(t("events.seasonOver", { year: activeSeason }))}</p>
+  <p>${escapeHTML(body)}</p>
+</div>`;
+  }
+
   function matchesSeason(ev) {
     if (!groupByMonth || !activeSeason) return true;
     const sn = seasonOf(ev);
@@ -760,7 +793,8 @@ async function initEventList(options) {
       if (emptyEl) emptyEl.style.display = "block";
     } else {
       if (emptyEl) emptyEl.style.display = "none";
-      listEl.innerHTML = groupByMonth ? groupBySeason(filtered) : groupByCircuit(filtered);
+      listEl.innerHTML = seasonOverHTML()
+        + (groupByMonth ? groupBySeason(filtered) : groupByCircuit(filtered));
     }
 
     bindIcsButtons();
