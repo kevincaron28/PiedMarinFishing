@@ -551,6 +551,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/prises/perchaude-2025.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/perchaude-2025.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/perchaude-2025.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/perchaude-2025.html"/>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/especes/achigan-grande-bouche.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/especes/achigan-grande-bouche.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/especes/achigan-grande-bouche.html?lang=en"/>
