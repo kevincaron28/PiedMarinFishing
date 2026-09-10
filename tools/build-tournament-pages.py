@@ -87,8 +87,12 @@ def long_date(value, lang):
         return ("%s %s" % (MONTHS_EN[month - 1], year) if lang == "en"
                 else "%s %s" % (MONTHS_FR[month - 1], year))
     day = int(parts[2])
+    # « 1 mai » n'est pas du français : le premier du mois prend l'ordinal.
+    # Même règle que longDate() dans assets/js/util.js, pour que les pages
+    # générées et celles rendues en JavaScript écrivent la même date.
+    jour = "1er" if day == 1 else str(day)
     return ("%s %d, %s" % (MONTHS_EN[month - 1], day, year) if lang == "en"
-            else "%d %s %s" % (day, MONTHS_FR[month - 1], year))
+            else "%s %s %s" % (jour, MONTHS_FR[month - 1], year))
 
 
 def date_phrase(ev, lang):

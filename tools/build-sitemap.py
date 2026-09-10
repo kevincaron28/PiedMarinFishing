@@ -39,6 +39,10 @@ PAGES = [
     ("history.html",     "0.6", "monthly", ["data/tournament-history.json",
                                             "data/team-members.json"]),
     ("especes.html",     "0.7", "monthly", ["data/species.json", "data/species-pages.json"]),
+    # « weekly » alors que rien n'y est écrit : c'est la seule page dont le
+    # CONTENU change tout seul, tous les jours, parce qu'elle compte des jours.
+    ("saison.html",      "0.8", "weekly",  ["data/regulations.json", "data/species.json",
+                                            "data/species-pages.json"]),
     ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
 ]
 COMMON = ["data/i18n.json"]

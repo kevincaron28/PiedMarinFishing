@@ -332,9 +332,14 @@ def rules_html(sp, rules, zones, ui, regs):
     stamp = {lang: ui[lang]["reg.updated"].replace(
         "{date}", long_date(regs.get("updated"), lang) or (regs.get("updated") or ""))
         for lang in ("fr", "en")}
-    foot = ('<p class="reg-note">%s%s</p>'
+    # Un renvoi vers la page qui CALCULE l'etat de la saison. Le bloc ci-dessus
+    # donne les dates; saison.html dit ou on en est aujourd'hui. Les deux se
+    # nourrissent du meme regulations.json, donc ils ne peuvent pas diverger.
+    seen = ' <a class="sp-src-link" href="saison.html">%s</a>' % bilingual(
+        "span", {"fr": ui["fr"]["season.stripLink"], "en": ui["en"]["season.stripLink"]})
+    foot = ('<p class="reg-note">%s%s%s</p>'
             % (bilingual("span", {"fr": ui["fr"]["reg.disclaimer"],
-                                  "en": ui["en"]["reg.disclaimer"]}), link))
+                                  "en": ui["en"]["reg.disclaimer"]}), link, seen))
     # data-reg-updated : le garde-fou d'obsolescence. Ces pages sont generees,
     # donc rien ne peut expirer au build — c'est assets/js/reg-guard.js qui
     # efface le bloc quand la date depasse le delai. Sans lui, deplacer la

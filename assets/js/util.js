@@ -55,9 +55,12 @@ function longDate(value, lang) {
       ? `${m.full[p.month]} ${p.year}`
       : `${m.full[p.month].toLowerCase()} ${p.year}`;
   }
+  // « 1 mai » n'est pas du français : le premier du mois prend l'ordinal.
+  // Les autres quantièmes, non — « 2e mai » serait pire encore.
+  const jour = p.day === 1 ? "1er" : String(p.day);
   return lang === "en"
     ? `${m.full[p.month]} ${p.day}, ${p.year}`
-    : `${p.day} ${m.full[p.month].toLowerCase()} ${p.year}`;
+    : `${jour} ${m.full[p.month].toLowerCase()} ${p.year}`;
 }
 
 // Lit une mesure de prise : « 50 po », « 11 lb », « 45" ». Renvoie la valeur et

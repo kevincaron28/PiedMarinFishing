@@ -145,6 +145,7 @@
       <span class="kicker" data-i18n="new.kicker">Quoi de neuf</span>
       <h2 data-i18n="new.title">Les dernières nouvelles de l'équipe</h2>
     </div>
+    <div data-season-strip hidden></div>
     <div id="news-grid" class="grid grid-3"></div>
     <p class="news-social-lead" data-i18n="new.socialLead">Le jour le jour se passe sur nos réseaux — photos de sorties, prises de la journée et coulisses.</p>
     <div id="news-socials" class="news-socials"></div>
@@ -245,9 +246,11 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/season.js"></script>
 <script src="assets/js/video.js"></script>
 <script src="assets/js/whatsnew.js"></script>
 <script>
+  initSeason("[data-season-strip]", { preview: 3 });
   initFeaturedVideo("#featured-video");
   initWhatsNew({
     sectionSelector: "#whats-new",

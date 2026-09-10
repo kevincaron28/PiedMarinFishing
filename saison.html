@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-text="sp.indexTitle">Les espèces du fleuve — Pied Marin Fishing</title>
-<meta name="description" data-i18n-content="sp.indexDesc" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
-<link rel="canonical" href="https://piedmarinfishing.com/especes.html">
-<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/especes.html">
-<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/especes.html?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/especes.html">
+<title data-i18n-text="season.title">Qu'est-ce qui est ouvert — Pied Marin Fishing</title>
+<meta name="description" data-i18n-content="season.desc" content="Ce qui est ouvert, ce qui ferme bientôt et ce qui ne se pêche pas dans les zones 7 et 8 du Saint-Laurent, calculé à partir de la réglementation officielle du Québec.">
+<link rel="canonical" href="https://piedmarinfishing.com/saison.html">
+<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/saison.html">
+<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/saison.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/saison.html">
 <meta name="theme-color" content="#0b1e33">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Pied Marin Fishing">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:locale:alternate" content="en_CA">
-<meta property="og:title" content="Les espèces du fleuve — Pied Marin Fishing">
-<meta property="og:description" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
-<meta property="og:url" content="https://piedmarinfishing.com/especes.html">
+<meta property="og:title" content="Qu'est-ce qui est ouvert — Pied Marin Fishing">
+<meta property="og:description" content="Ce qui est ouvert, ce qui ferme bientôt et ce qui ne se pêche pas dans les zones 7 et 8 du Saint-Laurent, calculé à partir de la réglementation officielle du Québec.">
+<meta property="og:url" content="https://piedmarinfishing.com/saison.html">
 <meta property="og:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Les espèces du fleuve — Pied Marin Fishing">
-<meta name="twitter:description" content="Nos fiches de référence sur les poissons du Saint-Laurent : taille, profondeur, température et fraie, tirées des fiches officielles du Québec.">
+<meta name="twitter:title" content="Qu'est-ce qui est ouvert — Pied Marin Fishing">
+<meta name="twitter:description" content="Ce qui est ouvert, ce qui ferme bientôt et ce qui ne se pêche pas dans les zones 7 et 8 du Saint-Laurent, calculé à partir de la réglementation officielle du Québec.">
 <meta name="twitter:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/favicon.png">
@@ -44,7 +44,7 @@
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre calendrier</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
-      <li><a href="especes.html" aria-current="page" data-i18n="nav.species">Espèces</a></li>
+      <li><a href="especes.html" data-i18n="nav.species">Espèces</a></li>
       <li><a href="social.html" data-i18n="nav.social">Réseaux</a></li>
       <li><a href="sponsors.html" data-i18n="nav.sponsors">Commanditaires</a></li>
     </ul>
@@ -60,28 +60,17 @@
 
 <div class="page-header">
   <div class="container">
-    <h1 data-i18n="sp.index">Les espèces du fleuve</h1>
-    <p class="tp-notes" data-i18n="sp.indexIntro">On consulte ces fiches avant de viser une espèce : la profondeur où elle se tient, la température qu'elle cherche, quand elle fraie, et comment la distinguer de celle qui lui ressemble. Tout vient des fiches officielles du gouvernement du Québec, avec la date à laquelle on les a lues.</p>
+    <h1 data-i18n="season.h1">Qu'est-ce qui est ouvert</h1>
+    <p class="tp-notes" data-i18n="season.intro">Les dates viennent de la réglementation officielle, avec le jour où on l'a lue. Ce qui suit est un calcul sur ces dates — pas une permission. Quand une date manque, la page le dit au lieu de deviner : c'est le cas du brochet, dont la fermeture est coupée par un saut de page dans le document du gouvernement.</p>
+    <div class="header-links">
+      <a class="cross-link" href="especes.html" data-i18n="season.crossLink">Les 47 fiches d'espèce →</a>
+    </div>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div data-season-strip hidden></div>
-    <div class="filters">
-      <input id="sp-search" type="text" data-i18n-placeholder="sp.search" data-i18n-aria-label="sp.searchLabel" placeholder="Rechercher une espèce…" aria-label="Rechercher une espèce">
-      <span class="result-count" data-species-count></span>
-    </div>
-    <nav class="sp-nav" data-species-nav hidden data-i18n-aria-label="sp.jumpLabel" aria-label="Aller à un groupe"></nav>
-    <div data-species-grid></div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <div class="section-head"><h2 data-i18n="reg.generalTitle">Les règles qui s'appliquent à tout le monde</h2></div>
-    <p class="tp-notes" data-i18n="reg.generalIntro">La réglementation propre à une espèce est sur sa fiche — c'est là qu'on se pose la question. Celles-ci ne visent aucun poisson en particulier, alors elles sont ici.</p>
-    <div data-general-rules></div>
+    <div data-season></div>
   </div>
 </section>
 
@@ -98,13 +87,9 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
-<script src="assets/js/species.js"></script>
 <script src="assets/js/season.js"></script>
 <script>
-  initSeason("[data-season-strip]", { preview: 3 });
-  initSpecies("[data-species-grid]", "[data-species-count]",
-              "#sp-search", "[data-species-nav]");
-  initGeneralRules("[data-general-rules]");
+  initSeason("[data-season]");
 </script>
 </body>
 </html>

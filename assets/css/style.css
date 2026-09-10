@@ -2894,6 +2894,57 @@ body.has-lightbox { overflow: hidden; }
 }
 .reg-src a { color: var(--ink-600); }
 
+/* Page saison : qu'est-ce qui est ouvert. */
+.season-group { margin-bottom: 34px; }
+.season-group:last-of-type { margin-bottom: 0; }
+.season-group-note { margin-bottom: 16px; }
+.season-rows { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.season-row {
+  background: var(--white); border: 1px solid var(--line);
+  border-radius: 12px; padding: 16px 18px;
+}
+.season-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 8px; }
+.season-species { font-weight: 700; color: var(--ink-900); }
+.season-zone {
+  font-size: 0.72rem; font-weight: 600; color: var(--ink-600);
+  background: var(--sand-100); border-radius: 999px; padding: 2px 8px;
+}
+.season-badge {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em;
+  text-transform: uppercase; border-radius: 999px; padding: 3px 10px;
+  border: 1px solid transparent;
+}
+/* Les couleurs disent l'urgence, jamais le sens seules : chaque pastille
+   porte son mot, pour qui ne distingue pas le vert de l'ambre. */
+.season-badge-open        { background: rgba(21,122,118,.10);  color: var(--teal-600); }
+.season-badge-closingSoon { background: rgba(197,122,26,.14);  color: #8f5208; }
+.season-badge-openingSoon { background: rgba(21,122,118,.10);  color: var(--teal-600); }
+.season-badge-closed      { background: rgba(71,96,111,.12);   color: var(--ink-600); }
+.season-badge-banned      { background: rgba(155,34,34,.12);   color: #8c1d1d; }
+.season-badge-unknown     { background: var(--sand-100); color: var(--ink-900); border-color: var(--gold-400); }
+.season-note { margin: 0 0 6px; font-size: 0.92rem; color: var(--ink-900); }
+.season-limit { margin: 0 0 10px; font-size: 0.86rem; color: var(--ink-600); }
+.season-sheets { display: flex; flex-wrap: wrap; gap: 8px; }
+.season-sheet {
+  font-size: 0.82rem; font-weight: 600; padding: 4px 10px;
+  border: 1px solid var(--line); border-radius: 999px; text-decoration: none;
+  color: var(--navy-900); background: var(--white);
+}
+.season-sheet:hover { border-color: var(--teal-400); color: var(--teal-600); text-decoration: none; }
+
+/* Le bandeau d'especes.html : ce qui presse, et rien d'autre. */
+.season-strip {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px;
+  padding: 14px 18px; margin-bottom: 24px;
+  background: var(--sand-100); border: 1px solid var(--line); border-radius: 12px;
+}
+.season-strip-lead { margin: 0; font-weight: 700; color: var(--ink-900); font-size: 0.9rem; }
+.season-strip-rows { display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 260px; }
+.season-chip {
+  font-size: 0.8rem; font-weight: 600; border-radius: 999px; padding: 4px 12px;
+}
+.season-strip .cross-link { margin-left: auto; }
+
 /* Index des espèces : liens rapides et groupes. */
 .sp-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: -10px 0 26px; }
 /* Volontairement PAS la barre de mois du guide : trois pastilles tiennent sur
