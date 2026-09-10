@@ -11,10 +11,15 @@
 //
 //   1. TROIS ÉTATS, JAMAIS DEUX. Ouvert, fermé, et « on ne sait pas ». Une
 //      période qui ne s'analyse pas ENTIÈREMENT tombe dans le troisième, et
-//      jamais dans « ouvert ». La règle du brochet en est la preuve vivante :
-//      le document officiel coupe sa date de fermeture par un saut de page,
-//      on a refusé de la reproduire de mémoire, alors la page dit qu'on ne
-//      sait pas. C'est l'espèce phare, et elle affiche un aveu d'ignorance.
+//      jamais dans « ouvert ».
+//
+//      Le brochet a servi de banc d'essai. Le document officiel coupait sa
+//      date de fermeture par un saut de page; on avait refusé de la
+//      reproduire de mémoire, et pendant deux jours l'espèce phare du site
+//      affichait un aveu d'ignorance aux deux zones. Kevin est allé chercher
+//      les deux fiches du registre, et le trou s'est refermé. Aujourd'hui
+//      toutes les règles se calculent — mais le troisième état reste, parce
+//      que c'est lui qui a rendu le trou visible au lieu de le combler.
 //
 //   2. LA DATE FRANÇAISE FAIT FOI. On n'analyse que le texte français, et on
 //      rend les deux langues à partir des dates obtenues. Analyser les deux

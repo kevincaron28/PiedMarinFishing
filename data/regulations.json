@@ -245,25 +245,25 @@
         "en": "Pike"
       },
       "period": {
-        "fr": "Ouverture le 15 mai 2026",
-        "en": "Opens May 15, 2026"
+        "fr": "15 mai 2026 au 31 mars 2027",
+        "en": "May 15, 2026 to March 31, 2027"
       },
       "limit": {
         "fr": "6 en tout",
         "en": "6 in total"
       },
       "length": {
-        "fr": "56 cm à 70 cm inclusivement",
-        "en": "56 cm to 70 cm inclusive"
+        "fr": "56 cm à 70 cm inclusivement — AFC du lac Saint-Pierre, fleuve et tributaires nommés seulement",
+        "en": "56 cm to 70 cm inclusive — Lac Saint-Pierre CWA, the river and named tributaries only"
       },
       "detail": {
-        "fr": "La zone 7 ouvre deux semaines plus tard que la zone 8. La limite de longueur s'applique à l'aire faunique communautaire du lac Saint-Pierre, au fleuve et à la partie aval de certains tributaires.",
-        "en": "Zone 7 opens two weeks later than zone 8. The length limit applies to the Lac Saint-Pierre community wildlife area, the river and the lower reaches of certain tributaries."
+        "fr": "La zone 7 ouvre deux semaines plus tard que la zone 8, et ferme le même jour. La limite de longueur s'applique à l'aire faunique communautaire du lac Saint-Pierre, au fleuve et à la partie aval de certains tributaires. Ailleurs en zone 7, le registre officiel n'inscrit aucune limite de longueur.",
+        "en": "Zone 7 opens two weeks later than zone 8 and closes the same day. The length limit applies to the Lac Saint-Pierre community wildlife area, the river and the lower reaches of certain tributaries. Elsewhere in zone 7 the official record lists no length limit."
       },
       "source": "qc-zone-7",
       "verified": {
-        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
-        "date": "2026-09-07"
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron; fiche de la zone 7 pour les brochets relue le 10 septembre 2026",
+        "date": "2026-09-10"
       }
     },
     {
