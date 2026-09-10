@@ -209,25 +209,25 @@
         "en": "Pike"
       },
       "period": {
-        "fr": "Ouverture le 1er mai 2026",
-        "en": "Opens May 1, 2026"
+        "fr": "1er mai 2026 au 31 mars 2027",
+        "en": "May 1, 2026 to March 31, 2027"
       },
       "limit": {
         "fr": "6 en tout",
         "en": "6 in total"
       },
       "length": {
-        "fr": "56 cm à 70 cm inclusivement",
-        "en": "56 cm to 70 cm inclusive"
+        "fr": "56 cm à 70 cm inclusivement — fleuve et plans d'eau nommés seulement",
+        "en": "56 cm to 70 cm inclusive — St. Lawrence and named waters only"
       },
       "detail": {
-        "fr": "La date de fermeture est coupée par un saut de page dans le document officiel : on ne la reproduit pas de mémoire. La limite de longueur s'applique au fleuve, au lac des Deux Montagnes, aux rivières des Outaouais, des Prairies et des Mille Îles, et à la portion aval de plusieurs tributaires.",
-        "en": "The closing date is cut off by a page break in the official document, so we do not reproduce it from memory. The length limit applies to the St. Lawrence, Lac des Deux Montagnes, the Ottawa, des Prairies and Mille Îles rivers, and the lower reaches of several tributaries."
+        "fr": "La limite de longueur s'applique au fleuve, au lac des Deux Montagnes, aux rivières des Outaouais, des Prairies et des Mille Îles, et à la portion aval de plusieurs tributaires. Ailleurs en zone 8, le registre officiel n'inscrit aucune limite de longueur.",
+        "en": "The length limit applies to the St. Lawrence, Lac des Deux Montagnes, the Ottawa, des Prairies and Mille Îles rivers, and the lower reaches of several tributaries. Elsewhere in zone 8 the official record lists no length limit."
       },
       "source": "qc-zone-8",
       "verified": {
-        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron",
-        "date": "2026-09-07"
+        "by": "lecture des documents officiels enregistrés et fournis par Kevin Caron; fiche de la zone 8 pour les brochets relue le 10 septembre 2026",
+        "date": "2026-09-10"
       }
     },
     {
