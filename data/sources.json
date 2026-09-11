@@ -1,44 +1,44 @@
 [
   {
-    "id": "qc-fiche-chevalier-cuivre",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "id": "bestioles-malachigan",
+    "kind": "web",
+    "authors": "Bestioles.ca",
     "year": "s.d.",
     "title": {
-      "fr": "Chevalier cuivré — fiche d'espèce faunique",
-      "en": "Copper redhorse — wildlife species profile"
+      "fr": "Le malachigan est un poisson d'eau douce",
+      "en": "The freshwater drum"
+    },
+    "publisher": {
+      "fr": "Bestioles.ca",
+      "en": "Bestioles.ca"
+    },
+    "url": "https://www.bestioles.ca/poissons/malachigans.html",
+    "covers": {
+      "fr": "Taille, poids, reproduction. Site généraliste — retenu seulement là où il recoupe les deux autres.",
+      "en": "Size, weight, reproduction. A general-interest site — used only where it agrees with the other two."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "brodeur-hatin-bacon-2013",
+    "kind": "gov",
+    "authors": "Brodeur, P., Hatin, D. et Bacon, J.",
+    "year": "2013",
+    "title": {
+      "fr": "Suivi du maskinongé dans le fleuve Saint-Laurent et le lac des Deux Montagnes",
+      "en": "Muskellunge monitoring in the St. Lawrence River and Lac des Deux Montagnes"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chevalier-cuivre",
+    "url": "",
     "covers": {
-      "fr": "Identification, répartition, statut provincial, habitat, alimentation, menaces, et la règle de remise à l'eau des zones 7 et 8.",
-      "en": "Identification, range, provincial status, habitat, diet, threats, and the mandatory-release rule for zones 7 and 8."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "eccc-retablissement-chevalier-2022",
-    "kind": "gov",
-    "authors": "Environnement et Changement climatique Canada",
-    "year": "2022",
-    "title": {
-      "fr": "Rapport sur les progrès de la mise en œuvre du programme de rétablissement du chevalier cuivré",
-      "en": "Report on the Progress of Recovery Strategy Implementation for the Copper Redhorse"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Canada",
-      "en": "Government of Canada"
-    },
-    "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/lep-sara/2022/20220526-CopperRedhorseProgressReport-fra.pdf",
-    "covers": {
-      "fr": "Statut LEP, habitat essentiel, mesures de rétablissement.",
-      "en": "SARA status, critical habitat, recovery measures."
+      "fr": "Suivi de population. Citation repérée par recherche — rien n'est confirmé.",
+      "en": "Population monitoring. Citation found by search — nothing confirmed."
     },
     "verified": null
   },
@@ -63,6 +63,118 @@
     "verified": null
   },
   {
+    "id": "decclic-malachigan",
+    "kind": "edu",
+    "authors": "Réseau d'enseignement et d'apprentissage (DECclic) — cours de biologie 101-NYA-05",
+    "year": "s.d.",
+    "title": {
+      "fr": "Fiche descriptive du malachigan",
+      "en": "Freshwater drum species sheet"
+    },
+    "publisher": {
+      "fr": "DECclic — Dec virtuel",
+      "en": "DECclic — Dec virtuel"
+    },
+    "url": "http://rea.decclic.qc.ca/dec_virtuel/Biologie/101-NYA-05/Cellule_et_evolution/3.Evolution_et_ecologie/Ecosysteme/malachigan/fchdesmalachigan.htm",
+    "covers": {
+      "fr": "Description, alimentation, habitat. Support de cours collégial.",
+      "en": "Description, diet, habitat. A college course resource."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "eccc-retablissement-chevalier-2022",
+    "kind": "gov",
+    "authors": "Environnement et Changement climatique Canada",
+    "year": "2022",
+    "title": {
+      "fr": "Rapport sur les progrès de la mise en œuvre du programme de rétablissement du chevalier cuivré",
+      "en": "Report on the Progress of Recovery Strategy Implementation for the Copper Redhorse"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Canada",
+      "en": "Government of Canada"
+    },
+    "url": "https://www.canada.ca/content/dam/eccc/documents/pdf/lep-sara/2022/20220526-CopperRedhorseProgressReport-fra.pdf",
+    "covers": {
+      "fr": "Statut LEP, habitat essentiel, mesures de rétablissement.",
+      "en": "SARA status, critical habitat, recovery measures."
+    },
+    "verified": null
+  },
+  {
+    "id": "g3e-malachigan",
+    "kind": "ngo",
+    "authors": "Groupe d'éducation et d'écosurveillance de l'eau (G3E)",
+    "year": "2025",
+    "title": {
+      "fr": "Malachigan — Les capsules du G3E",
+      "en": "Freshwater drum — G3E capsules"
+    },
+    "publisher": {
+      "fr": "G3E",
+      "en": "G3E"
+    },
+    "url": "https://www.g3e-ewag.ca/ressources-interactives/capsules/biologie/faune/poissons/malachigan.html",
+    "covers": {
+      "fr": "Identification, habitat, reproduction, alimentation. Organisme d'éducation à l'eau, pas une source gouvernementale.",
+      "en": "Identification, habitat, reproduction, diet. A water-education non-profit, not a government source."
+    },
+    "verified": {
+      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "igfa-records-grand-brochet",
+    "kind": "org",
+    "authors": "International Game Fish Association",
+    "year": "2026",
+    "title": {
+      "fr": "Records mondiaux — grand brochet (Esox lucius)",
+      "en": "World Records — Northern pike (Esox lucius)"
+    },
+    "publisher": {
+      "fr": "IGFA",
+      "en": "IGFA"
+    },
+    "url": "https://igfa.org/igfa-world-records/",
+    "covers": {
+      "fr": "Le relevé complet des records IGFA du grand brochet : catégorie, poids ou longueur, plan d'eau, date et pêcheur. Seuls le record toutes lignes et le plus proche de chez nous sont repris ici.",
+      "en": "The full IGFA record listing for northern pike: category, weight or length, water, date and angler. Only the all-tackle record and the nearest one to us are reproduced here."
+    },
+    "verified": {
+      "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+      "date": "2026-09-11"
+    }
+  },
+  {
+    "id": "igfa-records-maskinonge",
+    "kind": "org",
+    "authors": "International Game Fish Association",
+    "year": "2026",
+    "title": {
+      "fr": "Records mondiaux — maskinongé (Esox masquinongy)",
+      "en": "World Records — Muskellunge (Esox masquinongy)"
+    },
+    "publisher": {
+      "fr": "IGFA",
+      "en": "IGFA"
+    },
+    "url": "https://igfa.org/igfa-world-records/",
+    "covers": {
+      "fr": "Le relevé complet des records IGFA du maskinongé, dont un record établi sur le fleuve Saint-Laurent. Seuls trois d'entre eux sont repris ici.",
+      "en": "The full IGFA record listing for muskellunge, including one set on the St. Lawrence River. Only three of them are reproduced here."
+    },
+    "verified": {
+      "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+      "date": "2026-09-11"
+    }
+  },
+  {
     "id": "muskies-canada-ppmf",
     "kind": "ngo",
     "authors": "Muskies Canada",
@@ -83,174 +195,19 @@
     "verified": null
   },
   {
-    "id": "robitaille-cotton-1992",
-    "kind": "gov",
-    "authors": "Robitaille, J. et Cotton, P.",
-    "year": "1992",
-    "title": {
-      "fr": "Bilan des connaissances sur le maskinongé (Esox masquinongy) et sur ses populations dans le Saint-Laurent",
-      "en": "Review of knowledge on the muskellunge (Esox masquinongy) and its St. Lawrence populations"
-    },
-    "publisher": {
-      "fr": "Ministère du Loisir, de la Chasse et de la Pêche — rapport technique",
-      "en": "Ministère du Loisir, de la Chasse et de la Pêche — technical report"
-    },
-    "url": "",
-    "covers": {
-      "fr": "Référence historique sur le maskinongé du fleuve. Citation repérée par recherche — ni le titre exact, ni la pagination, ni le contenu ne sont confirmés.",
-      "en": "Historical reference on St. Lawrence muskellunge. Citation found by search — exact title, pagination and content all unconfirmed."
-    },
-    "verified": null
-  },
-  {
-    "id": "brodeur-hatin-bacon-2013",
-    "kind": "gov",
-    "authors": "Brodeur, P., Hatin, D. et Bacon, J.",
-    "year": "2013",
-    "title": {
-      "fr": "Suivi du maskinongé dans le fleuve Saint-Laurent et le lac des Deux Montagnes",
-      "en": "Muskellunge monitoring in the St. Lawrence River and Lac des Deux Montagnes"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "",
-    "covers": {
-      "fr": "Suivi de population. Citation repérée par recherche — rien n'est confirmé.",
-      "en": "Population monitoring. Citation found by search — nothing confirmed."
-    },
-    "verified": null
-  },
-  {
-    "id": "qc-fiche-maskinonge",
+    "id": "qc-fiche-achigan-grande-bouche",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Maskinongé — fiche d'espèce faunique",
-      "en": "Muskellunge — wildlife species profile"
+      "fr": "Achigan à grande bouche — fiche d'espèce faunique",
+      "en": "Largemouth bass — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/maskinonge",
-    "covers": {
-      "fr": "Identification, répartition, état des populations du fleuve, rang de précarité, suivi.",
-      "en": "Identification, range, state of the St. Lawrence populations, conservation rank, monitoring."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-perchaude",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Perchaude — fiche d'espèce faunique",
-      "en": "Yellow perch — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/perchaude",
-    "covers": {
-      "fr": "Identification, répartition, et le moratoire du lac Saint-Pierre.",
-      "en": "Identification, range, and the Lac Saint-Pierre moratorium."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-tanche",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Tanche — fiche d'espèce faunique",
-      "en": "Tench — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/tanche",
-    "covers": {
-      "fr": "Espèce envahissante : progression dans le corridor fluvial, interdictions de possession et règle de remise à l'eau.",
-      "en": "Invasive species: spread through the river corridor, possession bans and the release rule."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-poisson-rouge",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Poisson rouge — fiche d'espèce faunique",
-      "en": "Goldfish — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-rouge",
-    "covers": {
-      "fr": "Espèce envahissante établie : répartition et obligation de signalement.",
-      "en": "Established invasive species: range and the mandatory reporting rule."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-poulamon-atlantique",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Poulamon atlantique — fiche d'espèce faunique",
-      "en": "Atlantic tomcod — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poulamon-atlantique",
-    "covers": {
-      "fr": "Identification, répartition et cycle de vie.",
-      "en": "Identification, range and life cycle."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-mene-herbe",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Méné d’herbe — fiche d'espèce faunique",
-      "en": "Bridle shiner — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-herbe",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/achigan-grande-bouche",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -261,19 +218,19 @@
     }
   },
   {
-    "id": "qc-fiche-omble-chevalier-oquassa",
+    "id": "qc-fiche-achigan-petite-bouche",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Omble chevalier oquassa — fiche d'espèce faunique",
-      "en": "Landlocked arctic char — wildlife species profile"
+      "fr": "Achigan à petite bouche — fiche d'espèce faunique",
+      "en": "Smallmouth bass — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier-oquassa",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/achigan-petite-bouche",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -284,19 +241,19 @@
     }
   },
   {
-    "id": "qc-fiche-omble-chevalier",
+    "id": "qc-fiche-alose-savoureuse",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Omble chevalier — fiche d'espèce faunique",
-      "en": "Arctic char — wildlife species profile"
+      "fr": "Alose savoureuse — fiche d'espèce faunique",
+      "en": "American Shad — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/alose-savoureuse",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -307,19 +264,19 @@
     }
   },
   {
-    "id": "qc-fiche-touladi",
+    "id": "qc-fiche-bar-raye",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Touladi — fiche d'espèce faunique",
-      "en": "Lake trout — wildlife species profile"
+      "fr": "Bar rayé — fiche d'espèce faunique",
+      "en": "Striped bass — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/touladi",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/bar-raye",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -330,19 +287,19 @@
     }
   },
   {
-    "id": "qc-fiche-truite-arc-en-ciel",
+    "id": "qc-fiche-barbotte-brune",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Truite arc-en-ciel — fiche d'espèce faunique",
-      "en": "Rainbow trout — wildlife species profile"
+      "fr": "Barbotte brune — fiche d'espèce faunique",
+      "en": "Brown bullhead — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-arc-en-ciel",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/barbotte-brune",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -353,19 +310,19 @@
     }
   },
   {
-    "id": "qc-fiche-omble-fontaine",
+    "id": "qc-fiche-barbue-riviere",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Omble de fontaine — fiche d'espèce faunique",
-      "en": "Brook trout — wildlife species profile"
+      "fr": "Barbue de rivière — fiche d'espèce faunique",
+      "en": "Channel catfish — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-fontaine",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/barbue-riviere",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -376,19 +333,19 @@
     }
   },
   {
-    "id": "qc-fiche-truite-brune",
+    "id": "qc-fiche-brochet-maille",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Truite brune — fiche d'espèce faunique",
-      "en": "Brown trout — wildlife species profile"
+      "fr": "Brochet maillé — fiche d'espèce faunique",
+      "en": "Chain pickerel — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-brune",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/brochet-maille",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -399,19 +356,19 @@
     }
   },
   {
-    "id": "qc-fiche-mene-laiton",
+    "id": "qc-fiche-brochet-vermicule",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Méné laiton — fiche d'espèce faunique",
-      "en": "Brassy minnow — wildlife species profile"
+      "fr": "Brochet vermiculé — fiche d'espèce faunique",
+      "en": "Grass pickerel — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-laiton",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/brochet-vermicule",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -422,19 +379,19 @@
     }
   },
   {
-    "id": "qc-fiche-poisson-tete-serpent-nord",
+    "id": "qc-fiche-carpe-argentee",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Poisson à tête de serpent du Nord — fiche d'espèce faunique",
-      "en": "Snakehead — wildlife species profile"
+      "fr": "Carpe argentée — fiche d'espèce faunique",
+      "en": "Silver carp — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-tete-serpent-nord",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-argentee",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -445,19 +402,19 @@
     }
   },
   {
-    "id": "qc-fiche-saumon-atlantique",
+    "id": "qc-fiche-carpe-commune",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Saumon atlantique — fiche d'espèce faunique",
-      "en": "Atlantic salmon — wildlife species profile"
+      "fr": "Carpe commune — fiche d'espèce faunique",
+      "en": "Common carp — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/saumon-atlantique",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-commune",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -468,19 +425,19 @@
     }
   },
   {
-    "id": "qc-fiche-dore-jaune",
+    "id": "qc-fiche-carpe-grosse-tete",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Doré jaune — fiche d'espèce faunique",
-      "en": "Walleye — wildlife species profile"
+      "fr": "Carpe à grosse tête — fiche d'espèce faunique",
+      "en": "Bighead carp — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/dore-jaune",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-grosse-tete",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -491,19 +448,19 @@
     }
   },
   {
-    "id": "qc-fiche-gobie-taches-noires",
+    "id": "qc-fiche-carpe-noire",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Gobie à taches noires — fiche d'espèce faunique",
-      "en": "Round goby — wildlife species profile"
+      "fr": "Carpe noire — fiche d'espèce faunique",
+      "en": "Black carp — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gobie-taches-noires",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-noire",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -514,19 +471,19 @@
     }
   },
   {
-    "id": "qc-fiche-esturgeon-jaune",
+    "id": "qc-fiche-carpe-roseau",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Esturgeon jaune — fiche d'espèce faunique",
-      "en": "Lake sturgeon — wildlife species profile"
+      "fr": "Carpe de roseau — fiche d'espèce faunique",
+      "en": "Grass carp — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/esturgeon-jaune",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-roseau",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -537,19 +494,19 @@
     }
   },
   {
-    "id": "qc-fiche-grand-brochet",
+    "id": "qc-fiche-chabot-prodonfeur",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Grand brochet — fiche d'espèce faunique",
-      "en": "Northern pike — wildlife species profile"
+      "fr": "Chabot de profondeur — fiche d'espèce faunique",
+      "en": "Deepwater sculpin — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/grand-brochet",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chabot-prodonfeur",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -560,22 +517,22 @@
     }
   },
   {
-    "id": "qc-fiche-eperlan-arc-en-ciel-pop-st-laurent",
+    "id": "qc-fiche-chevalier-cuivre",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Éperlan arc-en-ciel, population du sud de l’estuaire du Saint-Laurent — fiche d'espèce faunique",
-      "en": "Rainbow smelt — wildlife species profile"
+      "fr": "Chevalier cuivré — fiche d'espèce faunique",
+      "en": "Copper redhorse — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/eperlan-arc-en-ciel-pop-st-laurent",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chevalier-cuivre",
     "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+      "fr": "Identification, répartition, statut provincial, habitat, alimentation, menaces, et la règle de remise à l'eau des zones 7 et 8.",
+      "en": "Identification, range, provincial status, habitat, diet, threats, and the mandatory-release rule for zones 7 and 8."
     },
     "verified": {
       "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
@@ -606,42 +563,19 @@
     }
   },
   {
-    "id": "qc-fiche-esturgeon-noir",
+    "id": "qc-fiche-crapet-roche",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Esturgeon noir — fiche d'espèce faunique",
-      "en": "Atlantic sturgeon — wildlife species profile"
+      "fr": "Crapet de roche — fiche d'espèce faunique",
+      "en": "Rock bass — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/esturgeon-noir",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-gardon-rouge",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Gardon rouge — fiche d'espèce faunique",
-      "en": "Rudd — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gardon-rouge",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/crapet-roche",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -665,121 +599,6 @@
       "en": "Government of Quebec"
     },
     "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/crapet-soleil",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-eperlan-arc-en-ciel",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Éperlan arc-en-ciel — fiche d'espèce faunique",
-      "en": "Rainbow smelt — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/eperlan-arc-en-ciel",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-fouille-roche-gris",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Fouille-roche gris — fiche d'espèce faunique",
-      "en": "Channel darter — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/fouille-roche-gris",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-dore-noir",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Doré noir — fiche d'espèce faunique",
-      "en": "Sauger — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/dore-noir",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-gobie-nez-tubulaire",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Gobie à nez tubulaire — fiche d'espèce faunique",
-      "en": "Tubenose goby, Western tubenose goby — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gobie-nez-tubulaire",
-    "covers": {
-      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
-      "en": "Identification, range, habitat, diet, reproduction and conservation status."
-    },
-    "verified": {
-      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "qc-fiche-crapet-roche",
-    "kind": "gov",
-    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
-    "year": "s.d.",
-    "title": {
-      "fr": "Crapet de roche — fiche d'espèce faunique",
-      "en": "Rock bass — wildlife species profile"
-    },
-    "publisher": {
-      "fr": "Gouvernement du Québec",
-      "en": "Government of Quebec"
-    },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/crapet-roche",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -836,19 +655,19 @@
     }
   },
   {
-    "id": "qc-fiche-chabot-prodonfeur",
+    "id": "qc-fiche-dore-jaune",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Chabot de profondeur — fiche d'espèce faunique",
-      "en": "Deepwater sculpin — wildlife species profile"
+      "fr": "Doré jaune — fiche d'espèce faunique",
+      "en": "Walleye — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/chabot-prodonfeur",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/dore-jaune",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -859,19 +678,19 @@
     }
   },
   {
-    "id": "qc-fiche-carpe-commune",
+    "id": "qc-fiche-dore-noir",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Carpe commune — fiche d'espèce faunique",
-      "en": "Common carp — wildlife species profile"
+      "fr": "Doré noir — fiche d'espèce faunique",
+      "en": "Sauger — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-commune",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/dore-noir",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -882,19 +701,19 @@
     }
   },
   {
-    "id": "qc-fiche-brochet-maille",
+    "id": "qc-fiche-eperlan-arc-en-ciel",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Brochet maillé — fiche d'espèce faunique",
-      "en": "Chain pickerel — wildlife species profile"
+      "fr": "Éperlan arc-en-ciel — fiche d'espèce faunique",
+      "en": "Rainbow smelt — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/brochet-maille",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/eperlan-arc-en-ciel",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -905,19 +724,19 @@
     }
   },
   {
-    "id": "qc-fiche-bar-raye",
+    "id": "qc-fiche-eperlan-arc-en-ciel-pop-st-laurent",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Bar rayé — fiche d'espèce faunique",
-      "en": "Striped bass — wildlife species profile"
+      "fr": "Éperlan arc-en-ciel, population du sud de l’estuaire du Saint-Laurent — fiche d'espèce faunique",
+      "en": "Rainbow smelt — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/bar-raye",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/eperlan-arc-en-ciel-pop-st-laurent",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -928,19 +747,19 @@
     }
   },
   {
-    "id": "qc-fiche-alose-savoureuse",
+    "id": "qc-fiche-esturgeon-jaune",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Alose savoureuse — fiche d'espèce faunique",
-      "en": "American Shad — wildlife species profile"
+      "fr": "Esturgeon jaune — fiche d'espèce faunique",
+      "en": "Lake sturgeon — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/alose-savoureuse",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/esturgeon-jaune",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -951,19 +770,19 @@
     }
   },
   {
-    "id": "qc-fiche-brochet-vermicule",
+    "id": "qc-fiche-esturgeon-noir",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Brochet vermiculé — fiche d'espèce faunique",
-      "en": "Grass pickerel — wildlife species profile"
+      "fr": "Esturgeon noir — fiche d'espèce faunique",
+      "en": "Atlantic sturgeon — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/brochet-vermicule",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/esturgeon-noir",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -974,19 +793,19 @@
     }
   },
   {
-    "id": "qc-fiche-barbotte-brune",
+    "id": "qc-fiche-fouille-roche-gris",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Barbotte brune — fiche d'espèce faunique",
-      "en": "Brown bullhead — wildlife species profile"
+      "fr": "Fouille-roche gris — fiche d'espèce faunique",
+      "en": "Channel darter — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/barbotte-brune",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/fouille-roche-gris",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -997,19 +816,19 @@
     }
   },
   {
-    "id": "qc-fiche-achigan-grande-bouche",
+    "id": "qc-fiche-gardon-rouge",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Achigan à grande bouche — fiche d'espèce faunique",
-      "en": "Largemouth bass — wildlife species profile"
+      "fr": "Gardon rouge — fiche d'espèce faunique",
+      "en": "Rudd — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/achigan-grande-bouche",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gardon-rouge",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1020,19 +839,19 @@
     }
   },
   {
-    "id": "qc-fiche-carpe-noire",
+    "id": "qc-fiche-gobie-nez-tubulaire",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Carpe noire — fiche d'espèce faunique",
-      "en": "Black carp — wildlife species profile"
+      "fr": "Gobie à nez tubulaire — fiche d'espèce faunique",
+      "en": "Tubenose goby, Western tubenose goby — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-noire",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gobie-nez-tubulaire",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1043,19 +862,19 @@
     }
   },
   {
-    "id": "qc-fiche-achigan-petite-bouche",
+    "id": "qc-fiche-gobie-taches-noires",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Achigan à petite bouche — fiche d'espèce faunique",
-      "en": "Smallmouth bass — wildlife species profile"
+      "fr": "Gobie à taches noires — fiche d'espèce faunique",
+      "en": "Round goby — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/achigan-petite-bouche",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/gobie-taches-noires",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1066,19 +885,19 @@
     }
   },
   {
-    "id": "qc-fiche-carpe-grosse-tete",
+    "id": "qc-fiche-grand-brochet",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Carpe à grosse tête — fiche d'espèce faunique",
-      "en": "Bighead carp — wildlife species profile"
+      "fr": "Grand brochet — fiche d'espèce faunique",
+      "en": "Northern pike — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-grosse-tete",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/grand-brochet",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1089,19 +908,42 @@
     }
   },
   {
-    "id": "qc-fiche-carpe-roseau",
+    "id": "qc-fiche-maskinonge",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Carpe de roseau — fiche d'espèce faunique",
-      "en": "Grass carp — wildlife species profile"
+      "fr": "Maskinongé — fiche d'espèce faunique",
+      "en": "Muskellunge — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-roseau",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/maskinonge",
+    "covers": {
+      "fr": "Identification, répartition, état des populations du fleuve, rang de précarité, suivi.",
+      "en": "Identification, range, state of the St. Lawrence populations, conservation rank, monitoring."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-mene-herbe",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Méné d’herbe — fiche d'espèce faunique",
+      "en": "Bridle shiner — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-herbe",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1112,19 +954,19 @@
     }
   },
   {
-    "id": "qc-fiche-carpe-argentee",
+    "id": "qc-fiche-mene-laiton",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Carpe argentée — fiche d'espèce faunique",
-      "en": "Silver carp — wildlife species profile"
+      "fr": "Méné laiton — fiche d'espèce faunique",
+      "en": "Brassy minnow — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/carpe-argentee",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/mene-laiton",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1135,19 +977,272 @@
     }
   },
   {
-    "id": "qc-fiche-barbue-riviere",
+    "id": "qc-fiche-omble-chevalier",
     "kind": "gov",
     "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
     "year": "s.d.",
     "title": {
-      "fr": "Barbue de rivière — fiche d'espèce faunique",
-      "en": "Channel catfish — wildlife species profile"
+      "fr": "Omble chevalier — fiche d'espèce faunique",
+      "en": "Arctic char — wildlife species profile"
     },
     "publisher": {
       "fr": "Gouvernement du Québec",
       "en": "Government of Quebec"
     },
-    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/barbue-riviere",
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-omble-chevalier-oquassa",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Omble chevalier oquassa — fiche d'espèce faunique",
+      "en": "Landlocked arctic char — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-chevalier-oquassa",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-omble-fontaine",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Omble de fontaine — fiche d'espèce faunique",
+      "en": "Brook trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/omble-fontaine",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-perchaude",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Perchaude — fiche d'espèce faunique",
+      "en": "Yellow perch — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/perchaude",
+    "covers": {
+      "fr": "Identification, répartition, et le moratoire du lac Saint-Pierre.",
+      "en": "Identification, range, and the Lac Saint-Pierre moratorium."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poisson-rouge",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poisson rouge — fiche d'espèce faunique",
+      "en": "Goldfish — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-rouge",
+    "covers": {
+      "fr": "Espèce envahissante établie : répartition et obligation de signalement.",
+      "en": "Established invasive species: range and the mandatory reporting rule."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poisson-tete-serpent-nord",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poisson à tête de serpent du Nord — fiche d'espèce faunique",
+      "en": "Snakehead — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poisson-tete-serpent-nord",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-poulamon-atlantique",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Poulamon atlantique — fiche d'espèce faunique",
+      "en": "Atlantic tomcod — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/poulamon-atlantique",
+    "covers": {
+      "fr": "Identification, répartition et cycle de vie.",
+      "en": "Identification, range and life cycle."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-saumon-atlantique",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Saumon atlantique — fiche d'espèce faunique",
+      "en": "Atlantic salmon — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/saumon-atlantique",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-tanche",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Tanche — fiche d'espèce faunique",
+      "en": "Tench — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/tanche",
+    "covers": {
+      "fr": "Espèce envahissante : progression dans le corridor fluvial, interdictions de possession et règle de remise à l'eau.",
+      "en": "Invasive species: spread through the river corridor, possession bans and the release rule."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-touladi",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Touladi — fiche d'espèce faunique",
+      "en": "Lake trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/touladi",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-truite-arc-en-ciel",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Truite arc-en-ciel — fiche d'espèce faunique",
+      "en": "Rainbow trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-arc-en-ciel",
+    "covers": {
+      "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
+      "en": "Identification, range, habitat, diet, reproduction and conservation status."
+    },
+    "verified": {
+      "by": "lecture de la page officielle enregistrée et fournie par Kevin Caron",
+      "date": "2026-09-07"
+    }
+  },
+  {
+    "id": "qc-fiche-truite-brune",
+    "kind": "gov",
+    "authors": "Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs",
+    "year": "s.d.",
+    "title": {
+      "fr": "Truite brune — fiche d'espèce faunique",
+      "en": "Brown trout — wildlife species profile"
+    },
+    "publisher": {
+      "fr": "Gouvernement du Québec",
+      "en": "Government of Quebec"
+    },
+    "url": "https://www.quebec.ca/agriculture-environnement-et-ressources-naturelles/faune/animaux-sauvages-quebec/fiches-especes-fauniques/truite-brune",
     "covers": {
       "fr": "Identification, répartition, habitat, alimentation, reproduction et état de la situation.",
       "en": "Identification, range, habitat, diet, reproduction and conservation status."
@@ -1204,72 +1299,23 @@
     }
   },
   {
-    "id": "g3e-malachigan",
-    "kind": "ngo",
-    "authors": "Groupe d'éducation et d'écosurveillance de l'eau (G3E)",
-    "year": "2025",
+    "id": "robitaille-cotton-1992",
+    "kind": "gov",
+    "authors": "Robitaille, J. et Cotton, P.",
+    "year": "1992",
     "title": {
-      "fr": "Malachigan — Les capsules du G3E",
-      "en": "Freshwater drum — G3E capsules"
+      "fr": "Bilan des connaissances sur le maskinongé (Esox masquinongy) et sur ses populations dans le Saint-Laurent",
+      "en": "Review of knowledge on the muskellunge (Esox masquinongy) and its St. Lawrence populations"
     },
     "publisher": {
-      "fr": "G3E",
-      "en": "G3E"
+      "fr": "Ministère du Loisir, de la Chasse et de la Pêche — rapport technique",
+      "en": "Ministère du Loisir, de la Chasse et de la Pêche — technical report"
     },
-    "url": "https://www.g3e-ewag.ca/ressources-interactives/capsules/biologie/faune/poissons/malachigan.html",
+    "url": "",
     "covers": {
-      "fr": "Identification, habitat, reproduction, alimentation. Organisme d'éducation à l'eau, pas une source gouvernementale.",
-      "en": "Identification, habitat, reproduction, diet. A water-education non-profit, not a government source."
+      "fr": "Référence historique sur le maskinongé du fleuve. Citation repérée par recherche — ni le titre exact, ni la pagination, ni le contenu ne sont confirmés.",
+      "en": "Historical reference on St. Lawrence muskellunge. Citation found by search — exact title, pagination and content all unconfirmed."
     },
-    "verified": {
-      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "decclic-malachigan",
-    "kind": "edu",
-    "authors": "Réseau d'enseignement et d'apprentissage (DECclic) — cours de biologie 101-NYA-05",
-    "year": "s.d.",
-    "title": {
-      "fr": "Fiche descriptive du malachigan",
-      "en": "Freshwater drum species sheet"
-    },
-    "publisher": {
-      "fr": "DECclic — Dec virtuel",
-      "en": "DECclic — Dec virtuel"
-    },
-    "url": "http://rea.decclic.qc.ca/dec_virtuel/Biologie/101-NYA-05/Cellule_et_evolution/3.Evolution_et_ecologie/Ecosysteme/malachigan/fchdesmalachigan.htm",
-    "covers": {
-      "fr": "Description, alimentation, habitat. Support de cours collégial.",
-      "en": "Description, diet, habitat. A college course resource."
-    },
-    "verified": {
-      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
-      "date": "2026-09-07"
-    }
-  },
-  {
-    "id": "bestioles-malachigan",
-    "kind": "web",
-    "authors": "Bestioles.ca",
-    "year": "s.d.",
-    "title": {
-      "fr": "Le malachigan est un poisson d'eau douce",
-      "en": "The freshwater drum"
-    },
-    "publisher": {
-      "fr": "Bestioles.ca",
-      "en": "Bestioles.ca"
-    },
-    "url": "https://www.bestioles.ca/poissons/malachigans.html",
-    "covers": {
-      "fr": "Taille, poids, reproduction. Site généraliste — retenu seulement là où il recoupe les deux autres.",
-      "en": "Size, weight, reproduction. A general-interest site — used only where it agrees with the other two."
-    },
-    "verified": {
-      "by": "lecture des pages enregistrées et fournies par Kevin Caron",
-      "date": "2026-09-07"
-    }
+    "verified": null
   }
 ]

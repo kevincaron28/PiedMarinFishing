@@ -120,6 +120,36 @@ La règle vient d'une recherche qui avait retourné « le maskinongé du
 Saint-Laurent est entièrement interdit de pêche » — faux, et
 auto-incriminant sur notre propre site.
 
+### Les records d'une espèce : deux ou trois lignes, jamais le relevé
+
+`records` sur une espèce, rendu par `records_html()` et gardé par
+`record_ok()` — **la même règle que `claim_ok`** : vérifié, sourcé, et la
+source elle-même vérifiée. Un record est une affirmation comme une autre.
+
+**La base des records de l'IGFA est leur propriété**, et les relevés viennent
+de leur espace membre. On en reprend **deux ou trois lignes** par espèce, avec
+la source et le lien — une citation factuelle. Recopier les 35 catégories de
+ligne d'une espèce, ce serait republier leur base. Ne le fais pas.
+
+Trois précautions qui sont dans les données, pas dans le code :
+
+- **La catégorie est toujours nommée.** Ce sont des records *par classe de
+  ligne*, pas « le plus gros jamais pris ». « 15,19 kg au Manitoba » sans
+  « soie 6 kg » serait faux dans le sens impressionnant.
+- **Le Québec n'a pas de programme officiel de records** — rien à citer. Le
+  site ne dit donc jamais « record du Québec », seulement le mondial et le
+  plus proche, avec le lieu exact.
+- **Les catégories « Junior » ne portent pas de nom de pêcheur** : elles
+  désignent quelqu'un qui était mineur au moment de la prise. Le relevé est
+  cité, qui veut le nom l'y trouvera.
+
+`cited()` doit voir les records **autant que** les affirmations : sans ça leur
+renvoi numéroté pointe vers une entrée absente de la liste des sources, et
+`order.index` lève une erreur.
+
+Deux espèces sur 47 en portent (grand brochet, maskinongé). Les 45 autres
+n'en ont pas, et c'est normal : pas de source, pas de record.
+
 ### Trois états, jamais deux
 
 `assets/js/season.js` calcule ce qui est ouvert. Une période qui ne s'analyse

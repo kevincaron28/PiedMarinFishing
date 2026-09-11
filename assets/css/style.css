@@ -3463,3 +3463,38 @@ html.search-open, html.search-open body { overflow: hidden; }
   background: rgba(217, 164, 65, 0.16);
 }
 .catch-release.is-kept::before { content: "•"; }
+
+
+/* ---------- Les records d'une espece ---------- */
+.sp-records {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.sp-record {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal-600);
+  border-radius: var(--radius-md);
+  background: var(--white);
+}
+/* Le record etabli pres de chez nous se distingue de celui de l'autre bout du
+   monde : c'est lui qui donne l'echelle utile au lecteur. */
+.sp-record-near { border-left-color: var(--gold-500); }
+.sp-record-cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.sp-record-value {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--navy-900);
+  line-height: 1.2;
+}
+.sp-record-meta { font-size: 0.9rem; color: var(--ink-900); }
+.sp-record-who { font-size: 0.84rem; color: var(--ink-600); }

@@ -129,6 +129,58 @@ def claim_ok(claim, sources):
     return all((sources.get(sid) or {}).get("verified") for sid in ids)
 
 
+def record_ok(rec, sources):
+    """Un record publiable — meme regle que claim_ok, sur une donnee chiffree.
+
+    Un record est une affirmation comme une autre : « le plus gros jamais pris »
+    se verifie ou ne se publie pas. La base des records de l'IGFA est leur
+    propriete; on en reprend deux ou trois lignes avec la source, jamais le
+    releve complet.
+    """
+    if not rec.get("verified"):
+        return False
+    if not pick(rec.get("value"), "fr"):
+        return False
+    ids = rec.get("sources") or []
+    if not ids:
+        return False
+    return all((sources.get(sid) or {}).get("verified") for sid in ids)
+
+
+def records_of(sp, sources):
+    return [r for r in (sp.get("records") or []) if record_ok(r, sources)]
+
+
+def records_html(sp, sources, order, ui):
+    """Le bloc « Les records » : le mondial, puis le plus proche de nous.
+
+    Rendu en liste de definitions et non en tableau : trois lignes de deux
+    champs se lisent mieux empilees sur un telephone, et un tableau de trois
+    rangees demanderait son propre conteneur a defilement.
+    """
+    rows = records_of(sp, sources)
+    if not rows:
+        return ""
+    page = "especes/%s.html" % sp["id"]
+    out = []
+    for r in rows:
+        refs = "".join(
+            '<a class="sp-ref" href="%s#src-%s"><sup>%d</sup></a>'
+            % (esc(page), esc(sid), order.index(sid) + 1)
+            for sid in sorted(r["sources"], key=order.index) if sid in order)
+        meta = {lang: " · ".join(x for x in (pick(r.get("place"), lang), r.get("year")) if x)
+                for lang in ("fr", "en")}
+        out.append(
+            '<div class="sp-record sp-record-%s">%s'
+            '%s%s%s%s</div>'
+            % (esc(r.get("scope") or "world"),
+               bilingual("span", r.get("category"), "sp-record-cat"),
+               bilingual("span", r.get("value"), "sp-record-value"), refs,
+               bilingual("span", meta, "sp-record-meta"),
+               bilingual("span", r.get("angler"), "sp-record-who") if r.get("angler") else ""))
+    return '<div class="sp-records">%s</div>' % "".join(out)
+
+
 def marks_of(sp):
     return [m for m in (sp.get("marks") or []) if pick(m.get("value"), "fr")]
 
@@ -153,12 +205,22 @@ def missing(sp, sources):
 
 
 def cited(sp, sources):
-    """Les sources réellement citées par une affirmation publiée, dans l'ordre."""
+    """Les sources réellement citées par une affirmation publiée, dans l'ordre.
+
+    Les records comptent au même titre : sans ça leur renvoi numéroté pointait
+    vers une entrée absente de la liste, et `order.index` levait une erreur.
+    """
     out = []
     for c in (sp.get("claims") or []):
         if not claim_ok(c, sources):
             continue
         for sid in c["sources"]:
+            if sid not in out:
+                out.append(sid)
+    for r in (sp.get("records") or []):
+        if not record_ok(r, sources):
+            continue
+        for sid in r["sources"]:
             if sid not in out:
                 out.append(sid)
     return out
@@ -497,6 +559,11 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None,
     if marks:
         body.append(section({"fr": ui["fr"]["sp.marks"], "en": ui["en"]["sp.marks"]},
                             marks, key="sp.marks"))
+
+    recs = records_html(sp, sources, order, ui)
+    if recs:
+        body.append(section({"fr": ui["fr"]["sp.records"], "en": ui["en"]["sp.records"]},
+                            recs, key="sp.records"))
 
     reg = rules_html(sp, rules, zones, ui, regs)
     if reg:

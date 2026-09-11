@@ -233,6 +233,79 @@
           "en": "Lakes, bays and moderate-current stretches. It sets up at strategic spots, typically along the edges of weed beds, and shifts into deeper water when summer heat settles in."
         }
       }
+    ],
+    "records": [
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial, toutes lignes",
+          "en": "All-Tackle world record"
+        },
+        "value": {
+          "fr": "30,61 kg (67 lb 8 oz)",
+          "en": "30.61 kg (67 lb 8 oz)"
+        },
+        "place": {
+          "fr": "Lac Court Oreilles, Wisconsin",
+          "en": "Lake Court Oreilles, Wisconsin"
+        },
+        "year": "1949",
+        "angler": "Cal Johnson",
+        "sources": [
+          "igfa-records-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "near",
+        "category": {
+          "fr": "Le plus lourd au Canada — ligne 6 kg",
+          "en": "Heaviest in Canada — 6 kg line"
+        },
+        "value": {
+          "fr": "29,48 kg (65 lb)",
+          "en": "29.48 kg (65 lb)"
+        },
+        "place": {
+          "fr": "Blackstone Harbour, Ontario",
+          "en": "Blackstone Harbor, Ontario"
+        },
+        "year": "1988",
+        "angler": "Kenneth O'Brien",
+        "sources": [
+          "igfa-records-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "near",
+        "category": {
+          "fr": "Sur le fleuve Saint-Laurent — catégorie junior",
+          "en": "On the St. Lawrence — junior category"
+        },
+        "value": {
+          "fr": "18,63 kg (41 lb 1 oz)",
+          "en": "18.63 kg (41 lb 1 oz)"
+        },
+        "place": {
+          "fr": "Fleuve Saint-Laurent",
+          "en": "St. Lawrence River"
+        },
+        "year": "2011",
+        "sources": [
+          "igfa-records-maskinonge"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      }
     ]
   },
   {
@@ -358,7 +431,81 @@
     "field": {
       "fr": "La fenêtre légale de 56 à 70 cm oriente notre façon de le pêcher : on monte en taille de leurre pour viser les plus gros spécimens.",
       "en": "The 56 to 70 cm keep window shapes how we fish for it: we size the baits up to target the biggest fish."
-    }
+    },
+    "records": [
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial, toutes lignes",
+          "en": "All-Tackle world record"
+        },
+        "value": {
+          "fr": "25,00 kg (55 lb 1 oz)",
+          "en": "25.00 kg (55 lb 1 oz)"
+        },
+        "place": {
+          "fr": "Lake of Grefeern, Allemagne",
+          "en": "Lake of Grefeern, Germany"
+        },
+        "year": "1986",
+        "angler": "Lothar Louis",
+        "sources": [
+          "igfa-records-grand-brochet"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial de longueur",
+          "en": "All-Tackle Length world record"
+        },
+        "value": {
+          "fr": "128 cm",
+          "en": "128 cm"
+        },
+        "place": {
+          "fr": "Rivière Léna, Russie",
+          "en": "Lena River, Russia"
+        },
+        "year": "2025",
+        "angler": "Sergey Sitnikov",
+        "sources": [
+          "igfa-records-grand-brochet"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "near",
+        "category": {
+          "fr": "Le plus lourd au Canada — soie 6 kg",
+          "en": "Heaviest in Canada — 6 kg tippet"
+        },
+        "value": {
+          "fr": "15,19 kg (33 lb 8 oz)",
+          "en": "15.19 kg (33 lb 8 oz)"
+        },
+        "place": {
+          "fr": "Lac Nejanilini, Manitoba",
+          "en": "Nejanilini Lake, Manitoba"
+        },
+        "year": "1994",
+        "angler": "Barry Reynolds",
+        "sources": [
+          "igfa-records-grand-brochet"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      }
+    ]
   },
   {
     "id": "brochet-maille",
