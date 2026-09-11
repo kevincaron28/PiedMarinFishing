@@ -21,7 +21,9 @@ import os
 from PIL import Image
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DIRS = ("assets/img/catches", "assets/img/team", "assets/img/boats")
+DIRS = ("assets/img/catches", "assets/img/team", "assets/img/boats",
+        # Les logos de marque : on ne les retouche pas, on les reduit.
+        "assets/img/marques")
 WIDTHS = (160, 400, 800)
 # Une photo de téléphone fait 4000px et 5 Mo. L'affichage le plus large du site
 # en demande 652, soit 1304 sur un écran à double densité : au-delà de 1600, on
