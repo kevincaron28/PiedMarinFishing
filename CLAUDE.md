@@ -205,11 +205,11 @@ Deux items — « Notre histoire » et « Réseaux » — portent la classe
 La barre n'a pas la place, le tiroir en a 484 px de reste.
 
 Le point de bascule est **1100 px**, mesuré, pas estimé : disposition « barre »
-forcée à toutes les largeurs, la rangée tient jusqu'à **1045 px en français**
-et 1007 px en anglais. Le français est toujours la langue contraignante.
+forcée à toutes les largeurs, la rangée tient jusqu'à **1046 px en français**
+et 995 px en anglais. Le français est toujours la langue contraignante.
 
 Ces chiffres étaient 967 et 929 avant que le bouton de recherche n'entre dans
-`.nav-actions` : **il a coûté 78 px de marge**, qui est passée de 133 à 55.
+`.nav-actions` : **il a coûté 78 px de marge**, qui est passée de 133 à 54.
 C'est encore positif, mais c'est mince. **Un dixième onglet, ou un deuxième
 bouton dans les actions, veut dire remesurer** — pas pousser le chiffre.
 
@@ -219,7 +219,7 @@ bouton dans les actions, veut dire remesurer** — pas pousser le chiffre.
 les fiches sortaient marquées sur « Équipe » — une fiche d'espèce annonçait
 « Équipe » comme page courante au lecteur d'écran.
 
-L'onglet « Ouvert ? » (`nav-live`) porte un accent doré **statique**. Il
+L'onglet « Quoi pêcher » (`nav-live`) porte un accent doré **statique**. Il
 n'annonce aucun état de saison, et c'est voulu : une pastille calculée dans la
 barre obligerait les 116 pages à charger `season.js` et `regulations.json`
 (45 Ko) pour dessiner un point — et un point qui dérive de la page qu'il
