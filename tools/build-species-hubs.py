@@ -223,6 +223,7 @@ def render(word, label, sheets, events, kept_ids, ui, sp_pages, total):
 %(nav)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="sh.kicker">Tournois par espèce</span>
     %(h1)s
   </div>
@@ -233,6 +234,10 @@ def render(word, label, sheets, events, kept_ids, ui, sp_pages, total):
         "title_fr": esc(title["fr"]), "title_en": esc(title["en"]),
         "desc_fr": esc(desc["fr"]), "desc_en": esc(desc["en"]),
         "url": url, "site": SITE, "nav": NAV, "footer": FOOTER,
+        "crumbs": pages.breadcrumb(
+            "tournois",
+            {lang: ui[lang]["sh.h1"].replace("{sp}", label[lang])
+             for lang in ("fr", "en")}, url),
         "h1": bilingual("h1", {lang: ui[lang]["sh.h1"].replace("{sp}", label[lang])
                                for lang in ("fr", "en")}),
         "body": "\n\n".join(body),

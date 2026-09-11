@@ -264,7 +264,7 @@ def related(c, kept):
     return out
 
 
-def render(c, ui, members, events, kept):
+def render(c, ui, members, events, kept, prev=None, nxt=None):
     title = {lang: title_of(c, lang, members) for lang in ("fr", "en")}
     h1 = {lang: headline(c, lang, members) for lang in ("fr", "en")}
     desc = {lang: description(c, lang, members) for lang in ("fr", "en")}
@@ -322,6 +322,7 @@ def render(c, ui, members, events, kept):
     return """%(head)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="cp.kicker">%(kicker)s</span>
     <h1 data-en="%(h1_en)s">%(h1_fr)s</h1>
     %(sub)s
@@ -329,9 +330,12 @@ def render(c, ui, members, events, kept):
 </div>
 
 %(body)s
+<section class="siblings-wrap"><div class="container">%(siblings)s</div></section>
 %(footer)s""" % {
         "head": profiles.head(title, desc, url, image, catch_ld(c, url, image, members),
                               og_type="article", current="catches.html"),
+        "crumbs": pages.breadcrumb("prises", h1, url),
+        "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["cp.kicker"]),
         "h1_fr": esc(h1["fr"]), "h1_en": esc(h1["en"]),
         "sub": bilingual("p", c.get("water"), "tp-when") if pick(c.get("water"), "fr") else "",
@@ -394,10 +398,18 @@ def main():
             os.remove(os.path.join(OUT_DIR, name))
             print("  retirée : prises/%s (passée sous le seuil)" % name)
 
-    for c in kept:
+    # De la plus recente a la plus ancienne, comme le mur des prises. Une date
+    # partielle se complete; sans date, la fiche n'existerait pas (c'est le
+    # seuil), donc pas de cas vide a traiter ici.
+    ordered = sorted(kept, key=lambda x: (x.get("date") or "").ljust(10, "0"), reverse=True)
+    for i, c in enumerate(ordered):
+        def link(other):
+            return ("prises/%s.html" % other["id"], other.get("species")) if other else None
+        prev = link(ordered[i - 1]) if i else None
+        nxt = link(ordered[i + 1]) if i + 1 < len(ordered) else None
         path = os.path.join(OUT_DIR, "%s.html" % c["id"])
         with io.open(path, "w", encoding="utf-8") as fh:
-            fh.write(render(c, ui, members, events, kept))
+            fh.write(render(c, ui, members, events, kept, prev, nxt))
         n = len(photos_of(c))
         print("  prises/%s.html  %d photo%s, récit de %d mots"
               % (c["id"], n, "s" if n > 1 else "",

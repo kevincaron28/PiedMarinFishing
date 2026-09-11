@@ -104,6 +104,13 @@ def date_phrase(ev, lang):
     return long_date(start, lang)
 
 
+def sortable(ev):
+    """Cle de calendrier. Une date partielle se complete, une absente passe
+    apres tout le reste — jamais avant, sinon une fiche sans date ouvrirait
+    la serie."""
+    return (ev.get("startDate") or "9999").ljust(10, "9")
+
+
 def rubric(ev):
     """Les champs qui comptent pour ce type d'entrée, et la note de passage."""
     if ev.get("kind") == "show":
@@ -246,6 +253,90 @@ def bilingual(tag, value, cls="", extra=""):
     return "<%s%s>%s</%s>" % (tag, attrs, esc(fr), tag)
 
 
+# ---------------------------------------------------------------- fil d'Ariane
+#
+# 103 des 116 pages du site sont generees et vivent un dossier plus bas. Une
+# fiche d'espece ne disait nulle part qu'elle appartenait a « Especes » : le
+# seul chemin de retour etait le menu, ou le bouton precedent du navigateur.
+#
+# Les libelles des deux premiers echelons reutilisent les cles du menu — s'il
+# change de nom, le fil suit. La feuille, elle, est une donnee bilingue, donc
+# data-en comme le reste de la page.
+#
+# ATTENTION : ces pages declarent <base href="/">, donc les href nus visent
+# bien la racine. C'est ce qu'on veut ici, et c'est aussi pour ca qu'il ne
+# faut PAS ecrire "../especes.html".
+CRUMB_FAMILIES = {
+    "especes": ("especes.html", "nav.species", "Espèces", "Species"),
+    "tournois": ("tournaments.html", "nav.guide", "Tournois", "Tournaments"),
+    "prises": ("catches.html", "nav.catches", "Prises", "Catches"),
+    "equipe": ("team.html", "nav.team", "Équipe", "Team"),
+}
+
+
+def breadcrumb(family, leaf, url=""):
+    """Le fil d'Ariane d'une page generee, plus son JSON-LD.
+
+    `leaf` est le nom de la page, en dict {fr, en} ou en texte. `url` est son
+    adresse absolue : sans elle, on rend le fil visible sans le JSON-LD,
+    plutot que d'ecrire un balisage a moitie faux.
+    """
+    href, key, parent_fr, parent_en = CRUMB_FAMILIES[family]
+    leaf_fr, leaf_en = pick(leaf, "fr"), pick(leaf, "en") or pick(leaf, "fr")
+    leaf_attr = ' data-en="%s"' % esc(leaf_en) if leaf_en != leaf_fr else ""
+
+    html = ("""<nav class="crumbs" data-i18n-aria-label="crumbs.label" aria-label="Fil d'Ariane">
+  <ol>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="%s" data-i18n="%s" data-en="%s">%s</a></li>
+    <li><span aria-current="page"%s>%s</span></li>
+  </ol>
+</nav>""" % (href, key, esc(parent_en), esc(parent_fr), leaf_attr, esc(leaf_fr)))
+
+    if url:
+        ld = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+              "itemListElement": [
+                  {"@type": "ListItem", "position": 1, "name": "Pied Marin Fishing",
+                   "item": SITE + "/"},
+                  {"@type": "ListItem", "position": 2, "name": parent_fr,
+                   "item": "%s/%s" % (SITE, href)},
+                  {"@type": "ListItem", "position": 3, "name": leaf_fr, "item": url},
+              ]}
+        html += ('\n<script type="application/ld+json">%s</script>'
+                 % json.dumps(ld, ensure_ascii=False))
+    return html
+
+
+def siblings(prev_item, next_item):
+    """« La precedente / la suivante », au bas d'une fiche generee.
+
+    Arriver sur une fiche depuis Google et vouloir en voir une autre obligeait
+    a remonter a l'index. Chaque famille decide de son ordre : alphabetique
+    pour les especes, chronologique pour les tournois et les prises.
+
+    `prev_item` et `next_item` sont des couples (href, nom bilingue), ou None
+    au bout de la liste — un seul lien vaut mieux qu'une fleche morte.
+    """
+    if not prev_item and not next_item:
+        return ""
+
+    def side(item, cls, key, arrow_before):
+        if not item:
+            return ""
+        href, name = item
+        fr, en = pick(name, "fr"), pick(name, "en") or pick(name, "fr")
+        attr = ' data-en="%s"' % esc(en) if en != fr else ""
+        label = ('<span class="sib-dir" data-i18n="%s">%s</span>'
+                 '<span class="sib-name"%s>%s</span>'
+                 % (key, "Précédente" if arrow_before else "Suivante", attr, esc(fr)))
+        return '<a class="sib %s" href="%s">%s</a>' % (cls, esc(href), label)
+
+    return ('<nav class="siblings" data-i18n-aria-label="sib.label" aria-label="Autres fiches">'
+            '%s%s</nav>'
+            % (side(prev_item, "sib-prev", "sib.prev", True),
+               side(next_item, "sib-next", "sib.next", False)))
+
+
 SPEC_ROWS = [("fee", "spec.fee", "💵", True), ("teamSize", "spec.teamSize", "👥", True),
              ("maxTeams", "spec.maxTeams", "🚩", False), ("hours", "spec.hours", "⏱", False),
              ("deadline", "spec.deadline", "📋", False), ("format", "spec.format", "🎯", False)]
@@ -295,6 +386,7 @@ FOOTER = """
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/tournament-page.js"></script>
 <!-- La visionneuse ne fait rien sans galerie : sur une fiche de tournoi, qui
      n'en a pas, initGalleryLightbox sort immediatement. -->
@@ -420,7 +512,8 @@ def family(identifier):
     return re.sub(r"-\d{4}$", "", identifier or "")
 
 
-def render(ev, by_id, stops_of, history, ui, kept, attending):
+def render(ev, by_id, stops_of, history, ui, kept, attending,
+           prev=None, nxt=None):
     fr_name = pick(ev.get("name"), "fr")
     title = {"fr": clamp_title(fr_name), "en": clamp_title(pick(ev.get("name"), "en"))}
     desc = {"fr": build_description(ev, "fr"), "en": build_description(ev, "en")}
@@ -608,6 +701,7 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
 %(nav)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="tp.kicker">Répertoire des tournois</span>
     %(h1)s
     <p class="tp-when">%(when)s</p>
@@ -616,10 +710,13 @@ def render(ev, by_id, stops_of, history, ui, kept, attending):
 </div>
 
 %(body)s
+<section class="siblings-wrap"><div class="container">%(siblings)s</div></section>
 %(footer)s""" % {
         "title_fr": esc(title["fr"]), "title_en": esc(title["en"]),
         "desc_fr": esc(desc["fr"]), "desc_en": esc(desc["en"]),
         "url": url, "site": SITE, "ld": ld_block, "nav": NAV, "footer": FOOTER,
+        "crumbs": breadcrumb("tournois", ev.get("name"), url),
+        "siblings": siblings(prev, nxt),
         "h1": bilingual("h1", ev.get("name")),
         "when": bilingual("span", when),
         "headcta": head_cta,
@@ -645,10 +742,18 @@ if __name__ == "__main__":
 
     existing = {f for f in os.listdir(OUT_DIR) if f.endswith(".html")}
     written = set()
-    for ev in kept:
+    # « La precedente / la suivante » suit le calendrier, pas l'ordre du
+    # fichier : un tournoi sans date publiee passe en fin de liste, comme dans
+    # le guide.
+    ordered = sorted(kept, key=lambda e: (sortable(e), pick(e.get("name"), "fr")))
+    for i, ev in enumerate(ordered):
+        def link(other):
+            return ("tournois/%s.html" % other["id"], other.get("name")) if other else None
+        prev = link(ordered[i - 1]) if i else None
+        nxt = link(ordered[i + 1]) if i + 1 < len(ordered) else None
         name = "%s.html" % ev["id"]
         with io.open(os.path.join(OUT_DIR, name), "w", encoding="utf-8") as fh:
-            fh.write(render(ev, by_id, stops_of, history, ui, kept, attending))
+            fh.write(render(ev, by_id, stops_of, history, ui, kept, attending, prev, nxt))
         written.add(name)
     # Un tournoi retiré du répertoire ne doit pas laisser sa fiche en ligne.
     for stale in sorted(existing - written):

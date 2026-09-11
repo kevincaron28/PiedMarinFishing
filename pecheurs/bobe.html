@@ -80,6 +80,14 @@
 
 <div class="page-header">
   <div class="container">
+    <nav class="crumbs" data-i18n-aria-label="crumbs.label" aria-label="Fil d'Ariane">
+  <ol>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="team.html" data-i18n="nav.team" data-en="Team">Équipe</a></li>
+    <li><span aria-current="page">BOBE</span></li>
+  </ol>
+</nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pied Marin Fishing", "item": "https://piedmarinfishing.com/"}, {"@type": "ListItem", "position": 2, "name": "Équipe", "item": "https://piedmarinfishing.com/team.html"}, {"@type": "ListItem", "position": 3, "name": "BOBE", "item": "https://piedmarinfishing.com/pecheurs/bobe.html"}]}</script>
     <span class="kicker" data-i18n="ap.kicker">Fiche de pêcheur</span>
     <h1>BOBE</h1>
     <p class="tp-when" data-en="Trolling specialist">Spécialiste de la traîne</p>
@@ -103,6 +111,7 @@
 <section class="alt"><div class="container"><div class="section-head"><h2 data-i18n="ap.sheetTitle" data-en="Pro staff sheet">Fiche pro staff</h2></div><p class="tp-notes" data-en="A one-page sheet to send a brand: his gear, his results and his catches, in French or English.">Une page à envoyer à une marque : son matériel, ses résultats et ses prises, en français ou en anglais.</p><div class="callout-actions"><a class="btn btn-ghost" href="assets/docs/pro-staff-bobe-fr.pdf" download><span data-en="📄 Pro staff sheet (FR)">📄 Fiche pro staff (FR)</span></a><a class="btn btn-ghost" href="assets/docs/pro-staff-bobe-en.pdf" download><span>📄 Pro staff sheet (EN)</span></a></div></div></section>
 
 <section><div class="container"><div class="callout-actions"><a class="btn btn-ghost" href="team.html"><span data-en="← The whole crew">← Toute l'équipe</span></a></div></div></section>
+<section class="siblings-wrap"><div class="container"><nav class="siblings" data-i18n-aria-label="sib.label" aria-label="Autres fiches"><a class="sib sib-prev" href="pecheurs/kevin-b.html"><span class="sib-dir" data-i18n="sib.prev">Précédente</span><span class="sib-name">Kevin B.</span></a></nav></div></section>
 
 <footer class="site-footer">
   <div class="container">
@@ -117,6 +126,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/tournament-page.js"></script>
 <!-- La visionneuse ne fait rien sans galerie : sur une fiche de tournoi, qui
      n'en a pas, initGalleryLightbox sort immediatement. -->

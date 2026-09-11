@@ -349,7 +349,8 @@ def person_ld(m, url, photo):
     return ld
 
 
-def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=()):
+def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=(),
+                  prev=None, nxt=None):
     name = m.get("name") or m.get("id")
     role = m.get("role") or {}
     title = {lang: clamp_title(", ".join(x for x in (name, pick(role, lang)) if x))
@@ -507,6 +508,7 @@ def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=())
     return """%(head)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="ap.kicker">%(kicker)s</span>
     <h1>%(name)s</h1>
     %(role)s
@@ -514,8 +516,11 @@ def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=())
 </div>
 
 %(body)s
+<section class="siblings-wrap"><div class="container">%(siblings)s</div></section>
 %(footer)s""" % {
         "head": head(title, desc, url, image, ld),
+        "crumbs": pages.breadcrumb("equipe", name, url),
+        "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["ap.kicker"]),
         "name": esc(name),
         "role": bilingual("p", role, "tp-when") if pick(role, "fr") else "",
@@ -571,7 +576,7 @@ def tasks_html(tasks, ui):
                column(todo, "bp.tasksTodo", "is-todo")))
 
 
-def render_boat(b, ui, members_by_id):
+def render_boat(b, ui, members_by_id, prev=None, nxt=None):
     title = {lang: clamp_title(pick(b.get("name"), lang)) for lang in ("fr", "en")}
     desc = {lang: boat_description(b, lang, ui) for lang in ("fr", "en")}
     url = "%s/bateaux/%s.html" % (SITE, b["id"])
@@ -654,14 +659,18 @@ def render_boat(b, ui, members_by_id):
     return """%(head)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="bp.kicker">%(kicker)s</span>
     %(h1)s
   </div>
 </div>
 
 %(body)s
+<section class="siblings-wrap"><div class="container">%(siblings)s</div></section>
 %(footer)s""" % {
         "head": head(title, desc, url, image, og_type="article"),
+        "crumbs": pages.breadcrumb("equipe", b.get("name"), url),
+        "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["bp.kicker"]),
         "h1": bilingual("h1", b.get("name")),
         "body": "\n\n".join(body),
@@ -702,12 +711,21 @@ if __name__ == "__main__":
     members_by_id = {m["id"]: m for m in members}
 
     videos = (load("videos.json") or {}).get("videos") or []
-    write_dir("pecheurs", {"%s.html" % m["id"]:
-                           render_angler(m, ui, results, catches, boats, tp_index,
-                                         cp_index, videos)
-                           for m in members})
-    write_dir("bateaux", {"%s.html" % b["id"]: render_boat(b, ui, members_by_id)
-                          for b in boats})
+    # Deux familles courtes : trois pecheurs, deux bateaux. Elles gardent
+    # l'ordre du fichier de donnees, qui est celui des pages d'index.
+    def around(rows, i, folder):
+        def link(other):
+            return ("%s/%s.html" % (folder, other["id"]), other.get("name")) if other else None
+        return (link(rows[i - 1]) if i else None,
+                link(rows[i + 1]) if i + 1 < len(rows) else None)
+
+    write_dir("pecheurs", {
+        "%s.html" % m["id"]: render_angler(m, ui, results, catches, boats, tp_index,
+                                           cp_index, videos, *around(members, i, "pecheurs"))
+        for i, m in enumerate(members)})
+    write_dir("bateaux", {
+        "%s.html" % b["id"]: render_boat(b, ui, members_by_id, *around(boats, i, "bateaux"))
+        for i, b in enumerate(boats)})
 
     print("%d fiches de pêcheur, %d fiches de bateau" % (len(members), len(boats)))
     for m in members:

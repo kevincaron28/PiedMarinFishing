@@ -66,6 +66,14 @@
 
 <div class="page-header">
   <div class="container">
+    <nav class="crumbs" data-i18n-aria-label="crumbs.label" aria-label="Fil d'Ariane">
+  <ol>
+    <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
+    <li><a href="tournaments.html" data-i18n="nav.guide" data-en="Tournaments">Tournois</a></li>
+    <li><span aria-current="page" data-en="walleye tournaments in Quebec">Les tournois de doré au Québec</span></li>
+  </ol>
+</nav>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Pied Marin Fishing", "item": "https://piedmarinfishing.com/"}, {"@type": "ListItem", "position": 2, "name": "Tournois", "item": "https://piedmarinfishing.com/tournaments.html"}, {"@type": "ListItem", "position": 3, "name": "Les tournois de doré au Québec", "item": "https://piedmarinfishing.com/tournois/espece-dore.html"}]}</script>
     <span class="kicker" data-i18n="sh.kicker">Tournois par espèce</span>
     <h1 data-en="walleye tournaments in Quebec">Les tournois de doré au Québec</h1>
   </div>
@@ -94,6 +102,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/search.js"></script>
 <script src="assets/js/tournament-page.js"></script>
 <!-- La visionneuse ne fait rien sans galerie : sur une fiche de tournoi, qui
      n'en a pas, initGalleryLightbox sort immediatement. -->

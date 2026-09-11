@@ -161,9 +161,13 @@ Deux items — « Notre histoire » et « Réseaux » — portent la classe
 La barre n'a pas la place, le tiroir en a 484 px de reste.
 
 Le point de bascule est **1100 px**, mesuré, pas estimé : disposition « barre »
-forcée à toutes les largeurs, la rangée tient jusqu'à 967 px en français et
-929 px en anglais. Le français est toujours la langue contraignante.
-**Un dixième item veut dire remesurer**, pas pousser le chiffre.
+forcée à toutes les largeurs, la rangée tient jusqu'à **1045 px en français**
+et 1007 px en anglais. Le français est toujours la langue contraignante.
+
+Ces chiffres étaient 967 et 929 avant que le bouton de recherche n'entre dans
+`.nav-actions` : **il a coûté 78 px de marge**, qui est passée de 133 à 55.
+C'est encore positif, mais c'est mince. **Un dixième onglet, ou un deuxième
+bouton dans les actions, veut dire remesurer** — pas pousser le chiffre.
 
 `nav_for(current)` dans `tools/build-profile-pages.py` déplace
 `aria-current="page"` sur l'onglet de la page. Il ne cherche qu'à partir du
@@ -309,6 +313,68 @@ Google vient d'indexer.
 
 ---
 
+## Se repérer dans les 104 pages générées
+
+### Le fil d'Ariane
+
+`breadcrumb(famille, feuille, url)` dans `tools/build-tournament-pages.py`,
+appelé par les cinq générateurs. Une fiche d'espèce ne disait nulle part
+qu'elle appartenait à « Espèces » : le seul retour était le menu.
+
+Les deux premiers échelons réutilisent **les clés du menu** (`nav.species`,
+`nav.guide`…) — renomme un onglet et le fil suit. La feuille est une donnée
+bilingue, donc `data-en`. Le helper émet aussi un `BreadcrumbList` JSON-LD,
+**dans le corps** et non dans `<head>` : c'est valide, et ça évite de faire
+passer les données du fil à travers `head()` dans cinq générateurs.
+
+Rappel du piège 3 : ces pages déclarent `<base href="/">`, donc `href="especes.html"`
+vise bien la racine. Il ne faut **pas** écrire `../especes.html`.
+
+### « Précédente / suivante »
+
+`siblings(prev, nxt)`, même module. Chaque famille décide de son ordre, et
+**cet ordre doit être celui de l'index correspondant**, sinon la flèche mène
+ailleurs que ce que le lecteur vient de voir :
+
+| Famille | Ordre |
+|---|---|
+| espèces | alphabétique sur le nom français, **accents repliés** (`fold()`) |
+| tournois | calendrier; une date absente vaut `9999` et passe en dernier |
+| prises | de la plus récente à la plus ancienne, comme le mur |
+| pêcheurs, bateaux | l'ordre du fichier de données, celui des index |
+
+Au bout de la série, `siblings()` ne rend qu'un seul lien — jamais une flèche
+morte. `.sib-next:only-child` le renvoie à droite, sinon il se collerait là où
+« précédente » aurait dû être.
+
+### La recherche
+
+`assets/js/search.js` + `data/search-index.json`, construit par
+`tools/build-search-index.py` (111 pages, 17 Ko).
+
+Il y avait **deux** recherches qui ne se parlaient pas — une sur l'index des
+espèces, une sur le guide — et les 104 pages générées n'étaient trouvables par
+aucune des deux.
+
+- **L'index n'est pas chargé avec la page.** Il arrive au premier clic sur la
+  loupe. Vérifié : 0 requête au chargement, 1 au premier usage.
+- **Le bouton est dans `.nav-actions`, pas dans la rangée d'onglets.** La
+  barre était pleine à 77 px près; un dixième onglet aurait forcé à remonter
+  le point de bascule.
+- **Le bouton et le panneau sont construits en JavaScript**, pas écrits dans
+  les 116 pages : une boîte de recherche ne sert à rien sans JavaScript. Le
+  menu, lui, est du contenu et reste dans le balisage.
+- L'index ne contient **aucun texte de corps** : on cherche des pages, pas des
+  phrases. Il vit dans `data/`, donc `check-private.py` le contrôle comme le
+  reste.
+- `PMF_I18N` est un `const` (piège 2) : `search.js` teste
+  `typeof PMF_I18N === "undefined"` et sort, il ne lit jamais `window`.
+
+Après toute modification de `data/`, relancer `tools/build-search-index.py` —
+sinon la recherche pointe sur une page qui n'existe plus.
+
+---
+
 ## Les seuils, et pourquoi ils existent
 
 Une page mince nuit plus qu'elle n'aide. Chaque générateur porte un seuil.
@@ -348,6 +414,7 @@ python3 tools/sync-html-fallbacks.py --check   # 0 divergence
 python3 tools/check-private.py                 # 0 identifiant, 0 prénom de mineure
 python3 tools/check-links.py                   # 0 lien cassé, 0 speciesId orphelin
 node    tools/test-season.js                   # 30 contrôles du moteur de saison
+python3 tools/build-search-index.py            # après toute modif de data/
 python3 tools/test-youtube.py                  # 51 contrôles du lecteur de flux
 ```
 

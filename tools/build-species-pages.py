@@ -62,6 +62,7 @@ plutôt que d'être recopié.
 import io
 import json
 import os
+import unicodedata
 import importlib.util
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -94,6 +95,17 @@ _uspec.loader.exec_module(units)
 def load(name):
     with io.open(os.path.join(REPO, "data", name), encoding="utf-8") as fh:
         return json.load(fh)
+
+
+def fold(text):
+    """Cle de tri insensible aux accents et a la casse.
+
+    « Eperlan » et « Éperlan » doivent se suivre, pas se retrouver aux deux
+    bouts de la liste : l'index des especes trie comme ca, et la fleche
+    « suivante » doit mener a la meme fiche que l'index.
+    """
+    flat = unicodedata.normalize("NFKD", text or "")
+    return "".join(c for c in flat if not unicodedata.combining(c)).lower()
 
 
 def words(value, lang="fr"):
@@ -462,7 +474,7 @@ def source_html(sp, sources, ui, order=()):
 
 
 def render(sp, ui, sources, rules=(), zones=(), regs=None,
-           catches=(), cp_index=(), members=None):
+           catches=(), cp_index=(), members=None, prev=None, nxt=None):
     name = sp.get("name")
     title = {lang: clamp_title(pick(name, lang)) for lang in ("fr", "en")}
     desc = {lang: description(sp, lang) for lang in ("fr", "en")}
@@ -540,6 +552,7 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None,
     return """%(head)s
 <div class="page-header">
   <div class="container">
+    %(crumbs)s
     <span class="kicker" data-i18n="sp.kicker">%(kicker)s</span>
     <h1 data-en="%(h1_en)s">%(h1_fr)s</h1>
     %(sci)s
@@ -547,10 +560,13 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None,
 </div>
 
 %(body)s
+<section class="siblings-wrap"><div class="container">%(siblings)s</div></section>
 %(footer)s""" % {
         "head": profiles.head(title, desc, url, image,
                               species_ld(sp, url, sources, order), og_type="article",
                               current="especes.html"),
+        "crumbs": pages.breadcrumb("especes", name, url),
+        "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["sp.kicker"]),
         "h1_fr": esc(pick(name, "fr")), "h1_en": esc(pick(name, "en")),
         "sci": sci,
@@ -628,10 +644,18 @@ def main():
             os.remove(os.path.join(OUT_DIR, name))
             print("  retirée : especes/%s (passée sous le seuil)" % name)
 
-    for sp in kept:
+    # « La precedente / la suivante » suit l'ordre du nom francais, celui de
+    # l'index des especes — pas l'ordre du fichier de donnees.
+    ordered = sorted(kept, key=lambda s: fold(pick(s.get("name"), "fr")))
+    for i, sp in enumerate(ordered):
+        def link(other):
+            return ("especes/%s.html" % other["id"], other.get("name")) if other else None
+        prev = link(ordered[i - 1]) if i else None
+        nxt = link(ordered[i + 1]) if i + 1 < len(ordered) else None
         with io.open(os.path.join(OUT_DIR, "%s.html" % sp["id"]), "w", encoding="utf-8") as fh:
             fh.write(render(sp, ui, sources, regs.get("rules") or [],
-                            regs.get("zones") or [], regs, catches, cp_index, members))
+                            regs.get("zones") or [], regs, catches, cp_index, members,
+                            prev, nxt))
         print("  especes/%-22s %d repère(s), %d bloc(s), %d affirmation(s)"
               % (sp["id"] + ".html", len(marks_of(sp)), len(blocks_of(sp)),
                  len([c for c in (sp.get("claims") or []) if claim_ok(c, sources)])))
