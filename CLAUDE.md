@@ -184,10 +184,33 @@ titre bilingue, `orientation`, `angler`, `catch` et `featured` sont écrits à
 la main; le flux ne donne qu'un titre, dans une seule langue. Une vidéo déjà
 connue est laissée telle quelle.
 
-**La seule exception**, et elle ne porte pas sur de l'éditorial : une `date`
-d'année seule (« 2025 ») est complétée par la date exacte du flux. La date de
-publication appartient à YouTube. Une date déjà précise au jour n'est jamais
-retouchée, et une année qui **contredit** le flux est signalée, pas corrigée.
+### `date` et `published` ne disent PAS la même chose
+
+| | | |
+|---|---|---|
+| `date` | quand la **sortie** a eu lieu | écrite à la main, souvent partielle (« 2025 »), souvent inconnue |
+| `published` | quand **YouTube a reçu** la vidéo | écrite par le robot, jamais retouchée ensuite |
+
+La première version confondait les deux et « précisait » un `date: "2025"`
+avec la date du flux. **Le garde-fou des années contradictoires l'a rattrapée
+au premier vrai passage** : les deux vidéos de la saison 2025 ont été mises en
+ligne les 26 et 28 août 2026. Si les années avaient concordé, la sortie aurait
+silencieusement pris la date du montage.
+
+Le robot ne remplit donc que `published`, et seulement s'il est vide. Une
+nouveauté arrive avec `date: ""` — le flux ne connaît pas la date de sortie,
+et vide vaut mieux que faux.
+
+Côté rendu, les deux sens ne se croisent pas :
+`videoOrder()` **classe** sur `published` (« notre dernière vidéo » parle de
+mise en ligne), `videoWhen()` **affiche** `date` en premier. L'inverse mettait
+« Kevin Caron · 28 août 2026 » sous une vidéo de la saison 2025.
+
+**Le titre est nettoyé.** La traînée finale de mots-clés
+(« #musky #pêchequébec ») est de la métadonnée YouTube, pas un titre : elle
+déborde de la légende et n'apprend rien. Seule la traînée **finale** est
+coupée — un « #1 » au milieu d'une phrase reste — et le test de `#shorts` se
+fait sur le titre brut, avant la coupe.
 
 **`channelId` se trouve tout seul.** Le flux veut un `UC…` et rien d'autre :
 ni le `@handle`, ni l'adresse de la chaîne. Le lire à la main demande
@@ -198,7 +221,7 @@ rempli et la page de la chaîne n'est plus jamais lue. Quatre motifs sont
 essayés, le lien canonique d'abord — le seul qui soit du HTML et non du
 JavaScript embarqué.
 
-**Les garde-fous, tous testés dans `tools/test-youtube.py` (42 contrôles) :**
+**Les garde-fous, tous testés dans `tools/test-youtube.py` (51 contrôles) :**
 
 | | |
 |---|---|
@@ -259,7 +282,7 @@ python3 tools/sync-html-fallbacks.py --check   # 0 divergence
 python3 tools/check-private.py                 # 0 identifiant, 0 prénom de mineure
 python3 tools/check-links.py                   # 0 lien cassé, 0 speciesId orphelin
 node    tools/test-season.js                   # 30 contrôles du moteur de saison
-python3 tools/test-youtube.py                  # 42 contrôles du lecteur de flux
+python3 tools/test-youtube.py                  # 51 contrôles du lecteur de flux
 ```
 
 Puis, si le rendu a changé, la suite Playwright du bac à sable

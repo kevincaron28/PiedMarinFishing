@@ -17,18 +17,40 @@ async function loadVideos() {
   }
 }
 
-// Les vidéos de la plus récente à la plus ancienne.
+// DEUX DATES, ET ELLES NE DISENT PAS LA MÊME CHOSE.
 //
-// Une date partielle (« 2025 ») se compare en la complétant, comme partout
-// ailleurs sur le site : elle vaut alors la fin de son année. Deux vidéos de
-// la même année s'y retrouvent donc à égalité — et c'est le cas aujourd'hui.
-// À égalité, la DERNIÈRE du fichier gagne : tools/fetch-youtube.py ajoute en
-// fin de liste, donc l'ordre du fichier est déjà chronologique. Sans cette
-// règle, le départage revenait à l'ordre du tableau, c'est-à-dire à l'envers.
+//   date      — quand la sortie a eu lieu. Écrite à la main, souvent partielle
+//               (« 2025 »). C'est ce qu'on affiche à côté du pêcheur.
+//   published — quand YouTube a reçu la vidéo. Écrite par le robot.
+//
+// Les deux premières vidéos racontent la saison 2025 et ont été mises en
+// ligne en août 2026 : les confondre décalait tout d'un an.
+//
+// « Notre dernière vidéo » parle de mise en ligne, donc on classe sur
+// `published`, avec `date` en secours pour une vidéo que le flux n'a jamais
+// vue. Une date partielle se compare en la complétant, comme partout ailleurs
+// sur le site : elle vaut alors la fin de son année. À égalité, la DERNIÈRE
+// du fichier gagne — `fetch-youtube.py` ajoute en fin de liste, donc l'ordre
+// du fichier est déjà chronologique.
+// Pour CLASSER : la mise en ligne d'abord — « notre dernière vidéo » parle de
+// ça. `date` en secours pour une vidéo que le flux n'a jamais vue.
+function videoOrder(v) {
+  return (v && (v.published || v.date)) || "";
+}
+
+// Pour AFFICHER : la sortie d'abord — c'est ce que le lecteur veut savoir, et
+// c'est ce que l'humain a écrit. La mise en ligne ne sert que si on ne connaît
+// pas la sortie. L'inverse affichait « Kevin Caron · 28 août 2026 » sous une
+// vidéo de la saison 2025.
+function videoWhen(v) {
+  return (v && (v.date || v.published)) || "";
+}
+
 function videosByDate(videos) {
   return (videos || [])
     .map((v, i) => ({ v, i }))
-    .sort((a, b) => sortableDate(b.v.date).localeCompare(sortableDate(a.v.date)) || b.i - a.i)
+    .sort((a, b) =>
+      sortableDate(videoOrder(b.v)).localeCompare(sortableDate(videoOrder(a.v))) || b.i - a.i)
     .map((x) => x.v);
 }
 
@@ -163,7 +185,9 @@ async function initVideoList(options) {
     list.innerHTML = videosByDate(videos).map((v) => {
       const id = encodeURIComponent(v.videoId);
       const title = tr(v.title) || t("videos.untitled");
-      const when = v.date ? longDate(v.date, PMF_I18N.lang) : "";
+      // La date de sortie si on la connaît; sinon celle de mise en ligne,
+      // qui reste une date vraie au sujet de la vidéo.
+      const when = videoWhen(v) ? longDate(videoWhen(v), PMF_I18N.lang) : "";
       const member = v.angler ? memberById.get(v.angler) : null;
       const who = member ? tr(member.name) : "";
       const line = [who, when].filter(Boolean).join(" · ");

@@ -12,6 +12,7 @@
       },
       "angler": "kevin-caron",
       "date": "2025",
+      "published": "2026-08-28",
       "featured": false,
       "reviewed": true
     },
@@ -25,19 +26,21 @@
       },
       "angler": "kevin-b",
       "date": "2025",
+      "published": "2026-08-26",
       "featured": false,
       "catch": "maskinonge-kevin-b",
       "reviewed": true
     },
     {
-      "id": "maskinonge-dans-l-epuisette-remise",
+      "id": "maskinonge-epuisette-remise",
       "videoId": "bl9RvD-PX5U",
       "orientation": "",
       "title": {
-        "fr": "Maskinongé dans l'épuisette 🎣 Remise à l'eau #musky #pêchequébec #muskyfishing #catchandrelease",
-        "en": ""
+        "fr": "Maskinongé dans l'épuisette, remis à l'eau",
+        "en": "Muskie in the net, released"
       },
-      "date": "2026-09-07",
+      "date": "",
+      "published": "2026-09-07",
       "featured": false,
       "reviewed": false
     }

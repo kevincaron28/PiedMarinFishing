@@ -93,6 +93,18 @@ def save(data):
         fh.write(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
 
 
+# « #musky #pechequebec #muskyfishing » a la fin d'un titre, c'est de la
+# metadonnee YouTube, pas un titre. Sur le site ca ne sert a rien et ca deborde
+# de la legende. On coupe la trainee finale — et seulement la finale : un
+# « #1 » au milieu d'une phrase reste.
+TRAILING_TAGS_RX = re.compile(r"(?:\s+#[^\s#]+)+\s*$")
+
+
+def clean_title(text):
+    cut = TRAILING_TAGS_RX.sub("", (text or "").strip()).strip(" -—–·|").strip()
+    return cut or (text or "").strip()
+
+
 def slug(text, taken):
     """Un identifiant lisible tiré du titre, sans accent ni doublon."""
     flat = unicodedata.normalize("NFKD", text or "")
@@ -160,31 +172,30 @@ def fetch(channel_id):
     return get(FEED % channel_id)
 
 
-def precise_dates(videos, by_id):
-    """Complete une date d'annee seule avec la date exacte du flux.
+def fill_published(videos, by_id):
+    """Ecrit `published` quand il manque. Ne touche JAMAIS a `date`.
 
-    Seule exception a la regle « on ne touche pas a l'existant », et elle ne
-    porte pas sur de l'editorial : la date de publication appartient a
-    YouTube, pas a nous. Les deux premieres videos portaient « 2025 » tout
-    court; a egalite de date, l'accueil ne pouvait pas savoir laquelle etait
-    la derniere. Une date deja precise au jour n'est jamais retouchee.
+    DEUX DATES, PAS UNE. `date` dit quand la sortie a eu lieu — c'est ce que
+    la page affiche a cote du pecheur. `published` dit quand la video a ete
+    mise en ligne. Ce n'est pas la meme chose : les deux premieres videos
+    racontent la saison 2025 et ont ete televersees en aout 2026.
+
+    La premiere version de ce script confondait les deux et aurait ecrase un
+    « 2025 » ecrit a la main par la date de televersement. Le garde-fou des
+    annees qui se contredisent l'a rattrape au premier vrai passage — mais si
+    l'annee avait concorde, la sortie aurait silencieusement pris la date du
+    montage. `date` appartient a l'humain, `published` au robot.
     """
-    fixed = []
+    filled = []
     for v in videos:
-        cur = (v.get("date") or "").strip()
-        if len(cur) >= 10:                     # deja AAAA-MM-JJ
+        if (v.get("published") or "").strip():
             continue
         e = by_id.get((v.get("videoId") or "").strip())
         if not e or not e["date"]:
             continue
-        if cur and not e["date"].startswith(cur):
-            # Le flux contredit l'annee ecrite a la main : on ne trancherait
-            # pas a sa place, on le signale.
-            fixed.append((v, cur, e["date"], True))
-            continue
-        v["date"] = e["date"]
-        fixed.append((v, cur, e["date"], False))
-    return fixed
+        v["published"] = e["date"]
+        filled.append(v)
+    return filled
 
 
 def merge(data, found):
@@ -199,19 +210,26 @@ def merge(data, found):
     for e in sorted(found, key=lambda x: x["date"]):
         if e["videoId"] in known:
             continue
+        title = clean_title(e["title"])
         item = {
-            "id": slug(e["title"], taken),
+            "id": slug(title, taken),
             "videoId": e["videoId"],
             # Le flux ne dit pas si une video est verticale, et une verticale
             # rendue en 16:9 se retrouve cernee de noir. « #shorts » dans le
             # titre est la seule indication fiable : c'est l'auteur qui l'a
             # ecrite, pas une deduction. Sans elle, le champ reste vide et le
             # rapport le signale.
+            # Teste sur le titre BRUT : clean_title vient d'enlever les
+            # mots-cles, « #shorts » compris.
             "orientation": "portrait" if "#short" in e["title"].lower() else "",
             # Une seule langue : le titre tel qu'il est sur YouTube. tr()
             # retombe sur le francais tant que l'anglais n'est pas ecrit.
-            "title": {"fr": e["title"], "en": ""},
-            "date": e["date"],
+            "title": {"fr": title, "en": ""},
+            # Quand la sortie a eu lieu : le flux ne le sait pas, seul un
+            # humain peut l'ecrire. Vide plutot que faux.
+            "date": "",
+            # Quand YouTube l'a recue. Ce champ appartient au robot.
+            "published": e["date"],
             "featured": False,
             # Mis a false par le robot, a true par un humain qui a relu le
             # titre anglais et l'orientation.
@@ -280,30 +298,27 @@ def main():
         print("Le flux ne contient aucune vidéo.", file=sys.stderr)
         return 1
 
-    dated = precise_dates(data.get("videos", []), {e["videoId"]: e for e in found})
+    by_id = {e["videoId"]: e for e in found}
+    filled = fill_published(data.get("videos", []), by_id)
     added = merge(data, found)
     print("%d vidéo(s) au flux, %d déjà connue(s), %d ajoutée(s)."
           % (len(found), len(found) - len(added), len(added)))
 
-    for v, before, after, clash in dated:
-        if clash:
-            print("  ! %-13s date écrite à la main « %s », le flux dit « %s » — "
-                  "laissée telle quelle, à trancher à la main"
-                  % (v["videoId"], before, after), file=sys.stderr)
-        else:
-            print("  ~ %-13s date précisée : « %s » → « %s »"
-                  % (v["videoId"], before or "(vide)", after))
+    for v in filled:
+        print("  ~ %-13s mise en ligne le %s" % (v["videoId"], v["published"]))
 
-    changed = bool(added) or any(not c for _, _, _, c in dated) or resolved
+    changed = bool(added) or bool(filled) or resolved
     if not changed:
         return 0
 
     for v in added:
-        print("  + %-13s %s  %s" % (v["videoId"], v["date"], v["title"]["fr"]))
+        print("  + %-13s %s  %s" % (v["videoId"], v["published"], v["title"]["fr"]))
     if added:
         print("\nÀ relire à la main sur chaque nouvelle entrée :\n"
               "  · title.en — le titre anglais (sinon le français s'affiche dans les deux langues)\n"
               "  · orientation — « portrait » pour un Short, sinon laisser vide\n"
+              "  · date — QUAND LA SORTIE A EU LIEU, pas la mise en ligne : le\n"
+              "    flux ne la connait pas et `published` ne la remplace pas\n"
               "  · angler / catch — pour que la vidéo apparaisse sur la fiche du pêcheur ou de la prise\n"
               "  · reviewed — passe-le à true quand c'est fait")
 

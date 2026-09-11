@@ -197,12 +197,13 @@ they stay in sync.
 - **YouTube videos** → `data/videos.json`. Nothing to configure: the fetcher
   resolves `channelId` from `channelUrl` on its first run and writes it back,
   then `.github/workflows/youtube.yml` adds new uploads daily via
-  `tools/fetch-youtube.py`. Hand-written fields —
-  bilingual `title`, `orientation`, `angler`, `catch`, `featured` — are never
-  overwritten; a year-only `date` is the one field the feed may complete.
-  New entries carry `reviewed: false` until someone writes the English title
-  and confirms the orientation. Run `python3 tools/test-youtube.py` (42
-  checks) after touching the fetcher.
+  `tools/fetch-youtube.py`. Hand-written fields are never overwritten. Note
+  the two distinct dates: `date` is when the outing happened (yours, often
+  partial, often unknown) and `published` is when YouTube received the video
+  (the bot's, filled once). The list sorts on `published` and displays `date`.
+  New entries carry `reviewed: false` until someone writes the English title,
+  confirms the orientation and adds the outing date. Run
+  `python3 tools/test-youtube.py` (51 checks) after touching the fetcher.
 - **Social links** → `data/socials.json`. `icon` must be one of
   `instagram`, `facebook`, `youtube`, `tiktok`, `mail` (see `social.html`),
   or add a new SVG to the `ICONS` map there.

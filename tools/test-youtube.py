@@ -109,32 +109,62 @@ check("marquée à relire", regular["reviewed"] is False)
 check("identifiant sans accent ni espace",
       regular["id"] == "ouverture-du-dore-2026-premiere", regular["id"])
 
-print("\n--- une date d'année seule se précise, une date au jour non ---")
+print("\n--- `date` et `published` ne sont pas la meme chose ---")
+# Le flux dit que PXwFXozk-5c a ete mise en ligne le 2025-11-02. Notre fiche
+# dit « 2025 » : l'annee de la SORTIE. Les deux doivent survivre cote a cote.
 data = fresh()
 by_id = {e["videoId"]: e for e in found}
-fixed = yt.precise_dates(data["videos"], by_id)
-check("« 2025 » devient « 2025-11-02 »", data["videos"][0]["date"] == "2025-11-02",
+filled = yt.fill_published(data["videos"], by_id)
+check("`date` écrite à la main intacte", data["videos"][0]["date"] == "2025",
       data["videos"][0]["date"])
-check("un seul champ signalé", len(fixed) == 1, len(fixed))
+check("`published` écrit par le robot", data["videos"][0]["published"] == "2025-11-02",
+      data["videos"][0].get("published"))
+check("un seul champ rempli", len(filled) == 1, len(filled))
 check("rien d'autre n'a bougé", data["videos"][0]["title"] == CURATED["title"])
 
 data = fresh()
-data["videos"][0]["date"] = "2025-01-09"          # déjà précise, et fausse
-yt.precise_dates(data["videos"], by_id)
-check("une date au jour n'est jamais retouchée", data["videos"][0]["date"] == "2025-01-09",
-      data["videos"][0]["date"])
+data["videos"][0]["published"] = "2026-08-26"       # deja connu
+yt.fill_published(data["videos"], by_id)
+check("un `published` déjà écrit n'est jamais retouché",
+      data["videos"][0]["published"] == "2026-08-26", data["videos"][0]["published"])
 
 data = fresh()
-data["videos"][0]["date"] = "2019"                 # l'année contredit le flux
-clash = yt.precise_dates(data["videos"], by_id)
-check("une année qui contredit le flux est laissée telle quelle",
-      data["videos"][0]["date"] == "2019", data["videos"][0]["date"])
-check("et le conflit est signalé", clash and clash[0][3] is True)
+yt.fill_published(data["videos"], by_id)
+again = yt.fill_published(data["videos"], by_id)
+check("deuxième passage : plus rien à remplir", len(again) == 0, len(again))
 
 data = fresh()
-yt.precise_dates(data["videos"], by_id)
-again = yt.precise_dates(data["videos"], by_id)
-check("deuxième passage : plus rien à préciser", len(again) == 0, len(again))
+data["videos"][0]["videoId"] = "inconnu1234"        # absente du flux
+check("une vidéo absente du flux reste sans `published`",
+      len(yt.fill_published(data["videos"], by_id)) == 0)
+
+print("\n--- une nouveaute n'invente pas la date de sortie ---")
+data = fresh()
+added = yt.merge(data, found)
+neuf = [a for a in added if a["videoId"] == "Kq9PmZn3XyT"][0]
+check("`date` laissée vide", neuf["date"] == "", neuf["date"])
+check("`published` = la date du flux", neuf["published"] == "2026-05-16", neuf["published"])
+
+print("\n--- les mots-cles de fin de titre sont coupes ---")
+cases = [
+    ("Maskinongé dans l'épuisette 🎣 Remise à l'eau #musky #pêchequébec #muskyfishing",
+     "Maskinongé dans l'épuisette 🎣 Remise à l'eau"),
+    ("Un brochet qui saute #shorts", "Un brochet qui saute"),
+    ("Sortie du 1er mai", "Sortie du 1er mai"),
+    ("Doré #1 de la saison", "Doré #1 de la saison"),      # au milieu : on garde
+    ("#shorts", "#shorts"),                                 # rien d'autre : on garde
+]
+for brut, attendu in cases:
+    got = yt.clean_title(brut)
+    check("« %s » → « %s »" % (brut[:34], attendu[:34]), got == attendu, got)
+
+data = fresh()
+added = yt.merge(data, [{"videoId": "aBcDeFgHiJk", "date": "2026-09-07",
+                         "title": "Remise à l'eau #musky #shorts"}])
+check("le titre stocké est nettoyé", added[0]["title"]["fr"] == "Remise à l'eau", added[0]["title"]["fr"])
+check("mais « #shorts » a quand même donné portrait",
+      added[0]["orientation"] == "portrait", added[0]["orientation"])
+check("l'identifiant vient du titre nettoyé", added[0]["id"] == "remise-a-l-eau", added[0]["id"])
 
 print("\n--- deux passages de suite n'ajoutent rien la seconde fois ---")
 data = fresh()
@@ -196,5 +226,5 @@ check("une URL refusée", not yt.CHANNEL_RX.match("https://youtube.com/@piedmari
 check("trop court refusé", not yt.CHANNEL_RX.match("UCabc"))
 
 print("\n%d vérifications passées, %d échec(s)" % (
-    42 - len(fails), len(fails)))
+    51 - len(fails), len(fails)))
 sys.exit(1 if fails else 0)
