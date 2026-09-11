@@ -32,6 +32,8 @@ PAGES = [
     ("tournaments.html", "0.9", "weekly",  ["data/quebec-tournaments.json"]),
     ("calendar.html",    "0.8", "weekly",  ["data/team-schedule.json"]),
     ("sponsors.html",    "0.8", "monthly", ["data/sponsors.json"]),
+    # Du texte, pas des données : elle ne change que quand on la réécrit.
+    ("histoire.html",    "0.7", "yearly",  []),
     ("team.html",        "0.7", "monthly", ["data/team-members.json", "data/boats.json",
                                             "data/catches.json", "data/tournament-history.json"]),
     ("catches.html",     "0.7", "monthly", ["data/catches.json", "data/team-members.json",

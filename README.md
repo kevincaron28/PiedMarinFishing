@@ -17,7 +17,7 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
 | `especes.html` | Index of the species reference sheets, grouped by official status |
-| `histoire.html` | *Notre histoire* — how the team came together, the boats, three Formule Brochet openers, and why the site exists. **Held back: `noindex`, no inbound link, absent from the sitemap, pending Kevin's approval** |
+| `histoire.html` | *Notre histoire* — how the team came together, the boats, three Formule Brochet openers, and why the site exists. Second item in the nav, ahead of the roster |
 | `tournois/espece-*.html` | One page per targeted species — *Les tournois de doré au Québec*. Answers the search a visitor actually types, from data the directory already holds |
 | `saison.html` | What is open right now — computed from the season dates in `data/regulations.json`. The only page whose content changes on its own, every day |
 | `merch.html` | Shop — under construction |
