@@ -502,11 +502,7 @@
   },
   {
     "id": "brochet-soir",
-    "angler": "",
-    "anglerName": {
-      "fr": "",
-      "en": ""
-    },
+    "angler": "bobe",
     "species": {
       "fr": "Grand brochet",
       "en": "Northern pike"
@@ -515,7 +511,7 @@
     "showcase": false,
     "released": true,
     "measure": "",
-    "date": "",
+    "date": "2025-07-04",
     "water": {
       "fr": "",
       "en": ""
