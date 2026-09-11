@@ -61,12 +61,31 @@ Chacune de ces pages refait donc le saut après le rendu, sans animation au
 chargement. Voir `openHashTarget()` dans `events.js`, `openHashGroup()` dans
 `species.js`. Si tu ajoutes une page rendue en JS avec des ancres, refais-le.
 
-### 5. `git commit` avec un heredoc est bloqué
+### 5. Écrire un message de commit : deux pièges, pas un
+
+`git commit` avec un heredoc est bloqué. Le contournement est d'écrire le
+message avec Python puis `git commit -F`, mais **pas** avec `python3 -c "…"` :
+entre guillemets **doubles**, bash substitue encore les accents graves. Un
+message qui citait deux noms de champs entre accents graves est parti en ligne
+avec la sortie de la commande `date` à la place du mot, et un
+`published: command not found` dans la foulée.
+
+Un heredoc **entre apostrophes** ne substitue rien — ni accents graves, ni
+`$`, ni `!` :
 
 ```bash
-python3 -c "import io; io.open('/tmp/msg.txt','w',encoding='utf-8').write('''...''')"
-git commit -F /tmp/msg.txt
+python3 - <<'FIN_DU_SCRIPT'
+import io
+io.open('.../msg.txt', 'w', encoding='utf-8').write('''…''')
+FIN_DU_SCRIPT
+git commit -F .../msg.txt
 ```
+
+Deuxième piège, celui-là attrapé en écrivant le premier : **le marqueur de fin
+ne doit apparaître nulle part dans le contenu.** Un texte qui montre un
+heredoc et son marqueur de fermeture coupe le heredoc extérieur à cette
+ligne-là. Choisis un marqueur qui ne peut pas se retrouver dans le texte — et
+quand tu documentes un heredoc, prends-en deux différents.
 
 ---
 
