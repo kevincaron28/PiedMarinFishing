@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n-text="catches.title">Nos plus belles prises — Pied Marin Fishing</title>
+<title data-i18n-text="trips.title">Notre journal de sorties — Pied Marin Fishing</title>
 <meta name="description" data-i18n-content="catches.desc" content="Les prises de Pied Marin Fishing — maskinongé, doré, barbue, perchaude et saumon chinook, chacune avec sa date, son plan d'eau et sa mesure.">
-<link rel="canonical" href="https://piedmarinfishing.com/catches.html">
+<link rel="canonical" href="https://piedmarinfishing.com/sorties.html">
 <!-- Le site sert les deux langues sur la même URL; ?lang=en est la version
      anglaise liable. Le français reste la version par défaut. -->
-<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/catches.html">
-<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/catches.html?lang=en">
-<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/catches.html">
+<link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/sorties.html">
+<link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/sorties.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/sorties.html">
 <meta name="theme-color" content="#0b1e33">
 <!-- Link previews on Facebook, Messenger, Instagram and WhatsApp. Crawlers read
      the static markup, so these carry the French copy — the site default. -->
@@ -18,15 +18,15 @@
 <meta property="og:site_name" content="Pied Marin Fishing">
 <meta property="og:locale" content="fr_CA">
 <meta property="og:locale:alternate" content="en_CA">
-<meta property="og:title" content="Nos plus belles prises — Pied Marin Fishing">
+<meta property="og:title" content="Notre journal de sorties — Pied Marin Fishing">
 <meta property="og:description" content="Les prises de Pied Marin Fishing — maskinongé, doré, barbue, perchaude et saumon chinook, chacune avec sa date, son plan d'eau et sa mesure.">
-<meta property="og:url" content="https://piedmarinfishing.com/catches.html">
+<meta property="og:url" content="https://piedmarinfishing.com/sorties.html">
 <meta property="og:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Écusson de l'équipe Pied Marin Fishing : un brochet au-dessus de l'eau">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Nos plus belles prises — Pied Marin Fishing">
+<meta name="twitter:title" content="Notre journal de sorties — Pied Marin Fishing">
 <meta name="twitter:description" content="Les prises de Pied Marin Fishing — maskinongé, doré, barbue, perchaude et saumon chinook, chacune avec sa date, son plan d'eau et sa mesure.">
 <meta name="twitter:image" content="https://piedmarinfishing.com/assets/img/og-card.png">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -44,7 +44,7 @@
     <ul class="nav-links" id="nav-menu">
       <li><a href="index.html" data-i18n="nav.home">Accueil</a></li>
       <li><a href="team.html" data-i18n="nav.team">Équipe</a></li>
-      <li><a href="catches.html" aria-current="page" data-i18n="nav.catches">Prises</a></li>
+      <li><a href="sorties.html" data-i18n="nav.catches">Prises</a></li>
       <li><a href="history.html" data-i18n="nav.history">Nos résultats</a></li>
       <li><a href="calendar.html" data-i18n="nav.calendar">Notre saison</a></li>
       <li><a href="tournaments.html" data-i18n="nav.guide">Tournois</a></li>
@@ -66,42 +66,15 @@
 
 <div class="page-header">
   <div class="container">
-    <h1 data-i18n="catches.h1">Nos plus belles prises</h1>
-    <p data-i18n="catches.intro">Les poissons dont on parle encore — et les histoires qui viennent avec. Filtre par pêcheur ou par espèce.</p>
-    <!-- Phrase calculée par catches.js à partir du champ `released` : elle
-         change d'elle-même le jour où une prise est gardée. -->
-    <p class="catch-trips-link"><a href="sorties.html" data-i18n="trips.seeAll">Tout le journal →</a></p>
-    <p class="catch-release-note" id="release-note" data-i18n="catches.releaseAll">On remet nos prises à l'eau. S'il nous arrive de garder un doré, c'est indiqué sur la fiche.</p>
+    <h1 data-i18n="trips.h1">Le journal des sorties</h1>
+    <p data-i18n="trips.intro">Une journée à la fois — qui était là, le temps qu'il faisait, et tout ce qui est sorti de l'eau. Le mur des prises ne garde que les records; ici on raconte les journées.</p>
+    <p class="result-count" id="trip-count"></p>
   </div>
 </div>
 
 <section>
   <div class="container">
-
-    <div class="filters">
-      <select id="angler-filter" data-i18n-aria-label="catches.allAnglers" aria-label="Tous les pêcheurs"></select>
-      <select id="species-filter" data-i18n-aria-label="catches.allSpecies" aria-label="Toutes les espèces"></select>
-      <span class="result-count" id="result-count"></span>
-    </div>
-
-    <!-- La prise vedette : remplie seulement si une prise porte "featured": true
-         dans data/catches.json, et masquée dès qu'un filtre est actif. -->
-    <div id="featured-catch"></div>
-
-    <!-- Temple de la renommée : calculé par catches.js à partir des prises
-         mesurées, une par espèce. Se masque tout seul sous deux records, et
-         quand un filtre est actif. -->
-    <div class="hall-section" data-hall-section hidden>
-      <div class="section-head">
-        <span class="kicker" data-i18n="hall.kicker">Records de l'équipe</span>
-        <h2 data-i18n="hall.title">Temple de la renommée</h2>
-        <p data-i18n="hall.intro">La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand.</p>
-      </div>
-      <div id="hall-of-fame" class="hall-grid"></div>
-    </div>
-
-    <div id="catch-grid" class="grid grid-3"></div>
-    <div id="empty-state" class="empty-state" style="display:none;" data-i18n="catches.empty">Aucune prise ne correspond à tes filtres.</div>
+    <div id="trip-list" class="trip-list"></div>
   </div>
 </section>
 
@@ -120,18 +93,9 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/lightbox.js"></script>
-<script src="assets/js/catches.js"></script>
+<script src="assets/js/trips.js"></script>
 <script>
-  initCatches({
-    gridSelector: "#catch-grid",
-    emptySelector: "#empty-state",
-    countSelector: "#result-count",
-    releaseSelector: "#release-note",
-    anglerFilterSelector: "#angler-filter",
-    speciesFilterSelector: "#species-filter",
-    featuredSelector: "#featured-catch",
-    hallSelector: "#hall-of-fame",
-  });
+  initTrips({ listSelector: "#trip-list", countSelector: "#trip-count" });
 </script>
 </body>
 </html>

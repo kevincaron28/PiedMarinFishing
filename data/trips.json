@@ -1,0 +1,37 @@
+[
+  {
+    "id": "2025-07-04-fleuve",
+    "date": "2025-07-04",
+    "title": {
+      "fr": "Quatre espèces, deux records personnels",
+      "en": "Four species, two personal bests"
+    },
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "members": [
+      "bobe",
+      "kevin-b",
+      "kevin-caron"
+    ],
+    "boat": "princecraft-1995",
+    "conditions": {
+      "fr": "Départ en début d'après-midi sous un ciel couvert, des averses par vagues toute la journée, une vingtaine de degrés ressentis. On visait l'achigan et le doré.",
+      "en": "Pushed off in the early afternoon under a heavy sky, showers rolling through in waves all day, around twenty degrees. We were working bass and walleye."
+    },
+    "catches": [
+      "maskinonge-bobe",
+      "malachigan-2025",
+      "barbue-2025",
+      "brochet-soir"
+    ],
+    "videos": [
+      "bl9RvD-PX5U"
+    ],
+    "story": {
+      "fr": "",
+      "en": ""
+    }
+  }
+]

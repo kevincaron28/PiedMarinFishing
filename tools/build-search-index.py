@@ -74,7 +74,7 @@ def build():
                      ("calendar.html", "nav.calendar"), ("tournaments.html", "nav.guide"),
                      ("especes.html", "nav.species"), ("saison.html", "nav.season"),
                      ("sponsors.html", "nav.sponsors"), ("histoire.html", "nav.story"),
-                     ("social.html", "nav.social")]:
+                     ("sorties.html", "nav.trips"), ("social.html", "nav.social")]:
         rows.append(entry(url, fr[key], en.get(key, ""), "site"))
 
     # --- espèces ----------------------------------------------------------
@@ -111,6 +111,14 @@ def build():
                           pick(c.get("species"), "en"), "prises",
                           [pick(who, "fr"), pick(c.get("water"), "fr"),
                            pick(c.get("measure"), "fr"), (c.get("date") or "")[:4]]))
+
+    # --- les sorties ------------------------------------------------------
+    # Elles n'ont pas de page a elles : l'ancre mene au bon endroit du journal.
+    for t in load("trips.json"):
+        rows.append(entry("sorties.html#t-%s" % t["id"], pick(t.get("title"), "fr"),
+                          pick(t.get("title"), "en"), "sorties",
+                          [pick(t.get("water"), "fr"), pick(t.get("water"), "en"),
+                           t.get("date", ""), (t.get("date") or "")[:4]]))
 
     # --- l'équipe ---------------------------------------------------------
     for m in load("team-members.json"):

@@ -226,6 +226,41 @@ def orphans():
     return out
 
 
+def trips(load):
+    """Une sortie ne recopie rien : elle pointe. Chaque pointeur doit exister.
+
+    Un identifiant de prise mal tape ne casse aucun lien HTML — la journee
+    perd simplement un poisson en silence, et personne ne le voit. C'est le
+    meme genre de trou que l'ancre morte des vignettes hors-mur.
+    """
+    out = []
+    rows = load("trips.json") or []
+    catches = {c["id"] for c in (load("catches.json") or [])}
+    members = {m["id"] for m in (load("team-members.json") or [])}
+    boats = {b["id"] for b in (load("boats.json") or [])}
+    vids = {v.get("videoId") for v in ((load("videos.json") or {}).get("videos") or [])}
+    seen = set()
+    for t in rows:
+        tid = t.get("id") or "(sans id)"
+        if tid in seen:
+            out.append((tid, tid, "deux sorties portent le meme identifiant"))
+        seen.add(tid)
+        if not (t.get("date") or "").strip():
+            out.append((tid, "(vide)", "une sortie sans date ne se classe pas"))
+        for cid in (t.get("catches") or []):
+            if cid not in catches:
+                out.append((tid, cid, "aucune prise ne porte cet identifiant"))
+        for mid in (t.get("members") or []):
+            if mid not in members:
+                out.append((tid, mid, "aucun pecheur ne porte cet identifiant"))
+        if t.get("boat") and t["boat"] not in boats:
+            out.append((tid, t["boat"], "aucun bateau ne porte cet identifiant"))
+        for vid in (t.get("videos") or []):
+            if vid not in vids:
+                out.append((tid, vid, "aucune video ne porte cet identifiant"))
+    return out
+
+
 def main():
     brief = "--brief" in sys.argv
     bad = broken()
@@ -233,6 +268,7 @@ def main():
     vars_ = variants()
     missing, want = expected()
     orph = orphans()
+    bad_trips = trips(load)
 
     print("%d pages examinées." % len(pages()))
     print("Liens cassés   : %d" % len(bad))
@@ -240,6 +276,7 @@ def main():
     print("Variantes absentes: %d" % len(vars_))
     print("Liens manquants: %d (sur %d attendus)" % (len(missing), len(want)))
     print("speciesId orphelins: %d" % len(orph))
+    print("sorties : pointeurs morts: %d" % len(bad_trips))
 
     if not brief:
         for page, href, root in bad:
@@ -254,7 +291,9 @@ def main():
                 print("  %-38s → %-34s  (%s)" % (src, dst, why))
         for cid, sid, why in orph:
             print("\n  ✗ data/catches.json — %s\n      %s : %s" % (cid, sid, why))
-    return 1 if bad or imgs or vars_ or orph else 0
+        for tid, ref, why in bad_trips:
+            print("\n  ✗ data/trips.json — %s\n      %s : %s" % (tid, ref, why))
+    return 1 if bad or imgs or vars_ or orph or bad_trips else 0
 
 
 if __name__ == "__main__":

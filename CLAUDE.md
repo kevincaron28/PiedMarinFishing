@@ -467,6 +467,43 @@ mur ne faisait PAS changer la phrase**, et le site continuait d'affirmer qu'on
 remet tout. La phrase décrit la pratique de l'équipe, pas le contenu du mur —
 elle doit voir les dix prises, pas les sept affichées.
 
+### Le journal des sorties : il pointe, il ne recopie pas
+
+`data/trips.json` + `assets/js/trips.js` + `sorties.html`. Le site avait deux
+endroits pour un poisson — le mur (records seulement) et la fiche de son
+espèce — et **aucun pour une journée**.
+
+Une sortie ne porte **que des identifiants** : `catches`, `members`, `boat`,
+`videos`. Rien n'est recopié, donc rien ne dérive le jour où une mesure est
+corrigée. `check-links.py` vérifie que chaque pointeur existe — un identifiant
+mal tapé ne casse aucun lien HTML, la journée perdrait juste un poisson en
+silence.
+
+Deux détails :
+
+- **`trips.js` lit `data/catches.json` directement**, pas via `PMF_CATCHES`.
+  Ce module vit dans `catches.js`, qui porte tout le rendu du mur : le
+  charger ferait payer à cette page 400 lignes qu'elle n'affiche pas. Et il
+  lui faut **toutes** les prises, y compris les `showcase: false` — le brochet
+  du 4 juillet est dans ce cas, et l'oublier raconterait la journée à moitié.
+- **Une prise ne devient un lien que si sa fiche existe** (`catch-pages.json`).
+  Pointer sur `prises/<id>.html` « au cas où » donnerait un 404 que
+  `check-links.py` ne peut pas voir depuis les données.
+
+**L'ÉCLATEMENT DE GRILLE, deuxième forme.** Une piste `auto` se dimensionne
+sur le contenu **maximal** de ses enfants. La grille intérieure des prises
+réclamait 4 × 150 px + 3 gouttières = 630 px, et la sortie entière s'étirait à
+**676 px dans une fenêtre de 390** — la page défilait latéralement.
+`minmax(0, 1fr)` sur la piste et `min-width: 0` sur les enfants autorisent le
+rétrécissement sous le contenu. C'est le même piège que `auto-fill` comptant
+ses colonnes sur le maximum, sous un autre déguisement.
+
+**Le journal n'invente aucune prose.** La sortie du 4 juillet porte un titre
+strictement factuel — quatre espèces sont au dossier pour cette date, deux
+portent « record personnel » — et ses conditions sont reprises **mot pour
+mot** du récit que Kevin avait écrit pour le maskinongé de BOBE. Le champ
+`story` reste vide : c'est à l'équipe de l'écrire.
+
 **Le compte de mots juge mal une fiche-tableau.** Un audit avait recommandé de
 couper de 34 fiches de tournoi à 16 sur ce critère; en les lisant, deux
 seulement ne répondaient à rien. Une fiche de 150 mots qui donne le prix,

@@ -92,6 +92,15 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/sorties.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/sorties.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/sorties.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/sorties.html"/>
+    <lastmod>2026-09-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/social.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/social.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/social.html?lang=en"/>

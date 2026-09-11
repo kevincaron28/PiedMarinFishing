@@ -45,6 +45,9 @@ PAGES = [
     # CONTENU change tout seul, tous les jours, parce qu'elle compte des jours.
     ("saison.html",      "0.8", "weekly",  ["data/regulations.json", "data/species.json",
                                             "data/species-pages.json"]),
+    # « weekly » comme le guide : c'est une page qui grossit a chaque sortie.
+    ("sorties.html",     "0.7", "weekly",  ["data/trips.json", "data/catches.json",
+                                            "data/team-members.json", "data/boats.json"]),
     ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
 ]
 COMMON = ["data/i18n.json"]

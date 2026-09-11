@@ -3498,3 +3498,92 @@ html.search-open, html.search-open body { overflow: hidden; }
 }
 .sp-record-meta { font-size: 0.9rem; color: var(--ink-900); }
 .sp-record-who { font-size: 0.84rem; color: var(--ink-600); }
+
+
+/* ---------- Le journal des sorties ---------- */
+/* L'ECLATEMENT DE GRILLE, deuxieme forme.
+   Une piste `auto` se dimensionne sur le contenu MAXIMAL de ses enfants. La
+   grille interieure des prises reclamait 4 x 150 px + 3 gouttieres = 630 px,
+   et la sortie entiere s'etirait a 676 px dans une fenetre de 390 — la page
+   defilait lateralement. `minmax(0, 1fr)` sur la piste et `min-width: 0` sur
+   les enfants autorisent le retrecissement sous le contenu. C'est le meme
+   piege que auto-fill comptant ses colonnes sur le maximum, sous un autre
+   deguisement. */
+.trip-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+}
+.trip {
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.trip-head { border-bottom: 1px solid var(--line); padding-bottom: 14px; margin-bottom: 16px; }
+.trip-when {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-700);
+}
+.trip-head h2 { margin: 4px 0 2px; }
+.trip-water { margin: 0; color: var(--ink-600); }
+.trip-tally { margin: 6px 0 0; font-weight: 600; color: var(--ink-900); }
+
+.trip-block { margin-top: 16px; }
+.trip-block-title {
+  margin: 0 0 8px;
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-600);
+}
+.trip-crew { display: flex; flex-wrap: wrap; gap: 6px; }
+.trip-boat { margin: 8px 0 0; font-size: 0.94rem; }
+.trip-story p { margin: 0; }
+
+.trip-catches {
+  display: grid;
+  gap: 10px;
+  /* Meme piege que les vignettes d'espece : avec auto-fill et un maximum fixe,
+     le navigateur compte les colonnes sur le MAXIMUM et en fabrique de vides.
+     auto-fit + 1fr, et une largeur maximale pour ne pas etirer deux prises sur
+     toute la page. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  max-width: 680px;
+  min-width: 0;
+}
+.trip-catch {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink-900);
+}
+a.trip-catch:hover { border-color: var(--teal-600); text-decoration: none; }
+.trip-catch-thumb { width: 100%; height: auto; border-radius: var(--radius-sm); }
+.trip-catch-body { display: flex; flex-direction: column; gap: 1px; }
+.trip-catch-species { font-weight: 600; font-size: 0.94rem; }
+.trip-catch-meta { font-size: 0.82rem; color: var(--ink-600); }
+
+.trip-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: var(--ink-900);
+  max-width: 420px;
+}
+.trip-video:hover { border-color: var(--teal-600); text-decoration: none; }
+.trip-video-thumb { width: 120px; height: auto; border-radius: var(--radius-sm); }
