@@ -138,8 +138,23 @@ Une page mince nuit plus qu'elle n'aide. Chaque générateur porte un seuil.
 | Ce qui est généré | Ce qu'il faut |
 |---|---|
 | Fiche de prise | une photo, un récit, une date, un plan d'eau |
+| Photo sur une fiche d'espèce | une photo et un `speciesId` — pas de récit exigé |
 | Fiche d'espèce | une source vérifiée, `MARKS_MIN` repères, `BLOCKS_MIN` blocs |
 | Fiche de tournoi | `SCORE_MIN` sur dix champs, **et** de quoi lire au-delà du nom |
+
+`showcase` décide où une prise apparaît, et le champ est OBLIGATOIRE :
+
+| | Mur des prises | Fiche d'espèce |
+|---|---|---|
+| `showcase: true` | oui | oui |
+| `showcase: false` | non | oui |
+| champ absent | `check-links.py` sort en code 1 |
+
+Le mur est une sélection — les gros, les beaux, ceux qui ont une histoire — et
+pas un journal de sorties. Une photo en `false` n'a AUCUN lien : sa vignette
+est un `<figure>`, pas un `<a>`. L'ancre `catches.html#c-<id>` d'une prise
+retirée du mur menait à l'index et n'y trouvait rien — un lien mort que
+`check-links.py` ne peut pas voir, puisque la page, elle, existe.
 
 **Le compte de mots juge mal une fiche-tableau.** Un audit avait recommandé de
 couper de 34 fiches de tournoi à 16 sur ce critère; en les lisant, deux

@@ -7,6 +7,7 @@
       "en": "Muskie"
     },
     "speciesId": "maskinonge",
+    "showcase": true,
     "measure": "",
     "date": "",
     "water": {
@@ -38,6 +39,7 @@
       "en": "Chinook salmon"
     },
     "speciesId": "",
+    "showcase": true,
     "measure": "20 lb",
     "date": "2024-10",
     "water": {
@@ -91,6 +93,7 @@
       "en": "Muskie"
     },
     "speciesId": "maskinonge",
+    "showcase": true,
     "measure": {
       "fr": "50 po",
       "en": "50\""
@@ -187,6 +190,7 @@
       "en": "Muskie"
     },
     "speciesId": "maskinonge",
+    "showcase": true,
     "measure": {
       "fr": "45 po",
       "en": "45\""
@@ -253,6 +257,7 @@
       "en": "Freshwater drum"
     },
     "speciesId": "malachigan",
+    "showcase": true,
     "measure": "11 lb",
     "date": "2025-07-04",
     "water": {
@@ -306,6 +311,7 @@
       "en": "Channel catfish"
     },
     "speciesId": "barbue-de-riviere",
+    "showcase": true,
     "measure": "7 lb",
     "date": "2025-07-04",
     "water": {
@@ -353,6 +359,7 @@
       "en": "Yellow perch"
     },
     "speciesId": "perchaude",
+    "showcase": true,
     "measure": "",
     "date": "2025-02",
     "water": {
@@ -410,6 +417,114 @@
     "story": {
       "fr": "Une journée de février au lac Champlain, à Venise-en-Québec : grand soleil, et un vent qui traversait la glace du matin au soir. La pêche était tranquille — quelques perchaudes en tout, rien qui se bousculait sous les trous. C'est cette journée-là que R.C. a choisie pour sa première prise. Pas sa première sur la glace : sa première tout court.\n\nUne petite canne à pêche de glace, une tête de jig UV, un ver de terre. Elle tenait la canne avec son père, et c'est lui qui l'a aidée à mouliner quand ça s'est mis à tirer. Ce qu'elle a retenu, ce n'est pas le combat : c'est le moment où le poisson est sorti du trou. Une perchaude de rien du tout, et elle la regardait comme si elle venait d'un autre monde.\n\nToutes les perchaudes de la journée sont retournées à l'eau, celle-là comme les autres. Elles étaient petites. On aime autant les revoir dans un an ou deux.",
       "en": "A February day on Lake Champlain, at Venise-en-Québec: full sun, and a wind that cut across the ice from morning to dark. The fishing was quiet — a handful of perch all day, nothing crowding the holes. That is the day R.C. picked for her first fish. Not her first through the ice: her first, period.\n\nA short ice rod, a UV jig head, a worm. She held the rod with her father, and he helped her reel when it started to pull. What stayed with her was not the fight — it was the moment the fish came up out of the hole. A perch of no size at all, and she looked at it like it had come from another world.\n\nEvery perch went back in that day, that one along with the rest. They were small. We would rather see them again in a year or two."
+    }
+  },
+  {
+    "id": "dore-nuit",
+    "angler": "",
+    "anglerName": {
+      "fr": "",
+      "en": ""
+    },
+    "species": {
+      "fr": "Doré jaune",
+      "en": "Walleye"
+    },
+    "speciesId": "dore-jaune",
+    "showcase": false,
+    "measure": "",
+    "date": "",
+    "water": {
+      "fr": "",
+      "en": ""
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/dore-nuit.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Un doré tenu à deux mains sur le pont d'une chaloupe, de nuit, les lumières d'une rive au loin sur l'eau noire.",
+        "en": "A walleye held in both hands on a boat deck at night, the lights of a far shore reflected on black water."
+      }
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "dore-jour",
+    "angler": "",
+    "anglerName": {
+      "fr": "",
+      "en": ""
+    },
+    "species": {
+      "fr": "Doré jaune",
+      "en": "Walleye"
+    },
+    "speciesId": "dore-jaune",
+    "showcase": false,
+    "measure": "",
+    "date": "",
+    "water": {
+      "fr": "",
+      "en": ""
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/dore-jour.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Un doré présenté à deux mains dans une chaloupe, sous un ciel de nuages, une rive boisée derrière.",
+        "en": "A walleye held out in both hands in a boat, under a cloudy sky with a wooded shore behind."
+      }
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
+    "id": "brochet-soir",
+    "angler": "",
+    "anglerName": {
+      "fr": "",
+      "en": ""
+    },
+    "species": {
+      "fr": "Grand brochet",
+      "en": "Northern pike"
+    },
+    "speciesId": "grand-brochet",
+    "showcase": false,
+    "measure": "",
+    "date": "",
+    "water": {
+      "fr": "",
+      "en": ""
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/brochet-soir.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Un grand brochet tenu à deux mains au coucher du soleil, le moteur hors-bord et l'épuisette visibles dans la chaloupe.",
+        "en": "A northern pike held in both hands at sunset, the outboard and the landing net visible in the boat."
+      }
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "",
+      "en": ""
     }
   }
 ]

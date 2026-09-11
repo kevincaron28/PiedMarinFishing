@@ -206,6 +206,14 @@ def orphans():
             out.append((c["id"], "(champ absent)", "aucun speciesId sur cette prise"))
         elif c["speciesId"] and c["speciesId"] not in species:
             out.append((c["id"], c["speciesId"], "aucune espece ne porte cet identifiant"))
+        # showcase decide si la prise monte sur le mur ou reste sur la fiche de
+        # son espece. Un champ absent vaudrait « oui » par defaut cote
+        # JavaScript, et une photo de journal se retrouverait sur le mur sans
+        # que personne l'ait decide. Le silence est le mauvais defaut ici.
+        if "showcase" not in c:
+            out.append((c["id"], "(champ absent)", "aucun showcase : le mur ou la fiche?"))
+        elif not isinstance(c["showcase"], bool):
+            out.append((c["id"], repr(c["showcase"]), "showcase doit valoir true ou false"))
     return out
 
 

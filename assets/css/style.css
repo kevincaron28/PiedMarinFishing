@@ -3102,6 +3102,10 @@ body.has-lightbox { overflow: hidden; }
   color: var(--ink-900);
 }
 .sp-catch:hover, .sp-catch:focus-visible { border-color: var(--teal-400); }
+/* Une photo qui ne mène nulle part ne fait pas semblant d'être cliquable :
+   pas de survol, pas de curseur, pas de couleur de lien. */
+.sp-catch-flat { margin: 0; }
+.sp-catch-flat:hover { border-color: var(--line); }
 /* Un ratio fixe : les photos de prise vont du portrait au paysage, et une
    grille qui ondule se lit moins bien qu'une grille qui se tient. */
 .sp-catch img {

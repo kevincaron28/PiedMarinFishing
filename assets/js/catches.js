@@ -17,6 +17,12 @@ const PMF_CATCHES = (() => {
     if (!cache) {
       cache = fetch("data/catches.json", DATA_FETCH)
         .then((r) => r.json())
+        // showcase === false : la photo vit sur la fiche de son espèce et
+        // nulle part ailleurs. Le mur des prises est une sélection — les gros,
+        // les beaux, ceux qui ont une histoire — et pas un journal de sorties.
+        // Sans ce filtre, chaque photo envoyée finissait sur le mur et le
+        // diluait; c'est ce qui arrive à tous les sites d'équipe.
+        .then((rows) => rows.filter((c) => c && c.showcase !== false))
         .then((rows) => rows.slice().sort((a, b) => {
           // La prise vedette d'abord, ensuite la plus récente.
           if (!!b.featured !== !!a.featured) return b.featured ? 1 : -1;

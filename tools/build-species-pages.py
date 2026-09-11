@@ -384,8 +384,19 @@ def catches_html(sp, catches, cp_index, members, ui):
             pick(c.get("measure"), lang),
             who.get("name") or pick(c.get("anglerName"), lang),
             long_date(c.get("date"), lang)) if x) for lang in ("fr", "en")}
-        href = ("prises/%s.html" % c["id"]) if c["id"] in cp_index \
-            else "catches.html#c-%s" % c["id"]
+        # Trois destinations possibles, et une quatrième qui n'existe pas.
+        #   fiche de prise   -> la prise a franchi son seuil
+        #   carte de l'index -> elle est sur le mur mais sans fiche
+        #   AUCUN LIEN       -> showcase=false : elle n'est NULLE PART ailleurs
+        # L'ancre « catches.html#c-<id> » d'une prise retirée du mur menait à
+        # l'index et n'y trouvait rien : un lien mort que check-links.py ne
+        # peut pas voir, puisque la page, elle, existe.
+        if c["id"] in cp_index:
+            href = "prises/%s.html" % c["id"]
+        elif c.get("showcase") is not False:
+            href = "catches.html#c-%s" % c["id"]
+        else:
+            href = ""
         media = c.get("media") or {}
         src = media.get("src") if media.get("type") == "image" else ""
         shot = ""
@@ -405,8 +416,10 @@ def catches_html(sp, catches, cp_index, members, ui):
         # le nom de l'espèce, plutôt qu'une vignette qui ne dit rien.
         if not pick(label, "fr"):
             label = {lang: pick(sp.get("name"), lang) for lang in ("fr", "en")}
-        cells.append('<a class="sp-catch" href="%s">%s%s</a>'
-                     % (esc(href), shot, bilingual("span", label, "sp-catch-cap")))
+        inner = shot + bilingual("span", label, "sp-catch-cap")
+        cells.append('<a class="sp-catch" href="%s">%s</a>' % (esc(href), inner)
+                     if href else
+                     '<figure class="sp-catch sp-catch-flat">%s</figure>' % inner)
     return '<div class="sp-catches">%s</div>' % "".join(cells)
 
 

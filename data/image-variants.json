@@ -65,11 +65,29 @@
     800,
     1200
   ],
+  "assets/img/catches/brochet-soir.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
   "assets/img/catches/chinook-salmon-river.jpg": [
     160,
     400,
     800,
     1200
+  ],
+  "assets/img/catches/dore-jour.jpg": [
+    160,
+    400,
+    800,
+    1600
+  ],
+  "assets/img/catches/dore-nuit.jpg": [
+    160,
+    400,
+    800,
+    1600
   ],
   "assets/img/catches/malachigan-2025.jpg": [
     160,
