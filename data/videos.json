@@ -1,6 +1,6 @@
 {
   "channelUrl": "https://youtube.com/@piedmarinfishing",
-  "channelId": "",
+  "channelId": "UCNfXs-Z_GjpFZyQalaeOsEg",
   "videos": [
     {
       "id": "peche-de-nuit-musky",
@@ -28,6 +28,18 @@
       "featured": false,
       "catch": "maskinonge-kevin-b",
       "reviewed": true
+    },
+    {
+      "id": "maskinonge-dans-l-epuisette-remise",
+      "videoId": "bl9RvD-PX5U",
+      "orientation": "",
+      "title": {
+        "fr": "Maskinongé dans l'épuisette 🎣 Remise à l'eau #musky #pêchequébec #muskyfishing #catchandrelease",
+        "en": ""
+      },
+      "date": "2026-09-07",
+      "featured": false,
+      "reviewed": false
     }
   ]
 }
