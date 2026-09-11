@@ -80,6 +80,22 @@
   </div>
 </section>
 
+<!-- « Ce qu'on pêche avec » suit « Nos partenaires » et ne s'y confond pas.
+     Deux sections, deux fichiers : sponsors.js lit data/sponsors.json,
+     brands.js lit data/brands.json. TFO a ouvert un compte guide à l'équipe —
+     ce n'est pas une commandite, et le titre de la section le dit. Chacune se
+     retire d'elle-même quand son fichier est vide, donc il n'y a jamais un
+     titre au-dessus du vide. -->
+<section id="brands-section" hidden>
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="brands.title">Ce qu'on pêche avec</h2>
+      <p data-i18n="brands.intro">Les marques qu'on a au bout des bras. Rien de commandité ici — juste ce qui monte dans le bateau.</p>
+    </div>
+    <div id="brand-grid" class="brand-grid"></div>
+  </div>
+</section>
+
 <section class="alt">
   <div class="container">
     <div class="section-head">
@@ -156,10 +172,12 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/brands.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/sponsors.js"></script>
 <script>
   initSponsors("#sponsor-grid", "#partners-section");
+  initBrands({ gridSelector: "#brand-grid", sectionSelector: "#brands-section" });
 </script>
 </body>
 </html>

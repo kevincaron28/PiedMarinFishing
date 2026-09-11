@@ -469,9 +469,21 @@ elle doit voir les dix prises, pas les sept affichées.
 
 ### « Ce qu'on pêche avec » n'est PAS la page des commanditaires
 
-`data/brands.json` + `assets/js/brands.js`, une section de `team.html`.
+`data/brands.json` + `assets/js/brands.js`, une section de **`sponsors.html`**,
+posée juste sous « Nos partenaires ».
 **Deux fichiers, deux sens, et ils ne se croisent jamais** — `sponsors.js` lit
 `data/sponsors.json`, `brands.js` lit `data/brands.json`.
+
+Les deux sections **se retirent chacune quand son fichier est vide**, donc il
+n'y a jamais un titre au-dessus du vide — et jamais « Nos partenaires » suivi
+d'un logo qu'on lirait comme un partenaire. Attention : `sponsors.js` masque
+par `style.display = "none"`, pas par l'attribut `hidden`. Un test qui lit
+`.hidden` conclut « visible » à tort; il faut lire le style calculé.
+
+La section était d'abord sur `team.html`, **tout en bas d'une page de
+3 349 px** — il fallait descendre 2 719 px pour la voir. Sur la page des
+commanditaires elle est à **y=297**, la première chose après l'en-tête, et
+c'est là qu'on va chercher quelles marques entourent l'équipe.
 
 TFO a ouvert un **compte guide** à l'équipe et autorise l'usage de son logo.
 Ce n'est pas une commandite. Écrire « Commanditaire » sous le logo d'une vraie
