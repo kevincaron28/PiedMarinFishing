@@ -131,6 +131,41 @@ consigne dans son propre champ `verified`.
 
 ---
 
+## La navigation : neuf dans la barre, onze dans le tiroir
+
+Le menu est écrit **à la main dans les 13 pages racine** et **une fois** dans
+`NAV`, au haut de `tools/build-tournament-pages.py`, d'où sortent les 103
+pages générées. Un changement se fait donc à deux endroits, puis on régénère.
+
+Deux items — « Notre histoire » et « Réseaux » — portent la classe
+`nav-extra` : masqués dans la barre, visibles dans le tiroir sous un filet.
+La barre n'a pas la place, le tiroir en a 484 px de reste.
+
+Le point de bascule est **1100 px**, mesuré, pas estimé : disposition « barre »
+forcée à toutes les largeurs, la rangée tient jusqu'à 967 px en français et
+929 px en anglais. Le français est toujours la langue contraignante.
+**Un dixième item veut dire remesurer**, pas pousser le chiffre.
+
+`nav_for(current)` dans `tools/build-profile-pages.py` déplace
+`aria-current="page"` sur l'onglet de la page. Il ne cherche qu'à partir du
+`<ul>` : l'écusson pointe lui aussi sur `index.html` et vient avant. Toutes
+les fiches sortaient marquées sur « Équipe » — une fiche d'espèce annonçait
+« Équipe » comme page courante au lecteur d'écran.
+
+L'onglet « Ouvert ? » (`nav-live`) porte un accent doré **statique**. Il
+n'annonce aucun état de saison, et c'est voulu : une pastille calculée dans la
+barre obligerait les 116 pages à charger `season.js` et `regulations.json`
+(45 Ko) pour dessiner un point — et un point qui dérive de la page qu'il
+annonce vaut moins que pas de point.
+
+Le bandeau « Ce qui presse » de l'accueil et de l'index des espèces est le
+seul autre chemin vers `saison.html`, et **il se masque quand rien ne bouge
+dans les 60 jours** (`root.hidden = true` dans `season.js`). C'est pour ça que
+la page a besoin d'une place permanente dans le menu : son seul lien entrant
+était saisonnier.
+
+---
+
 ## Les seuils, et pourquoi ils existent
 
 Une page mince nuit plus qu'elle n'aide. Chaque générateur porte un seuil.

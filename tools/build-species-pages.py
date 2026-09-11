@@ -549,7 +549,8 @@ def render(sp, ui, sources, rules=(), zones=(), regs=None,
 %(body)s
 %(footer)s""" % {
         "head": profiles.head(title, desc, url, image,
-                              species_ld(sp, url, sources, order), og_type="article"),
+                              species_ld(sp, url, sources, order), og_type="article",
+                              current="especes.html"),
         "kicker": esc(ui["fr"]["sp.kicker"]),
         "h1_fr": esc(pick(name, "fr")), "h1_en": esc(pick(name, "en")),
         "sci": sci,

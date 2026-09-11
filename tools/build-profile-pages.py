@@ -38,13 +38,26 @@ def load(name):
         return json.load(fh)
 
 
-def nav_for(depth):
-    """Le menu du gabarit, avec l'onglet actif remis sur Équipe."""
+def nav_for(current="team.html"):
+    """Le menu du gabarit, avec l'onglet actif deplace sur `current`.
+
+    Le gabarit arrive marque sur Tournois. Toutes les fiches passaient par ici
+    et ressortaient marquees sur Equipe — une fiche d'espece annoncait donc
+    « Equipe » comme page courante au lecteur d'ecran. L'appelant dit
+    maintenant de quel onglet il depend.
+    """
     html = pages.NAV.replace(' aria-current="page"', "")
-    return html.replace('<a href="team.html"', '<a href="team.html" aria-current="page"', 1)
+    # La marque pointe elle aussi sur index.html et vient AVANT la liste : on
+    # ne cherche l'onglet qu'a partir du <ul>, sinon nav_for("index.html")
+    # decorerait l'ecusson.
+    head, sep, tail = html.partition('<ul class="nav-links">')
+    needle = 'href="%s"' % current
+    if needle not in tail:
+        raise SystemExit("nav_for : aucun onglet %s dans le menu" % current)
+    return head + sep + tail.replace(needle, needle + ' aria-current="page"', 1)
 
 
-def head(title, desc, url, image, ld="", og_type="profile"):
+def head(title, desc, url, image, ld="", og_type="profile", current="team.html"):
     return """<!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -83,7 +96,7 @@ def head(title, desc, url, image, ld="", og_type="profile"):
 %(nav)s""" % {"title_fr": esc(title["fr"]), "title_en": esc(title["en"]),
               "desc_fr": esc(desc["fr"]), "desc_en": esc(desc["en"]),
               "url": url, "image": image, "ld": ld, "og_type": og_type,
-              "nav": nav_for(1)}
+              "nav": nav_for(current)}
 
 
 VARIANTS = {}

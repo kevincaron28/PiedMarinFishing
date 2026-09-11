@@ -331,7 +331,7 @@ def render(c, ui, members, events, kept):
 %(body)s
 %(footer)s""" % {
         "head": profiles.head(title, desc, url, image, catch_ld(c, url, image, members),
-                              og_type="article"),
+                              og_type="article", current="catches.html"),
         "kicker": esc(ui["fr"]["cp.kicker"]),
         "h1_fr": esc(h1["fr"]), "h1_en": esc(h1["en"]),
         "sub": bilingual("p", c.get("water"), "tp-when") if pick(c.get("water"), "fr") else "",

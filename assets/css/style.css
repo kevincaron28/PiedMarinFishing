@@ -150,6 +150,23 @@ img { max-width: 100%; display: block; }
   text-decoration: none;
 }
 
+/* « Ouvert ? » est le seul onglet qui repond a une question datee, alors il
+   se detache. L'accent est STATIQUE et n'annonce aucun etat de saison : une
+   pastille calculee dans la barre obligerait les 116 pages a charger
+   season.js et regulations.json (45 Ko) pour dessiner un point, et un point
+   qui derive de la page qu'il annonce vaut moins que pas de point du tout. */
+.nav-links a.nav-live { color: var(--gold-400); }
+.nav-links a.nav-live:hover,
+.nav-links a.nav-live[aria-current="page"] {
+  color: var(--navy-950);
+  background: var(--gold-400);
+}
+
+/* Deux items ne tiennent plus dans la barre mais gardent leur place dans le
+   tiroir, qui a 484 px de libre sous lui a 390 px de large. Ils sont donc
+   masques ici et rendus visibles par la requete media du tiroir. */
+.nav-extra { display: none; }
+
 .nav-actions {
   display: flex;
   align-items: center;
@@ -193,12 +210,16 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 
-/* Ten nav items need a wider row than eight did: at 1150px the bar overflowed
-   the viewport horizontally rather than wrapping. Measured at 1440 / 1180 /
-   1024 / 900 / 768 / 390 px — 1320 is the first breakpoint where ten items and
-   the language switch still fit on one line. Adding an eleventh means
-   re-measuring, not nudging this number. */
-@media (max-width: 1320px) {
+/* Neuf items dans la barre, deux de plus dans le tiroir seulement.
+   Mesure au pixel, disposition « barre » forcee a toutes les largeurs : la
+   rangee tient jusqu'a 967 px en francais et 929 px en anglais. Le seuil est
+   pose a 1100 px, soit 133 px de marge sur la langue la plus large — assez
+   pour absorber une police de rechange ou une etiquette qui s'allonge.
+   Les dix items d'avant exigeaient 1320 px : un portable 1280 tombait dans le
+   tiroir, il a maintenant la barre complete.
+   Toucher a cette valeur ou ajouter un dixieme item veut dire remesurer, pas
+   pousser le chiffre. */
+@media (max-width: 1100px) {
   .nav-toggle { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
   .brand { font-size: 1.05rem; }
   .brand-logo { width: 36px; height: 36px; }
@@ -215,6 +236,13 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 12px 8px; }
+  /* Le tiroir porte les onze items : il en reste de la place. */
+  .nav-extra { display: block; }
+  .nav-extra-first {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
 }
 
 /* On the narrowest screens the crest carries the wordmark on its own. */
