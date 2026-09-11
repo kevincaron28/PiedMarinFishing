@@ -817,7 +817,81 @@
     "field": {
       "fr": "On le pêche de trois façons : à la dandinette, à la traîne, et à la dérive le long des cassants. On le trouve le plus souvent entre 3 et 9 mètres. Dans le courant du fleuve, ça prend une tête plombée lourde montée d'un souple à queue, ou un poisson nageur à grande bavette qui descend vite et nage face au courant. Le jig est surtout payant au printemps et à l'automne.",
       "en": "We fish it three ways: jigging, trolling, and drifting along the drop-offs. Most of the time it sits between 3 and 9 metres. In the river's current it takes a heavy jighead dressed with a tailed soft plastic, or a deep-diving crankbait that gets down fast and swims into the flow. The jig earns its keep mostly in spring and fall."
-    }
+    },
+    "records": [
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial, toutes lignes",
+          "en": "All-Tackle world record"
+        },
+        "value": {
+          "fr": "11,34 kg (25 lb)",
+          "en": "11.34 kg (25 lb)"
+        },
+        "place": {
+          "fr": "Lac Old Hickory, Tennessee",
+          "en": "Old Hickory Lake, Tennessee"
+        },
+        "year": "1960",
+        "angler": "Mabry Harper",
+        "sources": [
+          "igfa-records-dore-jaune"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial de longueur — au Canada",
+          "en": "All-Tackle Length world record — in Canada"
+        },
+        "value": {
+          "fr": "79 cm",
+          "en": "79 cm"
+        },
+        "place": {
+          "fr": "Réservoir St. Mary, Alberta",
+          "en": "St. Mary's Reservoir, Alberta"
+        },
+        "year": "2015",
+        "angler": "Jason Auld",
+        "sources": [
+          "igfa-records-dore-jaune"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "near",
+        "category": {
+          "fr": "Le plus proche — baie de Quinte, ligne 1 kg",
+          "en": "The nearest — Bay of Quinte, 1 kg line"
+        },
+        "value": {
+          "fr": "5,44 kg (12 lb)",
+          "en": "5.44 kg (12 lb)"
+        },
+        "place": {
+          "fr": "Baie de Quinte, Ontario",
+          "en": "Bay of Quinte, Ontario"
+        },
+        "year": "2007",
+        "angler": "Greg Amiel",
+        "sources": [
+          "igfa-records-dore-jaune"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      }
+    ]
   },
   {
     "id": "dore-noir",
@@ -1063,7 +1137,80 @@
     "field": {
       "fr": "En eau claire il devient méfiant, et c'est là que les souples finesse travaillent : ned rig, drop shot, tube, senko. On les laisse travailler près du fond avec de petites secousses, et on surveille la ligne plutôt que d'attendre le coup. La saison principale va de juin à septembre.",
       "en": "In clear water it turns cagey, and that is where finesse plastics work: ned rig, drop shot, tube, senko. We let them work near the bottom with small twitches, and watch the line rather than wait for the hit. The main season runs June through September."
-    }
+    },
+    "records": [
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial, toutes lignes",
+          "en": "All-Tackle world record"
+        },
+        "value": {
+          "fr": "5,41 kg (11 lb 15 oz)",
+          "en": "5.41 kg (11 lb 15 oz)"
+        },
+        "place": {
+          "fr": "Lac Dale Hollow, Tennessee",
+          "en": "Dale Hollow Lake, Tennessee"
+        },
+        "year": "1955",
+        "angler": "David Hayes",
+        "sources": [
+          "igfa-records-achigan-petite-bouche"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial de longueur",
+          "en": "All-Tackle Length world record"
+        },
+        "value": {
+          "fr": "53 cm",
+          "en": "53 cm"
+        },
+        "place": {
+          "fr": "Lac Guntersville, Alabama",
+          "en": "Guntersville Lake, Alabama"
+        },
+        "year": "2014",
+        "angler": "William Brent Evans",
+        "sources": [
+          "igfa-records-achigan-petite-bouche"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "near",
+        "category": {
+          "fr": "Le seul au Canada — catégorie junior",
+          "en": "The only one in Canada — junior category"
+        },
+        "value": {
+          "fr": "2,49 kg (5 lb 8 oz)",
+          "en": "2.49 kg (5 lb 8 oz)"
+        },
+        "place": {
+          "fr": "Baie Baril, Ontario",
+          "en": "Baril Bay, Ontario"
+        },
+        "year": "2003",
+        "sources": [
+          "igfa-records-achigan-petite-bouche"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      }
+    ]
   },
   {
     "id": "achigan-grande-bouche",
@@ -1386,6 +1533,56 @@
         "body": {
           "fr": "Lacs, étangs et cours d'eau à faible courant. Elle affectionne particulièrement les habitats qui présentent de la végétation aquatique, et se tient généralement en eau peu profonde.",
           "en": "Lakes, ponds and low-current waters. It particularly favours habitats with aquatic vegetation, and generally holds in shallow water."
+        }
+      }
+    ],
+    "records": [
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial, toutes lignes",
+          "en": "All-Tackle world record"
+        },
+        "value": {
+          "fr": "1,91 kg (4 lb 3 oz)",
+          "en": "1.91 kg (4 lb 3 oz)"
+        },
+        "place": {
+          "fr": "Bordentown, New Jersey",
+          "en": "Bordentown, New Jersey"
+        },
+        "year": "1865",
+        "angler": "Dr. C. Abbot",
+        "sources": [
+          "igfa-records-perchaude"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
+        }
+      },
+      {
+        "scope": "world",
+        "category": {
+          "fr": "Record mondial de longueur",
+          "en": "All-Tackle Length world record"
+        },
+        "value": {
+          "fr": "38 cm",
+          "en": "38 cm"
+        },
+        "place": {
+          "fr": "Deep Pond, New York",
+          "en": "Deep Pond, New York"
+        },
+        "year": "2013",
+        "angler": "Wesley C. Winters, Jr.",
+        "sources": [
+          "igfa-records-perchaude"
+        ],
+        "verified": {
+          "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+          "date": "2026-09-11"
         }
       }
     ]

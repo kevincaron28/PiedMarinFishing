@@ -147,8 +147,22 @@ Trois précautions qui sont dans les données, pas dans le code :
 renvoi numéroté pointe vers une entrée absente de la liste des sources, et
 `order.index` lève une erreur.
 
-Deux espèces sur 47 en portent (grand brochet, maskinongé). Les 45 autres
-n'en ont pas, et c'est normal : pas de source, pas de record.
+**Cinq espèces sur 47 en portent** — grand brochet, maskinongé, doré jaune,
+achigan à petite bouche, perchaude. Les 42 autres n'en ont pas, et c'est
+normal : pas de source, pas de record. L'achigan à **grande** bouche n'en a
+pas non plus : le relevé fourni ne couvre que la petite bouche, et les records
+de l'une ne sont pas ceux de l'autre.
+
+**Le lecteur de relevés IGFA** (`scratchpad`, pas dans le dépôt) a coûté deux
+pièges qui valent d'être notés si on recommence :
+
+- **Le `codespacerange` dit la largeur des codes.** Ces PDF-là sont en **un
+  octet**; les lire par deux décalait tout l'alphabet et sortait « FAﬂILY »
+  pour « FAMILY ». Le texte restait *presque* lisible, ce qui est le pire cas.
+- **Un document porte plusieurs polices, donc plusieurs CMaps**, et le même
+  code n'y veut pas dire la même lettre. Les fusionner faisait gagner la
+  dernière. Il faut décoder avec chacune et garder celle qui retrouve le plus
+  de mots-repères du tableau (« Line Class », « Location », « Catch Date »).
 
 ### Trois états, jamais deux
 

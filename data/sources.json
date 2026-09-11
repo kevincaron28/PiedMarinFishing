@@ -129,6 +129,52 @@
     }
   },
   {
+    "id": "igfa-records-achigan-petite-bouche",
+    "kind": "org",
+    "authors": "International Game Fish Association",
+    "year": "2026",
+    "title": {
+      "fr": "Records mondiaux — achigan à petite bouche (Micropterus dolomieu)",
+      "en": "World Records — Smallmouth bass (Micropterus dolomieu)"
+    },
+    "publisher": {
+      "fr": "IGFA",
+      "en": "IGFA"
+    },
+    "url": "https://igfa.org/igfa-world-records/",
+    "covers": {
+      "fr": "Le relevé complet des records IGFA de l'achigan à petite bouche : 37 catégories. Trois d'entre elles sont reprises ici.",
+      "en": "The full IGFA record listing for smallmouth bass: 37 categories. Three are reproduced here."
+    },
+    "verified": {
+      "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+      "date": "2026-09-11"
+    }
+  },
+  {
+    "id": "igfa-records-dore-jaune",
+    "kind": "org",
+    "authors": "International Game Fish Association",
+    "year": "2026",
+    "title": {
+      "fr": "Records mondiaux — doré jaune (Sander vitreus)",
+      "en": "World Records — Walleye (Sander vitreus)"
+    },
+    "publisher": {
+      "fr": "IGFA",
+      "en": "IGFA"
+    },
+    "url": "https://igfa.org/igfa-world-records/",
+    "covers": {
+      "fr": "Le relevé complet des records IGFA du doré jaune, dont le record mondial de longueur, établi en Alberta. Trois lignes sont reprises ici.",
+      "en": "The full IGFA record listing for walleye, including the all-tackle length world record set in Alberta. Three rows are reproduced here."
+    },
+    "verified": {
+      "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+      "date": "2026-09-11"
+    }
+  },
+  {
     "id": "igfa-records-grand-brochet",
     "kind": "org",
     "authors": "International Game Fish Association",
@@ -168,6 +214,29 @@
     "covers": {
       "fr": "Le relevé complet des records IGFA du maskinongé, dont un record établi sur le fleuve Saint-Laurent. Seuls trois d'entre eux sont repris ici.",
       "en": "The full IGFA record listing for muskellunge, including one set on the St. Lawrence River. Only three of them are reproduced here."
+    },
+    "verified": {
+      "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
+      "date": "2026-09-11"
+    }
+  },
+  {
+    "id": "igfa-records-perchaude",
+    "kind": "org",
+    "authors": "International Game Fish Association",
+    "year": "2026",
+    "title": {
+      "fr": "Records mondiaux — perchaude (Perca flavescens)",
+      "en": "World Records — Yellow perch (Perca flavescens)"
+    },
+    "publisher": {
+      "fr": "IGFA",
+      "en": "IGFA"
+    },
+    "url": "https://igfa.org/igfa-world-records/",
+    "covers": {
+      "fr": "Le relevé complet des records IGFA de la perchaude, dont le record toutes lignes établi en 1865. Aucun record canadien au relevé.",
+      "en": "The full IGFA record listing for yellow perch, including the all-tackle record set in 1865. No Canadian record in the listing."
     },
     "verified": {
       "by": "lecture du relevé IGFA enregistré depuis Member Services et fourni par Kevin Caron",
