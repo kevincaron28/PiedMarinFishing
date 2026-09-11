@@ -278,8 +278,8 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "Un malachigan de 11 livres levé au coucher du soleil sur le fleuve. La longueur n'a pas été mesurée.",
-      "en": "An 11-pound freshwater drum lifted at sunset on the St. Lawrence. Its length was not measured."
+      "fr": "Le record personnel de BOBE. Un malachigan de 11 livres levé au coucher du soleil sur le fleuve. La longueur n'a pas été mesurée.",
+      "en": "BOBE's personal best. An 11-pound freshwater drum lifted at sunset on the St. Lawrence. Its length was not measured."
     },
     "story": {
       "fr": "Même sortie que le maskinongé de 45 pouces de BOBE : le 4 juillet 2025, du début d'après-midi jusqu'à un peu passé minuit, sur le fleuve. Ciel couvert, averses par vagues, une vingtaine de degrés qui ont fini par tomber en fin de soirée — l'humidité et la pluie de la journée ont fini par nous rattraper. C'est la meilleure journée qu'on ait eue en variété d'espèces, et le malachigan de BOBE en fait partie. On ne le visait pas : on cherchait l'achigan et le doré. C'est un poisson que bien du monde regarde de haut au Québec, et qui ne le mérite pas — le combat est intense, il tire fort et il ne lâche pas. Onze livres au peson. La longueur n'a pas été mesurée. C'est ça qui est surprenant avec le fleuve : on ne sait jamais ce qui va prendre.",
@@ -333,8 +333,8 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "Une barbue de rivière de 7 livres prise de nuit sur le fleuve. La longueur n'a pas été mesurée.",
-      "en": "A 7-pound channel catfish taken at night on the St. Lawrence. Its length was not measured."
+      "fr": "Le record personnel de Kevin Caron. Une barbue de rivière de 7 livres prise de nuit sur le fleuve. La longueur n'a pas été mesurée.",
+      "en": "Kevin Caron's personal best. A 7-pound channel catfish taken at night on the St. Lawrence. Its length was not measured."
     },
     "story": {
       "fr": "Troisième espèce de la même journée, le 4 juillet 2025. On est restés sur l'eau jusqu'à un peu passé minuit, et la barbue est venue dans le noir. La soirée avait fraîchi pour de bon : après une journée d'averses, l'humidité finit par passer à travers le linge. On visait l'achigan et le doré depuis le début de l'après-midi, et on est repartis avec un maskinongé de 45 pouces, un malachigan et cette barbue de rivière — la meilleure journée de l'équipe en variété d'espèces. Sept livres, la longueur n'a pas été mesurée. Comme le malachigan, c'est une espèce que peu de monde cible volontairement, et comme le malachigan, elle donne un combat qui surprend ceux qui n'en ont jamais accroché une. Tout ça sur le même bout de fleuve, en une seule sortie.",
@@ -513,8 +513,8 @@
     "measure": "",
     "date": "2025-07-04",
     "water": {
-      "fr": "",
-      "en": ""
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
     },
     "event": "",
     "media": {
