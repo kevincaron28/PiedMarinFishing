@@ -2902,6 +2902,48 @@ body.has-lightbox { overflow: hidden; }
 .season-over p { margin: 0; font-size: 0.92rem; }
 .season-over-head { font-weight: 700; color: var(--ink-900); margin-bottom: 4px !important; }
 
+/* Page « Notre histoire » : du texte, et rien d'autre. */
+.story-lead { font-size: 1.08rem; max-width: 62ch; }
+.story-body { max-width: 64ch; }
+.story-body p { margin: 0 0 14px; line-height: 1.7; }
+.story-body p:last-child { margin-bottom: 0; }
+
+/* Le bandeau « par espèce » du guide. */
+.sh-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: -8px 0 22px; }
+.sh-nav-lead { font-size: 0.85rem; font-weight: 700; color: var(--ink-900); }
+.sh-chip {
+  display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px;
+  border-radius: 999px; border: 1px solid var(--line); background: var(--white);
+  font-size: 0.82rem; font-weight: 700; color: var(--navy-900); text-decoration: none;
+}
+.sh-chip:hover { border-color: var(--teal-400); color: var(--teal-600); text-decoration: none; }
+.sh-chip-n {
+  font-weight: 600; font-size: 0.74rem; color: var(--ink-600);
+  background: var(--sand-100); border-radius: 999px; padding: 1px 7px;
+}
+
+/* Pages « les tournois de X au Québec ». */
+.sh-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.sh-list li { margin: 0; }
+.sh-list a, .sh-flat {
+  display: block; padding: 12px 16px; background: var(--white);
+  border: 1px solid var(--line); border-radius: 12px; text-decoration: none;
+}
+.sh-list a:hover { border-color: var(--teal-400); text-decoration: none; }
+.sh-name { display: block; font-weight: 700; color: var(--ink-900); }
+.sh-list a:hover .sh-name { color: var(--teal-600); }
+.sh-meta { display: block; font-size: 0.86rem; color: var(--ink-600); margin-top: 3px; }
+/* Une entrée sans fiche reste lisible mais ne fait pas semblant d'être un
+   lien : pas de survol, pas de curseur, rien à cliquer. */
+.sh-flat { color: var(--ink-600); background: transparent; }
+.sh-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.sh-tag {
+  display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px;
+  border-radius: 999px; background: var(--sand-100); border: 1px solid var(--line);
+  font-size: 0.8rem; font-weight: 600; color: var(--navy-900);
+}
+.sh-tag-n { font-weight: 600; font-size: 0.74rem; color: var(--ink-600); }
+
 /* Page saison : qu'est-ce qui est ouvert. */
 .season-group { margin-bottom: 34px; }
 .season-group:last-of-type { margin-bottom: 0; }
