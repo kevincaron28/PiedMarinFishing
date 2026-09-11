@@ -39,10 +39,12 @@
         "fr": "Maskinongé dans l'épuisette, remis à l'eau",
         "en": "Muskie in the net, released"
       },
-      "date": "",
+      "date": "2025-07-04",
       "published": "2026-09-07",
       "featured": false,
-      "reviewed": false
+      "reviewed": true,
+      "angler": "bobe",
+      "catch": "maskinonge-bobe"
     }
   ]
 }
