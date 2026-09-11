@@ -253,9 +253,30 @@ img { max-width: 100%; display: block; }
   /* Le fond defilait sous le tiroir ouvert : on ouvrait le menu, on glissait
      le pouce, et c'est la page derriere qui bougeait. Le verrou est pose ici
      et pas en JavaScript, pour qu'il n'existe QUE tant que le tiroir existe —
-     un overflow en ligne se serait aussi applique sur ecran large. */
+     un overflow en ligne se serait aussi applique sur ecran large.
+
+     CLIP, PAS HIDDEN. `overflow: hidden` sur la racine lui retire son role de
+     conteneur de defilement, et `position: sticky` n'a alors plus rien a quoi
+     se tenir : mesure a 390 px, l'en-tete retombait a sa place dans le flux,
+     900 px au-dessus de l'ecran, EMPORTANT le bouton ☰ et le tiroir qu'on
+     venait d'ouvrir. Le menu s'ouvrait — hors champ. Il ne se voyait qu'en
+     haut de page, la ou le flux et le collant coincident.
+     `overflow: clip` bloque le defilement sans creer de conteneur : le collant
+     tient. Un navigateur trop vieux pour `clip` ignore la declaration et
+     retombe sur l'ancienne petite gene, jamais sur le tiroir invisible. */
   html.nav-open,
-  html.nav-open body { overflow: hidden; }
+  html.nav-open body { overflow: clip; }
+
+  /* Le tiroir porte onze items : ~520 px. Un telephone couche n'a que 390 px
+     de haut, et le verrou ci-dessus l'empeche de defiler la page pour aller
+     chercher le bas. Il defile donc lui-meme. Le `100%` est celui du bloc
+     contenant — l'en-tete —, donc sa hauteur : ce qui reste de l'ecran. */
+  .nav-links {
+    max-height: calc(100vh - 100%);
+    max-height: calc(100dvh - 100%);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
   /* Le tiroir porte les onze items : il en reste de la place. */
   .nav-extra { display: block; }
   .nav-extra-first {

@@ -327,11 +327,29 @@ Plus `aria-controls` absent : le bouton annonçait « replié » sans jamais
 nommer ce qu'il repliait. Il exige un `id`, donc `id="nav-menu"` est sur la
 liste dans les 116 pages **et** dans `NAV`.
 
-Deux détails qui se paient si on les oublie :
+Quatre détails qui se paient si on les oublie :
 
 - **Le verrou du défilement est en CSS**, sous la requête média
-  (`html.nav-open { overflow: hidden }`), pas en JavaScript. Un `overflow` posé
+  (`html.nav-open { overflow: clip }`), pas en JavaScript. Un `overflow` posé
   en ligne se serait aussi appliqué sur écran large, où le tiroir n'existe pas.
+- **`clip`, jamais `hidden`.** C'est le mot qui a coûté le plus cher du lot.
+  `overflow: hidden` sur la racine lui retire son rôle de conteneur de
+  défilement, et `position: sticky` n'a alors plus rien à quoi se tenir :
+  l'en-tête retombe à sa place dans le flux, c'est-à-dire tout en haut du
+  document. Mesuré à 390 px, page à 900 : l'en-tête partait à **y=−900**,
+  **emportant le bouton ☰ et le tiroir qu'on venait d'ouvrir**. Le menu
+  s'ouvrait — hors champ, et le verrou empêchait de remonter le chercher. Il ne
+  marchait qu'en haut de page, là où le flux et le collant coïncident, ce qui
+  le faisait passer pour un bug intermittent. `overflow: clip` bloque le
+  défilement **sans** créer de conteneur : le collant tient. Un navigateur trop
+  vieux pour `clip` ignore la déclaration et retombe sur la petite gêne d'avant,
+  jamais sur le tiroir invisible.
+- **Le tiroir défile lui-même.** Onze items font ~583 px; un téléphone couché
+  n'a que 390 px de haut, et le verrou ci-dessus lui interdit de défiler la
+  page pour aller chercher le bas. `max-height: calc(100dvh - 100%)` +
+  `overflow-y: auto` sur `.nav-links` — le `100%` est celui du bloc contenant,
+  l'en-tête, donc sa hauteur. Sans ça « Réseaux » était à 639 px dans un écran
+  de 390 : présent dans le DOM, inatteignable au pouce.
 - **La tabulation tourne dans `.nav`, pas dans `.nav-links`** — le
   commutateur de langue est dans `.nav-actions`, et ouvrir le menu ne doit pas
   empêcher de changer de langue.
@@ -499,6 +517,17 @@ de TFO est le retrait des métadonnées et une compression sans perte —
 vérifiée pixel par pixel contre la source. La version noire fournie était en
 RGB avec fond opaque et apparaîtrait dans un rectangle blanc : elle n'entre
 pas, c'est la RGBA transparente qui sert.
+
+**Et c'est la VARIANTE que le navigateur sert, pas le maître.** Le fichier
+d'origine peut être parfait pendant que la page affiche une horreur :
+`tools/build-image-variants.py` appelait `im.convert("RGB")` sur toute image
+avant de la réduire, ce qui n'a rien de neutre sur un PNG à canal alpha — ça
+**aplatit la transparence sur du NOIR**. `tfo.png` était intact en 1600×636
+RGBA, et les trois variantes sortaient opaques : `srcset` servait `tfo-800.png`,
+donc un logo dans un rectangle noir. La conversion ne se fait plus que vers le
+JPEG, qui ne sait pas porter d'alpha (`for_resize()`), et le script **refuse de
+finir** si une source transparente ressort opaque — la vérification est dans le
+générateur, pas dans l'œil de celui qui regarde la page.
 
 **Pas d'adresse, pas de lien.** Un lien mort sous le logo d'une marque est
 pire que pas de lien. `url` vide rend une `<div>`, pas un `<a>`.

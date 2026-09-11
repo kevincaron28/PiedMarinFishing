@@ -36,6 +36,24 @@ QUALITY = 82
 EXTS = (".jpg", ".jpeg", ".png")
 
 
+def for_resize(im, rel):
+    """Prépare une image pour LANCZOS sans lui enlever ce qu'elle a.
+
+    `convert("RGB")` sur une image à canal alpha ne « simplifie » pas : il
+    APLATIT la transparence sur du NOIR. Un logo de marque fourni en RGBA
+    transparent est ressorti sur un rectangle noir dans ses trois variantes,
+    alors que le fichier maître, lui, était intact — et c'est la variante que
+    srcset sert. Un PNG à alpha reste donc en RGBA de bout en bout; seul un
+    JPEG, qui ne sait pas porter d'alpha, est ramené en RGB.
+    """
+    if rel.lower().endswith(".png") and (im.mode in ("RGBA", "LA")
+                                         or "transparency" in im.info):
+        return im if im.mode == "RGBA" else im.convert("RGBA")
+    if im.mode not in ("RGB", "L"):
+        return im.convert("RGB")
+    return im
+
+
 def variant_path(src, width):
     stem, ext = os.path.splitext(src)
     return "%s-%d%s" % (stem, width, ext)
@@ -53,8 +71,7 @@ def cap_source(rel, report):
     if im.width <= MAX_SOURCE:
         return im
     avant = os.path.getsize(src)
-    if im.mode not in ("RGB", "L"):
-        im = im.convert("RGB")
+    im = for_resize(im, rel)
     petite = im.resize((MAX_SOURCE, round(MAX_SOURCE * im.height / im.width)), Image.LANCZOS)
     buf = io.BytesIO()
     if rel.lower().endswith(".png"):
@@ -76,8 +93,8 @@ def cap_source(rel, report):
 def build(rel, report):
     src = os.path.join(REPO, rel)
     im = cap_source(rel, report)
-    if im.mode not in ("RGB", "L"):
-        im = im.convert("RGB")
+    alpha = im.mode in ("RGBA", "LA") or "transparency" in im.info
+    im = for_resize(im, rel)
     widths = [w for w in WIDTHS if w < im.width]
     for w in widths:
         out_rel = variant_path(rel, w)
@@ -90,6 +107,11 @@ def build(rel, report):
             small.save(out, "PNG", optimize=True)
         else:
             small.save(out, "JPEG", quality=QUALITY, optimize=True, progressive=True)
+        # Une source transparente qui ressort opaque a ete alteree. On le dit
+        # ici plutot que de le decouvrir sur la page.
+        if alpha and Image.open(out).mode not in ("RGBA", "LA"):
+            raise SystemExit("ALPHA PERDU : %s sort opaque alors que %s est "
+                             "transparente." % (out_rel, rel))
         report.append((out_rel, os.path.getsize(out)))
     # La largeur d'origine ferme la liste : c'est elle que srcset sert en haut
     # de gamme, sous son nom de fichier normal.
