@@ -50,7 +50,10 @@ def nav_for(current="team.html"):
     # La marque pointe elle aussi sur index.html et vient AVANT la liste : on
     # ne cherche l'onglet qu'a partir du <ul>, sinon nav_for("index.html")
     # decorerait l'ecusson.
-    head, sep, tail = html.partition('<ul class="nav-links">')
+    # On coupe sur le debut de balise seulement : la liste a gagne un id
+    # (aria-controls), et chercher la balise complete a fait echouer le
+    # generateur — bruyamment, ce qui valait mieux qu'un menu faux.
+    head, sep, tail = html.partition('<ul class="nav-links"')
     needle = 'href="%s"' % current
     if needle not in tail:
         raise SystemExit("nav_for : aucun onglet %s dans le menu" % current)

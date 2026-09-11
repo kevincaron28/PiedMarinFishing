@@ -262,6 +262,53 @@ départage, deux vidéos datées « 2025 » se classaient à l'envers.
 
 ---
 
+## Le tiroir est un menu, pas une classe CSS
+
+`initNavDrawer()` dans `assets/js/main.js`. Il n'était qu'un `classList.toggle`.
+Mesuré sur un téléphone, **cinq comportements attendus manquaient** :
+
+| | |
+|---|---|
+| Échap | ne fermait rien |
+| un geste à côté | ne fermait rien |
+| le focus | ne revenait pas au bouton après fermeture |
+| la tabulation | sortait du menu ouvert vers la page derrière |
+| **le fond** | **défilait sous le tiroir** — on ouvre, on glisse le pouce, c'est la page qui bouge |
+
+Plus `aria-controls` absent : le bouton annonçait « replié » sans jamais
+nommer ce qu'il repliait. Il exige un `id`, donc `id="nav-menu"` est sur la
+liste dans les 116 pages **et** dans `NAV`.
+
+Deux détails qui se paient si on les oublie :
+
+- **Le verrou du défilement est en CSS**, sous la requête média
+  (`html.nav-open { overflow: hidden }`), pas en JavaScript. Un `overflow` posé
+  en ligne se serait aussi appliqué sur écran large, où le tiroir n'existe pas.
+- **La tabulation tourne dans `.nav`, pas dans `.nav-links`** — le
+  commutateur de langue est dans `.nav-actions`, et ouvrir le menu ne doit pas
+  empêcher de changer de langue.
+
+`matchMedia` remet tout à zéro en repassant au-dessus de 1100 px : sans ça,
+`open`, `nav-open` et `aria-expanded` restaient dans un état que plus rien
+n'affichait.
+
+**Cibles tactiles : 44 px, pas 24.** WCAG 2.5.8 (AA) demande 24 px et était
+respecté — c'est pourquoi `taps.js` ne signalait rien. Mais les liens
+faisaient 42 px, le bouton ☰ 39 et les boutons de langue **32**. 2.5.5 vise
+44, et c'est la vraie cible au pouce.
+
+**Pas de « retour en haut », et c'est réglé.** L'en-tête est `sticky` :
+mesuré tout en bas du guide (11,7 écrans sur téléphone), il est encore à
+`y=0` et le bouton ☰ reste atteignable. Le menu est à deux gestes de
+n'importe quel point de n'importe quelle page.
+
+**Un seul site, responsive.** Pas de version mobile séparée : le menu est
+écrit en dur dans 116 pages et un gabarit, et le dédoubler ferait 232 endroits
+à tenir, deux sitemaps, et couperait en deux le référencement d'une page que
+Google vient d'indexer.
+
+---
+
 ## Les seuils, et pourquoi ils existent
 
 Une page mince nuit plus qu'elle n'aide. Chaque générateur porte un seuil.

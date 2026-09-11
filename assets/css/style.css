@@ -189,6 +189,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.05em;
   padding: 9px 12px;
+  min-height: 44px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
 }
@@ -198,12 +199,18 @@ img { max-width: 100%; display: block; }
   color: var(--navy-950);
 }
 
+/* Mesure au doigt, pas a l'oeil : le bouton faisait 44x39 et les deux
+   boutons de langue 43x32. WCAG 2.5.8 (AA) demande 24 px et etait respecte,
+   mais 2.5.5 vise 44 et c'est la vraie cible sur un telephone — 32 px de haut
+   pour changer de langue, c'est un bouton qu'on rate. La largeur, elle,
+   tenait deja. */
 .nav-toggle {
   display: none;
   background: none;
   border: 1px solid rgba(255,255,255,0.3);
   border-radius: 8px;
   padding: 8px 10px;
+  min-height: 44px;
   color: var(--white);
   font-family: inherit;
   font-size: 0.9rem;
@@ -235,7 +242,20 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .nav-links.open { display: flex; }
-  .nav-links a { padding: 12px 8px; }
+  .nav-links a {
+    padding: 12px 8px;
+    /* Les liens faisaient 42 px : deux de moins que la cible. */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Le fond defilait sous le tiroir ouvert : on ouvrait le menu, on glissait
+     le pouce, et c'est la page derriere qui bougeait. Le verrou est pose ici
+     et pas en JavaScript, pour qu'il n'existe QUE tant que le tiroir existe —
+     un overflow en ligne se serait aussi applique sur ecran large. */
+  html.nav-open,
+  html.nav-open body { overflow: hidden; }
   /* Le tiroir porte les onze items : il en reste de la place. */
   .nav-extra { display: block; }
   .nav-extra-first {
