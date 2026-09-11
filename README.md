@@ -194,6 +194,14 @@ they stay in sync.
   placeholder photo), `bio`, and a `specs` block. Swap `initials`
   for a real headshot by editing the `member-photo` markup in
   `assets/js/team.js` if you add photo files under `assets/img/`.
+- **YouTube videos** → `data/videos.json`. Set `channelId` once (the `UC…`
+  string from the channel page source) and `.github/workflows/youtube.yml`
+  adds new uploads daily via `tools/fetch-youtube.py`. Hand-written fields —
+  bilingual `title`, `orientation`, `angler`, `catch`, `featured` — are never
+  overwritten; a year-only `date` is the one field the feed may complete.
+  New entries carry `reviewed: false` until someone writes the English title
+  and confirms the orientation. Run `python3 tools/test-youtube.py` (34
+  checks) after touching the fetcher.
 - **Social links** → `data/socials.json`. `icon` must be one of
   `instagram`, `facebook`, `youtube`, `tiktok`, `mail` (see `social.html`),
   or add a new SVG to the `ICONS` map there.

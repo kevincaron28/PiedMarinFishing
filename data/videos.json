@@ -1,5 +1,6 @@
 {
   "channelUrl": "https://youtube.com/@piedmarinfishing",
+  "channelId": "",
   "videos": [
     {
       "id": "peche-de-nuit-musky",
@@ -11,7 +12,8 @@
       },
       "angler": "kevin-caron",
       "date": "2025",
-      "featured": false
+      "featured": false,
+      "reviewed": true
     },
     {
       "id": "fin-saison-2025-musky",
@@ -23,8 +25,9 @@
       },
       "angler": "kevin-b",
       "date": "2025",
-      "featured": true,
-      "catch": "maskinonge-kevin-b"
+      "featured": false,
+      "catch": "maskinonge-kevin-b",
+      "reviewed": true
     }
   ]
 }

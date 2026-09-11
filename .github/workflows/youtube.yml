@@ -1,0 +1,78 @@
+# Va chercher les nouvelles vidéos de la chaîne et les commite.
+#
+# Le flux Atom de YouTube est public et sans jeton, mais il ne porte aucun
+# en-tête CORS : une page ne peut pas le lire elle-même. On le lit donc ici,
+# une fois par jour, et on écrit le résultat dans le dépôt. Le site continue
+# de lire un fichier local — aucun script tiers, aucun témoin, aucun jeton
+# dans le navigateur du visiteur.
+#
+# Rien à configurer : pas de secret, pas de clé d'API. Tant que
+# data/videos.json n'a pas d'identifiant de chaîne, le script le dit et
+# s'arrête sans rien changer.
+name: Vidéos YouTube
+
+on:
+  schedule:
+    # 11 h UTC, soit 6 h ou 7 h au Québec selon la saison. Une fois par jour
+    # suffit largement : la chaîne publie quelques fois par mois.
+    - cron: "0 11 * * *"
+  workflow_dispatch:
+
+# Le seul droit dont l'action a besoin, et elle ne touche qu'à data/ et au
+# sitemap.
+permissions:
+  contents: write
+
+concurrency:
+  group: youtube-feed
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # build-sitemap.py lit « git log » pour dater chaque page : un clone
+          # superficiel lui donnerait la date du clone.
+          fetch-depth: 0
+
+      - name: Contrôles du lecteur de flux
+        run: python3 tools/test-youtube.py
+
+      - name: Chercher les nouvelles vidéos
+        run: python3 tools/fetch-youtube.py
+
+      - name: Rien n'a bougé ?
+        id: diff
+        run: |
+          if git diff --quiet -- data/videos.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "Aucune nouveauté."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Les contrôles du dépôt tournent AVANT le commit : une vidéo ajoutée ne
+      # doit pas pouvoir casser un lien ni faire dériver un texte français.
+      - name: Contrôles du dépôt
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          python3 tools/sync-html-fallbacks.py --check
+          python3 tools/check-private.py
+          python3 tools/check-links.py
+
+      - name: Redater le sitemap
+        if: steps.diff.outputs.changed == 'true'
+        run: python3 tools/build-sitemap.py
+
+      - name: Commiter
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/videos.json sitemap.xml
+          git commit \
+            -m "Nouvelles vidéos de la chaîne YouTube" \
+            -m "Ajoutées depuis le flux Atom par .github/workflows/youtube.yml. Les entrées existantes ne sont jamais modifiées; les nouvelles portent reviewed: false tant que le titre anglais et l'orientation n'ont pas été relus à la main."
+          git push

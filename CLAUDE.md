@@ -166,6 +166,50 @@ la page a besoin d'une place permanente dans le menu : son seul lien entrant
 
 ---
 
+## Le seul automate du dépôt : le flux YouTube
+
+`.github/workflows/youtube.yml` appelle `tools/fetch-youtube.py` une fois par
+jour, qui ajoute les nouvelles vidéos dans `data/videos.json` et commite.
+
+**Pourquoi pas dans le navigateur.** Le flux Atom de YouTube est public et
+sans jeton, mais il ne porte aucun en-tête CORS — une page ne peut pas le
+lire. Passer par un relais tiers ferait transiter nos visiteurs par un service
+qu'on ne contrôle pas, pour un fichier qui change une fois par mois. On le lit
+donc dans l'action et on écrit le résultat dans le dépôt : le site continue de
+lire un fichier local, et la position d'`analytics.js` — un seul script tiers,
+sans témoin, pas de bandeau de consentement — tient toujours.
+
+**Ce que le robot ne fait jamais.** Il n'écrase aucune entrée existante. Le
+titre bilingue, `orientation`, `angler`, `catch` et `featured` sont écrits à
+la main; le flux ne donne qu'un titre, dans une seule langue. Une vidéo déjà
+connue est laissée telle quelle.
+
+**La seule exception**, et elle ne porte pas sur de l'éditorial : une `date`
+d'année seule (« 2025 ») est complétée par la date exacte du flux. La date de
+publication appartient à YouTube. Une date déjà précise au jour n'est jamais
+retouchée, et une année qui **contredit** le flux est signalée, pas corrigée.
+
+**Les garde-fous, tous testés dans `tools/test-youtube.py` (34 contrôles) :**
+
+| | |
+|---|---|
+| `channelId` absent | le script explique où le trouver et sort en 0 — rien n'est deviné |
+| `channelId` mal formé | refus (il faut `UC` + 22 caractères) |
+| identifiant de vidéo ≠ 11 caractères | l'entrée est ignorée — `video.js` retomberait sans bruit sur le bloc « bientôt » |
+| `#shorts` dans le titre | `orientation: "portrait"`, seule indication fiable de verticalité |
+| flux illisible ou vide | code de sortie non nul, rien n'est écrit |
+
+**L'accueil suit la plus récente, plus « la première du tableau ».** Le robot
+ajoute en fin de liste : « la première » serait devenue la plus vieille, alors
+que la section s'appelle « Notre dernière vidéo ». `videosByDate()` dans
+`video.js` trie par date, et **à égalité c'est la dernière du fichier qui
+gagne** — l'ordre du fichier est déjà chronologique. Sans cette règle de
+départage, deux vidéos datées « 2025 » se classaient à l'envers.
+
+`featured: true` reste une épingle manuelle et **court-circuite** le tri.
+
+---
+
 ## Les seuils, et pourquoi ils existent
 
 Une page mince nuit plus qu'elle n'aide. Chaque générateur porte un seuil.
@@ -205,6 +249,7 @@ python3 tools/sync-html-fallbacks.py --check   # 0 divergence
 python3 tools/check-private.py                 # 0 identifiant, 0 prénom de mineure
 python3 tools/check-links.py                   # 0 lien cassé, 0 speciesId orphelin
 node    tools/test-season.js                   # 30 contrôles du moteur de saison
+python3 tools/test-youtube.py                  # 34 contrôles du lecteur de flux
 ```
 
 Puis, si le rendu a changé, la suite Playwright du bac à sable

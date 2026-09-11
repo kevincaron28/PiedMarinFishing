@@ -17,6 +17,25 @@ async function loadVideos() {
   }
 }
 
+// Les vidéos de la plus récente à la plus ancienne.
+//
+// Une date partielle (« 2025 ») se compare en la complétant, comme partout
+// ailleurs sur le site : elle vaut alors la fin de son année. Deux vidéos de
+// la même année s'y retrouvent donc à égalité — et c'est le cas aujourd'hui.
+// À égalité, la DERNIÈRE du fichier gagne : tools/fetch-youtube.py ajoute en
+// fin de liste, donc l'ordre du fichier est déjà chronologique. Sans cette
+// règle, le départage revenait à l'ordre du tableau, c'est-à-dire à l'envers.
+function videosByDate(videos) {
+  return (videos || [])
+    .map((v, i) => ({ v, i }))
+    .sort((a, b) => sortableDate(b.v.date).localeCompare(sortableDate(a.v.date)) || b.i - a.i)
+    .map((x) => x.v);
+}
+
+function newestVideo(videos) {
+  return videosByDate(videos)[0];
+}
+
 async function initFeaturedVideo(selector) {
   const host = document.querySelector(selector);
   if (!host) return;
@@ -25,11 +44,16 @@ async function initFeaturedVideo(selector) {
   const { t, tr } = PMF_I18N;
 
   const all = await loadVideos();
-  // La vedette, sinon la première de la liste — l'accueil montre toujours
-  // quelque chose tant qu'il y a une vidéo.
+  // La vedette si quelqu'un en a choisi une, sinon LA PLUS RÉCENTE.
+  //
+  // C'était « la première de la liste », ce qui marchait tant que la liste
+  // était tenue à la main. tools/fetch-youtube.py ajoute maintenant les
+  // nouveautés à la FIN : « la première » serait devenue la plus vieille, et
+  // la section s'appelle « Notre dernière vidéo ». Le titre doit rester vrai
+  // tout seul.
   const data = Object.assign(
     { channelUrl: all.channelUrl },
-    all.videos.find((v) => v.featured) || all.videos[0] || {});
+    all.videos.find((v) => v.featured) || newestVideo(all.videos) || {});
 
   // Accept a bare id or a full YouTube URL, whichever got pasted in.
   function extractId(value) {
@@ -136,7 +160,7 @@ async function initVideoList(options) {
       return;
     }
     if (section) section.hidden = false;
-    list.innerHTML = videos.map((v) => {
+    list.innerHTML = videosByDate(videos).map((v) => {
       const id = encodeURIComponent(v.videoId);
       const title = tr(v.title) || t("videos.untitled");
       const when = v.date ? longDate(v.date, PMF_I18N.lang) : "";
