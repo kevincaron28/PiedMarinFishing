@@ -61,17 +61,26 @@ CHANNEL_RX = re.compile(r"^UC[A-Za-z0-9_-]{22}$")
 # la vraie. Ce qui n'a pas la bonne forme n'entre pas dans le fichier.
 VIDEO_RX = re.compile(r"^[A-Za-z0-9_-]{11}$")
 
+# La page d'une chaîne porte son identifiant à plusieurs endroits. Le lien
+# canonique est le plus stable des quatre — c'est le seul qui soit du HTML et
+# non du JavaScript embarqué — alors on l'essaie en premier.
+ID_PATTERNS = [
+    re.compile(r'<link[^>]+rel="canonical"[^>]+href="https://www\.youtube\.com/channel/(UC[\w-]{22})"'),
+    re.compile(r'"externalId"\s*:\s*"(UC[\w-]{22})"'),
+    re.compile(r'<meta[^>]+itemprop="identifier"[^>]+content="(UC[\w-]{22})"'),
+    re.compile(r'"channelId"\s*:\s*"(UC[\w-]{22})"'),
+]
+
 WHERE_TO_FIND = """\
-Aucun identifiant de chaîne dans data/videos.json (champ « channelId »).
+Aucun identifiant de chaîne, et aucune adresse de chaîne pour le trouver.
 
-Pour le trouver : ouvre https://www.youtube.com/@piedmarinfishing, clic droit
-« Afficher le code source », cherche « channelId ». C'est la chaîne qui
-commence par UC et fait 24 caractères. Colle-la dans data/videos.json :
+Remplis l'un des deux dans data/videos.json :
 
-    "channelId": "UC..."
+    "channelUrl": "https://youtube.com/@piedmarinfishing"   (le script en déduit l'identifiant)
+    "channelId":  "UC..."                                    (si tu l'as déjà)
 
-Sans elle, ce script ne fait rien — et c'est voulu : il vaut mieux ne rien
-ajouter que deviner une chaîne."""
+Sans l'un des deux, ce script ne fait rien — et c'est voulu : il vaut mieux ne
+rien ajouter que deviner une chaîne."""
 
 
 def load():
@@ -114,14 +123,41 @@ def entries(xml_text):
     return out
 
 
-def fetch(channel_id):
+def get(url):
+    """Lit une page. Sans en-tete d'agent, YouTube repond parfois une erreur."""
     import urllib.request
     req = urllib.request.Request(
-        FEED % channel_id,
-        # Sans en-tête d'agent, YouTube répond parfois une page d'erreur.
-        headers={"User-Agent": "PiedMarinFishing/1.0 (+https://piedmarinfishing.com)"})
+        url,
+        headers={"User-Agent": "PiedMarinFishing/1.0 (+https://piedmarinfishing.com)",
+                 "Accept-Language": "fr-CA,fr;q=0.9,en;q=0.8"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        return r.read().decode("utf-8")
+        charset = r.headers.get_content_charset() or "utf-8"
+        return r.read().decode(charset, "replace")
+
+
+def channel_id_in(html):
+    """L'identifiant UC... trouve dans la page d'une chaine, sinon ''."""
+    for rx in ID_PATTERNS:
+        m = rx.search(html)
+        if m and CHANNEL_RX.match(m.group(1)):
+            return m.group(1)
+    return ""
+
+
+def resolve_channel_id(channel_url):
+    """Deduit l'identifiant a partir de l'adresse @handle de la chaine.
+
+    Le flux Atom veut un « UC... » et rien d'autre : ni le @handle, ni
+    l'adresse. Le trouver a la main demande de lire le code source d'une page,
+    ce qui n'est pas faisable sur un telephone. L'action, elle, a le reseau :
+    elle le fait une fois et l'ecrit dans data/videos.json. Les fois suivantes
+    le champ est deja rempli et cette fonction n'est plus appelee.
+    """
+    return channel_id_in(get(channel_url))
+
+
+def fetch(channel_id):
+    return get(FEED % channel_id)
 
 
 def precise_dates(videos, by_id):
@@ -197,14 +233,33 @@ def main():
 
     data = load()
     channel_id = (data.get("channelId") or "").strip()
+    channel_url = (data.get("channelUrl") or "").strip()
+    resolved = False
 
     if args.from_file:
         with io.open(args.from_file, encoding="utf-8") as fh:
             xml_text = fh.read()
     else:
         if not channel_id:
-            print(WHERE_TO_FIND)
-            return 0
+            if not channel_url:
+                print(WHERE_TO_FIND)
+                return 0
+            print("Aucun channelId — on le cherche sur %s" % channel_url)
+            try:
+                channel_id = resolve_channel_id(channel_url)
+            except Exception as exc:
+                print("Page de la chaîne injoignable : %s" % exc, file=sys.stderr)
+                return 1
+            if not channel_id:
+                print("L'identifiant n'est pas dans la page de %s.\n"
+                      "YouTube a peut-être changé sa mise en page. Mets-le à la "
+                      "main dans data/videos.json :\n    \"channelId\": \"UC...\""
+                      % channel_url, file=sys.stderr)
+                return 1
+            print("Trouvé : %s — il sera écrit dans data/videos.json." % channel_id)
+            data["channelId"] = channel_id
+            resolved = True
+
         if not CHANNEL_RX.match(channel_id):
             print("channelId « %s » n'a pas la forme d'un identifiant YouTube "
                   "(UC + 22 caractères)." % channel_id, file=sys.stderr)
@@ -239,7 +294,8 @@ def main():
             print("  ~ %-13s date précisée : « %s » → « %s »"
                   % (v["videoId"], before or "(vide)", after))
 
-    if not added and not any(not c for _, _, _, c in dated):
+    changed = bool(added) or any(not c for _, _, _, c in dated) or resolved
+    if not changed:
         return 0
 
     for v in added:

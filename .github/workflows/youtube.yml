@@ -6,9 +6,9 @@
 # de lire un fichier local — aucun script tiers, aucun témoin, aucun jeton
 # dans le navigateur du visiteur.
 #
-# Rien à configurer : pas de secret, pas de clé d'API. Tant que
-# data/videos.json n'a pas d'identifiant de chaîne, le script le dit et
-# s'arrête sans rien changer.
+# Rien à configurer : pas de secret, pas de clé d'API, et même pas
+# l'identifiant de la chaîne — au premier passage le script le déduit de
+# « channelUrl » et l'écrit dans data/videos.json.
 name: Vidéos YouTube
 
 on:

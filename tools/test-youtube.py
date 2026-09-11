@@ -167,6 +167,28 @@ check("entrée sans videoId ignorée", yt.entries(
     '<feed xmlns="http://www.w3.org/2005/Atom" xmlns:yt="http://www.youtube.com/xml/schemas/2015">'
     '<entry><title>t</title></entry></feed>') == [])
 
+print("\n--- l'identifiant se déduit de la page de la chaîne ---")
+REAL = "UCaBcDeFgHiJkLmNoPqRsTuV"
+shapes = {
+    "lien canonique": '<link rel="canonical" href="https://www.youtube.com/channel/%s">' % REAL,
+    "externalId": '{"externalId":"%s","title":"Pied Marin Fishing"}' % REAL,
+    "meta itemprop": '<meta itemprop="identifier" content="%s">' % REAL,
+    "channelId dans le JS": 'var x = {"channelId": "%s"};' % REAL,
+}
+for nom, html in shapes.items():
+    check("trouvé par %s" % nom, yt.channel_id_in("<html>" + html + "</html>") == REAL,
+          yt.channel_id_in(html))
+
+check("le lien canonique l'emporte sur un autre identifiant plus haut",
+      yt.channel_id_in(
+          '"channelId":"UCzzzzzzzzzzzzzzzzzzzzzz"'
+          '<link rel="canonical" href="https://www.youtube.com/channel/%s">' % REAL) == REAL)
+check("page sans identifiant → chaîne vide", yt.channel_id_in("<html>rien ici</html>") == "")
+check("une page d'erreur ne donne rien",
+      yt.channel_id_in("<html><title>404 Not Found</title></html>") == "")
+check("un identifiant tronqué est refusé",
+      yt.channel_id_in('"externalId":"UCtroplcourt"') == "")
+
 print("\n--- la forme de l'identifiant de chaîne est contrôlée ---")
 check("UC + 22 accepté", bool(yt.CHANNEL_RX.match("UCaBcDeFgHiJkLmNoPqRsTuV")))
 check("un @handle refusé", not yt.CHANNEL_RX.match("@piedmarinfishing"))
@@ -174,5 +196,5 @@ check("une URL refusée", not yt.CHANNEL_RX.match("https://youtube.com/@piedmari
 check("trop court refusé", not yt.CHANNEL_RX.match("UCabc"))
 
 print("\n%d vérifications passées, %d échec(s)" % (
-    34 - len(fails), len(fails)))
+    42 - len(fails), len(fails)))
 sys.exit(1 if fails else 0)

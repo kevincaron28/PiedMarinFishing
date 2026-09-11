@@ -189,11 +189,21 @@ d'année seule (« 2025 ») est complétée par la date exacte du flux. La date 
 publication appartient à YouTube. Une date déjà précise au jour n'est jamais
 retouchée, et une année qui **contredit** le flux est signalée, pas corrigée.
 
-**Les garde-fous, tous testés dans `tools/test-youtube.py` (34 contrôles) :**
+**`channelId` se trouve tout seul.** Le flux veut un `UC…` et rien d'autre :
+ni le `@handle`, ni l'adresse de la chaîne. Le lire à la main demande
+d'ouvrir le code source d'une page — impossible sur un téléphone. Le script
+va donc chercher la page de `channelUrl`, en extrait l'identifiant et
+**l'écrit dans `data/videos.json`**. C'est fait une fois; ensuite le champ est
+rempli et la page de la chaîne n'est plus jamais lue. Quatre motifs sont
+essayés, le lien canonique d'abord — le seul qui soit du HTML et non du
+JavaScript embarqué.
+
+**Les garde-fous, tous testés dans `tools/test-youtube.py` (42 contrôles) :**
 
 | | |
 |---|---|
-| `channelId` absent | le script explique où le trouver et sort en 0 — rien n'est deviné |
+| `channelId` et `channelUrl` absents | le script dit quoi remplir et sort en 0 — rien n'est deviné |
+| page de chaîne sans identifiant | code non nul, et il dit de le mettre à la main |
 | `channelId` mal formé | refus (il faut `UC` + 22 caractères) |
 | identifiant de vidéo ≠ 11 caractères | l'entrée est ignorée — `video.js` retomberait sans bruit sur le bloc « bientôt » |
 | `#shorts` dans le titre | `orientation: "portrait"`, seule indication fiable de verticalité |
@@ -249,7 +259,7 @@ python3 tools/sync-html-fallbacks.py --check   # 0 divergence
 python3 tools/check-private.py                 # 0 identifiant, 0 prénom de mineure
 python3 tools/check-links.py                   # 0 lien cassé, 0 speciesId orphelin
 node    tools/test-season.js                   # 30 contrôles du moteur de saison
-python3 tools/test-youtube.py                  # 34 contrôles du lecteur de flux
+python3 tools/test-youtube.py                  # 42 contrôles du lecteur de flux
 ```
 
 Puis, si le rendu a changé, la suite Playwright du bac à sable
