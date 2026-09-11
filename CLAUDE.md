@@ -467,6 +467,35 @@ mur ne faisait PAS changer la phrase**, et le site continuait d'affirmer qu'on
 remet tout. La phrase décrit la pratique de l'équipe, pas le contenu du mur —
 elle doit voir les dix prises, pas les sept affichées.
 
+### « Ce qu'on pêche avec » n'est PAS la page des commanditaires
+
+`data/brands.json` + `assets/js/brands.js`, une section de `team.html`.
+**Deux fichiers, deux sens, et ils ne se croisent jamais** — `sponsors.js` lit
+`data/sponsors.json`, `brands.js` lit `data/brands.json`.
+
+TFO a ouvert un **compte guide** à l'équipe et autorise l'usage de son logo.
+Ce n'est pas une commandite. Écrire « Commanditaire » sous le logo d'une vraie
+compagnie affirmerait une entente commerciale que personne n'a dite, sur un
+site public. Le mot est venu de Kevin, pas de moi.
+
+Corollaire : quand une vraie commandite arrivera, elle a déjà sa place
+ailleurs, et rien ne se mélange.
+
+**Un logo de marque ne se retouche pas.** Ni recadrage, ni recoloration :
+`object-fit: contain`, jamais `cover`. La seule opération faite sur le fichier
+de TFO est le retrait des métadonnées et une compression sans perte —
+vérifiée pixel par pixel contre la source. La version noire fournie était en
+RGB avec fond opaque et apparaîtrait dans un rectangle blanc : elle n'entre
+pas, c'est la RGBA transparente qui sert.
+
+**Pas d'adresse, pas de lien.** Un lien mort sous le logo d'une marque est
+pire que pas de lien. `url` vide rend une `<div>`, pas un `<a>`.
+
+**Aucune affirmation sur ce qu'ils pêchent.** Le champ `note` est vide : la
+fiche de Kevin Caron porte une canne **Fenwick**, alors « les cannes de
+l'équipe sont des TFO » serait faux. Le titre de la section porte ce qu'il
+faut; le détail attend d'être vrai.
+
 ### Le journal des sorties : il pointe, il ne recopie pas
 
 `data/trips.json` + `assets/js/trips.js` + `sorties.html`. Le site avait deux

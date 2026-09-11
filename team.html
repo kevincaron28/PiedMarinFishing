@@ -99,6 +99,20 @@
   </div>
 </section>
 
+<!-- « Ce qu'on pêche avec » — les marques que l'équipe utilise, et rien de
+     plus. Ce n'est PAS la page des commanditaires : brands.js lit
+     data/brands.json, sponsors.js lit data/sponsors.json, et les deux ne se
+     croisent jamais. La section se retire d'elle-même si le fichier est vide. -->
+<section id="brands-section" hidden>
+  <div class="container">
+    <div class="section-head">
+      <h2 data-i18n="brands.title">Ce qu'on pêche avec</h2>
+      <p data-i18n="brands.intro">Les marques qu'on a au bout des bras. Rien de commandité ici — juste ce qui monte dans le bateau.</p>
+    </div>
+    <div id="brand-grid" class="brand-grid"></div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-bottom">
@@ -112,6 +126,7 @@
 <script src="assets/js/main.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/i18n.js"></script>
+<script src="assets/js/brands.js"></script>
 <script src="assets/js/search.js"></script>
 <script src="assets/js/history.js"></script>
 <script src="assets/js/catches.js"></script>
@@ -122,6 +137,7 @@
   initTeam("#team-grid");
   initNextGen("[data-nextgen-section]", "#nextgen-list");
   initBoats("#boat-list");
+  initBrands({ gridSelector: "#brand-grid", sectionSelector: "#brands-section" });
 </script>
 </body>
 </html>
