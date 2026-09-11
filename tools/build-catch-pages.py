@@ -264,6 +264,22 @@ def related(c, kept):
     return out
 
 
+def release_chip(c, ui):
+    """« Remis a l'eau » ou « Garde », d'apres le champ `released`.
+
+    Le champ est obligatoire (check-links.py). Il vaut true sur les dix prises
+    actuelles; le jour ou un dore est garde, sa fiche le dira et la phrase du
+    mur des prises, qui est calculee, changera avec elle. Une phrase figee
+    serait devenue fausse sans que personne ne s'en apercoive.
+    """
+    if not isinstance(c.get("released"), bool):
+        return ""
+    key = "catch.released" if c["released"] else "catch.kept"
+    cls = "catch-release" if c["released"] else "catch-release is-kept"
+    return '\n    <p><span class="%s" data-i18n="%s" data-en="%s">%s</span></p>' % (
+        cls, key, esc(ui["en"][key]), esc(ui["fr"][key]))
+
+
 def render(c, ui, members, events, kept, prev=None, nxt=None):
     title = {lang: title_of(c, lang, members) for lang in ("fr", "en")}
     h1 = {lang: headline(c, lang, members) for lang in ("fr", "en")}
@@ -338,7 +354,8 @@ def render(c, ui, members, events, kept, prev=None, nxt=None):
         "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["cp.kicker"]),
         "h1_fr": esc(h1["fr"]), "h1_en": esc(h1["en"]),
-        "sub": bilingual("p", c.get("water"), "tp-when") if pick(c.get("water"), "fr") else "",
+        "sub": (bilingual("p", c.get("water"), "tp-when") if pick(c.get("water"), "fr") else "")
+               + release_chip(c, ui),
         "body": "\n\n".join(body),
         "footer": pages.FOOTER,
     }

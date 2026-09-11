@@ -214,6 +214,15 @@ def orphans():
             out.append((c["id"], "(champ absent)", "aucun showcase : le mur ou la fiche?"))
         elif not isinstance(c["showcase"], bool):
             out.append((c["id"], repr(c["showcase"]), "showcase doit valoir true ou false"))
+        # released dit si le poisson est reparti a l'eau. La phrase du mur des
+        # prises est CALCULEE a partir de ce champ : un champ absent la ferait
+        # mentir dans le sens rassurant, en affirmant « on remet tout » alors
+        # qu'une prise ne l'aurait jamais dit. Meme logique que showcase : le
+        # silence est le mauvais defaut.
+        if "released" not in c:
+            out.append((c["id"], "(champ absent)", "aucun released : remis a l'eau ou garde?"))
+        elif not isinstance(c["released"], bool):
+            out.append((c["id"], repr(c["released"]), "released doit valoir true ou false"))
     return out
 
 

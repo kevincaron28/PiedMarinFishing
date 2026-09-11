@@ -400,6 +400,29 @@ est un `<figure>`, pas un `<a>`. L'ancre `catches.html#c-<id>` d'une prise
 retirée du mur menait à l'index et n'y trouvait rien — un lien mort que
 `check-links.py` ne peut pas voir, puisque la page, elle, existe.
 
+### `released` : la remise à l'eau se calcule, elle ne s'écrit pas
+
+Le champ est **obligatoire** sur chaque prise, comme `showcase` :
+
+| | |
+|---|---|
+| `released: true` | pastille « Remis à l'eau » sur la carte et sur la fiche |
+| `released: false` | pastille « Gardé » |
+| champ absent | `check-links.py` sort en code 1 |
+
+La phrase du haut du mur des prises est **dérivée** de ce champ : « On remet
+nos prises à l'eau… » tant que tout est à `true`, « …sauf indication contraire
+sur la fiche » dès qu'une prise passe à `false`. Une phrase figée serait
+devenue fausse en silence le jour où un doré est gardé — et fausse dans le
+sens qui rassure, ce qui est le pire.
+
+**Le calcul se fait sur `PMF_CATCHES.loadAll()`, pas sur `load()`.** `load()`
+retire les prises en `showcase: false`, qui ne montent pas sur le mur. La
+première version comptait dessus : simulée, **un doré gardé et laissé hors du
+mur ne faisait PAS changer la phrase**, et le site continuait d'affirmer qu'on
+remet tout. La phrase décrit la pratique de l'équipe, pas le contenu du mur —
+elle doit voir les dix prises, pas les sept affichées.
+
 **Le compte de mots juge mal une fiche-tableau.** Un audit avait recommandé de
 couper de 34 fiches de tournoi à 16 sur ce critère; en les lisant, deux
 seulement ne répondaient à rien. Une fiche de 150 mots qui donne le prix,

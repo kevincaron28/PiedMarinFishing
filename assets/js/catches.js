@@ -13,29 +13,51 @@
 
 const PMF_CATCHES = (() => {
   let cache = null;
+  let everything = null;
+
+  function fetchAll() {
+    if (!everything) {
+      everything = fetch("data/catches.json", DATA_FETCH)
+        .then((r) => r.json())
+        .then((rows) => rows.filter(Boolean))
+        .catch(() => []);
+    }
+    return everything;
+  }
+
   function load() {
     if (!cache) {
-      cache = fetch("data/catches.json", DATA_FETCH)
-        .then((r) => r.json())
+      cache = fetchAll()
         // showcase === false : la photo vit sur la fiche de son espèce et
         // nulle part ailleurs. Le mur des prises est une sélection — les gros,
         // les beaux, ceux qui ont une histoire — et pas un journal de sorties.
         // Sans ce filtre, chaque photo envoyée finissait sur le mur et le
         // diluait; c'est ce qui arrive à tous les sites d'équipe.
-        .then((rows) => rows.filter((c) => c && c.showcase !== false))
+        .then((rows) => rows.filter((c) => c.showcase !== false))
         .then((rows) => rows.slice().sort((a, b) => {
           // La prise vedette d'abord, ensuite la plus récente.
           if (!!b.featured !== !!a.featured) return b.featured ? 1 : -1;
           return (b.date || "").localeCompare(a.date || "");
-        }))
-        .catch(() => []);
+        }));
     }
     return cache;
   }
+
+  // TOUTES les prises, y compris celles qui ne montent pas sur le mur.
+  //
+  // La phrase « on remet nos prises à l'eau » décrit la pratique de l'équipe,
+  // pas le contenu du mur. En la calculant sur la liste filtrée, un doré gardé
+  // et marqué showcase:false n'aurait PAS fait changer la phrase — le site
+  // aurait continué d'affirmer qu'on remet tout. Vérifié en simulant le cas :
+  // c'est exactement ce qui se produisait.
+  function loadAll() {
+    return fetchAll();
+  }
+
   function forAngler(rows, id) {
     return rows.filter((c) => c.angler === id);
   }
-  return { load, forAngler };
+  return { load, loadAll, forAngler };
 })();
 
 // Toutes les photos d'une prise : la couverture, puis les photos additionnelles.
@@ -61,6 +83,7 @@ async function initCatches(options) {
     emptySelector,
     countSelector,
     featuredSelector,
+    releaseSelector,
     hallSelector,
     anglerFilterSelector,
     speciesFilterSelector,
@@ -83,12 +106,14 @@ async function initCatches(options) {
   // est écrite par tools/build-catch-pages.py; si elle manque, les cartes
   // s'affichent simplement sans le lien.
   let pageIds = [];
+  let allCatches = [];
   try {
-    [catches, members, events, pageIds] = await Promise.all([
+    [catches, members, events, pageIds, allCatches] = await Promise.all([
       PMF_CATCHES.load(),
       fetch("data/team-members.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
       fetch("data/tournament-history.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
       fetch("data/catch-pages.json", DATA_FETCH).then((r) => r.json()).catch(() => []),
+      PMF_CATCHES.loadAll(),
     ]);
   } catch (e) {
     grid.innerHTML = `<div class="empty-state">${escapeHTML(t("catches.loadError"))}</div>`;
@@ -104,6 +129,7 @@ async function initCatches(options) {
   const emptyEl = emptySelector ? document.querySelector(emptySelector) : null;
   const featuredEl = featuredSelector ? document.querySelector(featuredSelector) : null;
   const hallEl = hallSelector ? document.querySelector(hallSelector) : null;
+  const releaseEl = releaseSelector ? document.querySelector(releaseSelector) : null;
 
   function buildOptions(select, entries, allLabel) {
     if (!select) return;
@@ -244,6 +270,20 @@ async function initCatches(options) {
     return `<div class="catch-empty-media"><span>${escapeHTML(t("catches.noMedia"))}</span></div>`;
   }
 
+  // Remise a l'eau, prise par prise.
+  //
+  // Le champ `released` est OBLIGATOIRE (check-links.py) et vaut true sur les
+  // dix prises actuelles. Le jour ou un dore est garde, on met false sur cette
+  // fiche-la et tout le site suit — y compris la phrase du haut de page, qui
+  // est calculee et non ecrite en dur. Une phrase figee « toutes nos prises
+  // repartent a l'eau » serait devenue fausse en silence.
+  function releaseChipHTML(c) {
+    if (typeof c.released !== "boolean") return "";
+    const key = c.released ? "catch.released" : "catch.kept";
+    const cls = c.released ? "catch-release" : "catch-release is-kept";
+    return `<span class="${cls}">${escapeHTML(t(key))}</span>`;
+  }
+
   function bodyHTML(c, d, headingTag) {
     const chip = d.anglerName
       ? (d.angler
@@ -256,6 +296,7 @@ async function initCatches(options) {
         ${d.measure ? `<span class="catch-measure">${escapeHTML(d.measure)}</span>` : ""}
       </div>
       ${chip ? `<div class="catch-anglers">${chip}</div>` : ""}
+      ${releaseChipHTML(c)}
       ${d.facts.length ? `<div class="catch-facts">${d.facts.map((f) => `<span>${escapeHTML(f)}</span>`).join("")}</div>` : ""}
       ${d.notes ? `<p class="catch-notes">${escapeHTML(d.notes)}</p>` : ""}
       ${storyLinkHTML(c)}
@@ -364,6 +405,13 @@ async function initCatches(options) {
     slides = slidesFor(rows);
 
     if (countEl) countEl.textContent = plural("catches.count", rows.length);
+    if (releaseEl) {
+      // Sur TOUTES les prises — ni la selection du filtre, ni meme celles du
+      // mur. La phrase decrit la pratique de l'equipe; une prise gardee mais
+      // laissee hors du mur (showcase:false) doit la faire changer quand meme.
+      const kept = allCatches.filter((c) => c.released === false).length;
+      releaseEl.textContent = t(kept ? "catches.releaseSome" : "catches.releaseAll");
+    }
 
     // La vedette ne sort que sur la page complète : dès qu'un filtre est actif,
     // toutes les prises retenues retournent dans la grille.

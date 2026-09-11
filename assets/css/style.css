@@ -3434,3 +3434,32 @@ body.has-lightbox { overflow: hidden; }
 /* Meme verrou que le tiroir : le panneau couvre la page, le fond ne doit pas
    glisser dessous. */
 html.search-open, html.search-open body { overflow: hidden; }
+
+
+/* ---------- Remise a l'eau ---------- */
+.catch-release-note {
+  margin: 8px 0 0;
+  color: var(--ink-600);
+  font-size: 0.94rem;
+}
+.catch-release {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  /* teal-700 sur sable : 5,8:1. La couleur ne porte pas l'information —
+     le mot « Remis a l'eau » la porte, la pastille ne fait que la ranger. */
+  color: var(--teal-700);
+  background: rgba(28, 150, 145, 0.12);
+}
+.catch-release::before { content: "↩"; font-weight: 400; }
+.catch-release.is-kept {
+  color: var(--gold-700);
+  background: rgba(217, 164, 65, 0.16);
+}
+.catch-release.is-kept::before { content: "•"; }

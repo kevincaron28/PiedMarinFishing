@@ -8,6 +8,7 @@
     },
     "speciesId": "maskinonge",
     "showcase": true,
+    "released": true,
     "measure": "",
     "date": "2017",
     "water": {
@@ -40,6 +41,7 @@
     },
     "speciesId": "",
     "showcase": true,
+    "released": true,
     "measure": "20 lb",
     "date": "2024-10",
     "water": {
@@ -94,6 +96,7 @@
     },
     "speciesId": "maskinonge",
     "showcase": true,
+    "released": true,
     "measure": {
       "fr": "50 po",
       "en": "50\""
@@ -191,6 +194,7 @@
     },
     "speciesId": "maskinonge",
     "showcase": true,
+    "released": true,
     "measure": {
       "fr": "45 po",
       "en": "45\""
@@ -258,6 +262,7 @@
     },
     "speciesId": "malachigan",
     "showcase": true,
+    "released": true,
     "measure": "11 lb",
     "date": "2025-07-04",
     "water": {
@@ -312,6 +317,7 @@
     },
     "speciesId": "barbue-de-riviere",
     "showcase": true,
+    "released": true,
     "measure": "7 lb",
     "date": "2025-07-04",
     "water": {
@@ -360,6 +366,7 @@
     },
     "speciesId": "perchaude",
     "showcase": true,
+    "released": true,
     "measure": "",
     "date": "2025-02",
     "water": {
@@ -432,6 +439,7 @@
     },
     "speciesId": "dore-jaune",
     "showcase": false,
+    "released": true,
     "measure": "",
     "date": "",
     "water": {
@@ -468,6 +476,7 @@
     },
     "speciesId": "dore-jaune",
     "showcase": false,
+    "released": true,
     "measure": "",
     "date": "",
     "water": {
@@ -504,6 +513,7 @@
     },
     "speciesId": "grand-brochet",
     "showcase": false,
+    "released": true,
     "measure": "",
     "date": "",
     "water": {
