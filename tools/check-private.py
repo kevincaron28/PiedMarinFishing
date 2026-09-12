@@ -14,6 +14,14 @@ l'equipe est designee par ses initiales et rien d'autre — « R.C. », pas
 c'est exactement la meme erreur que le numero d'immatriculation reecrit dans
 la description d'une photo. La regle vit ici plutot que dans ma memoire.
 
+Troisieme regle : la reponse d'un virement Interac. Une affiche de tournoi la
+porte en clair, parce qu'elle circule dans un fil et qu'on suppose que ca reste
+entre pecheurs. Notre guide est indexe et permanent : la recopier donnerait a
+quiconque intercepte un avis de virement de quoi encaisser l'argent de
+l'organisateur. C'est le meme geste que le numero reecrit dans un alt-text —
+une information qui parait anodine la ou on la lit, et qui ne l'est plus une
+fois indexee.
+
     python3 tools/check-private.py     # sort en code 1 si quelque chose passe
 
 A lancer avant de pousser, comme sync-html-fallbacks.py --check.
@@ -48,6 +56,18 @@ PATTERNS = [
                 r"[^.\n]{0,20}?[:\s]\s*"
                 r"((?=[A-Z0-9-]{6,})(?:[A-Z]+[\s-]?\d|\d{6})[A-Z0-9\s-]*)", re.I),
      "un identifiant suit un mot comme « immatriculation »"),
+    # Troisieme regle : la REPONSE d'un virement Interac. Les affiches de
+    # tournoi la portent en clair — « Question de securite : TOURNOIS /
+    # Reponse : PECHEGAM » — parce qu'elles circulent dans un fil et qu'on
+    # suppose que ca reste entre pecheurs. Notre guide, lui, est indexe et
+    # permanent : republier la reponse, c'est donner a quiconque intercepte un
+    # avis de virement de quoi encaisser l'argent de l'organisateur. La
+    # question peut rester (elle ne sert a rien seule); c'est ce qui suit
+    # « reponse » qui ne passe pas. On renvoie donc le lecteur a l'affiche.
+    ("reponse d'un virement",
+     re.compile(r"(?:r[ée]ponse|security answer|answer)\s*(?:de s[ée]curit[ée]\s*)?"
+                r"[:\s]\s*([A-Za-z0-9]{4,})", re.I),
+     "la reponse d'un virement Interac ne se republie pas — renvoyer a l'affiche"),
 ]
 
 

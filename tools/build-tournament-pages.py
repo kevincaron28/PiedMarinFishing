@@ -740,7 +740,15 @@ if __name__ == "__main__":
     if not os.path.isdir(OUT_DIR):
         os.makedirs(OUT_DIR)
 
-    existing = {f for f in os.listdir(OUT_DIR) if f.endswith(".html")}
+    # DEUX generateurs ecrivent dans tournois/. Celui-ci sort <id>.html, et
+    # build-species-hubs.py sort espece-<mot>.html. Le menage ci-dessous
+    # effacait tout ce qu'il n'avait pas ecrit LUI-MEME : lancer ce script seul
+    # emportait les quatre carrefours d'espece, et tournaments.html pointait
+    # alors sur quatre pages absentes. check-links.py l'attrapait, mais apres
+    # coup, et seulement si on le lancait. Le menage ne touche donc plus qu'a
+    # ce qui lui appartient.
+    existing = {f for f in os.listdir(OUT_DIR)
+                if f.endswith(".html") and not f.startswith("espece-")}
     written = set()
     # « La precedente / la suivante » suit le calendrier, pas l'ordre du
     # fichier : un tournoi sans date publiee passe en fin de liste, comme dans
