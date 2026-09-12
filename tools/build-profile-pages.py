@@ -122,6 +122,11 @@ def srcset_attrs(src, sizes):
     return ' srcset="%s" sizes="%s"' % (esc(liste), esc(sizes))
 
 
+def gallery_src(photo):
+    """Le chemin d'une entree de galerie, qu'elle soit nue ou {src, alt}."""
+    return photo.get("src") if isinstance(photo, dict) else photo
+
+
 def gallery_html(photos, alt):
     """Une galerie où chaque photo peut porter sa propre description.
 
@@ -581,7 +586,16 @@ def render_boat(b, ui, members_by_id, prev=None, nxt=None):
     desc = {lang: boat_description(b, lang, ui) for lang in ("fr", "en")}
     url = "%s/bateaux/%s.html" % (SITE, b["id"])
     gallery = [p for p in (b.get("gallery") or []) if p]
-    hero = b.get("image") or (gallery[0] if gallery else "")
+    # UNE ENTREE DE GALERIE N'EST PAS UN CHEMIN. C'est soit un chemin, soit
+    # {src, alt:{fr,en}} — gallery_html() le sait, cette ligne-ci l'ignorait.
+    # Resultat : un bateau sans `image` mais avec une galerie mettait le dict
+    # Python entier dans og:image, et le guillemet du texte francais fermait
+    # l'attribut au milieu du <head>. Aucune page de partage n'affichait
+    # d'apercu, et rien ne criait — le lien existait, il etait juste absurde.
+    hero = b.get("image") or (gallery_src(gallery[0]) if gallery else "")
+    if hero and not isinstance(hero, str):
+        raise SystemExit("og:image doit etre un chemin, pas %r (bateau %s)"
+                         % (type(hero).__name__, b.get("id")))
     image = "%s/%s" % (SITE, hero) if hero else "%s/assets/img/og-card.png" % SITE
 
     body = []
