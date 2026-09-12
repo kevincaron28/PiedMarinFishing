@@ -485,31 +485,27 @@ mur ne faisait PAS changer la phrase**, et le site continuait d'affirmer qu'on
 remet tout. La phrase décrit la pratique de l'équipe, pas le contenu du mur —
 elle doit voir les dix prises, pas les sept affichées.
 
-### « Ce qu'on pêche avec » n'est PAS la page des commanditaires
+### TFO est sous « Nos partenaires », et le mot est venu de Kevin
 
-`data/brands.json` + `assets/js/brands.js`, une section de **`sponsors.html`**,
-posée juste sous « Nos partenaires ».
-**Deux fichiers, deux sens, et ils ne se croisent jamais** — `sponsors.js` lit
-`data/sponsors.json`, `brands.js` lit `data/brands.json`.
-
-Les deux sections **se retirent chacune quand son fichier est vide**, donc il
-n'y a jamais un titre au-dessus du vide — et jamais « Nos partenaires » suivi
-d'un logo qu'on lirait comme un partenaire. Attention : `sponsors.js` masque
-par `style.display = "none"`, pas par l'attribut `hidden`. Un test qui lit
+`data/sponsors.json` + `assets/js/sponsors.js`, une section de `sponsors.html`.
+La section **se retire d'elle-même quand le fichier est vide** (`[]`), donc il
+n'y a jamais un titre au-dessus du vide. Attention : `sponsors.js` masque par
+`style.display = "none"`, **pas** par l'attribut `hidden`. Un test qui lit
 `.hidden` conclut « visible » à tort; il faut lire le style calculé.
 
-La section était d'abord sur `team.html`, **tout en bas d'une page de
-3 349 px** — il fallait descendre 2 719 px pour la voir. Sur la page des
-commanditaires elle est à **y=297**, la première chose après l'en-tête, et
-c'est là qu'on va chercher quelles marques entourent l'équipe.
-
 TFO a ouvert un **compte guide** à l'équipe et autorise l'usage de son logo.
-Ce n'est pas une commandite. Écrire « Commanditaire » sous le logo d'une vraie
-compagnie affirmerait une entente commerciale que personne n'a dite, sur un
-site public. Le mot est venu de Kevin, pas de moi.
+Ce n'est pas une commandite, et **le site n'écrit nulle part le mot
+« Commanditaire »** : `sponsors.js` ne rend que le logo et une phrase
+facultative, jamais d'étiquette. Affirmer une entente commerciale que personne
+n'a dite, sur un site public, ne se rattrape pas. **Partenaire** est le mot que
+Kevin a choisi, en connaissance de la relation — ce n'est pas au code de le
+décider.
 
-Corollaire : quand une vraie commandite arrivera, elle a déjà sa place
-ailleurs, et rien ne se mélange.
+Il y a eu un temps **deux** sections : « Nos partenaires » (vide) et « Ce qu'on
+pêche avec » (`brands.json` + `brands.js`), qui existait pour ne pas avoir à
+nommer la relation. Kevin a tranché pour une seule, et le second sous-système
+est parti avec. Si l'envie revient de séparer « ce qu'on utilise » de « qui
+nous appuie », c'est un fichier et un script à refaire, pas un réglage.
 
 **Un logo de marque ne se retouche pas.** Ni recadrage, ni recoloration :
 `object-fit: contain`, jamais `cover`. La seule opération faite sur le fichier
@@ -529,13 +525,23 @@ JPEG, qui ne sait pas porter d'alpha (`for_resize()`), et le script **refuse de
 finir** si une source transparente ressort opaque — la vérification est dans le
 générateur, pas dans l'œil de celui qui regarde la page.
 
+Corollaire : `sponsors.js` **doit** passer par `PMF_IMG.attrs()`. Il servait
+l'original de 1600 px pour un affichage de 90 px de haut — la variante existait,
+personne ne la demandait.
+
 **Pas d'adresse, pas de lien.** Un lien mort sous le logo d'une marque est
 pire que pas de lien. `url` vide rend une `<div>`, pas un `<a>`.
 
-**Aucune affirmation sur ce qu'ils pêchent.** Le champ `note` est vide : la
+**Aucune affirmation sur ce qu'ils pêchent.** Le champ `blurb` est vide : la
 fiche de Kevin Caron porte une canne **Fenwick**, alors « les cannes de
-l'équipe sont des TFO » serait faux. Le titre de la section porte ce qu'il
-faut; le détail attend d'être vrai.
+l'équipe sont des TFO » serait faux. Le détail attend d'être vrai.
+
+**Une seule carte ne s'étire pas pour remplir la rangée.** `.sponsor-grid`
+tient ses pistes en `minmax(200px, 260px)` et centre le **groupe**
+(`justify-content: center`). Avec `grid-3`, l'unique partenaire se collait à
+gauche sous un titre centré, deux tiers de rangée vides; avec un `1fr` en
+borne haute, il se serait étiré à 760 px. Vérifié de 0 à 4 partenaires, sur
+téléphone et sur bureau.
 
 ### Le journal des sorties : il pointe, il ne recopie pas
 

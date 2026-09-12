@@ -481,6 +481,16 @@ section.alt { background: var(--sand-100); }
   color: var(--teal-600);
   font-weight: 700;
 }
+/* Un seul partenaire dans une grille a trois colonnes se collait a gauche sous
+   un titre centre, avec les deux tiers de la rangee vides. Les pistes sont donc
+   bornees en largeur et le GROUPE est centre : une carte se pose au milieu,
+   trois remplissent la rangee, et rien ne s'etire pour combler du vide.
+   minmax(200px, 260px) et pas 1fr — c'est le 1fr qui etirait la carte unique. */
+.sponsor-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 260px));
+  justify-content: center;
+}
+
 .sponsor-card {
   display: flex;
   flex-direction: column;
@@ -3610,35 +3620,3 @@ a.trip-catch:hover { border-color: var(--teal-600); text-decoration: none; }
 .trip-video-thumb { width: 120px; height: auto; border-radius: var(--radius-sm); }
 
 
-/* ---------- Ce qu'on peche avec ---------- */
-.brand-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  max-width: 760px;
-  min-width: 0;
-}
-.brand-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-width: 0;
-  padding: 24px 20px;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: var(--white);
-  text-decoration: none;
-  color: var(--ink-900);
-}
-a.brand-card:hover { border-color: var(--teal-600); text-decoration: none; }
-/* Un logo de marque se pose, il ne se recadre pas : contain, jamais cover. */
-.brand-logo-img {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
-  object-fit: contain;
-}
-.brand-name { font-weight: 700; font-size: 1.1rem; }
-.brand-note { margin: 0; font-size: 0.9rem; color: var(--ink-600); text-align: center; }

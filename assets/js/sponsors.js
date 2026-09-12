@@ -8,6 +8,7 @@ async function initSponsors(gridSelector, sectionSelector) {
   if (!grid || !section) return;
 
   await PMF_I18N.ready;
+  await PMF_IMG.load();
   const { tr } = PMF_I18N;
 
   let list = [];
@@ -25,8 +26,13 @@ async function initSponsors(gridSelector, sectionSelector) {
     section.style.display = "";
     grid.innerHTML = list.map((s) => {
       const name = tr(s.name);
+      // Le logo porte le nom en texte alternatif : une marque reconnue a l'oeil
+      // ne l'est pas au lecteur d'ecran. Et il passe par PMF_IMG, sinon la page
+      // recoit l'original de 1600 px pour un affichage de 90 px de haut.
       const logo = s.logo
-        ? `<img src="${escapeHTML(s.logo)}" alt="${escapeHTML(name)}" class="sponsor-logo" loading="lazy">`
+        ? `<img src="${escapeHTML(s.logo)}"${
+            PMF_IMG.attrs(s.logo, "(max-width: 620px) 60vw, 220px")
+          } alt="${escapeHTML(name)}" class="sponsor-logo" loading="lazy">`
         : `<span class="sponsor-name">${escapeHTML(name)}</span>`;
       const blurb = tr(s.blurb);
       const inner = `${logo}${blurb ? `<p class="sponsor-blurb">${escapeHTML(blurb)}</p>` : ""}`;

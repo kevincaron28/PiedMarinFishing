@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "id": "tfo",
+    "name": "Temple Fork Outfitters",
+    "logo": "assets/img/marques/tfo.png",
+    "url": "https://www.tforods.ca/",
+    "blurb": {
+      "fr": "",
+      "en": ""
+    }
+  }
+]
