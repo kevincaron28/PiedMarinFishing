@@ -1,5 +1,132 @@
 [
   {
+    "id": "dore-bobe-2026",
+    "angler": "bobe",
+    "species": {
+      "fr": "Doré jaune",
+      "en": "Walleye"
+    },
+    "speciesId": "dore-jaune",
+    "showcase": true,
+    "released": true,
+    "measure": "4,5 lb",
+    "date": "2026-09-12",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/dore-bobe-2026.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "BOBE tient un doré jaune à deux mains dans la chaloupe, de nuit, éclairé à la lampe frontale.",
+        "en": "BOBE holding a walleye in both hands in the boat at night, lit by a headlamp."
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/catches/dore-bobe-2026-peson.jpg",
+        "alt": {
+          "fr": "Le peson numérique affiche 4,50 lb, tenu à bout de bras au-dessus du bateau.",
+          "en": "The digital scale reads 4.50 lb, held up over the boat."
+        }
+      }
+    ],
+    "featured": false,
+    "notes": {
+      "fr": "Le record personnel de doré de BOBE depuis l'ouverture du mur des prises. Quatre livres et demie au peson, remis à l'eau.",
+      "en": "BOBE's personal best walleye since the wall of catches opened. Four and a half pounds on the scale, released."
+    },
+    "story": {
+      "fr": "Sortie du samedi 12 septembre 2026, de 17 h à 22 h sur le fleuve. Il a fait chaud jusqu'à 20 h, et beaucoup de vent jusque-là. On a passé une bonne partie de la soirée à chercher le poisson : le vent avait déplacé les bancs de menés, et les prédateurs avec. Le moment où les petits menés se sont mis à sauter hors de l'eau, on a commencé à enchaîner les prises. Le vent s'est un peu calmé après 20 h, mais garder le bateau sur sa ligne à la traîne est resté une tâche compliquée toute la soirée. De nombreux dorés ont été pris et remis à l'eau ce soir-là. Celui-ci est le plus gros : 4,5 lb au peson, et le record personnel de doré de BOBE depuis qu'on tient le mur des prises sur le site.",
+      "en": "Saturday, September 12, 2026, 5 p.m. to 10 p.m. on the river. It stayed warm until 8, and windy right up to then. A good part of the evening went into finding fish: the wind had pushed the baitfish schools around, and the predators with them. The moment the little minnows started jumping clear of the water, the catches started coming one after another. The wind eased off a bit after 8, but holding the boat on a trolling line stayed a chore all evening. Plenty of walleye were caught and released that evening. This one was the biggest: 4.5 lb on the scale, and BOBE's personal best walleye since we started keeping the wall of catches on the site."
+    }
+  },
+  {
+    "id": "achigan-kev-b-2026",
+    "angler": "kevin-b",
+    "species": {
+      "fr": "Achigan à petite bouche",
+      "en": "Smallmouth bass"
+    },
+    "speciesId": "achigan-petite-bouche",
+    "showcase": true,
+    "released": true,
+    "measure": "2,15 lb",
+    "date": "2026-09-12",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/achigan-kev-b-2026.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Kev B. tient un achigan à petite bouche à deux mains dans la chaloupe, de nuit.",
+        "en": "Kev B. holding a smallmouth bass in both hands in the boat at night."
+      }
+    },
+    "gallery": [],
+    "featured": false,
+    "notes": {
+      "fr": "Un achigan à petite bouche de 2,15 lb pris en soirée par Kev B., remis à l'eau.",
+      "en": "A 2.15-pound smallmouth bass taken in the evening by Kev B., released."
+    },
+    "story": {
+      "fr": "Sortie du samedi 12 septembre 2026, de 17 h à 22 h sur le fleuve. Il a fait chaud jusqu'à 20 h, et beaucoup de vent jusque-là. On a passé une bonne partie de la soirée à chercher le poisson : le vent avait déplacé les bancs de menés, et les prédateurs avec. Le moment où les petits menés se sont mis à sauter hors de l'eau, on a commencé à enchaîner les prises. Le vent s'est un peu calmé après 20 h, mais garder le bateau sur sa ligne à la traîne est resté une tâche compliquée toute la soirée. Quelques achigans sont montés dans le bateau en plus des dorés. Celui de Kev B. a fait 2,15 lb au peson.",
+      "en": "Saturday, September 12, 2026, 5 p.m. to 10 p.m. on the river. It stayed warm until 8, and windy right up to then. A good part of the evening went into finding fish: the wind had pushed the baitfish schools around, and the predators with them. The moment the little minnows started jumping clear of the water, the catches started coming one after another. The wind eased off a bit after 8, but holding the boat on a trolling line stayed a chore all evening. A few bass came aboard alongside the walleye. Kev B.'s went 2.15 lb on the scale."
+    }
+  },
+  {
+    "id": "dore-jour-2026",
+    "angler": "bobe",
+    "species": {
+      "fr": "Doré jaune",
+      "en": "Walleye"
+    },
+    "speciesId": "dore-jaune",
+    "showcase": false,
+    "released": true,
+    "measure": "",
+    "date": "2026-09-12",
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "event": "",
+    "media": {
+      "type": "image",
+      "src": "assets/img/catches/dore-jour-2026.jpg",
+      "videoId": "",
+      "alt": {
+        "fr": "Un doré jaune tenu à une main au-dessus de l'eau, au crépuscule, devant le moteur hors-bord.",
+        "en": "A walleye held in one hand over the water at dusk, in front of the outboard."
+      }
+    },
+    "gallery": [
+      {
+        "src": "assets/img/catches/dore-jour-2026-gros-plan.jpg",
+        "alt": {
+          "fr": "Gros plan sur la tête du même doré, gueule ouverte, au-dessus de l'eau.",
+          "en": "Close-up of the same walleye's head, mouth open, over the water."
+        }
+      }
+    ],
+    "featured": false,
+    "notes": {
+      "fr": "Un doré pris de jour par BOBE. Ni longueur ni poids : il n'était pas gros, et il est reparti à l'eau au plus vite.",
+      "en": "A walleye taken in daylight by BOBE. No length, no weight: it was not big, and it went back in as fast as possible."
+    },
+    "story": {
+      "fr": "Sortie du samedi 12 septembre 2026, de 17 h à 22 h sur le fleuve. Il a fait chaud jusqu'à 20 h, et beaucoup de vent jusque-là. On a passé une bonne partie de la soirée à chercher le poisson : le vent avait déplacé les bancs de menés, et les prédateurs avec. Le moment où les petits menés se sont mis à sauter hors de l'eau, on a commencé à enchaîner les prises. Le vent s'est un peu calmé après 20 h, mais garder le bateau sur sa ligne à la traîne est resté une tâche compliquée toute la soirée. Ce doré-là est monté avant la noirceur. Il n'a été ni mesuré ni pesé : il n'était pas gros, et on l'a remis à l'eau au plus vite.",
+      "en": "Saturday, September 12, 2026, 5 p.m. to 10 p.m. on the river. It stayed warm until 8, and windy right up to then. A good part of the evening went into finding fish: the wind had pushed the baitfish schools around, and the predators with them. The moment the little minnows started jumping clear of the water, the catches started coming one after another. The wind eased off a bit after 8, but holding the boat on a trolling line stayed a chore all evening. This walleye came up before dark. It was neither measured nor weighed: it was not big, and it went back in as fast as possible."
+    }
+  },
+  {
     "id": "maskinonge-kevin-b-2",
     "angler": "kevin-b",
     "species": {

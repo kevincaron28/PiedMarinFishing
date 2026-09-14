@@ -569,6 +569,15 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/prises/achigan-kev-b-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/achigan-kev-b-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/achigan-kev-b-2026.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/achigan-kev-b-2026.html"/>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/prises/barbue-2025.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/barbue-2025.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/barbue-2025.html?lang=en"/>
@@ -582,6 +591,24 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/chinook-salmon-river.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/chinook-salmon-river.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/chinook-salmon-river.html"/>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://piedmarinfishing.com/prises/dore-bobe-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/dore-bobe-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/dore-bobe-2026.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/dore-bobe-2026.html"/>
+    <lastmod>2026-09-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://piedmarinfishing.com/prises/dore-jour-2026.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/dore-jour-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/dore-jour-2026.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/dore-jour-2026.html"/>
     <lastmod>2026-09-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

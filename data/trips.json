@@ -1,5 +1,37 @@
 [
   {
+    "id": "2026-09-12-fleuve",
+    "date": "2026-09-12",
+    "title": {
+      "fr": "Deux records personnels quand les menés se sont mis à sauter",
+      "en": "Two personal bests, the moment the minnows started jumping"
+    },
+    "water": {
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
+    },
+    "members": [
+      "bobe",
+      "kevin-b",
+      "kevin-caron"
+    ],
+    "boat": "princecraft-1996",
+    "conditions": {
+      "fr": "Sortie du samedi 12 septembre 2026, de 17 h à 22 h sur le fleuve. Il a fait chaud jusqu'à 20 h, et beaucoup de vent jusque-là. On a passé une bonne partie de la soirée à chercher le poisson : le vent avait déplacé les bancs de menés, et les prédateurs avec. Le moment où les petits menés se sont mis à sauter hors de l'eau, on a commencé à enchaîner les prises. Le vent s'est un peu calmé après 20 h, mais garder le bateau sur sa ligne à la traîne est resté une tâche compliquée toute la soirée.",
+      "en": "Saturday, September 12, 2026, 5 p.m. to 10 p.m. on the river. It stayed warm until 8, and windy right up to then. A good part of the evening went into finding fish: the wind had pushed the baitfish schools around, and the predators with them. The moment the little minnows started jumping clear of the water, the catches started coming one after another. The wind eased off a bit after 8, but holding the boat on a trolling line stayed a chore all evening."
+    },
+    "catches": [
+      "dore-bobe-2026",
+      "achigan-kev-b-2026",
+      "dore-jour-2026"
+    ],
+    "videos": [],
+    "story": {
+      "fr": "",
+      "en": ""
+    }
+  },
+  {
     "id": "2025-07-04-fleuve",
     "date": "2025-07-04",
     "title": {
