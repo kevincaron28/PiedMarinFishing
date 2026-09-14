@@ -194,15 +194,18 @@ consigne dans son propre champ `verified`.
 
 ---
 
-## La navigation : neuf dans la barre, onze dans le tiroir
+## La navigation : neuf dans la barre, douze dans le tiroir
 
 Le menu est écrit **à la main dans les 13 pages racine** et **une fois** dans
 `NAV`, au haut de `tools/build-tournament-pages.py`, d'où sortent les 103
 pages générées. Un changement se fait donc à deux endroits, puis on régénère.
 
-Deux items — « Notre histoire » et « Réseaux » — portent la classe
-`nav-extra` : masqués dans la barre, visibles dans le tiroir sous un filet.
-La barre n'a pas la place, le tiroir en a 484 px de reste.
+Trois items — « Sorties », « Notre histoire » et « Réseaux » — portent la
+classe `nav-extra` : masqués dans la barre, visibles dans le tiroir sous un
+filet. La barre n'a pas la place; le tiroir fait 634 px pour 633 px de contenu
+sur un téléphone debout — **il est plein à 1 px près**. Un treizième item ne
+tiendra plus à l'écran d'un coup; il faudra défiler (le tiroir sait le faire),
+ou sortir quelque chose.
 
 Le point de bascule est **1100 px**, mesuré, pas estimé : disposition « barre »
 forcée à toutes les largeurs, la rangée tient jusqu'à **1046 px en français**
@@ -212,6 +215,23 @@ Ces chiffres étaient 967 et 929 avant que le bouton de recherche n'entre dans
 `.nav-actions` : **il a coûté 78 px de marge**, qui est passée de 133 à 54.
 C'est encore positif, mais c'est mince. **Un dixième onglet, ou un deuxième
 bouton dans les actions, veut dire remesurer** — pas pousser le chiffre.
+
+**Et le dixième a été mesuré, puis refusé.** « Sorties » dans la barre :
+
+| | La rangée tient jusqu'à | Marge sous 1100 px |
+|---|---|---|
+| FR, 9 onglets | 1021 px | +79 px |
+| **FR, 10 onglets** | **1118 px** | **−18 px** |
+| EN, 10 onglets | 1023 px | +77 px |
+
+Elle ne rentre pas en français — la rangée casserait entre 1100 et 1118 px.
+« Sorties » est donc dans le tiroir et dans le pied de page, pas dans la barre.
+Deux pièges de mesure valent d'être notés si on recommence : la rangée est en
+`nowrap`, donc **elle ne passe jamais à la ligne, elle déborde** — chercher un
+retour à la ligne ne mesure rien; et ces chiffres sont ~25 px sous ceux du
+paragraphe précédent, un écart constant entre les deux langues, donc un
+décalage de méthode et non une dérive. Compare des mesures prises de la même
+façon, jamais une mesure à un chiffre écrit ailleurs.
 
 `nav_for(current)` dans `tools/build-profile-pages.py` déplace
 `aria-current="page"` sur l'onglet de la page. Il ne cherche qu'à partir du
