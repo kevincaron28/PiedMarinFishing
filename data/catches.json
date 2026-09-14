@@ -32,6 +32,13 @@
           "fr": "Le peson numérique affiche 4,50 lb, tenu à bout de bras au-dessus du bateau.",
           "en": "The digital scale reads 4.50 lb, held up over the boat."
         }
+      },
+      {
+        "src": "assets/img/catches/dore-bobe-2026-second.jpg",
+        "alt": {
+          "fr": "Le même doré sous un autre angle, tenu à deux mains, la lampe frontale allumée.",
+          "en": "The same walleye from another angle, held in both hands, headlamp on."
+        }
       }
     ],
     "featured": false,
