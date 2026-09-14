@@ -13,6 +13,7 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `index.html` | Landing page |
 | `team.html` | Roster — bios, angler specs, per-member record, and the team boats |
 | `catches.html` | Catch log with photos and video |
+| `sorties.html` | *Journal des sorties* — one entry per day on the water. Holds only ids, so nothing drifts when a measurement is corrected |
 | `history.html` | *Résultats / Results* — every tournament fished, filterable by member and season |
 | `calendar.html` | Our own upcoming tournament schedule |
 | `tournaments.html` | Québec tournament directory (for any angler, not just the team) |
@@ -105,6 +106,12 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `species.js` | the species index — reads `species-pages.json`, so a card can never point at an ungenerated sheet |
 | `reg-guard.js` | erases a regulation block on a generated page once it goes stale |
 | `sponsors.js` | partner logos — hides its whole section when there are none |
+| `trips.js` | the trip journal — reads `data/catches.json` directly, because it needs the `showcase: false` ones too |
+| `search.js` | site search — builds its own button and panel, and fetches `data/search-index.json` only on the first click |
+| `whatsnew.js` | the *Quoi de neuf* strip on the homepage |
+| `sun-moon.js` | sun and moon rise/set and meridian passage, computed — no service is called |
+| `moon.js` | the solunar calendar, and the line between what is computed and what is not |
+| `moon-calendar.js` | renders one lunar month at a time, with the arrows |
 | `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
@@ -140,6 +147,10 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-sponsor-kit.py` | builds the sponsor-kit HTML from `data/i18n.json` |
 | `tools/build-angler-sheets.py` | writes one Letter-size pro-staff sheet per angler per language, from `data/team-members.json` and the results/catches logs |
 | `tools/render-angler-sheets.js` | renders those to `assets/docs/pro-staff-<id>-<lang>.pdf` |
+| `tools/build-search-index.py` | writes `data/search-index.json` — page titles and anchors only, never body text. **Re-run it after any change under `data/`** |
+| `tools/fetch-youtube.py` | the repo's only robot: reads the channel's Atom feed once a day from a GitHub Action and appends new videos to `data/videos.json` |
+| `tools/test-youtube.py` | 51 checks on that reader — every guard, including the ones that must refuse rather than guess |
+| `tools/pdf-text.py`, `tools/pdf-rows.py` | a minimal PDF text extractor, written because pdfminer and pypdf will not import in this workspace. Used to read regulation PDFs |
 | `tools/render-sponsor-kit.js` | renders that HTML to PDF with Chromium |
 
 The usual order after a content change:
@@ -216,12 +227,20 @@ they stay in sync.
 - **Federations and associations** → `data/organizations.json` (see
   **Fédérations et associations**).
 - **Catches** → `data/catches.json`, photos in `assets/img/catches/`.
-- **Featured video** → `data/featured-video.json`. Paste a YouTube video id
-  (or a full YouTube URL — `watch?v=`, `youtu.be`, `shorts/` and `embed/`
-  links are all parsed) into `videoId` and the homepage placeholder becomes
-  the real clip. The homepage shows a click-to-load thumbnail rather than a
-  live embed, so nothing is requested from YouTube until a visitor presses
-  play, and the player then loads from `youtube-nocookie.com`.
+- **Videos** → `data/videos.json`. This is the one file a robot writes:
+  `.github/workflows/youtube.yml` runs `tools/fetch-youtube.py` daily and appends
+  new videos from the channel's Atom feed. It never overwrites an existing entry —
+  the bilingual title, `orientation`, `angler`, `catch` and `featured` are yours.
+  **`date` and `published` do not mean the same thing**: `date` is when the outing
+  happened (hand-written, often partial, often unknown), `published` is when YouTube
+  received the file (robot-written, never touched again). A new video arrives with
+  `date: ""` — empty beats wrong. The homepage shows a click-to-load thumbnail
+  rather than a live embed, so nothing is requested from YouTube until a visitor
+  presses play, and the player then loads from `youtube-nocookie.com`.
+- **Trips** → `data/trips.json`. A trip carries **only ids** (`catches`, `members`,
+  `boat`, `videos`); nothing is copied, so nothing drifts. `check-links.py` verifies
+  every pointer — a mistyped id breaks no HTML link, the day would just lose a fish
+  in silence.
 
   Optional fields added since: `photo` (a path under `assets/img/team/`,
   which replaces the initials and hides the crest watermark) and `photoAlt`
