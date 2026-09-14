@@ -339,10 +339,18 @@ def stat_tiles(tiles):
 
 
 def person_ld(m, url, photo):
+    # Le nom officiel est le nom complet quand on l'a; le surnom devient un
+    # alternateName. C'est sous « Kev B. » qu'on les connait, et sous « Kevin
+    # Bastien » qu'on les cherche — schema.org sait porter les deux, la page
+    # n'a pas a choisir.
+    affiche = m.get("name")
+    complet = m.get("fullName") or affiche
     ld = {"@context": "https://schema.org", "@type": "Person",
-          "name": m.get("name"), "url": url,
+          "name": complet, "url": url,
           "memberOf": {"@type": "SportsTeam", "name": "Pied Marin Fishing",
                        "url": SITE + "/"}}
+    if complet != affiche:
+        ld["alternateName"] = affiche
     role = pick(m.get("role"), "fr")
     if role:
         ld["jobTitle"] = role
@@ -516,6 +524,7 @@ def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=(),
     %(crumbs)s
     <span class="kicker" data-i18n="ap.kicker">%(kicker)s</span>
     <h1>%(name)s</h1>
+    %(fullname)s
     %(role)s
   </div>
 </div>
@@ -528,6 +537,11 @@ def render_angler(m, ui, results, catches, boats, tp_index, cp_index, videos=(),
         "siblings": pages.siblings(prev, nxt),
         "kicker": esc(ui["fr"]["ap.kicker"]),
         "name": esc(name),
+        # Un nom propre s'ecrit pareil dans les deux langues : pas de data-en.
+        # Et rien ne s'affiche quand le nom complet EST le nom affiche, sinon
+        # la fiche de Kevin Caron repeterait « Kevin Caron » sous « Kevin Caron ».
+        "fullname": ('<p class="ap-fullname">%s</p>' % esc(m.get("fullName"))
+                     if m.get("fullName") and m.get("fullName") != name else ""),
         "role": bilingual("p", role, "tp-when") if pick(role, "fr") else "",
         "body": "\n\n".join(body),
         "footer": pages.FOOTER,

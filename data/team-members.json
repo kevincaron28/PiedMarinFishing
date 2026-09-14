@@ -2,6 +2,7 @@
   {
     "id": "kevin-caron",
     "name": "Kevin Caron",
+    "fullName": "Kevin Caron",
     "initials": "KC",
     "role": {
       "fr": "Pêcheur multi-espèces",
@@ -97,15 +98,16 @@
   },
   {
     "id": "kevin-b",
-    "name": "Kevin B.",
+    "name": "Kev B.",
+    "fullName": "Kevin Bastien",
     "initials": "KB",
     "role": {
       "fr": "Capitaine",
       "en": "Skipper"
     },
     "bio": {
-      "fr": "Kevin B. est le capitaine de l'équipe — c'est lui qui place le bateau et qui lit l'eau. Il pêche depuis toujours, surtout l'achigan sur le fleuve Saint-Laurent, et il passe sans hésiter de la finesse au power fishing selon ce que la journée demande. Son record, un maskinongé de 50 pouces; son objectif, le même poisson en 55.",
-      "en": "Kevin B. is the crew's skipper — he's the one putting the boat on fish and reading the water. He's fished his whole life, mostly bass on the St. Lawrence, and he'll swing from finesse to power fishing without hesitating depending on what the day calls for. His personal best is a 50-inch muskie; what he's after is the same fish at 55."
+      "fr": "Kev B. est le capitaine de l'équipe — c'est lui qui place le bateau et qui lit l'eau. Il pêche depuis toujours, surtout l'achigan sur le fleuve Saint-Laurent, et il passe sans hésiter de la finesse au power fishing selon ce que la journée demande. Son record, un maskinongé de 50 pouces; son objectif, le même poisson en 55.",
+      "en": "Kev B. is the crew's skipper — he's the one putting the boat on fish and reading the water. He's fished his whole life, mostly bass on the St. Lawrence, and he'll swing from finesse to power fishing without hesitating depending on what the day calls for. His personal best is a 50-inch muskie; what he's after is the same fish at 55."
     },
     "specs": {
       "homeWater": {
@@ -157,13 +159,14 @@
     ],
     "photo": "assets/img/team/kevin-b.jpg",
     "photoAlt": {
-      "fr": "Kevin B. en gros plan sous la pluie, chapeau de brousse noir et habit imperméable, tenant un maskinongé",
-      "en": "Close-up of Kevin B. in the rain, black bush hat and rain gear, holding a muskie"
+      "fr": "Kev B. en gros plan sous la pluie, chapeau de brousse noir et habit imperméable, tenant un maskinongé",
+      "en": "Close-up of Kev B. in the rain, black bush hat and rain gear, holding a muskie"
     }
   },
   {
     "id": "bobe",
     "name": "BOBE",
+    "fullName": "Serge Bastien",
     "initials": "BO",
     "role": {
       "fr": "Spécialiste de la traîne",

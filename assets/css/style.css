@@ -2041,6 +2041,13 @@ body.has-lightbox { overflow: hidden; }
   padding: 56px 0 40px;
 }
 .page-header h1 { color: var(--white); margin-bottom: 8px; }
+/* Le nom complet, sous le surnom. Plus discret que le titre : c'est « Kev B. »
+   qu'on lit, « Kevin Bastien » qu'on confirme. */
+.page-header .ap-fullname {
+  margin: 4px 0 0;
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+}
 .page-header p { color: rgba(255,255,255,0.78); max-width: 60ch; }
 
 /* ---------------------------------------------------------------------------
