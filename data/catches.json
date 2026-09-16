@@ -562,11 +562,7 @@
   },
   {
     "id": "dore-nuit",
-    "angler": "",
-    "anglerName": {
-      "fr": "",
-      "en": ""
-    },
+    "angler": "bobe",
     "species": {
       "fr": "Doré jaune",
       "en": "Walleye"
@@ -575,10 +571,10 @@
     "showcase": false,
     "released": true,
     "measure": "",
-    "date": "",
+    "date": "2025",
     "water": {
-      "fr": "",
-      "en": ""
+      "fr": "Fleuve Saint-Laurent",
+      "en": "St. Lawrence River"
     },
     "event": "",
     "media": {
@@ -593,17 +589,13 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "",
-      "en": ""
+      "fr": "Un doré pris par BOBE sur le fleuve Saint-Laurent en 2025.",
+      "en": "A walleye taken by BOBE on the St. Lawrence in 2025."
     }
   },
   {
     "id": "dore-jour",
-    "angler": "",
-    "anglerName": {
-      "fr": "",
-      "en": ""
-    },
+    "angler": "kevin-caron",
     "species": {
       "fr": "Doré jaune",
       "en": "Walleye"
@@ -612,10 +604,10 @@
     "showcase": false,
     "released": true,
     "measure": "",
-    "date": "",
+    "date": "2024",
     "water": {
-      "fr": "",
-      "en": ""
+      "fr": "Rivière Richelieu",
+      "en": "Richelieu River"
     },
     "event": "",
     "media": {
@@ -630,8 +622,8 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "",
-      "en": ""
+      "fr": "Un doré pris par Kevin Caron sur la rivière Richelieu en 2024.",
+      "en": "A walleye taken by Kevin Caron on the Richelieu River in 2024."
     }
   },
   {
@@ -663,8 +655,12 @@
     "gallery": [],
     "featured": false,
     "notes": {
-      "fr": "",
-      "en": ""
+      "fr": "Un grand brochet du 4 juillet 2025, remis à l'eau sans être mesuré.",
+      "en": "A northern pike from July 4th, 2025, released without being measured."
+    },
+    "story": {
+      "fr": "Quatrième espèce de la même journée, le 4 juillet 2025. On est partis en début d'après-midi sous un ciel dégagé, un petit vent de 5 à 10 km/h, une vingtaine de degrés, et on est restés sur l'eau jusqu'à un peu passé minuit. Trois sur le bateau de BOBE, Kev B. à la barre.\n\nBelle journée de pêche, avec beaucoup de poisson au rendez-vous. C'était une journée spéciale où tout semblait mordre, même en visant le doré. On a sorti de beaux spécimens, dont ce brochet qui aurait bien fait notre bonheur pendant les tournois Formule Brochet de Muskies Canada Montréal.\n\nAucune mesure n'a été prise : on l'a remis à l'eau au plus vite. C'est le quatrième poisson d'une journée qui en a donné quatre espèces et trois records personnels — la meilleure de l'équipe en variété.",
+      "en": "Fourth species of the same day, July 4th, 2025. We pushed off in the early afternoon under a clear sky, a light 5 to 10 km/h wind, around twenty degrees, and stayed out until a little past midnight. Three of us aboard BOBE's boat, Kev B. at the wheel.\n\nA good day on the water, with plenty of fish around. It was one of those special days where everything seemed to bite, even while we were targeting walleye. Some fine specimens came aboard, this pike among them — the kind that would have made our day at a Muskies Canada Montréal Formule Brochet.\n\nNo measurement was taken: it went back in as fast as possible. It was the fourth fish of a day that gave up four species and three personal bests — the crew's best for variety."
     }
   }
 ]

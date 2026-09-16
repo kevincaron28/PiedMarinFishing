@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -51,7 +51,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/team.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/team.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/team.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -60,7 +60,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/catches.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/catches.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/catches.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -96,7 +96,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/sorties.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/sorties.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/sorties.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -528,7 +528,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/pecheurs/bobe.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/pecheurs/bobe.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/pecheurs/bobe.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -546,7 +546,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/pecheurs/kevin-caron.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/pecheurs/kevin-caron.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/pecheurs/kevin-caron.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -582,7 +582,16 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/barbue-2025.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/barbue-2025.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/barbue-2025.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://piedmarinfishing.com/prises/brochet-soir.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/brochet-soir.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/brochet-soir.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/brochet-soir.html"/>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -654,7 +663,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/prises/perchaude-2025.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/prises/perchaude-2025.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/prises/perchaude-2025.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -843,7 +852,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/especes/dore-jaune.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/especes/dore-jaune.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/especes/dore-jaune.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -933,7 +942,7 @@
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/especes/grand-brochet.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/especes/grand-brochet.html?lang=en"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/especes/grand-brochet.html"/>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
