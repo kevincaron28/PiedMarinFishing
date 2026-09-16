@@ -251,6 +251,30 @@ dans les 60 jours** (`root.hidden = true` dans `season.js`). C'est pour ça que
 la page a besoin d'une place permanente dans le menu : son seul lien entrant
 était saisonnier.
 
+### Un circuit vit dans PLUSIEURS saisons, pas une
+
+`seasonsOf()` dans `events.js`, au pluriel, et c'est le pluriel qui compte. Un
+circuit n'a pas de date propre : il vit dans celles de ses étapes, et rien ne
+l'oblige à tenir dans une seule année. Dès que l'organisateur du BaitFuel a
+publié son calendrier 2027, le circuit a porté des étapes 2026 **et** 2027 en
+même temps, et deux choses ont cassé d'un coup :
+
+- `seasonOf()` ne rendait que la **première** année, donc le circuit
+  disparaissait de la saison 2027 — il avait pourtant cinq étapes dedans.
+- `isPastInSeason()` — dont le nom dit « in season » — **ne regardait pas la
+  saison** : il jugeait *toutes* les étapes. Celles de 2027 n'étant pas
+  passées, la saison 2026 est redevenue éternellement vivante et **le bandeau
+  de fin de saison a cessé de se déclencher**. Sans bruit : un bandeau qui ne
+  s'affiche pas ne ressemble pas à une panne.
+
+C'est la deuxième fois que ce piège mord. La première, trois circuits sans date
+gardaient 2026 vivante parce qu'`isPastEvent` ne déclare jamais passé ce qui n'a
+pas de date; le commentaire au-dessus de `isPastInSeason` raconte celle-là.
+**Chaque fois qu'un circuit gagne des étapes dans une nouvelle année, rejouer la
+simulation d'horloge** — `addInitScript` avec un `Date` figé au 11 octobre, au
+1er novembre et au 1er février — parce que rien dans la suite de tests ne couvre
+`events.js`.
+
 ---
 
 ## Le seul automate du dépôt : le flux YouTube

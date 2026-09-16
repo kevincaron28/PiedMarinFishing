@@ -192,20 +192,33 @@ async function initEventList(options) {
     const own = (ev.startDate || "").slice(0, 4);
     if (/^\d{4}$/.test(own)) return own;
     if (ev.kind === "circuit") {
-      const years = (stopsOf.get(ev.id) || [])
-        .map((st) => (st.startDate || "").slice(0, 4))
-        .filter((y) => /^\d{4}$/.test(y))
-        .sort();
+      const years = seasonsOf(ev);
       if (years.length) return years[0];
     }
     return null;
+  }
+
+  // Les saisons d'un circuit, au PLURIEL. Un circuit n'a pas de date propre :
+  // il vit dans celles de ses étapes, et rien ne l'oblige à tenir dans une
+  // seule année. Le BaitFuel a porté ses étapes 2026 et 2027 en même temps dès
+  // que l'organisateur a publié son calendrier — et tant que seasonOf ne
+  // rendait que la PREMIÈRE année, le circuit disparaissait de la saison 2027
+  // et gardait la 2026 vivante pour toujours.
+  function seasonsOf(ev) {
+    if (ev.kind !== "circuit") {
+      const own = (ev.startDate || "").slice(0, 4);
+      return /^\d{4}$/.test(own) ? [own] : [];
+    }
+    return [...new Set((stopsOf.get(ev.id) || [])
+      .map((st) => (st.startDate || "").slice(0, 4))
+      .filter((y) => /^\d{4}$/.test(y)))].sort();
   }
 
   let seasons = [];
   let activeSeason = null;
 
   function buildSeasons() {
-    seasons = [...new Set(events.map(seasonOf).filter(Boolean))].sort();
+    seasons = [...new Set(events.flatMap(seasonsOf).filter(Boolean))].sort();
     if (!seasons.length) { activeSeason = null; return; }
     const thisYear = String(new Date().getFullYear());
     if (!activeSeason || !seasons.includes(activeSeason)) {
@@ -246,15 +259,22 @@ async function initEventList(options) {
   // bandeau ne se déclenchait jamais. Un circuit est passé quand toutes ses
   // étapes le sont — la même logique que seasonOf, qui lit déjà sa saison
   // dans ses étapes.
+  // Deuxième forme du même piège, arrivée avec les dates 2027 du BaitFuel : la
+  // fonction s'appelle isPastInSeason et ne regardait PAS la saison. Ses étapes
+  // 2027, pas encore passées, ont rendu la saison 2026 éternellement vivante et
+  // le bandeau de fin de saison a cessé de se déclencher — sans bruit, il ne
+  // s'affiche simplement plus. On ne juge donc que les étapes de la saison
+  // affichée.
   function isPastInSeason(ev) {
     if (ev.kind !== "circuit" || (ev.startDate || "")) return isPastEvent(ev);
-    const stops = stopsOf.get(ev.id) || [];
+    const stops = (stopsOf.get(ev.id) || [])
+      .filter((st) => (st.startDate || "").slice(0, 4) === activeSeason);
     return stops.length > 0 && stops.every(isPastEvent);
   }
 
   function seasonOverHTML() {
     if (!groupByMonth || !activeSeason) return "";
-    const inSeason = events.filter((e) => seasonOf(e) === activeSeason);
+    const inSeason = events.filter((e) => seasonsOf(e).includes(activeSeason));
     if (!inSeason.length || !inSeason.every(isPastInSeason)) return "";
     const next = seasons.filter((y) => y > activeSeason);
     const body = next.length
@@ -268,8 +288,9 @@ async function initEventList(options) {
 
   function matchesSeason(ev) {
     if (!groupByMonth || !activeSeason) return true;
-    const sn = seasonOf(ev);
-    return sn === null || sn === activeSeason;   // les sans-date restent visibles
+    const sns = seasonsOf(ev);
+    // les sans-date restent visibles; un circuit paraît dans chacune de ses saisons
+    return sns.length === 0 || sns.includes(activeSeason);
   }
 
   function matchesKind(ev) {

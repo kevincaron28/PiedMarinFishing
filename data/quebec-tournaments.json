@@ -2247,5 +2247,290 @@
     },
     "tier": "regional",
     "kind": "single"
+  },
+  {
+    "id": "baitfuel-quinte-west-2027",
+    "name": {
+      "fr": "Qualifications 1 et 2 — Quinte West",
+      "en": "Qualifiers 1 and 2 — Quinte West"
+    },
+    "startDate": "2027-06-26",
+    "endDate": "2027-06-27",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Quinte West (Ontario)",
+      "en": "Quinte West, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/",
+    "notes": {
+      "fr": "Les deux premières qualifications, sur une fin de semaine. Saison 2027 annoncée : six qualifications à 65 équipes, et les 40 meilleures passent à la fin de semaine de la finale. Les frais d'inscription sont remis en entier en bourses. Plus de 250 000 $ annoncés en argent, récompenses aux pêcheurs et forfait Bass Cat/Mercury pour l'ensemble de la saison. Inscription prioritaire pour les équipes de retour du 15 au 31 octobre 2026; ouverte à tous à partir du 1er novembre 2026. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "The first two qualifiers, over one weekend. 2027 season announced: six qualifiers with a 65-team field, and the top 40 move on to Tour Championship weekend. Registration fees are paid back in full as cash payouts. Over $250,000 announced across the season in cash, angler rewards and a Bass Cat/Mercury package. Preferred registration for returning teams October 15–31, 2026; open to all from November 1, 2026. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-brockville-2027",
+    "name": {
+      "fr": "Qualification 3 — Brockville",
+      "en": "Qualifier 3 — Brockville"
+    },
+    "startDate": "2027-07-10",
+    "endDate": "2027-07-10",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Brockville (Ontario)",
+      "en": "Brockville, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/",
+    "notes": {
+      "fr": "Troisième qualification. Saison 2027 annoncée : six qualifications à 65 équipes, et les 40 meilleures passent à la fin de semaine de la finale. Les frais d'inscription sont remis en entier en bourses. Plus de 250 000 $ annoncés en argent, récompenses aux pêcheurs et forfait Bass Cat/Mercury pour l'ensemble de la saison. Inscription prioritaire pour les équipes de retour du 15 au 31 octobre 2026; ouverte à tous à partir du 1er novembre 2026. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Third qualifier. 2027 season announced: six qualifiers with a 65-team field, and the top 40 move on to Tour Championship weekend. Registration fees are paid back in full as cash payouts. Over $250,000 announced across the season in cash, angler rewards and a Bass Cat/Mercury package. Preferred registration for returning teams October 15–31, 2026; open to all from November 1, 2026. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-cornwall-2027",
+    "name": {
+      "fr": "Qualifications 4 et 5 — Cornwall",
+      "en": "Qualifiers 4 and 5 — Cornwall"
+    },
+    "startDate": "2027-08-07",
+    "endDate": "2027-08-08",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Cornwall (Ontario)",
+      "en": "Cornwall, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/",
+    "notes": {
+      "fr": "Quatrième et cinquième qualifications, sur une fin de semaine. Saison 2027 annoncée : six qualifications à 65 équipes, et les 40 meilleures passent à la fin de semaine de la finale. Les frais d'inscription sont remis en entier en bourses. Plus de 250 000 $ annoncés en argent, récompenses aux pêcheurs et forfait Bass Cat/Mercury pour l'ensemble de la saison. Inscription prioritaire pour les équipes de retour du 15 au 31 octobre 2026; ouverte à tous à partir du 1er novembre 2026. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Fourth and fifth qualifiers, over one weekend. 2027 season announced: six qualifiers with a 65-team field, and the top 40 move on to Tour Championship weekend. Registration fees are paid back in full as cash payouts. Over $250,000 announced across the season in cash, angler rewards and a Bass Cat/Mercury package. Preferred registration for returning teams October 15–31, 2026; open to all from November 1, 2026. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-cardinal-2027",
+    "name": {
+      "fr": "Qualification 6 — Cardinal",
+      "en": "Qualifier 6 — Cardinal"
+    },
+    "startDate": "2027-08-21",
+    "endDate": "2027-08-21",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Cardinal (Ontario)",
+      "en": "Cardinal, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/",
+    "notes": {
+      "fr": "Sixième et dernière qualification de la saison. Saison 2027 annoncée : six qualifications à 65 équipes, et les 40 meilleures passent à la fin de semaine de la finale. Les frais d'inscription sont remis en entier en bourses. Plus de 250 000 $ annoncés en argent, récompenses aux pêcheurs et forfait Bass Cat/Mercury pour l'ensemble de la saison. Inscription prioritaire pour les équipes de retour du 15 au 31 octobre 2026; ouverte à tous à partir du 1er novembre 2026. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "Sixth and final qualifier of the season. 2027 season announced: six qualifiers with a 65-team field, and the top 40 move on to Tour Championship weekend. Registration fees are paid back in full as cash payouts. Over $250,000 announced across the season in cash, angler rewards and a Bass Cat/Mercury package. Preferred registration for returning teams October 15–31, 2026; open to all from November 1, 2026. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "baitfuel-championship-2027",
+    "name": {
+      "fr": "Finale du circuit — Gananoque",
+      "en": "Tour Championship — Gananoque"
+    },
+    "startDate": "2027-09-11",
+    "endDate": "2027-09-12",
+    "region": {
+      "fr": "Ontario — corridor du Saint-Laurent",
+      "en": "Ontario — St. Lawrence corridor"
+    },
+    "location": {
+      "fr": "Gananoque (Ontario)",
+      "en": "Gananoque, Ontario"
+    },
+    "species": {
+      "fr": "Achigan",
+      "en": "Bass"
+    },
+    "organizer": "BAITFUEL Fishing Tour",
+    "type": {
+      "fr": "Étape de circuit",
+      "en": "Circuit Stop"
+    },
+    "status": "confirmed",
+    "link": "https://baitfuelfishingtour.com/",
+    "notes": {
+      "fr": "La finale, réservée aux 40 meilleures équipes des six qualifications. Saison 2027 annoncée : six qualifications à 65 équipes, et les 40 meilleures passent à la fin de semaine de la finale. Les frais d'inscription sont remis en entier en bourses. Plus de 250 000 $ annoncés en argent, récompenses aux pêcheurs et forfait Bass Cat/Mercury pour l'ensemble de la saison. Inscription prioritaire pour les équipes de retour du 15 au 31 octobre 2026; ouverte à tous à partir du 1er novembre 2026. Circuit ontarien : permis de pêche de l'Ontario et pièces d'identité pour la frontière.",
+      "en": "The championship, for the top 40 teams from the six qualifiers. 2027 season announced: six qualifiers with a 65-team field, and the top 40 move on to Tour Championship weekend. Registration fees are paid back in full as cash payouts. Over $250,000 announced across the season in cash, angler rewards and a Bass Cat/Mercury package. Preferred registration for returning teams October 15–31, 2026; open to all from November 1, 2026. Ontario circuit: an Ontario fishing licence and border ID are required."
+    },
+    "specs": {
+      "fee": "",
+      "teamSize": {
+        "fr": "2 pêcheurs / bateau",
+        "en": "2 anglers / boat"
+      },
+      "maxTeams": {
+        "fr": "65 bateaux",
+        "en": "65 boats"
+      }
+    },
+    "tier": "regional",
+    "kind": "stop",
+    "circuit": "baitfuel-fishing-tour"
+  },
+  {
+    "id": "tournoi-lac-megantic-2026",
+    "name": {
+      "fr": "Tournoi de pêche Lac Mégantic",
+      "en": "Lac Mégantic Fishing Tournament"
+    },
+    "startDate": "2026-09-19",
+    "endDate": "2026-09-19",
+    "region": {
+      "fr": "Estrie",
+      "en": "Estrie"
+    },
+    "location": {
+      "fr": "Lac Mégantic",
+      "en": "Lac Mégantic"
+    },
+    "species": {
+      "fr": "Brochet et achigan",
+      "en": "Pike and bass"
+    },
+    "organizer": {
+      "fr": "Passion Pêche Aventure",
+      "en": "Passion Pêche Aventure"
+    },
+    "type": {
+      "fr": "Tournoi d'un jour en équipe",
+      "en": "One-day team tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Tournoi d'une journée au brochet et à l'achigan sur le lac Mégantic, de 8 h à 16 h. Équipes de deux au maximum, 50 $ par équipe. Le pointage tient compte de la longueur ET du poids. Le montant des prix dépend du nombre de participants. L'affiche annonçait la dernière semaine d'inscription à trois jours de l'événement, sans date limite chiffrée.",
+      "en": "One-day pike and bass tournament on Lac Mégantic, 8 a.m. to 4 p.m. Teams of two at most, $50 per team. Scoring counts both length AND weight. Prize money depends on turnout. The poster announced the final week of registration three days before the event, without naming a cut-off date."
+    },
+    "specs": {
+      "fee": {
+        "fr": "50 $ / équipe",
+        "en": "$50 / team"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs au maximum",
+        "en": "2 anglers maximum"
+      },
+      "hours": {
+        "fr": "8 h à 16 h",
+        "en": "8 a.m. to 4 p.m."
+      },
+      "format": {
+        "fr": "Longueur et poids",
+        "en": "Length and weight"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
   }
 ]
