@@ -2532,5 +2532,53 @@
     },
     "tier": "regional",
     "kind": "single"
+  },
+  {
+    "id": "tournoi-brochets-guy-mayer-2026",
+    "name": {
+      "fr": "Tournoi de pêche aux brochets",
+      "en": "Pike Fishing Tournament"
+    },
+    "startDate": "2026-10-10",
+    "endDate": "2026-10-10",
+    "region": {
+      "fr": "Montérégie",
+      "en": "Montérégie"
+    },
+    "location": {
+      "fr": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix",
+      "en": "Pourvoirie Guy Mayer, Saint-Paul-de-l'Île-aux-Noix"
+    },
+    "species": {
+      "fr": "Brochet",
+      "en": "Pike"
+    },
+    "organizer": "",
+    "type": {
+      "fr": "Tournoi d'un jour",
+      "en": "One-day Tournament"
+    },
+    "status": "confirmed",
+    "link": "",
+    "notes": {
+      "fr": "Tournoi d'une journée au brochet, au départ de la Pourvoirie Guy Mayer. Descente gratuite. Deux pêcheurs au maximum par embarcation. L'entièreté des coûts d'inscription est remise en bourse à l'équipe gagnante. À l'arrivée, un objet mystère est remis à chaque équipe : il doit figurer sur chaque photo de prise. Aucun manque de respect ni geste agressif n'est toléré — l'équipe fautive est éliminée sur-le-champ — et l'organisation se dit non responsable des vols, bris ou accidents. L'affiche ne donne ni heures ni date limite d'inscription; pour joindre l'organisateur, elle indique Messenger ou un numéro de téléphone.",
+      "en": "One-day pike tournament out of the Pourvoirie Guy Mayer. Free boat launch. Two anglers maximum per boat. All registration fees are paid out as prize money to the winning team. On arrival, each team is handed a mystery object that must appear in every photo of a catch. No disrespect or aggressive behaviour is tolerated — the offending team is eliminated on the spot — and the organizers state they are not responsible for theft, damage or accidents. The poster gives no start time or registration cut-off; to reach the organizer it points to Messenger or a phone number."
+    },
+    "specs": {
+      "fee": {
+        "fr": "60 $ / pêcheur",
+        "en": "$60 / angler"
+      },
+      "teamSize": {
+        "fr": "2 pêcheurs maximum par embarcation",
+        "en": "2 anglers maximum per boat"
+      },
+      "format": {
+        "fr": "Objet mystère sur chaque photo de prise",
+        "en": "Mystery object in every catch photo"
+      }
+    },
+    "tier": "regional",
+    "kind": "single"
   }
 ]
