@@ -23,6 +23,7 @@ page. Live at [piedmarinfishing.com](https://piedmarinfishing.com).
 | `saison.html` | What is open right now — computed from the season dates in `data/regulations.json`. The only page whose content changes on its own, every day |
 | `merch.html` | Shop — under construction |
 | `social.html` | Social media links |
+| `privacy.html` | Privacy and cookies — Google AdSense, the consent choice, Law 25. Linked from every footer |
 | `404.html` | Not-found page, served by GitHub Pages at any depth |
 | `tournois/*.html` | One generated page per documented tournament |
 | `pecheurs/*.html` | One generated profile per angler — its own URL, so it can be pasted into a pro-staff application |
@@ -113,6 +114,7 @@ To add a language, add a third block to `data/i18n.json`, add its code to
 | `moon.js` | the solunar calendar, and the line between what is computed and what is not |
 | `moon-calendar.js` | renders one lunar month at a time, with the arrows |
 | `analytics.js` | GoatCounter beacon — inert until a site code is filled in |
+| `consent.js` | cookie banner (FR/EN, self-contained). Loads the AdSense loader only after a choice: personalised on Accept, non-personalised on Decline. No ad units in the markup — Auto ads are switched on in AdSense. Not on `404.html` or `merch.html` |
 
 Load order matters: `util.js` → `i18n.js` → renderer. `team.html` also loads
 `history.js`, because the record strip on each card is computed from the
