@@ -110,6 +110,15 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://piedmarinfishing.com/privacy.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/privacy.html?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://piedmarinfishing.com/privacy.html"/>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://piedmarinfishing.com/tournois/amical-april-marine-2026.html</loc>
     <xhtml:link rel="alternate" hreflang="fr-ca" href="https://piedmarinfishing.com/tournois/amical-april-marine-2026.html"/>
     <xhtml:link rel="alternate" hreflang="en-ca" href="https://piedmarinfishing.com/tournois/amical-april-marine-2026.html?lang=en"/>

@@ -49,6 +49,7 @@ PAGES = [
     ("sorties.html",     "0.7", "weekly",  ["data/trips.json", "data/catches.json",
                                             "data/team-members.json", "data/boats.json"]),
     ("social.html",      "0.5", "monthly", ["data/socials.json", "data/videos.json"]),
+    ("privacy.html",     "0.3", "yearly",  []),
 ]
 COMMON = ["data/i18n.json"]
 # Les fiches de tournoi sont générées : elles suivent le répertoire et le
