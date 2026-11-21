@@ -515,8 +515,107 @@ def family(identifier):
     return re.sub(r"-\d{4}$", "", identifier or "")
 
 
+# ------------------------------------------------------------- indexation
+#
+# AdSense a refusé le site le 21 novembre 2026 pour « contenu à faible
+# valeur », et une cinquantaine de fiches bâties sur un même gabarit, la
+# plupart d'une édition déjà passée, en sont la part la plus visible. Aucune
+# fiche n'est retirée : l'adresse reste, le visiteur la lit, les liens y
+# mènent. On dit seulement aux moteurs de ne pas l'indexer quand :
+#
+#   - l'édition est ENTIÈREMENT passée au moment du build (la date de fin, ou
+#     la fin de la période pour une date partielle; un circuit sans date
+#     propre est passé quand toutes ses étapes datées le sont). Une entrée
+#     sans date n'est jamais passée, comme isPastEvent() dans util.js;
+#   - ou la fiche compte moins de THIN_WORDS mots visibles (menu, fil
+#     d'Ariane, pied de page et scripts exclus).
+#
+# Quand la même série a une édition plus récente qui, elle, reste indexée
+# (même famille d'identifiant, même organisateur), la fiche passée pointe vers
+# elle par <link rel="canonical"> au lieu de porter noindex : les deux
+# signaux se contrediraient. build-sitemap.py écarte les deux cas.
+#
+# La règle dépend du jour du build : relancer le script après une fin de
+# saison, sinon une fiche passée reste indexée jusqu'au prochain passage.
+THIN_WORDS = 180
+_SKIP_TAGS = ("script", "style", "svg", "noscript", "header", "nav", "footer")
+
+
+def visible_words(html):
+    """Les mots qu'un lecteur voit, en français — data-en n'est pas compté."""
+    body = html.split("<body", 1)[-1]
+    for tag in _SKIP_TAGS:
+        body = re.sub(r"<%s\b.*?</%s>" % (tag, tag), " ", body, flags=re.S | re.I)
+    text = re.sub(r"<[^>]+>", " ", body)
+    for ent, ch in (("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&quot;", '"'), ("&nbsp;", " ")):
+        text = text.replace(ent, ch)
+    return len(re.findall(r"[\w’'-]+", text, re.U))
+
+
+def end_of_period(value):
+    """« 2026 » -> 31 décembre, « 2026-05 » -> 31 mai : endOfPeriod() d'util.js."""
+    parts = (value or "").split("-")
+    try:
+        year = int(parts[0])
+    except ValueError:
+        return None
+    if len(parts) == 1:
+        return datetime.date(year, 12, 31)
+    month = int(parts[1])
+    if len(parts) == 2:
+        nxt = datetime.date(year + (month == 12), month % 12 + 1, 1)
+        return nxt - datetime.timedelta(days=1)
+    return datetime.date(year, month, int(parts[2]))
+
+
+def is_past(ev, stops_of):
+    today = datetime.date.fromisoformat(TODAY)
+    if ev.get("kind") == "circuit" and not ev.get("startDate"):
+        ends = [end_of_period(s.get("endDate") or s.get("startDate"))
+                for s in stops_of.get(ev["id"]) or []]
+        ends = [e for e in ends if e]
+        return bool(ends) and all(e < today for e in ends)
+    end = end_of_period(ev.get("endDate") or ev.get("startDate"))
+    return bool(end) and end < today
+
+
+def index_policies(kept, words, stops_of):
+    """Pour chaque fiche : None (indexée), "noindex", ou l'id de sa canonique."""
+    past = {e["id"]: is_past(e, stops_of) for e in kept}
+    out = {e["id"]: ("noindex" if past[e["id"]] or words[e["id"]] < THIN_WORDS else None)
+           for e in kept}
+    for ev in kept:
+        if not past[ev["id"]]:
+            continue
+        year = (ev.get("startDate") or "")[:4]
+        newer = [e for e in kept
+                 if e["id"] != ev["id"] and family(e["id"]) == family(ev["id"])
+                 and family(ev["id"]) != ev["id"]
+                 and (e.get("startDate") or "")[:4] > year
+                 and pick(e.get("organizer"), "fr") == pick(ev.get("organizer"), "fr")
+                 and out[e["id"]] is None]
+        if newer:
+            out[ev["id"]] = min(newer, key=sortable)["id"]
+    return out
+
+
+def index_tags(url, policy):
+    """Les balises d'indexation du <head>, selon la décision ci-dessus."""
+    if policy and policy != "noindex":
+        # Une page non canonique ne déclare pas ses propres versions de langue :
+        # ce serait annoncer comme alternatives une adresse qu'on désindexe.
+        return '<link rel="canonical" href="%s/tournois/%s.html">' % (SITE, policy)
+    tags = ['<link rel="canonical" href="%s">' % url,
+            '<link rel="alternate" hreflang="fr-ca" href="%s">' % url,
+            '<link rel="alternate" hreflang="en-ca" href="%s?lang=en">' % url,
+            '<link rel="alternate" hreflang="x-default" href="%s">' % url]
+    if policy == "noindex":
+        tags.insert(0, '<meta name="robots" content="noindex, follow">')
+    return "\n".join(tags)
+
+
 def render(ev, by_id, stops_of, history, ui, kept, attending,
-           prev=None, nxt=None):
+           prev=None, nxt=None, policy=None):
     fr_name = pick(ev.get("name"), "fr")
     title = {"fr": clamp_title(fr_name), "en": clamp_title(pick(ev.get("name"), "en"))}
     desc = {"fr": build_description(ev, "fr"), "en": build_description(ev, "en")}
@@ -676,10 +775,7 @@ def render(ev, by_id, stops_of, history, ui, kept, attending,
 <base href="/">
 <title data-en="%(title_en)s">%(title_fr)s</title>
 <meta name="description" content="%(desc_fr)s" data-en-content="%(desc_en)s">
-<link rel="canonical" href="%(url)s">
-<link rel="alternate" hreflang="fr-ca" href="%(url)s">
-<link rel="alternate" hreflang="en-ca" href="%(url)s?lang=en">
-<link rel="alternate" hreflang="x-default" href="%(url)s">
+%(index_tags)s
 <meta name="theme-color" content="#0b1e33">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Pied Marin Fishing">
@@ -718,6 +814,7 @@ def render(ev, by_id, stops_of, history, ui, kept, attending,
         "title_fr": esc(title["fr"]), "title_en": esc(title["en"]),
         "desc_fr": esc(desc["fr"]), "desc_en": esc(desc["en"]),
         "url": url, "site": SITE, "ld": ld_block, "nav": NAV, "footer": FOOTER,
+        "index_tags": index_tags(url, policy),
         "crumbs": breadcrumb("tournois", ev.get("name"), url),
         "siblings": siblings(prev, nxt),
         "h1": bilingual("h1", ev.get("name")),
@@ -757,14 +854,23 @@ if __name__ == "__main__":
     # fichier : un tournoi sans date publiee passe en fin de liste, comme dans
     # le guide.
     ordered = sorted(kept, key=lambda e: (sortable(e), pick(e.get("name"), "fr")))
-    for i, ev in enumerate(ordered):
+    def neighbours(i):
         def link(other):
             return ("tournois/%s.html" % other["id"], other.get("name")) if other else None
-        prev = link(ordered[i - 1]) if i else None
-        nxt = link(ordered[i + 1]) if i + 1 < len(ordered) else None
+        return (link(ordered[i - 1]) if i else None,
+                link(ordered[i + 1]) if i + 1 < len(ordered) else None)
+
+    # Deux passes : la décision d'indexer dépend du nombre de mots de la page
+    # rendue, et les balises qu'elle ajoute ne changent pas ce nombre.
+    words = {ev["id"]: visible_words(render(ev, by_id, stops_of, history, ui, kept,
+                                            attending, *neighbours(i)))
+             for i, ev in enumerate(ordered)}
+    policies = index_policies(kept, words, stops_of)
+    for i, ev in enumerate(ordered):
         name = "%s.html" % ev["id"]
         with io.open(os.path.join(OUT_DIR, name), "w", encoding="utf-8") as fh:
-            fh.write(render(ev, by_id, stops_of, history, ui, kept, attending, prev, nxt))
+            fh.write(render(ev, by_id, stops_of, history, ui, kept, attending,
+                            *neighbours(i), policy=policies[ev["id"]]))
         written.add(name)
     # Un tournoi retiré du répertoire ne doit pas laisser sa fiche en ligne.
     for stale in sorted(existing - written):
@@ -777,6 +883,17 @@ if __name__ == "__main__":
 
     print("%d fiches écrites dans tournois/ (%d tournois au répertoire)"
           % (len(kept), len(events)))
+    shut = sorted(i for i, p in policies.items() if p == "noindex")
+    canon = sorted((i, p) for i, p in policies.items() if p and p != "noindex")
+    print("Indexation : %d indexées, %d noindex, %d canoniques vers une édition plus récente"
+          % (len(kept) - len(shut) - len(canon), len(shut), len(canon)))
+    for i in shut:
+        why = ["passée"] if is_past(by_id[i], stops_of) else []
+        if words[i] < THIN_WORDS:
+            why.append("%d mots" % words[i])
+        print("  noindex   %-44s %s" % (i, ", ".join(why)))
+    for i, p in canon:
+        print("  canonique %-44s -> %s" % (i, p))
     for ev in sorted(events, key=lambda e: -score(e)):
         mark = "✓" if ev in kept else " "
         print("  %s %-46s %2d/%d  %s" % (mark, pick(ev.get("name"), "fr")[:46],
