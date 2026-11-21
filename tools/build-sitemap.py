@@ -12,12 +12,16 @@ Chaque entrée déclare aussi ses deux langues (hreflang), comme les balises
 
     python3 tools/build-sitemap.py
 
+Une fiche générée qui porte noindex, ou dont la canonique est une autre
+adresse, est écartée aussi (voir indexable()).
+
 merch.html et 404.html sont volontairement absentes : la première porte
 noindex tant que la boutique est vide, la seconde n'a rien à indexer.
 """
 import datetime
 import io
 import os
+import re
 import subprocess
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -102,15 +106,38 @@ GENERATED_DIRS = [("tournois", "0.6", PAGE_DEPS), ("pecheurs", "0.7", PAGE_DEPS)
                   ("especes", "0.6", SPECIES_DEPS)]
 
 
+NOINDEX_RE = re.compile(r'<meta name="robots" content="[^"]*noindex', re.I)
+CANONICAL_RE = re.compile(r'<link rel="canonical" href="([^"]+)"', re.I)
+SKIPPED = []
+
+
+def indexable(page):
+    """Une fiche qui demande noindex, ou dont la canonique est une autre
+    adresse, n'a rien à faire dans le sitemap : y lister une page qu'on
+    désindexe envoie deux signaux contraires. La décision se prend dans le
+    générateur (build-tournament-pages.py); on la lit ici dans la page
+    elle-même pour ne pas la rejouer et risquer d'en diverger."""
+    with io.open(os.path.join(REPO, page), encoding="utf-8") as fh:
+        head = fh.read().split("</head>", 1)[0]
+    if NOINDEX_RE.search(head):
+        return False
+    m = CANONICAL_RE.search(head)
+    return not m or m.group(1) == "%s/%s" % (SITE, page)
+
+
 def generated_pages():
-    """Une entrée par fiche générée, avec les données dont elle dépend."""
+    """Une entrée par fiche générée et indexable, avec ses dépendances."""
     out = []
     for dirname, priority, deps in GENERATED_DIRS:
         directory = os.path.join(REPO, dirname)
         if not os.path.isdir(directory):
             continue
         for name in sorted(f for f in os.listdir(directory) if f.endswith(".html")):
-            out.append(("%s/%s" % (dirname, name), priority, "monthly", deps))
+            page = "%s/%s" % (dirname, name)
+            if indexable(page):
+                out.append((page, priority, "monthly", deps))
+            else:
+                SKIPPED.append(page)
     return out
 
 
@@ -125,3 +152,5 @@ if __name__ == "__main__":
         fh.write(xml)
     for page, _, _, deps in PAGES:
         print("%-34s %s" % (page, lastmod(page, deps)))
+    print("%d adresses au sitemap; %d fiches écartées (noindex ou canonique ailleurs)"
+          % (len(PAGES), len(SKIPPED)))
