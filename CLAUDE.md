@@ -635,6 +635,7 @@ l'horaire, le format et la date limite fait son travail.
 
 ```bash
 python3 tools/sync-html-fallbacks.py --check   # 0 divergence
+python3 tools/build-prerender.py --check        # listes des pages racine à jour de data/
 python3 tools/check-private.py                 # 0 identifiant, 0 prénom de mineure
 python3 tools/check-links.py                   # 0 lien cassé, 0 speciesId orphelin
 node    tools/test-season.js                   # 30 contrôles du moteur de saison

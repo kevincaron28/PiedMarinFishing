@@ -90,6 +90,15 @@ ayant une fiche. `assets/js/events.js` la lit pour ajouter le bouton « Fiche du
 tournoi » aux bonnes cartes du répertoire, et supprime les fiches devenues
 orphelines quand un tournoi quitte le guide.
 
+**Indexée ou non.** Aucune fiche n'est retirée, mais une fiche dont
+l'édition est entièrement passée au jour du build, ou qui compte moins de
+`THIN_WORDS` (180) mots visibles, porte `<meta name="robots" content="noindex,
+follow">`. Si la même série a une édition plus récente qui reste indexée
+(même famille d'identifiant, même organisateur), la fiche passée pointe vers
+elle par `<link rel="canonical">` à la place. Le script affiche la décision
+pour chaque fiche. Elle dépend de la date : relancer le script après une fin
+de saison.
+
 Le français est écrit en dur dans le HTML — c'est lui que lisent les robots —
 et l'anglais voyage dans des attributs `data-en` qu'`assets/js/tournament-page.js`
 échange au clic. Rien n'est rendu en JavaScript. Ne modifie jamais un fichier
@@ -193,8 +202,9 @@ python3 tools/build-sitemap.py
 
 À relancer juste après un commit de contenu, pour que les dates soient celles
 du commit et non celles de la journée. `merch.html` et `404.html` en sont
-absentes : elles portent `noindex`. Les fiches de `tournois/` y sont ajoutées
-automatiquement.
+absentes : elles portent `noindex`. Les fiches générées y sont ajoutées
+automatiquement, sauf celles qui portent `noindex` ou dont la canonique est
+une autre adresse — le script le lit dans la page elle-même.
 
 ## Ce qui demande une vérification
 

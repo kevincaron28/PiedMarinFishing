@@ -139,6 +139,7 @@ These are run by hand, not at deploy time — GitHub Pages serves the repo as-is
 | `tools/build-species-pages.py` | writes `especes/*.html` for the species whose claims are **verified**, from `data/species.json` and `data/sources.json` |
 | `tools/build-structured-data.py` | refreshes the JSON-LD blocks in the hand-written pages |
 | `tools/build-sitemap.py` | rewrites `sitemap.xml`, with `lastmod` taken from git per page **and its data dependencies** |
+| `tools/build-prerender.py` | writes the French version of the JS-built lists (roster, trips, catches, species index, results, our calendar, shop) into the committed root pages, so a crawler without JavaScript reads them. Each script still replaces its container on load. Season status and regulation text are deliberately not pre-rendered — `--check` exits 1 on drift |
 | `tools/sync-html-fallbacks.py` | copies the French from `data/i18n.json` into the hard-coded HTML, and regenerates the `og:`/`twitter:` tags — `--check` exits 1 on drift |
 | `tools/check-links.py` | every internal link resolves, every image and `srcset` width is on disk, and pages about the same subject actually point at each other |
 | `tools/check-private.py` | refuses to let a registration number, plate or serial reach `data/` or a generated page; exits 1 on a hit |
@@ -162,6 +163,7 @@ python3 tools/build-image-variants.py     # if a photo was added
 python3 tools/build-tournament-pages.py   # if a tournament changed
 python3 tools/build-profile-pages.py      # if a member or a boat changed
 python3 tools/build-structured-data.py
+python3 tools/build-prerender.py         # the lists in the root pages
 python3 tools/sync-html-fallbacks.py
 python3 tools/build-sitemap.py            # last — it reads git for lastmod
 ```

@@ -77,23 +77,131 @@
   <div class="container">
     <div class="notice" data-i18n="history.notice">Nos trois Formule Brochet sont confirmées, résultats à l'appui. Le brochet s'y mesure à la règle officielle sans sortir de l'eau, et le pointage est la longueur combinée des deux plus longs. Classements et mesures tirés de FishDonkey, l'application officielle du tournoi.</div>
 
-    <div id="history-stats" class="grid grid-4" style="margin-bottom:32px;"></div>
+    <div id="history-stats" class="grid grid-4" style="margin-bottom:32px;"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><div class="stat-card"><div class="num">3</div>
+<div class="label">Tournois pêchés</div>
+</div>
+<div class="stat-card"><div class="num">99e sur 329</div>
+<div class="label">Meilleur résultat</div>
+</div>
+<div class="stat-card"><div class="num">55,25 po</div>
+<div class="label">Meilleur pointage</div>
+</div>
+<div class="stat-card"><div class="num">3</div>
+<div class="label">Saisons</div>
+</div></div>
 
     <!-- Palmarès en tableau : rempli par history.js, il se retire sous deux
          lignes. Les cartes plus bas gardent le détail de chaque année. -->
-    <div class="record-section" data-table-section hidden>
+    <div class="record-section" data-table-section>
       <h2 class="record-title" data-i18n="history.tableTitle">Palmarès</h2>
-      <div id="record-table"></div>
+      <div id="record-table"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><table class="record-table"><thead><tr><th>Saison</th>
+<th>Tournoi</th>
+<th>Classement</th>
+<th>Pointage</th>
+</tr>
+</thead><tbody><tr><td>2026</td>
+<td>Formule Brochet 2026</td>
+<td>102e sur 309 <span class="table-pct">top 34 %</span>
+</td>
+<td>55 po</td>
+</tr>
+<tr><td>2025</td>
+<td>Formule Brochet 2025</td>
+<td>99e sur 329 <span class="table-pct">top 31 %</span>
+</td>
+<td>55,25 po</td>
+</tr>
+<tr><td>2024</td>
+<td>Formule Brochet 2024</td>
+<td>118e sur 313 <span class="table-pct">top 38 %</span>
+</td>
+<td>53 po</td>
+</tr>
+</tbody></table></div>
     </div>
 
     <div class="filters">
       <select id="member-filter" data-i18n-aria-label="history.allMembers" aria-label="Tous les membres"></select>
       <select id="year-filter" data-i18n-aria-label="history.allSeasons" aria-label="Toutes les saisons"></select>
       <input id="search-filter" type="text" data-i18n-placeholder="history.search" placeholder="Rechercher un tournoi, un plan d'eau…">
-      <span class="result-count" id="result-count"></span>
+      <span class="result-count" id="result-count">3 résultats</span>
     </div>
 
-    <div id="result-list" class="event-list"></div>
+    <div id="result-list" class="event-list"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><article class="result-card"><div class="event-date"><span class="month">MAI</span>
+<span class="day">2</span>
+<span class="year">2026</span>
+</div>
+<div class="result-main"><div class="event-title">Formule Brochet 2026</div>
+<div class="event-meta"><span>📍 Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre</span>
+<span>Zone 8 / corridor du Saint-Laurent</span>
+<span>🎣 Brochet</span>
+<span>Muskies Canada Montréal</span>
+</div>
+<div class="result-figures"><span><b>55 po</b> 2 plus longs brochets</span>
+<span><b>28 po</b> plus long brochet</span>
+</div>
+<div class="angler-chips"><span class="angler-label">Au bateau :</span>
+<a class="angler-chip" href="?member=kevin-caron">Kevin Caron</a>
+<a class="angler-chip" href="?member=kevin-b">Kev B.</a>
+<a class="angler-chip" href="?member=bobe">BOBE</a>
+</div>
+<p class="result-notes">Notre total : 55 po (28 po + 27 po). Troisième participation de suite. Sur les 309 équipes inscrites, 208 ont enregistré une prise classable.</p>
+</div>
+<div class="result-place"><span class="placement ">102e</span>
+<span class="placement-of">sur 309</span>
+<span class="placement-pct">top 34 %</span>
+</div>
+</article>
+<article class="result-card"><div class="event-date"><span class="month">MAI</span>
+<span class="day">3</span>
+<span class="year">2025</span>
+</div>
+<div class="result-main"><div class="event-title">Formule Brochet 2025</div>
+<div class="event-meta"><span>📍 Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre</span>
+<span>Zone 8 / corridor du Saint-Laurent</span>
+<span>🎣 Brochet</span>
+<span>Muskies Canada Montréal</span>
+</div>
+<div class="result-figures"><span><b>55,25 po</b> 2 plus longs brochets</span>
+<span><b>28 po</b> plus long brochet</span>
+</div>
+<div class="angler-chips"><span class="angler-label">Au bateau :</span>
+<a class="angler-chip" href="?member=kevin-caron">Kevin Caron</a>
+<a class="angler-chip" href="?member=kevin-b">Kev B.</a>
+<a class="angler-chip" href="?member=bobe">BOBE</a>
+</div>
+<p class="result-notes">Notre total : 55,25 po (28 po + 27,25 po). Dix-neuf places gagnées et deux pouces de plus qu'en 2024. Sur les 329 équipes inscrites, 237 ont enregistré une prise classable.</p>
+</div>
+<div class="result-place"><span class="placement ">99e</span>
+<span class="placement-of">sur 329</span>
+<span class="placement-pct">top 31 %</span>
+</div>
+</article>
+<article class="result-card"><div class="event-date"><span class="month">MAI</span>
+<span class="day">4</span>
+<span class="year">2024</span>
+</div>
+<div class="result-main"><div class="event-title">Formule Brochet 2024</div>
+<div class="event-meta"><span>📍 Ouverture du brochet — zone 8 et corridor zone 7, incluant l'AFC du lac Saint-Pierre</span>
+<span>Zone 8 / corridor du Saint-Laurent</span>
+<span>🎣 Brochet</span>
+<span>Muskies Canada Montréal</span>
+</div>
+<div class="result-figures"><span><b>53 po</b> 2 plus longs brochets</span>
+<span><b>27,5 po</b> plus long brochet</span>
+</div>
+<div class="angler-chips"><span class="angler-label">Au bateau :</span>
+<a class="angler-chip" href="?member=kevin-caron">Kevin Caron</a>
+<a class="angler-chip" href="?member=kevin-b">Kev B.</a>
+<a class="angler-chip" href="?member=bobe">BOBE</a>
+</div>
+<p class="result-notes">Notre total : 53 po (27,5 po + 25,5 po). Notre première participation. Sur les 313 équipes inscrites, 235 ont enregistré une prise classable.</p>
+</div>
+<div class="result-place"><span class="placement ">118e</span>
+<span class="placement-of">sur 313</span>
+<span class="placement-pct">top 38 %</span>
+</div>
+</article></div>
     <div id="empty-state" class="empty-state" style="display:none;" data-i18n="history.empty">Aucun résultat ne correspond à tes filtres.</div>
   </div>
 </section>
