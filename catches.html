@@ -82,26 +82,206 @@
     <div class="filters">
       <select id="angler-filter" data-i18n-aria-label="catches.allAnglers" aria-label="Tous les pêcheurs"></select>
       <select id="species-filter" data-i18n-aria-label="catches.allSpecies" aria-label="Toutes les espèces"></select>
-      <span class="result-count" id="result-count"></span>
+      <span class="result-count" id="result-count">9 prises</span>
     </div>
 
     <!-- La prise vedette : remplie seulement si une prise porte "featured": true
          dans data/catches.json, et masquée dès qu'un filtre est actif. -->
-    <div id="featured-catch"></div>
+    <div id="featured-catch"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><article class="featured-catch" id="c-maskinonge-kevin-b"><div class="catch-media featured-media"><button type="button" class="catch-media-btn" data-catch="maskinonge-kevin-b" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/maskinonge-kevin-b.jpg" srcset="assets/img/catches/maskinonge-kevin-b-160.jpg 160w, assets/img/catches/maskinonge-kevin-b-400.jpg 400w, assets/img/catches/maskinonge-kevin-b-800.jpg 800w, assets/img/catches/maskinonge-kevin-b.jpg 1200w" sizes="(max-width: 760px) 92vw, 583px" alt="Kev B. et BOBE tenant un maskinongé de 50 pouces à bord, sous la pluie" loading="lazy">
+<span class="catch-photo-count" aria-hidden="true">1/6</span>
+</button>
+<span class="featured-flag">Prise vedette</span>
+</div>
+<div class="catch-body featured-body"><div class="catch-head"><h2>Maskinongé</h2>
+<span class="catch-measure">50 po</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=kevin-b">Kev B.</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 2025</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le record personnel de Kev B. Sorti du fleuve Saint-Laurent une journée de pluie, hors tournoi.</p>
+<a class="catch-story-link" href="prises/maskinonge-kevin-b.html">Lire le récit →</a>
+<a class="catch-video-link" href="https://www.youtube.com/watch?v=PXwFXozk-5c" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> Voir la vidéo</a>
+</div>
+</article></div>
 
     <!-- Temple de la renommée : calculé par catches.js à partir des prises
          mesurées, une par espèce. Se masque tout seul sous deux records, et
          quand un filtre est actif. -->
-    <div class="hall-section" data-hall-section hidden>
+    <div class="hall-section" data-hall-section>
       <div class="section-head">
         <span class="kicker" data-i18n="hall.kicker">Records de l'équipe</span>
         <h2 data-i18n="hall.title">Temple de la renommée</h2>
         <p data-i18n="hall.intro">La plus grosse de chaque espèce depuis qu'on tient le compte. Clique une prise pour la voir en grand.</p>
       </div>
-      <div id="hall-of-fame" class="hall-grid"></div>
+      <div id="hall-of-fame" class="hall-grid"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><button type="button" class="hall-item" data-catch="achigan-kev-b-2026" data-photo="0"><img class="hall-thumb" src="assets/img/catches/achigan-kev-b-2026.jpg" srcset="assets/img/catches/achigan-kev-b-2026-160.jpg 160w, assets/img/catches/achigan-kev-b-2026-400.jpg 400w, assets/img/catches/achigan-kev-b-2026-800.jpg 800w, assets/img/catches/achigan-kev-b-2026.jpg 1600w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Achigan à petite bouche</span>
+<span class="hall-measure">2,15 lb</span>
+<span class="hall-angler">Kev B.</span>
+</span>
+</button>
+<button type="button" class="hall-item" data-catch="barbue-2025" data-photo="0"><img class="hall-thumb" src="assets/img/catches/barbue-2025.jpg" srcset="assets/img/catches/barbue-2025-160.jpg 160w, assets/img/catches/barbue-2025-400.jpg 400w, assets/img/catches/barbue-2025-800.jpg 800w, assets/img/catches/barbue-2025.jpg 1200w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Barbue de rivière</span>
+<span class="hall-measure">7 lb</span>
+<span class="hall-angler">Kevin Caron</span>
+</span>
+</button>
+<button type="button" class="hall-item" data-catch="dore-bobe-2026" data-photo="0"><img class="hall-thumb" src="assets/img/catches/dore-bobe-2026.jpg" srcset="assets/img/catches/dore-bobe-2026-160.jpg 160w, assets/img/catches/dore-bobe-2026-400.jpg 400w, assets/img/catches/dore-bobe-2026-800.jpg 800w, assets/img/catches/dore-bobe-2026.jpg 1600w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Doré jaune</span>
+<span class="hall-measure">4,5 lb</span>
+<span class="hall-angler">BOBE</span>
+</span>
+</button>
+<button type="button" class="hall-item" data-catch="malachigan-2025" data-photo="0"><img class="hall-thumb" src="assets/img/catches/malachigan-2025.jpg" srcset="assets/img/catches/malachigan-2025-160.jpg 160w, assets/img/catches/malachigan-2025-400.jpg 400w, assets/img/catches/malachigan-2025-800.jpg 800w, assets/img/catches/malachigan-2025.jpg 1200w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Malachigan</span>
+<span class="hall-measure">11 lb</span>
+<span class="hall-angler">BOBE</span>
+</span>
+</button>
+<button type="button" class="hall-item" data-catch="maskinonge-kevin-b" data-photo="0"><img class="hall-thumb" src="assets/img/catches/maskinonge-kevin-b.jpg" srcset="assets/img/catches/maskinonge-kevin-b-160.jpg 160w, assets/img/catches/maskinonge-kevin-b-400.jpg 400w, assets/img/catches/maskinonge-kevin-b-800.jpg 800w, assets/img/catches/maskinonge-kevin-b.jpg 1200w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Maskinongé</span>
+<span class="hall-measure">50 po</span>
+<span class="hall-angler">Kev B.</span>
+</span>
+</button>
+<button type="button" class="hall-item" data-catch="chinook-salmon-river" data-photo="0"><img class="hall-thumb" src="assets/img/catches/chinook-salmon-river.jpg" srcset="assets/img/catches/chinook-salmon-river-160.jpg 160w, assets/img/catches/chinook-salmon-river-400.jpg 400w, assets/img/catches/chinook-salmon-river-800.jpg 800w, assets/img/catches/chinook-salmon-river.jpg 1200w" sizes="72px" alt="" loading="lazy" width="120" height="90">
+<span class="hall-body"><span class="hall-species">Saumon chinook</span>
+<span class="hall-measure">20 lb</span>
+<span class="hall-angler">Kevin Caron</span>
+</span>
+</button></div>
     </div>
 
-    <div id="catch-grid" class="grid grid-3"></div>
+    <div id="catch-grid" class="grid grid-3"><!-- Pré-rendu par tools/build-prerender.py : le script de la page le remplace au chargement. --><article class="catch-card" id="c-dore-bobe-2026"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="dore-bobe-2026" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/dore-bobe-2026.jpg" srcset="assets/img/catches/dore-bobe-2026-160.jpg 160w, assets/img/catches/dore-bobe-2026-400.jpg 400w, assets/img/catches/dore-bobe-2026-800.jpg 800w, assets/img/catches/dore-bobe-2026.jpg 1600w" sizes="(max-width: 760px) 92vw, 346px" alt="BOBE tient un doré jaune à deux mains dans la chaloupe, de nuit, éclairé à la lampe frontale." loading="lazy">
+<span class="catch-photo-count" aria-hidden="true">1/3</span>
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Doré jaune</h3>
+<span class="catch-measure">4,5 lb</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=bobe">BOBE</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 12 septembre 2026</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le record personnel de doré de BOBE depuis l'ouverture du mur des prises. Quatre livres et demie au peson, remis à l'eau.</p>
+<a class="catch-story-link" href="prises/dore-bobe-2026.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-achigan-kev-b-2026"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="achigan-kev-b-2026" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/achigan-kev-b-2026.jpg" srcset="assets/img/catches/achigan-kev-b-2026-160.jpg 160w, assets/img/catches/achigan-kev-b-2026-400.jpg 400w, assets/img/catches/achigan-kev-b-2026-800.jpg 800w, assets/img/catches/achigan-kev-b-2026.jpg 1600w" sizes="(max-width: 760px) 92vw, 346px" alt="Kev B. tient un achigan à petite bouche à deux mains dans la chaloupe, de nuit." loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Achigan à petite bouche</h3>
+<span class="catch-measure">2,15 lb</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=kevin-b">Kev B.</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 12 septembre 2026</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Un achigan à petite bouche de 2,15 lb pris en soirée par Kev B., remis à l'eau.</p>
+<a class="catch-story-link" href="prises/achigan-kev-b-2026.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-maskinonge-bobe"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="maskinonge-bobe" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/maskinonge-bobe.jpg" srcset="assets/img/catches/maskinonge-bobe-160.jpg 160w, assets/img/catches/maskinonge-bobe-400.jpg 400w, assets/img/catches/maskinonge-bobe-800.jpg 800w, assets/img/catches/maskinonge-bobe.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Maskinongé — BOBE — Fleuve Saint-Laurent" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Maskinongé</h3>
+<span class="catch-measure">45 po</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=bobe">BOBE</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 4 juillet 2025</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le record personnel de BOBE. Sorti du fleuve Saint-Laurent en fin de journée, hors tournoi.</p>
+<a class="catch-story-link" href="prises/maskinonge-bobe.html">Lire le récit →</a>
+<a class="catch-video-link" href="https://www.youtube.com/watch?v=bl9RvD-PX5U" target="_blank" rel="noopener"><span aria-hidden="true">▶</span> Voir la vidéo</a>
+</div>
+</article>
+<article class="catch-card" id="c-malachigan-2025"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="malachigan-2025" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/malachigan-2025.jpg" srcset="assets/img/catches/malachigan-2025-160.jpg 160w, assets/img/catches/malachigan-2025-400.jpg 400w, assets/img/catches/malachigan-2025-800.jpg 800w, assets/img/catches/malachigan-2025.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Malachigan — BOBE — Fleuve Saint-Laurent" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Malachigan</h3>
+<span class="catch-measure">11 lb</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=bobe">BOBE</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 4 juillet 2025</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le record personnel de BOBE. Un malachigan de 11 livres levé au coucher du soleil sur le fleuve. La longueur n'a pas été mesurée.</p>
+<a class="catch-story-link" href="prises/malachigan-2025.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-barbue-2025"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="barbue-2025" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/barbue-2025.jpg" srcset="assets/img/catches/barbue-2025-160.jpg 160w, assets/img/catches/barbue-2025-400.jpg 400w, assets/img/catches/barbue-2025-800.jpg 800w, assets/img/catches/barbue-2025.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Barbue de rivière — Kevin Caron — Fleuve Saint-Laurent" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Barbue de rivière</h3>
+<span class="catch-measure">7 lb</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=kevin-caron">Kevin Caron</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 4 juillet 2025</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le record personnel de Kevin Caron. Une barbue de rivière de 7 livres prise de nuit sur le fleuve. La longueur n'a pas été mesurée.</p>
+<a class="catch-story-link" href="prises/barbue-2025.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-perchaude-2025"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="perchaude-2025" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/perchaude-2025.jpg" srcset="assets/img/catches/perchaude-2025-160.jpg 160w, assets/img/catches/perchaude-2025-400.jpg 400w, assets/img/catches/perchaude-2025-800.jpg 800w, assets/img/catches/perchaude-2025.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Une jeune enfant, visage masqué, tenant une petite perchaude sur la glace" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Perchaude</h3>
+</div>
+<div class="catch-anglers"><span class="angler-chip">R.C.</span>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 février 2025</span>
+<span>📍 Lac Champlain, Venise-en-Québec</span>
+</div>
+<p class="catch-notes">Une petite perchaude sortie sur la glace par R.C., la fille de Kevin Caron — la relève de l'équipe.</p>
+<a class="catch-story-link" href="prises/perchaude-2025.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-chinook-salmon-river"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="chinook-salmon-river" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/chinook-salmon-river.jpg" srcset="assets/img/catches/chinook-salmon-river-160.jpg 160w, assets/img/catches/chinook-salmon-river-400.jpg 400w, assets/img/catches/chinook-salmon-river-800.jpg 800w, assets/img/catches/chinook-salmon-river.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Saumon chinook — Kevin Caron — Salmon River, Pulaski (New York)" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Saumon chinook</h3>
+<span class="catch-measure">20 lb</span>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=kevin-caron">Kevin Caron</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 octobre 2024</span>
+<span>📍 Salmon River, Pulaski (New York)</span>
+</div>
+<p class="catch-notes">Pris sur la Salmon River, à Pulaski, dans l'État de New York, pendant la remonte automnale des chinooks des Grands Lacs, hors tournoi.</p>
+<a class="catch-story-link" href="prises/chinook-salmon-river.html">Lire le récit →</a>
+</div>
+</article>
+<article class="catch-card" id="c-maskinonge-kevin-b-2"><div class="catch-media"><button type="button" class="catch-media-btn" data-catch="maskinonge-kevin-b-2" data-photo="0" aria-label="Voir la photo en grand"><img class="catch-media-img" src="assets/img/catches/maskinonge-kevin-b-2.jpg" srcset="assets/img/catches/maskinonge-kevin-b-2-160.jpg 160w, assets/img/catches/maskinonge-kevin-b-2-400.jpg 400w, assets/img/catches/maskinonge-kevin-b-2-800.jpg 800w, assets/img/catches/maskinonge-kevin-b-2.jpg 1200w" sizes="(max-width: 760px) 92vw, 346px" alt="Maskinongé — Kev B. — Fleuve Saint-Laurent" loading="lazy">
+</button>
+</div>
+<div class="catch-body"><div class="catch-head"><h3>Maskinongé</h3>
+</div>
+<div class="catch-anglers"><a class="angler-chip" href="history.html?member=kevin-b">Kev B.</a>
+</div>
+<span class="catch-release">Remis à l'eau</span>
+<div class="catch-facts"><span>📅 2017</span>
+<span>📍 Fleuve Saint-Laurent</span>
+</div>
+<p class="catch-notes">Le maskinongé qui a mis fin à une saison entière de lancers, pour Kev B. et BOBE. Sorti en fin de saison 2017, eux deux seuls sur le bateau.</p>
+<a class="catch-story-link" href="prises/maskinonge-kevin-b-2.html">Lire le récit →</a>
+</div>
+</article></div>
     <div id="empty-state" class="empty-state" style="display:none;" data-i18n="catches.empty">Aucune prise ne correspond à tes filtres.</div>
   </div>
 </section>
